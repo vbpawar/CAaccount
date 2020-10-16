@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+
+header('Content-Type: application/json');
 
 class Welcome extends CI_Controller {
 
@@ -27,8 +30,7 @@ class Welcome extends CI_Controller {
 		echo 'hello vikas';
 	}
         public function test2() {
-            echo 'hello test2';
-            echo 'hello test3'
-            . '.+';
+            echo json_encode( array("name"=>"abc","age"=>20,"phone"=>45678992));
         }
+        
 }
