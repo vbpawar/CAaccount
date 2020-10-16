@@ -26,4 +26,9 @@ class Welcome extends CI_Controller {
 		echo 'Hello Lalit';
 		echo 'hello vikas';
 	}
+        public function test2() {
+            echo 'hello test2';
+            echo 'hello test3'
+            . '.+';
+        }
 }
