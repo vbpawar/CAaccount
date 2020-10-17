@@ -11,8 +11,6 @@ header('Content-Type: application/json');
 
 class Role extends CI_Controller {
 
-    private $response = null;
-    private $records = null;
 
     public function getAllRoles() {
         $this->load->model('Role_model', 'role');
@@ -34,5 +32,7 @@ class Role extends CI_Controller {
         echo json_encode($response);
 //        echo $data;
     }
+    
+    
 
 }
