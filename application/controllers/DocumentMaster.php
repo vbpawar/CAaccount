@@ -64,7 +64,7 @@ class DocumentMaster extends CI_Controller{
     //API - delete a document 
     public function removeDoc()
     {
-        $id  = $this->Docs->remove_document('docId');
+        $id  = $this->input->post('docId');
         if(!$id){
             $response = array(
                 'Message' => 'Parameter missing',
@@ -72,7 +72,7 @@ class DocumentMaster extends CI_Controller{
             );
         }
          
-        if($this->Docs->delete($id))
+        if($this->Docs->remove_document($id))
         {
             $response = array(
                 'Message' => 'Document Removed successfully',
