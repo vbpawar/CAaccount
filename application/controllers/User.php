@@ -85,5 +85,23 @@ class User extends CI_Controller {
         }
         echo json_encode($response);
     }
+    
+    public function findUser($userid) {
+//        $userid = $this->input->get('userid');
+        $record=$this->user->findUser($userid);   
+        if($record!=null){
+             $response = array(
+                'Message' => 'get user successfully',
+                 'Data'=>$record,
+                'Responsecode' => 200
+            );
+        }else{
+             $response = array(
+                'Message' => 'not found',
+                'Responsecode' => 401
+            );
+        }
+        echo json_encode($response);
+    }
 
 }

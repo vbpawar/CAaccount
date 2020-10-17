@@ -25,5 +25,10 @@ class User_model extends CI_Model {
             return FALSE;
         }
     }
+    
+    public function findUser($userid) {
+         $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
+        return $query->row();
+    }
 
 }
