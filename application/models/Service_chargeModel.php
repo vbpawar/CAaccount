@@ -3,8 +3,8 @@
 class Service_chargeModel extends CI_Model {
 
     public function getservicecharges() {
-        $sql = "SELECT ss.categoryid,ss.serviceid,sm.servicename,ss.category,ss.createdat,ss.updatedat 
-        FROM service_subcategorys ss INNER JOIN service_master sm ON sm.serviceid = ss.serviceid";
+        $sql = "SELECT sc.chargesid,sc.serviceid,sm.servicename,sc.charges,sc.createdat 
+        FROM service_charges sc INNER JOIN service_master sm ON sm.serviceid = sc.serviceid";
             $query = $this->db->query($sql);
     return $query->result();
     }
@@ -16,7 +16,7 @@ class Service_chargeModel extends CI_Model {
             return false;
          }
     }
-    public function removeservicecharges($id){
+    public function removeservicecharge($id){
         $this->db->where('chargesid', $id);
         if($this->db->delete('service_charges')){
            return true;

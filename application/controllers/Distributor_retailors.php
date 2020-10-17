@@ -1,12 +1,12 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class Service_charges extends CI_Controller{
+class Distributor_retailors extends CI_Controller{
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Service_chargeModel','service');
+        $this->load->model('DistributorModel','service');
     }
     private $response = null;
     private $records = null;
