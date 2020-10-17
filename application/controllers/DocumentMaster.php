@@ -1,15 +1,8 @@
 <?php
+require APPPATH . 'libraries/REST_Controller.php';
+// use Restserver\Libraries\REST_Controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-header('Access-Control-Allow-Origin: *');
-
-header('Content-Type: application/json');
-
-class DocumentMaster extends CI_Controller {
+class DocumentMaster extends REST_Controller{
 
     public function __construct()
     {
@@ -34,7 +27,8 @@ class DocumentMaster extends CI_Controller {
                 'Responsecode' => 401
             );
         }
-        echo json_encode($response);
+        $this->response($response, REST_Controller::HTTP_OK);
+        // echo json_encode($response);
     }
 
     //create API for documnet master
