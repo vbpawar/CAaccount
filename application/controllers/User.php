@@ -23,16 +23,16 @@ class User extends CI_Controller {
             'contact' => $this->input->post('contact'),
         );
         $userid = $this->user->createNewUser($user1);
-        $contact=array(
-            'userid'=>$userid,
-            'country'=>$this->input->post('country'),
-            'ustate'=>$this->input->post('ustate'),
-            'city'=>$this->input->post('city'),
-            'pincode'=>$this->input->post('pincode'),
-            'uaddress'=>$this->input->post('uaddress'),
+        $contact = array(
+            'userid' => $userid,
+            'country' => $this->input->post('country'),
+            'ustate' => $this->input->post('ustate'),
+            'city' => $this->input->post('city'),
+            'pincode' => $this->input->post('pincode'),
+            'uaddress' => $this->input->post('uaddress'),
         );
-        $result= $this->contact->createUserContact($contact);
-        
+        $result = $this->contact->createUserContact($contact);
+
         if ($result) {
 
             $response = array(
@@ -52,7 +52,7 @@ class User extends CI_Controller {
 
     public function getUsersList() {
 //        $response=null;
-        $records=$this->user->getAllUsersList();
+        $records = $this->user->getAllUsersList();
         if ($records != null) {
 
             $response = array(
@@ -68,4 +68,22 @@ class User extends CI_Controller {
         }
         echo json_encode($response);
     }
+
+    public function deleteUser() {
+        $userid = $this->input->post("userid");
+        $result = $this->user->deleteUser($userid);
+        if ($result) {
+            $response = array(
+                'Message' => 'user deleted successfully',
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Failed to delete',
+                'Responsecode' => 302
+            );
+        }
+        echo json_encode($response);
+    }
+
 }
