@@ -1,8 +1,10 @@
 <?php
 require APPPATH . 'libraries/REST_Controller.php';
 // use Restserver\Libraries\REST_Controller;
+header('Access-Control-Allow-Origin: *');
 
-class DocumentMaster extends REST_Controller{
+header('Content-Type: application/json');
+class DocumentMaster extends CI_Controller{
 
     public function __construct()
     {
@@ -27,8 +29,8 @@ class DocumentMaster extends REST_Controller{
                 'Responsecode' => 401
             );
         }
-        $this->response($response, REST_Controller::HTTP_OK);
-        // echo json_encode($response);
+        //$this->response($response, REST_Controller::HTTP_OK);
+         echo json_encode($response);
     }
 
     //create API for documnet master
@@ -42,8 +44,7 @@ class DocumentMaster extends REST_Controller{
             'Message' => 'Pass the document title',
             'Responsecode' => 303
         );
-    }else{
-       
+    }else{ 
         $result = $this->Docs->insert_documents($data);
         if($result === 0){ 
             $response = array(
@@ -87,5 +88,33 @@ class DocumentMaster extends REST_Controller{
         }
         echo json_encode($response);
     }
+
+   //API - update a book 
+   function updatedocument(){
+         
+    $document      = $this->input->post('document');
+    $docId         = $this->input->post('docId');
+    
+    if(!$document && !$docId){
+        $response = array(
+            'Message' => 'Parameter missing',
+            'Responsecode' => 404
+        );
+    }else{
+       $result = $this->Docs->updatedoc($docId, array("document"=>$document));
+       if($result === 0){
+        $response = array(
+            'Message' => 'Sorry try again',
+            'Responsecode' => 302
+        );
+       }else{
+        $response = array(
+            'Message' => 'Document updated successfully',
+            'Responsecode' => 200
+        );
+       }
+   }
+   echo json_encode($response);
+   }
     
 }

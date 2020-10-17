@@ -29,4 +29,14 @@ class Document_model extends CI_Model {
          }
     }
 
+    public function updatedoc($docId,$data)
+    {
+        if($docId==0){
+            return $this->db->insert('document_master',$data);
+        }else{
+            $this->db->where('docId',$docId);
+            return $this->db->update('document_master',$data);
+        }        
+    }
+
 }
