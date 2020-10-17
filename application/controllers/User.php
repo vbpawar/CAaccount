@@ -51,6 +51,21 @@ class User extends CI_Controller {
     }
 
     public function getUsersList() {
-        
+//        $response=null;
+        $records=$this->user->getAllUsersList();
+        if ($records != null) {
+
+            $response = array(
+                'Message' => 'get all users list successfully!',
+                "Data" => $records,
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'records not found',
+                'Responsecode' => 401
+            );
+        }
+        echo json_encode($response);
     }
 }
