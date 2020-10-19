@@ -2,10 +2,12 @@
 
 class Admin extends CI_Controller {
 
-        public function blankPage()
+        public function formDemo()
         {
-                $this->load->view('admin/header');
-                $this->load->view('admin/blank');
-                $this->load->view('admin/footer');
+                $this->load->view('admin/form_demo');
+                
+        }
+        public function caCertificate() {
+            $this->load->view('admin/ca_certificate');
         }
 }
