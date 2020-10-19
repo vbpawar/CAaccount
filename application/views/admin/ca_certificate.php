@@ -4,29 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Forms Layout | SmartAdmin - Responsive admin template.</title>
-        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="shortcut icon" href="<?php echo base_url('admin_assets/img/favicon.ico'); ?>">
         <!--STYLESHEET-->
         <!--=================================================-->
         <!--Roboto Slab Font [ OPTIONAL ] -->
         <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet">
         <!--Bootstrap Stylesheet [ REQUIRED ]-->
-        <link href="<?php echo base_url('admin_assets/css/bootstrap.min.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
         <!--Jasmine Stylesheet [ REQUIRED ]-->
-        <link href="<?php echo base_url('admin_assets/css/style.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/css/style.css'); ?>" rel="stylesheet">
         <!--Font Awesome [ OPTIONAL ]-->
-        <link href="<?php echo base_url('admin_assets/plugins/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/plugins/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
         <!--Switchery [ OPTIONAL ]-->
-        <link href="<?php echo base_url('admin_assets/plugins/switchery/switchery.min.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/plugins/switchery/switchery.min.css'); ?>" rel="stylesheet">
         <!--Bootstrap Select [ OPTIONAL ]-->
-        <link href="<?php echo base_url('admin_assets/plugins/bootstrap-select/bootstrap-select.min.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/plugins/bootstrap-select/bootstrap-select.min.css'); ?>" rel="stylesheet">
         <!--Demo [ DEMONSTRATION ]-->
-        <link href="<?php echo base_url('admin_assets/css/demo/jasmine.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('admin_assets/css/demo/jasmine.css'); ?>" rel="stylesheet">
         <!--/STYLESHEET-->
         <!--=================================================-->
         <!--Page Load Progress Bar [ OPTIONAL ]-->
-        <link href="<?php echo base_url('admin_assets/plugins/pace/pace.min.css');?>" rel="stylesheet">
-        <script src="<?php echo base_url('admin_assets/plugins/pace/pace.min.js');?>"></script>
+        <link href="<?php echo base_url('admin_assets/plugins/pace/pace.min.css'); ?>" rel="stylesheet">
+        <script src="<?php echo base_url('admin_assets/plugins/pace/pace.min.js'); ?>"></script>
     </head>
     <body>
         <div id="container" class="effect mainnav-full">
@@ -54,13 +54,13 @@
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="fa fa-envelope fa-lg"></i>
-                                <span class="badge badge-header badge-warning">9</span>
+                                    <i class="fa fa-envelope fa-lg"></i>
+                                    <span class="badge badge-header badge-warning">9</span>
                                 </a>
                                 <!--Message dropdown menu-->
                                 <div class="dropdown-menu dropdown-menu-md with-arrow">
                                     <div class="pad-all bord-btm">
-                                       <div class="h4 text-muted text-thin mar-no">You have 3 messages.</div>
+                                        <div class="h4 text-muted text-thin mar-no">You have 3 messages.</div>
                                     </div>
                                     <div class="nano scrollable">
                                         <div class="nano-content">
@@ -70,7 +70,7 @@
                                                     <a href="#" class="media">
 
                                                         <div class="media-left">
-                                                            <img src="img/av2.png" alt="Profile Picture" class="img-circle img-sm">
+                                                            <img src="<?php echo base_url('admin_assets/img/av2.png'); ?>" alt="Profile Picture" class="img-circle img-sm">
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-nowrap">Andy sent you a message</div>
@@ -82,7 +82,7 @@
                                                 <li>
                                                     <a href="#" class="media">
                                                         <div class="media-left">
-                                                            <img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm">
+                                                            <img src="<?php echo base_url('admin_assets/img/av4.png'); ?>" alt="Profile Picture" class="img-circle img-sm">
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-nowrap">Lucy sent you a message</div>
@@ -94,7 +94,7 @@
                                                 <li>
                                                     <a href="#" class="media">
                                                         <div class="media-left">
-                                                            <img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm">
+                                                            <img src="<?php echo base_url('admin_assets/img/av3.png'); ?>" alt="Profile Picture" class="img-circle img-sm">
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-nowrap">Jackson sent you a message</div>
@@ -106,7 +106,7 @@
                                                 <li>
                                                     <a href="#" class="media">
                                                         <div class="media-left">
-                                                            <img src="img/av6.png" alt="Profile Picture" class="img-circle img-sm">
+                                                            <img src="<?php echo base_url('admin_assets/img/av6.png'); ?>" alt="Profile Picture" class="img-circle img-sm">
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-nowrap">Donna sent you a message</div>
@@ -144,7 +144,7 @@
                                     <!--Dropdown footer-->
                                     <div class="pad-all bord-top">
                                         <a href="#" class="btn-link text-dark box-block">
-                                        <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Messages
+                                            <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Messages
                                         </a>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                 <!--Notification dropdown menu-->
                                 <div class="dropdown-menu dropdown-menu-md with-arrow">
                                     <div class="pad-all bord-btm">
-                                       <div class="h4 text-muted text-thin mar-no"> Notification </div>
+                                        <div class="h4 text-muted text-thin mar-no"> Notification </div>
                                     </div>
                                     <div class="nano scrollable">
                                         <div class="nano-content">
@@ -232,7 +232,7 @@
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li class="hidden-xs" id="toggleFullscreen">
                                 <a class="fa fa-expand" data-toggle="fullscreen" href="#" role="button">
-                                <span class="sr-only">Toggle fullscreen</span>
+                                    <span class="sr-only">Toggle fullscreen</span>
                                 </a>
                             </li>
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -241,7 +241,7 @@
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li id="dropdown-user" class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
-                                    <span class="pull-right"> <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture"> </span>
+                                    <span class="pull-right"> <img class="img-circle img-user media-object" src="<?php echo base_url('admin_assets/img/av1.png'); ?>" alt="Profile Picture"> </span>
                                     <div class="username hidden-xs">John Doe</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right with-arrow">
@@ -371,7 +371,7 @@
                     <!--Page content-->
                     <!--===================================================-->
                     <div id="page-content">
-                        
+
                         <div class="row">
                             <div class="eq-height">
                                 <div class="col-sm-6 eq-box-sm">
@@ -383,122 +383,150 @@
                                                 <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                                 <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                             </div>
-                                            <h3 class="panel-title">Block styled form</h3>
+                                            <h3 class="panel-title">CA Certificate</h3>
                                         </div>
                                         <!--Block Styled Form -->
                                         <!--===================================================-->
                                         <form>
                                             <div class="panel-body">
                                                 <div class="row">
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-4">
                                                         <div class="form-group">
-                                                            <label class="control-label">Firstname</label>
-                                                            <input type="text" class="form-control">
+                                                            <label class="control-label">Name</label>
+                                                            <input type="text" class="form-control" placeholder="As per Aadhar">
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <label class="control-label">Lastname</label>
-                                                            <input type="text" class="form-control">
+                                                            <label class="control-label">Select Aadhar card</label>
+                                                            <input name="file" type="file" multiple />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">PAN Card</label>
+                                                            <input type="text" class="form-control" placeholder="Pan No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Select Pan card</label>
+                                                            <input name="file" type="file" multiple />
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="panel-body">
                                                 <div class="row">
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-4">
                                                         <div class="form-group">
-                                                            <label class="control-label">Email</label>
-                                                            <input type="email" class="form-control">
+                                                            <label class="control-label">Mobile No.</label>
+                                                            <input type="text" class="form-control" placeholder="Mobile No.">
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-4">
                                                         <div class="form-group">
-                                                            <label class="control-label">Website</label>
-                                                            <input type="url" class="form-control">
+                                                            <label class="control-label">Email Id</label>
+                                                            <input type="email" class="form-control" placeholder="Mail Id">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Shop Address:</label>
+                                                            <textarea rows="2" cols="40"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Home Address:</label>
+                                                            <textarea rows="2" cols="48"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="panel-footer text-right">
-                                                <button class="btn btn-info" type="submit">Submit</button>
-                                            </div>
-                                        </form>
-                                        <!--===================================================-->
-                                        <!--End Block Styled Form -->
+                                            <!--</div>-->
                                     </div>
+                                    <div class="panel-footer text-right">
+                                        <button class="btn btn-info" type="submit">Submit</button>
+                                    </div>
+                                    </form>
+                                    <!--===================================================-->
+                                    <!--End Block Styled Form -->
                                 </div>
-                                
                             </div>
+
                         </div>
-                       
                     </div>
-                    <!--===================================================-->
-                    <!--End page content-->
+
                 </div>
                 <!--===================================================-->
-                <!--END CONTENT CONTAINER-->
+                <!--End page content-->
             </div>
-            <!-- FOOTER -->
             <!--===================================================-->
-            <footer id="footer">
-                <!-- Visible when footer positions are fixed -->
-                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <div class="show-fixed pull-right">
-                    <ul class="footer-list list-inline">
-                        <li>
-                            <p class="text-sm">SEO Proggres</p>
-                            <div class="progress progress-sm progress-light-base">
-                                <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="text-sm">Online Tutorial</p>
-                            <div class="progress progress-sm progress-light-base">
-                                <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Visible when footer positions are static -->
-                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <div class="hide-fixed pull-right pad-rgt">Currently v2.2</div>
-                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
-                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <p class="pad-lft">&#0169; 2015 Your Company</p>
-            </footer>
-            <!--===================================================-->
-            <!-- END FOOTER -->
-            <!-- SCROLL TOP BUTTON -->
-            <!--===================================================-->
-            <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
-            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
         </div>
+        <!-- FOOTER -->
         <!--===================================================-->
-        <!-- END OF CONTAINER -->
-        <!--JAVASCRIPT-->
-        <!--=================================================-->
-        <!--jQuery [ REQUIRED ]-->
-        <script src="<?php echo base_url('admin_assets/js/jquery-2.1.1.min.js');?>"></script>
-        <!--BootstrapJS [ RECOMMENDED ]-->
-        <script src="<?php echo base_url('admin_assets/js/bootstrap.min.js');?>"></script>
-        <!--Fast Click [ OPTIONAL ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/fast-click/fastclick.min.js');?>"></script>
-        <!--Jquery Nano Scroller js [ REQUIRED ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/nanoscrollerjs/jquery.nanoscroller.min.js');?>"></script>
-        <!--Metismenu js [ REQUIRED ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/metismenu/metismenu.min.js');?>"></script> 
-       <!--Jasmine Admin [ RECOMMENDED ]-->
-        <script src="<?php echo base_url('admin_assets/js/scripts.js');?>"></script>
-        <!--Switchery [ OPTIONAL ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/switchery/switchery.min.js');?>"></script>
-        <!--Bootstrap Select [ OPTIONAL ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/bootstrap-select/bootstrap-select.min.js');?>"></script>
-        <!--Fullscreen jQuery [ OPTIONAL ]-->
-        <script src="<?php echo base_url('admin_assets/plugins/screenfull/screenfull.js');?>"></script>
-        <!--Demo script [ DEMONSTRATION ]-->
-        <script src="<?php echo base_url('admin_assets/js/demo/form-layout.js');?>"></script>
-    </body>
+        <footer id="footer">
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                <ul class="footer-list list-inline">
+                    <li>
+                        <p class="text-sm">SEO Proggres</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="text-sm">Online Tutorial</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">Currently v2.2</div>
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <p class="pad-lft">&#0169; 2015 Your Company</p>
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<?php echo base_url('admin_assets/js/jquery-2.1.1.min.js'); ?>"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="<?php echo base_url('admin_assets/js/bootstrap.min.js'); ?>"></script>
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/fast-click/fastclick.min.js'); ?>"></script>
+    <!--Jquery Nano Scroller js [ REQUIRED ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/nanoscrollerjs/jquery.nanoscroller.min.js'); ?>"></script>
+    <!--Metismenu js [ REQUIRED ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/metismenu/metismenu.min.js'); ?>"></script> 
+    <!--Jasmine Admin [ RECOMMENDED ]-->
+    <script src="<?php echo base_url('admin_assets/js/scripts.js'); ?>"></script>
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/switchery/switchery.min.js'); ?>"></script>
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/bootstrap-select/bootstrap-select.min.js'); ?>"></script>
+    <!--Fullscreen jQuery [ OPTIONAL ]-->
+    <script src="<?php echo base_url('admin_assets/plugins/screenfull/screenfull.js'); ?>"></script>
+    <!--Demo script [ DEMONSTRATION ]-->
+    <script src="<?php echo base_url('admin_assets/js/demo/form-layout.js'); ?>"></script>
+</body>
 </html>
