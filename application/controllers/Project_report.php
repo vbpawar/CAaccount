@@ -1,19 +1,19 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class Certificate_service extends CI_Controller{
+class E_waybill extends CI_Controller{
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('CertificateModel','service');
+        $this->load->model('project_report','service');
     }
     private $response = null;
     private $records = null;
 
     //get all certificates
-    public function getcertificates() {
-        $records = $this->service->getcertificates();
+    public function getreports() {
+        $records = $this->service->getreports();
         if ($records != null) {
             $response = array(
                 'Message' => 'All data load successfully',
@@ -30,25 +30,24 @@ class Certificate_service extends CI_Controller{
     }
 
     //create API for documnet master
-    public function addcertificate()
+    public function addreport()
     {
         $data = array(
-            'userid '=>$this->input->post('userid'),
-        'nameasperadhar'=>$this->input->post('nameasperadhar'),
-        'pancardnumber' => $this->input->post('pancardnumber'),
-        'mobilenumber'=>$this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid'),
-        'shopaddress'=>$this->input->post('shopaddress'),
-        'homeaddress' => $this->input->post('homeaddress'),
-        'reason'=>$this->input->post('reason')
+        'userid '=>$this->input->post('userid'),
+        'cost' => $this->input->post('cost'),
+        'loanamt'=>$this->input->post('loanamt'),
+        'owncapital' => $this->input->post('owncapital'),
+        'noofyear'=>$this->input->post('noofyear'),
+        'repayment_shedule' => $this->input->post('repayment_shedule'),
+        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet'),
         );
-    if(!$data){
+    if(!$data || empty($data)){
         $response = array(
             'Message' => 'Missing parameter',
             'Responsecode' => 303
         );
     }else{ 
-        $result = $this->service->addcertificate($data);
+        $result = $this->service->addreport($data);
         if($result === 0){ 
             $response = array(
                 'Message' => 'Try again',
@@ -56,7 +55,7 @@ class Certificate_service extends CI_Controller{
             );
        }else{ 
         $response = array(
-            'Message' => 'CA certificate added successfully',
+            'Message' => 'Project Report Generated successfully',
             'Responsecode' => 200
         );
        }
@@ -65,20 +64,19 @@ class Certificate_service extends CI_Controller{
 }
 
     //API - delete a document 
-    public function removecertificate()
+    public function removereport()
     {
-        $id  = $this->input->post('certid');
+        $id  = $this->input->post('reportid');
         if(!$id || empty($id)){
             $response = array(
                 'Message' => 'Parameter missing',
                 'Responsecode' => 404
             );
         }else{
-         
-        if($this->service->removecertificate($id))
+        if($this->service->removereport($id))
         {
             $response = array(
-                'Message' => 'CA certificate removed successfully',
+                'Message' => 'Project Report removed successfully',
                 'Responsecode' => 200
             );
         } 
@@ -94,27 +92,25 @@ class Certificate_service extends CI_Controller{
     }
 
    //API - update a service
-   public function updatecertificate(){
-         
+   public function updatereport(){
     $data = array(
         'userid '=>$this->input->post('userid'),
-        'nameasperadhar'=>$this->input->post('nameasperadhar'),
-        'pancardnumber' => $this->input->post('pancardnumber'),
-        'mobilenumber'=>$this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid'),
-        'shopaddress'=>$this->input->post('shopaddress'),
-        'homeaddress' => $this->input->post('homeaddress'),
-        'reason'=>$this->input->post('reason')
+        'cost' => $this->input->post('cost'),
+        'loanamt'=>$this->input->post('loanamt'),
+        'owncapital' => $this->input->post('owncapital'),
+        'noofyear'=>$this->input->post('noofyear'),
+        'repayment_shedule' => $this->input->post('repayment_shedule'),
+        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet'),
         );
-        $certid = $this->input->post('certid');
+        $reportid = $this->input->post('reportid');
     
-    if(!$certid && !$data){
+    if(!$reportid || !$data || empty($data)){
         $response = array(
             'Message' => 'Parameter missing',
             'Responsecode' => 404
         );
     }else{
-       $result = $this->service->updatecertificate($certid,$data);
+       $result = $this->service->updatereport($reportid,$data);
        if($result === 0){
         $response = array(
             'Message' => 'Sorry try again',
@@ -122,7 +118,7 @@ class Certificate_service extends CI_Controller{
         );
        }else{
         $response = array(
-            'Message' => 'CA certificate updated successfully updated',
+            'Message' => 'Project report updated successfully',
             'Responsecode' => 200
         );
        }
