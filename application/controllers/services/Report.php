@@ -8,6 +8,16 @@ class Report extends CI_Controller {
         $this->load->view('admin/js/reportjs');
         $this->load->view('admin/footer');
     }
+    public function update() {
+        
+    }
     
+    public function delete() {
+        
+    }
+    
+    public function show() {
+        
+    }
     
 }
