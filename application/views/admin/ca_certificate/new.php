@@ -1,4 +1,5 @@
-
+</head>
+    <body>
         <div id="container" class="effect mainnav-full">
             <!--NAVBAR-->
             <!--===================================================-->
