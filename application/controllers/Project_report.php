@@ -1,12 +1,12 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class E_waybill extends CI_Controller{
+class Project_report extends CI_Controller{
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('project_report','service');
+        $this->load->model('Preport','service');
     }
     private $response = null;
     private $records = null;
@@ -39,7 +39,7 @@ class E_waybill extends CI_Controller{
         'owncapital' => $this->input->post('owncapital'),
         'noofyear'=>$this->input->post('noofyear'),
         'repayment_shedule' => $this->input->post('repayment_shedule'),
-        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet'),
+        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet')
         );
     if(!$data || empty($data)){
         $response = array(
@@ -100,7 +100,7 @@ class E_waybill extends CI_Controller{
         'owncapital' => $this->input->post('owncapital'),
         'noofyear'=>$this->input->post('noofyear'),
         'repayment_shedule' => $this->input->post('repayment_shedule'),
-        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet'),
+        'lastyear_bal_sheet' => $this->input->post('lastyear_bal_sheet')
         );
         $reportid = $this->input->post('reportid');
     

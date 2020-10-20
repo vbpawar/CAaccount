@@ -1,6 +1,6 @@
 <?php
 
-class Eway_bill extends CI_Model {
+class Preport extends CI_Model {
 
     public function getreports() {
         if(!empty($this->input->get("reportid"))){
