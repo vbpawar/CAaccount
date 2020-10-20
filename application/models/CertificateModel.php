@@ -13,7 +13,7 @@ class CertificateModel extends CI_Model {
     public function addcertificate($data)
     {    
         if($this->db->insert('ca_certificate', $data)){
-            return true;
+            return $this->db->insert_id();
          }else{
             return false;
          }

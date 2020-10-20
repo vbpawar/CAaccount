@@ -7,6 +7,7 @@ class Certificate_service extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('CertificateModel','service');
+        $this->load->library('upload');
     }
     private $response = null;
     private $records = null;
@@ -42,7 +43,7 @@ class Certificate_service extends CI_Controller{
         'homeaddress' => $this->input->post('homeaddress'),
         'reason'=>$this->input->post('reason')
         );
-    if(!$data){
+    if(!$data || empty($data)){
         $response = array(
             'Message' => 'Missing parameter',
             'Responsecode' => 303
@@ -55,6 +56,31 @@ class Certificate_service extends CI_Controller{
                 'Responsecode' => 402
             );
        }else{ 
+           if(isset($_POST['aadharcard'])){
+            $filename= $_FILES["aadharcard"]["name"];
+            $file_ext = pathinfo($filename,PATHINFO_EXTENSION);
+               $config['upload_path']          = './uploads/CACERT/';
+               $config['file_name']            = $result.$file_ext;
+                $config['max_size']             = 100;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if ( !$this->upload->do_upload('aadharcard'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                       $flag = 1;
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+
+                        $flag=0;
+                }
+            }
+        
         $response = array(
             'Message' => 'CA certificate added successfully',
             'Responsecode' => 200
