@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2020 at 06:40 PM
+-- Generation Time: Oct 20, 2020 at 08:50 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `chataccount`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ca_certificate`
+--
+
+CREATE TABLE `ca_certificate` (
+  `certid` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `nameasperadhar` varchar(100) NOT NULL,
+  `pancardnumber` varchar(12) NOT NULL,
+  `mobilenumber` varchar(15) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `shopaddress` text NOT NULL,
+  `homeaddress` text NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ca_certificate`
+--
+
+INSERT INTO `ca_certificate` (`certid`, `userid`, `nameasperadhar`, `pancardnumber`, `mobilenumber`, `emailid`, `shopaddress`, `homeaddress`, `reason`, `createdat`, `updatedat`) VALUES
+(2, 1, 'PAWAR Laxman BHASKAR', 'EEVPP4596B', '9657613754', 'vikaspawar3110@gmail.com', 'Pune Maharashtra', 'Rahuri Ahmadnagar Maharashtra', 'for school', '2020-10-18 23:39:05', '2020-10-20 22:57:57');
 
 -- --------------------------------------------------------
 
@@ -79,6 +106,17 @@ CREATE TABLE `document_master` (
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `document_master`
+--
+
+INSERT INTO `document_master` (`docid`, `document`, `createdat`, `updatedat`) VALUES
+(1, 'Aadhar Card', '2020-10-16 23:24:03', '2020-10-16 23:24:03'),
+(2, 'Pan Card', '2020-10-16 23:24:03', '2020-10-16 23:24:03'),
+(4, 'VOTER CARD', '2020-10-17 12:43:09', '2020-10-17 12:43:09'),
+(5, 'LIC', '2020-10-17 13:02:29', '2020-10-17 13:02:29'),
+(6, 'Premium', '2020-10-17 13:10:01', '2020-10-17 13:10:01');
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +134,32 @@ CREATE TABLE `employee_service` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `e_waybill`
+--
+
+CREATE TABLE `e_waybill` (
+  `billid` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL COMMENT 'it can be retailor,user',
+  `gstnumber` varchar(50) NOT NULL,
+  `gstid` varchar(50) NOT NULL,
+  `gstpwd` varchar(50) NOT NULL,
+  `mobilenumber` varchar(15) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `e_waybill`
+--
+
+INSERT INTO `e_waybill` (`billid`, `userid`, `gstnumber`, `gstid`, `gstpwd`, `mobilenumber`, `emailid`, `createdat`, `updatedat`) VALUES
+(2, 1, '9745852', '78456123', '7410258', '8208504868', 'vbpawar311@gmail.com', '2020-10-20 00:04:37', '2020-10-20 00:04:37'),
+(3, 1, '9745852', '78456123', '7410258', '8208504868', 'vbpawar311@gmail.com', '2020-10-20 00:06:22', '2020-10-20 00:06:22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment_transaction`
 --
 
@@ -109,6 +173,53 @@ CREATE TABLE `payment_transaction` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projectedbalancesheet`
+--
+
+CREATE TABLE `projectedbalancesheet` (
+  `projectedid` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `nameasperadhar` varchar(100) NOT NULL,
+  `pancardnumber` varchar(50) NOT NULL,
+  `DOB` date NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `mobilenumber` varchar(15) NOT NULL,
+  `projectAmt` double(11,2) NOT NULL,
+  `shopAddress` varchar(255) NOT NULL,
+  `homeAddress` varchar(255) NOT NULL,
+  `createat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_report`
+--
+
+CREATE TABLE `project_report` (
+  `reportid` int(11) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `cost` double(10,2) NOT NULL,
+  `loanamt` double(11,2) NOT NULL,
+  `owncapital` double(11,2) NOT NULL,
+  `noofyear` int(11) NOT NULL,
+  `repayment_shedule` smallint(1) NOT NULL DEFAULT 0,
+  `lastyear_bal_sheet` smallint(1) NOT NULL DEFAULT 0,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `project_report`
+--
+
+INSERT INTO `project_report` (`reportid`, `userid`, `cost`, `loanamt`, `owncapital`, `noofyear`, `repayment_shedule`, `lastyear_bal_sheet`, `createdat`, `updatedat`) VALUES
+(1, 1, 50000.00, 5000.00, 200000.00, 10, 1, 1, '2020-10-20 23:27:45', '2020-10-20 23:28:51');
 
 -- --------------------------------------------------------
 
@@ -174,11 +285,19 @@ INSERT INTO `role_master` (`roleid`, `role`, `createdat`, `updatedat`) VALUES
 
 CREATE TABLE `service_charges` (
   `chargesid` tinyint(4) NOT NULL,
-  `serviceid` tinyint(4) NOT NULL,
+  `serviceid` int(10) UNSIGNED NOT NULL,
   `charges` double(11,2) NOT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `service_charges`
+--
+
+INSERT INTO `service_charges` (`chargesid`, `serviceid`, `charges`, `createdat`, `updatedat`) VALUES
+(2, 3, 200.00, '2020-10-17 18:19:44', '2020-10-17 18:19:44'),
+(4, 4, 150.00, '2020-10-17 18:25:03', '2020-10-17 18:25:03');
 
 -- --------------------------------------------------------
 
@@ -208,6 +327,15 @@ CREATE TABLE `service_master` (
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `service_master`
+--
+
+INSERT INTO `service_master` (`serviceid`, `servicename`, `createdat`, `updatedat`) VALUES
+(2, 'PAN CARD', '2020-10-17 14:56:54', '2020-10-17 14:56:54'),
+(3, 'Shop Act', '2020-10-17 17:19:14', '2020-10-17 17:19:14'),
+(4, 'AEPS', '2020-10-17 18:24:49', '2020-10-17 18:24:49');
+
 -- --------------------------------------------------------
 
 --
@@ -218,9 +346,18 @@ CREATE TABLE `service_subcategorys` (
   `categoryid` int(10) UNSIGNED NOT NULL,
   `serviceid` int(10) UNSIGNED NOT NULL,
   `category` varchar(150) NOT NULL,
-  `createdat` datetime NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `service_subcategorys`
+--
+
+INSERT INTO `service_subcategorys` (`categoryid`, `serviceid`, `category`, `createdat`, `updatedat`) VALUES
+(2, 2, 'association', '2020-10-17 15:26:10', '2020-10-17 15:26:10'),
+(3, 2, 'Trust', '2020-10-17 15:26:26', '2020-10-17 15:26:26'),
+(4, 2, 'Trust', '2020-10-17 15:30:40', '2020-10-17 15:30:40');
 
 -- --------------------------------------------------------
 
@@ -293,6 +430,12 @@ CREATE TABLE `wallet_transaction` (
 --
 
 --
+-- Indexes for table `ca_certificate`
+--
+ALTER TABLE `ca_certificate`
+  ADD PRIMARY KEY (`certid`);
+
+--
 -- Indexes for table `contact_master`
 --
 ALTER TABLE `contact_master`
@@ -321,14 +464,33 @@ ALTER TABLE `document_master`
 --
 ALTER TABLE `employee_service`
   ADD PRIMARY KEY (`empserviceid`),
+  ADD UNIQUE KEY `serviceid_2` (`serviceid`,`empid`),
   ADD KEY `serviceid` (`serviceid`),
   ADD KEY `empid` (`empid`);
+
+--
+-- Indexes for table `e_waybill`
+--
+ALTER TABLE `e_waybill`
+  ADD PRIMARY KEY (`billid`);
 
 --
 -- Indexes for table `payment_transaction`
 --
 ALTER TABLE `payment_transaction`
   ADD PRIMARY KEY (`paymentid`);
+
+--
+-- Indexes for table `projectedbalancesheet`
+--
+ALTER TABLE `projectedbalancesheet`
+  ADD PRIMARY KEY (`projectedid`);
+
+--
+-- Indexes for table `project_report`
+--
+ALTER TABLE `project_report`
+  ADD PRIMARY KEY (`reportid`);
 
 --
 -- Indexes for table `proof_docs`
@@ -355,7 +517,8 @@ ALTER TABLE `role_master`
 -- Indexes for table `service_charges`
 --
 ALTER TABLE `service_charges`
-  ADD PRIMARY KEY (`chargesid`);
+  ADD PRIMARY KEY (`chargesid`),
+  ADD UNIQUE KEY `serviceid` (`serviceid`);
 
 --
 -- Indexes for table `service_documents`
@@ -410,10 +573,16 @@ ALTER TABLE `wallet_transaction`
 --
 
 --
+-- AUTO_INCREMENT for table `ca_certificate`
+--
+ALTER TABLE `ca_certificate`
+  MODIFY `certid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `contact_master`
 --
 ALTER TABLE `contact_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `criteria_documents`
@@ -431,19 +600,37 @@ ALTER TABLE `distributors_retailors`
 -- AUTO_INCREMENT for table `document_master`
 --
 ALTER TABLE `document_master`
-  MODIFY `docid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `docid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `employee_service`
 --
 ALTER TABLE `employee_service`
-  MODIFY `empserviceid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `empserviceid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `e_waybill`
+--
+ALTER TABLE `e_waybill`
+  MODIFY `billid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payment_transaction`
 --
 ALTER TABLE `payment_transaction`
   MODIFY `paymentid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `projectedbalancesheet`
+--
+ALTER TABLE `projectedbalancesheet`
+  MODIFY `projectedid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `project_report`
+--
+ALTER TABLE `project_report`
+  MODIFY `reportid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `proof_docs`
@@ -467,7 +654,7 @@ ALTER TABLE `role_master`
 -- AUTO_INCREMENT for table `service_charges`
 --
 ALTER TABLE `service_charges`
-  MODIFY `chargesid` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `chargesid` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `service_documents`
@@ -479,13 +666,13 @@ ALTER TABLE `service_documents`
 -- AUTO_INCREMENT for table `service_master`
 --
 ALTER TABLE `service_master`
-  MODIFY `serviceid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `serviceid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `service_subcategorys`
 --
 ALTER TABLE `service_subcategorys`
-  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `service_transaction`
@@ -503,7 +690,7 @@ ALTER TABLE `service_transaction_docs`
 -- AUTO_INCREMENT for table `user_master`
 --
 ALTER TABLE `user_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wallet_transaction`
@@ -519,7 +706,7 @@ ALTER TABLE `wallet_transaction`
 -- Constraints for table `contact_master`
 --
 ALTER TABLE `contact_master`
-  ADD CONSTRAINT `contact_master_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_master` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `contact_master_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_master` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `employee_service`
@@ -535,6 +722,12 @@ ALTER TABLE `proof_docs`
   ADD CONSTRAINT `proof_docs_ibfk_1` FOREIGN KEY (`catgoryid`) REFERENCES `service_subcategorys` (`categoryid`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `proof_docs_ibfk_2` FOREIGN KEY (`serviceid`) REFERENCES `service_master` (`serviceid`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `proof_docs_ibfk_3` FOREIGN KEY (`docid`) REFERENCES `document_master` (`docid`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `service_charges`
+--
+ALTER TABLE `service_charges`
+  ADD CONSTRAINT `service_charges_ibfk_1` FOREIGN KEY (`serviceid`) REFERENCES `service_master` (`serviceid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `service_documents`
