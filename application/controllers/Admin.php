@@ -8,9 +8,9 @@ class Admin extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function caCertificate() {
+    public function newCACertificate() {
         $this->load->view('admin/header');
-        $this->load->view('admin/ca_certificate');
+        $this->load->view('admin/new_ca_certificate');
         $this->load->view('admin/footer');
     }
 
