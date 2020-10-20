@@ -7,6 +7,7 @@ class BalancedProjectSheet extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Balance_sheet','service');
+        echo 'hi';
     }
     private $response = null;
     private $records = null;
