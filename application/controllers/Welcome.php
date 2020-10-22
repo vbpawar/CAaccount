@@ -24,13 +24,5 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('welcome_message');
-	}
-	public function test(){
-		echo 'Hello Lalit';
-		echo 'hello vikas';
-	}
-        public function test2() {
-            echo json_encode( array("name"=>"abc","age"=>20,"phone"=>45678992));
-        }
-        
+	}   
 }
