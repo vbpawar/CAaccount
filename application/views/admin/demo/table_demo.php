@@ -502,7 +502,7 @@
                         <!--===================================================-->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">CA Certificate List</h3>
+                                <h3 class="panel-title">Demo List</h3>
                             </div>
                             <div class="panel-body">
                                 <table id="demo-dt-basic" class="table table-striped table-bordered">

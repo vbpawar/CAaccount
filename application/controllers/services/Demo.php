@@ -20,4 +20,9 @@ class Demo extends CI_Controller {
         $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/footer');
     }
+    
+    public function baseUrl() {
+        echo base_url();
+        echo base_url('services/certificate/update');
+    }
 }
