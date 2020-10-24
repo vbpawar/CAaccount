@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 20, 2020 at 08:50 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Host: localhost:3306
+-- Generation Time: Oct 24, 2020 at 11:15 AM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `chataccount`
+-- Database: `soulsoft_CA`
 --
 
 -- --------------------------------------------------------
@@ -38,8 +38,8 @@ CREATE TABLE `ca_certificate` (
   `shopaddress` text NOT NULL,
   `homeaddress` text NOT NULL,
   `reason` varchar(255) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -47,7 +47,8 @@ CREATE TABLE `ca_certificate` (
 --
 
 INSERT INTO `ca_certificate` (`certid`, `userid`, `nameasperadhar`, `pancardnumber`, `mobilenumber`, `emailid`, `shopaddress`, `homeaddress`, `reason`, `createdat`, `updatedat`) VALUES
-(2, 1, 'PAWAR Laxman BHASKAR', 'EEVPP4596B', '9657613754', 'vikaspawar3110@gmail.com', 'Pune Maharashtra', 'Rahuri Ahmadnagar Maharashtra', 'for school', '2020-10-18 23:39:05', '2020-10-20 22:57:57');
+(2, 1, 'PAWAR VIKAS BHASKAR', 'EEVPP4596B', '9657613754', 'vikas@nucleon.com', 'Pune Maharashtra', 'Rahuri Ahmadnagar Maharashtra', 'for school', '2020-10-18 23:39:05', '2020-10-23 11:11:08'),
+(3, 1, 'Lalit Meshram', 'ARPF1234', '8007015819', 'lalit@gmail.com', 'Civil line', 'Reshimbagh', 'Hospital', '2020-10-23 11:03:46', '2020-10-23 11:03:46');
 
 -- --------------------------------------------------------
 
@@ -62,9 +63,16 @@ CREATE TABLE `contact_master` (
   `city` varchar(50) NOT NULL,
   `pincode` varchar(10) NOT NULL,
   `uaddress` text NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact_master`
+--
+
+INSERT INTO `contact_master` (`userid`, `country`, `ustate`, `city`, `pincode`, `uaddress`, `createdat`, `updatedat`) VALUES
+(2, 'India', 'Maharashtra', 'Sangmner', '411528', 'A/P-Sangmner,Tal-Sangmner,Dist-Ahamadnagar', '2020-10-23 10:34:53', '2020-10-23 10:34:53');
 
 -- --------------------------------------------------------
 
@@ -75,8 +83,8 @@ CREATE TABLE `contact_master` (
 CREATE TABLE `criteria_documents` (
   `criteriaid` int(10) UNSIGNED NOT NULL,
   `proof` varchar(150) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -89,9 +97,17 @@ CREATE TABLE `distributors_retailors` (
   `distretid` int(10) UNSIGNED NOT NULL,
   `distributorid` int(10) UNSIGNED NOT NULL,
   `retailorid` int(10) UNSIGNED NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `distributors_retailors`
+--
+
+INSERT INTO `distributors_retailors` (`distretid`, `distributorid`, `retailorid`, `createdat`, `updatedat`) VALUES
+(2, 1, 2, '2020-10-22 11:41:15', '2020-10-22 11:41:15'),
+(3, 1, 3, '2020-10-22 11:41:31', '2020-10-22 11:41:31');
 
 -- --------------------------------------------------------
 
@@ -102,8 +118,8 @@ CREATE TABLE `distributors_retailors` (
 CREATE TABLE `document_master` (
   `docid` int(10) UNSIGNED NOT NULL,
   `document` varchar(100) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -127,8 +143,8 @@ CREATE TABLE `employee_service` (
   `empserviceid` int(10) UNSIGNED NOT NULL,
   `serviceid` int(10) UNSIGNED NOT NULL,
   `empid` int(10) UNSIGNED NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -145,8 +161,8 @@ CREATE TABLE `e_waybill` (
   `gstpwd` varchar(50) NOT NULL,
   `mobilenumber` varchar(15) NOT NULL,
   `emailid` varchar(100) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -156,6 +172,56 @@ CREATE TABLE `e_waybill` (
 INSERT INTO `e_waybill` (`billid`, `userid`, `gstnumber`, `gstid`, `gstpwd`, `mobilenumber`, `emailid`, `createdat`, `updatedat`) VALUES
 (2, 1, '9745852', '78456123', '7410258', '8208504868', 'vbpawar311@gmail.com', '2020-10-20 00:04:37', '2020-10-20 00:04:37'),
 (3, 1, '9745852', '78456123', '7410258', '8208504868', 'vbpawar311@gmail.com', '2020-10-20 00:06:22', '2020-10-20 00:06:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `importexport`
+--
+
+CREATE TABLE `importexport` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `typeoforg` varchar(50) NOT NULL,
+  `prefactivity` varchar(100) NOT NULL,
+  `pannumber` varchar(10) NOT NULL,
+  `panname` varchar(100) NOT NULL,
+  `DOBpan` date NOT NULL,
+  `branchdetails` varchar(255) NOT NULL,
+  `uaddress` varchar(255) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `ustate` varchar(50) DEFAULT NULL,
+  `district` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `pincode` varchar(7) DEFAULT NULL,
+  `bankname` varchar(55) DEFAULT NULL,
+  `acholdername` varchar(100) DEFAULT NULL,
+  `acno` varchar(20) DEFAULT NULL,
+  `branchname` varchar(100) DEFAULT NULL,
+  `ifsccode` varchar(50) DEFAULT NULL,
+  `cin` varchar(50) DEFAULT NULL,
+  `gstno` varchar(50) DEFAULT NULL,
+  `spanname` varchar(100) DEFAULT NULL,
+  `spannumber` varchar(10) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `line1` varchar(255) DEFAULT NULL,
+  `line2` varchar(255) DEFAULT NULL,
+  `scity` varchar(50) DEFAULT NULL,
+  `sstate` varchar(50) DEFAULT NULL,
+  `spin` varchar(7) DEFAULT NULL,
+  `smobile` varchar(11) DEFAULT NULL,
+  `semailid` varchar(100) DEFAULT NULL,
+  `sadharnumber` varchar(13) DEFAULT NULL,
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `importexport`
+--
+
+INSERT INTO `importexport` (`id`, `userid`, `typeoforg`, `prefactivity`, `pannumber`, `panname`, `DOBpan`, `branchdetails`, `uaddress`, `country`, `ustate`, `district`, `city`, `pincode`, `bankname`, `acholdername`, `acno`, `branchname`, `ifsccode`, `cin`, `gstno`, `spanname`, `spannumber`, `dob`, `line1`, `line2`, `scity`, `sstate`, `spin`, `smobile`, `semailid`, `sadharnumber`, `createdat`, `updatedat`) VALUES
+(2, 1, 'CA', 'NA', 'EEVPP', 'VBPAWAR', '0000-00-00', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', '0000-00-00', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', '123', '2020-10-24 10:43:12', '2020-10-24 10:43:12');
 
 -- --------------------------------------------------------
 
@@ -170,8 +236,8 @@ CREATE TABLE `payment_transaction` (
   `amount` double(11,2) NOT NULL,
   `paymentdate` date NOT NULL,
   `message` varchar(255) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -191,8 +257,8 @@ CREATE TABLE `projectedbalancesheet` (
   `projectAmt` double(11,2) NOT NULL,
   `shopAddress` varchar(255) NOT NULL,
   `homeAddress` varchar(255) NOT NULL,
-  `createat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -208,10 +274,10 @@ CREATE TABLE `project_report` (
   `loanamt` double(11,2) NOT NULL,
   `owncapital` double(11,2) NOT NULL,
   `noofyear` int(11) NOT NULL,
-  `repayment_shedule` smallint(1) NOT NULL DEFAULT 0,
-  `lastyear_bal_sheet` smallint(1) NOT NULL DEFAULT 0,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `repayment_shedule` smallint(1) NOT NULL DEFAULT '0',
+  `lastyear_bal_sheet` smallint(1) NOT NULL DEFAULT '0',
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -233,9 +299,9 @@ CREATE TABLE `proof_docs` (
   `criteriaid` int(10) UNSIGNED NOT NULL,
   `docid` int(10) UNSIGNED NOT NULL,
   `catgoryid` int(10) UNSIGNED NOT NULL,
-  `flag` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `flag` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -249,8 +315,8 @@ CREATE TABLE `retailor_access_control` (
   `retailorid` int(10) UNSIGNED NOT NULL,
   `serviceid` int(10) UNSIGNED NOT NULL,
   `isactive` enum('0','1') NOT NULL DEFAULT '0',
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -262,8 +328,8 @@ CREATE TABLE `retailor_access_control` (
 CREATE TABLE `role_master` (
   `roleid` int(10) UNSIGNED NOT NULL,
   `role` varchar(50) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -287,8 +353,8 @@ CREATE TABLE `service_charges` (
   `chargesid` tinyint(4) NOT NULL,
   `serviceid` int(10) UNSIGNED NOT NULL,
   `charges` double(11,2) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -310,8 +376,8 @@ CREATE TABLE `service_documents` (
   `serviceid` int(10) UNSIGNED NOT NULL,
   `categoryid` int(10) UNSIGNED NOT NULL,
   `docid` int(10) UNSIGNED NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -323,8 +389,8 @@ CREATE TABLE `service_documents` (
 CREATE TABLE `service_master` (
   `serviceid` int(10) UNSIGNED NOT NULL,
   `servicename` varchar(150) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -346,8 +412,8 @@ CREATE TABLE `service_subcategorys` (
   `categoryid` int(10) UNSIGNED NOT NULL,
   `serviceid` int(10) UNSIGNED NOT NULL,
   `category` varchar(150) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -372,8 +438,8 @@ CREATE TABLE `service_transaction` (
   `serviceid` int(10) UNSIGNED NOT NULL,
   `categoryid` int(10) UNSIGNED NOT NULL,
   `charges` double(11,2) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -393,6 +459,33 @@ CREATE TABLE `service_transaction_docs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `udyog_adhar`
+--
+
+CREATE TABLE `udyog_adhar` (
+  `uid` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `adharnumber` varchar(12) NOT NULL,
+  `nameofent` varchar(100) NOT NULL,
+  `gender` enum('Male','Female','Others') NOT NULL,
+  `category` varchar(15) NOT NULL,
+  `mobilenumber` varchar(15) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `nameofentr` varchar(100) NOT NULL,
+  `typeoforg` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `postoffice` varchar(50) NOT NULL,
+  `pincode` varchar(7) NOT NULL,
+  `ustate` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `status` enum('complete','New') NOT NULL DEFAULT 'New',
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_master`
 --
 
@@ -404,9 +497,16 @@ CREATE TABLE `user_master` (
   `lastname` varchar(100) NOT NULL,
   `upassword` varchar(20) NOT NULL,
   `contact` varchar(15) NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_master`
+--
+
+INSERT INTO `user_master` (`userid`, `roleid`, `emailid`, `firstname`, `lastname`, `upassword`, `contact`, `createdat`, `updatedat`) VALUES
+(2, 1, 'admin@ca.com', 'KIRAN', 'VYAVHARE', '12345', '9657613754', '2020-10-23 10:33:58', '2020-10-23 10:33:58');
 
 -- --------------------------------------------------------
 
@@ -421,8 +521,8 @@ CREATE TABLE `wallet_transaction` (
   `amount` double(11,2) NOT NULL,
   `message` varchar(255) NOT NULL,
   `transactiondate` datetime NOT NULL,
-  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `createdat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -473,6 +573,12 @@ ALTER TABLE `employee_service`
 --
 ALTER TABLE `e_waybill`
   ADD PRIMARY KEY (`billid`);
+
+--
+-- Indexes for table `importexport`
+--
+ALTER TABLE `importexport`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `payment_transaction`
@@ -555,6 +661,12 @@ ALTER TABLE `service_transaction_docs`
   ADD PRIMARY KEY (`servicedocid`);
 
 --
+-- Indexes for table `udyog_adhar`
+--
+ALTER TABLE `udyog_adhar`
+  ADD PRIMARY KEY (`uid`);
+
+--
 -- Indexes for table `user_master`
 --
 ALTER TABLE `user_master`
@@ -576,13 +688,13 @@ ALTER TABLE `wallet_transaction`
 -- AUTO_INCREMENT for table `ca_certificate`
 --
 ALTER TABLE `ca_certificate`
-  MODIFY `certid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `certid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `contact_master`
 --
 ALTER TABLE `contact_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `criteria_documents`
@@ -594,7 +706,7 @@ ALTER TABLE `criteria_documents`
 -- AUTO_INCREMENT for table `distributors_retailors`
 --
 ALTER TABLE `distributors_retailors`
-  MODIFY `distretid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `distretid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `document_master`
@@ -613,6 +725,12 @@ ALTER TABLE `employee_service`
 --
 ALTER TABLE `e_waybill`
   MODIFY `billid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `importexport`
+--
+ALTER TABLE `importexport`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment_transaction`
@@ -687,10 +805,16 @@ ALTER TABLE `service_transaction_docs`
   MODIFY `servicedocid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `udyog_adhar`
+--
+ALTER TABLE `udyog_adhar`
+  MODIFY `uid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user_master`
 --
 ALTER TABLE `user_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wallet_transaction`

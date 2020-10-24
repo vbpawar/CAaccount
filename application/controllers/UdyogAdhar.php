@@ -74,17 +74,17 @@ class UdyogAdhar extends CI_Controller{
     //API - delete a document 
     public function removebill()
     {
-        $id  = $this->input->post('id');
-        if(!$id || empty($id)){
+        $uid  = $this->input->post('uid');
+        if(!$uid || empty($uid)){
             $response = array(
                 'Message' => 'Parameter missing',
                 'Responsecode' => 404
             );
         }else{
-        if($this->service->removebill($id))
+        if($this->service->removebill($uid))
         {
             $response = array(
-                'Message' => 'Import export bill removed successfully',
+                'Message' => 'Udyog Adhar bill removed successfully',
                 'Responsecode' => 200
             );
         } 
