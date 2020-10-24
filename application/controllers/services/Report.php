@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 class Report extends CI_Controller {
     public function create() {
         $this->load->view('admin/header');
