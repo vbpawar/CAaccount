@@ -74,7 +74,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6, 7]}],
+            columnDefs: [{orderable: true, targets: []}],
 
             dom: 'Bfrtip',
 
