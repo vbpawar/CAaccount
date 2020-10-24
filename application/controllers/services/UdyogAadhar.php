@@ -17,7 +17,7 @@ class UdyogAadhar extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/udyog_aadhar/new');
         $this->load->view('admin/js/comman_js');
-        // $this->load->view('admin/js/udyog_aadhar/new_js');
+         $this->load->view('admin/js/udyog_aadhar/new_js');
         $this->load->view('admin/footer');
     }
     
