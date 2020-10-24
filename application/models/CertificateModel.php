@@ -30,11 +30,14 @@ class CertificateModel extends CI_Model {
     public function updatecertificate($certid,$data)
     {
         if($certid==0){
-            return $this->db->insert('ca_certificate',$data);
+            $result['result']= $this->db->insert('ca_certificate',$data);
+            $result['data'] = [];
         }else{
             $this->db->where('certid',$certid);
-            return $this->db->update('ca_certificate',$data);
-        }        
+            $result['result'] = $this->db->update('ca_certificate',$data);
+            $result['data']  = $this->db->get_where("ca_certificate", ['certid' => $certid])->row_array();
+        }       
+        return $result; 
     }
 
 }
