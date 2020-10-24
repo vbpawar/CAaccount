@@ -12,12 +12,11 @@ class ImportExport extends CI_Controller {
     public function create() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/steps');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/import_export/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/steps_js');
-
-
+        $this->load->view('admin/js/import_export/new_js');
         $this->load->view('admin/footer');
     }
     
