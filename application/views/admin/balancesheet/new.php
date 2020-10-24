@@ -354,7 +354,7 @@
                                                 <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                                 <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                             </div>
-                                            <h3 class="panel-title">CA Certificate</h3>
+                                            <h3 class="panel-title">Project Balance Sheet</h3>
                                         </div>
                                         <!--Block Styled Form -->
                                         <!--===================================================-->
