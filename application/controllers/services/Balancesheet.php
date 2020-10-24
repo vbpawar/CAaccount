@@ -6,18 +6,14 @@
  * and open the template in the editor.
  */
 
-class ImportExport extends CI_Controller {
+class Balancesheet extends CI_Controller {
 
     
     public function create() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/steps');
-        $this->load->view('admin/import_export/new');
+        $this->load->view('admin/balancesheet/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/steps_js');
-
-
         $this->load->view('admin/footer');
     }
     
@@ -25,16 +21,15 @@ class ImportExport extends CI_Controller {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/dataModalCss');
-        $this->load->view('admin/import_export/show');
+        $this->load->view('admin/balancesheet/show');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/footer');
-        
     }
     public function update() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/import_export/show');
+        $this->load->view('admin/balancesheet/show');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/footer');
     }
