@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'chataccount',
+	'hostname' => '208.109.12.251',
+	'username' => 'soulsoft_CA',
+	'password' => 'Soulsoft@1987',
+	'database' => 'soulsoft_CA',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

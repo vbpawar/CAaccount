@@ -12,8 +12,8 @@ class Distributor_retailors extends CI_Controller{
     private $records = null;
 
     //get API for all services
-    public function getservicecharges() {
-        $records = $this->service->getservicecharges();
+    public function distributor_retailors() {
+        $records = $this->service->getretailors();
         if ($records != null) {
             $response = array(
                 'Message' => 'All data load successfully',
@@ -30,11 +30,11 @@ class Distributor_retailors extends CI_Controller{
     }
 
     //create API for documnet master
-    public function addServiceCharges()
+    public function add_dist_retailors()
     {
         $data = array(
-        'serviceid'=>$this->input->post('serviceid'),
-        'charges' => $this->input->post('charges')
+        'distributorid'=>$this->input->post('distributorid'),
+        'retailorid' => $this->input->post('retailorid')
         );
     if(!$data){
         $response = array(
@@ -42,7 +42,7 @@ class Distributor_retailors extends CI_Controller{
             'Responsecode' => 303
         );
     }else{ 
-        $result = $this->service->addservicecharges($data);
+        $result = $this->service->add_retailors($data);
         if($result === 0){ 
             $response = array(
                 'Message' => 'Try again',
@@ -50,7 +50,7 @@ class Distributor_retailors extends CI_Controller{
             );
        }else{ 
         $response = array(
-            'Message' => 'Service charges added successfully',
+            'Message' => 'Distributor are mapped to retailors added successfully',
             'Responsecode' => 200
         );
        }
@@ -59,9 +59,9 @@ class Distributor_retailors extends CI_Controller{
 }
 
     //API - delete a document 
-    public function removeservicecharges()
+    public function removemap()
     {
-        $id  = $this->input->post('chargesid');
+        $id  = $this->input->post('distretid');
         if(!$id || empty($id)){
             $response = array(
                 'Message' => 'Parameter missing',
@@ -69,10 +69,10 @@ class Distributor_retailors extends CI_Controller{
             );
         }else{
          
-        if($this->service->removeservicecharge($id))
+        if($this->service->removemap($id))
         {
             $response = array(
-                'Message' => 'service charges removed successfully',
+                'Message' => 'Distributor retailors removed successfully',
                 'Responsecode' => 200
             );
         } 
@@ -88,19 +88,19 @@ class Distributor_retailors extends CI_Controller{
     }
 
    //API - update a service
-   public function updateservicecharges(){
-         
-    $chargesid      = $this->input->post('chargesid');
-    $serviceid         = $this->input->post('serviceid');
-    $charges             = $this->input->post('charges');
-    
-    if(!$chargesid && !$serviceid && !$charges){
+   public function updateretailors(){
+    $distretid      = $this->input->post('distretid');
+    $data = array(
+        'distributorid'=>$this->input->post('distributorid'),
+        'retailorid' => $this->input->post('retailorid')
+        );
+    if(!$distretid && !$data && empty($data)){
         $response = array(
             'Message' => 'Parameter missing',
             'Responsecode' => 404
         );
     }else{
-       $result = $this->service->updateservicecharges($chargesid, array("serviceid"=>$serviceid,"charges"=>$charges));
+       $result = $this->service->updateretailors($distretid,$data);
        if($result === 0){
         $response = array(
             'Message' => 'Sorry try again',
@@ -108,7 +108,7 @@ class Distributor_retailors extends CI_Controller{
         );
        }else{
         $response = array(
-            'Message' => 'Service charges updated successfully updated',
+            'Message' => 'update distributor retailors successfully updated',
             'Responsecode' => 200
         );
        }

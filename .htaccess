@@ -7,3 +7,4 @@ RewriteRule ^(.*)$ index.php/$1 [L]
     Header set Access-Control-Allow-Origin "*"
   </IfModule>
 </FilesMatch>
+

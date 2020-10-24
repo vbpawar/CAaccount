@@ -2,6 +2,8 @@
     <!--=================================================-->
     <!--jQuery [ REQUIRED ]-->
     <script src="<?php echo base_url('admin_assets/js/jquery-2.1.1.min.js'); ?>"></script>
+    
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>-->
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="<?php echo base_url('admin_assets/js/bootstrap.min.js'); ?>"></script>
     <!--Fast Click [ OPTIONAL ]-->
@@ -20,3 +22,5 @@
     <script src="<?php echo base_url('admin_assets/plugins/screenfull/screenfull.js'); ?>"></script>
     <!--Demo script [ DEMONSTRATION ]-->
     <script src="<?php echo base_url('admin_assets/js/demo/form-layout.js'); ?>"></script>
+    <!--sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
