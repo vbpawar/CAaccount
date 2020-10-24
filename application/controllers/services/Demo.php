@@ -10,7 +10,7 @@ class Demo extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-   public function tableDemo() {
+    public function tableDemo() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/dataModalCss');
@@ -20,15 +20,9 @@ class Demo extends CI_Controller {
         $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/footer');
     }
-<<<<<<< HEAD
 
     public function baseUrl() {
         echo base_url();
-=======
-    
-    public function baseUrl() {
-        echo base_url();
-        echo base_url('services/certificate/update');
->>>>>>> d8e7af2640cb05802487c452f3c8cfd816ad9586
     }
+
 }
