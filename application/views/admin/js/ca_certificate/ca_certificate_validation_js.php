@@ -1,67 +1,86 @@
 <script>
-    $(function () {
+    
 
-        $("#caCertificateForm").validate({
+$(function () {
 
-            ignore: [], rules: {
+$("#caCertificateForm").validate({
 
-                nameasperadhar: {
+    ignore: [],
+    rules: {
 
-                    required: true, minlength: 2, maxlength: 255
+        nameasperadhar: {
 
-                },
+            required: true,
+            minlength: 2,
+            maxlength: 255
 
-                pancardnumber: {
+        },
 
-                    required: true, minlength: 2, maxlength: 255
+        pancardnumber: {
 
-                },
-                mobilenumber: {
+            required: true,
+            minlength: 2,
+            maxlength: 255
 
-//                required: true, minlength: 10, maxlength: 10
-                    required: true,
-                    number: true,
-                    minlength: 10,
-                    maxlength: 10
+        },
+        mobilenumber: {
 
-                },
+            //                required: true, minlength: 10, maxlength: 10
+            required: true,
+            number: true,
+            minlength: 10,
+            maxlength: 10
 
-                shopaddress: {
-                    required: true, minlength: 2, maxlength: 255
-                }
+        },
 
-            }
+        shopaddress: {
+            required: true,
+            minlength: 2,
+            maxlength: 255
+        }
 
-            , messages: {
+    }
 
-                nameasperadhar: {
+    ,
+    messages: {
 
-                    required: 'Enter Name as per Aadharcard', minlength: 'please enter more word', maxlength: 'length is exceed'
+        nameasperadhar: {
 
-                },
+            required: 'Enter Name as per Aadharcard',
+            minlength: 'please enter more word',
+            maxlength: 'length is exceed'
 
-                pancardnumber: {
+        },
 
-                    required: 'Enter PANCARD Number', minlength: 'please enter more word', maxlength: 'length is exceed'
+        pancardnumber: {
 
-                },
-                mobilenumber: {
+            required: 'Enter PANCARD Number',
+            minlength: 'please enter more word',
+            maxlength: 'length is exceed'
 
-                    required: 'Enter Mobile Number', minlength: 'please enter Valid Mobile Number', maxlength: 'please enter Valid Mobile Number'
+        },
+        mobilenumber: {
 
-                },
-                
-                shopaddress: {
+            required: 'Enter Mobile Number',
+            minlength: 'please enter Valid Mobile Number',
+            maxlength: 'please enter Valid Mobile Number'
 
-                    required: 'Enter Shop Address', minlength: 'please enter more word', maxlength: 'length is exceed'
+        },
 
-                }
+        shopaddress: {
 
-            }
+            required: 'Enter Shop Address',
+            minlength: 'please enter more word',
+            maxlength: 'length is exceed'
 
-        });
+        }
 
-    });
+    }
+
+});
+
+});
+
 
 
 </script>

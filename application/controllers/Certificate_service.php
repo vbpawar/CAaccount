@@ -141,16 +141,18 @@ class Certificate_service extends CI_Controller{
         );
     }else{
        $result = $this->service->updatecertificate($certid,$data);
-       if($result === 0){
+       if($result['result']!=0 && $result['data']!=null){
+        $response = array(
+            'Message' => 'CA certificate updated successfully updated',
+            'Data'=>$result['data'],
+            'Responsecode' => 200
+        );
+       }else{
         $response = array(
             'Message' => 'Sorry try again',
             'Responsecode' => 302
         );
-       }else{
-        $response = array(
-            'Message' => 'CA certificate updated successfully updated',
-            'Responsecode' => 200
-        );
+       
        }
    }
    echo json_encode($response);

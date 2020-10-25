@@ -22,45 +22,41 @@
         e.preventDefault();
 
     var returnVal = $("#caCertificateForm").valid();
-
+alert(returnVal);
         if (returnVal) {
         var formdata = new FormData(this);
+          
+            // $.ajax({
 
-            $.ajax({
+            //     url: url + 'Certificate_service/updatecertificate',
 
-                url: url + 'Certificate_service/updatecertificate',
+            //     type: 'POST',
 
-                type: 'POST',
+            //     data: formdata,
 
-                data: formdata,
+            //     cache: false,
 
-                cache: false,
+            //     contentType: false,
 
-                contentType: false,
+            //     processData: false,
 
-                processData: false,
+            //     dataType: 'json',
 
-                dataType: 'json',
+            //     success: function (response) {
 
-                success: function (response) {
-//                alert(response.Data.customerId);
-//                console.log(response);
+            //         if (response.Responsecode == 200) {
+            //             swal("Congrats!", response.Message, "success");
+            //             goback();
 
-                    if (response.Responsecode == 200) {
-//                         var productid = response.Data.customerId;
-//                    productid = productid.toString();
-                        swal("Congrats!", response.Message, "success");
-                        goback();
+            //         } else {
 
-                    } else {
+            //             swal("Error!", response.Message, "success");
 
-                        swal("Error!", response.Message, "success");
+            //         }
 
-                    }
+            //     }
 
-                }
-
-            });
+            // });
 
         }
 
