@@ -151,6 +151,35 @@
                 <!-- end dropdown-menu -->
             </li>
             <!-- end standard drop down -->
+            
+            <!--All Services-->
+             <!-- standard drop down -->
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> All Services <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <!--CA certificate-->
+                    <li class="dropdown-submenu">
+                        <a href="#">CA Certificate</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/certificate/create">Create</a></li>
+                                    <li><a href="http://localhost/CAaccount/services/certificate/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                    
+                    <!--Report-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Report</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/report/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/report/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                </ul>
+                <!-- end dropdown-menu -->
+            </li>
+            <!-- end standard drop down -->
         </ul>
         <!-- end nav navbar-nav -->
     </div>

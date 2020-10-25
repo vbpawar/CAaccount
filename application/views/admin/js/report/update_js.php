@@ -3,32 +3,30 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
-        $('#certid').val(product.certid);
-        $('#nameasperadhar').val(product.nameasperadhar);
-        $('#pancardnumber').val(product.pancardnumber);
-        $('#mobilenumber').val(product.mobilenumber);
-        $('#emailid').val(product.emailid);
-        $('#shopaddress').val(product.shopaddress);
-        $('#homeaddress').val(product.homeaddress);
-        $('#reason').val(product.reason);
+        $('#reportid').val(product.reportid);
+        $('#cost').val(product.cost);
+        $('#loanamt').val(product.loanamt);
+        $('#owncapital').val(product.owncapital);
+        $('#noofyear').val(product.noofyear);
+        $('#repayment_shedule').val(product.repayment_shedule);
+        $('#lastyear_bal_sheet').val(product.lastyear_bal_sheet);
 
     }
 
     loadDetails(details);
 
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#reportForm').on('submit', function (e) {
 
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
+//    var returnVal = $("#caCertificateForm").valid();
 
-        if (returnVal) {
-        var formdata = new FormData(this);
-
+        if (true) {
+            var formdata = new FormData(this);
+            formdata.append('userid', 1);
             $.ajax({
 
-                url: url + 'Certificate_service/updatecertificate',
+                url: url + 'Project_report/updatereport',
 
                 type: 'POST',
 
@@ -66,10 +64,5 @@
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+
 </script>

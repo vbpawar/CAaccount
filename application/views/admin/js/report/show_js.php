@@ -1,12 +1,12 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var caCertificate = new Map();
+    var reportList = new Map();
 
     const loadList = () => {
 
         $.ajax({
 
-            url: url + 'Certificate_service/getcertificates',
+            url: url + 'Project_report/getreports',
 
             type: 'get',
 
@@ -21,11 +21,11 @@
 
                     for (var i = 0; i < count; i++) {
 
-                        caCertificate.set(response.Data[i].certid, response.Data[i]);
+                        reportList.set(response.Data[i].reportid, response.Data[i]);
 
                     }
 
-                    showList(caCertificate);
+                    showList(reportList);
 
                 }
 
@@ -46,13 +46,12 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.nameasperadhar + '</td>';
-            tblData += '<td>' + services.pancardnumber + '</td>';
-            tblData += '<td>' + services.mobilenumber + '</td>';
-            tblData += '<td>' + services.emailid + '</td>';
-            tblData += '<td>' + services.shopaddress + '</td>';
-            tblData += '<td>' + services.homeaddress + '</td>';
-            tblData += '<td>' + services.reason + '</td>';
+            tblData += '<tr><td>' + services.cost + '</td>';
+            tblData += '<td>' + services.loanamt + '</td>';
+            tblData += '<td>' + services.owncapital + '</td>';
+            tblData += '<td>' + services.noofyear + '</td>';
+            tblData += '<td>' + services.repayment_shedule + '</td>';
+            tblData += '<td>' + services.lastyear_bal_sheet + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -74,7 +73,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6, 7]}],
+            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6]}],
 
             dom: 'Bfrtip',
 
@@ -90,18 +89,18 @@
 
         laborid = laborid.toString();
 
-        if (caCertificate.has(laborid)) {
+        if (reportList.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = caCertificate.get(laborid);
+            var product = reportList.get(laborid);
 
             ulaborid = laborid;
             details = product;
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/certificate/update',
+                url: url+'services/report/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,9 +116,9 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = caCertificate.get(laborid);
-    var name=product.nameasperadhar;
-    var msg='Do you want to delete '+name+' Information ?';
+    var product = reportList.get(laborid);
+    var loanamt=product.loanamt;
+    var msg='Do you want to delete Loan Amount '+loanamt+' Report ?';
     
     var alert1 = '';
     alert1 += '<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
@@ -138,11 +137,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'Project_report/removereport',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{reportid:laborid},
 
 //            cache: false,
 //
@@ -211,7 +210,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/report/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
