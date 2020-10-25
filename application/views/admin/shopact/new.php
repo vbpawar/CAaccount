@@ -111,7 +111,7 @@
                             <form id="caCertificateForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Name of Establishment</strong></div>
+                                        <div class="panel-title bg-info"><strong>Name of Establishment</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -125,7 +125,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Address and Situation of the Establishment</strong></div>
+                                        <div class="panel-title bg-info"><strong>Address and Situation of the Establishment</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Date of Commencement of Business <span class="text-danger">*</strong></div>
+                                        <div class="panel-title bg-info"><strong>Date of Commencement of Business <span class="text-danger">*</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -210,7 +210,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Nature of Business <span class="text-danger">*</strong></div>
+                                        <div class="panel-title bg-info"><strong>Nature of Business <span class="text-danger">*</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -223,7 +223,7 @@
                                 <hr />
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Manpower/Workers Details <span class="text-danger">*</strong></div>
+                                        <div class="panel-title bg-info"><strong>Manpower/Workers Details <span class="text-danger">*</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -243,7 +243,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Name of the Employer <span class="text-danger">*</strong></div>
+                                        <div class="panel-title bg-info"><strong>Name of the Employer <span class="text-danger">*</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -256,7 +256,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Residential Address of Employer</strong></div>
+                                        <div class="panel-title bg-info"><strong>Residential Address of Employer</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -358,7 +358,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Type of organisation (i.e. Proprietor, Partnership, LLP, Company/ Trust/ Co-operative Society/ Board)</strong></div>
+                                        <div class="panel-title bg-info"><strong>Type of organisation (i.e. Proprietor, Partnership, LLP, Company/ Trust/ Co-operative Society/ Board)</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -371,7 +371,7 @@
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="header bg-info"><strong>Name of the members of employer</strong></div>
+                                        <div class="panel-title bg-info"><strong>Name of the members of employer</strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
