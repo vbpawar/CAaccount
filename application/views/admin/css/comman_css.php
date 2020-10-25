@@ -44,4 +44,3 @@
         <!--Page Load Progress Bar [ OPTIONAL ]-->
         <link href="<?php echo base_url('admin_assets/plugins/pace/pace.min.css'); ?>" rel="stylesheet">
         <script src="<?php echo base_url('admin_assets/plugins/pace/pace.min.js'); ?>"></script>
-        

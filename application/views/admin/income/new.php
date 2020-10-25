@@ -369,17 +369,33 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label class="control-label" name="type_of_organisation"> Select Type </label>
-                                                        <select class="form-control" name="type_of_organisation" required="">
-                                                            <option value="">--Select--</option>
-                                                            <option value="Proprietorship">Bussiness</option>
-                                                            <option value="Partnership Firm">Salary </option>
+                                                        <label class="control-label"> Select Type </label>
+                                                        <select class="form-control" required="" id="typeof" name="typeof">
+                                                            <option value="1" id="typeof" name="typeof">Bussiness</option>
+                                                            <option value="2" id="typeof" name="typeof">Salary </option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row"> 
-                                            <div class="col-sm-4">
+
+                                            <div class="row" id="otherFieldGroupDiv">
+                                                <!-- <div class="header"><strong>BUSINESS INFO</strong></div> -->
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Business Name</label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Premise Name</label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label" name="type_of_organisation"> Choose Assesment Year </label>
                                                         <select class="form-control" name="type_of_organisation" title="change year if needed">
@@ -392,7 +408,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                               
+                                                <!-- <div class="header"><strong>PERSONAL INFO</strong></div> -->
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
@@ -414,28 +430,59 @@
                                                         <input type="text" class="form-control" />
                                                     </div>
                                                 </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Gender</label>
+                                                        <select class="form-control" name="gender" required="">
+                                                            <option value="">--Select--</option>
+                                                            <option name="male" id="male" value="">Male</option>
+                                                            <option name="female" id="female" value="">Female </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Date Of Birth </label>
+                                                        <input type="date" name="dob" id="dob" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">PAN Number </label>
+                                                        <input type="text" name="pan" id="pan" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Fathers Name </label>
+                                                        <input type="text" name="father" id="father" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Mobile No. </label>
+                                                        <input type="text" name="mobile" id="mobile" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Email </label>
+                                                        <input type="email" name="email" id="email" class="form-control" />
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div class="row">
-                                                <div class="header"><strong>BUSINESS INFO</strong></div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Business Name</label>
-                                                        <input type="text" class="form-control" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Premise Name</label>
-                                                        <input type="text" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <hr />
 
                                             <div class="row">
-                                                <div class="header"><strong>BUSINESS CONTACT</strong></div>
-                                                <div class="col-sm-6">
+                                                <!-- <div class="header"><strong>BUSINESS CONTACT</strong></div> -->
+                                                <!-- <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Mobile No.</label>
                                                         <input type="text" class="form-control" />
@@ -446,12 +493,12 @@
                                                         <label class="control-label">Email</label>
                                                         <input type="email" class="form-control" />
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <hr />
 
                                             <div class="row">
-                                                <div class="header"><strong>PLACE OF BUSINESS</strong></div>
+                                                <!-- <div class="header"><strong>ADDRESS</strong></div> -->
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Country</label>
@@ -493,23 +540,97 @@
                                                         <input type="text" class="form-control" />
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <hr />
 
-                                            <div class="row">
-                                                <div class="header"><strong>RESIDENTIAL ADDRESS</strong></div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Flat/door/block no.</label>
                                                         <input type="text" class="form-control" placeholder="" />
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <hr />
+
+                                            <div class="row">
+                                                <!-- <div class="header"><strong>RESIDENTIAL ADDRESS</strong></div> -->
+
                                                 <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Bank Statement(if yes show attachment)</label>
+                                                        <select class="form-control" name="type_of_organisation" required="">
+                                                            <!-- <option value="">--Select--</option> -->
+                                                            <option value="Proprietorship">Yes</option>
+                                                            <option value="Partnership Firm">No </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Bank Statement Attachment</label>
+                                                        <input type="file" class="form-control" placeholder="" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">16 no. form Part A & Part B(if yes show attachment)</label>
+                                                        <select class="form-control" name="type_of_organisation" required="">
+                                                            <!-- <option value="">--Select--</option> -->
+                                                            <option value="Proprietorship">Yes</option>
+                                                            <option value="Partnership Firm">No </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">16 no. form Part A & Part B Attachment</label>
+                                                        <input type="file" class="form-control" placeholder="" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Salary Sleep(if yes show attachment)</label>
+                                                        <select class="form-control" name="type_of_organisation" required="">
+                                                            <!-- <option value="">--Select--</option> -->
+                                                            <option value="Proprietorship">Yes</option>
+                                                            <option value="Partnership Firm">No </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Salary Sleep Attachment</label>
+                                                        <input type="file" class="form-control" placeholder="" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Investment proof(if yes show attachment)</label>
+                                                        <select class="form-control" name="type_of_organisation" required="">
+                                                            <!-- <option value="">--Select--</option> -->
+                                                            <option value="Proprietorship">Yes</option>
+                                                            <option value="Partnership Firm">No </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Investment proof Attachment</label>
+                                                        <input type="file" class="form-control" placeholder="" />
+                                                    </div>
+                                                </div>
+
+                                                <!-- <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Premise Name</label>
                                                         <input type="text" class="form-control" />
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="panel-footer text-right">
@@ -519,6 +640,32 @@
                                     <!--===================================================-->
                                     <!--End Block Styled Form -->
                                 </div>
+                                <script>
+                                    $("#typeof").change(function () {
+                                        if ($(this).val() == "1") {
+                                            $("#otherFieldGroupDiv").show();
+                                            //   $('#bannertitle').attr('required', '');
+                                            //   $('#articletitle').attr('required', '');
+                                            //   $('#fullarticle').attr('required', '');
+                                            //   $('#description').attr('required', '');
+                                            //   $('#websitelink').attr('required', '');
+                                            //   $('#imageurl').attr('required', '');
+                                            //   $('#areaid').attr('required','hi');
+                                            //   $('#addestination').attr('required','');
+                                        } else {
+                                            $("#otherFieldGroupDiv").hide();
+                                            //   $('#bannertitle').attr('required','');
+                                            //   $('#articletitle').attr('required','');
+                                            //   $('#fullarticle').removeAttr('required');
+                                            //   $('#description').removeAttr('required');
+                                            //   $('#websitelink').removeAttr('required');
+                                            //   $('#imageurl').removeAttr('required');
+                                            //   $('#areaid').attr('required','hi');
+                                            //   $('#addestination').attr('required','');
+                                        }
+                                    });
+                                    $("#typeof").trigger("change");
+                                </script>
                             </div>
                         </div>
                     </div>

@@ -110,7 +110,9 @@
                             <!--===================================================-->
                             <form id="caCertificateForm" method="post">
                                 <div class="panel-body">
-                                    <div class="row">
+                                        <div class="row">
+                                        <div class="panel-title bg-info"><strong>Entrepreneur Details</strong></div>
+
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Aadhar Number</label>
@@ -118,7 +120,6 @@
                                                 <input type="hidden" class="form-control" name="" value="1" />
                                             </div>
                                         </div>
-
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Name Of Entrepreneur</label>
@@ -165,6 +166,17 @@
                                             </div>
                                         </div>
 
+                                        </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Enteprise Details</strong></div>
+
+                                        
+
+                                        
+
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Name Of Enteprise</label>
@@ -190,6 +202,29 @@
                                     <div>
                                     
                                     </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Village/Town </label>
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Road</label>
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Shop no.</label>
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+
+
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">City</label>
@@ -220,6 +255,75 @@
                                         <div class="form-group">
                                             <label class="control-label">District</label>
                                             <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+                                    
+
+                                    
+                                </div>
+                                <div class="panel-body">
+                                <div class="row">
+                                <div class="panel-title bg-info"><strong>Status of Enterprise  </strong></div>
+
+                                <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label"></label>
+                                            <label class="control-label">Registration Date</label>
+
+                                            <input type="date" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="panel-body">
+                                <div class="row">
+                                <div class="panel-title bg-info"><strong>Bank Details </strong></div>
+                                <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <!-- <label class="control-label"> </label> -->
+                                            <label class="control-label">Bank Name</label>
+
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            
+                                            <label class="control-label">IFC Code</label>
+
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            
+                                            <label class="control-label">Bank Account Number</label>
+
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+                                </div></div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Number of Employees <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Men </label>
+                                                <input type="text" class="form-control" name="Men1" id="Men1" placeholder="2" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Women </label>
+                                                <input type="text" class="form-control" name="Women1" id="Women1" placeholder="1" name="" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
