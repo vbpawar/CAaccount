@@ -136,7 +136,7 @@
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label>Date of Incorporation/ DOB as on PAN</label>
-                                                            <input type="text" name="Last-name" class="form-control" placeholder="" />
+                                                            <input type="date" name="Last-name" class="form-control" placeholder="" />
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -292,7 +292,7 @@
 
                                                 <div class="col-md-4">
                                                     <label>Date of Birth</label>
-                                                    <input type="text" name="Last-name" class="form-control" placeholder="" />
+                                                    <input type="date" name="Last-name" class="form-control" placeholder="" />
                                                 </div>
                                             </div>
 
@@ -344,6 +344,43 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                       
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Individual's/  Frim's/ Company's PAN Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Voter ID/ Aadhar card/ Passport</label>
+                                                <input type="file" class="form-control" name="Electronics" id="Electronics" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Individual/ Company's Cancle Cheque of Current Bank Account </label>
+                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Rent Agreement/ Electricity bill copy of the premise</label>
+                                                <input type="file" class="form-control" name="Electricity" id="Electricity" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 1) Individual's or Frim's Company's copy of PAN Card. 2 ) Individual's voter ID or Aadhar card or Passport copy. 3) Individual's or company's or firm's cancle cheque copy of current bank account . 4) Copy of Rent Agreement or Electricity bill copy of the premise. -->
+                                    </div>
+                                </div>
+
+                                            
                                         </div>
 
                                         <!--/ Wizard Container 3 -->

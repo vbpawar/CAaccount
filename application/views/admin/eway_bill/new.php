@@ -162,6 +162,32 @@
                                     
                                     <!--</div>-->
                                 </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pan Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                       
+                                        
+                                        
+                                        
+                                        <!-- 1) Pan Card, 2) Aadhar Card , 3) Shop Address 4) Residence Address 5) Electronics Bill 5) Check / Bank Passbook 6) Mobile Number 7) Mail ID -->
+                                    </div>
+                                </div>
                                 <div class="panel-footer text-right">
                                     <button class="btn btn-info" type="submit">Submit</button>
                                 </div>

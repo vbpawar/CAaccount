@@ -110,7 +110,7 @@
                             <!--===================================================-->
                             <form id="caCertificateForm" method="post">
                                 <div class="panel-body">
-                                        <div class="row">
+                                    <div class="row">
                                         <div class="panel-title bg-info"><strong>Entrepreneur Details</strong></div>
 
                                         <div class="col-sm-4">
@@ -165,17 +165,12 @@
                                                 <input type="email" class="form-control" placeholder="" name="" />
                                             </div>
                                         </div>
-
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="panel-title bg-info"><strong>Enteprise Details</strong></div>
-
-                                        
-
-                                        
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -196,12 +191,8 @@
                                                 </select>
                                             </div>
                                         </div>
-
-                                        
                                     </div>
-                                    <div>
-                                    
-                                    </div>
+                                    <div></div>
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
@@ -222,8 +213,6 @@
                                             <input type="text" class="form-control" placeholder="" name="" />
                                         </div>
                                     </div>
-
-
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
@@ -257,60 +246,70 @@
                                             <input type="text" class="form-control" placeholder="" name="" />
                                         </div>
                                     </div>
-                                    
-
-                                    
                                 </div>
                                 <div class="panel-body">
-                                <div class="row">
-                                <div class="panel-title bg-info"><strong>Status of Enterprise  </strong></div>
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Status of Enterprise </strong></div>
 
-                                <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="control-label"></label>
-                                            <label class="control-label">Registration Date</label>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label"></label>
+                                                <label class="control-label">Registration Date</label>
 
-                                            <input type="date" class="form-control" placeholder="" name="" />
+                                                <input type="date" class="form-control" placeholder="" name="" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-
-                                <div class="panel-body">
-                                <div class="row">
-                                <div class="panel-title bg-info"><strong>Bank Details </strong></div>
-                                <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <!-- <label class="control-label"> </label> -->
-                                            <label class="control-label">Bank Name</label>
-
-                                            <input type="text" class="form-control" placeholder="" name="" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            
-                                            <label class="control-label">IFC Code</label>
-
-                                            <input type="text" class="form-control" placeholder="" name="" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            
-                                            <label class="control-label">Bank Account Number</label>
-
-                                            <input type="text" class="form-control" placeholder="" name="" />
-                                        </div>
-                                    </div>
-
-                                </div></div>
 
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="panel-title bg-info"><strong>Number of Employees <span class="text-danger">*</strong></div>
+                                        <div class="panel-title bg-info"><strong>Bank Details </strong></div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <!-- <label class="control-label"> </label> -->
+                                                <label class="control-label">Bank Name</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">IFC Code</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Bank Account Number</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Manufaturing/ Services</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label"> </label>
+                                                <input type="text" class="form-control" name="Manufaturing" id="Manufaturing" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Number of Employees <span class="text-danger">*</span></strong></div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -325,6 +324,42 @@
                                                 <input type="text" class="form-control" name="Women1" id="Women1" placeholder="1" name="" />
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pan Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Electronics Bill</label>
+                                                <input type="file" class="form-control" name="Electronics" id="Electronics" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Check / Bank Passbook </label>
+                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- 1) Pan Card, 2) Aadhar Card , 3) Shop Address 4) Residence Address 5) Electronics Bill 5) Check / Bank Passbook 6) Mobile Number 7) Mail ID -->
                                     </div>
                                 </div>
 

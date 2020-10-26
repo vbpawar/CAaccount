@@ -227,7 +227,7 @@
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Men </label>
+                                                <label class="control-label">Men</label>
                                                 <input type="text" class="form-control" name="Men1" id="Men1" placeholder="2" name="" />
                                             </div>
                                         </div>
@@ -394,6 +394,46 @@
                                                 <input type="text" class="form-control" name="Men" id="Men" placeholder="" name="" />
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pan Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Shop Owner Passport Photo </label>
+                                                <input type="file" class="form-control" name="owner_pic" id="owner_pic" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Sign </label>
+                                                <input type="file" class="form-control" name="Sign" id="Sign" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Shop Photo </label>
+                                                <input type="file" class="form-control" name="Shop_pic" id="Shop_pic" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 1) , 2) Pan Card, 3) Shop Photo ,4) Shop Owner Passport Photo, 5) Sahi, 6) Shop Photo 7) Mail ID 8) Mobile number 9)  10) residence address -->
                                     </div>
                                 </div>
 
