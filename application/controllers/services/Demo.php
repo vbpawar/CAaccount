@@ -25,5 +25,9 @@ class Demo extends CI_Controller {
     public function baseUrl() {
         echo base_url();
     }
+    
+    public function test() {
+        
+    }
 
 }
