@@ -125,13 +125,13 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">GST No.</label>
-                                                <input type="text" class="form-control" placeholder="" name="">
+                                                <input type="text" class="form-control" placeholder="" name="gstnumber" id="gstnumber">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">GST ID</label>
-                                                <input type="text" class="form-control" placeholder="" name="">
+                                                <input type="text" class="form-control" placeholder="" name="gstid" id="gstid">
                                             </div>
                                         </div>
                                         
@@ -142,19 +142,19 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">GST Password</label>
-                                                <input type="text" class="form-control" placeholder="" name="">
+                                                <input type="text" class="form-control" placeholder="" name="gstpwd" id="gstpwd">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Mobile No.</label>
-                                                <input type="text" class="form-control" placeholder="primary mobile no." name="">
+                                                <input type="text" class="form-control" placeholder="primary mobile no." name="mobilenumber" id="mobilenumber">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Email Id</label>
-                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid">
+                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid">
                                             </div>
                                         </div>
                                         
