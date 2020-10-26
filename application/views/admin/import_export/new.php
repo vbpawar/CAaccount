@@ -180,7 +180,6 @@
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            ============
                                             
                                         </div>
                                         <!--/ Wizard Container 1 -->
@@ -266,7 +265,6 @@
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                        ============
                                             
                                         </div>
                                         <!--/ Wizard Container 2 -->
