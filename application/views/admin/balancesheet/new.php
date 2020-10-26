@@ -120,7 +120,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Name</label>
-                                                            <input type="text" class="form-control" placeholder="As per Aadhar">
+                                                            <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar"id="nameasperadhar">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
@@ -133,7 +133,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">PAN Card</label>
-                                                            <input type="text" class="form-control" placeholder="Pan No.">
+                                                            <input type="text" class="form-control" placeholder="Pan No." name="pancardnumber"id="pancardnumber">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
@@ -149,19 +149,19 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Date of birth</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" class="form-control" placeholder="" name="DOB" id="DOB">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Mobile No.</label>
-                                                            <input type="text" class="form-control" placeholder="Mobile No.">
+                                                            <input type="text" class="form-control" placeholder="Mobile No." name="mobilenumber" id="mobilenumber">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Email Id</label>
-                                                            <input type="email" class="form-control" placeholder="Mail Id">
+                                                            <input type="email" class="form-control" placeholder="Mail Id" name="emailid" id="emailid">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -173,7 +173,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Projected Total Amount</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" class="form-control" placeholder="" name="projectAmt" id="projectAmt" >
                                                         </div>
                                                     </div>
                                                    
@@ -182,13 +182,13 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Shop Address:</label>
-                                                            <textarea rows="2" cols="40"></textarea>
+                                                            <textarea rows="2" cols="40" name="shopaddress" id="shopaddress"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Home Address:</label>
-                                                            <textarea rows="2" cols="48"></textarea>
+                                                            <textarea rows="2" cols="48" name="homeaddress" id="homeaddress"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
