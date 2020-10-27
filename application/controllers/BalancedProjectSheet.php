@@ -110,22 +110,23 @@ class BalancedProjectSheet extends CI_Controller{
         );
         $projectedid = $this->input->post('projectedid');
     
-    if(!$projectedid && !$data){
+    if(!$projectedid || !$data || empty($data)){
         $response = array(
             'Message' => 'Parameter missing',
             'Responsecode' => 404
         );
     }else{
        $result = $this->service->updatebill($projectedid,$data);
-       if($result === 0){
+       if($result['result']!=0 && $result['data']!=null){
         $response = array(
-            'Message' => 'Sorry try again',
-            'Responsecode' => 302
+            'Message' => 'Balance sheet  successfully updated',
+            'Data'=>$result['data'],
+            'Responsecode' => 200
         );
        }else{
         $response = array(
-            'Message' => 'Project bill updated successfully',
-            'Responsecode' => 200
+            'Message' => 'Try Again',
+            'Responsecode' => 302
         );
        }
    }

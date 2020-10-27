@@ -1,17 +1,18 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#distributorForm').on('submit', function (e) {
-
+    $('#reportForm').on('submit', function (e) {
+// alert("hello");
         e.preventDefault();
 
 //    var returnVal = $("#caCertificateForm").valid();
+        
         var formdata = new FormData(this);
-
+        formdata.append('userid', 1);
         if (true) {
 
             $.ajax({
 
-                url: url + 'Distributor_retailors/add_dist_retailors',
+                url: url + 'Project_report/addreport',
 
                 type: 'POST',
 
@@ -53,7 +54,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/RetailorDistributor/show');
+        window.location.replace(url + 'services/report/show');
     }
 
 

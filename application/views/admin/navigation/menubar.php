@@ -176,6 +176,46 @@
                         </ul>
                         <!-- end dropdown-menu -->
                     </li>
+                    
+                    <!--Import Export-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Import Export</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/ImportExport/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/report/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                    
+                    <!--pancard-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Pancard</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/pancard/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/report/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                    
+                    <!--Balancesheet-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Balancesheet</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/Balancesheet/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/Balancesheet/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                    
+                    <!--distributor-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Distributor Retailor</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/RetailorDistributor/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/RetailorDistributor/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
                 </ul>
                 <!-- end dropdown-menu -->
             </li>

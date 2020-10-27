@@ -156,6 +156,13 @@
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
+                                                <label class="control-label">Address</label>
+                                                <textarea name="" id="" class="form-control" placeholder="Address" id="Address" name="Address"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
                                                 <label class="control-label">Contry</label>
                                                 <input type="text" class="form-control" placeholder="Contry" id="Contry" name="Contry">
                                             </div>

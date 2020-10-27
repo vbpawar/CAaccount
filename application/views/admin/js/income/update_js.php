@@ -3,33 +3,30 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#projectedid').val(product.projectedid);
-        $('#nameasperadhar').val(product.nameasperadhar);
-        $('#pancardnumber').val(product.pancardnumber);
-        $('#mobilenumber').val(product.mobilenumber);
-        $('#DOB').val(product.DOB);
-        $('#emailid').val(product.emailid);
-        $('#projectAmt').val(product.projectAmt);
-        $('#shopaddress').val(product.shopAddress);
-        $('#homeaddress').val(product.homeAddress);
+        $('#reportid').val(product.reportid);
+        $('#cost').val(product.cost);
+        $('#loanamt').val(product.loanamt);
+        $('#owncapital').val(product.owncapital);
+        $('#noofyear').val(product.noofyear);
+        $('#repayment_shedule').val(product.repayment_shedule);
+        $('#lastyear_bal_sheet').val(product.lastyear_bal_sheet);
 
     }
 
     loadDetails(details);
 
-    $('#balancesheetForm').on('submit', function (e) {
+    $('#reportForm').on('submit', function (e) {
+
         e.preventDefault();
 
-//    var returnVal = $("#balancesheetForm").valid();
+//    var returnVal = $("#caCertificateForm").valid();
 
         if (true) {
-        var formdata = new FormData(this);
-        formdata.append('userid', 1);
-//        alert('ok1');
-//        console.log(formdata);
+            var formdata = new FormData(this);
+            formdata.append('userid', 1);
             $.ajax({
 
-                url: url + 'BalancedProjectSheet/updatebill',
+                url: url + 'Project_report/updatereport',
 
                 type: 'POST',
 
@@ -67,10 +64,5 @@
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+
 </script>

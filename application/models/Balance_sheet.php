@@ -30,11 +30,14 @@ class Balance_sheet extends CI_Model {
     public function updatebill($projectedid,$data)
     {
         if($projectedid==0){
-            return $this->db->insert('projectedbalancesheet',$data);
+            $result['result']= $this->db->insert('projectedbalancesheet',$data);
+            $result['data'] = [];
         }else{
-            $this->db->where('projectedid',$certid);
-            return $this->db->update('projectedbalancesheet',$data);
-        }        
+            $this->db->where('projectedid',$projectedid);
+            $result['result'] = $this->db->update('projectedbalancesheet',$data);
+            $result['data']  = $this->db->get_where("projectedbalancesheet", ['projectedid' => $projectedid])->row_array();
+        } 
+        return $result;       
     }
 
 }

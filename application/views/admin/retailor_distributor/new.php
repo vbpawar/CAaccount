@@ -110,18 +110,22 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
+                            <form id="distributorForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Distributor</label>
+<<<<<<< HEAD
                                                 <select name="Distributor" id="Distributor" class="form-control">
                                                 <option value="">id1</option>
                                                 <option value="">id2</option>
 
                                                 </select>
                                               
+=======
+                                                <input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                             </div>
                                         </div>
                                        
@@ -129,11 +133,15 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Retailor</label>
+<<<<<<< HEAD
                                                 <select name="Distributor" id="Distributor" class="form-control">
                                                 <option value="">id1</option>
                                                 <option value="">id2</option>
 
                                                 </select>
+=======
+                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                             </div>
                                         </div>
                                         

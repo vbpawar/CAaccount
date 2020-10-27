@@ -46,7 +46,13 @@ class UdyogAdhar extends CI_Controller{
         'district' => $this->input->post('district'),
         'city'=>$this->input->post('city'),
         'pincode' => $this->input->post('pincode'),
-        'postoffice'=>$this->input->post('postoffice')
+        'postoffice'=>$this->input->post('postoffice'),
+        'regdate'=>$this->input->post('regdate'),
+        'bankName'=>$this->input->post('bankName'),
+        'ifsc'=>$this->input->post('ifsc'),
+        'bankAc'=>$this->input->post('bankAc'),
+        'men'=>$this->input->post('men'),
+        'women'=>$this->input->post('women')
         );
     if(!$data || empty($data)){
         $response = array(
@@ -115,7 +121,13 @@ class UdyogAdhar extends CI_Controller{
         'district' => $this->input->post('district'),
         'city'=>$this->input->post('city'),
         'pincode' => $this->input->post('pincode'),
-        'postoffice'=>$this->input->post('postoffice')
+        'postoffice'=>$this->input->post('postoffice'),
+        'regdate'=>$this->input->post('regdate'),
+        'bankName'=>$this->input->post('bankName'),
+        'ifsc'=>$this->input->post('ifsc'),
+        'bankAc'=>$this->input->post('bankAc'),
+        'men'=>$this->input->post('men'),
+        'women'=>$this->input->post('women')
         );
         $uid = $this->input->post('uid');
     

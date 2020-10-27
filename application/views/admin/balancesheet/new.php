@@ -106,17 +106,21 @@
                                                 <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                                 <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                             </div>
+<<<<<<< HEAD
                                             <h3 class="panel-title">Balancesheet</h3>
+=======
+                                            <h3 class="panel-title">Project Balance Sheet</h3>
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                         </div>
                                         <!--Block Styled Form -->
                                         <!--===================================================-->
-                                        <form>
+                                        <form id="balancesheetForm" method="post" enctype="multipart/form-data">
                                             <div class="panel-body">
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Name</label>
-                                                            <input type="text" class="form-control" placeholder="As per Aadhar">
+                                                            <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" id="nameasperadhar">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
@@ -129,7 +133,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">PAN Card</label>
-                                                            <input type="text" class="form-control" placeholder="Pan No.">
+                                                            <input type="text" class="form-control" placeholder="Pan No." name="pancardnumber"id="pancardnumber">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
@@ -145,19 +149,23 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Date of birth</label>
+<<<<<<< HEAD
                                                             <input type="date" class="form-control" placeholder="">
+=======
+                                                            <input type="text" class="form-control" placeholder="" name="DOB" id="DOB">
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Mobile No.</label>
-                                                            <input type="text" class="form-control" placeholder="Mobile No.">
+                                                            <input type="text" class="form-control" placeholder="Mobile No." name="mobilenumber" id="mobilenumber">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Email Id</label>
-                                                            <input type="email" class="form-control" placeholder="Mail Id">
+                                                            <input type="email" class="form-control" placeholder="Mail Id" name="emailid" id="emailid">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -169,7 +177,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Projected Total Amount</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" class="form-control" placeholder="" name="projectAmt" id="projectAmt" >
                                                         </div>
                                                     </div>
                                                    
@@ -178,13 +186,13 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Shop Address:</label>
-                                                            <textarea rows="2" cols="40"></textarea>
+                                                            <textarea rows="2" cols="40" name="shopaddress" id="shopaddress"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Home Address:</label>
-                                                            <textarea rows="2" cols="48"></textarea>
+                                                            <textarea rows="2" cols="48" name="homeaddress" id="homeaddress"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
