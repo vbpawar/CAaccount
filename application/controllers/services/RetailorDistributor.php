@@ -24,18 +24,20 @@ class RetailorDistributor extends CI_Controller {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/dataModalCss');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/retailor_distributor/show');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/dataModalJavaScript');
+        $this->load->view('admin/js/retailor_distributor/show_js');
         $this->load->view('admin/footer');
     }
 
     public function update() {
-        $this->load->view('admin/header');
-        $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/retailor_distributor/show');
-        $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/footer');
+           $this->load->view('admin/retailor_distributor/update');
+        $this->load->view('admin/js/jquery_validation_js');
+        $this->load->view('admin/js/retailor_distributor/retailor_distributor_validation_js');
+        $this->load->view('admin/js/retailor_distributor/update_js');
     }
 
 }

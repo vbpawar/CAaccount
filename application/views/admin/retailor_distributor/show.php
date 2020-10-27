@@ -101,35 +101,19 @@
                         <!--===================================================-->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">CA Certificate List</h3>
+                                <h3 class="panel-title">Distributor Retailor List</h3>
                             </div>
                             <div class="panel-body">
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Pan No.</th>
-                                            <th class="min-tablet">Mobile No.</th>
-                                            <th class="min-tablet">Email ID</th>
-                                            <th class="min-desktop">Shop Address</th>
-                                            <th class="min-desktop">Home Address</th>
-                                            <th class="min-desktop">Reason</th>
+                                            <th>Distributor Id</th>
+                                            <th>Retailor Id</th>
                                             <th class="min-desktop">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="serviceList">
-<!--                                        <tr>
-                                            <td>Lalit</td>
-                                            <td>ARFPM2345</td>
-                                            <td>8007015819</td>
-                                            <td>ca@gmail.com</td>
-                                            <td>148/1 Nandanvan,Nagpur</td>
-                                            <td>34,Civil Line,Nagpur</td>
-                                            <td>for Office</td>
-                                            <td><div class="label label-table label-info">On Process</div></td>
-                                            <td><button class="btn btn-success fa fa-edit"></button>&nbsp;&nbsp;<button class="btn btn-danger fa fa-trash"></button></td>
-                                        </tr>
-                                       -->
+                                                                               
                                     </tbody>
                                 </table>
                             </div>
