@@ -1,17 +1,18 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#balancesheetForm').on('submit', function (e) {
 
         e.preventDefault();
 
 //    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
+        formdata.append('userid',1);
 
         if (true) {
 
             $.ajax({
 
-                url: url + 'Certificate_service/addcertificate',
+                url: url + 'BalancedProjectSheet/addsheet',
 
                 type: 'POST',
 
@@ -26,8 +27,6 @@
                 dataType: 'json',
 
                 success: function (response) {
-//                alert(response.Data.customerId);
-//                console.log(response);
 
                     if (response.Responsecode == 200) {
 
@@ -53,7 +52,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/balancesheet/show');
     }
 
 
