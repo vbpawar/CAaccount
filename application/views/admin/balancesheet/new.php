@@ -106,21 +106,17 @@
                                                 <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                                 <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                             </div>
-<<<<<<< HEAD
                                             <h3 class="panel-title">Project Balance Sheet</h3>
-=======
-                                            <h3 class="panel-title">Balancesheet</h3>
->>>>>>> 1bfd057874f960dca33a68173d89691a82dac593
                                         </div>
                                         <!--Block Styled Form -->
                                         <!--===================================================-->
-                                        <form>
+                                        <form id="balancesheetForm" method="post" enctype="multipart/form-data">
                                             <div class="panel-body">
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Name</label>
-                                                            <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar"id="nameasperadhar">
+                                                            <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" id="nameasperadhar">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">

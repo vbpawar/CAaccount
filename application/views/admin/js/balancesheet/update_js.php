@@ -3,32 +3,33 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
-        $('#certid').val(product.certid);
+        $('#projectedid').val(product.projectedid);
         $('#nameasperadhar').val(product.nameasperadhar);
         $('#pancardnumber').val(product.pancardnumber);
         $('#mobilenumber').val(product.mobilenumber);
+        $('#DOB').val(product.DOB);
         $('#emailid').val(product.emailid);
-        $('#shopaddress').val(product.shopaddress);
-        $('#homeaddress').val(product.homeaddress);
-        $('#reason').val(product.reason);
+        $('#projectAmt').val(product.projectAmt);
+        $('#shopaddress').val(product.shopAddress);
+        $('#homeaddress').val(product.homeAddress);
 
     }
 
     loadDetails(details);
 
-    $('#caCertificateForm').on('submit', function (e) {
-
+    $('#balancesheetForm').on('submit', function (e) {
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
+//    var returnVal = $("#balancesheetForm").valid();
 
-        if (returnVal) {
+        if (true) {
         var formdata = new FormData(this);
-
+        formdata.append('userid', 1);
+//        alert('ok1');
+//        console.log(formdata);
             $.ajax({
 
-                url: url + 'Certificate_service/updatecertificate',
+                url: url + 'BalancedProjectSheet/updatebill',
 
                 type: 'POST',
 

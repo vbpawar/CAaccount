@@ -1,12 +1,12 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var caCertificate = new Map();
+    var balancesheetList = new Map();
 
     const loadList = () => {
 
         $.ajax({
 
-            url: url + 'Certificate_service/getcertificates',
+            url: url + 'BalancedProjectSheet/getsheets',
 
             type: 'get',
 
@@ -14,18 +14,17 @@
 
             success: function (response) {
 
-                console.log(response);
                 if (response.Responsecode == 200 && response.Data != null) {
 
                     const count = response.Data.length;
 
                     for (var i = 0; i < count; i++) {
 
-                        caCertificate.set(response.Data[i].certid, response.Data[i]);
+                        balancesheetList.set(response.Data[i].projectedid, response.Data[i]);
 
                     }
 
-                    showList(caCertificate);
+                    showList(balancesheetList);
 
                 }
 
@@ -48,11 +47,12 @@
             let services = serviceList.get(k);
             tblData += '<tr><td>' + services.nameasperadhar + '</td>';
             tblData += '<td>' + services.pancardnumber + '</td>';
+            tblData += '<td>' + services.DOB + '</td>';
             tblData += '<td>' + services.mobilenumber + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
-            tblData += '<td>' + services.shopaddress + '</td>';
-            tblData += '<td>' + services.homeaddress + '</td>';
-            tblData += '<td>' + services.reason + '</td>';
+            tblData += '<td>' + services.projectAmt + '</td>';
+            tblData += '<td>' + services.shopAddress + '</td>';
+            tblData += '<td>' + services.homeAddress + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -90,18 +90,18 @@
 
         laborid = laborid.toString();
 
-        if (caCertificate.has(laborid)) {
+        if (balancesheetList.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = caCertificate.get(laborid);
+            var product = balancesheetList.get(laborid);
 
             ulaborid = laborid;
             details = product;
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/certificate/update',
+                url: url+'services/balancesheet/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with

@@ -116,21 +116,21 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Aadhar Number</label>
-                                                <input type="text" class="form-control" placeholder="" name="nameasperadhar" />
+                                                <input type="text" class="form-control" placeholder="" name="adharnumber" id="adharnumber" />
                                                 <input type="hidden" class="form-control" name="" value="1" />
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Name Of Entrepreneur</label>
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="nameofent" id="nameofent" />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Gender</label>
-                                                <select class="form-control" name="type_of_organisation" required="">
+                                                <select class="form-control" name="gender" id="gender" required="">
                                                     <option value="">--Select--</option>
                                                     <option value="Proprietorship">Male</option>
                                                     <option value="Partnership Firm">Female </option>
@@ -142,7 +142,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Category</label>
-                                                <select class="form-control" name="type_of_organisation" required="">
+                                                <select class="form-control" name="category" id="category" required="">
                                                     <option value="">--Select--</option>
                                                     <option value="Proprietorship">ST</option>
                                                     <option value="Partnership Firm">SC </option>
@@ -155,14 +155,14 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Mobile No.</label>
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="mobilenumber" id="mobilenumber" />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Email</label>
-                                                <input type="email" class="form-control" placeholder="" name="" />
+                                                <input type="email" class="form-control" placeholder="" name="emailid" id="emailid" />
                                             </div>
                                         </div>
 
@@ -180,14 +180,14 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Name Of Enteprise</label>
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="nameofentr" id="nameofentr" />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Type Of Organization</label>
-                                                <select class="form-control" name="type_of_organisation" required="">
+                                                <select class="form-control" name="typeoforg" id="typeoforg" required="">
                                                     <option value="">--Select--</option>
                                                     <option value="Proprietorship">Proprietory</option>
                                                     <option value="Partnership Firm">Partnership </option>
@@ -206,7 +206,7 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">Village/Town </label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="" id="" />
                                         </div>
                                     </div>
 
@@ -228,33 +228,33 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">City</label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="city" id="city" />
                                         </div>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">Post Office</label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="postoffice" id="postoffice" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">Pincode</label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="pincode" id="pincode" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">State</label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="ustate" id="ustate" />
                                         </div>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="control-label">District</label>
-                                            <input type="text" class="form-control" placeholder="" name="" />
+                                            <input type="text" class="form-control" placeholder="" name="district" id="district" />
                                         </div>
                                     </div>
                                     

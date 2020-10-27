@@ -110,14 +110,13 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
+                            <form id="distributorForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Distributor</label>
-                                                <input type="text" class="form-control" placeholder="" name="nameasperadhar">
-                                                <input type="hidden" class="form-control"  name="userid" value="1">
+                                                <input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">
                                             </div>
                                         </div>
                                        
@@ -125,7 +124,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Retailor</label>
-                                                <input type="text" class="form-control" placeholder="" name="">
+                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">
                                             </div>
                                         </div>
                                         
