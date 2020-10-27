@@ -178,6 +178,28 @@
                                     </div>
                                     <!--</div>-->
                                 </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="form-label">PAN Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        
+                                        
+                                        <!-- 1) Individual's or Frim's Company's copy of PAN Card. 2 ) Individual's voter ID or Aadhar card or Passport copy. 3) Individual's or company's or firm's cancle cheque copy of current bank account . 4) Copy of Rent Agreement or Electricity bill copy of the premise. -->
+                                    </div>
+                                </div>
                                 <div class="panel-footer text-right">
                                     <button class="btn btn-info" type="submit">Submit</button>
                                 </div>

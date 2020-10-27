@@ -370,12 +370,27 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- <div class="col-sm-4">
+                                                <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label class="control-label">Premise Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <label class="control-label"> LIC Sleep</label>
+                                                        <input type="file" name= "lic" class="form-control" />
                                                     </div>
-                                                </div> -->
+                                                </div>
+                                                
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> From No. 16 A Part and B Part</label>
+                                                        <input type="text" name= "form_a" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Loan certificate </label>
+                                                        <input type="text" name= "form_a" class="form-control" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="panel-footer text-right">

@@ -110,38 +110,98 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="distributorForm" method="post">
+                            <form id="caCertificateForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Distributor</label>
-<<<<<<< HEAD
-                                                <select name="Distributor" id="Distributor" class="form-control">
+                                                <label class="control-label">Role</label>
+                                                <select name="Role" id="Role" class="form-control">
                                                 <option value="">id1</option>
                                                 <option value="">id2</option>
 
                                                 </select>
                                               
-=======
-                                                <input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">
->>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                             </div>
                                         </div>
                                        
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Retailor</label>
-<<<<<<< HEAD
-                                                <select name="Distributor" id="Distributor" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
+                                                <label class="control-label">First Name</label>
+                                                <input type="text" class="form-control" placeholder="First" name="First">
+                                            </div>
+                                        </div>
 
-                                                </select>
-=======
-                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">
->>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Last" name="Last">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contact</label>
+                                                <input type="text" class="form-control" placeholder="Contact" name="Contact">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Email</label>
+                                                <input type="email" class="form-control" placeholder="Email" name="Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Address</label>
+                                                <textarea name="" id="" class="form-control" placeholder="Address" id="Address" name="Address"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contry</label>
+                                                <input type="text" class="form-control" placeholder="Contry" id="Contry" name="Contry">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">State</label>
+                                                <input type="text" class="form-control" placeholder="State" id="State" name="State">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">City</label>
+                                                <input type="text" class="form-control" placeholder="City" id="City" name="City">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pincode</label>
+                                                <input type="text" class="form-control" placeholder="Contact" id="" name="Contact">
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Password</label>
+                                                <input type="password" class="form-control" placeholder="" name="Password">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Confirm Password</label>
+                                                <input type="text" class="form-control" placeholder="confirm your password" name="cPassword">
                                             </div>
                                         </div>
                                         

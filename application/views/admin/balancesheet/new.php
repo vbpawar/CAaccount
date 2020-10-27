@@ -106,7 +106,11 @@
                                                 <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                                 <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                             </div>
+<<<<<<< HEAD
+                                            <h3 class="panel-title">Balancesheet</h3>
+=======
                                             <h3 class="panel-title">Project Balance Sheet</h3>
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                         </div>
                                         <!--Block Styled Form -->
                                         <!--===================================================-->
@@ -122,7 +126,7 @@
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
                                                             <label class="control-label">Select Aadhar card</label>
-                                                            <input name="file" type="file" multiple />
+                                                            <input class="form-control"  name="file" type="file" multiple />
                                                         </div>
                                                     </div>
 
@@ -135,7 +139,7 @@
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
                                                             <label class="control-label">Select Pan card</label>
-                                                            <input name="file" type="file" multiple />
+                                                            <input class="form-control"  name="file" type="file" multiple />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,7 +149,11 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Date of birth</label>
+<<<<<<< HEAD
+                                                            <input type="date" class="form-control" placeholder="">
+=======
                                                             <input type="text" class="form-control" placeholder="" name="DOB" id="DOB">
+>>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
