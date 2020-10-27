@@ -1,5 +1,4 @@
 <div id="includeBox">
-    
 </div>
 <div id="deleteAlert"></div>
             <div class="boxed showDiv">
