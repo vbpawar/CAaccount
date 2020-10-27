@@ -43,15 +43,16 @@ class Distributor_retailors extends CI_Controller{
         );
     }else{ 
         $result = $this->service->add_retailors($data);
-        if($result === 0){ 
+        if($result['status']){ 
             $response = array(
-                'Message' => 'Try again',
-                'Responsecode' => 402
+                'Message' => 'Distributor are mapped to retailors added successfully',
+                'Data'=>$result['data'],
+                'Responsecode' => 200
             );
        }else{ 
         $response = array(
-            'Message' => 'Distributor are mapped to retailors added successfully',
-            'Responsecode' => 200
+            'Message' => 'Try again',
+                'Responsecode' => 402
         );
        }
     }
@@ -101,15 +102,16 @@ class Distributor_retailors extends CI_Controller{
         );
     }else{
        $result = $this->service->updateretailors($distretid,$data);
-       if($result === 0){
+       if($result['status']){
         $response = array(
-            'Message' => 'Sorry try again',
-            'Responsecode' => 302
+            'Message' => 'update distributor retailors successfully updated',
+            'Data'=>$result['data'],
+            'Responsecode' => 200
         );
        }else{
         $response = array(
-            'Message' => 'update distributor retailors successfully updated',
-            'Responsecode' => 200
+            'Message' => 'Sorry try again',
+            'Responsecode' => 302
         );
        }
    }
