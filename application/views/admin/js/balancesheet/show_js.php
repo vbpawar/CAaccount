@@ -117,7 +117,7 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = caCertificate.get(laborid);
+    var product = balancesheetList.get(laborid);
     var name=product.nameasperadhar;
     var msg='Do you want to delete '+name+' Information ?';
     
@@ -138,11 +138,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'BalancedProjectSheet/removebill',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{projectedid:laborid},
 
 //            cache: false,
 //
@@ -154,7 +154,6 @@ function deletePermission(laborid) {
 
             success: function(response) {
 
-                console.log(response.userId);
 
                 if (response.Responsecode == 200) {
 
@@ -211,7 +210,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/balancesheet/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

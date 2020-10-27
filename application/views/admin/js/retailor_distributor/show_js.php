@@ -96,7 +96,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/retailor_distributor/update',
+                url: url+'services/RetailorDistributor/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -206,7 +206,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/RetailorDistributor/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

@@ -67,10 +67,5 @@
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+
 </script>

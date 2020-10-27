@@ -3,32 +3,26 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
-        $('#certid').val(product.certid);
-        $('#nameasperadhar').val(product.nameasperadhar);
-        $('#pancardnumber').val(product.pancardnumber);
-        $('#mobilenumber').val(product.mobilenumber);
-        $('#emailid').val(product.emailid);
-        $('#shopaddress').val(product.shopaddress);
-        $('#homeaddress').val(product.homeaddress);
-        $('#reason').val(product.reason);
+        $('#distributorid').val(product.distributorid);
+        $('#retailorid').val(product.retailorid);
+
 
     }
 
     loadDetails(details);
 
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#distributorForm').on('submit', function (e) {
 
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
+//    var returnVal = $("#caCertificateForm").valid();
 
-        if (returnVal) {
-        var formdata = new FormData(this);
-
+        if (true) {
+            var formdata = new FormData(this);
+            formdata.append('distretid', ulaborid);
             $.ajax({
 
-                url: url + 'Certificate_service/updatecertificate',
+                url: url + 'Distributor_retailors/updateretailors',
 
                 type: 'POST',
 
@@ -66,10 +60,5 @@
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+
 </script>
