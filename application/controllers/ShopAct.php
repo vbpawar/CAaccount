@@ -73,7 +73,6 @@ class ShopAct extends CI_Controller{
         );
     }else{ 
         $result = $this->service->addshopact($data);
-        echo $result;
         if($result === 0 || $result == NULL){ 
             $response = array(
                 'Message' => 'Try again',
