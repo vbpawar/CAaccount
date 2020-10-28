@@ -1,12 +1,12 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var reportList = new Map();
+    var incomeList = new Map();
 
     const loadList = () => {
 
         $.ajax({
 
-            url: url + 'Project_report/getreports',
+            url: url + 'IncomeTax/getincomeforms',
 
             type: 'get',
 
@@ -21,11 +21,11 @@
 
                     for (var i = 0; i < count; i++) {
 
-                        reportList.set(response.Data[i].reportid, response.Data[i]);
+                        incomeList.set(response.Data[i].reportid, response.Data[i]);
 
                     }
 
-                    showList(reportList);
+                    showList(incomeList);
 
                 }
 
@@ -46,12 +46,25 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.cost + '</td>';
-            tblData += '<td>' + services.loanamt + '</td>';
-            tblData += '<td>' + services.owncapital + '</td>';
-            tblData += '<td>' + services.noofyear + '</td>';
-            tblData += '<td>' + services.repayment_shedule + '</td>';
-            tblData += '<td>' + services.lastyear_bal_sheet + '</td>';
+            tblData += '<tr><td>' + services.profession + '</td>';
+            tblData += '<td>' + services.bussiname + '</td>';
+            tblData += '<td>' + services.premisename + '</td>';
+            tblData += '<td>' + services.assesmentyear + '</td>';
+            tblData += '<td>' + services.fname + '</td>';
+            tblData += '<td>' + services.mname + '</td>';
+            tblData += '<td>' + services.lname + '</td>';
+            tblData += '<td>' + services.gender + '</td>';
+            tblData += '<td>' + services.dob + '</td>';
+            tblData += '<td>' + services.pannumber + '</td>';
+            tblData += '<td>' + services.fathername + '</td>';
+            tblData += '<td>' + services.contact + '</td>';
+            tblData += '<td>' + services.emailid + '</td>';
+            tblData += '<td>' + services.country + '</td>';
+            tblData += '<td>' + services.ustate + '</td>';
+            tblData += '<td>' + services.city + '</td>';
+            tblData += '<td>' + services.flat + '</td>';
+            tblData += '<td>' + services.road + '</td>';
+            tblData += '<td>' + services.pincode + '</td>';
 
             tblData += '<div class="table-actions">';
 

@@ -1,10 +1,10 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#reportForm').on('submit', function (e) {
+    $('#incomeForm').on('submit', function (e) {
 // alert("hello");
         e.preventDefault();
 
-//    var returnVal = $("#caCertificateForm").valid();
+//    var returnVal = $("#incomeForm").valid();
         
         var formdata = new FormData(this);
         formdata.append('userid', 1);
@@ -12,7 +12,7 @@
 
             $.ajax({
 
-                url: url + 'Project_report/addreport',
+                url: url + 'IncomeTax/addincomeform',
 
                 type: 'POST',
 
@@ -54,7 +54,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/report/show');
+        window.location.replace(url + 'services/income/show');
     }
 
 

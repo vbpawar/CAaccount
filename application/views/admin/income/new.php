@@ -109,7 +109,7 @@
                                     </div>
                                     <!--Block Styled Form -->
                                     <!--===================================================-->
-                                    <form>
+                                    <form name="incomeForm" id="incomeForm" method="post" enctype="multipart/form-data">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-sm-4">
@@ -128,13 +128,13 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Business Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="bussiname" id="bussiname" />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Premise Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="premisename" id="premisename" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,8 +142,8 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label class="control-label" name="type_of_organisation"> Choose Assesment Year </label>
-                                                        <select class="form-control" name="type_of_organisation" title="change year if needed">
+                                                        <label class="control-label" name="assesmentyear"> Choose Assesment Year </label>
+                                                        <select class="form-control" name="assesmentyear" id="assesmentyear" title="change year if needed">
                                                             <option value="">--Select--</option>
                                                             <option value="Proprietorship">2020-2021</option>
                                                             <option value="Partnership Firm">2019-2020 </option>
@@ -158,28 +158,28 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">First Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="fname" id="fname" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Middle Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="mname" id="mname" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Last Name</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="lname" id="lname" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Gender</label>
-                                                        <select class="form-control" name="gender" required="">
+                                                        <select class="form-control" name="gender" required="" id="gender">
                                                             <option value="">--Select--</option>
                                                             <option name="male" id="male" value="">Male</option>
                                                             <option name="female" id="female" value="">Female </option>
@@ -247,20 +247,21 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Country</label>
-                                                        <input type="text" class="form-control" placeholder="" />
+                                                        <input type="text" class="form-control" placeholder="" name="country" id="country" />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">State</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="ustate" id="ustate"
+                                                               />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">City/Town</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="city" id="city" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -269,29 +270,29 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Flat/door/block no.</label>
-                                                        <input type="text" class="form-control" placeholder="" />
+                                                        <input type="text" class="form-control" placeholder="" name="flat" id="flat" />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Road/Street</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="road" id="road" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Pincode</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="pincode" id="pincode" />
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-4">
+                                               <!-- <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label class="control-label">Flat/door/block no.</label>
                                                         <input type="text" class="form-control" placeholder="" />
                                                     </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                             <hr />
 
