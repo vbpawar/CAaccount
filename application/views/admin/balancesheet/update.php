@@ -146,7 +146,7 @@
                                                 <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Date of birth</label>
-                                                            <input type="text" class="form-control" placeholder="" name="DOB" id="DOB">
+                                                            <input type="date" class="form-control" placeholder="" name="DOB" id="DOB">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
