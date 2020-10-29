@@ -13,10 +13,14 @@ class UdyogModel extends CI_Model {
     public function addudyog($data)
     {    
         if($this->db->insert('udyog_adhar', $data)){
-            return $this->db->insert_id();
+          $id = $this->db->insert_id();
+            $result['data']  = $this->db->get_where("udyog_adhar", ['uid' => $id])->row_array();
+            $result['status'] =true;
          }else{
-            return false;
+            $result['status'] =false;
+            $result['data']=[];
          }
+         return $result;
     }
     public function removebill($id){
         $this->db->where('uid', $id);

@@ -61,16 +61,16 @@ class UdyogAdhar extends CI_Controller{
         );
     }else{ 
         $result = $this->service->addudyog($data);
-        if($result === 0){ 
+        if($result['status']){ 
             $response = array(
-                'Message' => 'Try again',
-                'Responsecode' => 402
+                'Message' => 'Udyog Adhar Bill Generated successfully',
+                'Data'=>$result['data'],
+                'Responsecode' => 200
             );
        }else{ 
         $response = array(
-            'Message' => 'Udyog Adhar Bill Generated successfully',
-            'Data'=>$result,
-            'Responsecode' => 200
+            'Message' => 'Try again',
+            'Responsecode' => 402
         );
        }
     }
