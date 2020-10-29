@@ -1,22 +1,5 @@
-<style>
 
-    .error{
-
-        color: red;
-
-    }
-
-    .required:after {
-
-        content:" *";
-
-        color: red;
-
-    }
-
-</style>
- 
-<div class="boxed updateDiv">
+<div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
     <div id="content-container">
@@ -123,78 +106,79 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">CA Certificate</h3>
+                                <h3 class="panel-title">Add E-way Bill</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post" name="caCertificateForm">
+                            <form id="ewayBillForm" method="post" enctype="">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Name</label>
-                                                <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" id="nameasperadhar">
-                                                <input type="hidden" class="form-control"  name="userid" id="userid">
-                                                <input type="hidden" class="form-control"  name="certid" id="certid">
+                                                <label class="control-label">GST No.</label>
+                                                <input type="text" class="form-control" placeholder="" name="gstnumber" id="gstnumber">
+                                                <input type="hidden" class="form-control" placeholder="" name="billid" id="billid">
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Aadhar card</label>
-                                                <input name="file" type="file" multiple />
-                                            </div>
-                                        </div>
-
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>PAN Card</label>
-                                                <input type="text" class="form-control" placeholder="Pan No." name="pancardnumber" id="pancardnumber">
+                                                <label class="control-label">GST ID</label>
+                                                <input type="text" class="form-control" placeholder="" name="gstid" id="gstid">
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Pan card</label>
-                                                <input name="file" type="file" multiple />
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Mobile No.</label>
-                                                <input type="text" class="form-control" placeholder="Mobile No." name="mobilenumber" id="mobilenumber">
+                                                <label class="control-label">GST Password</label>
+                                                <input type="text" class="form-control" placeholder="" name="gstpwd" id="gstpwd">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Mobile No.</label>
+                                                <input type="text" class="form-control" placeholder="primary mobile no." name="mobilenumber" id="mobilenumber">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Email Id</label>
-                                                <input type="email" class="form-control" placeholder="Email Id" name="emailid" id="emailid">
+                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid">
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Shop Address:</label>
-                                                <textarea rows="2" cols="50" name="shopaddress" id="shopaddress"></textarea>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Home Address:</label>
-                                                <textarea rows="2" cols="50" name="homeaddress" id="homeaddress"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Reason</label>
-                                                <textarea rows="2" cols="50" name="reason" id="reason"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <!--</div>-->
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pan Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                       
+                                        
+                                        
+                                        
+                                        <!-- 1) Pan Card, 2) Aadhar Card , 3) Shop Address 4) Residence Address 5) Electronics Bill 5) Check / Bank Passbook 6) Mobile Number 7) Mail ID -->
+                                    </div>
                                 </div>
                                 <div class="panel-footer text-right">
                                     <button class="btn btn-info" type="submit">Submit</button>

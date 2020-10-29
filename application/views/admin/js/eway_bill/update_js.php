@@ -3,32 +3,29 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
-        $('#certid').val(product.certid);
-        $('#nameasperadhar').val(product.nameasperadhar);
-        $('#pancardnumber').val(product.pancardnumber);
+        $('#billid').val(product.billid);
+        $('#gstid').val(product.gstid);
+        $('#gstnumber').val(product.gstnumber);
+        $('#gstpwd').val(product.gstpwd);
         $('#mobilenumber').val(product.mobilenumber);
         $('#emailid').val(product.emailid);
-        $('#shopaddress').val(product.shopaddress);
-        $('#homeaddress').val(product.homeaddress);
-        $('#reason').val(product.reason);
 
     }
 
     loadDetails(details);
 
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#ewayBillForm').on('submit', function (e) {
 
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
+//    var returnVal = $("#ewayBillForm").valid();
 
-        if (returnVal) {
+        if (true) {
         var formdata = new FormData(this);
-
+        formdata.append('userid',1);
             $.ajax({
 
-                url: url + 'Certificate_service/updatecertificate',
+                url: url + 'E_waybill/updatebill',
 
                 type: 'POST',
 

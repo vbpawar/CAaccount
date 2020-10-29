@@ -216,6 +216,24 @@
                         </ul>
                         <!-- end dropdown-menu -->
                     </li>
+                    <!--income-->
+                    <li class="dropdown-submenu">
+                        <a href="#">Income</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/income/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/income/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
+                    <!--E-way Bill-->
+                    <li class="dropdown-submenu">
+                        <a href="#">E-way Bill</a>
+                        <ul class="dropdown-menu">
+                                    <li><a href="http://localhost/CAaccount/services/EwayBill/create">Create</a></li>
+                                    <li><a href="http://[::1]/CAaccount/services/EwayBill/show">Show</a></li>
+                        </ul>
+                        <!-- end dropdown-menu -->
+                    </li>
                 </ul>
                 <!-- end dropdown-menu -->
             </li>

@@ -1,12 +1,12 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var caCertificate = new Map();
+    var ewaybillList = new Map();
 
     const loadList = () => {
 
         $.ajax({
 
-            url: url + 'Certificate_service/getcertificates',
+            url: url + 'E_waybill/gatewaybills',
 
             type: 'get',
 
@@ -21,11 +21,11 @@
 
                     for (var i = 0; i < count; i++) {
 
-                        caCertificate.set(response.Data[i].certid, response.Data[i]);
+                        ewaybillList.set(response.Data[i].billid, response.Data[i]);
 
                     }
 
-                    showList(caCertificate);
+                    showList(ewaybillList);
 
                 }
 
@@ -46,13 +46,11 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.nameasperadhar + '</td>';
-            tblData += '<td>' + services.pancardnumber + '</td>';
+            tblData += '<tr><td>' + services.gstnumber + '</td>';
+            tblData += '<td>' + services.gstid + '</td>';
+            tblData += '<td>' + services.gstpwd + '</td>';
             tblData += '<td>' + services.mobilenumber + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
-            tblData += '<td>' + services.shopaddress + '</td>';
-            tblData += '<td>' + services.homeaddress + '</td>';
-            tblData += '<td>' + services.reason + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -74,7 +72,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6, 7]}],
+            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5]}],
 
             dom: 'Bfrtip',
 
@@ -90,18 +88,18 @@
 
         laborid = laborid.toString();
 
-        if (caCertificate.has(laborid)) {
+        if (ewaybillList.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = caCertificate.get(laborid);
+            var product = ewaybillList.get(laborid);
 
             ulaborid = laborid;
             details = product;
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/certificate/update',
+                url: url+'services/EwayBill/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -211,7 +209,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/EwayBill/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
