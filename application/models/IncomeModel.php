@@ -14,9 +14,11 @@ class IncomeModel extends CI_Model {
     {    
         if($this->db->insert('incometax', $data)){
             $id = $this->db->insert_id();
+            $result['status'] = true;
            $result['data'] = $this->db->get_where("incometax", ['id' => $id])->row_array();
          }else{
-            $result['data']=false;
+            $result['data']=[];
+            $result['status'] = false;
          }
          return $result;
     }

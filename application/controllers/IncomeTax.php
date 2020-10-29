@@ -61,7 +61,7 @@ class IncomeTax extends CI_Controller{
         );
     }else{ 
         $result = $this->service->addincomeform($data);
-        if($result['data'] != false){ 
+        if($result['status']){ 
             $response = array(
                 'Message' => 'Income form submited successfully',
                 'Data'=>$result['data'],
