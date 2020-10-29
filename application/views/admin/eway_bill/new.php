@@ -110,18 +110,9 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
+                            <form id="ewayBillForm" method="post" enctype="">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">User ID</label>
-                                                <input type="text" class="form-control" placeholder="User ID" name="nameasperadhar">
-                                                <input type="hidden" class="form-control"  name="userid" value="1">
-                                            </div>
-                                        </div>
-                                       
-
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">GST No.</label>

@@ -1,17 +1,18 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#ewayBillForm').on('submit', function (e) {
 
         e.preventDefault();
 
 //    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
+        formdata.append('userid',1);
 
         if (true) {
 
             $.ajax({
 
-                url: url + 'Certificate_service/addcertificate',
+                url: url + 'E_waybill/addbill',
 
                 type: 'POST',
 
@@ -53,7 +54,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/EwayBill/show');
     }
 
 
