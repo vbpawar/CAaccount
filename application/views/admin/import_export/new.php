@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <!-- START Form Wizard -->
-                                    <form class="form-horizontal form-bordered" action="#" id="wizard">
+                                    <form class="form-horizontal form-bordered" action="#" id="importForm">
                                         <!-- Wizard Container 1 -->
                                         <div class="wizard-title">* Marked fields are mandetory.</div>
                                         <div class="wizard-container">
@@ -117,6 +117,8 @@
                                                         <div class="col-md-4">
                                                             <label>Type of Organization/Nature of Concern </label>
                                                             <input type="text" name="typeoforg" id="typeoforg" class="form-control" placeholder="" />
+                                                            <input type="hidden" name="userid" id="userid" class="form-control" placeholder="" />
+
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label>Preferred/Business Activity</label>
@@ -136,11 +138,8 @@
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label>Date of Incorporation/ DOB as on PAN</label>
-<<<<<<< HEAD
-                                                            <input type="date" name="Last-name" class="form-control" placeholder="" />
-=======
-                                                            <input type="text" name="DOBpan" id="DOBpan" class="form-control" placeholder="" />
->>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
+                                                            
+                                                            <input type="date" name="DOBpan" id="DOBpan" class="form-control" placeholder="" />
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -294,11 +293,8 @@
 
                                                 <div class="col-md-4">
                                                     <label>Date of Birth</label>
-<<<<<<< HEAD
-                                                    <input type="date" name="Last-name" class="form-control" placeholder="" />
-=======
-                                                    <input type="text" name="dob" id="dob" class="form-control" placeholder="" />
->>>>>>> e3b8a8604f6060bdba4dc0fc92038072f1c08918
+                                                    
+                                                    <input type="date" name="dob" id="dob" class="form-control" placeholder="" />
                                                 </div>
                                             </div>
 

@@ -113,18 +113,7 @@
                             <form id="distributorForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Distributor</label>
-                                                <select name="Distributor" id="Distributor" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
-
-                                                </select>
-                                              
-                                            </div>
-                                        </div>
-                                       
+                                        
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -136,6 +125,32 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Service</label>
+                                                <select name="Service" id="Service" class="form-control">
+                                                <option value="">id1</option>
+                                                <option value="">id2</option>
+
+                                                </select>
+                                              
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label"> Active</label>
+                                                <select name="Service" id="Service" class="form-control">
+                                                <option value="">Yes</option>
+                                                <option value="">No</option>
+
+                                                </select>
+                                              
+                                            </div>
+                                        </div>
+                                       
                                         
                                         
                                     </div>

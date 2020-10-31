@@ -108,7 +108,7 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
+                            <form id="udyogAadharForm" method="post" enctype="">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="panel-title bg-info"><strong>Entrepreneur Details</strong></div>
@@ -117,7 +117,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Aadhar Number</label>
                                                 <input type="text" class="form-control" placeholder="" name="adharnumber" id="adharnumber" />
-                                                <input type="hidden" class="form-control" name="" value="1" />
+                                                <input type="hidden" class="form-control" name="userid" value="1" />
+                                              
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -131,10 +132,10 @@
                                             <div class="form-group">
                                                 <label class="control-label">Gender</label>
                                                 <select class="form-control" name="gender" id="gender" required="">
-                                                    <option value="">--Select--</option>
-                                                    <option value="Proprietorship">Male</option>
-                                                    <option value="Partnership Firm">Female </option>
-                                                    <option value="Public Limited">Others</option>
+                                                    <option value="0">--Select--</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female </option>
+                                                    <option value="3">Others</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -144,10 +145,10 @@
                                                 <label class="control-label">Category</label>
                                                 <select class="form-control" name="category" id="category" required="">
                                                     <option value="">--Select--</option>
-                                                    <option value="Proprietorship">ST</option>
-                                                    <option value="Partnership Firm">SC </option>
-                                                    <option value="Private Limited">OBC</option>
-                                                    <option value="Public Limited">Others</option>
+                                                    <option value="ST">ST</option>
+                                                    <option value="SC">SC </option>
+                                                    <option value="OBC">OBC</option>
+                                                    <option value="Others">Others</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -256,7 +257,7 @@
                                                 <label class="control-label"></label>
                                                 <label class="control-label">Registration Date</label>
 
-                                                <input type="date" class="form-control" placeholder="" name="" />
+                                                <input type="date" class="form-control" placeholder="" name="regdate" id="regdate" />
                                             </div>
                                         </div>
                                     </div>
@@ -270,7 +271,7 @@
                                                 <!-- <label class="control-label"> </label> -->
                                                 <label class="control-label">Bank Name</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="bankName" id="bankName" />
                                             </div>
                                         </div>
 
@@ -278,7 +279,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">IFC Code</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="ifsc" id="ifsc" />
                                             </div>
                                         </div>
 
@@ -286,7 +287,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Bank Account Number</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="bankAc" id="bankAc" />
                                             </div>
                                         </div>
                                     </div>
@@ -314,14 +315,14 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Men </label>
-                                                <input type="text" class="form-control" name="Men1" id="Men1" placeholder="2" name="" />
+                                                <input type="text" class="form-control" name="men" id="men" placeholder="2"  />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Women </label>
-                                                <input type="text" class="form-control" name="Women1" id="Women1" placeholder="1" name="" />
+                                                <input type="text" class="form-control" name="women" id="women" placeholder="1" />
                                             </div>
                                         </div>
                                     </div>

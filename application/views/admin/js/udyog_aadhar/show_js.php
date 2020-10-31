@@ -6,7 +6,7 @@
 
         $.ajax({
 
-            url: url + 'Certificate_service/getcertificates',
+            url: url + 'UdyogAdhar/getudyogs',
 
             type: 'get',
 
@@ -21,7 +21,7 @@
 
                     for (var i = 0; i < count; i++) {
 
-                        caCertificate.set(response.Data[i].certid, response.Data[i]);
+                        caCertificate.set(response.Data[i].uid, response.Data[i]);
 
                     }
 
@@ -46,13 +46,10 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.nameasperadhar + '</td>';
-            tblData += '<td>' + services.pancardnumber + '</td>';
+            tblData += '<tr><td>' + services.nameofent + '</td>';
             tblData += '<td>' + services.mobilenumber + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
-            tblData += '<td>' + services.shopaddress + '</td>';
-            tblData += '<td>' + services.homeaddress + '</td>';
-            tblData += '<td>' + services.reason + '</td>';
+            tblData += '<td>' + services.status + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -101,7 +98,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/certificate/update',
+                url: url+'services/UdyogAadhar/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with

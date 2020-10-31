@@ -1,22 +1,4 @@
-<style>
-
-    .error{
-
-        color: red;
-
-    }
-
-    .required:after {
-
-        content:" *";
-
-        color: red;
-
-    }
-
-</style>
- 
-<div class="boxed updateDiv">
+<div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
     <div id="content-container">
@@ -30,7 +12,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">Users</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-users fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-users fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -42,7 +24,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">Inbox</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-envelope fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-envelope fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -54,7 +36,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">FAQ</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-headphones fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-headphones fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -66,7 +48,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">Settings</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-cogs fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-cogs fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -78,7 +60,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">Calender</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-calendar fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-calendar fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -90,7 +72,7 @@
                                     <div class="pull-left">
                                         <p class="profile-title text-bricky">Pictures</p>
                                     </div>
-                                    <div class="pull-right text-bricky"> <i class="fa fa-picture-o fa-4x"></i> </div>
+                                    <div class="pull-right text-bricky"><i class="fa fa-picture-o fa-4x"></i></div>
                                 </a>
                             </div>
                         </div>
@@ -99,19 +81,18 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Form Layout </h3>
+            <h3><i class="fa fa-home"></i> Form Layout</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
-                    <li> <a href="#"> Home </a> </li>
-                    <li class="active"> form layout </li>
+                    <li><a href="#"> Home </a></li>
+                    <li class="active">form layout</li>
                 </ol>
             </div>
         </div>
         <!--Page content-->
         <!--===================================================-->
         <div id="page-content">
-
             <div class="row">
                 <div class="eq-height">
                     <div class="col-sm-6 eq-box-sm">
@@ -123,79 +104,266 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">CA Certificate</h3>
+                                <h3 class="panel-title">Update Entry</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post" name="caCertificateForm">
+                            <form id="udyogAadharForm" method="post" enctype="">
                                 <div class="panel-body">
                                     <div class="row">
+                                        <div class="panel-title bg-info"><strong>Entrepreneur Details</strong></div>
+
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Name</label>
-                                                <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" id="nameasperadhar">
-                                                <input type="hidden" class="form-control"  name="userid" id="userid">
-                                                <input type="hidden" class="form-control"  name="certid" id="certid">
+                                                <label class="control-label">Aadhar Number</label>
+                                                <input type="text" class="form-control" placeholder="" name="adharnumber" id="adharnumber" />
+                                                <input type="hidden" class="form-control" name="userid" value="1" />
+                                              
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Select Aadhar card</label>
-                                                <input name="file" type="file" multiple />
+                                                <label class="control-label">Name Of Entrepreneur</label>
+                                                <input type="text" class="form-control" placeholder="" name="nameofent" id="nameofent" />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>PAN Card</label>
-                                                <input type="text" class="form-control" placeholder="Pan No." name="pancardnumber" id="pancardnumber">
+                                                <label class="control-label">Gender</label>
+                                                <select class="form-control" name="gender" id="gender" required="">
+                                                    <option value="0">--Select--</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female </option>
+                                                    <option value="3">Others</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+
+                                        <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Select Pan card</label>
-                                                <input name="file" type="file" multiple />
+                                                <label class="control-label">Category</label>
+                                                <select class="form-control" name="category" id="category" required="">
+                                                    <option value="">--Select--</option>
+                                                    <option value="ST">ST</option>
+                                                    <option value="SC">SC </option>
+                                                    <option value="OBC">OBC</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
                                             </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Mobile No.</label>
+                                                <input type="text" class="form-control" placeholder="" name="mobilenumber" id="mobilenumber" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Email</label>
+                                                <input type="email" class="form-control" placeholder="" name="emailid" id="emailid" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Enteprise Details</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Name Of Enteprise</label>
+                                                <input type="text" class="form-control" placeholder="" name="nameofentr" id="nameofentr" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Type Of Organization</label>
+                                                <select class="form-control" name="typeoforg" id="typeoforg" required="">
+                                                    <option value="">--Select--</option>
+                                                    <option value="Proprietorship">Proprietory</option>
+                                                    <option value="Partnership Firm">Partnership </option>
+                                                    <option value="Private Limited">Private Limited Company</option>
+                                                    <option value="Public Limited">Others</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div></div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Village/Town </label>
+                                            <input type="text" class="form-control" placeholder="" name="" id="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Road</label>
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Shop no.</label>
+                                            <input type="text" class="form-control" placeholder="" name="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">City</label>
+                                            <input type="text" class="form-control" placeholder="" name="city" id="city" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Post Office</label>
+                                            <input type="text" class="form-control" placeholder="" name="postoffice" id="postoffice" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Pincode</label>
+                                            <input type="text" class="form-control" placeholder="" name="pincode" id="pincode" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">State</label>
+                                            <input type="text" class="form-control" placeholder="" name="ustate" id="ustate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label">District</label>
+                                            <input type="text" class="form-control" placeholder="" name="district" id="district" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
+                                        <div class="panel-title bg-info"><strong>Status of Enterprise </strong></div>
+
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Mobile No.</label>
-                                                <input type="text" class="form-control" placeholder="Mobile No." name="mobilenumber" id="mobilenumber">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Email Id</label>
-                                                <input type="email" class="form-control" placeholder="Email Id" name="emailid" id="emailid">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"><span class="error">*</span>Shop Address:</label>
-                                                <textarea rows="2" cols="50" name="shopaddress" id="shopaddress"></textarea>
+                                                <label class="control-label"></label>
+                                                <label class="control-label">Registration Date</label>
+
+                                                <input type="date" class="form-control" placeholder="" name="regdate" id="regdate" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Home Address:</label>
-                                                <textarea rows="2" cols="50" name="homeaddress" id="homeaddress"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Reason</label>
-                                                <textarea rows="2" cols="50" name="reason" id="reason"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--</div>-->
                                 </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Bank Details </strong></div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <!-- <label class="control-label"> </label> -->
+                                                <label class="control-label">Bank Name</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="bankName" id="bankName" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">IFC Code</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="ifsc" id="ifsc" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Bank Account Number</label>
+
+                                                <input type="text" class="form-control" placeholder="" name="bankAc" id="bankAc" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Manufaturing/ Services</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label"> </label>
+                                                <input type="text" class="form-control" name="Manufaturing" id="Manufaturing" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Number of Employees <span class="text-danger">*</span></strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Men </label>
+                                                <input type="text" class="form-control" name="men" id="men" placeholder="2"  />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Women </label>
+                                                <input type="text" class="form-control" name="women" id="women" placeholder="1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Aadhar Card </label>
+                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pan Card </label>
+                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Electronics Bill</label>
+                                                <input type="file" class="form-control" name="Electronics" id="Electronics" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Check / Bank Passbook </label>
+                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- 1) Pan Card, 2) Aadhar Card , 3) Shop Address 4) Residence Address 5) Electronics Bill 5) Check / Bank Passbook 6) Mobile Number 7) Mail ID -->
+                                    </div>
+                                </div>
+
                                 <div class="panel-footer text-right">
                                     <button class="btn btn-info" type="submit">Submit</button>
                                 </div>
@@ -204,10 +372,8 @@
                             <!--End Block Styled Form -->
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
         <!--===================================================-->
         <!--End page content-->

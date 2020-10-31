@@ -63,7 +63,7 @@ class UdyogAdhar extends CI_Controller{
         $result = $this->service->addudyog($data);
         if($result['status']){ 
             $response = array(
-                'Message' => 'Udyog Adhar Bill Generated successfully',
+                'Message' => 'Udyog Adhar Generated successfully',
                 'Data'=>$result['data'],
                 'Responsecode' => 200
             );
@@ -90,7 +90,7 @@ class UdyogAdhar extends CI_Controller{
         if($this->service->removebill($uid))
         {
             $response = array(
-                'Message' => 'Udyog Adhar bill removed successfully',
+                'Message' => 'Udyog Adhar removed successfully',
                 'Responsecode' => 200
             );
         } 

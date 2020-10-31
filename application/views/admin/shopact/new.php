@@ -108,7 +108,7 @@
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
+                            <form id="shopActForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="panel-title bg-info"><strong>Name of Establishment</strong></div>
@@ -122,6 +122,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
 
                                 <div class="panel-body">
                                     <div class="row">
