@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <!-- START Form Wizard -->
-                                    <form class="form-horizontal form-bordered" action="#" id="importForm">
+                                    <form class="form-horizontal form-bordered" action="#" id="wizard">
                                         <!-- Wizard Container 1 -->
                                         <div class="wizard-title">* Marked fields are mandetory.</div>
                                         <div class="wizard-container">
