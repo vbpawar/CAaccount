@@ -62,7 +62,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="registration"> Don't have an account ! <a href="#/pages/signup"> <span class="text-primary"> Sign Up </span> </a> </div>
+                <!--<div class="registration"> Don't have an account ! <a href="#/pages/signup"> <span class="text-primary"> Sign Up </span> </a> </div>-->
             </div>
         </div>
         <!--===================================================-->
