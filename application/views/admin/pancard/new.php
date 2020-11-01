@@ -113,11 +113,6 @@
                                             <!-- Wizard Container 1 -->
                                             <div class="wizard-title">Personal Details</div>
                                             <div class="wizard-container">
-                                                
-                                                
-
-            
-
                                                 <div class="panel">
                                                     <div class="panel-body">
                                                         <div class="row">
@@ -429,11 +424,6 @@
                                                 Contact & other details
                                             </div>
                                             <div class="wizard-container">
-
-                                                
-
-
-
                                                 <div class="panel">
                                                     <div class="panel-title text-info">Source of Income*</div>
                                                     <div class="panel-body">
