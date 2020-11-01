@@ -112,6 +112,7 @@
                                         <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
                                     </ul>
 
+<<<<<<< HEAD
                                     <div class="tab-content">
                                         <div id="home" class="tab-pane fade in active">
                                             <div class="panel">
@@ -121,6 +122,17 @@
 
             
 
+=======
+                                    <div class="panel-body">
+                                        <!-- START Form Wizard -->
+                                        <form class="form-horizontal form-bordered" action="#" id="wizard">
+                                            <!-- Wizard Container 0 -->
+                                           
+
+                                            <!-- Wizard Container 1 -->
+                                            <div class="wizard-title">Personal Details</div>
+                                            <div class="wizard-container">
+>>>>>>> 7230e8cf583c8794725017b170e0f6ded4196b21
                                                 <div class="panel">
                                                     <div class="panel-body">
                                                         <div class="row">
@@ -427,6 +439,7 @@
                                                 </div>
                                             </div>
                                             </div>
+<<<<<<< HEAD
                                             
                                         </div>
 
@@ -440,6 +453,9 @@
 
 
 
+=======
+                                            <div class="wizard-container">
+>>>>>>> 7230e8cf583c8794725017b170e0f6ded4196b21
                                                 <div class="panel">
                                                     <div class="panel-title text-info">Source of Income*</div>
                                                     <div class="panel-body">

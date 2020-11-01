@@ -21,7 +21,38 @@ class Demo extends CI_Controller {
         $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/footer');
     }
-
+    public function adminMenubarDemo() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/admin_menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+    }
+    public function distributorMenubarDemo() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/distributor_menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+    }
+    public function retailorMenubarDemo() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/retailor_menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+    }
+    public function employeeMenubarDemo() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/employee_menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+    }
     public function baseUrl() {
         echo base_url();
     }

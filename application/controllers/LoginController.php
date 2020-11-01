@@ -5,6 +5,7 @@ class LoginController extends CI_Controller {
 
     public function __construct() {
         parent:: __construct();
+        $this->load->model('LoginModel','service');
     }
     
     public function flash_message(){
@@ -20,31 +21,43 @@ class LoginController extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('sessions/login');
+        $this->load->view('services/user/login');
     }
 
     public function authenticate() {
         $user = $this->input->post('user');  
         $pass = $this->input->post('pass');
-        if(!empty($user) && !empty($passs)){
-           $result = $this->auth->checkauth($user,$pass);
-           if($result!=NULL){
-            $this->session->set_userdata('username', $user);
-            $this->session->set_userdata('logged_in', TRUE);
-           }
+        if(!empty($user) || !empty($pass)){
+           $result = $this->service->checkauth($user,$pass);
+           if($result['status']) {
+               print_r($result);
+            $session_data = array( 
+                'username' => $result['firstname'].' '.$result['lastname'],
+                'emailid'=>$result['emailid'],
+                'role'=>$result['roleid'],
+                'userid'=>$result['userid'],
+                'logged_in'=> TRUE
+           );  
+           $this->session->set_userdata($session_data); 
+           $response = array(
+            'Message' => 'Logged in successfully',
+            'Data'=>$session_data,
+            'Responsecode' => 200
+        );
+           }else{
             $response = array(
-                'Message' => 'Data Not Found',
-                'Responsecode' => 401
+                'Message' => 'Invalid user id and password',
+                'Responsecode' => 204
             );
+           }
+           
         } else{
             $response = array(
-                'Message' => 'Data Not Found',
-                'Responsecode' => 401
+                'Message' => 'Parameter missing',
+                'Responsecode' => 404
             );
         } 
-        $this->session->set_userdata('username', 'John Doe');
-        $this->session->set_userdata('logged_in', TRUE);
-        redirect(base_url('dashboard'));
+       echo json_encode($response);
     }
 
     public function dashboard() {
@@ -58,9 +71,8 @@ class LoginController extends CI_Controller {
     }
 
     public function logout() {
-        $this->session->unset_userdata('username');
-        $this->session->unset_userdata('logged_in');
-        redirect(base_url('login'));
+        $this->session->sess_destroy();
+        redirect(base_url());
     }
 }
 ?>
