@@ -99,9 +99,10 @@
         <div id="page-content">
             <div class="row">
                 <div class="col-md-12">
+                <form action="" method="post" id="shopActForm">
                     <section class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">SHOP ACT LICENCE</h3>
+                            <h3 class="panel-title"> UPDATE SHOP ACT LICENCE</h3>
                         </div>
 
                         <div class="panel">
@@ -114,7 +115,7 @@
 
                                 <div class="tab-content">
                                     <div id="home" class="tab-pane fade in active">
-                                        <form action="" method="post" id="shopActForm">
+                                        
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -412,17 +413,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-sub-head">
-                                                <div class="text-left">
-                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
-                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            
                                     </div>
 
                                     <div id="menu1" class="tab-pane fade">
-                                        <form action="" method="post" id="documentForm">
+                                       
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -470,7 +465,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -479,6 +474,7 @@
                             <!--End Block Styled Form -->
                         </div>
                     </section>
+                    </form>
                 </div>
             </div>
         </div>
