@@ -30,5 +30,12 @@ class User_model extends CI_Model {
          $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
         return $query->row();
     }
+    public function updateuser($userid,$data)
+    {
+        $this->db->where('userid',$userid);
+        $result['result'] =   $this->db->update('user_master',$data);
+        $result['data']  = $this->db->get_where("user_master", ['userid' => $userid])->row_array();
+        return $result;
+    }
 
 }

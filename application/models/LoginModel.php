@@ -19,4 +19,12 @@ class LoginModel extends CI_Model {
         }  
         return $result;
     }
+
+    public function accesspages($userid){
+        $sql = "SELECT uc.accessid,ac.activityid,ac.activity,ac.path,ac.pagename,ac.servicetype 
+        FROM user_access_control uc INNER JOIN activities ac ON ac.activityid = uc.activityid
+         WHERE uc.userid = $userid";
+    $query = $this->db->query($sql);
+    return $query->result();
+    }
 }

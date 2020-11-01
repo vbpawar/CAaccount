@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
 class LoginController extends CI_Controller {
 
     public function __construct() {
@@ -27,21 +28,37 @@ class LoginController extends CI_Controller {
     public function authenticate() {
         $user = $this->input->post('user');  
         $pass = $this->input->post('pass');
+        $mainResult = array();
         if(!empty($user) || !empty($pass)){
            $result = $this->service->checkauth($user,$pass);
            if($result['status']) {
-               print_r($result);
             $session_data = array( 
-                'username' => $result['firstname'].' '.$result['lastname'],
-                'emailid'=>$result['emailid'],
-                'role'=>$result['roleid'],
-                'userid'=>$result['userid'],
+                'username' => $result['data'][0]->firstname.' '.$result['data'][0]->lastname,
+                'emailid'=>$result['data'][0]->emailid,
+                'role'=>$result['data'][0]->roleid,
+                'userid'=>$result['data'][0]->userid,
                 'logged_in'=> TRUE
-           );  
+           );
+          $userid = $result['data'][0]->userid;
            $this->session->set_userdata($session_data); 
+           $pages = $this->service->accesspages($userid);
+           if($pages!=NULL && count($pages)>0){
+            foreach ($pages as $key => $server) {
+                $Category = $server->servicetype;
+                $temp     = $server;
+                 
+            if (array_key_exists($Category, $mainResult)) {
+                $mainResult["$Category"][] = $temp;
+            } else {
+                $mainResult["$Category"][] = $temp;
+            }
+            }
+           }
+           
            $response = array(
             'Message' => 'Logged in successfully',
             'Data'=>$session_data,
+            'Pages'=>$mainResult,
             'Responsecode' => 200
         );
            }else{
