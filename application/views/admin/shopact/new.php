@@ -116,295 +116,301 @@
                                     <div id="home" class="tab-pane fade in active">
                                         <form action="" method="post" id="shopActForm">
                                             <div class="panel">
-                                            <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Name of Establishment</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info"><strong>Name of Establishment</strong></div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"></label>
-                                                <input type="text" class="form-control" name="nameofestb" id="nameofestb" placeholder="Name of Establishment" name="estab_name" />
-                                                <!-- <input type="text" class="form-control" name="estab_name" id="estab_name" name="estab_name" id="estab_name" value="1" /> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"></label>
+                                                                <input type="text" class="form-control" name="nameofestb" id="nameofestb" placeholder="Name of Establishment" name="estab_name" />
+                                                                <!-- <input type="text" class="form-control" name="estab_name" id="estab_name" name="estab_name" id="estab_name" value="1" /> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Address and Situation of the Establishment</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info"><strong>Address and Situation of the Establishment</strong></div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Name of Building</label>
-                                                <input type="text" class="form-control" name="Building" id="Building" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Street <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="street" id="street" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Name of Building</label>
+                                                                <input type="text" class="form-control" name="Building" id="Building" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Street <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="street" id="street" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Landmark <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="landmark" id="landmark" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Landmark <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="landmark" id="landmark" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">District <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="district" id="district" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">District <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="district" id="district" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Taluka <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="taluka" id="taluka" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Taluka <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="taluka" id="taluka" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Village</label>
-                                                <input type="text" class="form-control" name="village" id="village" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Pincode <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Mobile No. <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Village</label>
+                                                                <input type="text" class="form-control" name="village" id="village" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Pincode <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile No. <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Email</label>
-                                                <input type="email" class="form-control" name="emailid" id="emailid" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
+                                                                <input type="email" class="form-control" name="emailid" id="emailid" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Ownership Premises <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="ownerpremise" id="ownerpremise" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Date of Commencement of Business <span class="text-danger">*</strong></div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Ownership Premises <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="ownerpremise" id="ownerpremise" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info">
+                                                            <strong>Date of Commencement of Business <span class="text-danger">*</span></strong>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"></label>
-                                                <input type="date" name="dateofcommit" id="dateofcommit" class="form-control" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"></label>
+                                                                <input type="date" name="dateofcommit" id="dateofcommit" class="form-control" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Nature of Business <span class="text-danger">*</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info">
+                                                            <strong>Nature of Business <span class="text-danger">*</span></strong>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"></label>
-                                                <input type="text" class="form-control" name="natureofbuss" id="natureofbuss" placeholder="ex. Kirana Shop" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Manpower/Workers Details <span class="text-danger">*</strong></div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"></label>
+                                                                <input type="text" class="form-control" name="natureofbuss" id="natureofbuss" placeholder="ex. Kirana Shop" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info">
+                                                            <strong>Manpower/Workers Details <span class="text-danger">*</span></strong>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Men</label>
-                                                <input type="text" class="form-control" name="menw" id="menw" placeholder="2" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Men</label>
+                                                                <input type="text" class="form-control" name="menw" id="menw" placeholder="2" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Women </label>
-                                                <input type="text" class="form-control" name="womenw" id="womenw" placeholder="1" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Women </label>
+                                                                <input type="text" class="form-control" name="womenw" id="womenw" placeholder="1" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Name of the Employer <span class="text-danger">*</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info">
+                                                            <strong>Name of the Employer <span class="text-danger">*</span></strong>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"> </label>
-                                                <input type="text" class="form-control" name="s_nameofestb" id="s_nameofestb" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> </label>
+                                                                <input type="text" class="form-control" name="s_nameofestb" id="s_nameofestb" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Residential Address of Employer</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info"><strong>Residential Address of Employer</strong></div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Name of Building </label>
-                                                <input type="text" class="form-control" name="Building_name" id="Building_name" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Name of Building </label>
+                                                                <input type="text" class="form-control" name="Building_name" id="Building_name" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Street <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_street" id="s_street" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Street <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_street" id="s_street" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Landmark <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="s_landmark" id="s_landmark" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Landmark <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="s_landmark" id="s_landmark" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Loacality/Ward  <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="s_locality" id="s_locality" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Loacality/Ward <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="s_locality" id="s_locality" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">State  <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="s_state" id="s_state" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">State <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="s_state" id="s_state" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">District <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_district" id="s_district" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Taluka <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_taluka" id="s_taluka" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">District <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_district" id="s_district" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Taluka <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_taluka" id="s_taluka" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Village </label>
-                                                <input type="text" class="form-control" name="s_village" id="s_village" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Village </label>
+                                                                <input type="text" class="form-control" name="s_village" id="s_village" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Pincode <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_pincode" id="s_pincode" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Reesidence Since(year)  <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="s_residence" id="s_residence" placeholder="5" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Pincode <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_pincode" id="s_pincode" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Reesidence Since(year) <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="s_residence" id="s_residence" placeholder="5" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Aadhar No.  <span class="text-danger">*</label>
-                                                <input type="text" class="form-control" name="s_adharnumber" id="s_adharnumber" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Aadhar No. <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" name="s_adharnumber" id="s_adharnumber" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Email <span class="text-danger">* </label>
-                                                <input type="email" name="s_email" id="s_email" class="form-control" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email <span class="text-danger">* </span></label>
+                                                                <input type="email" name="s_email" id="s_email" class="form-control" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Mobile No. <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_mobile" id="s_mobile" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile No. <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_mobile" id="s_mobile" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Status/Designation <span class="text-danger">* </label>
-                                                <input type="text" class="form-control" name="s_status" id="s_status" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Status/Designation <span class="text-danger">*</span> </label>
+                                                                <input type="text" class="form-control" name="s_status" id="s_status" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Type of organisation (i.e. Proprietor, Partnership, LLP, Company/ Trust/ Co-operative Society/ Board)</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info"><strong>Type of organisation (i.e. Proprietor, Partnership, LLP, Company/ Trust/ Co-operative Society/ Board)</strong></div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"></label>
-                                                <input type="text" class="form-control" name="typeoforg" id="typeoforg" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"></label>
+                                                                <input type="text" class="form-control" name="typeoforg" id="typeoforg" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Name of the members of employer</strong></div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="panel-title bg-info"><strong>Name of the members of employer</strong></div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"> </label>
-                                                <textarea class="form-control" name="s_nameofemp" id="s_nameofemp"></textarea>
-                                                <!-- <input type="text" class="form-control" name="estab_name" id="estab_name" placeholder="" name="" /> -->
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> </label>
+                                                                <textarea class="form-control" name="s_nameofemp" id="s_nameofemp"></textarea>
+                                                                <!-- <input type="text" class="form-control" name="estab_name" id="estab_name" placeholder="" name="" /> -->
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Women </label>
-                                                <input type="text" class="form-control" name="s_womenw" id="s_womenw" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Women </label>
+                                                                <input type="text" class="form-control" name="s_womenw" id="s_womenw" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Men </label>
-                                                <input type="text" class="form-control" name="s_menw" id="s_menw" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Men </label>
+                                                                <input type="text" class="form-control" name="s_menw" id="s_menw" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="tab-sub-head">
                                                 <div class="text-left">
@@ -434,23 +440,23 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Shop Owner Passport Photo </label>
-                                                <input type="file" class="form-control" name="owner_pic" id="owner_pic" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Sign </label>
-                                                <input type="file" class="form-control" name="Sign" id="Sign" placeholder="" name="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Shop Photo </label>
-                                                <input type="file" class="form-control" name="Shop_pic" id="Shop_pic" placeholder="" name="" />
-                                            </div>
-                                        </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label">Shop Owner Passport Photo </label>
+                                                                <input type="file" class="form-control" name="owner_pic" id="owner_pic" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Sign </label>
+                                                                <input type="file" class="form-control" name="Sign" id="Sign" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Shop Photo </label>
+                                                                <input type="file" class="form-control" name="Shop_pic" id="Shop_pic" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 

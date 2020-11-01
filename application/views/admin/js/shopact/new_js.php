@@ -11,7 +11,7 @@
 
             $.ajax({
 
-                url: url + 'Distributor_retailors/add_dist_retailors',
+                url: url + 'ShopAct/addshopact',
 
                 type: 'POST',
 
@@ -53,7 +53,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/RetailorDistributor/show');
+        window.location.replace(url + 'services/ShopAct/show');
     }
 
 
