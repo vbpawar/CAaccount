@@ -101,20 +101,18 @@
                         <!--===================================================-->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Import Export List</h3>
+                                <h3 class="panel-title">User Master List</h3>
                             </div>
                             <div class="panel-body">
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <!-- <th>Pan No.</th> -->
-                                            <th class="min-tablet">Mobile No.</th>
-                                            <th class="min-tablet">Email ID</th>
-                                            <!-- <th class="min-desktop">Shop Address</th>
-                                            <th class="min-desktop">Home Address</th> -->
-                                            <!-- <th class="min-desktop">Reason</th> -->
-                                            <th class="min-desktop">Action</th>
+                                            <th class="min-tablet">NAME</th>
+                                            <th class="min-tablet">MOBILE NO.</th>
+                                            <th class="min-tablet">EMAIL ID</th>
+                                            <th class="min-desktop">STATUS</th>
+                                            <th class="min-desktop">ACTION</th>
+
                                         </tr>
                                     </thead>
                                     <tbody class="serviceList">

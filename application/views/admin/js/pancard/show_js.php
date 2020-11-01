@@ -6,7 +6,7 @@
 
         $.ajax({
 
-            url: url + 'Project_report/getreports',
+            url: url + 'PanCard/getpancards',
 
             type: 'get',
 
@@ -46,12 +46,12 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.cost + '</td>';
-            tblData += '<td>' + services.loanamt + '</td>';
-            tblData += '<td>' + services.owncapital + '</td>';
-            tblData += '<td>' + services.noofyear + '</td>';
-            tblData += '<td>' + services.repayment_shedule + '</td>';
-            tblData += '<td>' + services.lastyear_bal_sheet + '</td>';
+            tblData += '<tr><td>' + services.fname + '</td>';
+            tblData += '<td>' + services.contact + '</td>';
+            tblData += '<td>' + services.emailid + '</td>';
+            // tblData += '<td>' + services.noofyear + '</td>';
+            // tblData += '<td>' + services.repayment_shedule + '</td>';
+            // tblData += '<td>' + services.lastyear_bal_sheet + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -73,7 +73,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6]}],
+            columnDefs: [{orderable: true, targets: [0, 1, 2, 3]}],
 
             dom: 'Bfrtip',
 

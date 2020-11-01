@@ -13,6 +13,14 @@ class Report extends CI_Controller {
         $this->load->view('admin/footer');
     }
     public function update() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/js/report/new_js');
+        $this->load->view('admin/footer');
+        
         $this->load->view('admin/report/update');
         $this->load->view('admin/js/jquery_validation_js');
         $this->load->view('admin/js/report/report_validation_js');

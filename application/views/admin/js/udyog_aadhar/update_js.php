@@ -4,31 +4,42 @@
 //    $('#pic_productId').val(product.testimonialId);
 
         $('#userid').val(product.userid);
-        $('#certid').val(product.certid);
-        $('#nameasperadhar').val(product.nameasperadhar);
-        $('#pancardnumber').val(product.pancardnumber);
+        $('#adharnumber').val(product.adharnumber);
+        $('#nameofent').val(product.nameofent);
+        $('#gender').val(product.gender);
         $('#mobilenumber').val(product.mobilenumber);
         $('#emailid').val(product.emailid);
-        $('#shopaddress').val(product.shopaddress);
-        $('#homeaddress').val(product.homeaddress);
-        $('#reason').val(product.reason);
+        $('#category').val(product.category);
+        $('#typeoforg').val(product.typeoforg);
+        $('#ustate').val(product.ustate);
+        $('#district').val(product.district);
+        $('#city').val(product.city);
+        $('#pincode').val(product.pincode);
+        $('#postoffice').val(product.postoffice);
+        $('#regdate').val(product.regdate);
+        $('#bankName').val(product.bankName);
+        $('#ifsc').val(product.ifsc);
+        $('#bankAc').val(product.bankAc);
+        $('#men').val(product.men);
+        $('#women').val(product.women);
+
 
     }
 
     loadDetails(details);
 
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#udyogAadharForm').on('submit', function (e) {
 
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
+    var returnVal = $("#udyogAadharForm").valid();
 
         if (returnVal) {
         var formdata = new FormData(this);
 
             $.ajax({
 
-                url: url + 'Certificate_service/updatecertificate',
+                url: url + 'UdyogAadhar/update',
 
                 type: 'POST',
 

@@ -1,5 +1,4 @@
-
-            <div class="boxed">
+ <div class="boxed">
                 <!--CONTENT CONTAINER-->
                 <!--===================================================-->
                 <div id="content-container">
@@ -114,27 +113,9 @@
                                             <!-- Wizard Container 1 -->
                                             <div class="wizard-title">Personal Details</div>
                                             <div class="wizard-container">
-                                                
-                                                
-
-            
-
                                                 <div class="panel">
                                                     <div class="panel-body">
                                                         <div class="row">
-                                                            
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="form-label">Application Type</label>
-                                                                    <select class="form-control" name="type_of_organisation" required="">
-                                                                        <option value="49A">New PAN - Indian </option>
-                                                                        <option value="49AA">New PAN - Foreiger </option>
-                                                                        <option value="CR">Changes/Correction </option>
-                                                                        <option value="CR">Reprint </option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Category</label>
@@ -150,6 +131,17 @@
                                                                                 <option value="H">HINDU UNDIVIDED FAMILY</option>
                                                                                 <option value="J">ARTIFICIAL JURIDICAL PERSON</option>
                                                                                 <option value="L">LOCAL AUTHORITY</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Application Type</label>
+                                                                    <select class="form-control" name="type_of_organisation" required="">
+                                                                        <option value="49A">New PAN - Indian </option>
+                                                                        <option value="49AA">New PAN - Foreiger </option>
+                                                                        <option value="CR">Changes/Correction </option>
+                                                                        <option value="CR">Reprint </option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -189,17 +181,6 @@
                                                     <div class="panel-body bg-secondary">
                                                         
                                                         <div class="row">
-                                                        <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="form-label">Title</label>
-                                                                    <select class="form-control" name="Title" required="">
-                                                                        <option value="shri">Shri </option>
-                                                                        <option value="smt">SMT </option>
-                                                                        <option value="kumari">Kumari </option>
-                                                                        
-                                                                    </select>
-                                                                </div>
-                                                            </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group" id="l_name_div">
                                                                     <label>Last Name / Surname <span class="text-danger">*</span></label>
@@ -443,11 +424,6 @@
                                                 Contact & other details
                                             </div>
                                             <div class="wizard-container">
-
-                                                
-
-
-
                                                 <div class="panel">
                                                     <div class="panel-title text-info">Source of Income*</div>
                                                     <div class="panel-body">
@@ -1504,4 +1480,3 @@
                 <!--===================================================-->
                 <!--END CONTENT CONTAINER-->
             </div>
-            

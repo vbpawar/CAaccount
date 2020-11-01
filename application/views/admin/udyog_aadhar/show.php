@@ -101,19 +101,16 @@
                         <!--===================================================-->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">CA Certificate List</h3>
+                                <h3 class="panel-title">Udyog Aadhar List</h3>
                             </div>
                             <div class="panel-body">
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Pan No.</th>
-                                            <th class="min-tablet">Mobile No.</th>
-                                            <th class="min-tablet">Email ID</th>
-                                            <th class="min-desktop">Shop Address</th>
-                                            <th class="min-desktop">Home Address</th>
-                                            <th class="min-desktop">Reason</th>
+                                            <th>Name of Entity</th>
+                                            <th>Mobile</th>
+                                            <th class="min-tablet">Email</th>
+                                            <th class="min-desktop">Status</th>
                                             <th class="min-desktop">Action</th>
                                         </tr>
                                     </thead>

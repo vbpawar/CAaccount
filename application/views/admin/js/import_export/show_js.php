@@ -6,7 +6,7 @@
 
         $.ajax({
 
-            url: url + 'Certificate_service/getcertificates',
+            url: url + 'ImportExport/getimpexp',
 
             type: 'get',
 
@@ -46,13 +46,13 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.nameasperadhar + '</td>';
-            tblData += '<td>' + services.pancardnumber + '</td>';
-            tblData += '<td>' + services.mobilenumber + '</td>';
-            tblData += '<td>' + services.emailid + '</td>';
-            tblData += '<td>' + services.shopaddress + '</td>';
-            tblData += '<td>' + services.homeaddress + '</td>';
-            tblData += '<td>' + services.reason + '</td>';
+            tblData += '<tr><td>' + services.panname + '</td>';
+            // tblData += '<td>' + services.pancardnumber + '</td>';
+            tblData += '<td>' + services.smobile + '</td>';
+            tblData += '<td>' + services.semailid + '</td>';
+            // tblData += '<td>' + services.shopaddress + '</td>';
+            // tblData += '<td>' + services.homeaddress + '</td>';
+            // tblData += '<td>' + services.reason + '</td>';
 
             tblData += '<div class="table-actions">';
 
@@ -74,7 +74,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3, 4, 5, 6, 7]}],
+            columnDefs: [{orderable: true, targets: [0, 1, 2]}],
 
             dom: 'Bfrtip',
 

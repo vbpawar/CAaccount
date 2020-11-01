@@ -1,4 +1,4 @@
-<div class="boxed newDiv">
+<div class="boxed">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
     <div id="content-container">
@@ -80,36 +80,43 @@
                 </div>
             </div>
         </div>
+        <!--Page Title-->
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Form Layout</h3>
+            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">form layout</li>
+                    <li class="active">forms wizard</li>
                 </ol>
             </div>
         </div>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <!--End page title-->
         <!--Page content-->
         <!--===================================================-->
         <div id="page-content">
             <div class="row">
-                <div class="eq-height">
-                    <div class="col-sm-6 eq-box-sm">
+                <div class="col-md-12">
+                    <section class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Udyog Aadhar</h3>
+                        </div>
+
                         <div class="panel">
-                            <div class="panel-heading">
-                                <div class="panel-control">
-                                    <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
-                                    <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
-                                    <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
-                                    <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
-                                </div>
-                                <h3 class="panel-title">Add New Entry</h3>
-                            </div>
-                            <!--Block Styled Form -->
-                            <!--===================================================-->
-                            <form id="caCertificateForm" method="post">
-                                <div class="panel-body">
+                            <div class="panel-body">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a data-toggle="pill" href="#home">Form Details</a></li>
+                                    <li><a data-toggle="pill" href="#menu1">Documents</a></li>
+                                    <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <form action="" id="udyogAadharForm" method="post" enctype="">
+                                            <div class="panel">
+                                            <div class="panel-body">
                                     <div class="row">
                                         <div class="panel-title bg-info"><strong>Entrepreneur Details</strong></div>
 
@@ -117,7 +124,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Aadhar Number</label>
                                                 <input type="text" class="form-control" placeholder="" name="adharnumber" id="adharnumber" />
-                                                <input type="hidden" class="form-control" name="" value="1" />
+                                                <input type="hidden" class="form-control" name="userid" value="1" />
+                                              
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -131,10 +139,10 @@
                                             <div class="form-group">
                                                 <label class="control-label">Gender</label>
                                                 <select class="form-control" name="gender" id="gender" required="">
-                                                    <option value="">--Select--</option>
-                                                    <option value="Proprietorship">Male</option>
-                                                    <option value="Partnership Firm">Female </option>
-                                                    <option value="Public Limited">Others</option>
+                                                    <option value="0">--Select--</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female </option>
+                                                    <option value="3">Others</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -144,10 +152,10 @@
                                                 <label class="control-label">Category</label>
                                                 <select class="form-control" name="category" id="category" required="">
                                                     <option value="">--Select--</option>
-                                                    <option value="Proprietorship">ST</option>
-                                                    <option value="Partnership Firm">SC </option>
-                                                    <option value="Private Limited">OBC</option>
-                                                    <option value="Public Limited">Others</option>
+                                                    <option value="ST">ST</option>
+                                                    <option value="SC">SC </option>
+                                                    <option value="OBC">OBC</option>
+                                                    <option value="Others">Others</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -256,7 +264,7 @@
                                                 <label class="control-label"></label>
                                                 <label class="control-label">Registration Date</label>
 
-                                                <input type="date" class="form-control" placeholder="" name="" />
+                                                <input type="date" class="form-control" placeholder="" name="regdate" id="regdate" />
                                             </div>
                                         </div>
                                     </div>
@@ -270,7 +278,7 @@
                                                 <!-- <label class="control-label"> </label> -->
                                                 <label class="control-label">Bank Name</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="bankName" id="bankName" />
                                             </div>
                                         </div>
 
@@ -278,7 +286,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">IFC Code</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="ifsc" id="ifsc" />
                                             </div>
                                         </div>
 
@@ -286,7 +294,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Bank Account Number</label>
 
-                                                <input type="text" class="form-control" placeholder="" name="" />
+                                                <input type="text" class="form-control" placeholder="" name="bankAc" id="bankAc" />
                                             </div>
                                         </div>
                                     </div>
@@ -314,38 +322,55 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Men </label>
-                                                <input type="text" class="form-control" name="Men1" id="Men1" placeholder="2" name="" />
+                                                <input type="text" class="form-control" name="men" id="men" placeholder="2"  />
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Women </label>
-                                                <input type="text" class="form-control" name="Women1" id="Women1" placeholder="1" name="" />
+                                                <input type="text" class="form-control" name="women" id="women" placeholder="1" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="panel-title bg-info"><strong>Documents <span class="text-danger">*</strong></div>
-
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Aadhar Card </label>
-                                                <input type="file" class="form-control" name="Aadhar" id="Aadhar" placeholder="" name="" />
+                                                
                                             </div>
-                                        </div>
-                                    
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Pan Card </label>
-                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                            <div class="tab-sub-head">
+                                                <div class="text-left">
+                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
+                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
+                                    </div>
 
-                                        <div class="col-sm-4">
+                                    <div id="menu1" class="tab-pane fade">
+                                        <form action="" method="post" id="documentForm">
+                                            <div class="panel">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Aadhar card </label>
+                                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Pan card</label>
+                                                                <input class="form-control" name="file" type="file" multiple />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Last Year Balancesheet Copy</label>
+                                                                <input type="file" class="form-control" placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Electronics Bill</label>
                                                 <input type="file" class="form-control" name="Electronics" id="Electronics" placeholder="" name="" />
@@ -357,20 +382,30 @@
                                                 <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
                                             </div>
                                         </div>
-                                        
-                                        
-                                        <!-- 1) Pan Card, 2) Aadhar Card , 3) Shop Address 4) Residence Address 5) Electronics Bill 5) Check / Bank Passbook 6) Mobile Number 7) Mail ID -->
+
+                                                       
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <hr />
+                                                    <div class="tab-sub-head">
+                                                        <div class="text-left">
+                                                            <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
+                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-
-                                <div class="panel-footer text-right">
-                                    <button class="btn btn-info" type="submit">Submit</button>
-                                </div>
-                            </form>
+                            </div>
+                            <!-- </div> -->
                             <!--===================================================-->
                             <!--End Block Styled Form -->
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

@@ -35,18 +35,19 @@ class UdyogAadhar extends CI_Controller {
         $this->load->view('admin/footer');
     }
     public function update() {
-//        $this->load->view('admin/header');
-//        $this->load->view('admin/css/comman_css');
-//        $this->load->view('admin/navigation/notificationbar');
-//        $this->load->view('admin/navigation/menubar');
-        ///////////////////////////////////////////////////////
+
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+
         $this->load->view('admin/udyog_aadhar/update');
         $this->load->view('admin/js/jquery_validation_js');
-        $this->load->view('admin/js/udyog_aadhar/ca_certificate_validation_js');
+        $this->load->view('admin/js/udyog_aadhar/udyog_aadhar_validation_js');
         $this->load->view('admin/js/udyog_aadhar/update_js');
-        ///////////////////////////////////////////////////////
-//        $this->load->view('admin/js/comman_js');
-//        $this->load->view('admin/footer');
+       
     }
     
     

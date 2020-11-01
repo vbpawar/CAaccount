@@ -3,19 +3,59 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#reportid').val(product.reportid);
-        $('#cost').val(product.cost);
-        $('#loanamt').val(product.loanamt);
-        $('#owncapital').val(product.owncapital);
-        $('#noofyear').val(product.noofyear);
-        $('#repayment_shedule').val(product.repayment_shedule);
-        $('#lastyear_bal_sheet').val(product.lastyear_bal_sheet);
+
+        $('#userid').val(product.userid);
+         $('#appType').val(product.appType);
+         $('#category').val(product.category);
+         $('#aadharnumber').val(product.aadharnumber);
+         $('#nameasperadhar').val(product.nameasperadhar);
+         $('#title').val(product.title);
+         $('#lname').val(product.lname);
+         $('#fname').val(product.fname);
+         $('#mname').val(product.mname);
+         $('#dob').val(product.dob);
+         $('#gender').val(product.gender);
+         $('#contact').val(product.contact);
+         $('#emailid').val(product.emailid);
+         $('#fatherlname').val(product.fatherlname);
+         $('#fatherfname').val(product.fatherfname);
+         $('#fathermname').val(product.fathermname);
+         $('#motherlname').val(product.motherlname);
+         $('#motherfname').val(product.motherfname);
+         $('#mothermname').val(product.mothermname);
+         $('#sourceofincome').val(product.sourceofincome);
+         $('#rflat').val(product.rflat);
+         $('#rnameofpremise').val(product.rnameofpremise);
+         $('#rstreet').val(product.rstreet);
+         $('#rarea').val(product.rarea);
+         $('#rtown').val(product.rtown);
+         $('#rcountry').val(product.rcountry);
+         $('#rstate').val(product.rstate);
+         $('#rpincode').val(product.rpincode);
+         $('#onameofoffice').val(product.onameofoffice);
+         $('#oflat').val(product.oflat);
+         $('#onameofpremise').val(product.onameofpremise);
+         $('#oroad').val(product.oroad);
+         $('#oarea').val(product.oarea);
+         $('#otown').val(product.otown);
+         $('#ocountry').val(product.ocountry);
+         $('#ostate').val(product.ostate);
+         $('#opincode').val(product.opincode);
+         $('#countrycode').val(product.countrycode);
+         $('#stdcode').val(product.stdcode);
+         $('#mobile').val(product.mobile);
+         $('#semailid').val(product.semailid);
+
+        
+
+
+
 
     }
 
     loadDetails(details);
 
-    $('#reportForm').on('submit', function (e) {
+    $('#wizard').on('submit', function (e) {
 
         e.preventDefault();
 
@@ -26,7 +66,7 @@
             formdata.append('userid', 1);
             $.ajax({
 
-                url: url + 'Project_report/updatereport',
+                url: url + 'PanCard/updatepanacard',
 
                 type: 'POST',
 

@@ -1,6 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#caCertificateForm').on('submit', function (e) {
+    $('#udyogAadharForm').on('submit', function (e) {
 
         e.preventDefault();
 
@@ -11,7 +11,7 @@
 
             $.ajax({
 
-                url: url + 'Certificate_service/addcertificate',
+                url: url + 'UdyogAdhar/addudyog',
 
                 type: 'POST',
 
@@ -53,7 +53,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/UdyogAdhar/show');
     }
 
 
