@@ -16,7 +16,7 @@ class Retailor extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/retailor/new');
         $this->load->view('admin/js/comman_js');
-        // $this->load->view('admin/js/retailor/new_js');
+        $this->load->view('admin/js/retailor/new_js');
         $this->load->view('admin/footer');
     }
 

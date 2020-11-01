@@ -106,7 +106,7 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">Add New User</h3>
+                                <h3 class="panel-title">Update User</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->

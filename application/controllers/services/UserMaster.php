@@ -16,7 +16,7 @@ class UserMaster extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/user_master/new');
         $this->load->view('admin/js/comman_js');
-        // $this->load->view('admin/js/user_master/new_js');
+        $this->load->view('admin/js/user_master/new_js');
         $this->load->view('admin/footer');
     }
 
@@ -25,6 +25,8 @@ class UserMaster extends CI_Controller {
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/user_master/show');
+        $this->load->view('admin/js/user_master/show_js');
+
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/footer');
@@ -32,10 +34,14 @@ class UserMaster extends CI_Controller {
 
     public function update() {
         $this->load->view('admin/header');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/user_master/show');
-        $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/footer');
+        $this->load->view('admin/css/dataModalCss');
+        $this->load->view('admin/user_master/update');
+        $this->load->view('admin/js/user_master/update_js');
+
+       
     }
 
 }
