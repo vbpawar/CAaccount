@@ -1,17 +1,18 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#shopActForm').on('submit', function (e) {
+    $('#userForm').on('submit', function (e) {
 
         e.preventDefault();
 
 //    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
+        formdata.append('userid',1);
 
         if (true) {
 
             $.ajax({
 
-                url: url + 'ShopAct/addshopact',
+                url: url + 'User/createUser',
 
                 type: 'POST',
 
@@ -53,7 +54,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/ShopAct/show');
+        window.location.replace(url + 'services/UserMaster/show');
     }
 
 

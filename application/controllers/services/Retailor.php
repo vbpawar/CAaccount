@@ -33,7 +33,7 @@ class Retailor extends CI_Controller {
     public function update() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/retailor/show');
+        $this->load->view('admin/retailor/update');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/footer');
     }

@@ -102,7 +102,7 @@
                 <form action="" method="post" id="shopActForm">
                     <section class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">SHOP ACT LICENCE</h3>
+                            <h3 class="panel-title"> UPDATE SHOP ACT LICENCE</h3>
                         </div>
 
                         <div class="panel">

@@ -3,43 +3,29 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
-        $('#adharnumber').val(product.adharnumber);
-        $('#nameofent').val(product.nameofent);
-        $('#gender').val(product.gender);
+        $('#billid').val(product.billid);
+        $('#gstid').val(product.gstid);
+        $('#gstnumber').val(product.gstnumber);
+        $('#gstpwd').val(product.gstpwd);
         $('#mobilenumber').val(product.mobilenumber);
         $('#emailid').val(product.emailid);
-        $('#category').val(product.category);
-        $('#typeoforg').val(product.typeoforg);
-        $('#ustate').val(product.ustate);
-        $('#district').val(product.district);
-        $('#city').val(product.city);
-        $('#pincode').val(product.pincode);
-        $('#postoffice').val(product.postoffice);
-        $('#regdate').val(product.regdate);
-        $('#bankName').val(product.bankName);
-        $('#ifsc').val(product.ifsc);
-        $('#bankAc').val(product.bankAc);
-        $('#men').val(product.men);
-        $('#women').val(product.women);
-
 
     }
 
     loadDetails(details);
 
-    $('#udyogAadharForm').on('submit', function (e) {
+    $('#userForm').on('submit', function (e) {
 
         e.preventDefault();
 
-    var returnVal = $("#udyogAadharForm").valid();
+//    var returnVal = $("#userForm").valid();
 
-        if (returnVal) {
+        if (true) {
         var formdata = new FormData(this);
-
+        formdata.append('userid',1);
             $.ajax({
 
-                url: url + 'UdyogAdhar/updateudyog',
+                url: url + 'E_waybill/updatebill',
 
                 type: 'POST',
 

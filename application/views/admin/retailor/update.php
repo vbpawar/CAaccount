@@ -106,7 +106,7 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">Add New Entry</h3>
+                                <h3 class="panel-title">Update Entry</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
@@ -117,7 +117,7 @@
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Retailor</label>
+                                                <label class="control-label">  Retailor</label>
                                                 <select name="Distributor" id="Distributor" class="form-control">
                                                 <option value="">id1</option>
                                                 <option value="">id2</option>

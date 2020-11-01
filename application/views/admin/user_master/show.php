@@ -110,7 +110,7 @@
                                             <th class="min-tablet">NAME</th>
                                             <th class="min-tablet">MOBILE NO.</th>
                                             <th class="min-tablet">EMAIL ID</th>
-                                            <th class="min-desktop">STATUS</th>
+                                            <!-- <th class="min-desktop">STATUS</th> -->
                                             <th class="min-desktop">ACTION</th>
 
                                         </tr>

@@ -106,51 +106,105 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">Add New Entry</h3>
+                                <h3 class="panel-title">Update User</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
-                            <form id="retailorForm" method="post">
+                            
+                            <form id="userForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
-                                        
-
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Retailor</label>
-                                                <select name="Distributor" id="Distributor" class="form-control">
+                                                <label class="control-label">Role</label>
+                                                <select name="roleid" id="roleid" class="form-control">
                                                 <option value="">id1</option>
                                                 <option value="">id2</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Service</label>
-                                                <select name="Service" id="Service" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
-
-                                                </select>
-                                              
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label"> Active</label>
-                                                <select name="Service" id="Service" class="form-control">
-                                                <option value="">Yes</option>
-                                                <option value="">No</option>
 
                                                 </select>
                                               
                                             </div>
                                         </div>
                                        
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">First Name</label>
+                                                <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Last" name="lastname" id="lastname" >
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contact</label>
+                                                <input type="text" class="form-control" placeholder="Contact" name="contact" id="contact">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Email</label>
+                                                <input type="email" class="form-control" placeholder="Email" id="emailid" name="emailid">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Address</label>
+                                                <textarea name="" id="" class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contry</label>
+                                                <input type="text" class="form-control" placeholder="Contry" id="country" name="country">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">State</label>
+                                                <input type="text" class="form-control" placeholder="State" id="ustate" name="ustate">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">City</label>
+                                                <input type="text" class="form-control" placeholder="City" id="city" name="city">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Pincode</label>
+                                                <input type="text" class="form-control" placeholder="Contact" id="pincode" name="pincode">
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Password</label>
+                                                <input type="password" class="form-control" placeholder="" name="Password">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Confirm Password</label>
+                                                <input type="password" class="form-control" placeholder="confirm your password" name="upassword" id="upassword"> 
+                                            </div>
+                                        </div>
                                         
                                         
                                     </div>

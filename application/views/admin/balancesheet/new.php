@@ -99,6 +99,7 @@
         <div id="page-content">
             <div class="row">
                 <div class="col-md-12">
+                <form action="" method="post" id="balancesheetForm">
                     <section class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">Project Balance Sheet</h3>
@@ -114,7 +115,7 @@
 
                                 <div class="tab-content">
                                     <div id="home" class="tab-pane fade in active">
-                                        <form action="" method="post" id="balancesheetForm">
+                                        
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -175,17 +176,11 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="tab-sub-head">
-                                                <div class="text-left">
-                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
-                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                           
                                     </div>
 
                                     <div id="menu1" class="tab-pane fade">
-                                        <form action="" method="post" id="documentForm">
+                                       
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -223,7 +218,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -232,6 +227,7 @@
                             <!--End Block Styled Form -->
                         </div>
                     </section>
+                    </form>
                 </div>
             </div>
         </div>

@@ -116,21 +116,12 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Distributor</label>
-<<<<<<< HEAD
-                                                <select name="Distributor" id="Distributor" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
-
-                                                </select>
-                                              
-=======
                                                 <select  id="distributorid" name="distributorid" class="form-control">
                                                 <option value="1">id1</option>
                                                 <option value="2">id2</option>
 
                                                 </select>
                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
->>>>>>> be9e37091620eabb10c3eda89019b9885537e610
                                             </div>
                                         </div>
                                        
@@ -138,20 +129,12 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Retailor</label>
-<<<<<<< HEAD
-                                                <select name="Distributor" id="Distributor" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
-
-                                                </select>
-=======
                                                 <select  id="retailorid" name="retailorid" class="form-control">
                                                 <option value="1">id1</option>
                                                 <option value="2">id2</option>
 
                                                 </select>
                                                 <!--<input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">-->
->>>>>>> be9e37091620eabb10c3eda89019b9885537e610
                                             </div>
                                         </div>
                                         

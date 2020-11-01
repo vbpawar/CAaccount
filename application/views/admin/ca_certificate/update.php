@@ -99,22 +99,23 @@
         <div id="page-content">
             <div class="row">
                 <div class="col-md-12">
+                <form action="" method="post" id="caCertificateForm" method="post" name="caCertificateForm" >
+
                     <section class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Project Certificate</h3>
+                            <h3 class="panel-title">Update Project Certificate</h3>
                         </div>
 
                         <div class="panel">
                             <div class="panel-body">
                                 <ul class="nav nav-pills">
-                                    <li class="active"><a data-toggle="pill" href="#home">Personal Details</a></li>
+                                    <li class="active"><a data-toggle="pill" href="#home"> Details</a></li>
                                     <li><a data-toggle="pill" href="#menu1">Documents</a></li>
                                     <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
                                 </ul>
 
                                 <div class="tab-content">
                                     <div id="home" class="tab-pane fade in active">
-                                        <form action="" method="post" id="caCertificateForm" method="post" name="caCertificateForm" >
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -174,17 +175,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-sub-head">
-                                                <div class="text-left">
-                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
-                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            
+                                        
                                     </div>
 
                                     <div id="menu1" class="tab-pane fade">
-                                        <form action="" method="post" id="documentForm">
+                                        
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -214,7 +210,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -223,6 +219,7 @@
                             <!--End Block Styled Form -->
                         </div>
                     </section>
+                    </form>
                 </div>
             </div>
         </div>

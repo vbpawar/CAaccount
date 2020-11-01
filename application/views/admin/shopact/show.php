@@ -107,7 +107,7 @@
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th class="min-tablet">NAME</th>
+                                            <th class="min-tablet">NAME userid</th>
                                             
                                             <th class="min-tablet">MOBILE NO.</th>
                                             <th class="min-tablet">EMAIL ID</th>
