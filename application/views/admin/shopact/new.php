@@ -124,7 +124,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label"></label>
                                                                 <input type="text" class="form-control" name="nameofestb" id="nameofestb" placeholder="Name of Establishment" name="estab_name" />
-                                                                <!-- <input type="text" class="form-control" name="estab_name" id="estab_name" name="estab_name" id="estab_name" value="1" /> -->
+                                                                <input type="hidden" class="form-control" name="userid" id="userid" name="userid" id="userid" value="1" />
                                                             </div>
                                                         </div>
                                                     </div>

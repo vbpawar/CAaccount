@@ -118,8 +118,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Role</label>
                                                 <select name="roleid" id="roleid" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
+                                                <option value="1">id1</option>
+                                                <option value="2">id2</option>
 
                                                 </select>
                                               
@@ -131,6 +131,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">First Name</label>
                                                 <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname">
+                                                <input type="hidden" class="form-control" placeholder="userid" name="userid" id="userid">
+
                                             </div>
                                         </div>
 

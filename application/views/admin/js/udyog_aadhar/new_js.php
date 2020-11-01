@@ -53,7 +53,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/UdyogAdhar/show');
+        window.location.replace(url + 'services/UdyogAadhar/show');
     }
 
 

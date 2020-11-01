@@ -39,7 +39,7 @@
 
             $.ajax({
 
-                url: url + 'UdyogAadhar/update',
+                url: url + 'UdyogAdhar/updateudyog',
 
                 type: 'POST',
 
