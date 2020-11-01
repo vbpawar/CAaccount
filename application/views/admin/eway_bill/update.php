@@ -103,18 +103,17 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Update E-way Bill</h3>
                         </div>
+                        <form action="" method="post" id="ewayBillForm">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <ul class="nav nav-pills">
+                                        <li class="active"><a data-toggle="pill" href="#home">Bill Details</a></li>
+                                        <li><a data-toggle="pill" href="#menu1">Documents</a></li>
+                                        <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
+                                    </ul>
 
-                        <div class="panel">
-                            <div class="panel-body">
-                                <ul class="nav nav-pills">
-                                    <li class="active"><a data-toggle="pill" href="#home">Bill Details</a></li>
-                                    <li><a data-toggle="pill" href="#menu1">Documents</a></li>
-                                    <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
-                                        <form action="" method="post" id="ewayBillForm">
+                                    <div class="tab-content">
+                                        <div id="home" class="tab-pane fade in active">
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -157,17 +156,10 @@
                                                     <!--</div>-->
                                                 </div>
                                             </div>
-                                            <div class="tab-sub-head">
-                                                <div class="text-left">
-                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
-                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            
+                                        </div>
 
-                                    <div id="menu1" class="tab-pane fade">
-                                        <form action="" method="post" id="documentForm">
+                                        <div id="menu1" class="tab-pane fade">
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -191,20 +183,20 @@
                                                     <hr />
                                                     <div class="tab-sub-head">
                                                         <div class="text-left">
-                                                            <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
+                                                            <button class="btn btn-primary" type="button" name="cancel" value="Reset" id="resetForm1">Cancel</button>
                                                             <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- </div> -->
+                                <!--===================================================-->
+                                <!--End Block Styled Form -->
                             </div>
-                            <!-- </div> -->
-                            <!--===================================================-->
-                            <!--End Block Styled Form -->
-                        </div>
+                        </form>
                     </section>
                 </div>
             </div>
