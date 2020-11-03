@@ -1,15 +1,17 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
+
 class LoginController extends CI_Controller {
 
     public function __construct() {
         parent:: __construct();
-        $this->load->model('LoginModel','service');
+        $this->load->model('LoginModel', 'service');
     }
-    
-    public function flash_message(){
+
+    public function flash_message() {
         $this->session->set_flashdata('msg', 'Welcome to CodeIgniter Flash Messages');
         redirect(base_url('flash_index'));
     }
@@ -26,55 +28,59 @@ class LoginController extends CI_Controller {
     }
 
     public function authenticate() {
-        $user = $this->input->post('user');  
+        $user = $this->input->post('user');
         $pass = $this->input->post('pass');
         $mainResult = array();
-        if(!empty($user) || !empty($pass)){
-           $result = $this->service->checkauth($user,$pass);
-           if($result['status']) {
-            $session_data = array( 
-                'username' => $result['data'][0]->firstname.' '.$result['data'][0]->lastname,
-                'emailid'=>$result['data'][0]->emailid,
-                'role'=>$result['data'][0]->roleid,
-                'userid'=>$result['data'][0]->userid,
-                'logged_in'=> TRUE
-           );
-          $userid = $result['data'][0]->userid;
-           $this->session->set_userdata($session_data); 
-           $pages = $this->service->accesspages($userid);
-           if($pages!=NULL && count($pages)>0){
-            foreach ($pages as $key => $server) {
-                $Category = $server->servicetype;
-                $temp     = $server;
-                 
-            if (array_key_exists($Category, $mainResult)) {
-                $mainResult["$Category"][] = $temp;
+        if (!empty($user) || !empty($pass)) {
+            $result = $this->service->checkauth($user, $pass);
+            if ($result['status']) {
+                $user_data = array(
+                    'username' => $result['data'][0]->firstname . ' ' . $result['data'][0]->lastname,
+                    'emailid' => $result['data'][0]->emailid,
+                    'role' => $result['data'][0]->roleid,
+                    'userid' => $result['data'][0]->userid,
+                    'logged_in' => TRUE
+                );
+                $userid = $result['data'][0]->userid;
+//           $this->session->set_userdata($session_data); 
+                $pages = $this->service->accesspages($userid);
+                if ($pages != NULL && count($pages) > 0) {
+                    foreach ($pages as $key => $server) {
+                        $Category = $server->servicetype;
+                        $temp = $server;
+
+                        if (array_key_exists($Category, $mainResult)) {
+                            $mainResult["$Category"][] = $temp;
+                        } else {
+                            $mainResult["$Category"][] = $temp;
+                        }
+                    }
+                }
+
+                $session_data = array(
+                    'Data' => $user_data,
+                    'Pages' => $mainResult
+                );
+
+                $this->session->set_userdata($session_data);
+                
+                $response = array(
+                    'Message' => 'Logged in successfully',
+                    'Responsecode' => 200
+                );
             } else {
-                $mainResult["$Category"][] = $temp;
+                $response = array(
+                    'Message' => 'Invalid user id or password',
+                    'Responsecode' => 204
+                );
             }
-            }
-           }
-           
-           $response = array(
-            'Message' => 'Logged in successfully',
-            'Data'=>$session_data,
-            'Pages'=>$mainResult,
-            'Responsecode' => 200
-        );
-           }else{
-            $response = array(
-                'Message' => 'Invalid user id and password',
-                'Responsecode' => 204
-            );
-           }
-           
-        } else{
+        } else {
             $response = array(
                 'Message' => 'Parameter missing',
                 'Responsecode' => 404
             );
-        } 
-       echo json_encode($response);
+        }
+        echo json_encode($response);
     }
 
     public function dashboard() {
@@ -88,8 +94,13 @@ class LoginController extends CI_Controller {
     }
 
     public function logout() {
+        $this->load->driver('cache');
+        $this->session->unset_userdata();
         $this->session->sess_destroy();
-        redirect(base_url());
+        $this->cache->clean();
+        redirect(base_url('services/user/login'));
     }
+
 }
+
 ?>

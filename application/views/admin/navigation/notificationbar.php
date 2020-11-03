@@ -228,7 +228,7 @@
                                             <a href="#">  <i class="fa fa-gear fa-fw"></i> Settings </a>
                                         </li>
                                         <li>
-                                            <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
+                                            <a href="<?php echo base_url('LoginController/logout');?>"> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
                                         </li>
                                     </ul>
                                 </div>

@@ -6,7 +6,7 @@
 
         $.ajax({
 
-            url: url + 'User/getUsersList',
+            url: url + 'user/getUsersList',
 
             type: 'get',
 
@@ -46,8 +46,7 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.firstname + '</td>';
-           
+            tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
 
@@ -71,7 +70,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0, 1, 2, 3]}],
+            columnDefs: [{orderable: true, targets: [0,1,2,3]}],
 
             dom: 'Bfrtip',
 
@@ -98,7 +97,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/User/update',
+                url: url+'services/certificate/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -114,7 +113,7 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = caCertificate.get(laborid);
+    var product = userList.get(laborid);
     var name=product.nameasperadhar;
     var msg='Do you want to delete '+name+' Information ?';
     
@@ -208,7 +207,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/EwayBill/show');
+        window.location.replace(url + 'services/certificate/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

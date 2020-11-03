@@ -6,13 +6,12 @@
 
 //    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
-        formdata.append('userid',1);
 
         if (true) {
 
             $.ajax({
 
-                url: url + 'User/createUser',
+                url: url + 'user/createUser',
 
                 type: 'POST',
 

@@ -131,7 +131,6 @@
                                             <div class="form-group">
                                                 <label class="control-label">First Name</label>
                                                 <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname">
-                                                <input type="hidden" class="form-control" placeholder="userid" name="userid" id="userid">
 
                                             </div>
                                         </div>
@@ -160,14 +159,14 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Address</label>
-                                                <textarea name="" id="" class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
+                                                <textarea  class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Contry</label>
-                                                <input type="text" class="form-control" placeholder="Contry" id="country" name="country">
+                                                <input type="text" class="form-control" placeholder="Country" id="country" name="country">
                                             </div>
                                         </div>
 
