@@ -40,6 +40,7 @@ class E_waybill extends CI_Controller{
         'mobilenumber'=>$this->input->post('mobilenumber'),
         'emailid' => $this->input->post('emailid')
         );
+        
     if(!$data || empty($data)){
         $response = array(
             'Message' => 'Missing parameter',
@@ -47,14 +48,26 @@ class E_waybill extends CI_Controller{
         );
     }else{ 
         $result = $this->service->addbill($data);
-        if($result === 0){ 
+        $a=false;
+         $p=false;
+        if(!$result['status']){ 
             $response = array(
                 'Message' => 'Try again',
                 'Responsecode' => 402
             );
        }else{ 
+        if(!empty($_FILES['aadharattach']['name']) && !empty($_FILES['panattach']['name']) ){ 
+         $a = $this->uploaddocs('aadharattach',$_FILES['aadharattach']['name']);
+         $p= $this->uploaddocs('panattach',$_FILES['panattach']['name']);
+        }
+        if($a && $p){
+            $document = 'Documents uplaoded';
+        }else{
+            $document = 'Document not uploaded';
+        }
         $response = array(
             'Message' => 'E-Way Bill Generated successfully',
+            'Doc'=>$document,
             'Responsecode' => 200
         );
        }
@@ -122,6 +135,28 @@ class E_waybill extends CI_Controller{
        }
    }
    echo json_encode($response);
+   }
+
+   public function uploaddocs($filetitle,$file)
+   {
+   echo $file;
+        $config['upload_path'] = 'document/'; 
+        $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf'; 
+        $config['max_size'] = '5000'; // max_size in kb 
+        $config['file_name'] = $file; 
+
+        // Load upload library 
+        $this->load->library('upload',$config); 
+  
+        // File upload
+        if($this->upload->do_upload($filetitle)){ 
+           // Get data about the file
+           $uploadData = $this->upload->data(); 
+           $filename = $uploadData['file_name']; 
+           return true; 
+        }else{ 
+          return false; 
+        } 
    }
     
 }

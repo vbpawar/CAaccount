@@ -12,11 +12,14 @@ class Eway_bill extends CI_Model {
     }
     public function addbill($data)
     {    
+        $result = [];
         if($this->db->insert('e_waybill', $data)){
-            return true;
+           $result['id'] =  $this->db->insert_id();
+           $result['status'] = true;   
          }else{
-            return false;
+            $result['status'] = false;
          }
+         return $result;
     }
     public function removebill($id){
         $this->db->where('billid', $id);
