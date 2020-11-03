@@ -103,7 +103,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Add E-way Bill</h3>
                         </div>
-                        <form action="" method="post" id="ewayBillForm">
+                        <form action="" method="post" id="ewayBillForm" enctype="multipart/form-data">
                             <div class="panel">
                                 <div class="panel-body">
                                     <ul class="nav nav-pills">
@@ -166,14 +166,14 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Aadhar card </label>
-                                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="aadharattach" id="aadharattach"  />
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Pan card</label>
-                                                                <input class="form-control" name="file" type="file" multiple />
+                                                                <input class="form-control" name="panattach" id="panattach" type="file" />
                                                             </div>
                                                         </div>
                                                     </div>
