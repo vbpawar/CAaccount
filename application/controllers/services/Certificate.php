@@ -17,6 +17,8 @@ class Certificate extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/ca_certificate/new');
         $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/js/ca_certificate/ca_certificate_validation_js');
+        
         $this->load->view('admin/js/ca_certificate/new_js');
         $this->load->view('admin/footer');
     }

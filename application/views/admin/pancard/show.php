@@ -85,12 +85,12 @@
                         </div>
                     </div>
                     <div class="pageheader">
-                        <h3><i class="fa fa-home"></i> Datatable Table </h3>
+                        <h3><i class="fa fa-home"></i> PAN Application List </h3>
                         <div class="breadcrumb-wrapper">
                             <span class="label">You are here:</span>
                             <ol class="breadcrumb">
                                 <li> <a href="#"> Home </a> </li>
-                                <li class="active"> datatable Table </li>
+                                <li class="active"> PAN Application List </li>
                             </ol>
                         </div>
                     </div>
@@ -100,11 +100,9 @@
                         <!-- Basic Data Tables -->
                         <!--===================================================-->
                         <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">PAN Application List</h3>
-                            </div>
+                           
                             <div class="panel-body">
-                            <button type="button" class="btn mb-1 btn-primary"  href = "#caCertificateForm">Add <span class="btn-icon-right"><i class="fa fa-plus-circle"></i></span></button>
+                            <a class="btn btn-primary" href="<?php echo base_url('services/Pancard/create');?> " role="button">Add New Entry</a>
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
