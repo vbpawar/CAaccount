@@ -11,7 +11,7 @@
                         <a href="index.html" class="navbar-brand">
                             <i class="fa fa-cube brand-icon"></i>
                             <div class="brand-title">
-                                <span class="brand-text">SmartAdmin</span>
+                                <span class="brand-text">CA Panel</span>
                             </div>
                         </a>
                     </div>
@@ -24,10 +24,10 @@
                             <!--Messages Dropdown-->
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                <!-- <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                                     <i class="fa fa-envelope fa-lg"></i>
                                     <span class="badge badge-header badge-warning">9</span>
-                                </a>
+                                </a> -->
                                 <!--Message dropdown menu-->
                                 <div class="dropdown-menu dropdown-menu-md with-arrow">
                                     <div class="pad-all bord-btm">
@@ -125,7 +125,7 @@
                             <!--Notification dropdown-->
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="fa fa-bell fa-lg"></i> <span class="badge badge-header badge-danger">5</span> </a>
+                                <!-- <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="fa fa-bell fa-lg"></i> <span class="badge badge-header badge-danger">5</span> </a> -->
                                 <!--Notification dropdown menu-->
                                 <div class="dropdown-menu dropdown-menu-md with-arrow">
                                     <div class="pad-all bord-btm">

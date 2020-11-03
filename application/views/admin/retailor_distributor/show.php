@@ -103,6 +103,7 @@
                                 <h3 class="panel-title">Distributor Retailor List</h3>
                             </div>
                             <div class="panel-body">
+                            <button type="button" class="btn mb-1 btn-primary"  href = "#caCertificateForm">Add <span class="btn-icon-right"><i class="fa fa-plus-circle"></i></span></button>
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
