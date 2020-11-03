@@ -40,15 +40,15 @@
                     <h4> Hello User !</h4>
                     <p class="text-center">Please login to Access your Account</p>
                     <div class="row">
-                        <form action="index.html" class="form-inline">
+                        <form class="form-inline" id="loginForm" method="post">
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-left">
                                     <label class="text-muted">Email ID</label>
-                                    <input id="signupInputEmail1" type="email" placeholder="Enter Email ID" class="form-control" required />
+                                    <input id="user" name="user" type="email" placeholder="Enter Email ID" class="form-control" required />
                                 </div>
                                 <div class="text-left">
                                     <label for="signupInputPassword" class="text-muted">Password</label>
-                                    <input id="signupInputPassword" type="password" placeholder="Password" class="form-control lock-input" required />
+                                    <input id="pass" name="pass" type="password" placeholder="Password" class="form-control lock-input" required />
                                 </div>
                                 <div class="pull-left pad-btm">
                                     <label class="form-checkbox form-icon form-text">
@@ -79,5 +79,7 @@
         <script src="<?php echo base_url('admin_assets/');?>plugins/switchery/switchery.min.js"></script>
         <!--Bootstrap Select [ OPTIONAL ]-->
         <script src="<?php echo base_url('admin_assets/');?>plugins/bootstrap-select/bootstrap-select.min.js"></script>
+        <!--sweet alert-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>
