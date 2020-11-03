@@ -122,15 +122,15 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Name</label>
-                                                                <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" />
-                                                                <input type="hidden" class="form-control" name="userid" value="1" />
+                                                                <input type="text" class="form-control" placeholder="As per Aadhar"  id="nameasperadhar"  name="nameasperadhar" />
+                                                                <input type="hidden" class="form-control" name="userid"  />
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">PAN Card</label>
-                                                                <input type="text" class="form-control" placeholder="Pan No." name="pancardnumber" />
+                                                                <input type="text" class="form-control" placeholder="Pan No." id="pancardnumber" name="pancardnumber" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,13 +140,13 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Mobile No.</label>
-                                                                <input type="text" class="form-control" placeholder="Mobile No." name="mobilenumber" />
+                                                                <input type="text" class="form-control" placeholder="Mobile No." id="mobilenumber" name="mobilenumber" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Email Id</label>
-                                                                <input type="email" class="form-control" placeholder="Email Id" name="emailid" />
+                                                                <input type="email" class="form-control" placeholder="Email Id" id="emailid" name="emailid" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -157,19 +157,19 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Shop Address:</label>
-                                                                <textarea class="form-control" name="shopaddress"></textarea>
+                                                                <textarea class="form-control" id="shopaddress" name="shopaddress"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Home Address:</label>
-                                                                <textarea class="form-control" name="homeaddress"></textarea>
+                                                                <textarea class="form-control" id="homeaddress" name="homeaddress"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Reason</label>
-                                                                <textarea class="form-control" name="reason"></textarea>
+                                                                <textarea class="form-control" id="reason" name="reason"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -204,8 +204,8 @@
                                                     <hr />
                                                     <div class="tab-sub-head">
                                                         <div class="text-left">
-                                                            <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
-                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
+                                                            <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Cancel</button>
+                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Update</button>
                                                         </div>
                                                     </div>
                                                 </div>

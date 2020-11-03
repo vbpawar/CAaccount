@@ -26,46 +26,46 @@ alert(returnVal);
         if (returnVal) {
         var formdata = new FormData(this);
           
-            // $.ajax({
+            $.ajax({
 
-            //     url: url + 'Certificate_service/updatecertificate',
+                url: url + 'Certificate_service/updatecertificate',
 
-            //     type: 'POST',
+                type: 'POST',
 
-            //     data: formdata,
+                data: formdata,
 
-            //     cache: false,
+                cache: false,
 
-            //     contentType: false,
+                contentType: false,
 
-            //     processData: false,
+                processData: false,
 
-            //     dataType: 'json',
+                dataType: 'json',
 
-            //     success: function (response) {
+                success: function (response) {
 
-            //         if (response.Responsecode == 200) {
-            //             swal("Congrats!", response.Message, "success");
-            //             goback();
+                    if (response.Responsecode == 200) {
+                        swal("Congrats!", response.Message, "success");
+                        goback();
 
-            //         } else {
+                    } else {
 
-            //             swal("Error!", response.Message, "success");
+                        swal("Error!", response.Message, "success");
 
-            //         }
+                    }
 
-            //     }
+                }
 
-            // });
+            });
 
         }
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+   function goback() {
+
+       window.location.replace(url + 'services/certificate/show');
+//$('.showDiv').show();
+//$('.updateDiv').hide();
+   }
 </script>
