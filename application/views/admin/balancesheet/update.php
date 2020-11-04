@@ -123,6 +123,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Name</label>
                                                                 <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" id="nameasperadhar" />
+                                                                <input type="hidden" class="form-control"  name="projectedid" id="projectedid" />
                                                             </div>
                                                         </div>
 
