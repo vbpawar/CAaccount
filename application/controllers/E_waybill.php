@@ -8,6 +8,7 @@ class E_waybill extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Eway_bill','service');
+        $this->load->model('DocsModel','docs');
     }
     private $response = null;
     private $records = null;
@@ -57,17 +58,16 @@ class E_waybill extends CI_Controller{
                 'Responsecode' => 402
             );
        }else{ 
+           $id = $result['id'];
         $document = 'Document not uploaded';
-        if(!empty($_FILES['aadharattach']['name']) && !empty($_FILES['panattach']['name']) ){ 
-         if($this->uploaddocs($_FILES['aadharattach']['name'],$_FILES['aadharattach']['tmp_name'])){
+        if(!empty($_FILES['adhar']['name']) && !empty($_FILES['file']['name']) ){ 
+         if($this->uploaddocs('aadhar',$id,'EWAY',$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
          $document = 'Documents uplaoded';
          }
+         if($this->uploaddocs('pan',$id,'EWAY',$_FILES['file']['name'],$_FILES['file']['tmp_name'])){
+            $document = 'Documents uplaoded';
+            }
         }
-//        if($a && $p){
-//            $document = 'Documents uplaoded';
-//        }else{
-//            $document = 'Document not uploaded';
-//        }
         $response = array(
             'Message' => 'E-Way Bill Generated successfully',
             'Doc'=>$document,
@@ -140,17 +140,39 @@ class E_waybill extends CI_Controller{
    echo json_encode($response);
    }
 
-   public function uploaddocs($name,$file)
+   public function uploaddocs($doctype,$rowid,$service,$filename,$file)
    {
-    $imgname = $name;
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    $data = array(
+        'service'=>$service,
+        'rowid'=>$rowid,
+        'extension'=>$ext,
+        'doctype'=>$doctype
+    );
+    $result = $this->docs->adddoc($data);
+    if($result){
+        $imgid = $result['docid'];
     $sourcePath = $file; // Storing source path of the file in a variable
-    $targetPath = "./documents/".$imgname ; // Target path where file is to be stored
+    $targetPath = "./documents/".$imgid.".".$ext; // Target path where file is to be stored
     if(move_uploaded_file($sourcePath,$targetPath)){
        return true;
     }else{
         return false;
     }
-      
+    }else{
+        return false;
+    }  
+   }
+   public function getdocs($id,$service)
+   {
+       $response=[];
+    $response = $this->docs->getdocs($id,$service); 
+    if(count($response)>0){
+        echo json_encode($response);
+    }else{
+        echo json_encode($response);
+    }
+   
    }
     
 }

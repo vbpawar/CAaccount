@@ -62,6 +62,14 @@ class UdyogAdhar extends CI_Controller{
     }else{ 
         $result = $this->service->addudyog($data);
         if($result['status']){ 
+            if(!empty($_FILES['adhar']['name']) && !empty($_FILES['file']['name']) ){ 
+                if($this->uploaddocs('aadhar',$id,'EWAY',$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
+                $document = 'Documents uplaoded';
+                }
+                if($this->uploaddocs('pan',$id,'EWAY',$_FILES['file']['name'],$_FILES['file']['tmp_name'])){
+                   $document = 'Documents uplaoded';
+                   }
+               }
             $response = array(
                 'Message' => 'Udyog Adhar Generated successfully',
                 'Data'=>$result['data'],
