@@ -358,7 +358,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="./admin_assets/img/doc_pre.png" alt="" id="adharpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -372,7 +372,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="" alt="" id="panpre" width="200px" height="200px"  />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px"  />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -387,7 +387,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="" alt="" id="balpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="balpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -401,7 +401,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="" alt="" id="billpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="billpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -415,7 +415,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="" alt="" id="passpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
