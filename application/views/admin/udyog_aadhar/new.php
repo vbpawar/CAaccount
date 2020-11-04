@@ -339,6 +339,91 @@
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
+                                                        <div>
+                                                            <table class="table table-image">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">DOCUMENT</th>
+                                                                        <th scope="col">PREVIEW</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Aadhar card </label>
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="./admin_assets/img/doc_pre.png" alt="" id="adharpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Pan card</label>
+                                                                                <input class="form-control" name="file" type="file" onchange="loadFile(event,'panpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="" alt="" id="panpre" width="200px" height="200px"  />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Last Year Balancesheet Copy</label>
+                                                                                <input type="file" class="form-control" onchange="loadFile(event,'balpre')"/>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="" alt="" id="balpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Electronics Bill</label>
+                                                                                <input type="file" class="form-control" name="Electronics" id="Electronics" onchange="loadFile(event,'billpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="" alt="" id="billpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Check / Bank Passbook </label>
+                                                                                <input type="file" class="form-control" name="Passbook" id="Passbook" onchange="loadFile(event,'passpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="" alt="" id="passpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Aadhar card </label>
@@ -371,7 +456,7 @@
                                                                 <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
 
                                                 <div>
