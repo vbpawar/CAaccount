@@ -349,7 +349,79 @@
                                     <div id="menu1" class="tab-pane fade">
                                           <div class="panel">
                                             <div class="panel-body">
-                                    <div class="row">
+                                            <div class="row">
+                                                        <div>
+                                                            <table class="table table-image">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">DOCUMENT</th>
+                                                                        <th scope="col">PREVIEW</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Voter ID/ Aadhar card/ Passport </label>
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Individual's/  Firm's/ Company's PAN Card </label>
+                                                                                <input class="form-control" name="pan" id="pan" type="file" onchange="loadFile(event,'panpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px"  />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Individual/ Company's Cancle Cheque of Current Bank Account</label>
+                                                                                <input type="file" class="form-control" name="chec" id="chec" onchange="loadFile(event,'balpre')"/>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="balpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Rent Agreement/ Electricity bill copy of the premise</label>
+                                                                                <input type="file" class="form-control" name="Electronics" id="Electronics" onchange="loadFile(event,'billpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="billpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                   
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                    <!-- <div class="row">
                                        
 
                                        
@@ -380,7 +452,7 @@
                                         </div>
                                         
                                         <!-- 1) Individual's or Frim's Company's copy of PAN Card. 2 ) Individual's voter ID or Aadhar card or Passport copy. 3) Individual's or company's or firm's cancle cheque copy of current bank account . 4) Copy of Rent Agreement or Electricity bill copy of the premise. -->
-                                    </div>
+                                    </div> -->
                                 </div>
                                                 
 

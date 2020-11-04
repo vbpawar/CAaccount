@@ -27,10 +27,10 @@ class Income extends CI_Controller {
         $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/ca_certificate/show');
+        $this->load->view('admin/income/show');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/dataModalJavaScript');
-        $this->load->view('admin/js/ca_certificate/show_js');
+        $this->load->view('admin/js/income/show_js');
         
         $this->load->view('admin/footer');
     }
@@ -40,10 +40,10 @@ class Income extends CI_Controller {
        $this->load->view('admin/navigation/notificationbar');
        $this->load->view('admin/navigation/menubar');
         ///////////////////////////////////////////////////////
-        $this->load->view('admin/ca_certificate/update');
+        $this->load->view('admin/income/update');
         $this->load->view('admin/js/jquery_validation_js');
-        $this->load->view('admin/js/ca_certificate/ca_certificate_validation_js');
-        $this->load->view('admin/js/ca_certificate/update_js');
+        // $this->load->view('admin/js/income/income_validation_js');
+        // $this->load->view('admin/js/income/update_js');
         ///////////////////////////////////////////////////////
        $this->load->view('admin/js/comman_js');
        $this->load->view('admin/footer');

@@ -83,12 +83,12 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
+            <h3><i class="fa fa-home"></i> E-way Bill</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">forms wizard</li>
+                    <li class="active">E-way Bill</li>
                 </ol>
             </div>
         </div>
@@ -103,7 +103,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Update E-way Bill</h3>
                         </div>
-                        <form action="" method="post" id="ewayBillForm">
+                        <form action="" method="post" id="ewayBillForm" enctype="multipart/form-data">
                             <div class="panel">
                                 <div class="panel-body">
                                     <ul class="nav nav-pills">
@@ -162,19 +162,49 @@
                                         <div id="menu1" class="tab-pane fade">
                                             <div class="panel">
                                                 <div class="panel-body">
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Aadhar card </label>
-                                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
-                                                            </div>
-                                                        </div>
+                                                <div class="row">
+                                                        <div>
+                                                            <table class="table table-image">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">DOCUMENT</th>
+                                                                        <th scope="col">PREVIEW</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Aadhar card </label>
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Pan card</label>
+                                                                                <input class="form-control" name="file" type="file" onchange="loadFile(event,'panpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px"  />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Pan card</label>
-                                                                <input class="form-control" name="file" type="file" multiple />
-                                                            </div>
+                                                                    
+                                                                   
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,7 +214,7 @@
                                                     <div class="tab-sub-head">
                                                         <div class="text-left">
                                                             <button class="btn btn-primary" type="button" name="cancel" value="Reset" id="resetForm1">Cancel</button>
-                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
+                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Update</button>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -162,19 +162,49 @@
                                         <div id="menu1" class="tab-pane fade">
                                             <div class="panel">
                                                 <div class="panel-body">
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Aadhar card </label>
-                                                                <input type="file" class="form-control" name="aadharattach" id="aadharattach"  />
-                                                            </div>
-                                                        </div>
+                                                <div class="row">
+                                                        <div>
+                                                            <table class="table table-image">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">DOCUMENT</th>
+                                                                        <th scope="col">PREVIEW</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Aadhar card </label>
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Pan card</label>
+                                                                                <input class="form-control" name="file" type="file" onchange="loadFile(event,'panpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px"  />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Pan card</label>
-                                                                <input class="form-control" name="panattach" id="panattach" type="file" />
-                                                            </div>
+                                                                    
+                                                                   
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
