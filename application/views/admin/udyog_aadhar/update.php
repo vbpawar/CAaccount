@@ -83,12 +83,12 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
+            <h3><i class="fa fa-home"></i> Udyog Aadhar</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">forms wizard</li>
+                    <li class="active">Udyog Aadhar</li>
                 </ol>
             </div>
         </div>
@@ -101,9 +101,9 @@
                 <div class="col-md-12">
                     <section class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Update Udyog Aadhar</h3>
+                            <h3 class="panel-title">Udyog Aadhar</h3>
                         </div>
-                        <form action="" id="udyogAadharForm" method="post" enctype="">
+                        <form action="" id="udyogAadharForm" method="post" enctype="multipart/form-data">
                             <div class="panel">
                                 <div class="panel-body">
                                     <ul class="nav nav-pills">
@@ -123,7 +123,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Number</label>
                                                                 <input type="text" class="form-control" placeholder="" name="adharnumber" id="adharnumber" />
-                                                                <input type="hidden" class="form-control" name="userid" value="1" />
+                                                                <input type="hidden" class="form-control" name="uid" id="uid"  />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -137,7 +137,6 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Gender</label>
                                                                 <select class="form-control" name="gender" id="gender" required="">
-                                                                    <option value="0">--Select--</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female </option>
                                                                     <option value="3">Others</option>

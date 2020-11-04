@@ -123,7 +123,7 @@
                                                             <div class="form-group">
                                                                 <label class="form-label">Name</label>
                                                                 <input type="text" class="form-control" placeholder="As per Aadhar"  id="nameasperadhar"  name="nameasperadhar" />
-                                                                <input type="hidden" class="form-control" name="userid"  />
+                                                                <input type="hidden" class="form-control" id="certid"  name="certid" />
                                                             </div>
                                                         </div>
 

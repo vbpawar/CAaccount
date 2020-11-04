@@ -21,11 +21,12 @@
 
         e.preventDefault();
 
-    var returnVal = $("#caCertificateForm").valid();
-alert(returnVal);
-        if (returnVal) {
-        var formdata = new FormData(this);
-          
+//    var returnVal = $("#caCertificateForm").valid();
+//alert(returnVal);
+        if (true) {
+            var formdata = new FormData(this);
+            formdata.append('userid', 1);
+//          console.log(formdata);
             $.ajax({
 
                 url: url + 'Certificate_service/updatecertificate',
@@ -43,7 +44,6 @@ alert(returnVal);
                 dataType: 'json',
 
                 success: function (response) {
-
                     if (response.Responsecode == 200) {
                         swal("Congrats!", response.Message, "success");
                         goback();
@@ -62,10 +62,10 @@ alert(returnVal);
 
     });
 
-   function goback() {
+    function goback() {
 
-       window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/certificate/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
-   }
+    }
 </script>
