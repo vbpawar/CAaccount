@@ -38,3 +38,14 @@
 <script src="<?php echo base_url('admin_assets/js/demo/form-layout.js'); ?>"></script>
 <!--sweet alert-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script> //img preview code ######DON'T REMOVE ####
+var loadFile = function(event,out) {
+    console.log("da")
+    var output = document.getElementById(out);
+    
+    output.src = URL.createObjectURL(event.target.files[0]);
+};
+
+</script>
+             

@@ -83,12 +83,12 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
+            <h3><i class="fa fa-home"></i> PAN Card</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">forms wizard</li>
+                    <li class="active">PAN Card</li>
                 </ol>
             </div>
         </div>
@@ -112,17 +112,6 @@
                                         <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
                                     </ul>
 
-<<<<<<< HEAD
-                                    <div class="tab-content">
-                                        <div id="home" class="tab-pane fade in active">
-                                            <div class="panel">
-                                            <div class="panel-body">
-                                                
-                                                
-
-            
-
-=======
                                     <div class="panel-body">
                                         <!-- START Form Wizard -->
                                         <form class="form-horizontal form-bordered" action="#" id="wizard">
@@ -132,7 +121,6 @@
                                             <!-- Wizard Container 1 -->
                                             <div class="wizard-title">Personal Details</div>
                                             <div class="wizard-container">
->>>>>>> 7230e8cf583c8794725017b170e0f6ded4196b21
                                                 <div class="panel">
                                                     <div class="panel-body">
                                                         <div class="row">
