@@ -187,13 +187,13 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Aadhar Card </label>
-                                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="aadharattach" id="Pan" placeholder="" name="" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">PAN Card </label>
-                                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="panattach" id="Pan" placeholder="" name="" />
                                                             </div>
                                                         </div>
 

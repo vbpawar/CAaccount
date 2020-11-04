@@ -166,14 +166,14 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Aadhar card </label>
-                                                                <input type="file" class="form-control" name="Passbook" id="Passbook" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="aadharattach" id="Passbook" placeholder="" name="" />
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Pan card</label>
-                                                                <input class="form-control" name="file" type="file" multiple />
+                                                                <input class="form-control" name="panattach" type="file" multiple />
                                                             </div>
                                                         </div>
                                                     </div>

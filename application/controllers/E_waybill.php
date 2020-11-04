@@ -56,14 +56,11 @@ class E_waybill extends CI_Controller{
                 'Responsecode' => 402
             );
        }else{ 
+        $document = 'Document not uploaded';
         if(!empty($_FILES['aadharattach']['name']) && !empty($_FILES['panattach']['name']) ){ 
-         $a = $this->uploaddocs('aadharattach',$_FILES['aadharattach']['name']);
-         $p= $this->uploaddocs('panattach',$_FILES['panattach']['name']);
-        }
-        if($a && $p){
-            $document = 'Documents uplaoded';
-        }else{
-            $document = 'Document not uploaded';
+         if($this->uploaddocs($_FILES['aadharattach']['name'],$_FILES['aadharattach']['tmp_name'])){
+         $document = 'Documents uplaoded';
+         }
         }
         $response = array(
             'Message' => 'E-Way Bill Generated successfully',
@@ -137,26 +134,17 @@ class E_waybill extends CI_Controller{
    echo json_encode($response);
    }
 
-   public function uploaddocs($filetitle,$file)
+   public function uploaddocs($name,$file)
    {
-   echo $file;
-        $config['upload_path'] = 'document/'; 
-        $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf'; 
-        $config['max_size'] = '5000'; // max_size in kb 
-        $config['file_name'] = $file; 
-
-        // Load upload library 
-        $this->load->library('upload',$config); 
-  
-        // File upload
-        if($this->upload->do_upload($filetitle)){ 
-           // Get data about the file
-           $uploadData = $this->upload->data(); 
-           $filename = $uploadData['file_name']; 
-           return true; 
-        }else{ 
-          return false; 
-        } 
+    $imgname = $name;
+    $sourcePath = $file; // Storing source path of the file in a variable
+    $targetPath = "./documents/".$imgname ; // Target path where file is to be stored
+    if(move_uploaded_file($sourcePath,$targetPath)){
+       return true;
+    }else{
+        return false;
+    }
+      
    }
     
 }
