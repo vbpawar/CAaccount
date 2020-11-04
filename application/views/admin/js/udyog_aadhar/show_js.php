@@ -114,8 +114,8 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = caCertificate.get(laborid);
-    var name=product.nameasperadhar;
+    var product = udyogAadharList.get(laborid);
+    var name=product.nameofent;
     var msg='Do you want to delete '+name+' Information ?';
     
     var alert1 = '';
@@ -135,11 +135,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'UdyogAdhar/removebill',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{uid:laborid},
 
 //            cache: false,
 //
@@ -151,7 +151,7 @@ function deletePermission(laborid) {
 
             success: function(response) {
 
-                console.log(response.userId);
+//                console.log(response.userId);
 
                 if (response.Responsecode == 200) {
 
