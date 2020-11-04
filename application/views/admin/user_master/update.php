@@ -118,8 +118,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Role</label>
                                                 <select name="roleid" id="roleid" class="form-control">
-                                                <option value="">id1</option>
-                                                <option value="">id2</option>
+                                                <option value="1">id1</option>
+                                                <option value="2">id2</option>
 
                                                 </select>
                                               
@@ -131,6 +131,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">First Name</label>
                                                 <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname">
+                                                <input type="hidden" class="form-control" name="userid" id="userid">
                                             </div>
                                         </div>
 
@@ -158,7 +159,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Address</label>
-                                                <textarea name="" id="" class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
+                                                <textarea class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
                                             </div>
                                         </div>
 
@@ -192,16 +193,16 @@
 
                                         
 
-                                        <div class="col-sm-4">
+<!--                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Password</label>
-                                                <input type="password" class="form-control" placeholder="" name="Password">
+                                                <input type="password" class="form-control" placeholder="" name="password">
                                             </div>
-                                        </div>
+                                        </div>-->
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Confirm Password</label>
+                                                <label class="control-label">Change Password</label>
                                                 <input type="password" class="form-control" placeholder="confirm your password" name="upassword" id="upassword"> 
                                             </div>
                                         </div>

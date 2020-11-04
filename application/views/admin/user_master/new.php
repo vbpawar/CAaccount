@@ -111,7 +111,7 @@
                             <!--Block Styled Form -->
                             <!--===================================================-->
                             
-                            <form id="userForm" method="post">
+                            <form action="<?php // echo base_url('services/demo/testFormData');?>" id="userForm" method="post">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-4">

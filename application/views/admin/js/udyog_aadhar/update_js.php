@@ -3,13 +3,14 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#userid').val(product.userid);
+        $('#uid').val(product.uid);
         $('#adharnumber').val(product.adharnumber);
         $('#nameofent').val(product.nameofent);
         $('#gender').val(product.gender);
         $('#mobilenumber').val(product.mobilenumber);
         $('#emailid').val(product.emailid);
         $('#category').val(product.category);
+        $('#nameofentr').val(product.nameofentr);
         $('#typeoforg').val(product.typeoforg);
         $('#ustate').val(product.ustate);
         $('#district').val(product.district);
@@ -28,14 +29,13 @@
 
     loadDetails(details);
 
-    $('#udyogAadharForm').on('submit', function (e) {
-
+$('#udyogAadharForm').on('submit', function (e) {
         e.preventDefault();
 
-    var returnVal = $("#udyogAadharForm").valid();
-
-        if (returnVal) {
+//    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
+            formdata.append('userid',1);
+        if (true) {
 
             $.ajax({
 
@@ -58,9 +58,11 @@
 //                console.log(response);
 
                     if (response.Responsecode == 200) {
-//                         var productid = response.Data.customerId;
-//                    productid = productid.toString();
+
                         swal("Congrats!", response.Message, "success");
+
+
+
                         goback();
 
                     } else {
@@ -77,10 +79,7 @@
 
     });
 
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+    
+
+
 </script>

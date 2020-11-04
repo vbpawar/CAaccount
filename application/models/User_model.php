@@ -20,22 +20,24 @@ class User_model extends CI_Model {
         $this->db->where('userid', $userid);
         $result = $this->db->delete('user_master');
         if ($result) {
-            return TRUE;
+            $this->db->where('userid', $userid);
+        $res = $this->db->delete('contact_master');
+        
+            return ($res)?TRUE:FALSE;
         } else {
             return FALSE;
         }
     }
-    
+
     public function findUser($userid) {
-         $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
+        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
         return $query->row();
     }
-    public function updateuser($userid,$data)
-    {
-        $this->db->where('userid',$userid);
-        $result['result'] =   $this->db->update('user_master',$data);
-        $result['data']  = $this->db->get_where("user_master", ['userid' => $userid])->row_array();
-        return $result;
+
+    public function updateuser($userid, $data) {
+        $this->db->where('userid', $userid);
+        $this->db->update('user_master', $data);
+        return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
     }
 
 }

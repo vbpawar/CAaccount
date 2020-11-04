@@ -1,6 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var caCertificate = new Map();
+    var udyogAadharList = new Map();
 
     const loadList = () => {
 
@@ -21,11 +21,11 @@
 
                     for (var i = 0; i < count; i++) {
 
-                        caCertificate.set(response.Data[i].uid, response.Data[i]);
+                        udyogAadharList.set(response.Data[i].uid, response.Data[i]);
 
                     }
 
-                    showList(caCertificate);
+                    showList(udyogAadharList);
 
                 }
 
@@ -87,11 +87,11 @@
 
         laborid = laborid.toString();
 
-        if (caCertificate.has(laborid)) {
+        if (udyogAadharList.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = caCertificate.get(laborid);
+            var product = udyogAadharList.get(laborid);
 
             ulaborid = laborid;
             details = product;
@@ -114,8 +114,8 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = caCertificate.get(laborid);
-    var name=product.nameasperadhar;
+    var product = udyogAadharList.get(laborid);
+    var name=product.nameofent;
     var msg='Do you want to delete '+name+' Information ?';
     
     var alert1 = '';
@@ -135,11 +135,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'UdyogAdhar/removebill',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{uid:laborid},
 
 //            cache: false,
 //
@@ -151,7 +151,7 @@ function deletePermission(laborid) {
 
             success: function(response) {
 
-                console.log(response.userId);
+//                console.log(response.userId);
 
                 if (response.Responsecode == 200) {
 
@@ -208,7 +208,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/UdyogAadhar/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

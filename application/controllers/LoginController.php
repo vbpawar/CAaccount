@@ -95,7 +95,6 @@ class LoginController extends CI_Controller {
 
     public function logout() {
         $this->load->driver('cache');
-        $this->session->unset_userdata();
         $this->session->sess_destroy();
         $this->cache->clean();
         redirect(base_url('services/user/login'));

@@ -1,3 +1,10 @@
+<?php
+$session_data=$this->session->userdata();
+//$isSession=$this->session->has_userdata();
+if(isset($session_data['Data'])){
+    redirect(base_url('services/user/dashboard'));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

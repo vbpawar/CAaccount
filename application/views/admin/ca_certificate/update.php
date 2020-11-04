@@ -121,8 +121,13 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Name</label>
+<<<<<<< HEAD
                                                                 <input type="text" class="form-control" placeholder="As per Aadhar" name="nameasperadhar" />
                                                                 <input type="hidden" class="form-control" name="userid" value="1" />
+=======
+                                                                <input type="text" class="form-control" placeholder="As per Aadhar"  id="nameasperadhar"  name="nameasperadhar" />
+                                                                <input type="hidden" class="form-control" id="certid"  name="certid" />
+>>>>>>> 5867814cb181607017eabfbde505d68bcd902505
                                                             </div>
                                                         </div>
 

@@ -1,7 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
     $('#udyogAadharForm').on('submit', function (e) {
-
         e.preventDefault();
 
 //    var returnVal = $("#caCertificateForm").valid();

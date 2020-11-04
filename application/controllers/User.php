@@ -13,8 +13,7 @@ class User extends CI_Controller {
     }
 
     public function createUser() {
-        $roleid = $this->input->post('roleid');
-        $user1 = array(
+        $user = array(
             'roleid' => $this->input->post('roleid'),
             'emailid' => $this->input->post('emailid'),
             'firstname' => $this->input->post('firstname'),
@@ -22,7 +21,7 @@ class User extends CI_Controller {
             'upassword' => $this->input->post('upassword'),
             'contact' => $this->input->post('contact'),
         );
-        $userid = $this->user->createNewUser($user1);
+        $userid = $this->user->createNewUser($user);
         $contact = array(
             'userid' => $userid,
             'country' => $this->input->post('country'),
@@ -85,68 +84,75 @@ class User extends CI_Controller {
         }
         echo json_encode($response);
     }
-    
+
     public function findUser($userid) {
 //        $userid = $this->input->get('userid');
-        $record=$this->user->findUser($userid);   
-        if($record!=null){
-             $response = array(
+        $record = $this->user->findUser($userid);
+        if ($record != null) {
+            $response = array(
                 'Message' => 'get user successfully',
-                 'Data'=>$record,
+                'Data' => $record,
                 'Responsecode' => 200
             );
-        }else{
-             $response = array(
+        } else {
+            $response = array(
                 'Message' => 'not found',
                 'Responsecode' => 401
             );
         }
         echo json_encode($response);
     }
-     //API - update a service
 
-   public function updateuser(){
-    $userid = $this->input->post('userid');
-    $data = array(
-        'roleid' => $this->input->post('roleid'),
-        'emailid' => $this->input->post('emailid'),
-        'firstname' => $this->input->post('firstname'),
-        'lastname' => $this->input->post('lastname'),
-        'upassword' => $this->input->post('upassword'),
-        'contact' => $this->input->post('contact')
-    );
-    $contact = array(
-        'country' => $this->input->post('country'),
-        'ustate' => $this->input->post('ustate'),
-        'city' => $this->input->post('city'),
-        'pincode' => $this->input->post('pincode'),
-        'uaddress' => $this->input->post('uaddress'),
-    );
-    if(!$userid || !$data || empty($data)){
-        $response = array(
-            'Message' => 'Parameter missing',
-            'Responsecode' => 404
+    //API - update a service
+
+    public function updateuser() {
+        $userid = $this->input->post('userid');
+        $data = array(
+            'roleid' => $this->input->post('roleid'),
+            'emailid' => $this->input->post('emailid'),
+            'firstname' => $this->input->post('firstname'),
+            'lastname' => $this->input->post('lastname'),
+            'upassword' => $this->input->post('upassword'),
+            'contact' => $this->input->post('contact')
         );
-    }else{
-       $user = $this->user->updateuser($userid,$data);
-       $contact = $this->contact->updatecontact($userid,$contact);
-       if($user['result'] === 0 && $contact['result'] ===0){
-        $response = array(
-            'Message' => 'Sorry try again',
-            'Responsecode' => 302
+        $contact = array(
+            'country' => $this->input->post('country'),
+            'ustate' => $this->input->post('ustate'),
+            'city' => $this->input->post('city'),
+            'pincode' => $this->input->post('pincode'),
+            'uaddress' => $this->input->post('uaddress'),
         );
-       }else{
-           $contactdetails = $contact['data'];
-           $userdata = $user['data'];
-        $response = array(
-            'Message' => 'user updated successfully',
-            'contactdetails'=> $contactdetails,
-            'userdata'=>$userdata,
-            'Responsecode' => 200
-        );
-       }
-   }
-   echo json_encode($response);
-   }
+        
+        $response=NULL;
+        if ($data == null || $contact == null || $userid == null) {
+            $response = array(
+                'Message' => 'Parameter missing',
+                'Responsecode' => 404
+            );
+        } else {
+            $userResult;
+            $contactResult;
+            $userResult = $this->user->updateuser($userid, $data);
+            if ($userResult) {
+                $contactResult = $this->contact->updatecontact($userid, $contact);
+                if ($userResult === FALSE && $contactResult === FALSE) {
+                    $response = array(
+                        'Message' => 'Sorry try again',
+                        'Responsecode' => 302
+                    );
+                } else {
+//                    $contactdetails = $contact['data'];
+//                    $userdata = $user['data'];
+                    $response = array(
+                        'Message' => 'user updated successfully',
+//                        'contactdetails' => $contactdetails,
+//                        'userdata' => $userdata,
+                        'Responsecode' => 200
+                    );
+                }
+            }
+        }
+        echo json_encode($response);
+    }
 
 }
