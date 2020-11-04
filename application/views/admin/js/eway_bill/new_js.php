@@ -28,7 +28,7 @@
 
                 success: function (response) {
 //                alert(response.Data.customerId);
-               console.log(response);
+                console.log(response);
 
                     if (response.Responsecode == 200) {
 
@@ -36,7 +36,7 @@
 
 
 
-                       // goback();
+//                        goback();
 
                     } else {
 

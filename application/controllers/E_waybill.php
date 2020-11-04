@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
+ 
 class E_waybill extends CI_Controller{
 
     public function __construct()
@@ -62,6 +63,11 @@ class E_waybill extends CI_Controller{
          $document = 'Documents uplaoded';
          }
         }
+//        if($a && $p){
+//            $document = 'Documents uplaoded';
+//        }else{
+//            $document = 'Document not uploaded';
+//        }
         $response = array(
             'Message' => 'E-Way Bill Generated successfully',
             'Doc'=>$document,

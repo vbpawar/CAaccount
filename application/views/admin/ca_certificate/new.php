@@ -83,12 +83,12 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
+            <h3><i class="fa fa-home"></i> Project Certificate</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">forms wizard</li>
+                    <li class="active">Project Certificate</li>
                 </ol>
             </div>
         </div>
@@ -99,23 +99,22 @@
         <div id="page-content">
             <div class="row">
                 <div class="col-md-12">
-                <form action="" method="post" id="caCertificateForm" method="post" name="caCertificateForm" >
+                    <form action="" method="post" id="caCertificateForm" method="post" name="caCertificateForm">
+                        <section class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Project Certificate</h3>
+                            </div>
 
-                    <section class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Project Certificate</h3>
-                        </div>
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <ul class="nav nav-pills">
+                                        <li class="active"><a data-toggle="pill" href="#home"> Details</a></li>
+                                        <li><a data-toggle="pill" href="#menu1">Documents</a></li>
+                                        <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
+                                    </ul>
 
-                        <div class="panel">
-                            <div class="panel-body">
-                                <ul class="nav nav-pills">
-                                    <li class="active"><a data-toggle="pill" href="#home"> Details</a></li>
-                                    <li><a data-toggle="pill" href="#menu1">Documents</a></li>
-                                    <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
+                                    <div class="tab-content">
+                                        <div id="home" class="tab-pane fade in active">
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
@@ -175,25 +174,49 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                        
-                                    </div>
+                                        </div>
 
-                                    <div id="menu1" class="tab-pane fade">
-                                        
+                                        <div id="menu1" class="tab-pane fade">
                                             <div class="panel">
                                                 <div class="panel-body">
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">Aadhar Card </label>
-                                                                <input type="file" class="form-control" name="aadharattach" id="Pan" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" onchange="loadFile(event,'out1')" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="output"></label>
+                                                                <img src="" alt="" id="out1" width="110px" height="110px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="form-label">PAN Card </label>
-                                                                <input type="file" class="form-control" name="panattach" id="Pan" placeholder="" name="" />
+                                                                <input type="file" class="form-control" name="Pan" id="Pan" placeholder="" name="" onchange="loadFile(event,'out2')" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="output"></label>
+                                                                <img src="" alt="" id="out2" width="110px" height="110px" />
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="productDesc">Brand Image</label>
+                                                                <input type="file" name="imgname" id="imgname" class="form-control" accept="image/*" onchange="loadFile(event,'output')" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="output">Brand Image view</label>
+                                                                <img src="" alt="" id="output" width="110px" height="110px" />
                                                             </div>
                                                         </div>
 
@@ -210,15 +233,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                      
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- </div> -->
+                                <!--===================================================-->
+                                <!--End Block Styled Form -->
                             </div>
-                            <!-- </div> -->
-                            <!--===================================================-->
-                            <!--End Block Styled Form -->
-                        </div>
-                    </section>
+                        </section>
                     </form>
                 </div>
             </div>

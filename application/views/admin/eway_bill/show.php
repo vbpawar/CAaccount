@@ -85,12 +85,12 @@
                         </div>
                     </div>
                     <div class="pageheader">
-                        <h3><i class="fa fa-home"></i> Datatable Table </h3>
+                        <h3><i class="fa fa-home"></i> E-way Bill List </h3>
                         <div class="breadcrumb-wrapper">
                             <span class="label">You are here:</span>
                             <ol class="breadcrumb">
                                 <li> <a href="#"> Home </a> </li>
-                                <li class="active"> datatable Table </li>
+                                <li class="active"> E-way Bill List </li>
                             </ol>
                         </div>
                     </div>
@@ -100,10 +100,9 @@
                         <!-- Basic Data Tables -->
                         <!--===================================================-->
                         <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">E-way Bill List</h3>
-                            </div>
+                            
                             <div class="panel-body">
+                            <a class="btn btn-primary" href="<?php echo base_url('services/EwayBill/create');?> " role="button">Add New Entry</a>
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>

@@ -82,12 +82,12 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Form Layout </h3>
+            <h3><i class="fa fa-home"></i> Retailor </h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li> <a href="#"> Home </a> </li>
-                    <li class="active"> form layout </li>
+                    <li class="active"> Retailor </li>
                 </ol>
             </div>
         </div>

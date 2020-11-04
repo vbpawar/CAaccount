@@ -24,6 +24,9 @@ class ImportExport extends CI_Controller {
     public function show() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
+        
         $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/import_export/show');
         $this->load->view('admin/js/comman_js');

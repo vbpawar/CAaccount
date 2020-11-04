@@ -52,3 +52,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'LoginController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['certificate']='services/certificate/show';
+$route['certificate/create']='services/certificate/create';
+
+$route['report']='services/report/show';
+$route['report/create']='services/report/create';
+
+$route['importExport']='services/ImportExport/show';
+$route['importExport/create']='services/ImportExport/create';
+
+$route['income']='services/income/show';
+$route['income/create']='services/income/create';
+
+$route['pancard']='services/pancard/show';
+$route['pancard/create']='services/pancard/create';
+
+$route['balancesheet']='services/balancesheet/show';
+$route['balancesheet/create']='services/balancesheet/create';
+
+$route['ewayBill']='services/EwayBill/show';
+$route['ewayBill/create']='services/EwayBill/create';
+
+$route['retailorDistributor']='services/RetailorDistributor/show';
+$route['retailorDistributor/create']='services/RetailorDistributor/create';
+
+$route['udyagAadhar']='services/UdyogAadhar/show';
+$route['udyagAadhar/create']='services/UdyogAadhar/create';
+
+$route['shopAct']='services/ShopAct/show';
+$route['shopAct/create']='services/ShopAct/create';
+
+$route['userMaster']='services/UserMaster/show';
+$route['userMaster/create']='services/UserMaster/create';
+
+$route['retailor']='services/Retailor/show';
+$route['retailor/create']='services/Retailor/create';
+
+$route['login']='services/user/login';
