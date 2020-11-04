@@ -137,10 +137,10 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Gender</label>
                                                                 <select class="form-control" name="gender" id="gender" required="">
-                                                                    <option value="0">--Select--</option>
-                                                                    <option value="1">Male</option>
-                                                                    <option value="2">Female </option>
-                                                                    <option value="3">Others</option>
+                                                                    
+                                                                    <option value="male">Male</option>
+                                                                    <option value="female">Female </option>
+                                                                    <option value="other_gender">Others</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -149,11 +149,11 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Category</label>
                                                                 <select class="form-control" name="category" id="category" required="">
-                                                                    <option value="">--Select--</option>
+                                                                    <option value="Others" >Others</option>
                                                                     <option value="ST">ST</option>
                                                                     <option value="SC">SC </option>
                                                                     <option value="OBC">OBC</option>
-                                                                    <option value="Others">Others</option>
+                                                                   
                                                                 </select>
                                                             </div>
                                                         </div>
