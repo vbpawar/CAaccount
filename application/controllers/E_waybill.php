@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
+ 
 class E_waybill extends CI_Controller{
 
     public function __construct()
@@ -57,14 +58,37 @@ class E_waybill extends CI_Controller{
             );
        }else{ 
         if(!empty($_FILES['aadharattach']['name']) && !empty($_FILES['panattach']['name']) ){ 
-         $a = $this->uploaddocs('aadharattach',$_FILES['aadharattach']['name']);
-         $p= $this->uploaddocs('panattach',$_FILES['panattach']['name']);
+//         $a = $this->uploaddocs('aadharattach',$_FILES['aadharattach']['name']);
+//         $a = $this->uploaddocs('aadharattach',$_FILES['aadharattach']);
+//         $p= $this->uploaddocs('panattach',$_FILES['panattach']);
+            $config['upload_path']          = '/uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 2048;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('aadharattach'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+//                        $this->load->view('upload_form', $error);
+                         $document = $error;
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+
+//                        $this->load->view('upload_success', $data);
+                     $document = $data;
+                }
         }
-        if($a && $p){
-            $document = 'Documents uplaoded';
-        }else{
-            $document = 'Document not uploaded';
-        }
+//        if($a && $p){
+//            $document = 'Documents uplaoded';
+//        }else{
+//            $document = 'Document not uploaded';
+//        }
         $response = array(
             'Message' => 'E-Way Bill Generated successfully',
             'Doc'=>$document,
@@ -139,24 +163,27 @@ class E_waybill extends CI_Controller{
 
    public function uploaddocs($filetitle,$file)
    {
-   echo $file;
-        $config['upload_path'] = 'document/'; 
-        $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf'; 
-        $config['max_size'] = '5000'; // max_size in kb 
-        $config['file_name'] = $file; 
+       print_r($file);
+        $config['upload_path']          = './documents/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 2048;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
 
-        // Load upload library 
-        $this->load->library('upload',$config); 
-  
-        // File upload
-        if($this->upload->do_upload($filetitle)){ 
-           // Get data about the file
-           $uploadData = $this->upload->data(); 
-           $filename = $uploadData['file_name']; 
-           return true; 
-        }else{ 
-          return false; 
-        } 
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+
+                        $this->load->view('upload_success', $data);
+                } 
    }
     
 }
