@@ -35,11 +35,6 @@ class UserMaster extends CI_Controller {
     }
 
     public function update() {
-        $this->load->view('admin/header');
-        $this->load->view('admin/navigation/notificationbar');
-        $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/user_master/update');
         $this->load->view('admin/js/user_master/update_js');
 

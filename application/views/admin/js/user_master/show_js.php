@@ -97,7 +97,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/certificate/update',
+                url: url+'services/UserMaster/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -114,7 +114,7 @@
     var deleteData = laborid =>{
     laborid = laborid.toString();
     var product = userList.get(laborid);
-    var name=product.nameasperadhar;
+    var name=product.firstname+' '+product.lastname;
     var msg='Do you want to delete '+name+' Information ?';
     
     var alert1 = '';
@@ -134,11 +134,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'user/deleteUser',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{userid:laborid},
 
 //            cache: false,
 //
@@ -150,7 +150,7 @@ function deletePermission(laborid) {
 
             success: function(response) {
 
-                console.log(response.userId);
+//                console.log(response.userId);
 
                 if (response.Responsecode == 200) {
 
@@ -207,7 +207,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'services/UserMaster/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

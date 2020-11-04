@@ -1,14 +1,19 @@
 <script>
 
     function loadDetails(product) {
-//    $('#pic_productId').val(product.testimonialId);
 
-        $('#billid').val(product.billid);
-        $('#gstid').val(product.gstid);
-        $('#gstnumber').val(product.gstnumber);
-        $('#gstpwd').val(product.gstpwd);
-        $('#mobilenumber').val(product.mobilenumber);
+        $('#userid').val(product.userid);
+        $('#roleid').change(product.roleid);
         $('#emailid').val(product.emailid);
+        $('#firstname').val(product.firstname);
+        $('#lastname').val(product.lastname);
+        $('#upassword').val(product.upassword);
+        $('#contact').val(product.contact);
+        $('#country').val(product.country);
+        $('#ustate').val(product.ustate);
+        $('#city').val(product.city);
+        $('#pincode').val(product.pincode);
+        $('#uaddress').val(product.uaddress);
 
     }
 
@@ -22,10 +27,9 @@
 
         if (true) {
         var formdata = new FormData(this);
-        formdata.append('userid',1);
             $.ajax({
 
-                url: url + 'E_waybill/updatebill',
+                url: url + 'User/updateuser',
 
                 type: 'POST',
 

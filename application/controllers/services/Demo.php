@@ -57,8 +57,16 @@ class Demo extends CI_Controller {
         echo base_url();
     }
     
-    public function test() {
-        
+    public function testFormData() {
+        $user = array(
+            'roleid' => $this->input->post('roleid'),
+            'emailid' => $this->input->post('emailid'),
+            'firstname' => $this->input->post('firstname'),
+            'lastname' => $this->input->post('lastname'),
+            'upassword' => $this->input->post('upassword'),
+            'contact' => $this->input->post('contact'),
+        );
+        print_r($user);
     }
 
 }
