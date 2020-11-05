@@ -12,8 +12,9 @@ class Access_control extends CI_Controller{
     private $records = null;
 
     //get API for all services
-    public function getallaccess() {
-        $records = $this->service->getretailors();
+    public function getuseraccess() {
+        $userid = $this->input->post('userid');
+        $records = $this->service->getuserlist($userid);
         if ($records != null) {
             $response = array(
                 'Message' => 'All data load successfully',
@@ -30,11 +31,11 @@ class Access_control extends CI_Controller{
     }
 
     //create API for documnet master
-    public function add_dist_retailors()
+    public function addaccess()
     {
         $data = array(
-        'distributorid'=>$this->input->post('distributorid'),
-        'retailorid' => $this->input->post('retailorid')
+        'userid'=>$this->input->post('userid'),
+        'activityid' => $this->input->post('activityid')
         );
     if(!$data){
         $response = array(
@@ -42,10 +43,10 @@ class Access_control extends CI_Controller{
             'Responsecode' => 303
         );
     }else{ 
-        $result = $this->service->add_retailors($data);
+        $result = $this->service->add_access($data);
         if($result['status']){ 
             $response = array(
-                'Message' => 'Distributor are mapped to retailors added successfully',
+                'Message' => 'User access added successfully',
                 'Data'=>$result['data'],
                 'Responsecode' => 200
             );
@@ -62,18 +63,17 @@ class Access_control extends CI_Controller{
     //API - delete a document 
     public function removemap()
     {
-        $id  = $this->input->post('distretid');
+        $id  = $this->input->post('accessid');
         if(!$id || empty($id)){
             $response = array(
                 'Message' => 'Parameter missing',
                 'Responsecode' => 404
             );
         }else{
-         
         if($this->service->removemap($id))
         {
             $response = array(
-                'Message' => 'Distributor retailors removed successfully',
+                'Message' => 'Users access removed successfully',
                 'Responsecode' => 200
             );
         } 
@@ -88,34 +88,6 @@ class Access_control extends CI_Controller{
         echo json_encode($response);
     }
 
-   //API - update a service
-   public function updateretailors(){
-    $distretid      = $this->input->post('distretid');
-    $data = array(
-        'distributorid'=>$this->input->post('distributorid'),
-        'retailorid' => $this->input->post('retailorid')
-        );
-    if(!$distretid && !$data && empty($data)){
-        $response = array(
-            'Message' => 'Parameter missing',
-            'Responsecode' => 404
-        );
-    }else{
-       $result = $this->service->updateretailors($distretid,$data);
-       if($result['status']){
-        $response = array(
-            'Message' => 'update distributor retailors successfully updated',
-            'Data'=>$result['data'],
-            'Responsecode' => 200
-        );
-       }else{
-        $response = array(
-            'Message' => 'Sorry try again',
-            'Responsecode' => 302
-        );
-       }
-   }
-   echo json_encode($response);
-   }
+
     
 }
