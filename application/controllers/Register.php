@@ -11,7 +11,7 @@ class Register extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('register');
+		$this->load->view('registration-form');
 	}
 
 	/**
@@ -24,7 +24,7 @@ class Register extends CI_Controller {
 		 * You can calculate payment amount as per your logic
 		 * Always set the amount from backend for security reasons
 		 */
-		$_SESSION['payable_amount'] = 10;
+		$_SESSION['payable_amount'] = 100;
 
 		$razorpayOrder = $api->order->create(array(
 			'receipt'         => rand(),
@@ -148,5 +148,7 @@ class Register extends CI_Controller {
 	public function paymentFailed()
 	{
 		$this->load->view('error');
-	}	
+	}
+	
+	
 }

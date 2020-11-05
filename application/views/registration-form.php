@@ -1,6 +1,8 @@
+
 <!doctype html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="https://codingbirdsonline.com/wp-content/uploads/2019/12/cropped-coding-birds-favicon-2-1-192x192.png" type="image/x-icon">
@@ -33,7 +35,7 @@
 
 					<label for="subject">Amount <span style="color: #FF0000">*</span></label>
                         <div class="form-label-group">
-                            <input type="text" id="amount" name="amount" value="10" readonly class="form-control" placeholder="Amount" required>
+                            <input type="text" id="amount" name="amount" value="100" readonly class="form-control" placeholder="Amount" required>
                         </div><br/>
                        <br/>
                         <button type="submit" name="sendMailBtn" class="btn btn-lg btn-primary btn-block text-uppercase" >Pay Now</button>
