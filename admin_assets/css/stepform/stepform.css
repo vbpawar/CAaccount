@@ -39,6 +39,12 @@ p.narrow{
     z-index: 1;
 }
 
+.nav {
+    padding-left: 200px;
+    margin-bottom: 0;
+    list-style: none;
+}
+
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: #555555;
     cursor: default;
@@ -169,6 +175,7 @@ li.active span.round-tabs.five{
 .tab-pane{
    position: relative;
 padding-top: 50px;
+
 }
 .tab-content .head{
     font-family: 'Roboto Condensed', sans-serif;

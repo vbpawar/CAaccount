@@ -81,12 +81,12 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Distributor</h3>
+            <h3><i class="fa fa-home"></i> Wallet</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">Distributor</li>
+                    <li class="active">Wallet</li>
                 </ol>
             </div>
         </div>
@@ -94,147 +94,141 @@
         <!--===================================================-->
         <div id="page-content">
             <!-- <div class="row"> -->
-                <div class="eq-height">
-                    <div class="col-sm-6 eq-box-sm">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <div class="panel-control">
-                                    <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
+            <div class="eq-height">
+                <div class="col-sm-6 eq-box-sm">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-control">
+                                <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                    <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
-                                </div>
-                                <h3 class="panel-title">Add New Entry</h3>
+                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                             </div>
-                            <!--Block Styled Form -->
-                            <!--===================================================-->
-                            <form id="distributorForm" method="post">
-                                
-                                    <section style="background: #efefe9;">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="">
-                                                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
-                                                    <div class="board-inner">
-                                                        <ul class="nav nav-tabs" id="myTab">
-                                                            <div class="liner"></div>
-                                                            <li class="active">
-                                                                <a href="#home" data-toggle="tab" title="welcome">
-                                                                    <span class="round-tabs one">
-                                                                        <i class="glyphicon glyphicon-home"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
+                            <h3 class="panel-title">Wallet Information</h3>
+                        </div>
+                        <!--Block Styled Form -->
+                        <!--===================================================-->
+                        <form id="distributorForm" method="post">
+                            <section style="background: #efefe9;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="">
+                                            <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                                            <div class="board-inner">
+                                                <ul class="nav nav-tabs" id="myTab">
+                                                    <!-- <div class="liner"></div> -->
 
-                                                            <li>
-                                                                <a href="#profile" data-toggle="tab" title="profile">
-                                                                    <span class="round-tabs two">
-                                                                        <i class="glyphicon glyphicon-user"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#messages" data-toggle="tab" title="bootsnipp goodies">
-                                                                    <span class="round-tabs three">
-                                                                        <i class="glyphicon glyphicon-gift"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
+                                                    <li class="active">
+                                                        <a href="#wallet" data-toggle="tab" title="Wallet">
+                                                            <span class="round-tabs two">
+                                                                <i class="fas fa-wallet"></i>
+                                                                <i class="glyphicon glyphicon-cash"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#transafermny" data-toggle="tab" title="Transafer Money">
+                                                            <span class="round-tabs one">
+                                                                <i class="glyphicon glyphicon-share"></i>
+                                                                <i class="fas fa-comment-dollar"></i>
+                                                                
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#transact" data-toggle="tab" title="Transactions">
+                                                            <span class="round-tabs three">
+                                                                <i class="glyphicon glyphicon-random"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
 
-                                                            <li>
-                                                                <a href="#settings" data-toggle="tab" title="blah blah">
-                                                                    <span class="round-tabs four">
-                                                                        <i class="glyphicon glyphicon-comment"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
+                                                    <li>
+                                                        <a href="#addmoneys" data-toggle="tab" title="Add Money">
+                                                            <span class="round-tabs four">
+                                                                <i class="fa fa-inr"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
 
-                                                            <li>
-                                                                <a href="#doner" data-toggle="tab" title="completed">
-                                                                    <span class="round-tabs five">
-                                                                        <i class="glyphicon glyphicon-ok"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane fade in active" id="home">
-                                                        <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Role Name</label>
-                                                <select  id="distributorid" name="distributorid" class="form-control">
-                                                <option value="1">id1</option>
-                                                <option value="2">id2</option>
-
-                                                </select>
-                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                    <!-- <li>
+                                                        <a href="#doner" data-toggle="tab" title="completed">
+                                                            <span class="round-tabs five">
+                                                                <i class="glyphicon glyphicon-ok"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li> -->
+                                                </ul>
                                             </div>
-                                        </div>
-                                       
 
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">User Name</label>
-                                                <select  id="retailorid" name="retailorid" class="form-control">
-                                                <option value="1">id1</option>
-                                                <option value="2">id2</option>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active" id="wallet">
+                                                    <h3 class="head text-center">Bootsnipp goodies</h3>
 
-                                                </select>
-                                                <!--<input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">-->
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                    </div>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="profile">
-                                                           
-                                                        </div>
-                                                        <div class="tab-pane fade" id="messages">
-                                                            <h3 class="head text-center">Bootsnipp goodies</h3>
-                                                            <p class="narrow text-center">
-                                                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                                            </p>
+                                                    <p class="text-center">
+                                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane fade" id="transafermny">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Name</label>
+                                                                <input type="disabled" class="form-control" placeholder="Wasim Shaikh" name="retailorid" id="retailorid" />
 
-                                                            <p class="text-center">
-                                                                <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="settings">
-                                                            <h3 class="head text-center">Drop comments!</h3>
-                                                            <p class="narrow text-center">
-                                                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                                            </p>
-
-                                                            <p class="text-center">
-                                                                <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="doner">
-                                                            <div class="text-center">
-                                                                <i class="img-intro icon-checkmark-circle"></i>
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
-                                                            <h3 class="head text-center">thanks for staying tuned! <span style="color: #f48260;">♥</span> Bootstrap</h3>
-                                                            <p class="narrow text-center">
-                                                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                                            </p>
                                                         </div>
-                                                        <div class="clearfix"></div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Account ID</label>
+
+                                                                <input type="disabled" class="form-control" placeholder="0011110" name="retailorid" id="retailorid" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="tab-pane fade" id="transact">
+                                                    <div class="card-body">
+                                                        <div class="card"></div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                        </ul>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                        </ul>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                            <li class="list-group-item">Cras justo odio</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="addmoneys">
+                                                    <div class="text-center">
+                                                        <i class="img-intro icon-checkmark-circle"></i>
+                                                    </div>
+                                                    <h3 class="head text-center">thanks for staying tuned! <span style="color: #f48260;">♥</span></h3>
+
+                                                    <p class="text-center">
+                                                        <a href="" class="btn btn-success btn-outline-rounded green"> Add Money Using UPI <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                    </p>
+                                                </div>
+
+                                                <div class="clearfix"></div>
                                             </div>
                                         </div>
-                                    </section>
-                                
-                            </form>
-                            <!--===================================================-->
-                            <!--End Block Styled Form -->
-                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                        <!--===================================================-->
+                        <!--End Block Styled Form -->
                     </div>
                 </div>
+            </div>
             <!-- </div> -->
         </div>
         <!--===================================================-->
