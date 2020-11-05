@@ -163,10 +163,10 @@
 
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active" id="wallet">
-                                                    <h3 class="head text-center">Bootsnipp goodies</h3>
+                                                    <h3 class="head text-center"></h3>
 
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        <a href="" class="btn btn-success btn-outline-rounded green">Amount 5000<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
                                                     </p>
                                                 </div>
                                                 <div class="tab-pane fade" id="transafermny">
