@@ -83,12 +83,12 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Forms Wizard</h3>
+            <h3><i class="fa fa-home"></i> PAN CARD</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">forms wizard</li>
+                    <li class="active">PAN CARD</li>
                 </ol>
             </div>
         </div>
