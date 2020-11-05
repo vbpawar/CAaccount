@@ -304,7 +304,7 @@
                                             </div>
                                             <div class="tab-sub-head">
                                                 <div class="text-left">
-                                                    <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
+                                                <a class="btn btn-primary" href="<?php echo base_url('services/Income/show');?> " role="button">Cancel</a>
                                                     <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
                                                 </div>
                                             </div>
@@ -511,7 +511,7 @@
                                                     <hr />
                                                     <div class="tab-sub-head">
                                                         <div class="text-left">
-                                                            <button class="btn btn-primary" type="button" name="Reset" value="Reset" id="resetForm1">Reset</button>
+                                                            <a class="btn btn-primary" href="<?php echo base_url('services/UdyogAadhar/show');?> " role="button">Cancel</a>
                                                             <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
                                                         </div>
                                                     </div>
