@@ -83,3 +83,5 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+define('RAZOR_KEY', 'rzp_test_R7lM1Lh4HqtW8d');
+define('RAZOR_SECRET_KEY', 'W4Dx1pZvlV6oEas8tWux7Idm');
