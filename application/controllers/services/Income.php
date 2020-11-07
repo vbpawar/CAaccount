@@ -16,9 +16,9 @@ class Income extends CI_Controller {
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/css/stepform_css');
-        $this->load->view('admin/income/income_redesign');
+       
 
-        // $this->load->view('admin/income/new');
+        $this->load->view('admin/income/new');
 
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/income/new_js');

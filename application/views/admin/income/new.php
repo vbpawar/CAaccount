@@ -1,4 +1,4 @@
-<div class="boxed">
+<div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
     <div id="content-container">
@@ -80,454 +80,296 @@
                 </div>
             </div>
         </div>
-        <!--Page Title-->
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> INCOME</h3>
+            <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> PF Withdrawal</h3> -->
+            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> PF Withdrawal</h3>
+
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">INCOME</li>
+                    <li class="active">PF Withdrawal</li>
                 </ol>
             </div>
         </div>
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <!--End page title-->
         <!--Page content-->
         <!--===================================================-->
         <div id="page-content">
-            <div class="row">
-                <div class="col-md-12">
-                    <form action="" method="post" id="balancesheetForm">
-                        <section class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">INCOME</h3>
+            <!-- <div class="row"> -->
+            <div class="eq-height">
+                <div class="col-sm-6 eq-box-sm">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-control">
+                                <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
+                                    <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
+                                    <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
+                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                             </div>
+                            <h3 class="panel-title">PF Withdrawal Information</h3>
+                        </div>
+                        <!--Block Styled Form -->
+                        <!--===================================================-->
+                        <form id="pf-withdrawl-form" method="post">
+                            <section style="background: #efefe9;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="">
+                                            <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                                            <div class="board-inner">
+                                                <ul class="nav nav-tabs" id="myTab">
+                                                    <!-- <div class="liner"></div> -->
 
-                            <div class="panel">
-                                <div class="panel-body">
-                                    <ul class="nav nav-pills">
-                                        <li class="active"><a data-toggle="pill" href="#home"> Details</a></li>
-                                        <li><a data-toggle="pill" href="#menu1">Documents</a></li>
-                                        <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
-                                    </ul>
+                                                    <li class="active">
+                                                        <a href="#personal" data-toggle="tab" title="Personal Details">
+                                                            <span class="round-tabs one">
+                                                                <i class="fa fa-user"></i>
+                                                                <!-- <i class="glyphicon glyphicon-profile"></i> -->
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#addressdet" data-toggle="tab" title="Address Details">
+                                                            <span class="round-tabs two">
+                                                                <i class="fa fa-address-card"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#bankdet" data-toggle="tab" title="Bank etails">
+                                                            <span class="round-tabs three">
+                                                                <i class="fa fa-bank"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
 
-                                    <div class="tab-content">
-                                        <div id="home" class="tab-pane fade in active">
-                                            <div class="panel">
-                                                <div class="panel-body">
+                                                    <li>
+                                                        <a href="#documenttab" data-toggle="tab" title="Documents">
+                                                            <span class="round-tabs four">
+                                                                <i class="fa fa-file"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <!-- <li>
+                                                        <a href="#doner" data-toggle="tab" title="completed">
+                                                            <span class="round-tabs five">
+                                                                <i class="glyphicon glyphicon-ok"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li> -->
+                                                </ul>
+                                            </div>
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active" id="personal">
+                                                    <h3 class="head text-center"></h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Select Type </label>
-                                                                <select class="form-control" required="" id="typeof" name="typeof">
-                                                                    <option value="1" id="typeof" name="typeof">Bussiness</option>
-                                                                    <option value="2" id="typeof" name="typeof">Salary </option>
-                                                                </select>
+                                                                <label class="control-label"> Name (as per pan card)</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">PAN Card Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Aadhar Card Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
+
+                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">UAN Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="" name="uanraw" id="uan" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">UAN Password</label>
+
+                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Confirm UAN Password</label>
+
+                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="row" id="otherFieldGroupDiv">
-                                                        <!-- <div class="header"><strong>BUSINESS INFO</strong></div> -->
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Business Name</label>
-                                                                <input type="text" class="form-control" name="bussiname" id="bussiname" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Premise Name</label>
-                                                                <input type="text" class="form-control" name="premisename" id="premisename" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label" name="assesmentyear"> Choose Assesment Year </label>
-                                                                <select class="form-control" name="assesmentyear" id="assesmentyear" title="change year if needed">
-                                                                    <option value="">--Select--</option>
-                                                                    <option value="Proprietorship">2020-2021</option>
-                                                                    <option value="Partnership Firm">2019-2020 </option>
-                                                                    <option value="Partnership Firm">2018-2019 </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <!-- <div class="header"><strong>PERSONAL INFO</strong></div> -->
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">First Name</label>
-                                                                <input type="text" class="form-control" name="fname" id="fname" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Middle Name</label>
-                                                                <input type="text" class="form-control" name="mname" id="mname" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Last Name</label>
-                                                                <input type="text" class="form-control" name="lname" id="lname" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Gender</label>
-                                                                <select class="form-control" name="gender" required="" id="gender">
-                                                                    <option value="">--Select--</option>
-                                                                    <option name="male" id="male" value="">Male</option>
-                                                                    <option name="female" id="female" value="">Female </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Date Of Birth </label>
-                                                                <input type="date" name="dob" id="dob" class="form-control" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">PAN Number </label>
-                                                                <input type="text" name="pan" id="pan" class="form-control" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Fathers Name </label>
-                                                                <input type="text" name="father" id="father" class="form-control" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Mobile No. </label>
-                                                                <input type="text" name="mobile" id="mobile" class="form-control" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Email </label>
-                                                                <input type="email" name="email" id="email" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <hr />
-
-                                                    <div class="row">
-                                                        <!-- <div class="header"><strong>BUSINESS CONTACT</strong></div> -->
-                                                        <!-- <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Mobile No.</label>
-                                                        <input type="text" class="form-control" />
-                                                    </div>
+                                                    <!-- <p class="text-center">
+                                                        <a href="" class="btn btn-success btn-outline-rounded green">Amount 5000<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                    </p> -->
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Email</label>
-                                                        <input type="email" class="form-control" />
-                                                    </div>
-                                                </div> -->
-                                                    </div>
-                                                    <hr />
-
+                                                <div class="tab-pane fade" id="addressdet">
                                                     <div class="row">
-                                                        <!-- <div class="header"><strong>ADDRESS</strong></div> -->
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Country</label>
-                                                                <input type="text" class="form-control" placeholder="" name="country" id="country" />
+                                                                <label class="control-label"> Premise Name</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Flat Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Road</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Area</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Village</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Taluka</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">District</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
-                                                                <input type="text" class="form-control" name="ustate" id="ustate" />
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">City/Town</label>
-                                                                <input type="text" class="form-control" name="city" id="city" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Flat/door/block no.</label>
-                                                                <input type="text" class="form-control" placeholder="" name="flat" id="flat" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Road/Street</label>
-                                                                <input type="text" class="form-control" name="road" id="road" />
-                                                            </div>
-                                                        </div>
-
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
-                                                                <input type="text" class="form-control" name="pincode" id="pincode" />
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="bankdet">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Bank Name</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
 
-                                                        <!-- <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Flat/door/block no.</label>
-                                                        <input type="text" class="form-control" placeholder="" />
-                                                    </div>
-                                                </div>-->
-                                                    </div>
-                                                    <hr />
-                                                </div>
-                                            </div>
-                                            <div class="tab-sub-head">
-                                                <div class="text-left">
-                                                <a class="btn btn-primary" href="<?php echo base_url('services/UdyogAadhar/show');?> " role="button">Cancel</a>
-                                                    <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Account Number</label>
 
-                                        <div id="menu1" class="tab-pane fade">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <div class="row">
-                                                        <div>
-                                                            <table class="table table-image">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">DOCUMENT</th>
-                                                                        <th scope="col">PREVIEW</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Bank Statement </label>
-                                                                                <input type="file" class="form-control" name="bankstat" id="bankstat" onchange="loadFile(event,'bankstatpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bankstatpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> 16 No. form Part A & Part B</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'form16pre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">Salary Sleep</label>
-                                                                                <input type="file" id="salarysleep" name="salarysleep" class="form-control" onchange="loadFile(event,'salarysleeppre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="salarysleeppre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">Investment proof</label>
-                                                                                <input type="file" class="form-control" name="invest" id="invest" onchange="loadFile(event,'investpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="investpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">LIC Sleep </label>
-                                                                                <input type="file" class="form-control" name="lic" id="lic" onchange="loadFile(event,'licpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="licpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Loan certificate </label>
-                                                                                <input type="file" class="form-control" name="loancert" id="loancert" onchange="loadFile(event,'loancertpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="loancertpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
+                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- <div class="row">
-                                                <//!-- <div class="header"><strong>RESIDENTIAL ADDRESS</strong></div> --//>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">IFSC Number</label>
 
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Bank Statement(if yes show attachment)</label>
-                                                        <select class="form-control" name="type_of_organisation" required="">
-                                                            <!//-- <option value="">--Select--</option> --//>
-                                                            <option value="Proprietorship">Yes</option>
-                                                            <option value="Partnership Firm">No </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Bank Statement Attachment</label>
-                                                        <input type="file" class="form-control" placeholder="" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">16 no. form Part A & Part B(if yes show attachment)</label>
-                                                        <select class="form-control" name="type_of_organisation" required="">
-                                                            <!//-- <option value="">--Select--</option> --//>
-                                                            <option value="Proprietorship">Yes</option>
-                                                            <option value="Partnership Firm">No </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">16 No. form Part A & Part B Attachment</label>
-                                                        <input type="file" class="form-control" placeholder="" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Salary Sleep(if yes show attachment)</label>
-                                                        <select class="form-control" name="type_of_organisation" required="">
-                                                            <//!-- <option value="">--Select--</option> --//>
-                                                            <option value="Proprietorship">Yes</option>
-                                                            <option value="Partnership Firm">No </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label"> Salary Sleep Attachment</label>
-                                                        <input type="file" class="form-control" placeholder="" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Investment proof(if yes show attachment)</label>
-                                                        <select class="form-control" name="type_of_organisation" required="">
-                                                            </!-- <option value="">--Select--</option> --/>
-                                                            <option value="Proprietorship">Yes</option>
-                                                            <option value="Partnership Firm">No </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Investment proof Attachment</label>
-                                                        <input type="file" class="form-control" placeholder="" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label"> LIC Sleep</label>
-                                                        <input type="file" name= "lic" class="form-control" />
-                                                    </div>
-                                                </div>
-                                                
-
-                                                
-
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <label class="control-label"> Loan certificate </label>
-                                                        <input type="file" name= "form_a" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                                </div>
-
-                                                <div>
-                                                    <hr />
-                                                    <div class="tab-sub-head">
-                                                        <div class="text-left">
-                                                            <a class="btn btn-primary" href="<?php echo base_url('services/Income/show');?> " role="button">Cancel</a>
-                                                            <button class="btn btn-primary" type="submit" name="reg" value="Submit" id="submitForm">Submit</button>
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="tab-pane fade" id="documenttab">
+                                                    <div class="text-center">
+                                                        <i class="img-intro icon-checkmark-circle"></i>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label"> Aadhar Card</label>
+                                                            <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+
+                                                            <!--<input type="file" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Pan Card</label>
+
+                                                            <input type="file" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Passbook/ Cancelled Check</label>
+
+                                                            <input type="file" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-center">
+                                                        <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                    </p>
+                                                </div>
+
+                                                <div class="clearfix"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- </div> -->
-                                <!--===================================================-->
-                                <!--End Block Styled Form -->
-                            </div>
-                        </section>
-                    </form>
+                            </section>
+                        </form>
+                        <!--===================================================-->
+                        <!--End Block Styled Form -->
+                    </div>
                 </div>
             </div>
+            <!-- </div> -->
         </div>
         <!--===================================================-->
         <!--End page content-->
