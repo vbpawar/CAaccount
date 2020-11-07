@@ -1,27 +1,25 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, OPTIONS");
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-class Income extends CI_Controller {
+class DigitalSignService extends CI_Controller {
 
-    
-    public function create() {
+     public function create() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/css/stepform_css');
+
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/css/stepform_css');
-        $this->load->view('admin/income/income_redesign');
-
-        // $this->load->view('admin/income/new');
-
+        $this->load->view('admin/digital_sign/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/income/new_js');
+        
+        // $this->load->view('admin/js/digital_sign/new_js');
         $this->load->view('admin/footer');
     }
     
@@ -31,28 +29,26 @@ class Income extends CI_Controller {
         $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/income/show');
+        $this->load->view('admin/digital_sign/show');
         $this->load->view('admin/js/comman_js');
         $this->load->view('admin/js/dataModalJavaScript');
-        $this->load->view('admin/js/income/show_js');
+        $this->load->view('admin/js/digital_sign/show_js');
         
         $this->load->view('admin/footer');
     }
     public function update() {
-       $this->load->view('admin/header');
-       $this->load->view('admin/css/comman_css');
-       $this->load->view('admin/navigation/notificationbar');
-       $this->load->view('admin/navigation/menubar');
-        ///////////////////////////////////////////////////////
-        $this->load->view('admin/income/update');
+        $this->load->view('admin/header');
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/footer');
+
+        $this->load->view('admin/digital_sign/update');
         $this->load->view('admin/js/jquery_validation_js');
-        // $this->load->view('admin/js/income/income_validation_js');
-        // $this->load->view('admin/js/income/update_js');
-        ///////////////////////////////////////////////////////
-       $this->load->view('admin/js/comman_js');
-       $this->load->view('admin/footer');
+        $this->load->view('admin/js/digital_sign/digital_sign_validation_js');
+        $this->load->view('admin/js/digital_sign/update_js');
+
     }
-    
-    
 
 }
