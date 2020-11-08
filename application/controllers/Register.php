@@ -24,7 +24,7 @@ class Register extends CI_Controller {
 		 * You can calculate payment amount as per your logic
 		 * Always set the amount from backend for security reasons
 		 */
-		$_SESSION['payable_amount'] = 100;
+		$_SESSION['payable_amount'] = $this->input->post('amount');
 
 		$razorpayOrder = $api->order->create(array(
 			'receipt'         => rand(),
@@ -41,7 +41,7 @@ class Register extends CI_Controller {
 		$_SESSION['razorpay_order_id'] = $razorpayOrderId;
 
 		$data = $this->prepareData($amount,$razorpayOrderId);
-
+		//return $data;
 		$this->load->view('rezorpay',array('data' => $data));
 	}
 
@@ -91,16 +91,16 @@ class Register extends CI_Controller {
 		$data = array(
 			"key" => RAZOR_KEY,
 			"amount" => $amount,
-			"name" => "Coding Birds Online",
-			"description" => "Learn To Code",
+			"name" => "TKINFOTECH",
+			"description" => "Accounting Services",
 			"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
 			"prefill" => array(
-				"name"  => $this->input->post('name'),
-				"email"  => $this->input->post('email'),
-				"contact" => $this->input->post('contact'),
+				"name"  => 'vikas pawar',
+				"email"  => 'vikas.nucleon@gmail.com',
+				"contact" => '9657613754',
 			),
 			"notes"  => array(
-				"address"  => "Hello World",
+				"address"  => "Not mention",
 				"merchant_order_id" => rand(),
 			),
 			"theme"  => array(

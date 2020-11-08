@@ -37,18 +37,12 @@ class Certificate extends CI_Controller {
         $this->load->view('admin/footer');
     }
     public function update() {
-//       $this->load->view('admin/header');
-//       $this->load->view('admin/css/comman_css');
-//       $this->load->view('admin/navigation/notificationbar');
-//       $this->load->view('admin/navigation/menubar');
-        /////////////////////////////////////////////////////
+
         $this->load->view('admin/ca_certificate/update');
         // $this->load->view('admin/js/jquery_validation_js');
         // $this->load->view('admin/js/ca_certificate/ca_certificate_validation_js');
         $this->load->view('admin/js/ca_certificate/update_js');
-        ///////////////////////////////////////////////////////
-//       $this->load->view('admin/js/comman_js');
-//       $this->load->view('admin/footer');
+
     }
     
     

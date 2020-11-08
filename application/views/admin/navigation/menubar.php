@@ -39,6 +39,8 @@
                 
             }
             ?>
+            <!--//Design form list-->
+            <?php $this->load->view('admin/navigation/design_menubar')?>
         </ul>
         <!-- end nav navbar-nav -->
     </div>

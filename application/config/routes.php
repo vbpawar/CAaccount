@@ -90,4 +90,4 @@ $route['userMaster/create']='services/UserMaster/create';
 $route['retailor']='services/Retailor/show';
 $route['retailor/create']='services/Retailor/create';
 
-$route['login']='services/user/login';
+$route['login']='services/User/login';
