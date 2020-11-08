@@ -214,7 +214,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">D.O.B</label>
 
-                                                                <input type="date" class="form-control"  name="dob" id="dob" />
+                                                                <input type="date" class="form-control" name="dob" id="dob" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -231,8 +231,6 @@
                                                                 <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
                                                             </div>
                                                         </div>
-
-
                                                     </div>
 
                                                     <!-- <p class="text-center">
@@ -420,14 +418,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Male</label>
 
-                                                                <input type="text" class="form-control"  name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Female</label>
 
-                                                                <input type="text" class="form-control"  name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -435,12 +433,10 @@
                                                 <div class="tab-pane fade" id="partenship">
                                                     <div class="row">
                                                         <div class="col-sm-10">
-
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Partner Name</label>
                                                                     <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" />
-
                                                                 </div>
                                                             </div>
 
@@ -472,11 +468,10 @@
                                                                     <input type="text" class="form-control" placeholder="123456789123" name="pMobile" id="pMobile" />
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                         <!--// add parteners button-->
                                                         <div class="col-sm-2">
-                                                            <div class="row mt-5" style="margin-top: 25px">
+                                                            <div class="row mt-5" style="margin-top: 25px;">
                                                                 <div class="col-sm-12">
                                                                     <div class="form-group">
                                                                         <label class="control-label"></label>
@@ -500,7 +495,7 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="partnerData">
-<!--                                                                    <tr>
+                                                                    <!--                                                                    <tr>
                                                                         <td>Lalit</td>
                                                                         <td>Aadhar123</td>
                                                                         <td>Pan123</td>
@@ -512,11 +507,9 @@
                                                                             </button>
                                                                         </td>
                                                                     </tr>-->
-
                                                                 </tbody>
                                                             </table>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="bankdet">
@@ -550,15 +543,15 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Turn over Amount</label>
 
-                                                                <input type="text" class="form-control"  name="panno" id="panno" />
+                                                                <input type="text" class="form-control" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">GST Number</label>
-                                                                <input type="text" class="form-control"  name="gst" id="gst" disabled=""/>
-                                                                <input type="checkbox" name="" id="enableGst">Enable GST
-                                                            </div>                                                          
+                                                                <input type="text" class="form-control" name="gst" id="gst" disabled="" />
+                                                                <input type="checkbox" name="" id="enableGst" />Enable GST
+                                                            </div>
                                                         </div>
                                                         <!--//electricity Bill-->
                                                         <div class="row">
@@ -606,7 +599,6 @@
                                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
-
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
@@ -622,9 +614,6 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
-
-
-
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -634,9 +623,8 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
                                                                 <h4>Do you have Electricity Bill of shop?</h4>
-                                                                <input type="radio" name="elect" id="" value="1">Yes
-                                                                <input type="radio" name="elect" id="" value="0">No
-                                                            </div>                                                          
+                                                                <input type="radio" name="elect" id="" value="1" />Yes <input type="radio" name="elect" id="" value="0" />No
+                                                            </div>
                                                         </div>
                                                         <div class="col-sm-12 electricityAttach">
                                                             <table class="table">
@@ -656,20 +644,9 @@
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
-                                                            </table> 
+                                                            </table>
                                                         </div>
                                                     </div>
-
-
-
-
-
-
-
-
-
-
-
 
                                                     <p class="text-center">
                                                         <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
