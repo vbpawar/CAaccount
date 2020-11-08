@@ -20,6 +20,8 @@ class ShopAct extends CI_Controller {
         $this->load->view('admin/shopact/new');
         $this->load->view('admin/js/comman_js');
          $this->load->view('admin/js/shopact/new_js');
+         $this->load->view('admin/js/udyog_aadhar/validation_js');
+
         $this->load->view('admin/footer');
     }
     
