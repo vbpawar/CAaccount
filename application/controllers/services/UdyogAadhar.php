@@ -13,11 +13,13 @@ class UdyogAadhar extends CI_Controller {
     public function create() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/udyog_aadhar/new');
         $this->load->view('admin/js/comman_js');
          $this->load->view('admin/js/udyog_aadhar/new_js');
+         $this->load->view('admin/js/udyog_aadhar/validation_js');
         $this->load->view('admin/footer');
     }
     
