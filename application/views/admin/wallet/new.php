@@ -108,7 +108,7 @@
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="distributorForm" method="post">
+                        <form action="<?php echo base_url().'register/pay';?>" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -207,14 +207,31 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="addmoneys">
+                                                <div class="row">
+                                                        <div class="col-sm-4">
+                                                            
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Amount</label>
+
+                                                                <input type="text" class="form-control" placeholder="200" name="amount" id="amount" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            
+                                                            </div>
+                                                    </div>
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
                                                     </div>
                                                     <h3 class="head text-center">thanks for staying tuned! <span style="color: #f48260;">♥</span></h3>
 
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green"> Add Money Using UPI <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        <button  type="submit" class="btn btn-success btn-outline-rounded green"> Add Money In Wallet <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                     </p>
+                                                    <div id="ak"></div>
                                                 </div>
 
                                                 <div class="clearfix"></div>
