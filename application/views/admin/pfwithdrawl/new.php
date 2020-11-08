@@ -136,7 +136,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#bankdet" data-toggle="tab" title="Bank etails">
+                                                        <a href="#bankdet" data-toggle="tab" title="Bank Details">
                                                             <span class="round-tabs three">
                                                                 <i class="fa fa-bank"></i>
                                                             </span>
@@ -179,6 +179,14 @@
                                                                 <label class="control-label">PAN Card Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Name (as per aadhar card)</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">

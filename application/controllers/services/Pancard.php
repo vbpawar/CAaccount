@@ -5,6 +5,8 @@ class Pancard extends CI_Controller {
     public function create() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/css/stepform_css');
+
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/pancard/new');
