@@ -109,16 +109,16 @@
                         <!--Block Styled Form -->
                         <!--===================================================-->
                         <form id="accessControlForm" method="post">
-                            <section style="background: #efefe9; " class="justify-content-center">
+                            <section style="background: #efefe9;" class="justify-content-center">
                                 <div class="container">
-                                    <div class="row ">
+                                    <div class="row">
                                         <div class="">
                                             <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
                                             <div class="board-inner">
                                                 <ul class="nav nav-tabs" id="myTab">
                                                     <div class="liner"></div>
                                                     <li class="active">
-                                                        <a href="#home" data-toggle="tab" title="welcome">
+                                                        <a href="#profile" data-toggle="tab" title="Profile">
                                                             <span class="round-tabs one">
                                                                 <i class="glyphicon glyphicon-user"></i>
                                                             </span>
@@ -126,14 +126,14 @@
                                                     </li>
 
                                                     <li>
-                                                        <a href="#profile" data-toggle="tab" title="profile">
+                                                        <a href="#services" data-toggle="tab" title="Services">
                                                             <span class="round-tabs two">
                                                                 <i class="glyphicon glyphicon-th"></i>
                                                             </span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#messages" data-toggle="tab" title="bootsnipp goodies">
+                                                        <a href="#sbm" data-toggle="tab" title="Submit">
                                                             <span class="round-tabs three">
                                                                 <i class="glyphicon   glyphicon-ok"></i>
                                                             </span>
@@ -159,41 +159,104 @@
                                             </div>
 
                                             <div class="tab-content">
-                                                <div class="tab-pane fade in active" id="home">
+                                                <div class="tab-pane fade in active" id="profile">
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Role Name</label>
-                                                                <select id="distributorid" name="distributorid" class="form-control">
+                                                                <label class="control-label">Role</label>
+                                                                <select name="roleid" id="roleid" class="form-control">
                                                                     <option value="1">id1</option>
                                                                     <option value="2">id2</option>
                                                                 </select>
-                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">User Name</label>
-                                                                <select id="retailorid" name="retailorid" class="form-control">
-                                                                    <option value="1">id1</option>
-                                                                    <option value="2">id2</option>
-                                                                </select>
-                                                                <!--<input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">-->
+                                                                <label class="control-label">First Name</label>
+                                                                <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Last Name</label>
+                                                                <input type="text" class="form-control" placeholder="Last" name="lastname" id="lastname" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Contact</label>
+                                                                <input type="text" class="form-control" placeholder="Contact" name="contact" id="contact" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
+                                                                <input type="email" class="form-control" placeholder="Email" id="emailid" name="emailid" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Address</label>
+                                                                <textarea class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Contry</label>
+                                                                <input type="text" class="form-control" placeholder="Country" id="country" name="country" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">State</label>
+                                                                <input type="text" class="form-control" placeholder="State" id="ustate" name="ustate" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">City</label>
+                                                                <input type="text" class="form-control" placeholder="City" id="city" name="city" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Pincode</label>
+                                                                <input type="text" class="form-control" placeholder="Contact" id="pincode" name="pincode" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Password</label>
+                                                                <input type="password" class="form-control" placeholder="" name="Password" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Confirm Password</label>
+                                                                <input type="password" class="form-control" placeholder="confirm your password" name="upassword" id="upassword" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="profile"></div>
-                                                <div class="tab-pane fade" id="messages">
-                                                    <h3 class="head text-center">Bootsnipp goodies</h3>
-                                                    <p class="narrow text-center">
-                                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                                    </p>
-
-                                                    <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
-                                                    </p>
+                                                <div class="tab-pane fade" id="services"></div>
+                                                
+                                               
+                                                <div class="tab-pane fade" id="sbm">
+                                                        <p class="text-center">
+                                                            <a href="" class="btn btn-success btn-outline-rounded green" type="submit">Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        </p>
+                                                   
                                                 </div>
                                                 <!-- <div class="tab-pane fade" id="settings">
                                                             <h3 class="head text-center">Drop comments!</h3>

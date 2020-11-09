@@ -137,8 +137,15 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#addressdet" data-toggle="tab" title="Extra Details">
+                                                        <a href="#multic" data-toggle="tab" title="Amounts">
                                                             <span class="round-tabs three">
+                                                                <i class="fa fa-address-card"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#addressdet" data-toggle="tab" title="Extra Details">
+                                                            <span class="round-tabs four">
                                                                 <i class="fa fa-address-card"></i>
                                                             </span>
                                                         </a>
@@ -153,7 +160,7 @@
 
                                                     <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
-                                                            <span class="round-tabs four">
+                                                            <span class="round-tabs five">
                                                                 <i class="fa fa-file"></i>
                                                             </span>
                                                         </a>
@@ -168,27 +175,23 @@
                                                     </li> -->
                                                 </ul>
                                             </div>
-                                            
 
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active" id="inctype">
-                                                        <div class="row card">
-                                                            
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"> Income Type</label>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="incometype" id="yes" value="yes" />
-                                                                        <label class="form-check-label" for="inlineRadio1">Bussness and Profession</label>
-                                                                        <input class="form-check-input" type="radio" name="incometype" id="no" value="no" />
-                                                                        <label class="form-check-label" for="">Salaried</label>
-                                                                    </div>
-
-                                                                
+                                                    <div class="row card">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Income Type</label>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                    <label class="form-check-label" for="inlineRadio1">Bussness and Profession</label>
+                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                    <label class="form-check-label" for="">Salaried</label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 <div class="tab-pane fade" id="personal">
                                                     <div class="row card">
                                                         <h3 class="head text-center card-title bg-info">Personal</h3>
@@ -234,22 +237,12 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Assesment Year</label>
-                                                                <?php 
-function yearDropdown($startYear, $endYear, $id="year"){ 
-    //start the select tag 
-    echo "<select id=".$id." name=".$id." class='form-control'>n"; 
-          
-        //echo each year as an option     
-        for ($i=$startYear;$i<=$endYear;$i++){ 
-        echo "<option class='form-control' value=".$i.">".$i."</option>n";     
-        } 
-      
-    //close the select tag 
-    echo "</select>"; 
-} 
-yearDropdown(1991,2055);
-?>
-                                                                
+
+                                                                <select class="form-control" name="" id="">
+                                                                    <option class="form-control" value="">2019</option>
+                                                                    <option class="form-control" value="">2020</option>
+                                                                    <option class="form-control" value="">2021</option>
+                                                                </select>
                                                             </div>
                                                         </div>
 
@@ -331,66 +324,164 @@ yearDropdown(1991,2055);
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                </div>
+                                                <div class="tab-pane fade" id="multic">
                                                     <div class="row card">
-                                                        <h3 class="head text-center card-title bg-info">Financial status</h3>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Turn Over Amount</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" checked />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" disabled />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Investment Amount</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Loan Amount</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
 
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Income From Other Source</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Income From Other Source</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> LIC slip</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> LIC slip</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Home Loan</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Home Loan</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Investment Amount</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Sandry Creditors</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Sandry Debitors</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Stock Amount</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Cash Balance</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Bussness Loan Certificate</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Personal Loan</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <label class="form-check-label" for="">No</label>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <!-- <p class="text-center"> 
-
-                                                        <a href="" class="btn btn-success btn-outline-rounded green">Amount 5000<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
-                                                    </p> -->
                                                 </div>
                                                 <div class="tab-pane fade" id="addressdet">
                                                     <div class="row card">
@@ -424,7 +515,7 @@ yearDropdown(1991,2055);
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Income Type</label>
+                                                                <label class="control-label">Bussiness Type</label>
 
                                                                 <select class="form-control" name="" id="">
                                                                     <option class="form-control" value="">Propertireship</option>
@@ -434,105 +525,9 @@ yearDropdown(1991,2055);
                                                                 </select>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Turn Over Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Investment Amount</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Sandry Creditors</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Sandry Debitors</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Stock Amount</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Cash Balance</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Bussness Loan Certificate</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Personal Loan</label>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                    <label class="form-check-label" for="">No</label>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
-                                               
+
                                                 <div class="tab-pane fade" id="documenttab">
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
@@ -547,9 +542,9 @@ yearDropdown(1991,2055);
                                                                         <th scope="col">PREVIEW</th>
                                                                     </tr>
                                                                 </thead> -->
-                                                              
+
                                                                 <tbody>
-                                                                <tr>
+                                                                    <tr>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Form-Type (SHOW ONLY IF SALARY) </label>
@@ -559,7 +554,6 @@ yearDropdown(1991,2055);
                                                                                     <input class="form-check-input" type="radio" name="no" id="no" value="no" />
                                                                                     <label class="form-check-label" for="">form -B-part</label>
                                                                                 </div>
-                                                                               
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -568,8 +562,6 @@ yearDropdown(1991,2055);
                                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
-
-                                                                        
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
@@ -615,14 +607,12 @@ yearDropdown(1991,2055);
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> investment proof</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" onchange="loadFile(event,'invpre')"  />
+                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" onchange="loadFile(event,'invpre')" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no"  onchange="loadFile(event,'invpre')" />
+                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" onchange="loadFile(event,'invpre')" />
                                                                                     <label class="form-check-label" for="">No</label>
-                                                                                <input class="form-control" id="inv" name="inv" type="file" onchange="loadFile(event,'invpre')" />
-
+                                                                                    <input class="form-control" id="inv" name="inv" type="file" onchange="loadFile(event,'invpre')" />
                                                                                 </div>
-                                                                                
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -638,7 +628,7 @@ yearDropdown(1991,2055);
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> bussiness loan certficate</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes"  />
+                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                                                     <input class="form-check-input" type="radio" name="no" id="no" value="no" />
                                                                                     <label class="form-check-label" for="">No</label>
@@ -682,7 +672,7 @@ yearDropdown(1991,2055);
                                                                                     <input class="form-check-input" type="radio" name="no" id="no" value="no" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'incopre')"   />
+                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'incopre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -739,7 +729,7 @@ yearDropdown(1991,2055);
                                                                                     <input class="form-check-input" type="radio" name="no" id="no" value="no" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'prespre')"/>
+                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'prespre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>

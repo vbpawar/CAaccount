@@ -210,7 +210,7 @@
                                                                 <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <!-- <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">UAN Number</label>
 
@@ -230,7 +230,7 @@
 
                                                                 <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
 
                                                     <!-- <p class="text-center">

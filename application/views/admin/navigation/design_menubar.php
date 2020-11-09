@@ -8,6 +8,8 @@
         <li><a href="<?php echo base_url();?>services/Pancard/create"> Pan Card</a></li>
         <li><a href="<?php echo base_url();?>services/Income/create"> Income</a></li>
         <li><a href="<?php echo base_url();?>services/DigitalSignService/create"> Digital Sign</a></li>
+        <li><a href="<?php echo base_url();?>services/AccessControlService/create"> Access Control</a></li>
+
 
 
     </ul>
