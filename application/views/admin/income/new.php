@@ -178,9 +178,9 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Income Type</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="incometype" id="yes" value="yes" />
                                                                         <label class="form-check-label" for="inlineRadio1">Bussness and Profession</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="incometype" id="no" value="no" />
                                                                         <label class="form-check-label" for="">Salaried</label>
                                                                     </div>
 
@@ -234,12 +234,22 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Assesment Year</label>
-
-                                                                <select class="form-control" name="" id="">
-                                                                    <option class="form-control" value="">2019</option>
-                                                                    <option class="form-control" value="">2020</option>
-                                                                    <option class="form-control" value="">2021</option>
-                                                                </select>
+                                                                <?php 
+function yearDropdown($startYear, $endYear, $id="year"){ 
+    //start the select tag 
+    echo "<select id=".$id." name=".$id." class='form-control'>n"; 
+          
+        //echo each year as an option     
+        for ($i=$startYear;$i<=$endYear;$i++){ 
+        echo "<option class='form-control' value=".$i.">".$i."</option>n";     
+        } 
+      
+    //close the select tag 
+    echo "</select>"; 
+} 
+yearDropdown(1991,2055);
+?>
+                                                                
                                                             </div>
                                                         </div>
 
@@ -327,7 +337,7 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Loan Amount</label>
+                                                                <label class="control-label"> Investment Amount</label>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
