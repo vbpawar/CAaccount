@@ -183,9 +183,9 @@
                                                             <div class="form-group">
                                                                 <label class="control-label"> Income Type</label>
                                                                 <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                    <input class="form-check-input" type="radio" name="inctype" id="yes" value="1" />
                                                                     <label class="form-check-label" for="inlineRadio1">Bussness and Profession</label>
-                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                    <input class="form-check-input" type="radio" name="inctype" id="no" value="2" />
                                                                     <label class="form-check-label" for="">Salaried</label>
                                                                 </div>
                                                             </div>
@@ -332,26 +332,26 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Turn Over Amount</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" checked />
+                                                                        <input class="form-check-input" type="radio" name="toveramt" id="yes" value="A" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" disabled />
+                                                                        <input class="form-check-input" type="radio" name="toveramt" id="no" value="B" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="turn_over_amt" id="turn_over_amt" style="display:none;" />
 
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Loan Amount</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="lamt" id="yes" value="C" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="lamt" id="no" value="D" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
+                                                                    <input type="text" class="form-control" placeholder="" name="loan_amt" id="loan_amt" style="display:none;" />
 
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
                                                                 </div>
                                                             </div>
 
@@ -359,36 +359,36 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Income From Other Source</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="iothersource" id="yes" value="E" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="iothersource" id="no" value="F" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="income_other_source" id="income_other_source"  style="display:none;"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> LIC slip</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="lslip" id="yes" value="G" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="lslip" id="no" value="H" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="licslip" id="licslip"  style="display:none;"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Home Loan</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="hloan" id="yes" value="I" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="hloan" id="no" value="J" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="home_loan" id="home_loan" style="display:none;"/>
                                                                 </div>
                                                             </div>
 
@@ -396,25 +396,25 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Investment Amount</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="inamt" id="yes" value="K" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="inamt" id="no" value="L" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="invest_amt" id="invest_amt" style="display:none;"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Sandry Creditors</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="scredit" id="yes" value="M" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="scredit" id="no" value="N" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_credit" id="sandry_credit" style="display:none;"/>
                                                                 </div>
                                                             </div>
 
@@ -422,24 +422,24 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Sandry Debitors</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="sdebit" id="yes" value="O" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="sdebit" id="no" value="P" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_debit" id="sandry_debit" style="display:none;" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Stock Amount</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="stamt" id="yes" value="Q" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="stamt" id="no" value="R" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="stock_amt" id="stock_amt" style="display:none;"/>
                                                                 </div>
                                                             </div>
 
@@ -447,24 +447,24 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Cash Balance</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="cbalance" id="yes" value="S" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="cbalance" id="no" value="T" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="cash_balance" id="cash_balance" style="display:none;"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label"> Bussness Loan Certificate</label>
+                                                                    <label class="control-label"> Bussness Loan</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="bloan" id="yes" value="U" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="bloan" id="no" value="V" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="buss_loan" id="buss_loan" style="display:none;" />
                                                                 </div>
                                                             </div>
 
@@ -472,12 +472,12 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Personal Loan</label>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                        <input class="form-check-input" type="radio" name="ploan" id="yes" value="W" />
                                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                        <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                        <input class="form-check-input" type="radio" name="ploan" id="no" value="X" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="" name="pers_loan" id="pers_loan" style="display:none;"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -607,11 +607,11 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> investment proof</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" onchange="loadFile(event,'invpre')" />
+                                                                                    <input class="form-check-input" type="radio" name="invet_proof" id="yes" value="Y"/>
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" onchange="loadFile(event,'invpre')" />
+                                                                                    <input class="form-check-input" type="radio" name="invet_proof" id="no" value="Z"/>
                                                                                     <label class="form-check-label" for="">No</label>
-                                                                                    <input class="form-control" id="inv" name="inv" type="file" onchange="loadFile(event,'invpre')" />
+                                                                                    <input class="form-control" id="inv_proof" name="inv_proof" type="file" onchange="loadFile(event,'invpre')" style="display:none;"/>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -628,12 +628,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> bussiness loan certficate</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="bloancert" id="yes" value="a" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="bloancert" id="no" value="b" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'bcertpre')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="buss_loan_cert" id="buss_loan_cert" onchange="loadFile(event,'bcertpre')" style="display:none;"/>
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -647,12 +647,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> lic reciept </label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="lcert" id="yes" value="c" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="lcert" id="no" value="d" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'licpre')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="lic_cert" id="lic_cert" onchange="loadFile(event,'licpre')" style="display:none;" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -667,12 +667,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> income from other source</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="iother" id="yes" value="e" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="iother" id="no" value="f" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'incopre')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="inc_other" id="inc_other" onchange="loadFile(event,'incopre')" style="display:none;" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -686,12 +686,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> home loan certificate</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="h_loan" id="yes" value="g" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="h_loan" id="no" value="h" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'homel')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="home_cert" id="home_cert" onchange="loadFile(event,'homel')" style="display:none;" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -724,12 +724,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> personal loan</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="i" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="j" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'prespre')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="pe_loan" id="pe_loan" onchange="loadFile(event,'prespre')" style="display:none;" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -744,12 +744,12 @@
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> last year balance sheet copy</label>
                                                                                 <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
+                                                                                    <input class="form-check-input" type="radio" name="bsheet" id="yes" value="k" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
+                                                                                    <input class="form-check-input" type="radio" name="bsheet" id="no" value="l" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'lastblpre')" />
+                                                                                <input type="file" class="form-control" placeholder="" name="bal_sheet" id="bal_sheet" onchange="loadFile(event,'lastblpre')" style="display:none;" />
                                                                             </div>
                                                                         </td>
                                                                         <td>

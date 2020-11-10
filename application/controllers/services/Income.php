@@ -21,6 +21,7 @@ class Income extends CI_Controller {
         $this->load->view('admin/income/new');
 
         $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/js/income/validation_js.php');
         $this->load->view('admin/js/income/new_js');
         $this->load->view('admin/footer');
     }
