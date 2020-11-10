@@ -353,25 +353,25 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="bankstat" id="bankstat" onchange="loadFile(event,'bankstatpre')" />
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bankstatpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'form16pre')" />
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                         
@@ -380,13 +380,13 @@
                                                                     <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Cancelled Check Passbook</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'form16pre')" />
+                                                                                <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event,'paspre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="paspre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>

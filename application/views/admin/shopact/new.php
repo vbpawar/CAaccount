@@ -328,8 +328,16 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"> Nature of Business</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+
+                                                                    <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                                </div>
+                                                            </div>
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Nature of Business</label>
+                                                                <label class="control-label">Bussiness Type</label>
                                                                 <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
                                                                 <select class="form-control selectpicker" id="natofBussiness">
                                                                     <option value="1">Proprietorship</option>
@@ -519,13 +527,13 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Filled Form</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'form16pre')" />
+                                                                                <input class="form-control" id="filled" name="filled" type="file" onchange="loadFile(event,'filledpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="filledpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                         

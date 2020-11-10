@@ -340,33 +340,66 @@
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
                                                     </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"> Aadhar Card</label>
-                                                            <input type="file" class="form-control" placeholder="" name="retailorid" id="retailorid" />
 
-                                                            <!--<input type="file" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+
+                                                    <div>
+                                                            <table class="table table-image">
+                                                                <!-- <thead>
+                                                                    <tr>
+                                                                        <th scope="col">DOCUMENT</th>
+                                                                        <th scope="col">PREVIEW</th>
+                                                                    </tr>
+                                                                </thead> -->
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Aadhar Card </label>
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Pan Card</label>
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+                                                                    <tr>
+                                                                    <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label"> Passport size Photo</label>
+                                                                                <input class="form-control" id="pass" name="pass" type="file" onchange="loadFile(event,'passpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+
+                                                                    
+                                                                </tbody>
+                                                            </table>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Pan Card</label>
-
-                                                            <input type="file" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Passport size Photo</label>
-
-                                                            <input type="file" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
-                                                        </div>
-                                                    </div>
-                                                    <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
-                                                    </p>
-                                                </div>
+                                                    
 
                                                 <div class="clearfix"></div>
                                             </div>
