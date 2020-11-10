@@ -29,7 +29,7 @@
         var $option = $(this).find('option:selected');
         //Added with the EDIT
         var value = $option.val();//to get content of "value" attrib
-        if (value == 2) {
+        if (value != 1) {
             $('#dynamicLi').show();
         } else {
             $('#dynamicLi').hide();
