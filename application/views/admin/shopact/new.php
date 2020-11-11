@@ -82,7 +82,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Shop Act</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> Shop Act</h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/shop_icon.png'); ?>" style="height:35px;width:35px"/> Shop Act</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -138,7 +138,7 @@
                                                     <li>
                                                         <a href="#shopdetails" data-toggle="tab" title="Shop Details">
                                                             <span class="round-tabs three">
-                                                                <i class="fa fa-bank"></i>
+                                                                <i class="fa fa-store"></i>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -511,32 +511,106 @@
                                                                     </tr>
                                                                 </thead> -->
                                                                 <tbody>
+
+
+
                                                                     <tr>
-                                                                        <!-- <td>
+                                                                        <td>
                                                                             <div class="form-group">
                                                                                 <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="bankstat" id="bankstat" onchange="loadFile(event,'bankstatpre')" />
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bankstatpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
                                                                             </div>
-                                                                        </td> -->
+                                                                        </td>
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label">Filled Form</label>
-                                                                                <input class="form-control" id="filled" name="filled" type="file" onchange="loadFile(event,'filledpre')" />
+                                                                                <label class="control-label">PAN card</label>
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="filledpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                         
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Passport Photo </label>
+                                                                                <input type="file" class="form-control" name="pas" id="pas" onchange="loadFile(event,'paspre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="paspre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Signature</label>
+                                                                                <input class="form-control" id="sign" name="sign" type="file" onchange="loadFile(event,'signpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="signpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Shop Photo </label>
+                                                                                <input type="file" class="form-control" name="shopp" id="shopp" onchange="loadFile(event,'shopppre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="shopppre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Declaration Form</label>
+                                                                                <input class="form-control" id="decl" name="decl" type="file" onchange="loadFile(event,'declpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="declpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Other Documents</label>
+                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                       
                                                                     </tr>
                                                                     
                                                                     

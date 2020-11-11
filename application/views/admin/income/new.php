@@ -82,7 +82,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Income</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> Income</h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/icome.png'); ?>" style="height:35px;width:35px"/> Income</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -122,8 +122,7 @@
                                                     <li class="active">
                                                         <a href="#inctype" data-toggle="tab" title="Income Type">
                                                             <span class="round-tabs one">
-                                                                <!-- <i class="fa fa-user"></i> -->
-                                                                <!-- <i class="glyphicon glyphicon-profile"></i> -->
+                                                            <img src="<?php echo base_url('/admin_assets/img/incometype.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -139,14 +138,14 @@
                                                     <li>
                                                         <a href="#multic" data-toggle="tab" title="Amounts">
                                                             <span class="round-tabs three">
-                                                                <i class="fa fa-address-card"></i>
+                                                            <img src="<?php echo base_url('/admin_assets/img/amount.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#addressdet" data-toggle="tab" title="Extra Details">
+                                                        <a href="#addressdet" data-toggle="tab" title="Bussiness Details">
                                                             <span class="round-tabs four">
-                                                                <i class="fa fa-address-card"></i>
+                                                            <img src="<?php echo base_url('/admin_assets/img/busdetail.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -634,7 +633,7 @@
                                                                 </thead> -->
 
                                                                 <tbody>
-                                                                    <tr>
+                                                                    <!-- <tr>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Form-Type (SHOW ONLY IF SALARY) </label>
@@ -652,7 +651,36 @@
                                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
+                                                                    </tr> -->
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">form -16-A-part</label>
+                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">form -B-part</label>
+                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                       
                                                                     </tr>
+                                                                    
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-group">
@@ -849,6 +877,22 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">Other Documents</label>
+                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                       
+                                                                    </tr>
+                                                                    
                                                                 </tbody>
                                                             </table>
                                                         </div>

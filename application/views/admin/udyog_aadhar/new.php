@@ -82,7 +82,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Udyog Aadhar</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> Udyog Aadhar</h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/udyog_icon.png'); ?>" style="height:35px;width:35px" /> Udyog Aadhar</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>

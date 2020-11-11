@@ -1,4 +1,30 @@
 <script>
+$('#apptype').change(function () {
+     
+     //Use $option (with the "$") to see that the variable is a jQuery object
+     var $option = $(this).find('option:selected');
+     //Added with the EDIT
+     var value = $option.val();//to get content of "value" attrib
+     if (value != 1) {
+         $('#pandiv').show();
+     } else {
+         $('#pandiv').hide();
+     }
+ });
+$('#catetype').change(function () {
+     
+     //Use $option (with the "$") to see that the variable is a jQuery object
+     var $option = $(this).find('option:selected');
+     //Added with the EDIT
+     var value = $option.val();//to get content of "value" attrib
+     if (value != 1) {
+         $('#otherdocu').show();
+     } else {
+         $('#otherdocu').hide();
+     }
+ });
+
+
     $(function () {
 
         $("#caCertificateForm").validate({

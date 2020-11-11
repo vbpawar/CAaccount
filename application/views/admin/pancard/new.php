@@ -82,7 +82,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> PAN Card</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> PAN Card</h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/pan.png'); ?>" style="height:35px;width:35px"/> PAN Card</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -165,6 +165,38 @@
                                                 <div class="tab-pane fade in active" id="personal">
                                                     <h3 class="head text-center"></h3>
                                                     <div class="row">
+                                                    <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Application Type</label>
+                                                                    <select class="form-control" id="apptype" name="apptype" required="">
+                                                                        <option value="1" class="form-control">New PAN </option>
+                                                                       
+                                                                        <option value="2"  class="form-control">Changes/Correction in PAN</option>
+                                                                       
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                    <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Category</label>
+                                                                    <select class="form-control" id="catetype" name="catetype" required="">
+                                                                        <option value="1" class="form-control" >Indivisual </option>
+                                                                        <option class="form-control" value="2">Partner</option>
+                                                                    <option class="form-control" value="3">Private Limited</option>
+                                                                    <option class="form-control" value="4">Public Private Limited</option>
+                                                                    
+                                                                       
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4" id="pandiv" >
+                                                            <div class="form-group">
+                                                                <label class="control-label">Pan Number </label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="pan_num" id="pan_num" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
                                                         
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
@@ -329,13 +361,26 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Filled Form</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'form16pre')" />
+                                                                                <input class="form-control" id="filled_form" name="filled_form" type="file" onchange="loadFile(event,'filled_formpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="filled_formpre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td id="otherdocu" >
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Other Documnents</label>
+                                                                                <input class="form-control" id="other_doc" name="other_doc" type="file" onchange="loadFile(event,'otherpre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                         
