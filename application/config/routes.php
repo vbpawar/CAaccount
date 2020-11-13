@@ -100,3 +100,5 @@ $route['load_pf'] = 'pf_controller/get_all_pf';
 $route['createdigital'] = 'digital_controller/add_digital_form';
 $route['updatedigital'] = 'digital_controller/update_digital_form';
 $route['load_digital'] = 'digital_controller/get_all_digital';
+
+$route['createudyog'] = 'udyog_controller/add_udyog_form';
