@@ -654,6 +654,57 @@
                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
                                                             </div>
                                                         </div>
+                                                        <div class="col-sm-6">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">PPL Agreement</label>
+                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">cancel check/bank stmt</label>
+                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">board resolution</label>
+                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <h4>Do you have rent aggrement?</h4>
+                                                            <input type="radio" name="rentPPL" id="" value="1" />Yes <input type="radio" name="rentPPL" id="" value="0" />No
+                                                            <div id="rentAgree3">
+                                                                <div class="form-group col-sm-6">
+                                                                    <label class="control-label">Rent aggrement</label>
+                                                                    <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                </div>
+
+                                                                <div class="form-group col-sm-6">
+                                                                    <label for="output"></label>
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <!--partnerhip-->

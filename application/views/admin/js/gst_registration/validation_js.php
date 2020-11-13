@@ -6,6 +6,7 @@
     $('#rentAgree').hide();
     $('#rentAgree1').hide();
     $('#rentAgree2').hide();
+    $('#rentAgree3').hide();
     $('#partnerhip').hide();
     $('#Partners_director').hide();
 //bussiness type change then appear new tab
@@ -70,6 +71,18 @@ $("input[name='rentPrivate']").change(function () {
             $('#rentAgree2').show();
         } else if (radioValue == 0) {
             $('#rentAgree2').hide();
+        }
+
+
+    });
+//Do you have rent aggrement? for private
+$("input[name='rentPPL']").change(function () {
+
+        var radioValue = $("input[name='rentPPL']:checked").val();
+        if (radioValue == 1) {
+            $('#rentAgree3').show();
+        } else if (radioValue == 0) {
+            $('#rentAgree3').hide();
         }
 
 
