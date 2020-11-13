@@ -41,7 +41,7 @@
 
 <script> //img preview code ######DON'T REMOVE ####
 var loadFile = function(event,out) {
-    console.log("da")
+//    console.log("da")
     var output = document.getElementById(out);
     
     output.src = URL.createObjectURL(event.target.files[0]);

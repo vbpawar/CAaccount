@@ -10,7 +10,8 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 class DigitalSignService extends CI_Controller {
 
      public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Digital Sign Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/stepform_css');
 
