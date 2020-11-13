@@ -96,3 +96,7 @@ $route['act'] = 'residential_address/act';
 $route['createpf'] = 'pf_controller/add_pf_form';
 $route['updatepf'] = 'pf_controller/update_pf_form';
 $route['load_pf'] = 'pf_controller/get_all_pf';
+
+$route['createdigital'] = 'digital_controller/add_digital_form';
+$route['updatedigital'] = 'digital_controller/update_digital_form';
+$route['load_digital'] = 'digital_controller/get_all_digital';

@@ -15,8 +15,8 @@ class Digital_controller extends CI_Controller
     private $records = null;
     
 
-    public function get_all_pf(){
-        $result = $this->pfmodel->get_details();
+    public function get_all_digital(){
+        $result = $this->dmodel->get_details();
         if ($result['status']) {
             $response = array(
                 'Message' => 'PF Details loaded successfully',
@@ -32,7 +32,7 @@ class Digital_controller extends CI_Controller
         echo json_encode($response);
     }
     //create API for PF master
-    public function add_pf_form()
+    public function add_digital_form()
     {
         //personal details
         $pdetails = array(
@@ -57,41 +57,37 @@ class Digital_controller extends CI_Controller
             'state' => $this->input->post('state'),
             'pincode' => $this->input->post('pincode')
         );
-        //bank details
-        $bdetails = array(
-            'bank_name ' => $this->input->post('bank_name'),
-            'ac_number' => $this->input->post('ac_number'),
-            'ifsc_number' => $this->input->post('ifsc_number')
-        );
+       
         if (!empty($pdetails)) {
             $pid = $this->pmodel->add_details($pdetails);
         }
         if (!empty($rdetails)) {
             $rid = $this->rmodel->add_details($rdetails);
         }
-        if (!empty($bdetails)) {
-            $bid = $this->bmodel->add_details($bdetails);
-        }
         
         $userid = $this->input->post('userid');
         
-        if ($pid['status'] && $rid['status'] && $bid['status']) {
+        if ($pid['status'] && $rid['status']) {
             $pid = $pid['pid'];
             $rid = $rid['rid'];
-            $bid = $bid['bid'];
             
             $data = array(
                 'userid' => $userid,
+                'class'=>$this->input->post('class'),
+                'uan_number'=>$this->input->post('uan_number'),
+                'uan_password'=>$this->input->post('uan_password'),
+                'nature_of_buss'=>$this->input->post('nature_of_buss'),
+                'trade_name'=>$this->input->post('trade_name'),
+                'place_of_buss'=>$this->input->post('place_of_buss'),
                 'pid' => $pid,
-                'rid' => $rid,
-                'bid' => $bid
+                'rid' => $rid
             );
             
-            $result = $this->pfmodel->add_details($data);
+            $result = $this->dmodel->add_details($data);
             if ($result['status']) {
                 
                 $response = array(
-                    'Message' => 'PF Details added successfully',
+                    'Message' => 'Digital Signature added successfully',
                     'Data' => $result['data'],
                     'Responsecode' => 200
                 );
@@ -111,7 +107,7 @@ class Digital_controller extends CI_Controller
         echo json_encode($response);
     }
 
-    public function update_pf_form()
+    public function update_digital_form()
     {
         //personal details
         $pdetails = array(
@@ -136,12 +132,6 @@ class Digital_controller extends CI_Controller
             'state' => $this->input->post('state'),
             'pincode' => $this->input->post('pincode')
         );
-        //bank details
-        $bdetails = array(
-            'bank_name ' => $this->input->post('bank_name'),
-            'ac_number' => $this->input->post('ac_number'),
-            'ifsc_number' => $this->input->post('ifsc_number')
-        );
         if (!empty($pdetails)) {
             $pid = $this->input->post('pid');
             $pid = $this->pmodel->update_details($pid,$pdetails);
@@ -150,23 +140,27 @@ class Digital_controller extends CI_Controller
             $rid = $this->input->post('rid');
             $rid = $this->rmodel->update_details($rid,$rdetails);
         }
-        if (!empty($bdetails)) {
-            $bid = $this->input->post('bid');
-            $bid = $this->bmodel->update_details($bid,$bdetails);
-        }
         
         $userid = $this->input->post('userid');
-        $status = $this->input->post('status');
-        $pfid=$this->input->post('pfid');
-        if ($pid && $rid && $bid) {
+        $did=$this->input->post('did');
+        if ($pid && $rid) {
            
             $data = array(
-                'status'=>$status
+                'userid' => $userid,
+                'class'=>$this->input->post('class'),
+                'uan_number'=>$this->input->post('uan_number'),
+                'uan_password'=>$this->input->post('uan_password'),
+                'nature_of_buss'=>$this->input->post('nature_of_buss'),
+                'trade_name'=>$this->input->post('trade_name'),
+                'place_of_buss'=>$this->input->post('place_of_buss'),
+                'pid' => $pid,
+                'rid' => $rid,
+                'status'=>$this->input->post('status')
             );
-            $result = $this->pfmodel->update_details($pfid,$data);
+            $result = $this->dmodel->update_details($did,$data);
             if ($result['status']) {
                 $response = array(
-                    'Message' => 'PF Details updated successfully',
+                    'Message' => 'Digital Signature Details updated successfully',
                     'Data' => $result['data'],
                     'Responsecode' => 200
                 );
