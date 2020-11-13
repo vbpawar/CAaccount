@@ -1,5 +1,5 @@
 <script>
-
+$('#dynamicLi').hide();
  $('#bustype').change(function () {
      
         //Use $option (with the "$") to see that the variable is a jQuery object
