@@ -144,7 +144,7 @@
                                                         </a>
                                                     </li>
                                                     <li id="dynamicLi">
-                                                        <a href="#partenship" data-toggle="tab" title="Parteners Detail">
+                                                        <a href="#partnership" data-toggle="tab" title="Partners Detail">
                                                             <span class="round-tabs four">
                                                                 <i class="fa fa-handshake"></i>
                                                             </span>
@@ -337,8 +337,14 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Nature of Business</label>
+                                                                <textarea class="form-control" name="shopName" id="shopName" rows="1"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Type</label>
                                                                 <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
-                                                                <select class="form-control selectpicker" id="natofBussiness">
+                                                                <select class="form-control selectpicker" id="bussinessType">
                                                                     <option value="1">Proprietorship</option>
                                                                     <option value="2">Partnership</option>
                                                                     <option value="3">Private Limited</option>
@@ -430,7 +436,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="partenship">
+                                                <div class="tab-pane fade" id="partnership">
                                                     <div class="row">
                                                         <div class="col-sm-10">
                                                             <div class="col-sm-4">
@@ -620,13 +626,13 @@
                                                     </div>
                                                     <!--extra attachment-->
                                                     <div class="row">
-                                                        <div class="col-sm-12">
+                                                        <div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <h4>Do you have Electricity Bill of shop?</h4>
                                                                 <input type="radio" name="elect" id="" value="1" />Yes <input type="radio" name="elect" id="" value="0" />No
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-12 electricityAttach">
+                                                        <div class="col-sm-6 electricityAttach">
                                                             <table class="table">
                                                                 <tbody>
                                                                     <tr>
@@ -646,6 +652,29 @@
                                                                 </tbody>
                                                             </table>
                                                         </div>
+                                                        <!--other documents start-->
+                                                        <div class="col-sm-6 otherdocAttach">
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h6>Other Document for Partnership/Private Limited/Public Private Limited</h6>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label">Other Documents</label>
+                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="output"></label>
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!--other documents end-->
                                                     </div>
 
                                                     <p class="text-center">
