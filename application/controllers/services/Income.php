@@ -11,7 +11,8 @@ class Income extends CI_Controller {
 
     
     public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Income Certificate Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');

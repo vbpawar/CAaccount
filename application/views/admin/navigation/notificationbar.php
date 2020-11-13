@@ -11,7 +11,7 @@
                         <a href="index.html" class="navbar-brand">
                             <i class="fa fa-cube brand-icon"></i>
                             <div class="brand-title">
-                                <span class="brand-text">CA Panel</span>
+                                <span class="brand-text">TKINFOTECH</span>
                             </div>
                         </a>
                     </div>
