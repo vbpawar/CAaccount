@@ -167,7 +167,31 @@
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> 1 ) Name Of Director</label>
+                                                                <label class="control-label"> Name Of Director</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Contact Number</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
+                                                                <input type="email" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Education</label>
                                                                 <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
@@ -176,47 +200,26 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> 2) Name Of Director</label>
-
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> 3) Name of Director</label>
+                                                                <label class="control-label"> Share Holding</label>
                                                                 <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                    <h3 class="head text-center">Director residential address</h3>
-                                                    <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> 1 ) First</label>
+                                                                <label class="control-label">Residential Address</label>
                                                                 <textarea class="form-control" placeholder="enter your name" name="retailorid" id="retailorid"> </textarea>
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> 2) Second</label>
-
-                                                                <textarea class="form-control" placeholder="enter your name" name="retailorid" id="retailorid"> </textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> 3) Third</label>
-                                                                <textarea class="form-control" placeholder="enter your name" name="retailorid" id="retailorid"> </textarea>
-                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
+
+                                                    
 
                                                     <!-- <p class="text-center">
                                                         <a href="" class="btn btn-success btn-outline-rounded green">Amount 5000<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>

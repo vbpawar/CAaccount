@@ -163,12 +163,12 @@
 
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active" id="personal">
-                                                    <h3 class="head text-center"></h3>
+                                                    <h3 class="head text-center">personal details</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Enter your name as per pan card" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -178,13 +178,13 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Enter your unique pan card number" name="pan_number" id="pan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per aadhar card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Enter your name as per aadhar card" name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -193,14 +193,21 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Date of Birth</label>
+
+                                                                <input type="date" class="form-control" placeholder="Enter  Date of Birth" name="dob" id="dob" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Mobile Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                                <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -238,11 +245,13 @@
                                                     </p> -->
                                                 </div>
                                                 <div class="tab-pane fade" id="addressdet">
+                                                        <h3 class="head text-center">residential address details</h3>
+
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Premise Name" name="premise_name" id="premise_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -252,56 +261,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="flat_number" id="flat_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="road" id="road" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="area" id="area" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="village" id="village" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="taluka" id="taluka" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="district" id="district" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="state" id="state" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -311,7 +320,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Bank Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Bank Name" name="bank_name" id="bank_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -321,20 +330,22 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Account Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Account Number" name="ac_number" id="ac_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">IFSC Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="IFSC Number" name="ifsc_number" id="ifsc_number" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     
                                                 </div>
                                                 <div class="tab-pane fade" id="documenttab">
+                                                <h3 class="head text-center">documents attachment</h3>
+
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
                                                     </div>
