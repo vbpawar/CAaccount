@@ -13,6 +13,9 @@ class Shop_details extends CI_Controller{
     private $records = null;
 
     //get all certificates
+    public function demo(){
+        return 1;
+    }
     public function get_shop_address() {
         $sid = $this->input->post('sid');
         $records = $this->service->get_details($sid);

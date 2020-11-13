@@ -91,3 +91,8 @@ $route['retailor']='services/Retailor/show';
 $route['retailor/create']='services/Retailor/create';
 
 $route['login']='services/User/login';
+$route['act'] = 'residential_address/act';
+//new service routes
+$route['createpf'] = 'pf_controller/add_pf_form';
+$route['updatepf'] = 'pf_controller/update_pf_form';
+$route['load_pf'] = 'pf_controller/get_all_pf';
