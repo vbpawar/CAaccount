@@ -9,8 +9,12 @@
         <li><a href="<?php echo base_url();?>services/Income/create"> Income</a></li>
         <li><a href="<?php echo base_url();?>services/DigitalSignService/create"> Digital Sign</a></li>
         <li><a href="<?php echo base_url();?>services/AccessControlService/create"> Access Control</a></li>
+<<<<<<< HEAD
         <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
 
+=======
+        <li><a href="<?php echo base_url();?>services/GstRegistration/create">GST Registration</a></li>
+>>>>>>> 3713abc03917e0d1e5d5007053708e709f9fa971
 
 
 
