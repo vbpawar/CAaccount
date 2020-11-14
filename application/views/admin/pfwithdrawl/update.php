@@ -143,13 +143,13 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
+<!--                                                    <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs four">
                                                                 <i class="fa fa-file"></i>
                                                             </span>
                                                         </a>
-                                                    </li>
+                                                    </li>-->
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
@@ -214,7 +214,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
 
-                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
+                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
                                                             </div>
                                                         </div>
                                                         <!-- <div class="col-sm-4">
@@ -422,9 +422,9 @@
 
 
                                                     
-                                                    <p class="text-center">
+<!--                                                    <p class="text-center">
                                                         <button href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
-                                                    </p>
+                                                    </p>-->
                                                 </div>
 
                                                 <div class="clearfix"></div>
