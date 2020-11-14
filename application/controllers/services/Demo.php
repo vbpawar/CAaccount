@@ -7,6 +7,7 @@ class Demo extends CI_Controller {
     public function sessiondata(){
         $userdata = $_SESSION['Data'];
         echo $userdata['userid'];
+        print_r($userdata);
     }
 
     public function formDemo() {
