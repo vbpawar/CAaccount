@@ -3,6 +3,12 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 class Demo extends CI_Controller {
 
+
+    public function sessiondata(){
+        $userdata = $_SESSION['Data'];
+        echo $userdata['userid'];
+    }
+
     public function formDemo() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');
