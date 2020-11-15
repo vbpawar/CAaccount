@@ -118,3 +118,4 @@ $route['employees'] = 'get/getemployees';
 $route['session'] = 'services/demo/sessiondata';
 //user creation
 $route['createuser'] = 'user/createUser';
+$route['loadbalance'] = 'walletController/loadBalance';
