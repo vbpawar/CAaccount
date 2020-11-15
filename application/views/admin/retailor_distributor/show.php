@@ -84,7 +84,10 @@
                         </div>
                     </div>
                     <div class="pageheader">
-                        <h3><i class="fa fa-home"></i> Distributor Retailor List </h3>
+                        
+                        <!-- <h3><i class="fa fa-home"></i> Distributor Retailor List </h3> -->
+                        <h3><img src="<?php echo base_url('/admin_assets/img/distributor.png'); ?>" style="height:35px;width:35px"/>  Distributor Retailor List</h3>
+
                         <div class="breadcrumb-wrapper">
                             <span class="label">You are here:</span>
                             <ol class="breadcrumb">

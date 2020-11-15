@@ -82,12 +82,13 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Form Layout </h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/distributor.png'); ?>" style="height:35px;width:35px"/> Distributor Retailor </h3>
+             
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li> <a href="#"> Home </a> </li>
-                    <li class="active"> form layout </li>
+                    <li class="active"> Distributor Retailor</li>
                 </ol>
             </div>
         </div>
@@ -106,7 +107,7 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
                                     <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
                                 </div>
-                                <h3 class="panel-title">Add New Entry</h3>
+                                <h3 class="panel-title">Update Entry</h3>
                             </div>
                             <!--Block Styled Form -->
                             <!--===================================================-->
@@ -116,7 +117,9 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Distributor</label>
-                                                <input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">
+                                                <select  id="distributorid" name="distributorid" class="form-control">
+                                               
+                                               </select>
                                             </div>
                                         </div>
                                        
@@ -124,7 +127,9 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label class="control-label">Retailor</label>
-                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">
+                                                <select  id="retailorid" name="retailorid" class="form-control">
+                                               
+                                                </select>
                                             </div>
                                         </div>
                                         
