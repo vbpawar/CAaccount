@@ -84,9 +84,6 @@ $route['udyagAadhar/create']='services/UdyogAadhar/create';
 $route['shopAct']='services/ShopAct/show';
 $route['shopAct/create']='services/ShopAct/create';
 
-$route['userMaster']='services/UserMaster/show';
-$route['userMaster/create']='services/UserMaster/create';
-
 $route['retailor']='services/Retailor/show';
 $route['retailor/create']='services/Retailor/create';
 
