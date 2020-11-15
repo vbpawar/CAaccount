@@ -7,15 +7,12 @@ function load_balance(){
         success:function(response){
             console.log(response.Data.balance);
             var options = '';
-            
-        //    if(response.Responsecode==200){
-        //     var data = response.Data;
-        //        for(var i=0;i<data.length;i++){
-        //         options += "<option value="+data[i].roleid+">"+data[i].role+"</option>";
-        //        }
-               
-        //    }
-           $('#wallet_amt').html(response.Data.balance);
+            var amount = 0.00;
+           if(response.Data.balance!=null){
+            var data = response.Data;
+            amount = response.Data.balance;
+           }
+           $('#wallet_amt').html(amount);
         }
     });
 }
@@ -30,15 +27,22 @@ function load_transaction(){
             if(response.Data !=null){
                 var data = response.Data;
                for(var i=0;i<data.length;i++){
-                options += `<tr>
-                <td>`+data[i].transaction_type+`</td>
-                <td>`+data[i].amount+`</td>
-                <td>`+data[i].transactiondate+`</td>
-                </tr>`;
+                   options += ` <tr class="bg-blue">
+                                                                        
+                                                                    
+                                                                        <td class="pt-3"> <span class="fa fa-exchange mr-1"></span> `+data[i].transaction_type+` </td>
+                                                                        <td class="pt-3"><span><img src="<?php echo base_url('/admin_assets/img/phonepe.png'); ?>" ></span></td>
+                                                                        <td class="pt-3">`+data[i].transactiondate+`</td>
+                                                                        <td class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ `+data[i].amount+` </td>
+                                                                    </tr>
+                                                                    <tr id="spacing-row">
+                                                                        <td></td>
+                                                                    </tr>`;
+        
                }
             }
            
-           //$('#wallet_amt').html(response.Data.balance);
+           $('#wallet_data').html(options);
         }
     });
 }

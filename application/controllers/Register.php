@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH."libraries/razorpay/razorpay-php/Razorpay.php");
-
+date_default_timezone_set('Asia/Kolkata');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
@@ -82,12 +82,12 @@ class Register extends CI_Controller {
 				'userid'=>$userdata['userid'],
 				'transaction_type'=>'Credit',
 				'amount'=>$_SESSION['payable_amount'],
-				'transactiondate'=>date('Y-m-d'),
+				'transactiondate'=>date('Y-m-d h:i:s'),
 				'message'=>'Added money in wallet'
 			);
 		$id = $this->service->addwallet($data);
 
-			redirect(base_url().'register/success');
+			redirect(base_url().'wallet');
 		}
 		else {
 			redirect(base_url().'register/paymentFailed');

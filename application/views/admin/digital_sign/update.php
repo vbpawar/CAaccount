@@ -150,13 +150,13 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
+<!--                                                    <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs four">
                                                                 <i class="fa fa-file"></i>
                                                             </span>
                                                         </a>
-                                                    </li>
+                                                    </li>-->
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
