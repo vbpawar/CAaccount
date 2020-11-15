@@ -124,6 +124,11 @@ $route['session'] = 'services/demo/sessiondata';
 $route['wallet'] = 'services/WalletService/create';
 //user creation
 $route['createuser'] = 'user/createUser';
+$route['getusers'] = 'user/getUsersList';
+//user ui
+$route['user/create']='services/AccessControlService/create';
+$route['users/show']='services/AccessControlService/show';
+
 $route['loadbalance'] = 'walletController/loadBalance';
 $route['loadtransaction'] = 'walletController/load_transactions';
 

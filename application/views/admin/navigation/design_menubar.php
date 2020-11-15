@@ -8,7 +8,7 @@
         <li><a href="<?php echo base_url();?>services/Pancard/create"> Pan Card</a></li>
         <li><a href="<?php echo base_url();?>services/Income/create"> Income</a></li>
         <li><a href="<?php echo base_url();?>digital_sign/show"> Digital Sign</a></li>
-        <li><a href="<?php echo base_url();?>services/AccessControlService/create"> Access Control</a></li>
+        <li><a href="<?php echo base_url();?>user/create"> Access Control</a></li>
         <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
 
         <li><a href="<?php echo base_url();?>services/GstRegistration/create">GST Registration</a></li>

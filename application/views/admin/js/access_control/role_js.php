@@ -1,4 +1,5 @@
 <script>
+    
 function loadroles(){
     $.ajax({
         url:'<?php echo base_url('/getroles');?>',
@@ -10,7 +11,7 @@ function loadroles(){
            if(response.Responsecode==200){
             var data = response.Data;
                for(var i=0;i<data.length;i++){
-                options += "<option value="+data[i].roleid+">"+data[i].role+"</option>";
+                options += "<option  value="+data[i].roleid+">"+data[i].role+"</option>";
                }
                
            }
@@ -30,7 +31,7 @@ function loadaccess(){
            if(response.Responsecode==200){
             var data = response.Data;
                for(var i=0;i<data.length;i++){
-                options += ` <div class="form-check col-sm-4" > <input class="form-check-input" type="checkbox" value="`+data[i].activityid+`">
+                options += ` <div class="form-check col-sm-4" > <input class="form-check-input access"  type="checkbox" value="`+data[i].activityid+`">
                                                         <label class="form-check-label">
                                                             `+data[i].activity+`
                                                         </label>  </div>`;

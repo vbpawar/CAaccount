@@ -260,7 +260,7 @@
                                                
                                                 <div class="tab-pane fade" id="sbm">
                                                         <p class="text-center">
-                                                            <a href="" class="btn btn-success btn-outline-rounded green" type="submit">Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                            <button class="btn btn-success btn-outline-rounded green" type="submit">Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                         </p>
                                                    
                                                 </div>
