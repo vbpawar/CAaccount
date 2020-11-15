@@ -121,6 +121,8 @@ $route['employees'] = 'get/getemployees';
 
 //demo api
 $route['session'] = 'services/demo/sessiondata';
+$route['wallet'] = 'services/WalletService/create';
 //user creation
 $route['createuser'] = 'user/createUser';
 $route['loadbalance'] = 'walletController/loadBalance';
+$route['loadtransaction'] = 'walletController/load_transactions';

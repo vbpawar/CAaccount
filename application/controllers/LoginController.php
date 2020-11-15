@@ -39,6 +39,7 @@ class LoginController extends CI_Controller {
                     'emailid' => $result['data'][0]->emailid,
                     'role' => $result['data'][0]->roleid,
                     'userid' => $result['data'][0]->userid,
+                    'contact' => $result['data'][0]->contact,
                     'logged_in' => TRUE
                 );
                 $userid = $result['data'][0]->userid;

@@ -102,6 +102,7 @@ class Register extends CI_Controller {
 	 */
 	public function prepareData($amount,$razorpayOrderId)
 	{
+		$user = $_SESSION['Data'];
 		$data = array(
 			"key" => RAZOR_KEY,
 			"amount" => $amount,
@@ -109,9 +110,9 @@ class Register extends CI_Controller {
 			"description" => "Accounting Services",
 			"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
 			"prefill" => array(
-				"name"  => 'vikas pawar',
-				"email"  => 'vikas.nucleon@gmail.com',
-				"contact" => '9657613754',
+				"name"  => $user['username'],
+				"email"  => $user['emailid'],
+				"contact" => $user['contact'],
 			),
 			"notes"  => array(
 				"address"  => "Not mention",

@@ -9,7 +9,7 @@ class User extends CI_Controller {
     
     
     public function dashboard() {
-        redirect('services/Certificate/show');
+        redirect('wallet');
     }
     public function loginProcess() {
         
