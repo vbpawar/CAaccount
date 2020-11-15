@@ -15,7 +15,7 @@ class WalletModel extends CI_Model {
     }
     public function gettransactions($userid)
     {
-        $sql = "SELECT * FROM wallet_transaction WHERE userid = $userid";
+        $sql = "SELECT * FROM wallet_transaction WHERE userid = $userid ORDER BY transactionid DESC";
         $query = $this->db->query($sql);
         return $query->result();
     }
