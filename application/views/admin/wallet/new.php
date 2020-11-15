@@ -164,8 +164,8 @@
                                                 <div class="tab-pane fade in active" id="wallet">
                                                     <h3 class="head text-center"></h3>
 
-                                                    <p class="text-center">
-                                                        <a href="" class="btn btn-info btn-outline-rounded" style="color: blue;">Amount 5000<span style="margin-left: 10px;" class="fa fa-money"></span></a>
+                                                    <p class="text-center">Wallet Amount:
+                                                        <a href="#" class="btn btn-info btn-outline-rounded" style="color: blue;" id="wallet_amt"><span style="margin-left: 10px;" class="fa fa-money"></span></a>
                                                     </p>
                                                 </div>
                                                 <div class="tab-pane fade" id="transafermny">

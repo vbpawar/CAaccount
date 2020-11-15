@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class PF_controller extends CI_Controller
+class WalletController extends CI_Controller
 {
     
     public function __construct()
@@ -11,7 +11,6 @@ class PF_controller extends CI_Controller
     }
     private $response = null;
     private $records = null;
-    
 
     public function loadBalance(){
         $userdata = $_SESSION['Data'];
@@ -19,6 +18,17 @@ class PF_controller extends CI_Controller
         
             $response = array(
                 'Message' => 'Balance loaded successfully',
+                'Data' => $result,
+                'Responsecode' => 200
+            );
+        echo json_encode($response);
+    }
+    public function load_transactions(){
+        $userdata = $_SESSION['Data'];
+        $result = $this->mmodel->gettransactions($userdata['userid']);
+        
+            $response = array(
+                'Message' => 'Transaction loaded successfully',
                 'Data' => $result,
                 'Responsecode' => 200
             );
