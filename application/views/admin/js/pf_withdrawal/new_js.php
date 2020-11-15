@@ -4,11 +4,11 @@
 
         e.preventDefault();
 
-//    var returnVal = $("#caCertificateForm").valid();
+    var returnVal = validChecker();
         var formdata = new FormData(this);
         formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
 //        console.log(formdata);
-        if (true) {
+        if (returnVal) {
 
             $.ajax({
 

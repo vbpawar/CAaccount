@@ -102,7 +102,7 @@
                         <div class="panel">
                             
                             <div class="panel-body">
-                            <a class="btn btn-primary" href="<?php echo base_url('services/certificate/create');?> " role="button">Add New Entry</a>
+                            <a class="btn btn-primary" href="<?php echo base_url('pf_withdrawal/create');?> " role="button">Add New Entry</a>
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>

@@ -49,6 +49,7 @@
             tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
+            tblData += '<td>' + services.role + '</td>';
 
             tblData += '<div class="table-actions">';
 

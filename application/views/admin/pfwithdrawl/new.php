@@ -1,3 +1,9 @@
+<style>
+    .error{
+        color:red;
+        size: 10px;
+    }
+</style>
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
@@ -160,14 +166,14 @@
                                                     </li> -->
                                                 </ul>
                                             </div>
-
+                                            <div id="error-container"></div>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active" id="personal">
                                                     <h3 class="head text-center">personal details</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Name (as per pan card)</label>
+                                                                <label class="control-label"><span class="error">*</span> Name (as per pan card)</label>
                                                                 <input type="text" class="form-control" placeholder="Enter your name as per pan card" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
@@ -176,7 +182,7 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">PAN Card Number</label>
+                                                                <label class="control-label"><span class="error">*</span>PAN Card Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Enter your unique pan card number" name="pan_number" id="pan_number" />
                                                             </div>

@@ -21,7 +21,7 @@ class WalletService extends CI_Controller {
         $this->load->view('admin/wallet/new');
         $this->load->view('admin/js/comman_js');
         
-        // $this->load->view('admin/js/wallet/new_js');
+        $this->load->view('admin/js/wallet/show_js');
         $this->load->view('admin/footer');
     }
     
