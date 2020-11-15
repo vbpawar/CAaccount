@@ -82,12 +82,12 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Distributor </h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/distributor.png'); ?>" style="height:35px;width:35px"/> Distributor Retailor </h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li> <a href="#"> Home </a> </li>
-                    <li class="active"> Distributor </li>
+                    <li class="active"> Distributor Retailor </li>
                 </ol>
             </div>
         </div>
@@ -126,7 +126,7 @@
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label">Retailor</label>
+                                                <label class="control-label ">Retailor</label>
                                                 <select  id="retailorid" name="retailorid" class="form-control">
                                                
                                                 </select>

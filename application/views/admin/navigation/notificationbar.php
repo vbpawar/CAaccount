@@ -1,5 +1,7 @@
 </head>
     <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <div id="container" class="effect mainnav-full">
             <!--NAVBAR-->
             <!--===================================================-->
@@ -222,7 +224,9 @@
                                             <a href="#"> <i class="fa fa-user fa-fw"></i> Profile </a>
                                         </li> -->
                                         <li>
-                                            <a href="<?php echo base_url('services/WalletService/create');?>"> <i class="fas fa-wallet"></i> Wallet </a>
+                                            <a href="<?php echo base_url('services/WalletService/create');?>"> <img  src="<?php echo base_url('admin_assets/img/wallettt.png'); ?>" style="height:20px;weight:20px" class="fa-fw"> Wallet </a>
+                                            <!-- <a href="<?php echo base_url('LoginController/logout');?>"> <i class="fas fa-wallet fa-fw"></i> Wallet </a> -->
+
                                         </li>
                                         <!-- <li>
                                             <a href="#">  <i class="fa fa-envelope fa-fw"></i> Messages </a>
