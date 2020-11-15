@@ -25,14 +25,13 @@ class UdyogAadhar extends CI_Controller {
     }
     
     public function show() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Udyog Aadhar Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/udyog_aadhar/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/dataModalJavaScript');
         $this->load->view('admin/js/udyog_aadhar/show_js');
         
         $this->load->view('admin/footer');

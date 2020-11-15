@@ -1,3 +1,10 @@
+<style>
+    .error{
+        color:red;
+        size: 10px;
+    }
+</style>
+
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
@@ -82,7 +89,7 @@
         </div>
         <div class="pageheader">
             <h3><i class="fas fa-file-signature"></i> Digital Signature</h3>
-            <!-- <h3><img src="<?php// echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> Digital Signature</h3> -->
+            <!-- <h3><img src="<?php // echo base_url('/admin_assets/img/withdraw_512x512.png');  ?>" /> Digital Signature</h3> -->
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -110,7 +117,7 @@
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="pf-withdrawl-form" method="post">
+                        <form id="digital-sign-form" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -160,26 +167,26 @@
                                                     </li> -->
                                                 </ul>
                                             </div>
-
+                                            <div id="error-container"></div>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active" id="personal">
                                                     <h3 class="head text-center"></h3>
                                                     <div class="row">
-                                                    <div class="col-sm-4">
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Select  Class</label>
-                                                              <select name="" id="" class="form-control">
-                                                              <option value="">CLASS 2</option>
-                                                              <option value="">Class 3</option>
+                                                                <select name="class" id="class" class="form-control">
+                                                                    <option value="CLASS 2">CLASS 2</option>
+                                                                    <option value="Class 3">Class 3</option>
 
-                                                              </select>
-                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                                </select>
+                                                                  <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <label class="control-label"><span class="error">*</span> Name (as per pan card)</label>
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -187,53 +194,54 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">PAN Card Number</label>
+                                                                <label class="control-label"><span class="error">*</span> PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="pan_number" id="pan_number" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Aadhar Card Name</label>
+
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar_name" id="aadhar_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar_number" id="aadhar_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Mobile Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                                <input type="text" class="form-control" placeholder="8888888888" name="contact_number" id="contact_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
 
-                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
+                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">UAN Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="uanraw" id="uan" />
+                                                                <input type="text" class="form-control" placeholder="" name="uan_number" id="uan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">UAN Password</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
+                                                                <input type="text" class="form-control" placeholder="" name="uan_password" id="uan_password" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Confirm UAN Password</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
-                                                            </div>
-                                                        </div>
                                                     </div>
 
                                                     <!-- <p class="text-center">
@@ -245,7 +253,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="premise_name" id="premise_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -255,56 +263,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="" name="flat_number" id="flat_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="road" id="road" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="area" id="area" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="village" id="village" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="taluka" id="taluka" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="district" id="district" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="state" id="state" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="pincode" id="pincode" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -314,7 +322,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Nature of Bussness</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="enter your name" name="nature_of_buss" id="nature_of_buss" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -324,14 +332,15 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Trade Name</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="trade_name" id="trade_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Place of Bussines</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="123456789123" name="place_of_buss" id="place_of_buss" />
+                                                                <input type="hidden" class="form-control" value="new"  name="status" id="status" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -343,69 +352,71 @@
 
 
                                                     <div>
-                                                            <table class="table table-image">
-                                                                <!-- <thead>
-                                                                    <tr>
-                                                                        <th scope="col">DOCUMENT</th>
-                                                                        <th scope="col">PREVIEW</th>
-                                                                    </tr>
-                                                                </thead> -->
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        
-                                                                    </tr>
-                                                                    <tr>
+                                                        <table class="table table-image">
+                                                            <!-- <thead>
+                                                                <tr>
+                                                                    <th scope="col">DOCUMENT</th>
+                                                                    <th scope="col">PREVIEW</th>
+                                                                </tr>
+                                                            </thead> -->
+                                                            <tbody>
+                                                                <tr>
                                                                     <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Passport size Photo</label>
-                                                                                <input class="form-control" id="pass" name="pass" type="file" onchange="loadFile(event,'passpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">Aadhar Card </label>
+                                                                            <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event, 'adharpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Pan Card</label>
+                                                                            <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'panpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
 
-                                                                    
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Passport size Photo</label>
+                                                                            <input class="form-control" id="pass" name="pass" type="file" onchange="loadFile(event, 'passpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
 
-                                                    
 
-                                                <div class="clearfix"></div>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+
+                                                    <p class="text-center">
+                                                        <button href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </section>
                         </form>
                         <!--===================================================-->
