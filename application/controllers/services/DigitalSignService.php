@@ -29,6 +29,8 @@ class DigitalSignService extends CI_Controller {
         $data['title'] = 'Digital Sign Service';
         $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/css/stepform_css');
+
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/digital_sign/show');

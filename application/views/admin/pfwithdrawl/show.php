@@ -85,7 +85,8 @@
                         </div>
                     </div>
                     <div class="pageheader">
-                        <h3><i class="fa fa-home"></i> PF Withdrawal </h3>
+                        <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> PF Withdrawal</h3>
+
                         <div class="breadcrumb-wrapper">
                             <span class="label">You are here:</span>
                             <ol class="breadcrumb">

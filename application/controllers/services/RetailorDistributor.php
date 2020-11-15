@@ -10,7 +10,8 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 class RetailorDistributor extends CI_Controller {
 
     public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Distributor Retailor  Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
@@ -21,7 +22,8 @@ class RetailorDistributor extends CI_Controller {
     }
 
     public function show() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Distributor Retailor  Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');

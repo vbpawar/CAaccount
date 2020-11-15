@@ -139,7 +139,9 @@
                                                         <a href="#shopdetails" data-toggle="tab" title="Shop Details">
                                                             <span class="round-tabs three">
                                                                 <!--<i class="fa fa-address-card"></i>-->
-                                                                <i class="fa fa-store"></i>
+                                                                <!-- <i class="fa fa-store"></i> -->
+                                                                <img src="<?php echo base_url('/admin_assets/img/shop_icon.png'); ?>" style="height:35px;width:35px"/>
+
                                                             </span>
                                                         </a>
                                                     </li>
@@ -183,7 +185,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="pan_name" id="pan_name" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -193,21 +195,21 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="pan_number" id="pan_number" />
+                                                                <input type="text" class="form-control" placeholder="PAN Card Number" name="pan_number" id="pan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Name(as per aadharcard)</label>
 
-                                                                <input type="text" class="form-control" placeholder="Enter your name" name="aadhar_name" id="aadhar_name" />
+                                                                <input type="text" class="form-control" placeholder="Name(as per aadharcard)" name="aadhar_name" id="aadhar_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar_number" id="aadhar_number" />
+                                                                <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar_number" id="aadhar_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -221,7 +223,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Mobile Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="8888888888" name="contact_number" id="contact_number" />
+                                                                <input type="text" class="form-control" placeholder="Mobile Number" name="contact_number" id="contact_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -238,7 +240,7 @@
                                                     </p> -->
                                                 </div>
                                                 <div class="tab-pane fade" id="addressdet">
-                                                    <h3 class="head text-center">resdential aadress</h3>
+                                                    <h3 class="head text-center">residential address</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">

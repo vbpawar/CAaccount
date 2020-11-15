@@ -82,7 +82,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Udyog Aadhar</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> GST Registration </h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/gst.png'); ?>" style="height:42px;weight:42px" /> GST Registration </h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -145,7 +145,9 @@
                                                         <a href="#shopdetails" data-toggle="tab" title="Shop Details">
                                                             <span class="round-tabs three">
                                                                 <!--<i class="fa fa-address-card"></i>-->
-                                                                <i class="fa fa-store"></i>
+                                                                <!-- <i class="fa fa-store"></i> -->
+                                                                <img src="<?php echo base_url('/admin_assets/img/shop_icon.png'); ?>" style="height:35px;width:35px"/>
+
                                                             </span>
                                                         </a>
                                                     </li>
@@ -212,7 +214,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -222,21 +224,21 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="PAN Card Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Name(as per aadharcard)</label>
 
-                                                                <input type="text" class="form-control" placeholder="Enter your name" name="aadharName" id="aadharName" />
+                                                                <input type="text" class="form-control" placeholder="Name(as per aadharcard)" name="aadharName" id="aadharName" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
 
@@ -244,7 +246,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Mobile Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                                <input type="text" class="form-control" placeholder="Mobile Number" name="mobile" id="mobile" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -261,12 +263,12 @@
                                                     </p> -->
                                                 </div>
                                                 <div class="tab-pane fade" id="addressdet">
-                                                    <h3 class="head text-center">resdential aadress</h3>
+                                                    <h3 class="head text-center">Residential Address</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Premise Name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -276,56 +278,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -336,7 +338,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Shop/Business Name</label>
-                                                                <input type="text" class="form-control" placeholder="Enter Shop/Business name" name="shopName" id="shopName" />
+                                                                <input type="text" class="form-control" placeholder="Shop/Business Name" name="shopName" id="shopName" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -348,7 +350,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Official/Work/Permanent</label>
-                                                                <input type="text" class="form-control" placeholder="official/work/permanent" name="shopName" id="shopName" />
+                                                                <input type="text" class="form-control" placeholder="Official/Work/Permanent" name="shopName" id="shopName" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -360,7 +362,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Nature of Business</label>
-                                                                <textarea class="form-control" name="shopName" id="shopName" rows="1"></textarea>
+                                                                <textarea class="form-control" placeholder="Nature of Business" name="shopName" id="shopName" rows="1"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -378,7 +380,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="shopPremiseName" id="shopPremiseName" />
+                                                                <input type="text" class="form-control" placeholder="Premise Name" name="shopPremiseName" id="shopPremiseName" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -402,42 +404,42 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="area" name="area" id="area" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="area" id="area" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -472,62 +474,62 @@
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">photo of prop</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Photo of Prop</label>
+                                                                <input class="form-control" id="propertypic" name="propertypic" type="file" onchange="loadFile(event, 'propertypicp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="propertypicp" width="200px" height="200px" />
                                                             </div>
                                                         </div>     
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">pan card</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <input class="form-control" id="pand" name="pand" type="file" onchange="loadFile(event, 'pandpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pandpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>     
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">address proof(Electricity bill)</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Address Proof(Electricity bill)</label>
+                                                                <input class="form-control" id="addressproof" name="addressproof" type="file" onchange="loadFile(event, 'addressproofpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="addressproofpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>  
 
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">cancel check/bank stat</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Cancel Check/Bank Statement</label>
+                                                                <input class="form-control" id="bstatdoc" name="bstatdoc" type="file" onchange="loadFile(event, 'bstatdocpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bstatdocpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">passport size photo</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Passport Size Photo</label>
+                                                                <input class="form-control" id="passportpic" name="passportpic" type="file" onchange="loadFile(event, 'passportpicpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passportpicpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
@@ -536,12 +538,12 @@
                                                             <div id="rentAgree">
                                                                 <div class="form-group col-sm-6">
                                                                     <label class="control-label">Rent aggrement</label>
-                                                                    <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                    <input class="form-control" id="rentdoc" name="rentdoc" type="file" onchange="loadFile(event, 'rentdocpre')" />
                                                                 </div>
 
                                                                 <div class="form-group col-sm-6">
                                                                     <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="rentdocpre" width="200px" height="200px" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -555,48 +557,48 @@
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">pan card of company</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <input class="form-control" id="cpandoc" name="cpandoc" type="file" onchange="loadFile(event, 'cpandocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="cpandocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">electricity bill of business</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Electricity Bill of Business</label>
+                                                                <input class="form-control" id="bizelectridoc" name="bizelectridoc" type="file" onchange="loadFile(event, 'bizelectridocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bizelectridocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">cancel check/passbook</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <input class="form-control" id="passbookdoc" name="passbookdoc" type="file" onchange="loadFile(event, 'passbookdocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passbookdocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">copy board resolutionok</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Copy Board Resolutionok</label>
+                                                                <input class="form-control" id="boarddoc" name="boarddoc" type="file" onchange="loadFile(event, 'boarddocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="boarddocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
@@ -605,12 +607,12 @@
                                                             <div id="rentAgree2">
                                                                 <div class="form-group col-sm-6">
                                                                     <label class="control-label">Rent aggrement</label>
-                                                                    <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                    <input class="form-control" id="rentagreemnt" name="rentagreemnt" type="file" onchange="loadFile(event, 'rentagreemntpre')" />
                                                                 </div>
 
                                                                 <div class="form-group col-sm-6">
                                                                     <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="rentagreemntpre" width="200px" height="200px" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -622,72 +624,72 @@
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">pan card of ppl</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <input class="form-control" id="pplpandoc" name="pplpandoc" type="file" onchange="loadFile(event, 'pplpandocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pplpandocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">copy of reg cert</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Copy of Reg Cert</label>
+                                                                <input class="form-control" id="regcertdoc" name="regcertdoc" type="file" onchange="loadFile(event, 'regcertdocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="regcertdocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">electricity bill</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Electricity Bill</label>
+                                                                <input class="form-control" id="electbilldoc" name="electbilldoc" type="file" onchange="loadFile(event, 'electbilldocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="electbilldocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">PPL Agreement</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <input class="form-control" id="pplagreedoc" name="pplagreedoc" type="file" onchange="loadFile(event, 'pplagreedocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pplagreedocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">cancel check/bank stmt</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Cancel Check/Bank stmt</label>
+                                                                <input class="form-control" id="cancelcheckdoc" name="cancelcheckdoc" type="file" onchange="loadFile(event, 'cancelcheckdocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="cancelcheckdocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">board resolution</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16p')" />
+                                                                <label class="control-label">Board resolution</label>
+                                                                <input class="form-control" id="resolvdoc" name="resolvdoc" type="file" onchange="loadFile(event, 'resolvdocp')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16p" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="resolvdocp" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
@@ -695,13 +697,13 @@
                                                             <input type="radio" name="rentPPL" id="" value="1" />Yes <input type="radio" name="rentPPL" id="" value="0" />No
                                                             <div id="rentAgree3">
                                                                 <div class="form-group col-sm-6">
-                                                                    <label class="control-label">Rent aggrement</label>
-                                                                    <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                    <label class="control-label">Rent Agreement</label>
+                                                                    <input class="form-control" id="rentdocu" name="rentdocu" type="file" onchange="loadFile(event, 'rentdocupre')" />
                                                                 </div>
 
                                                                 <div class="form-group col-sm-6">
                                                                     <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="rentdocupre" width="200px" height="200px" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -713,43 +715,43 @@
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">pan card of partner ship firm</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Pan Card of Partnership Firm</label>
+                                                                <input class="form-control" id="psfirmpandoc" name="psfirmpandoc" type="file" onchange="loadFile(event, 'psfirmpandocpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="psfirmpandocpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">copy of partner ship deed</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Copy of Partnership Deed</label>
+                                                                <input class="form-control" id="psdeeddoc" name="psdeeddoc" type="file" onchange="loadFile(event, 'psdeeddocpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="psdeeddocpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">Address pfroof(electricity bill)</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                <label class="control-label">Address proof(electricity bill)</label>
+                                                                <input class="form-control" id="addproofdoc" name="addproofdoc" type="file" onchange="loadFile(event, 'addproofdocpre')" />
                                                             </div>
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="addproofdocpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">cancel check/bank stmt</label>
+                                                                <label class="control-label">Cancel Check/bank stmt</label>
                                                                 <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
                                                             </div>
 
@@ -789,14 +791,14 @@
 
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">Aadharcard Number</label>
+                                                                        <label class="control-label">Aadhar card Number</label>
 
                                                                         <input type="text" class="form-control" placeholder="ABCD0101E" name="pAadhar" id="pAadhar" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">Pancard Number</label>
+                                                                        <label class="control-label">Pan card Number</label>
 
                                                                         <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" />
                                                                     </div>

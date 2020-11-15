@@ -191,7 +191,7 @@
                                                                 <label class="control-label"> Income Type</label>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio" name="inctype" id="yes" value="1" />
-                                                                    <label class="form-check-label" for="inlineRadio1">Bussness and Profession</label>
+                                                                    <label class="form-check-label" for="inlineRadio1">Business and Profession</label>
                                                                     <input class="form-check-input" type="radio" name="inctype" id="no" value="2" />
                                                                     <label class="form-check-label" for="">Salaried</label>
                                                                 </div>
@@ -206,7 +206,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -216,13 +216,13 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="PAN Card Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per aadhar card)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per aadhar card)" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -231,7 +231,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -268,7 +268,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder=" Premise Name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -278,56 +278,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -498,7 +498,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Business Name</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="Business Name" name="retailorid" id="retailorid" />
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -506,7 +506,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Nature of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="Nature of Business" name="retailorid" id="retailorid" />
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -514,7 +514,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Place of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="Place of Business" name="retailorid" id="retailorid" />
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -540,36 +540,36 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Partner Name</label>
-                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" />
+                                                                    <input type="text" class="form-control" placeholder="Partner Name" name="partnerName" id="partnerName" />
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Aadharcard Number</label>
+                                                                    <label class="control-label">Aadhar Card Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="ABCD0101E" name="pAadhar" id="pAadhar" />
+                                                                    <input type="text" class="form-control" placeholder="Aadhar Card Number" name="pAadhar" id="pAadhar" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Pancard Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" />
+                                                                    <input type="text" class="form-control" placeholder="Pancard Number" name="pPancard" id="pPancard" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Email Id</label>
 
-                                                                    <input type="email" class="form-control" placeholder="123456789123" name="pEmail" id="pEmail" />
+                                                                    <input type="email" class="form-control" placeholder="example@gmail.com" name="pEmail" id="pEmail" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Mobile Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="123456789123" name="pMobile" id="pMobile" />
+                                                                    <input type="text" class="form-control" placeholder="Mobile Number" name="pMobile" id="pMobile" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -655,27 +655,27 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="form-label">form -16-A-part</label>
-                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                                <label class="form-label">FORM-16- A-part</label>
+                                                                                <input type="file" class="form-control" name="form16a" id="form16a" onchange="loadFile(event,'form16apre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16apre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
 
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="form-label">form -B-part</label>
-                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
+                                                                                <label class="form-label">FORM-16- B-part</label>
+                                                                                <input type="file" class="form-control" name="form16b" id="form16b" onchange="loadFile(event,'form16bpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16bpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                        
@@ -685,7 +685,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="bankstat" id="bankstat" onchange="loadFile(event,'adharpre')" />
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -697,7 +697,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'panpre')" />
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -711,7 +711,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Bank Statement/Passbook</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event,'stmpre')" />
+                                                                                <input class="form-control" id="bankstt" name="bankstt" type="file" onchange="loadFile(event,'stmpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -723,7 +723,7 @@
 
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> investment proof</label>
+                                                                                <label class="control-label"> Investment Proof</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="invet_proof" id="yes" value="Y"/>
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -744,7 +744,7 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> bussiness loan certficate</label>
+                                                                                <label class="control-label"> Bussiness Loan Certficate</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="bloancert" id="yes" value="a" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -763,7 +763,7 @@
 
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> lic reciept </label>
+                                                                                <label class="control-label"> LIC reciept </label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="lcert" id="yes" value="c" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -783,7 +783,7 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> income from other source</label>
+                                                                                <label class="control-label"> Income from other source</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="iother" id="yes" value="e" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -802,7 +802,7 @@
 
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> home loan certificate</label>
+                                                                                <label class="control-label"> Home Loan Certificate</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="h_loan" id="yes" value="g" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -820,27 +820,10 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
+                                                                        
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> investment proof</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="yes" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="no" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid" onchange="loadFile(event,'investppre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="investppre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> personal loan</label>
+                                                                                <label class="control-label"> Personal Loan</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="" id="yes" value="i" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -856,11 +839,9 @@
                                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="prespre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
-                                                                    </tr>
-                                                                    <tr>
                                                                         <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> last year balance sheet copy</label>
+                                                                                <label class="control-label"> Last Year Balance Sheet Copy</label>
                                                                                 <div class="form-check form-check-inline">
                                                                                     <input class="form-check-input" type="radio" name="bsheet" id="yes" value="k" />
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -877,6 +858,7 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
+                                                                    
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-group">

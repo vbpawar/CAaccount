@@ -192,7 +192,7 @@
                                                             <div class="col-sm-4" id="pandiv" >
                                                             <div class="form-group">
                                                                 <label class="control-label">Pan Number </label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="pan_num" id="pan_num" />
+                                                                <input type="text" class="form-control" placeholder="Pan Number" name="pan_num" id="pan_num" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -201,7 +201,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Applicant Name (as per aadhar card)</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Applicant Name (as per aadhar card)" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -217,7 +217,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Mobile Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                                <input type="text" class="form-control" placeholder="Mobile Number" name="mobile" id="mobile" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -239,7 +239,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Premise Name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -249,56 +249,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -308,7 +308,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Bank Name</label>
-                                                                <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Bank Name" name="retailorid" id="retailorid" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -318,14 +318,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Account Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Account Number" name="panno" id="panno" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">IFSC Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="123456789123" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="IFSC Number" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
