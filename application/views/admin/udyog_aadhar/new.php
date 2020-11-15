@@ -328,12 +328,12 @@
                                                                 <input type="text" class="form-control" placeholder="Office Mail" name="office_mailid" id="office_mailid" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <!-- <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Official/ Work/ Permanent</label>
                                                                 <input type="text" class="form-control" placeholder="Official/ Work/ Permanent" name="shopName" id="shopName" />
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Business Startup Date</label>
@@ -430,14 +430,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Male</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="male" id="male" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Female</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="female" id="female" />
                                                             </div>
                                                         </div>
                                                     </div>
