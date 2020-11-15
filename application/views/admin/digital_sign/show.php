@@ -112,7 +112,7 @@
                                             <th class="min-tablet">Mobile No.</th>
                                             <th class="min-tablet">Email ID</th>
                                             <th class="min-tablet">Status</th>
-                                            <!--<th class="min-desktop">Action</th>-->
+                                            <th class="min-desktop">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="serviceList">
