@@ -102,9 +102,14 @@ $route['pf_withdrawal/create'] = 'services/PfwithdrawlService/create';
 $route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';
 $route['pf_withdrawal/update'] = 'services/PfwithdrawlService/update';
 
+//digital sign apis
 $route['createdigital'] = 'digital_controller/add_digital_form';
 $route['updatedigital'] = 'digital_controller/update_digital_form';
 $route['load_digital'] = 'digital_controller/get_all_digital';
+//digital sign ui
+$route['digital_sign/cerate'] = 'services/DigitalSignService/create';
+$route['digital_sign/show'] = 'services/DigitalSignService/show';
+$route['digital_sign/update'] = 'services/DigitalSignService/update';
 
 $route['createudyog'] = 'udyog_controller/add_udyog_form';
 //Get APIS
