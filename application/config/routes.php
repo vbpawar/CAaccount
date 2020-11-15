@@ -126,3 +126,8 @@ $route['wallet'] = 'services/WalletService/create';
 $route['createuser'] = 'user/createUser';
 $route['loadbalance'] = 'walletController/loadBalance';
 $route['loadtransaction'] = 'walletController/load_transactions';
+
+//pan services
+$route['createpan'] = 'pan_controller/add_pan_form';
+$route['updatepan'] = 'pan_controller/update_pan_form';
+$route['loadpan'] = 'pan_controller/get_all_pan';
