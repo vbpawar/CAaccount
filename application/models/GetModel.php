@@ -17,5 +17,10 @@ class GetModel extends CI_Model {
             $query = $this->db->query($sql);
     return $query->result();
     }
+    public function activities() {
+        $sql = "SELECT * FROM activities";
+        $query = $this->db->query($sql);
+    return $query->result();
+    }
 
 }

@@ -91,3 +91,30 @@ $route['retailor']='services/Retailor/show';
 $route['retailor/create']='services/Retailor/create';
 
 $route['login']='services/User/login';
+$route['act'] = 'residential_address/act';
+//new service routes
+//pf apis
+$route['createpf'] = 'pf_controller/add_pf_form';
+$route['updatepf'] = 'pf_controller/update_pf_form';
+$route['load_pf'] = 'pf_controller/get_all_pf';
+//pf ui
+$route['pf_withdrawal/create'] = 'services/PfwithdrawlService/create';
+$route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';
+$route['pf_withdrawal/update'] = 'services/PfwithdrawlService/update';
+
+$route['createdigital'] = 'digital_controller/add_digital_form';
+$route['updatedigital'] = 'digital_controller/update_digital_form';
+$route['load_digital'] = 'digital_controller/get_all_digital';
+
+$route['createudyog'] = 'udyog_controller/add_udyog_form';
+//Get APIS
+$route['getroles'] = 'role/getAllRoles';
+$route['activities'] = 'get/getactivities';
+$route['distributors'] = 'get/getdistributors';
+$route['retailors'] = 'get/getretailors';
+$route['employees'] = 'get/getemployees';
+
+//demo api
+$route['session'] = 'services/demo/sessiondata';
+//user creation
+$route['createuser'] = 'user/createUser';

@@ -46,8 +46,8 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
-            tblData += '<tr><td>' + services.distributorid + '</td>';
-            tblData += '<td>' + services.retailorid + '</td>';
+            tblData += '<tr><td>' +services.dname+' '+ services.dlname + '</td>';
+            tblData += '<td>'+services.rname+' '+ services.rlname + '</td>';
 
             tblData += '<div class="table-actions">';
 

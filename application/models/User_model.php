@@ -40,4 +40,9 @@ class User_model extends CI_Model {
         return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
     }
 
+    public function create_batch($data){
+        $query = $this->db->insert('user_access_control', $data);
+      return $this->db->insert_id();
+      }
+     
 }

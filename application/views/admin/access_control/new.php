@@ -166,8 +166,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Role</label>
                                                                 <select name="roleid" id="roleid" class="form-control">
-                                                                    <option value="1">id1</option>
-                                                                    <option value="2">id2</option>
+                                                                  
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -251,112 +250,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="services">
-                                                <div class="row">
-                                                    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
+                                                <div class="row role_access">
+                                                 
+                                                   
                                                 </div>
-                                                <div class="row">
-                                                
-                                                    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                </div><div class="row">
-                                                    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4" >
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check col-sm-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Default checkbox
-                                                        </label>
-                                                    </div>
-                                                    
-                                                </div>
+                                               
                                                 </div>
                                                 
                                                

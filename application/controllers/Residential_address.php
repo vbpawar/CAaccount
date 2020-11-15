@@ -1,17 +1,23 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
- 
-class Personal_details extends CI_Controller{
+ require APPPATH . 'controllers/shop_details.php';
+class Residential_address extends CI_Controller{
 
     public function __construct()
     {
         parent::__construct();
         $this->load->model('ResidentialModel','service');
+        // $this->load->library('controllers/shop_details'); 
     }
     private $response = null;
     private $records = null;
-
+   
+    
+    
+    public function act(){
+        echo $this->shop_details->demo();
+    }
     //get all certificates
     public function get_residential_address() {
         $rid = $this->input->post('rid');

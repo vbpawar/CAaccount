@@ -117,9 +117,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Distributor</label>
                                                 <select  id="distributorid" name="distributorid" class="form-control">
-                                                <option value="1">id1</option>
-                                                <option value="2">id2</option>
-
+                                               
                                                 </select>
                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                             </div>
@@ -130,9 +128,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Retailor</label>
                                                 <select  id="retailorid" name="retailorid" class="form-control">
-                                                <option value="1">id1</option>
-                                                <option value="2">id2</option>
-
+                                               
                                                 </select>
                                                 <!--<input type="text" class="form-control" placeholder="" name="retailorid" id="retailorid">-->
                                             </div>

@@ -6,6 +6,11 @@ use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
 class Register extends CI_Controller {
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('WalletModel','service');
+    }
 	/**
 	 * This function loads the registration form
 	 */
@@ -72,6 +77,15 @@ class Register extends CI_Controller {
 			 * to save save data before of after the payment
 			 */
 			$this->setRegistrationData();
+			$userdata = $_SESSION['Data'];
+			$data = array(
+				'userid'=>$userdata['userid'],
+				'transaction_type'=>'Credit',
+				'amount'=>$_SESSION['payable_amount'],
+				'transactiondate'=>date('Y-m-d'),
+				'message'=>'Added money in wallet'
+			);
+		$id = $this->service->addwallet($data);
 
 			redirect(base_url().'register/success');
 		}

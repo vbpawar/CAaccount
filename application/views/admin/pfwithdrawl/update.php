@@ -143,13 +143,13 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
+<!--                                                    <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs four">
                                                                 <i class="fa fa-file"></i>
                                                             </span>
                                                         </a>
-                                                    </li>
+                                                    </li>-->
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
@@ -422,9 +422,9 @@
 
 
                                                     
-                                                    <p class="text-center">
+<!--                                                    <p class="text-center">
                                                         <button href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
-                                                    </p>
+                                                    </p>-->
                                                 </div>
 
                                                 <div class="clearfix"></div>

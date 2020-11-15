@@ -61,4 +61,20 @@ class Get extends CI_Controller{
         }
          echo json_encode($response);
     }
+    public function getactivities() {
+        $records = $this->service->activities();
+        if ($records != null) {
+            $response = array(
+                'Message' => 'All data load successfully',
+                "Data" => $records,
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Data Not Found',
+                'Responsecode' => 401
+            );
+        }
+         echo json_encode($response);
+    }
 }

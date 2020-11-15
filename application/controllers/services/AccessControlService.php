@@ -20,7 +20,7 @@ class AccessControlService extends CI_Controller {
         $this->load->view('admin/access_control/new');
         $this->load->view('admin/js/comman_js');
         
-        // $this->load->view('admin/js/access_control/new_js');
+        $this->load->view('admin/js/access_control/role_js');
         $this->load->view('admin/footer');
     }
     
