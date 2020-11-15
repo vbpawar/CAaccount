@@ -32,24 +32,21 @@ class User extends CI_Controller {
         );
         $result = $this->contact->createUserContact($contact);
        $access= $this->input->post('access');
-    //    print_r($access);
-    //    exit;
-    if (is_array($access) || is_object($access))
-{
-    foreach ($access as $row){
+       $access = explode(',',$access);
+      
+       for($i=0;$i<count($access);$i++){
         $data = array(
             'userid'=>$userid,
-            'activityid'=>$row->activityid
+            'activityid'=>$access[$i]
         );
-        $this->user->create_batch($data);
-    }
-}
-       
+     $insert[] = $this->user->create_batch($data);
+    } 
         if ($result) {
 
             $response = array(
                 'Message' => 'user created successfully',
                 "userid" => $userid,
+                'array'=>$insert,
                 'Responsecode' => 200
             );
         } else {
