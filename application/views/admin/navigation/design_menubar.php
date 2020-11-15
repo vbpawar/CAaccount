@@ -10,6 +10,7 @@
         <li><a href="<?php echo base_url();?>services/DigitalSignService/create"> Digital Sign</a></li>
         <li><a href="<?php echo base_url();?>services/AccessControlService/create"> Access Control</a></li>
         <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
+
         <li><a href="<?php echo base_url();?>services/GstRegistration/create">GST Registration</a></li>
 
 

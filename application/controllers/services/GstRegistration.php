@@ -11,7 +11,8 @@ class GstRegistration extends CI_Controller {
 
     
     public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'GST Registration Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/navigation/notificationbar');

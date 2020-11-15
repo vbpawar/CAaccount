@@ -105,8 +105,8 @@
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th>Distributor Id</th>
-                                            <th>Retailor Id</th>
+                                            <th>Distributor </th>
+                                            <th>Retailor </th>
                                             <th class="min-desktop">Action</th>
                                         </tr>
                                     </thead>

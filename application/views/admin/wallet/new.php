@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Wallet</h3>
+            <h3><i class="fas fa-wallet"></i> Wallet</h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
@@ -131,7 +131,6 @@
                                                             <span class="round-tabs one">
                                                                 <i class="glyphicon glyphicon-share"></i>
                                                                 <i class="fas fa-comment-dollar"></i>
-                                                                
                                                             </span>
                                                         </a>
                                                     </li>
@@ -166,7 +165,7 @@
                                                     <h3 class="head text-center"></h3>
 
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green">Amount 5000<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        <a href="" class="btn btn-info btn-outline-rounded" style="color: blue;">Amount 5000<span style="margin-left: 10px;" class="fa fa-money"></span></a>
                                                     </p>
                                                 </div>
                                                 <div class="tab-pane fade" id="transafermny">
@@ -187,30 +186,82 @@
                                                                 <input type="disabled" class="form-control" placeholder="0011110" name="retailorid" id="retailorid" />
                                                             </div>
                                                         </div>
+                                                        <a href="" class="btn btn-success btn-outline-rounded green">Send Money<span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="transact">
-                                                    <div class="card-body">
-                                                        <div class="card"></div>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                        </ul>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                        </ul>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                            <li class="list-group-item">Cras justo odio</li>
-                                                        </ul>
+                                                    <div class="container rounded mt-5 bg-white p-md-5">
+                                                        <h3 class="head text-center">Transaction history</h3>
+
+                                                        <!-- <div class="h2 font-weight-bold">Meetings</div> -->
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Name</th>
+                                                                        <th scope="col">Date</th>
+                                                                        <th scope="col">Time</th>
+                                                                        <th scope="col">Status</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr class="bg-blue">
+                                                                        <td class="pt-2">
+                                                                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
+                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Emilia Kollette</div>
+                                                                        </td>
+                                                                        <td class="pt-3 mt-1">25 Sep 2020</td>
+                                                                        <td class="pt-3">11:00 AM</td>
+                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
+                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    </tr>
+                                                                    <tr id="spacing-row">
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="bg-blue">
+                                                                        <td class="pt-2">
+                                                                            <img src="https://images.pexels.com/photos/3765114/pexels-photo-3765114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="rounded-circle" alt="" />
+                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Anny Adams</div>
+                                                                        </td>
+                                                                        <td class="pt-3">26 Sep 2020</td>
+                                                                        <td class="pt-3">11:00 AM</td>
+                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
+                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    </tr>
+                                                                    <tr id="spacing-row">
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="bg-blue">
+                                                                        <td class="pt-2">
+                                                                            <img src="https://images.pexels.com/photos/3779448/pexels-photo-3779448.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
+                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Arnold Linn</div>
+                                                                        </td>
+                                                                        <td class="pt-3">26 Sep 2020</td>
+                                                                        <td class="pt-3">02:00 PM</td>
+                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
+                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    </tr>
+                                                                    <tr id="spacing-row">
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="bg-blue">
+                                                                        <td class="pt-2">
+                                                                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
+                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Josh Limosel</div>
+                                                                        </td>
+                                                                        <td class="pt-3">26 Sep 2020</td>
+                                                                        <td class="pt-3">04:00 PM</td>
+                                                                        <td class="pt-3"><span class="fa fa-minus pl-3"></span></td>
+                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="addmoneys">
-                                                <div class="row">
-                                                        <div class="col-sm-4">
-                                                            
-                                                        </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4"></div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
@@ -219,9 +270,7 @@
                                                                 <input type="text" class="form-control" placeholder="200" name="amount" id="amount" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            
-                                                            </div>
+                                                        <div class="col-sm-4"></div>
                                                     </div>
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
@@ -229,7 +278,9 @@
                                                     <h3 class="head text-center">thanks for staying tuned! <span style="color: #f48260;">♥</span></h3>
 
                                                     <p class="text-center">
-                                                        <button  type="submit" class="btn btn-success btn-outline-rounded green"> Add Money In Wallet <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                        <button type="submit" class="btn btn-info btn-outline-rounded green">
+                                                            Add Money to Wallet <span style="margin-left: 10px;"><img src="<?php echo base_url('/admin_assets/img/addmoney.png'); ?>" style="height: 25px; width: 25px;" /></span>
+                                                        </button>
                                                     </p>
                                                     <div id="ak"></div>
                                                 </div>
