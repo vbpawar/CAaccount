@@ -1,16 +1,17 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#udyogAadharForm').on('submit', function (e) {
+    $('#digital-sign-form').on('submit', function (e) {
+        alert('ok2');
         e.preventDefault();
 
-        var returnVal = validChecker();
+    var returnVal = validChecker();
         var formdata = new FormData(this);
-        formdata.append('userid',<?php echo $_SESSION['Data']['userid']; ?>);
+        formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
         if (returnVal) {
 
             $.ajax({
 
-                url: url + 'UdyogAdhar/addudyog',
+                url: url + 'createdigital',
 
                 type: 'POST',
 
@@ -52,7 +53,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/UdyogAadhar/show');
+        window.location.replace(url + 'digital_sign/show');
     }
 
 
