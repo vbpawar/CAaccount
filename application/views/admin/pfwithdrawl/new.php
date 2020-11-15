@@ -214,7 +214,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
 
-                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
+                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
                                                             </div>
                                                         </div>
                                                         <!-- <div class="col-sm-4">
