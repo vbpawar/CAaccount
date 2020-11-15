@@ -204,7 +204,7 @@
                                                                     <th scope="col">Amount</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="wallet_data">
                                                                     <tr class="bg-blue">
                                                                     <td  class="pt-3"> <span class="fa fa-bed mr-1"></span> Hotel Leela Palace </td>
                                                                     <!-- <td  class="pt-3">Google Pay <i><span class="fab fa-google-pay"></i></span></td> -->
@@ -230,17 +230,7 @@
                                                                         <td></td>
                                                                     </tr>
 
-                                                                    <tr class="bg-blue">
-                                                                        
-                                                                    
-                                                                        <td class="pt-3"> <span class="fa fa-exchange mr-1"></span> Service Purchase </td>
-                                                                        <td class="pt-3">PhonePe<span><img src="<?php echo base_url('/admin_assets/img/phonepe.png'); ?>" ></span></td>
-                                                                        <td class="pt-3">12 May 2020, 4:30 PM</td>
-                                                                        <td class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ 198.90 </td>
-                                                                    </tr>
-                                                                    <tr id="spacing-row">
-                                                                        <td></td>
-                                                                    </tr>
+                                                                   
                                                                     
                                                                     <!-- <tr class="bg-blue">
                                                                         <td class="pt-2">
