@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class Udyog_controller extends CI_Controller
+class Pan_controller extends CI_Controller
 {
     
     public function __construct()
