@@ -39,6 +39,14 @@
 <!--sweet alert-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<!--DataTables [ OPTIONAL ]-->
+
+<script src="<?php echo base_url('admin_assets/plugins/datatables/media/js/jquery.dataTables.js'); ?>"></script>
+<script src="<?php echo base_url('admin_assets/plugins/datatables/media/js/dataTables.bootstrap.js'); ?>"></script>
+<script src="<?php echo base_url('admin_assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js'); ?>"></script>
+
+
+
 <script> //img preview code ######DON'T REMOVE ####
 var loadFile = function(event,out) {
 //    console.log("da")
