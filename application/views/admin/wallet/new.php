@@ -198,53 +198,51 @@
                                                             <table class="table">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th scope="col">Name</th>
-                                                                        <th scope="col">Date</th>
-                                                                        <th scope="col">Time</th>
-                                                                        <th scope="col">Status</th>
+                                                                    <th scope="col">Activity</th>
+                                                                    <th scope="col">Mode</th>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Amount</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr class="bg-blue">
-                                                                        <td class="pt-2">
-                                                                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
-                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Emilia Kollette</div>
-                                                                        </td>
-                                                                        <td class="pt-3 mt-1">25 Sep 2020</td>
-                                                                        <td class="pt-3">11:00 AM</td>
-                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    <td  class="pt-3"> <span class="fa fa-bed mr-1"></span> Hotel Leela Palace </td>
+                                                                    <!-- <td  class="pt-3">Google Pay <i><span class="fab fa-google-pay"></i></span></td> -->
+                                                                    <td class="pt-3">Google Pay<span><img src="<?php echo base_url('/admin_assets/img/google-pay.png'); ?>" ></span></td>
+
+                                                                    <td  class="pt-3">11 Jul 2020, 2:00 PM</td>
+                                                                    <td  class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ 18.9 </td>
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="bg-blue">
-                                                                        <td class="pt-2">
-                                                                            <img src="https://images.pexels.com/photos/3765114/pexels-photo-3765114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="rounded-circle" alt="" />
-                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Anny Adams</div>
-                                                                        </td>
-                                                                        <td class="pt-3">26 Sep 2020</td>
-                                                                        <td class="pt-3">11:00 AM</td>
-                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                    
+                                                                    <td  class="pt-3"> <span class="fa fa-exchange mr-1"></span> Monthly Salary </td>
+                                                                    <!-- <td  class="pt-3"> Visa <span class="fa fa-cc-visa"></span></td> -->
+                                                                    <td class="pt-3">PhonePe<span><img src="<?php echo base_url('/admin_assets/img/paytm.png'); ?>" ></span></td>
+
+                                                                    <td  class="pt-3"> 10 Jul 2020, 8:30 PM</td>
+                                                                    <td  class="pt-3">  <span class="fa fa-long-arrow-down mr-1"></span> ₹ 9,765.00 </td>
+                                                                   
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
                                                                     </tr>
+
                                                                     <tr class="bg-blue">
-                                                                        <td class="pt-2">
-                                                                            <img src="https://images.pexels.com/photos/3779448/pexels-photo-3779448.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
-                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Arnold Linn</div>
-                                                                        </td>
-                                                                        <td class="pt-3">26 Sep 2020</td>
-                                                                        <td class="pt-3">02:00 PM</td>
-                                                                        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                                                                        
+                                                                    
+                                                                        <td class="pt-3"> <span class="fa fa-exchange mr-1"></span> Service Purchase </td>
+                                                                        <td class="pt-3">PhonePe<span><img src="<?php echo base_url('/admin_assets/img/phonepe.png'); ?>" ></span></td>
+                                                                        <td class="pt-3">12 May 2020, 4:30 PM</td>
+                                                                        <td class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ 198.90 </td>
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
                                                                     </tr>
-                                                                    <tr class="bg-blue">
+                                                                    
+                                                                    <!-- <tr class="bg-blue">
                                                                         <td class="pt-2">
                                                                             <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
                                                                             <div class="pl-lg-5 pl-md-3 pl-1 name">Josh Limosel</div>
@@ -253,7 +251,7 @@
                                                                         <td class="pt-3">04:00 PM</td>
                                                                         <td class="pt-3"><span class="fa fa-minus pl-3"></span></td>
                                                                         <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
-                                                                    </tr>
+                                                                    </tr> -->
                                                                 </tbody>
                                                             </table>
                                                         </div>
