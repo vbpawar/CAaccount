@@ -218,18 +218,18 @@
                                 <div class="dropdown-menu dropdown-menu-right with-arrow">
                                     <!-- User dropdown menu -->
                                     <ul class="head-list">
-                                        <li>
+                                        <!-- <li>
                                             <a href="#"> <i class="fa fa-user fa-fw"></i> Profile </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="<?php echo base_url('services/WalletService/create');?>"> <i class="fas fa-wallet"></i> Wallet </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="#">  <i class="fa fa-envelope fa-fw"></i> Messages </a>
                                         </li>
                                         <li>
                                             <a href="#">  <i class="fa fa-gear fa-fw"></i> Settings </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="<?php echo base_url('LoginController/logout');?>"> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
                                         </li>
