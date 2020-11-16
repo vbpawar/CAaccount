@@ -182,14 +182,14 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>PAN Card Number</label>
+                                                                <label class="control-label"><span class="error">*</span> PAN Card Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Enter your unique pan card number" name="pan_number" id="pan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Name (as per aadhar card)</label>
+                                                                <label class="control-label"><span class="error">*</span> Name (as per aadhar card)</label>
                                                                 <input type="text" class="form-control" placeholder="Enter your name as per aadhar card" name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
@@ -197,7 +197,7 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Aadhar Card Number</label>
+                                                                <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
                                                             </div>
@@ -211,7 +211,7 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Mobile Number</label>
+                                                                <label class="control-label"><span class="error">*</span> Mobile Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" />
                                                             </div>

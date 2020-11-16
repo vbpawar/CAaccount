@@ -201,21 +201,21 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Aadhar Card Name</label>
+                                                                <label class="control-label"><span class="error">*</span> Aadhar Card Name</label>
 
                                                                 <input type="text" class="form-control" placeholder="Aadhar Card Name" name="aadhar_name" id="aadhar_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Aadhar Card Number</label>
+                                                                <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar_number" id="aadhar_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Mobile Number</label>
+                                                                <label class="control-label"><span class="error">*</span> Mobile Number</label>
 
                                                                 <input type="text" class="form-control" placeholder="Mobile Number" name="contact_number" id="contact_number" />
                                                             </div>
@@ -321,8 +321,8 @@
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Nature of Bussness</label>
-                                                                <input type="text" class="form-control" placeholder="Nature of Bussness" name="nature_of_buss" id="nature_of_buss" />
+                                                                <label class="control-label"> Nature of Business</label>
+                                                                <textarea  class="form-control" placeholder="Nature of Business" name="nature_of_buss" id="nature_of_buss"> </textarea>
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>

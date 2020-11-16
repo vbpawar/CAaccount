@@ -10,12 +10,11 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 class WalletService extends CI_Controller {
 
      public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Wallet Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/css/wallet_css');
-
-
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/wallet/new');
