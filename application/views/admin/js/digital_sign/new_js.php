@@ -1,7 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
     $('#digital-sign-form').on('submit', function (e) {
-        alert('ok2');
         e.preventDefault();
 
     var returnVal = validChecker();
