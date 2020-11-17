@@ -38,6 +38,7 @@
             } else {
                 
             }
+            $this->view('admin/navigation/design_menubar');
             ?>
         </ul>
         <!-- end nav navbar-nav -->

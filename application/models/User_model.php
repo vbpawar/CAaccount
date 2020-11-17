@@ -13,6 +13,10 @@ class User_model extends CI_Model {
         return $query->result();
     }
 
+    public function getUserAccess() {
+        $query = $this->db->query("SELECT * FROM user_access_control");
+        return $query->result();
+    }
     public function deleteUser($userid) {
 //        DELETE user_master ,contact_master from user_master INNER JOIN contact_master ON user_master.userid=contact_master.userid WHERE user_master.userid=8
 //        $query = $this->db->query("DELETE user_master ,contact_master from user_master INNER JOIN contact_master ON user_master.userid=contact_master.userid WHERE user_master.userid='$userid'");

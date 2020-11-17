@@ -33,7 +33,7 @@ class User extends CI_Controller {
         $result = $this->contact->createUserContact($contact);
        $access= $this->input->post('access');
        $access = explode(',',$access);
-      
+       
        for($i=0;$i<count($access);$i++){
         $data = array(
             'userid'=>$userid,
@@ -41,7 +41,9 @@ class User extends CI_Controller {
         );
      $insert[] = $this->user->create_batch($data);
     } 
-        if ($result) {
+//    echo $access[$i];
+    
+    if ($result) {
 
             $response = array(
                 'Message' => 'user created successfully',
@@ -62,11 +64,13 @@ class User extends CI_Controller {
     public function getUsersList() {
 //        $response=null;
         $records = $this->user->getAllUsersList();
+        $access = $this->user->getUserAccess();
         if ($records != null) {
 
             $response = array(
                 'Message' => 'get all users list successfully!',
                 "Data" => $records,
+                "access" => $access,
                 'Responsecode' => 200
             );
         } else {

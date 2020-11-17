@@ -1,7 +1,7 @@
 <script>
     var url = '<?php echo base_url(); ?>';
     var userList = new Map();
-
+    var userAccess=null;
     const loadList = () => {
 
         $.ajax({
@@ -13,16 +13,17 @@
             dataType: 'json',
 
             success: function (response) {
-
-                console.log(response);
+//                console.log('===============response===================');
+//                console.log(response);
                 if (response.Responsecode == 200 && response.Data != null) {
 
                     const count = response.Data.length;
-
+                    userAccess=response.access;
+                    
                     for (var i = 0; i < count; i++) {
 
                         userList.set(response.Data[i].userid, response.Data[i]);
-
+//                            console.log(userList); 
                     }
 
                     showList(userList);
@@ -98,7 +99,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/UserMaster/update',
+                url: url+'user/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
