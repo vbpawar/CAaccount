@@ -224,7 +224,7 @@
                                             <a href="#"> <i class="fa fa-user fa-fw"></i> Profile </a>
                                         </li> -->
                                         <li>
-                                            <a href="<?php echo base_url('services/WalletService/create');?>"> <img  src="<?php echo base_url('admin_assets/img/wallettt.png'); ?>" style="height:20px;weight:20px" class="fa-fw"> Wallet </a>
+                                            <a href="<?php echo base_url('services/WalletService/create');?>"> <img  src="<?php echo base_url('admin_assets/img/wallettt.png'); ?>" style="height:20px;weight:20px" class="fa-fw"> &nbsp;Wallet </a>
                                             <!-- <a href="<?php echo base_url('LoginController/logout');?>"> <i class="fas fa-wallet fa-fw"></i> Wallet </a> -->
 
                                         </li>

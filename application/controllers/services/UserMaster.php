@@ -10,13 +10,14 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 class UserMaster extends CI_Controller {
 
     public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'User Master';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/user_master/new');
+        $this->load->view('admin/access_control/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/user_master/new_js');
+        $this->load->view('admin/js/access_control/new_js');
         $this->load->view('admin/footer');
     }
 
@@ -26,10 +27,10 @@ class UserMaster extends CI_Controller {
        
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/user_master/show');
+        $this->load->view('admin/access_control/show');
         $this->load->view('admin/js/comman_js');
      
-        $this->load->view('admin/js/user_master/show_js');
+        $this->load->view('admin/js/access_control/show_js');
         
         $this->load->view('admin/footer');
     }
