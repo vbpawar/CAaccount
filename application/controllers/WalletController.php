@@ -8,13 +8,12 @@ class WalletController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('WalletModel', 'mmodel');
-        $userdata = $_SESSION['Data'];
     }
     private $response = null;
     private $records = null;
 
     public function loadBalance(){
-       
+        $userdata = $_SESSION['Data'];
         $result = $this->mmodel->getbalance($userdata['userid']);
         if($result!=null){
             $response = array(
@@ -33,6 +32,7 @@ class WalletController extends CI_Controller
         echo json_encode($response);
     }
     public function load_transactions(){
+        $userdata = $_SESSION['Data'];
         $result = $this->mmodel->gettransactions($userdata['userid']);
         
             $response = array(
