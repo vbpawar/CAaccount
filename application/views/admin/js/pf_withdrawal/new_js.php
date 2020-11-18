@@ -7,9 +7,11 @@
     var returnVal = validChecker();
         var formdata = new FormData(this);
         formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
+        var userid = <?php echo $_SESSION['Data']['userid'];?>;
+        var amount = 2000;
 //        console.log(formdata);
         if (returnVal) {
-
+             if(check_balance(userid,amount)){
             $.ajax({
 
                 url: url + 'createpf',
@@ -47,6 +49,10 @@
                 }
 
             });
+             }else{
+                 window.open(url+ 'wallet','_blank');
+                // window.location.replace(url + 'wallet');
+             }
 
         }
 

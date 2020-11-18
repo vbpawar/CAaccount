@@ -54,6 +54,23 @@ var loadFile = function(event,out) {
     
     output.src = URL.createObjectURL(event.target.files[0]);
 };
-
+function check_balance(userid,amount){
+    var check = false;
+    $.ajax({
+        url:'<?php echo base_url('/checkbalance');?>',
+        type:'POST',
+        dataType:'json',
+        data:{userid:userid,amount:amount},
+        async:false,
+        success:function(response){
+           if(response.Responsecode==200){
+           check = true;
+           }else{
+               check = false;
+           }
+        }
+    });
+    return check;
+}
 </script>
              
