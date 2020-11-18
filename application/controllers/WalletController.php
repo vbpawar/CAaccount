@@ -43,20 +43,20 @@ class WalletController extends CI_Controller
         echo json_encode($response);
     }
 
-    public function checkbalance(){
-        $result = $this->mmodel->check($userdata['userid']);
-        if($result){
-            $response = array(
-                'Message' => 'Transaction loaded successfully',
-                'Data' => $result,
-                'Responsecode' => 200
-            );
-        }else{
-            $response = array(
-                'Message' => 'Transaction loaded successfully',
-                'Responsecode' => 204
-            ); 
-        }
-        echo json_encode($response);
-    }
+    // public function checkbalance(){
+    //     $result = $this->mmodel->check($userdata['userid']);
+    //     if($result){
+    //         $response = array(
+    //             'Message' => 'Transaction loaded successfully',
+    //             'Data' => $result,
+    //             'Responsecode' => 200
+    //         );
+    //     }else{
+    //         $response = array(
+    //             'Message' => 'Transaction loaded successfully',
+    //             'Responsecode' => 204
+    //         ); 
+    //     }
+    //     echo json_encode($response);
+    // }
 } 
