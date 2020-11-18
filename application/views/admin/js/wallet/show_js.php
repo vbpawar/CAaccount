@@ -16,7 +16,28 @@ function load_balance(){
         }
     });
 }
+function check_balance(userid,amount){
+    var check = false;
+    $.ajax({
+        url:'<?php echo base_url('/checkbalance');?>',
+        type:'POST',
+        dataType:'json',
+        data:{userid:userid,amount:amount},
+        async:false,
+        success:function(response){
+           if(response.Responsecode==200){
+           check = true;
+           }else{
+               check = false;
+           }
+        }
+    });
+    return check;
+}
 function load_transaction(){
+    if(check_balance(2,500)){
+        console.log('working');
+    }
     $.ajax({
         url:'<?php echo base_url('/loadtransaction');?>',
         type:'GET',

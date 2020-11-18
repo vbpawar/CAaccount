@@ -129,6 +129,7 @@ $route['user/update']='services/AccessControlService/update';
 
 $route['loadbalance'] = 'walletController/loadBalance';
 $route['loadtransaction'] = 'walletController/load_transactions';
+$route['checkbalance'] = 'walletController/checkbalance';
 
 //pan services
 $route['createpan'] = 'pan_controller/add_pan_form';

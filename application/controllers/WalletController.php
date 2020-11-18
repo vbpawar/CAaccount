@@ -8,12 +8,13 @@ class WalletController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('WalletModel', 'mmodel');
+        $userdata = $_SESSION['Data'];
     }
     private $response = null;
     private $records = null;
 
     public function loadBalance(){
-        $userdata = $_SESSION['Data'];
+       
         $result = $this->mmodel->getbalance($userdata['userid']);
         if($result!=null){
             $response = array(
@@ -32,7 +33,6 @@ class WalletController extends CI_Controller
         echo json_encode($response);
     }
     public function load_transactions(){
-        $userdata = $_SESSION['Data'];
         $result = $this->mmodel->gettransactions($userdata['userid']);
         
             $response = array(
@@ -40,6 +40,23 @@ class WalletController extends CI_Controller
                 'Data' => $result,
                 'Responsecode' => 200
             );
+        echo json_encode($response);
+    }
+
+    public function checkbalance(){
+        $result = $this->mmodel->check($userdata['userid']);
+        if($result){
+            $response = array(
+                'Message' => 'Transaction loaded successfully',
+                'Data' => $result,
+                'Responsecode' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'Transaction loaded successfully',
+                'Responsecode' => 204
+            ); 
+        }
         echo json_encode($response);
     }
 } 
