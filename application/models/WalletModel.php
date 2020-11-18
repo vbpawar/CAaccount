@@ -19,5 +19,16 @@ class WalletModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result();
     }
+
+    public function deduct_amount($data)
+    {
+        $result = false;
+        if($this->db->insert('wallet_transaction', $data)){
+            $result = true;
+        }else{
+            $result = false;
+        }
+        return $result;
+    }
    
 }
