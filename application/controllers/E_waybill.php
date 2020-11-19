@@ -140,20 +140,20 @@ class E_waybill extends CI_Controller{
    echo json_encode($response);
    }
 
-   public function uploaddocs($doctype,$rowid,$service,$filename,$file)
+   public function uploaddocs($doctype,$pfid,$filename,$file)
    {
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     $data = array(
-        'service'=>$service,
-        'rowid'=>$rowid,
         'extension'=>$ext,
+        'userid'=>1,
+        'pfid'=>$pfid,
         'doctype'=>$doctype
     );
     $result = $this->docs->adddoc($data);
     if($result){
         $imgid = $result['docid'];
     $sourcePath = $file; // Storing source path of the file in a variable
-    $targetPath = "./documents/".$imgid.".".$ext; // Target path where file is to be stored
+    $targetPath = "./pfdocs/".$imgid.".".$ext; // Target path where file is to be stored
     if(move_uploaded_file($sourcePath,$targetPath)){
        return true;
     }else{

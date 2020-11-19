@@ -11,6 +11,7 @@ class PF_controller extends CI_Controller
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('BankModel', 'bmodel');
         $this->load->model('PFModel', 'pfmodel');
+        $this->load->model('DocsModel','docs');
     }
     private $response = null;
     private $records = null;
@@ -90,10 +91,20 @@ class PF_controller extends CI_Controller
             
             $result = $this->pfmodel->add_details($data);
             if ($result['status']) {
-                
+                $id = $result['pfid'];
+                $document = 'Document not uploaded';
+                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) ){ 
+                 if($this->uploaddocs('Aadhar',$id,$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
+                 $document = 'Documents uplaoded';
+                 }
+                 if($this->uploaddocs('PAN',$id,$_FILES['pan']['name'],$_FILES['pan']['tmp_name'])){
+                    $document = 'Documents uplaoded';
+                    }
+                }
                 $response = array(
                     'Message' => 'PF Details added successfully',
                     'Data' => $result['data'],
+                    'document'=>$document,
                     'Responsecode' => 200
                 );
             } else {
@@ -186,5 +197,29 @@ class PF_controller extends CI_Controller
         }
         echo json_encode($response);
     }
+
+    public function uploaddocs($doctype,$pfid,$filename,$file)
+   {
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    $data = array(
+        'extension'=>$ext,
+        'userid'=>1,
+        'pfid'=>$pfid,
+        'doctype'=>$doctype
+    );
+    $result = $this->docs->add_pf_docs($data);
+    if($result){
+        $imgid = $result['docid'];
+    $sourcePath = $file; // Storing source path of the file in a variable
+    $targetPath = "./documents/pf/".$imgid.".".$ext; // Target path where file is to be stored
+    if(move_uploaded_file($sourcePath,$targetPath)){
+       return true;
+    }else{
+        return false;
+    }
+    }else{
+        return false;
+    }  
+   }
     
 } 

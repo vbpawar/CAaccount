@@ -91,9 +91,9 @@ $route['login']='services/User/login';
 $route['act'] = 'residential_address/act';
 //new service routes
 //pf apis
-$route['createpf'] = 'pf_controller/add_pf_form';
-$route['updatepf'] = 'pf_controller/update_pf_form';
-$route['load_pf'] = 'pf_controller/get_all_pf';
+$route['createpf'] = 'PF_controller/add_pf_form';
+$route['updatepf'] = 'PF_controller/update_pf_form';
+$route['load_pf'] = 'PF_controller/get_all_pf';
 //pf ui
 $route['pf_withdrawal/create'] = 'services/PfwithdrawlService/create';
 $route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';

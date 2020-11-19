@@ -2,10 +2,10 @@
 
 class DocsModel extends CI_Model {
 
-    public function adddoc($data)
+    public function add_pf_docs($data)
     {    
         $result = [];
-        if($this->db->insert('documents', $data)){
+        if($this->db->insert('pf_docs', $data)){
            $result['docid'] =  $this->db->insert_id();
            $result['status'] = true;   
          }else{
@@ -13,8 +13,8 @@ class DocsModel extends CI_Model {
          }
          return $result;
     }
-    public function getdocs($id,$service) {
-        $sql = "SELECT * FROM documents WHERE rowid=$id AND service='$service'";
+    public function get_pf_docs($pfid) {
+        $sql = "SELECT * FROM pf_docs WHERE pfid=$pfid";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
