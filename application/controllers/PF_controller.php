@@ -221,5 +221,10 @@ class PF_controller extends CI_Controller
         return false;
     }  
    }
-    
+    public function getpfdocs()
+    {
+        $pfid = $this->input->post('pfid');
+        $result = $this->docs->get_pf_docs($pfid);
+        echo json_encode($result); 
+    }
 } 

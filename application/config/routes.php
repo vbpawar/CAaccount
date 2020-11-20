@@ -100,9 +100,9 @@ $route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';
 $route['pf_withdrawal/update'] = 'services/PfwithdrawlService/update';
 
 //digital sign apis
-$route['createdigital'] = 'digital_controller/add_digital_form';
-$route['updatedigital'] = 'digital_controller/update_digital_form';
-$route['load_digital'] = 'digital_controller/get_all_digital';
+$route['createdigital'] = 'Digital_controller/add_digital_form';
+$route['updatedigital'] = 'Digital_controller/update_digital_form';
+$route['load_digital'] = 'Digital_controller/get_all_digital';
 //digital sign ui
 $route['digital_sign/cerate'] = 'services/DigitalSignService/create';
 $route['digital_sign/show'] = 'services/DigitalSignService/show';
@@ -135,3 +135,7 @@ $route['checkbalance'] = 'walletController/checkbalance';
 $route['createpan'] = 'pan_controller/add_pan_form';
 $route['updatepan'] = 'pan_controller/update_pan_form';
 $route['loadpan'] = 'pan_controller/get_all_pan';
+
+//docs apis
+$route['getpfdocs'] = 'PF_controller/getpfdocs';
+$route['getdigitaldocs'] = 'Digital_controller/getdigitaldocs';

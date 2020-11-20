@@ -10,6 +10,7 @@ class Digital_controller extends CI_Controller
         $this->load->model('ResidentialModel', 'rmodel');
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('DigitalModel', 'dmodel');
+        $this->load->model('DocsModel','docs');
     }
     private $response = null;
     private $records = null;
@@ -85,10 +86,23 @@ class Digital_controller extends CI_Controller
             
             $result = $this->dmodel->add_details($data);
             if ($result['status']) {
-                
+                $id = $result['did'];
+                $document = 'Document not uploaded';
+                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pass']['name'])){ 
+                 if($this->uploaddocs('Aadhar',$id,$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
+                 $document = 'Documents uplaoded';
+                 }
+                 if($this->uploaddocs('PAN',$id,$_FILES['pan']['name'],$_FILES['pan']['tmp_name'])){
+                    $document = 'Documents uplaoded';
+                    }
+                    if($this->uploaddocs('Passport',$id,$_FILES['pass']['name'],$_FILES['pass']['tmp_name'])){
+                        $document = 'Documents uplaoded';
+                        }
+                }
                 $response = array(
                     'Message' => 'Digital Signature added successfully',
                     'Data' => $result['data'],
+                    'Document'=>$document,
                     'Responsecode' => 200
                 );
             } else {
@@ -180,4 +194,33 @@ class Digital_controller extends CI_Controller
         echo json_encode($response);
     }
     
+    public function uploaddocs($doctype,$did,$filename,$file)
+    {
+     $ext = pathinfo($filename, PATHINFO_EXTENSION);
+     $data = array(
+         'extension'=>$ext,
+         'userid'=>1,
+         'did'=>$did,
+         'doctype'=>$doctype
+     );
+     $result = $this->docs->add_digital_docs($data);
+     if($result){
+         $imgid = $result['docid'];
+     $sourcePath = $file; // Storing source path of the file in a variable
+     $targetPath = "./documents/digital/".$imgid.".".$ext; // Target path where file is to be stored
+     if(move_uploaded_file($sourcePath,$targetPath)){
+        return true;
+     }else{
+         return false;
+     }
+     }else{
+         return false;
+     }  
+    }
+    public function getdigitaldocs()
+    {
+        $did = $this->input->post('did');
+        $result = $this->docs->get_digital_docs($did);
+        echo json_encode($result); 
+    }
 } 
