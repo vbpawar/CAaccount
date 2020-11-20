@@ -70,16 +70,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-// $active_group = 'default';
-$active_group = 'localdb';
+ $active_group = 'testing';
+//$active_group = 'production';
+// $active_group = 'localdb';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['testing'] = array(
 	'dsn'	=> '',
 	'hostname' => '208.109.12.251',
 	'username' => 'soulsoft_CA',
 	'password' => 'Soulsoft@1987',
 	'database' => 'soulsoft_CA',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+$db['production'] = array(
+	'dsn'	=> '',
+	'hostname' => '208.109.12.251',
+	'username' => 'soulsoft_CA',
+	'password' => 'Soulsoft@1987',
+	'database' => 'soulsoft_production',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

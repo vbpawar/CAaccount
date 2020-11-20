@@ -32,6 +32,24 @@ class WalletController extends CI_Controller
            
         echo json_encode($response);
     }
+
+    public function alluserbalance(){
+        $result = $this->mmodel->loadbalance();
+        if($result!=null){
+            $response = array(
+                'Message' => 'Balance loaded successfully',
+                'Data' => $result,
+                'Responsecode' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'No data found',
+                'Responsecode' => 204
+            ); 
+        }
+           
+        echo json_encode($response);
+    }
     public function load_transactions(){
         $userdata = $_SESSION['Data'];
         $result = $this->mmodel->gettransactions($userdata['userid']);
@@ -83,6 +101,31 @@ class WalletController extends CI_Controller
                 'Message' => 'Transaction loaded successfully',
                 'Responsecode' => 204
             ); 
+        }
+        echo json_encode($response);
+    }
+
+    public function update_balance(){
+       $data = array(
+        'userid'=>$this->input->post('userid'),
+        'transaction_type'=>'Debit',
+        'amount'=>$this->input->post('amount'),
+        'message'=>'Admin Debited amount for service charge',
+        'transactiondate'=>date('Y-m-d h:i:s')
+       );
+        $result = $this->mmodel->deduct_amount($data);
+        if($result){
+            $response = array(
+                'Message' => 'Money Deducted successfully',
+                'Data' => $result,
+                'Responsecode' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'Money is not deducted',
+                'Data' => $result,
+                'Responsecode' => 204
+            );  
         }
         echo json_encode($response);
     }

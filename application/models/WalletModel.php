@@ -30,5 +30,15 @@ class WalletModel extends CI_Model {
         }
         return $result;
     }
+    public function loadbalance()
+    {
+        $sql = "SELECT COALESCE(SUM(CASE WHEN wt.transaction_type = 'credit' THEN wt.amount ELSE -wt.amount END),0) AS balance,um.firstname,um.lastname,um.contact,rm.role
+        FROM user_master um LEFT JOIN wallet_transaction wt ON wt.userid = um.userid
+        LEFT JOIN role_master rm ON rm.roleid = um.roleid
+        GROUP BY um.userid
+        ORDER BY um.roleid";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
    
 }

@@ -149,6 +149,13 @@
                                                             </span>
                                                         </a>
                                                     </li>
+                                                    <li>
+                                                        <a href="#wallet_users" data-toggle="tab" title="Users Wallet">
+                                                            <span class="round-tabs five">
+                                                                <i class="glyphicon glyphicon-random"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
@@ -195,7 +202,7 @@
 
                                                         <!-- <div class="h2 font-weight-bold">Meetings</div> -->
                                                         <div class="table-responsive">
-                                                            <table class="table">
+                                                            <table class="table" id="w_w">
                                                                 <thead>
                                                                     <tr>
                                                                     <th scope="col">Activity</th>
@@ -205,43 +212,8 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="wallet_data">
-                                                                    <tr class="bg-blue">
-                                                                    <td  class="pt-3"> <span class="fa fa-bed mr-1"></span> Hotel Leela Palace </td>
-                                                                    <!-- <td  class="pt-3">Google Pay <i><span class="fab fa-google-pay"></i></span></td> -->
-                                                                    <td class="pt-3">Google Pay<span><img src="<?php echo base_url('/admin_assets/img/google-pay.png'); ?>" ></span></td>
-
-                                                                    <td  class="pt-3">11 Jul 2020, 2:00 PM</td>
-                                                                    <td  class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ 18.9 </td>
-                                                                    </tr>
-                                                                    <tr id="spacing-row">
-                                                                        <td></td>
-                                                                    </tr>
-                                                                    <tr class="bg-blue">
-                                                                    
-                                                                    <td  class="pt-3"> <span class="fa fa-exchange mr-1"></span> Monthly Salary </td>
-                                                                    <!-- <td  class="pt-3"> Visa <span class="fa fa-cc-visa"></span></td> -->
-                                                                    <td class="pt-3">PhonePe<span><img src="<?php echo base_url('/admin_assets/img/paytm.png'); ?>" ></span></td>
-
-                                                                    <td  class="pt-3"> 10 Jul 2020, 8:30 PM</td>
-                                                                    <td  class="pt-3">  <span class="fa fa-long-arrow-down mr-1"></span> ₹ 9,765.00 </td>
-                                                                   
-                                                                    </tr>
-                                                                    <tr id="spacing-row">
-                                                                        <td></td>
-                                                                    </tr>
-
-                                                                   
-                                                                    
-                                                                    <!-- <tr class="bg-blue">
-                                                                        <td class="pt-2">
-                                                                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="" />
-                                                                            <div class="pl-lg-5 pl-md-3 pl-1 name">Josh Limosel</div>
-                                                                        </td>
-                                                                        <td class="pt-3">26 Sep 2020</td>
-                                                                        <td class="pt-3">04:00 PM</td>
-                                                                        <td class="pt-3"><span class="fa fa-minus pl-3"></span></td>
-                                                                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
-                                                                    </tr> -->
+                                                                  
+                                                                  
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -271,6 +243,30 @@
                                                         </button>
                                                     </p>
                                                     <div id="ak"></div>
+                                                </div>
+                                                <div class="tab-pane fade" id="wallet_users">
+                                                    <div class="container rounded mt-5 bg-white p-md-5">
+                                                        <h3 class="head text-center">Wallet Balances</h3>
+
+                                                        <!-- <div class="h2 font-weight-bold">Meetings</div> -->
+                                                        <div class="table-responsive">
+                                                            <table class="table" id="user_w">
+                                                                <thead>
+                                                                    <tr>
+                                                                    <th scope="col">User</th>
+                                                                    <th scope="col">Contact Number</th>
+                                                                    <th scope="col">Role</th>
+                                                                    <th scope="col">Amount</th>
+                                                                    <th scope="col">#</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="wallet_user_data">
+                                                                   
+                                                                  
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="clearfix"></div>

@@ -126,10 +126,12 @@ $route['getusers'] = 'user/getUsersList';
 $route['user/create']='services/AccessControlService/create';
 $route['users/show']='services/AccessControlService/show';
 $route['user/update']='services/AccessControlService/update';
-
+//wallet apis
 $route['loadbalance'] = 'walletController/loadBalance';
 $route['loadtransaction'] = 'walletController/load_transactions';
 $route['checkbalance'] = 'walletController/checkbalance';
+$route['userbalances'] = 'walletController/alluserbalance';
+$route['updatewallet'] = 'walletController/update_balance';
 
 //pan services
 $route['createpan'] = 'pan_controller/add_pan_form';

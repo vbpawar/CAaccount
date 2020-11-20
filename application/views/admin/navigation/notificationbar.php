@@ -1,5 +1,12 @@
 </head>
     <body>
+    <?php
+    if(isset($_SESSION['Data'])){
+        $username = $_SESSION['Data']['username'];
+    }else{
+        $username = 'John Doe';
+    }
+    ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <div id="container" class="effect mainnav-full">
@@ -215,7 +222,7 @@
                             <li id="dropdown-user" class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                                     <span class="pull-right"> <img class="img-circle img-user media-object" src="<?php echo base_url('admin_assets/img/av1.png'); ?>" alt="Profile Picture"> </span>
-                                    <div class="username hidden-xs">John Doe</div>
+                                    <div class="username hidden-xs"><?php echo $username;?></div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right with-arrow">
                                     <!-- User dropdown menu -->
@@ -224,7 +231,7 @@
                                             <a href="#"> <i class="fa fa-user fa-fw"></i> Profile </a>
                                         </li> -->
                                         <li>
-                                            <a href="<?php echo base_url('services/WalletService/create');?>"> <img  src="<?php echo base_url('admin_assets/img/wallettt.png'); ?>" style="height:20px;weight:20px" class="fa-fw"> &nbsp;Wallet </a>
+                                            <a href="<?php echo base_url('wallet');?>"> <img  src="<?php echo base_url('admin_assets/img/wallettt.png'); ?>" style="height:20px;weight:20px" class="fa-fw"> &nbsp;Wallet </a>
                                             <!-- <a href="<?php echo base_url('LoginController/logout');?>"> <i class="fas fa-wallet fa-fw"></i> Wallet </a> -->
 
                                         </li>
