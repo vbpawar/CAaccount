@@ -126,14 +126,7 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <li class="">
-                                                        <a href="#transafermny" data-toggle="tab" title="Transafer Money">
-                                                            <span class="round-tabs one">
-                                                                <i class="glyphicon glyphicon-share"></i>
-                                                                <i class="fas fa-comment-dollar"></i>
-                                                            </span>
-                                                        </a>
-                                                    </li>
+                                                   
                                                     <li>
                                                         <a href="#transact" data-toggle="tab" title="Transactions">
                                                             <span class="round-tabs three">
@@ -149,13 +142,29 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                    
+                                                    <?php
+                                                    $data = $this->session->userdata();
+                                                    if($data['Data']['role'] == 1){
+                                                    ?>
+                                                        <li>
                                                         <a href="#wallet_users" data-toggle="tab" title="Users Wallet">
                                                             <span class="round-tabs five">
                                                                 <i class="glyphicon glyphicon-random"></i>
                                                             </span>
                                                         </a>
                                                     </li>
+                                                    <li class="">
+                                                        <a href="#transafermny" data-toggle="tab" title="Transafer Money">
+                                                            <span class="round-tabs one">
+                                                                <i class="glyphicon glyphicon-share"></i>
+                                                                <i class="fas fa-comment-dollar"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <?php } ?>
+                                                  
+                                                    
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
@@ -209,6 +218,7 @@
                                                                     <th scope="col">Mode</th>
                                                                     <th scope="col">Date</th>
                                                                     <th scope="col">Amount</th>
+                                                                    <th scope="col">Message</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="wallet_data">

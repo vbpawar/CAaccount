@@ -32,7 +32,7 @@ class WalletModel extends CI_Model {
     }
     public function loadbalance()
     {
-        $sql = "SELECT COALESCE(SUM(CASE WHEN wt.transaction_type = 'credit' THEN wt.amount ELSE -wt.amount END),0) AS balance,um.firstname,um.lastname,um.contact,rm.role
+        $sql = "SELECT COALESCE(SUM(CASE WHEN wt.transaction_type = 'credit' THEN wt.amount ELSE -wt.amount END),0) AS balance,um.firstname,um.lastname,um.contact,rm.role,um.userid
         FROM user_master um LEFT JOIN wallet_transaction wt ON wt.userid = um.userid
         LEFT JOIN role_master rm ON rm.roleid = um.roleid
         GROUP BY um.userid

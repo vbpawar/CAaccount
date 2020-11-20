@@ -22,7 +22,6 @@ function load_transaction(){
         type:'GET',
         dataType:'json',
         success:function(response){
-            console.log(response.Data);
             var options = '';
             if(response.Data !=null){
                 var data = response.Data;
@@ -34,6 +33,7 @@ function load_transaction(){
                                                                         <td class="pt-3"><span><img src="<?php echo base_url('/admin_assets/img/phonepe.png'); ?>" ></span></td>
                                                                         <td class="pt-3">`+data[i].transactiondate+`</td>
                                                                         <td class="pt-3"> ₹ `+data[i].amount+` </td>
+                                                                        <td class="pt-3"> ₹ `+data[i].message+` </td>
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
@@ -53,7 +53,7 @@ bPaginate: $('tbody tr').length > 5,
 
 order: [],
 
-columnDefs: [{orderable: true, targets: []}],
+columnDefs: [{orderable: false, targets: []}],
 
 dom: 'Bfrtip',
 
@@ -71,24 +71,30 @@ function load_user_balance(){
         type:'GET',
         dataType:'json',
         success:function(response){
-            console.log(response.Data);
             var options = '';
             if(response.Data !=null){
                 var data = response.Data;
+                var show = `#`;
                for(var i=0;i<data.length;i++){
+                   if(data[i].balance > 0){
+                       show = `<a href="#" onclick="update_balance(`+data[i].userid+`)" title="Deduct Amount"><i class="fa fa-info-circle text-info"></i></a>`;
+                   }else{
+                       show = `#`;
+                   }
                    options += ` <tr class="bg-blue">
                                                                     <td  class="pt-3"> <span class="fa fa-user mr-1"></span> ` +data[i].firstname+` `+data[i].lastname+`</td>
 
                                                                     <td  class="pt-3">`+data[i].contact+`</td>
                                                                     <td  class="pt-3">`+data[i].role+`</td>
                                                                     <td  class="pt-3">  ₹ ` +data[i].balance+` </td>
-                                                                    <td  class="pt-3"> <span class="fa fa-long-arrow-up mr-1"></span> ₹ 18.9 </td>
+                                                                    <td  class="pt-3" style="width:5%">`+show+`</td>
 
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
                                                                     </tr>`;
         
+                                                                   
                }
             }
            
@@ -103,7 +109,7 @@ bPaginate: $('tbody tr').length > 5,
 
 order: [],
 
-columnDefs: [{orderable: true, targets: []}],
+columnDefs: [{orderable: false, targets: []}],
 
 dom: 'Bfrtip',
 
@@ -118,4 +124,8 @@ destroy: true
 load_balance();
 load_transaction();
 load_user_balance();
+
+function update_balance(userid){
+    alert(userid);
+}
 </script>
