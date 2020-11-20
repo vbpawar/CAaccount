@@ -299,3 +299,57 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Remark And Attachments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--card start-->
+                    <div class="card">
+
+                        <div class="form-group">
+                            <label class="control-label">Change Status</label>
+                            <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
+                            <select class="form-control selectpicker" id="status">
+                                <option value="1">Pending...</option>
+                                <option value="2">Hold</option>
+                                <option value="3">Rejected</option>
+                                <option value="4">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="error">*</span>Remark</label>
+
+                            <textarea class="form-control" id="remark" ></textarea>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="control-label">Attachment 1</label>
+                            <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event, 'paspre')" />
+
+                        </div>
+                        <div class="form-group">
+
+                            <label class="control-label">Attachment 2</label>
+                            <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event, 'paspre')" />
+
+                        </div>
+
+
+                    </div>
+                    <!--card end-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

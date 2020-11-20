@@ -126,6 +126,6 @@ load_transaction();
 load_user_balance();
 
 function update_balance(userid){
-    alert(userid);
+    $('#statusModal').modal('toggle');
 }
 </script>
