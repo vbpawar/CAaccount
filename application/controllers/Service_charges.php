@@ -33,7 +33,7 @@ class Service_charges extends CI_Controller{
     public function addServiceCharges()
     {
         $data = array(
-        'serviceid'=>$this->input->post('serviceid'),
+        'service'=>$this->input->post('service'),
         'charges' => $this->input->post('charges')
         );
     if(!$data){
@@ -91,7 +91,7 @@ class Service_charges extends CI_Controller{
    public function updateservicecharges(){
          
     $chargesid      = $this->input->post('chargesid');
-    $serviceid         = $this->input->post('serviceid');
+    $service         = $this->input->post('service');
     $charges             = $this->input->post('charges');
     
     if(!$chargesid && !$serviceid && !$charges){
@@ -100,7 +100,7 @@ class Service_charges extends CI_Controller{
             'Responsecode' => 404
         );
     }else{
-       $result = $this->service->updateservicecharges($chargesid, array("serviceid"=>$serviceid,"charges"=>$charges));
+       $result = $this->service->updateservicecharges($chargesid, array("service"=>$service,"charges"=>$charges));
        if($result === 0){
         $response = array(
             'Message' => 'Sorry try again',

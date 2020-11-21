@@ -75,8 +75,6 @@ class Digital_controller extends CI_Controller
             $data = array(
                 'userid' => $userid,
                 'class'=>$this->input->post('class'),
-                'uan_number'=>$this->input->post('uan_number'),
-                'uan_password'=>$this->input->post('uan_password'),
                 'nature_of_buss'=>$this->input->post('nature_of_buss'),
                 'trade_name'=>$this->input->post('trade_name'),
                 'place_of_buss'=>$this->input->post('place_of_buss'),
@@ -162,8 +160,6 @@ class Digital_controller extends CI_Controller
             $data = array(
                 'userid' => $userid,
                 'class'=>$this->input->post('class'),
-                'uan_number'=>$this->input->post('uan_number'),
-                'uan_password'=>$this->input->post('uan_password'),
                 'nature_of_buss'=>$this->input->post('nature_of_buss'),
                 'trade_name'=>$this->input->post('trade_name'),
                 'place_of_buss'=>$this->input->post('place_of_buss'),

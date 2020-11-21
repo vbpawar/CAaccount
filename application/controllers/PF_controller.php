@@ -86,20 +86,25 @@ class PF_controller extends CI_Controller
                 'userid' => $userid,
                 'pid' => $pid,
                 'rid' => $rid,
-                'bid' => $bid
+                'bid' => $bid,
+                'uan_number'=>$this->input->post('uan_number'),
+                'uan_password'=>$this->input->post('uan_password')
             );
             
             $result = $this->pfmodel->add_details($data);
             if ($result['status']) {
                 $id = $result['pfid'];
                 $document = 'Document not uploaded';
-                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) ){ 
+                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pas']['name'])){ 
                  if($this->uploaddocs('Aadhar',$id,$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
                  $document = 'Documents uplaoded';
                  }
                  if($this->uploaddocs('PAN',$id,$_FILES['pan']['name'],$_FILES['pan']['tmp_name'])){
                     $document = 'Documents uplaoded';
                     }
+                    if($this->uploaddocs('Passbook',$id,$_FILES['pas']['name'],$_FILES['pas']['tmp_name'])){
+                        $document = 'Documents uplaoded';
+                        }
                 }
                 $response = array(
                     'Message' => 'PF Details added successfully',

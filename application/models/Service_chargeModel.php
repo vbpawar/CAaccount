@@ -3,8 +3,7 @@
 class Service_chargeModel extends CI_Model {
 
     public function getservicecharges() {
-        $sql = "SELECT sc.chargesid,sc.serviceid,sm.servicename,sc.charges,sc.createdat 
-        FROM service_charges sc INNER JOIN service_master sm ON sm.serviceid = sc.serviceid";
+        $sql = "SELECT * FROM service_charges";
             $query = $this->db->query($sql);
     return $query->result();
     }

@@ -144,3 +144,9 @@ $route['loadpan'] = 'pan_controller/get_all_pan';
 //docs apis
 $route['getpfdocs'] = 'PF_controller/getpfdocs';//pass pf id
 $route['getdigitaldocs'] = 'Digital_controller/getdigitaldocs';//pass did
+
+//service charges apis
+$route['loadcharges'] = 'Service_charges/getservicecharges';
+$route['addcharges'] = 'Service_charges/addServiceCharges';
+$route['removecharges'] = 'Service_charges/removeservicecharges';
+$route['updatecharges'] = 'Service_charges/updateservicecharges';
