@@ -11,13 +11,14 @@ class PF_controller extends CI_Controller
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('BankModel', 'bmodel');
         $this->load->model('PFModel', 'pfmodel');
-        $this->load->model('DocsModel','docs');
+        $this->load->model('DocsModel', 'docs');
     }
     private $response = null;
     private $records = null;
     
-
-    public function get_all_pf(){
+    
+    public function get_all_pf()
+    {
         $result = $this->pfmodel->get_details();
         if ($result['status']) {
             $response = array(
@@ -87,29 +88,29 @@ class PF_controller extends CI_Controller
                 'pid' => $pid,
                 'rid' => $rid,
                 'bid' => $bid,
-                'uan_number'=>$this->input->post('uan_number'),
-                'uan_password'=>$this->input->post('uan_password')
+                'uan_number' => $this->input->post('uan_number'),
+                'uan_password' => $this->input->post('uan_password')
             );
             
             $result = $this->pfmodel->add_details($data);
             if ($result['status']) {
-                $id = $result['pfid'];
+                $id       = $result['pfid'];
                 $document = 'Document not uploaded';
-                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pas']['name'])){ 
-                 if($this->uploaddocs('Aadhar',$id,$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
-                 $document = 'Documents uplaoded';
-                 }
-                 if($this->uploaddocs('PAN',$id,$_FILES['pan']['name'],$_FILES['pan']['tmp_name'])){
-                    $document = 'Documents uplaoded';
-                    }
-                    if($this->uploaddocs('Passbook',$id,$_FILES['pas']['name'],$_FILES['pas']['tmp_name'])){
+                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pas']['name'])) {
+                    if ($this->uploaddocs('Aadhar', $id, $_FILES['adhar']['name'], $_FILES['adhar']['tmp_name'])) {
                         $document = 'Documents uplaoded';
-                        }
+                    }
+                    if ($this->uploaddocs('PAN', $id, $_FILES['pan']['name'], $_FILES['pan']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->uploaddocs('Passbook', $id, $_FILES['pas']['name'], $_FILES['pas']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
                 }
                 $response = array(
                     'Message' => 'PF Details added successfully',
                     'Data' => $result['data'],
-                    'document'=>$document,
+                    'document' => $document,
                     'Responsecode' => 200
                 );
             } else {
@@ -127,7 +128,7 @@ class PF_controller extends CI_Controller
         }
         echo json_encode($response);
     }
-
+    
     public function update_pf_form()
     {
         //personal details
@@ -161,26 +162,26 @@ class PF_controller extends CI_Controller
         );
         if (!empty($pdetails)) {
             $pid = $this->input->post('pid');
-            $pid = $this->pmodel->update_details($pid,$pdetails);
+            $pid = $this->pmodel->update_details($pid, $pdetails);
         }
         if (!empty($rdetails)) {
             $rid = $this->input->post('rid');
-            $rid = $this->rmodel->update_details($rid,$rdetails);
+            $rid = $this->rmodel->update_details($rid, $rdetails);
         }
         if (!empty($bdetails)) {
             $bid = $this->input->post('bid');
-            $bid = $this->bmodel->update_details($bid,$bdetails);
+            $bid = $this->bmodel->update_details($bid, $bdetails);
         }
         
         $userid = $this->input->post('userid');
         $status = $this->input->post('status');
-        $pfid=$this->input->post('pfid');
+        $pfid   = $this->input->post('pfid');
         if ($pid && $rid && $bid) {
-           
-            $data = array(
-                'status'=>$status
+            
+            $data   = array(
+                'status' => $status
             );
-            $result = $this->pfmodel->update_details($pfid,$data);
+            $result = $this->pfmodel->update_details($pfid, $data);
             if ($result['status']) {
                 $response = array(
                     'Message' => 'PF Details updated successfully',
@@ -202,87 +203,88 @@ class PF_controller extends CI_Controller
         }
         echo json_encode($response);
     }
-
-    public function uploaddocs($doctype,$pfid,$filename,$file)
-   {
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    $data = array(
-        'extension'=>$ext,
-        'userid'=>1,
-        'pfid'=>$pfid,
-        'doctype'=>$doctype
-    );
-    $result = $this->docs->add_pf_docs($data);
-    if($result){
-        $imgid = $result['docid'];
-    $sourcePath = $file; // Storing source path of the file in a variable
-    $targetPath = "./documents/pf/".$imgid.".".$ext; // Target path where file is to be stored
-    if(move_uploaded_file($sourcePath,$targetPath)){
-       return true;
-    }else{
-        return false;
+    
+    public function uploaddocs($doctype, $pfid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'extension' => $ext,
+            'userid' => 1,
+            'pfid' => $pfid,
+            'doctype' => $doctype
+        );
+        $result = $this->docs->add_pf_docs($data);
+        if ($result) {
+            $imgid      = $result['docid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/pf/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
-    }else{
-        return false;
-    }  
-   }
     public function getpfdocs()
     {
-        $pfid = $this->input->post('pfid');
+        $pfid   = $this->input->post('pfid');
         $result = $this->docs->get_pf_docs($pfid);
-        echo json_encode($result); 
+        echo json_encode($result);
     }
-    public function update_status(){
-        $pfid = $this->input->post('pfid');
-        $data = array(
-         'status'=>$this->input->post('status'),
-         'remark'=>$this->input->post('remark')
+    public function update_status()
+    {
+        $pfid   = $this->input->post('pfid');
+        $data   = array(
+            'status' => $this->input->post('status'),
+            'remark' => $this->input->post('remark')
         );
-         $result = $this->mmodel->updatepfstatus($pfid,$data);
-         if($result){
+        $result = $this->mmodel->updatepfstatus($pfid, $data);
+        if ($result) {
             $document = 'Documents not uplaoded';
-            if(!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])){ 
-                if($this->uploadremarks('PF',$id,$_FILES['result1']['name'],$_FILES['result1']['tmp_name'])){
-                $document = 'Documents uplaoded';
-                }
-                if($this->uploadremarks('PF',$id,$_FILES['result2']['name'],$_FILES['result2']['tmp_name'])){
+            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+                if ($this->uploadremarks('PF', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
-                    }
-               }
-             $response = array(
-                 'Message' => 'Status updated successfully',
-                 'Data'=>$document,
-                 'Responsecode' => 200
-             );
-         }else{
-             $response = array(
-                 'Message' => 'Try Again',
-                 'Responsecode' => 204
-             );  
-         }
-         echo json_encode($response);
-     }
-
-     public function uploadremarks($service,$rowid,$filename,$file)
-   {
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    $data = array(
-        'service'=>$service,
-        'rowid'=>$rowid,
-        'extension'=>$ext
-    );
-    $result = $this->docs->add_remark_docs($data);
-    if($result){
-        $imgid = $result['remarkid'];
-    $sourcePath = $file; // Storing source path of the file in a variable
-    $targetPath = "./documents/remarks/".$imgid.".".$ext; // Target path where file is to be stored
-    if(move_uploaded_file($sourcePath,$targetPath)){
-       return true;
-    }else{
-        return false;
+                }
+                if ($this->uploadremarks('PF', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+            }
+            $response = array(
+                'Message' => 'Status updated successfully',
+                'Data' => $document,
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Try Again',
+                'Responsecode' => 204
+            );
+        }
+        echo json_encode($response);
     }
-    }else{
-        return false;
-    }  
-   }
+    
+    public function uploadremarks($service, $rowid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'service' => $service,
+            'rowid' => $rowid,
+            'extension' => $ext
+        );
+        $result = $this->docs->add_remark_docs($data);
+        if ($result) {
+            $imgid      = $result['remarkid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 } 

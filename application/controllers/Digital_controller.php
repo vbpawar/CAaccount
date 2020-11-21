@@ -10,13 +10,14 @@ class Digital_controller extends CI_Controller
         $this->load->model('ResidentialModel', 'rmodel');
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('DigitalModel', 'dmodel');
-        $this->load->model('DocsModel','docs');
+        $this->load->model('DocsModel', 'docs');
     }
     private $response = null;
     private $records = null;
     
-
-    public function get_all_digital(){
+    
+    public function get_all_digital()
+    {
         $result = $this->dmodel->get_details();
         if ($result['status']) {
             $response = array(
@@ -58,7 +59,7 @@ class Digital_controller extends CI_Controller
             'state' => $this->input->post('state'),
             'pincode' => $this->input->post('pincode')
         );
-       
+        
         if (!empty($pdetails)) {
             $pid = $this->pmodel->add_details($pdetails);
         }
@@ -74,33 +75,33 @@ class Digital_controller extends CI_Controller
             
             $data = array(
                 'userid' => $userid,
-                'class'=>$this->input->post('class'),
-                'nature_of_buss'=>$this->input->post('nature_of_buss'),
-                'trade_name'=>$this->input->post('trade_name'),
-                'place_of_buss'=>$this->input->post('place_of_buss'),
+                'class' => $this->input->post('class'),
+                'nature_of_buss' => $this->input->post('nature_of_buss'),
+                'trade_name' => $this->input->post('trade_name'),
+                'place_of_buss' => $this->input->post('place_of_buss'),
                 'pid' => $pid,
                 'rid' => $rid
             );
             
             $result = $this->dmodel->add_details($data);
             if ($result['status']) {
-                $id = $result['did'];
+                $id       = $result['did'];
                 $document = 'Document not uploaded';
-                if(!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pass']['name'])){ 
-                 if($this->uploaddocs('Aadhar',$id,$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
-                 $document = 'Documents uplaoded';
-                 }
-                 if($this->uploaddocs('PAN',$id,$_FILES['pan']['name'],$_FILES['pan']['tmp_name'])){
-                    $document = 'Documents uplaoded';
-                    }
-                    if($this->uploaddocs('Passport',$id,$_FILES['pass']['name'],$_FILES['pass']['tmp_name'])){
+                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pass']['name'])) {
+                    if ($this->uploaddocs('Aadhar', $id, $_FILES['adhar']['name'], $_FILES['adhar']['tmp_name'])) {
                         $document = 'Documents uplaoded';
-                        }
+                    }
+                    if ($this->uploaddocs('PAN', $id, $_FILES['pan']['name'], $_FILES['pan']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->uploaddocs('Passport', $id, $_FILES['pass']['name'], $_FILES['pass']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
                 }
                 $response = array(
                     'Message' => 'Digital Signature added successfully',
                     'Data' => $result['data'],
-                    'Document'=>$document,
+                    'Document' => $document,
                     'Responsecode' => 200
                 );
             } else {
@@ -118,7 +119,7 @@ class Digital_controller extends CI_Controller
         }
         echo json_encode($response);
     }
-
+    
     public function update_digital_form()
     {
         //personal details
@@ -146,28 +147,28 @@ class Digital_controller extends CI_Controller
         );
         if (!empty($pdetails)) {
             $pid = $this->input->post('pid');
-            $pid = $this->pmodel->update_details($pid,$pdetails);
+            $pid = $this->pmodel->update_details($pid, $pdetails);
         }
         if (!empty($rdetails)) {
             $rid = $this->input->post('rid');
-            $rid = $this->rmodel->update_details($rid,$rdetails);
+            $rid = $this->rmodel->update_details($rid, $rdetails);
         }
         
         $userid = $this->input->post('userid');
-        $did=$this->input->post('did');
+        $did    = $this->input->post('did');
         if ($pid && $rid) {
-           
-            $data = array(
+            
+            $data   = array(
                 'userid' => $userid,
-                'class'=>$this->input->post('class'),
-                'nature_of_buss'=>$this->input->post('nature_of_buss'),
-                'trade_name'=>$this->input->post('trade_name'),
-                'place_of_buss'=>$this->input->post('place_of_buss'),
+                'class' => $this->input->post('class'),
+                'nature_of_buss' => $this->input->post('nature_of_buss'),
+                'trade_name' => $this->input->post('trade_name'),
+                'place_of_buss' => $this->input->post('place_of_buss'),
                 'pid' => $pid,
                 'rid' => $rid,
-                'status'=>$this->input->post('status')
+                'status' => $this->input->post('status')
             );
-            $result = $this->dmodel->update_details($did,$data);
+            $result = $this->dmodel->update_details($did, $data);
             if ($result['status']) {
                 $response = array(
                     'Message' => 'Digital Signature Details updated successfully',
@@ -190,84 +191,85 @@ class Digital_controller extends CI_Controller
         echo json_encode($response);
     }
     
-    public function uploaddocs($doctype,$did,$filename,$file)
+    public function uploaddocs($doctype, $did, $filename, $file)
     {
-     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-     $data = array(
-         'extension'=>$ext,
-         'userid'=>1,
-         'did'=>$did,
-         'doctype'=>$doctype
-     );
-     $result = $this->docs->add_digital_docs($data);
-     if($result){
-         $imgid = $result['docid'];
-     $sourcePath = $file; // Storing source path of the file in a variable
-     $targetPath = "./documents/digital/".$imgid.".".$ext; // Target path where file is to be stored
-     if(move_uploaded_file($sourcePath,$targetPath)){
-        return true;
-     }else{
-         return false;
-     }
-     }else{
-         return false;
-     }  
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'extension' => $ext,
+            'userid' => 1,
+            'did' => $did,
+            'doctype' => $doctype
+        );
+        $result = $this->docs->add_digital_docs($data);
+        if ($result) {
+            $imgid      = $result['docid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/digital/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
     public function getdigitaldocs()
     {
-        $did = $this->input->post('did');
+        $did    = $this->input->post('did');
         $result = $this->docs->get_digital_docs($did);
-        echo json_encode($result); 
+        echo json_encode($result);
     }
-    public function update_status(){
-        $did = $this->input->post('did');
-        $data = array(
-         'status'=>$this->input->post('status'),
-         'remark'=>$this->input->post('remark')
+    public function update_status()
+    {
+        $did    = $this->input->post('did');
+        $data   = array(
+            'status' => $this->input->post('status'),
+            'remark' => $this->input->post('remark')
         );
-         $result = $this->mmodel->updatedigitalstatus($did,$data);
-         if($result){
+        $result = $this->mmodel->updatedigitalstatus($did, $data);
+        if ($result) {
             $document = 'Documents not uplaoded';
-            if(!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])){ 
-                if($this->uploadremarks('Digital',$id,$_FILES['result1']['name'],$_FILES['result1']['tmp_name'])){
-                $document = 'Documents uplaoded';
-                }
-                if($this->uploadremarks('Digital',$id,$_FILES['result2']['name'],$_FILES['result2']['tmp_name'])){
+            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+                if ($this->uploadremarks('Digital', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
-                    }
-               }
-             $response = array(
-                 'Message' => 'Status updated successfully',
-                 'Responsecode' => 200
-             );
-         }else{
-             $response = array(
-                 'Message' => 'Try Again',
-                 'Responsecode' => 204
-             );  
-         }
-         echo json_encode($response);
-     }
-     public function uploadremarks($service,$rowid,$filename,$file)
-     {
-      $ext = pathinfo($filename, PATHINFO_EXTENSION);
-      $data = array(
-          'service'=>$service,
-          'rowid'=>$rowid,
-          'extension'=>$ext
-      );
-      $result = $this->docs->add_remark_docs($data);
-      if($result){
-          $imgid = $result['remarkid'];
-      $sourcePath = $file; // Storing source path of the file in a variable
-      $targetPath = "./documents/remarks/".$imgid.".".$ext; // Target path where file is to be stored
-      if(move_uploaded_file($sourcePath,$targetPath)){
-         return true;
-      }else{
-          return false;
-      }
-      }else{
-          return false;
-      }  
-     }
+                }
+                if ($this->uploadremarks('Digital', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+            }
+            $response = array(
+                'Message' => 'Status updated successfully',
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Try Again',
+                'Responsecode' => 204
+            );
+        }
+        echo json_encode($response);
+    }
+    public function uploadremarks($service, $rowid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'service' => $service,
+            'rowid' => $rowid,
+            'extension' => $ext
+        );
+        $result = $this->docs->add_remark_docs($data);
+        if ($result) {
+            $imgid      = $result['remarkid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 } 
