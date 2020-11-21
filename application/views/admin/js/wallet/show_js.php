@@ -1,4 +1,6 @@
 <script>
+var userList = new Map();
+var global_user = null;
 function load_balance(){
     $.ajax({
         url:'<?php echo base_url('/loadbalance');?>',
@@ -66,6 +68,7 @@ destroy: true
     });
 }
 function load_user_balance(){
+    userList.clear();
     $.ajax({
         url:'<?php echo base_url('/userbalances');?>',
         type:'GET',
@@ -74,58 +77,106 @@ function load_user_balance(){
             var options = '';
             if(response.Data !=null){
                 var data = response.Data;
-                var show = `#`;
+               
                for(var i=0;i<data.length;i++){
-                   if(data[i].balance > 0){
-                       show = `<a href="#" onclick="update_balance(`+data[i].userid+`)" title="Deduct Amount"><i class="fa fa-info-circle text-info"></i></a>`;
+                
+                userList.set(data[i].userid, data[i]);
+                                                                   
+               }
+               showList(userList);
+            }
+        }
+    });
+}
+
+const showList = serviceList => {
+        $('#user_w').dataTable().fnDestroy();
+
+        $('#wallet_user_data').empty();
+
+        var options = '';
+        var show = `#`;
+        for (let k of serviceList.keys()) {
+
+            let services = serviceList.get(k);
+           
+            if(services.balance > 0){
+                       show = `<a href="#" onclick="update_balance(`+k+`)" title="Deduct Amount"><i class="fa fa-info-circle text-info"></i></a>`;
                    }else{
                        show = `#`;
                    }
                    options += ` <tr class="bg-blue">
-                                                                    <td  class="pt-3"> <span class="fa fa-user mr-1"></span> ` +data[i].firstname+` `+data[i].lastname+`</td>
+                                                                    <td  class="pt-3"> <span class="fa fa-user mr-1"></span> ` +services.firstname+` `+services.lastname+`</td>
 
-                                                                    <td  class="pt-3">`+data[i].contact+`</td>
-                                                                    <td  class="pt-3">`+data[i].role+`</td>
-                                                                    <td  class="pt-3">  ₹ ` +data[i].balance+` </td>
+                                                                    <td  class="pt-3">`+services.contact+`</td>
+                                                                    <td  class="pt-3">`+services.role+`</td>
+                                                                    <td  class="pt-3">  ₹ ` +services.balance+` </td>
                                                                     <td  class="pt-3" style="width:5%">`+show+`</td>
 
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
                                                                     </tr>`;
-        
-                                                                   
-               }
-            }
-           
-           $('#wallet_user_data').html(options);
-           $('#user_w').dataTable({
-
-searching: true,
-
-retrieve: true,
-
-bPaginate: $('tbody tr').length > 5,
-
-order: [],
-
-columnDefs: [{orderable: false, targets: []}],
-
-dom: 'Bfrtip',
-
-buttons: ['copy', 'csv', 'excel', 'pdf'],
-
-destroy: true
-
-});
         }
-    });
-}
+
+        $('#wallet_user_data').html(options);
+
+        $('#user_w').dataTable({
+
+            searching: true,
+
+            retrieve: true,
+
+            bPaginate: $('tbody tr').length > 10,
+
+            order: [],
+
+            columnDefs: [{orderable: true, targets: [0,1,2,3]}],
+
+            dom: 'Bfrtip',
+
+            buttons: ['copy', 'csv', 'excel', 'pdf'],
+
+            destroy: true
+
+        });
+
+    }
 load_balance();
 load_transaction();
 load_user_balance();
 
 function update_balance(userid){
+    userid = userid.toString();
+if (userList.has(userid)) {
+    global_user = userid;
+    var product = userList.get(userid);
     $('#statusModal').modal('toggle');
 }
+}
+
+var url = '<?php echo base_url(); ?>';
+    $('#updatebalance').on('submit', function (e) {
+        e.preventDefault();
+        var formdata = new FormData(this);
+      formdata.append('userid',global_user);
+            $.ajax({
+                url: url + 'updatewallet',
+                type: 'POST',
+                data: formdata,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response.Responsecode == 200) {
+                        swal("Congrats!", response.Message, "success");
+                        $('#statusModal').modal('toggle');
+                        load_user_balance();
+                        load_balance();
+                    } else {
+                        swal("Error!", response.Message, "success");
+                    }
+                }
+            });
+    });
 </script>

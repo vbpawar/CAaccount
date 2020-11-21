@@ -110,7 +110,7 @@ class WalletController extends CI_Controller
         'userid'=>$this->input->post('userid'),
         'transaction_type'=>'Debit',
         'amount'=>$this->input->post('amount'),
-        'message'=>'Admin Debited amount for service charge',
+        'message'=>'Admin Debited amount for service charge '.$this->input->post('remark'),
         'transactiondate'=>date('Y-m-d h:i:s')
        );
         $result = $this->mmodel->deduct_amount($data);
