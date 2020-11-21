@@ -102,5 +102,52 @@ window.location.replace(url + 'services/certificate/show');
 //$('.updateDiv').hide();
 }
 
+$('#remarkField').hide();
+function changeStatus(id) {
+    $('#statusModal').modal('toggle');
+}
+
+
+function documentList(id) {
+    $.ajax({
+        url: url + 'getpfdocs',
+
+                type: 'POST',
+
+                data: {pfid:id},
+
+                cache: false,
+
+                dataType: 'json',
+                success:function(response) {
+                    const count = response.length;
+                    var docTable='';
+                    for(var i=0;i<count;i++){
+                 docTable +=` <tr>
+      <td>
+          <a href="`+(url+'documents/pf/'+response[i].docid+'.'+response[i].extension)+`" class="stretched-link" download>`+response[i].doctype+`</a>
+      </td>
+    </tr>`;
+                    }
+                    $('#documentList').html(docTable);
+                    $('#documentModal').modal('toggle');
+                }
+    });
+}
+
+
+
+//remark field enable disable on status change 
+$('#statusRemark').change(function() {
+     //Use $option (with the "$") to see that the variable is a jQuery object
+        var $option = $(this).find('option:selected');
+        //Added with the EDIT
+        var value = $option.val();//to get content of "value" attrib
+        if (value== 2 || value==3) {
+            $('#remarkField').show();
+        } else {
+            $('#remarkField').hide();
+        }
+});
+
 </script>
-<?php $this->view('admin/js/comman_modal_js'); ?>

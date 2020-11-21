@@ -242,7 +242,7 @@
 
 <!-- Documnet Modal -->
 <div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Download Attachments</h5>
@@ -256,29 +256,7 @@
                         <!--table-->
                         <table class="table table-striped">
   
-  <tbody>
-    <tr>
-      <td>
-          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-      </td>
-      <td>
-          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-      </td>
-      <td>
-          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-      </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-        </td>
-        <td>
-            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-        </td>
-        <td>
-            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
-        </td>
-    </tr>
+                            <tbody id="documentList" >
     
   </tbody>
 </table>
