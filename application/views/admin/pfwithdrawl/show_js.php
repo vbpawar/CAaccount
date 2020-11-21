@@ -3,11 +3,13 @@
     var url = '<?php echo base_url(); ?>';
     var pfWithdrawal = new Map();
     const loadList = () => {
-
+        var userid=<?php echo $_SESSION['Data']['userid'];?>;
+        var roleid=<?php echo $_SESSION['Data']['role'];?>;
         $.ajax({
 
             url: url + 'load_pf',
             type: 'get',
+            data:{userid:userid,roleid:roleid},
             dataType: 'json',
             success: function (response) {
 
@@ -97,13 +99,14 @@ type: 'get',
 
 function goback() {
 
-window.location.replace(url + 'services/certificate/show');
+window.location.replace(url + 'pf_withdrawal/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
 }
 
 $('#remarkField').hide();
 function changeStatus(id) {
+   $('#pfid').val(id);
     $('#statusModal').modal('toggle');
 }
 
@@ -150,4 +153,49 @@ $('#statusRemark').change(function() {
         }
 });
 
+
+//status form submit
+$('#statusUpdateForm').on('submit', function (e) {
+
+        e.preventDefault();
+        
+        var formdata = new FormData(this);
+        $.ajax({
+
+                url: url + 'updatestatus',
+
+                type: 'POST',
+
+                data: formdata,
+
+                cache: false,
+
+                contentType: false,
+
+                processData: false,
+
+                dataType: 'json',
+
+                success: function (response) {
+//                alert(response.Data.customerId);
+//                console.log(response);
+
+                    if (response.Responsecode == 200) {
+
+                        swal("Congrats!", response.Message, "success");
+
+
+
+                        goback();
+
+                    } else {
+
+                        swal("Error!", response.Message, "success");
+
+                    }
+
+                }
+
+            });
+    });
 </script>

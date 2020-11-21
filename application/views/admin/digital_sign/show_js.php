@@ -3,13 +3,14 @@
     var digitalSign = new Map();
 
     const loadList = () => {
-
+        var userid=<?php echo $_SESSION['Data']['userid'];?>;
+        var roleid=<?php echo $_SESSION['Data']['role'];?>;
         $.ajax({
 
             url: url + 'load_digital',
 
             type: 'get',
-
+            data:{userid:userid,roleid:roleid},
             dataType: 'json',
 
             success: function (response) {
