@@ -1,4 +1,5 @@
 <script>
+    
     var url = '<?php echo base_url(); ?>';
     var pfWithdrawal = new Map();
     const loadList = () => {
@@ -40,15 +41,15 @@
             tblData += '<td>' + services.status + '</td>';
 
         tblData += '<div class="table-actions">';
-                tblData += `<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-info-circle text-info"></i></a> 
+                tblData += `<td style="width:5%"><a href="#" onclick="editData(` + (k) + `)" title="edit details"><i class="fa fa-info-circle text-info"></i></a> `;
                 <?php
                 $data = $this->session->userdata();
-                    if ($data['Data']['role'] == 1) {?>
-             <a href="#!" onclick="changeStatus(' + (k) + ')" title="Change Status"><i class="fa fa-edit text-success"></i></a> 
+                    if ($data['Data']['role'] == 1 || $data['Data']['role'] ==4) {?>
+          tblData +=  `&nbsp; <a href="#@" onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`; 
                       <?php  
                     }
                 ?>
-<a href="#!" onclick="documentList(' + (k) + ')" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
+              tblData +=` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
 tblData += '</div></tr>';
 
 
@@ -70,7 +71,6 @@ searching: true,
 }
 
 var editData = laborid => {
-
 laborid = laborid.toString();
 if (pfWithdrawal.has(laborid)) {
 
@@ -102,12 +102,5 @@ window.location.replace(url + 'services/certificate/show');
 //$('.updateDiv').hide();
 }
 
-function changeStatus(id) {
-    $('#statusModal').modal('toggle');
-}
-
-
-function documentList(id) {
-    $('#documentModal').modal('toggle');
-}
 </script>
+<?php $this->view('admin/js/comman_modal_js'); ?>

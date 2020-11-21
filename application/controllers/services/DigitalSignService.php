@@ -20,8 +20,8 @@ class DigitalSignService extends CI_Controller {
         $this->load->view('admin/digital_sign/new');
         $this->load->view('admin/js/comman_js');
         
-         $this->load->view('admin/js/digital_sign/validation_js');
-         $this->load->view('admin/js/digital_sign/new_js');
+         $this->load->view('admin/digital_sign/validation_js');
+         $this->load->view('admin/digital_sign/new_js');
         $this->load->view('admin/footer');
     }
     
@@ -35,7 +35,7 @@ class DigitalSignService extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/digital_sign/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/digital_sign/show_js');
+        $this->load->view('admin/digital_sign/show_js');
         
         $this->load->view('admin/footer');
     }
@@ -44,7 +44,7 @@ class DigitalSignService extends CI_Controller {
 $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/digital_sign/update');
 //        $this->load->view('admin/js/digital_sign/validation_js');
-        $this->load->view('admin/js/digital_sign/update_js');
+        $this->load->view('admin/digital_sign/update_js');
 
     }
 

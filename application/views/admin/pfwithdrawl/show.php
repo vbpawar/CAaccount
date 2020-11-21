@@ -190,7 +190,7 @@
         <div class="modal-content">
             <form>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Remark And Attachments</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Status Approval</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -200,19 +200,19 @@
                     <div class="card">
 
                         <div class="form-group">
-                            <label class="control-label">Change Status</label>
+                            <label class="control-label">Status</label>
                             <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
-                            <select class="form-control selectpicker" id="status">
+                            <select class="form-control selectpicker" id="statusRemark">
                                 <option value="1">Pending...</option>
                                 <option value="2">Hold</option>
                                 <option value="3">Rejected</option>
                                 <option value="4">Completed</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label"><span class="error">*</span>Remark</label>
+                        <div class="form-group" id="remarkField">
+                            <label class="control-label"><span class="error"></span>Remark</label>
 
-                            <textarea class="form-control" id="remark" ></textarea>
+                            <textarea class="form-control"  ></textarea>
                         </div>
                         <div class="form-group">
 
@@ -242,11 +242,10 @@
 
 <!-- Documnet Modal -->
 <div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Remark And Attachments</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Download Attachments</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -254,24 +253,40 @@
                 <div class="modal-body">
                     <!--card start-->
                     <div class="card">
-
-                        <div class="form-group">
-                            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" download>Aadhar Card
-                            </a>
-                            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" download>Pan card
-                            </a>
-
-                        </div>
-
-
-                    </div>
+                        <!--table-->
+                        <table class="table table-striped">
+  
+  <tbody>
+    <tr>
+      <td>
+          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+      </td>
+      <td>
+          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+      </td>
+      <td>
+          <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+        </td>
+        <td>
+            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+        </td>
+        <td>
+            <a href="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" class="stretched-link" download>Aadhar Card</a>
+        </td>
+    </tr>
+    
+  </tbody>
+</table>
+                        <!--table-->
+                        
                     <!--card end-->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+                
         </div>
     </div>
 </div>
