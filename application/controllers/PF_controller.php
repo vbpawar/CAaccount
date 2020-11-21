@@ -227,4 +227,24 @@ class PF_controller extends CI_Controller
         $result = $this->docs->get_pf_docs($pfid);
         echo json_encode($result); 
     }
+    public function update_status(){
+        $pfid = $this->input->post('pfid');
+        $data = array(
+         'status'=>$this->input->post('status'),
+         'remark'=>$this->input->post('remark')
+        );
+         $result = $this->mmodel->updatepfstatus($pfid,$data);
+         if($result){
+             $response = array(
+                 'Message' => 'Status updated successfully',
+                 'Responsecode' => 200
+             );
+         }else{
+             $response = array(
+                 'Message' => 'Try Again',
+                 'Responsecode' => 204
+             );  
+         }
+         echo json_encode($response);
+     }
 } 

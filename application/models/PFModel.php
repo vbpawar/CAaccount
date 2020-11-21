@@ -59,6 +59,17 @@ class PFModel extends CI_Model {
                 $result['status'] = false;
             }         
             return $result;
+        }
+        public function updatepfstatus($pfid,$data)
+        {
+            $result = false;
+            $this->db->where('pfid',$pfid);
+            if($this->db->update('pf_withdrwal',$data)){
+                $result['status'] = true;
+            }else{
+                $result['status'] = false;
+            }
+            return $result;
         }        
 
 }

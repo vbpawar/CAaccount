@@ -94,6 +94,7 @@ $route['act'] = 'residential_address/act';
 $route['createpf'] = 'PF_controller/add_pf_form';
 $route['updatepf'] = 'PF_controller/update_pf_form';
 $route['load_pf'] = 'PF_controller/get_all_pf';
+$route['updatestatus'] = 'PF_controller/update_status';
 //pf ui
 $route['pf_withdrawal/create'] = 'services/PfwithdrawlService/create';
 $route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';
