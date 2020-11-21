@@ -54,6 +54,17 @@ class DigitalModel extends CI_Model {
                 $result['status'] = false;
             }         
             return $result;
+        }  
+        public function updatedigitalstatus($did,$data)
+        {
+            $result = false;
+            $this->db->where('did',$did);
+            if($this->db->update('digital_signature',$data)){
+                $result['status'] = true;
+            }else{
+                $result['status'] = false;
+            }
+            return $result;
         }             
 
 }

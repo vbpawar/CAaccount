@@ -95,6 +95,7 @@ $route['createpf'] = 'PF_controller/add_pf_form';
 $route['updatepf'] = 'PF_controller/update_pf_form';
 $route['load_pf'] = 'PF_controller/get_all_pf';
 $route['updatestatus'] = 'PF_controller/update_status';
+
 //pf ui
 $route['pf_withdrawal/create'] = 'services/PfwithdrawlService/create';
 $route['pf_withdrawal/show'] = 'services/PfwithdrawlService/show';
@@ -104,6 +105,7 @@ $route['pf_withdrawal/update'] = 'services/PfwithdrawlService/update';
 $route['createdigital'] = 'Digital_controller/add_digital_form';
 $route['updatedigital'] = 'Digital_controller/update_digital_form';
 $route['load_digital'] = 'Digital_controller/get_all_digital';
+$route['digital_status'] = 'Digital_controller/update_status';
 //digital sign ui
 $route['digital_sign/cerate'] = 'services/DigitalSignService/create';
 $route['digital_sign/show'] = 'services/DigitalSignService/show';
@@ -140,5 +142,5 @@ $route['updatepan'] = 'pan_controller/update_pan_form';
 $route['loadpan'] = 'pan_controller/get_all_pan';
 
 //docs apis
-$route['getpfdocs'] = 'PF_controller/getpfdocs';
-$route['getdigitaldocs'] = 'Digital_controller/getdigitaldocs';
+$route['getpfdocs'] = 'PF_controller/getpfdocs';//pass pf id
+$route['getdigitaldocs'] = 'Digital_controller/getdigitaldocs';//pass did
