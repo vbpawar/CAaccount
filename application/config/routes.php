@@ -150,3 +150,6 @@ $route['loadcharges']   = 'Service_charges/getservicecharges';
 $route['addcharges']    = 'Service_charges/addServiceCharges';
 $route['removecharges'] = 'Service_charges/removeservicecharges';
 $route['updatecharges'] = 'Service_charges/updateservicecharges';
+
+//service charges ui
+$route['servicecharge']   = 'services/ServiceCharges/show';
