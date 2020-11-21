@@ -1,4 +1,5 @@
 <script>
+    
     var url = '<?php echo base_url(); ?>';
     var pfWithdrawal = new Map();
     const loadList = () => {
@@ -40,15 +41,15 @@
             tblData += '<td>' + services.status + '</td>';
 
         tblData += '<div class="table-actions">';
-                tblData += `<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-info-circle text-info"></i></a> 
+                tblData += `<td style="width:5%"><a href="#" onclick="editData(` + (k) + `)" title="edit details"><i class="fa fa-info-circle text-info"></i></a> `;
                 <?php
                 $data = $this->session->userdata();
-                    if ($data['Data']['role'] == 1) {?>
-             <a href="#!" onclick="changeStatus(' + (k) + ')" title="Change Status"><i class="fa fa-edit text-success"></i></a> 
+                    if ($data['Data']['role'] == 1 || $data['Data']['role'] ==4) {?>
+          tblData +=  `&nbsp; <a href="#@" onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`; 
                       <?php  
                     }
                 ?>
-<a href="#!" onclick="documentList(' + (k) + ')" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
+              tblData +=` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
 tblData += '</div></tr>';
 
 
@@ -70,7 +71,6 @@ searching: true,
 }
 
 var editData = laborid => {
-
 laborid = laborid.toString();
 if (pfWithdrawal.has(laborid)) {
 
@@ -102,12 +102,52 @@ window.location.replace(url + 'services/certificate/show');
 //$('.updateDiv').hide();
 }
 
+$('#remarkField').hide();
 function changeStatus(id) {
     $('#statusModal').modal('toggle');
 }
 
 
 function documentList(id) {
-    $('#documentModal').modal('toggle');
+    $.ajax({
+        url: url + 'getpfdocs',
+
+                type: 'POST',
+
+                data: {pfid:id},
+
+                cache: false,
+
+                dataType: 'json',
+                success:function(response) {
+                    const count = response.length;
+                    var docTable='';
+                    for(var i=0;i<count;i++){
+                 docTable +=` <tr>
+      <td>
+          <a href="`+(url+'documents/pf/'+response[i].docid+'.'+response[i].extension)+`" class="stretched-link" download>`+response[i].doctype+`</a>
+      </td>
+    </tr>`;
+                    }
+                    $('#documentList').html(docTable);
+                    $('#documentModal').modal('toggle');
+                }
+    });
 }
+
+
+
+//remark field enable disable on status change 
+$('#statusRemark').change(function() {
+     //Use $option (with the "$") to see that the variable is a jQuery object
+        var $option = $(this).find('option:selected');
+        //Added with the EDIT
+        var value = $option.val();//to get content of "value" attrib
+        if (value== 2 || value==3) {
+            $('#remarkField').show();
+        } else {
+            $('#remarkField').hide();
+        }
+});
+
 </script>
