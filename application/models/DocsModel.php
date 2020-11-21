@@ -36,4 +36,16 @@ class DocsModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function add_remark_docs($data)
+    {    
+        $result = [];
+        if($this->db->insert('remarks_document', $data)){
+           $result['remarkid'] =  $this->db->insert_id();
+           $result['status'] = true;   
+         }else{
+            $result['status'] = false;
+         }
+         return $result;
+    }
+
 }

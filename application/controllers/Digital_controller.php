@@ -227,6 +227,15 @@ class Digital_controller extends CI_Controller
         );
          $result = $this->mmodel->updatedigitalstatus($did,$data);
          if($result){
+            $document = 'Documents not uplaoded';
+            if(!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])){ 
+                if($this->uploadremarks('Digital',$id,$_FILES['result1']['name'],$_FILES['result1']['tmp_name'])){
+                $document = 'Documents uplaoded';
+                }
+                if($this->uploadremarks('Digital',$id,$_FILES['result2']['name'],$_FILES['result2']['tmp_name'])){
+                    $document = 'Documents uplaoded';
+                    }
+               }
              $response = array(
                  'Message' => 'Status updated successfully',
                  'Responsecode' => 200
@@ -238,5 +247,27 @@ class Digital_controller extends CI_Controller
              );  
          }
          echo json_encode($response);
+     }
+     public function uploadremarks($service,$rowid,$filename,$file)
+     {
+      $ext = pathinfo($filename, PATHINFO_EXTENSION);
+      $data = array(
+          'service'=>$service,
+          'rowid'=>$rowid,
+          'extension'=>$ext
+      );
+      $result = $this->docs->add_remark_docs($data);
+      if($result){
+          $imgid = $result['remarkid'];
+      $sourcePath = $file; // Storing source path of the file in a variable
+      $targetPath = "./documents/remarks/".$imgid.".".$ext; // Target path where file is to be stored
+      if(move_uploaded_file($sourcePath,$targetPath)){
+         return true;
+      }else{
+          return false;
+      }
+      }else{
+          return false;
+      }  
      }
 } 
