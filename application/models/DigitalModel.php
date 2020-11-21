@@ -2,10 +2,16 @@
 
 class DigitalModel extends CI_Model {
 
-    public function get_details() {
+    public function get_details($roleid,$userid) {
+        if($roleid ==1){
         $sql = "SELECT * FROM digital_signature pf 
         JOIN personal_details pd ON pd.pid = pf.pid
         JOIN residential_details rd ON rd.rid = pf.rid";
+        }else{
+            $sql = "SELECT * FROM digital_signature pf 
+            JOIN personal_details pd ON pd.pid = pf.pid
+            JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid";  
+        }
         $query = $this->db->query($sql);
        $result['status'] = true;
        $result['data'] =  $query->result();

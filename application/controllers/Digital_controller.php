@@ -18,7 +18,9 @@ class Digital_controller extends CI_Controller
     
     public function get_all_digital()
     {
-        $result = $this->dmodel->get_details();
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->dmodel->get_details($roleid,$userid);
         if ($result['status']) {
             $response = array(
                 'Message' => 'PF Details loaded successfully',
