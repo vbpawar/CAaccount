@@ -42,18 +42,32 @@
 
         $('.serviceList').empty();
 
-        var tblData = '', badge;
+        var tblData = '', badge,status;
 
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
+            switch (services.status) {
+                case '1':
+                    status = '<span class="badge badge-pill badge-primary">Pending...</span>';
+                    break;
+                case '2':
+                    status = '<span class="badge badge-pill badge-warning">Hold</span>';
+                    break;
+                case '3':
+                    status = '<span class="badge badge-pill badge-danger">Rejected</span>';
+                    break;
+                case '4':
+                    status = '<span class="badge badge-pill badge-success">Completed</span>';
+                    break;
+            }
             tblData += '<tr><td>' + services.aadhar_name + '</td>';
             tblData += '<td>' + services.pan_number + '</td>';
             tblData += '<td>' + services.aadhar_number + '</td>';
             tblData += '<td>' + services.contact_number + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
             tblData += '<td>' + services.createdat + '</td>';
-            tblData += '<td>' + services.status + '</td>';
+            tblData += '<td>' + status + '</td>';
 
             tblData += '<div class="table-actions">';
                 tblData += `<td style="width:5%"><a href="#" onclick="editData(` + (k) + `)" title="edit details"><i class="fa fa-info-circle text-info"></i></a> `;
