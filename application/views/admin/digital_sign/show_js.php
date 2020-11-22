@@ -124,7 +124,7 @@
     
 function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'digital_sign/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -132,6 +132,7 @@ function goback() {
 
 $('#remarkField').hide();
 function changeStatus(id) {
+    $('#did').val(id);
     $('#statusModal').modal('toggle');
 }
 
@@ -178,4 +179,49 @@ $('#statusRemark').change(function() {
         }
 });
 
+
+//status form submit
+$('#statusUpdateForm').on('submit', function (e) {
+
+        e.preventDefault();
+        
+        var formdata = new FormData(this);
+        $.ajax({
+
+                url: url + 'digital_status',
+
+                type: 'POST',
+
+                data: formdata,
+
+                cache: false,
+
+                contentType: false,
+
+                processData: false,
+
+                dataType: 'json',
+
+                success: function (response) {
+//                alert(response.Data.customerId);
+//                console.log(response);
+
+                    if (response.Responsecode == 200) {
+
+                        swal("Congrats!", response.Message, "success");
+
+
+
+                        goback();
+
+                    } else {
+
+                        swal("Error!", response.Message, "success");
+
+                    }
+
+                }
+
+            });
+    });
 </script>

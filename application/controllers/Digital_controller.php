@@ -229,14 +229,14 @@ class Digital_controller extends CI_Controller
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
-        $result = $this->mmodel->updatedigitalstatus($did, $data);
+        $result = $this->dmodel->updatedigitalstatus($did, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('Digital', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('Digital', $did, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('Digital', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('Digital', $did, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }

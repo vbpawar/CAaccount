@@ -185,7 +185,8 @@
 <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form>
+            <!--form-->
+            <form id="statusUpdateForm">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Status Approval</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -195,11 +196,11 @@
                 <div class="modal-body">
                     <!--card start-->
                     <div class="card">
-
+                        <input type="hidden" name="did" id="did"/>
                         <div class="form-group">
                             <label class="control-label">Status</label>
                             <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
-                            <select class="form-control selectpicker" id="statusRemark">
+                            <select class="form-control selectpicker" id="statusRemark" name="status">
                                 <option value="1">Pending...</option>
                                 <option value="2">Hold</option>
                                 <option value="3">Rejected</option>
@@ -209,18 +210,18 @@
                         <div class="form-group" id="remarkField">
                             <label class="control-label"><span class="error"></span>Remark</label>
 
-                            <textarea class="form-control"  ></textarea>
+                            <textarea class="form-control" name="remark" ></textarea>
                         </div>
                         <div class="form-group">
 
                             <label class="control-label">Attachment 1</label>
-                            <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event, 'paspre')" />
+                            <input class="form-control" id="result1" name="result1" type="file" />
 
                         </div>
                         <div class="form-group">
 
                             <label class="control-label">Attachment 2</label>
-                            <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event, 'paspre')" />
+                            <input class="form-control" id="result2" name="result2" type="file"  />
 
                         </div>
 
@@ -229,8 +230,8 @@
                     <!--card end-->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="Submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
         </div>
