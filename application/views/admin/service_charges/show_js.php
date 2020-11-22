@@ -1,6 +1,25 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    showList(servicecharges);
+   var charges = new Map();
+    var loadList = () => {
+$.ajax({
+    url: '<?php echo base_url('/loadcharges');?>',
+    type: 'get',
+    dataType: 'json',
+    success: function (response) {
+        if (response.Responsecode == 200 && response.Data != null) {
+            const count = response.Data.length;
+            for (var i = 0; i < count; i++) {
+                charges.set(response.Data[i].chargesid, response.Data[i]);
+            }
+            showList(charges);
+        }
+
+    }
+
+});
+}
+loadList();
     const showList = serviceList => {
         $('#service').dataTable().fnDestroy();
 
@@ -50,11 +69,11 @@
 
         laborid = laborid.toString();
 
-        if (servicecharges.has(laborid)) {
+        if (charges.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = servicecharges.get(laborid);
+            var product = charges.get(laborid);
 
             ulaborid = laborid;
             details = product;
@@ -77,7 +96,7 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = servicecharges.get(laborid);
+    var product = charges.get(laborid);
     var name=product.servicename;
     var msg='Do you want to delete '+name+' Information ?';
     
