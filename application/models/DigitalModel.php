@@ -6,11 +6,11 @@ class DigitalModel extends CI_Model {
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM digital_signature pf 
         JOIN personal_details pd ON pd.pid = pf.pid
-        JOIN residential_details rd ON rd.rid = pf.rid ORDER BY pf.pfid DESC";
+        JOIN residential_details rd ON rd.rid = pf.rid ORDER BY pf.did DESC";
         }else{
             $sql = "SELECT * FROM digital_signature pf 
             JOIN personal_details pd ON pd.pid = pf.pid
-            JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid ORDER BY pf.pfid DESC";  
+            JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid ORDER BY pf.did DESC";  
         }
         $query = $this->db->query($sql);
        $result['status'] = true;
