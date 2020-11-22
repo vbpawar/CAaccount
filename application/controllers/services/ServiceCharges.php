@@ -10,14 +10,15 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 class ServiceCharges extends CI_Controller {
 
     public function create() {
-        $data['title'] = 'Distributor Retailor  Service';
+        $data['title'] = 'Service Charges';
         $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
-        $this->load->view('admin/retailor_distributor/new');
+        $this->load->view('admin/service_charges/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/retailor_distributor/new_js');
+        $this->load->view('admin/service_charges/validation_js');
+        $this->load->view('admin/service_charges/new_js');
         $this->load->view('admin/footer');
     }
 
@@ -29,15 +30,14 @@ class ServiceCharges extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/service_charges/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/service_charges/show_js');
+        $this->load->view('admin/service_charges/show_js');
         $this->load->view('admin/footer');
     }
 
     public function update() {
-           $this->load->view('admin/retailor_distributor/update');
-        $this->load->view('admin/js/jquery_validation_js');
-        $this->load->view('admin/js/retailor_distributor/retailor_distributor_validation_js');
-        $this->load->view('admin/js/retailor_distributor/update_js');
+           $this->load->view('admin/service_charges/update');
+           $this->load->view('admin/service_charges/validation_js');
+           $this->load->view('admin/service_charges/update_js');
     }
 
 }

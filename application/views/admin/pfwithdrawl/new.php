@@ -107,10 +107,10 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-control">
-                                <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
+<!--                                 <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
+                                <a href="<?php echo base_url('pf_withdrawal/show');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">PF Withdrawal Information</h3>
                         </div>
@@ -223,27 +223,21 @@
                                                                 <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="col-sm-4">
+                                                        
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">UAN Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="uanraw" id="uan" />
+                                                                <input type="text" class="form-control" placeholder="UAN Number" name="uan_number" id="uan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">UAN Password</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
+                                                                <input type="text" class="form-control" placeholder="" name="uan_password" id="uan_password" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Confirm UAN Password</label>
-
-                                                                <input type="text" class="form-control" placeholder="" name="uanp" id="uanp" />
-                                                            </div>
-                                                        </div> -->
                                                     </div>
 
                                                     <!-- <p class="text-center">

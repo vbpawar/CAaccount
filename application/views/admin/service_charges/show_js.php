@@ -95,7 +95,7 @@
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url+'services/RetailorDistributor/update',
+                url: url+'servicecharge/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -112,7 +112,7 @@
     var deleteData = laborid =>{
     laborid = laborid.toString();
     var product = distributorList.get(laborid);
-    var name=product.nameasperadhar;
+    var name=product.servicename;
     var msg='Do you want to delete '+name+' Information ?';
     
     var alert1 = '';
@@ -132,11 +132,11 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'Certificate_service/removecertificate',
+            url: url + 'removecharges',
 
             type: 'POST',
 
-            data:{certid:laborid},
+            data:{chargesid:laborid},
 
 //            cache: false,
 //
@@ -148,7 +148,6 @@ function deletePermission(laborid) {
 
             success: function(response) {
 
-                console.log(response.userId);
 
                 if (response.Responsecode == 200) {
 
@@ -165,18 +164,6 @@ function deletePermission(laborid) {
                         timer: 1500
 
                     })
-
-//                    var productid = response.certid;
-//                    productid = productid.toString();
-//
-//                    if(ca.has(productid)){
-//
-//                        customer.delete(productid);
-//
-//                    }
-//
-//
-//                    showtest(customer);
 
                     goback();
 
@@ -205,7 +192,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/service_charges/show');
+        window.location.replace(url + 'servicecharge');
     }
 
 </script>

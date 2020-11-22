@@ -10,6 +10,8 @@
         $('#dob').val(product.dob);
         $('#contact_number').val(product.contact_number);
         $('#emailid').val(product.emailid);
+        $('#uan_number').val(product.uan_number);
+        $('#uan_password').val(product.uan_password);
         $('#premise_name').val(product.premise_name);
         $('#flat_number').val(product.flat_number);
         $('#road').val(product.road);

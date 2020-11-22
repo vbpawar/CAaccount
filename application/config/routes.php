@@ -153,3 +153,5 @@ $route['updatecharges'] = 'Service_charges/updateservicecharges';
 
 //service charges ui
 $route['servicecharge']   = 'services/ServiceCharges/show';
+$route['servicecharge/create']   = 'services/ServiceCharges/create';
+$route['servicecharge/update']   = 'services/ServiceCharges/update';
