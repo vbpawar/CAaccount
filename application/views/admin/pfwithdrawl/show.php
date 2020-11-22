@@ -105,7 +105,7 @@
                 <div class="panel-body">
                     <?php
                     $data = $this->session->userdata();
-                    if ($data['Data']['role'] != 1) {
+                    if ($data['Data']['role'] == 3) {
                         echo '<a class="btn btn-primary" href="' . base_url() . 'pf_withdrawal/create" role="button">Add New Entry</a>';
                     }
                     ?>
