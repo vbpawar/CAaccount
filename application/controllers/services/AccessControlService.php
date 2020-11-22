@@ -21,8 +21,8 @@ class AccessControlService extends CI_Controller {
         $this->load->view('admin/access_control/new');
         $this->load->view('admin/js/comman_js');
 
-        $this->load->view('admin/js/access_control/role_js');
-        $this->load->view('admin/js/access_control/new_js');
+        $this->load->view('admin/access_control/role_js');
+        $this->load->view('admin/access_control/new_js');
         $this->load->view('admin/footer');
     }
 
@@ -34,7 +34,7 @@ class AccessControlService extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/access_control/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/access_control/show_js');
+        $this->load->view('admin/access_control/show_js');
 
         $this->load->view('admin/footer');
     }
@@ -42,7 +42,7 @@ class AccessControlService extends CI_Controller {
     public function update() {
         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/access_control/update');
-        $this->load->view('admin/js/access_control/update_js');
+        $this->load->view('admin/access_control/update_js');
     }
 
 }
