@@ -3,14 +3,14 @@
 class DigitalModel extends CI_Model {
 
     public function get_details($roleid,$userid) {
-        if($roleid ==1){
+        if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM digital_signature pf 
         JOIN personal_details pd ON pd.pid = pf.pid
-        JOIN residential_details rd ON rd.rid = pf.rid";
+        JOIN residential_details rd ON rd.rid = pf.rid ORDER BY pf.pfid DESC";
         }else{
             $sql = "SELECT * FROM digital_signature pf 
             JOIN personal_details pd ON pd.pid = pf.pid
-            JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid";  
+            JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid ORDER BY pf.pfid DESC";  
         }
         $query = $this->db->query($sql);
        $result['status'] = true;

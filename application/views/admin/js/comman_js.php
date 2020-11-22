@@ -48,6 +48,7 @@
 
 
 <script> //img preview code ######DON'T REMOVE ####
+ var servicecharges = new Map();
 var loadFile = function(event,out) {
 //    console.log("da")
     var output = document.getElementById(out);
@@ -72,5 +73,24 @@ function check_balance(userid,amount){
     });
     return check;
 }
+var load_service_charges = () => {
+$.ajax({
+    url: '<?php echo base_url('/loadcharges');?>',
+    type: 'get',
+    dataType: 'json',
+    async:false,
+    success: function (response) {
+        if (response.Responsecode == 200 && response.Data != null) {
+            const count = response.Data.length;
+            for (var i = 0; i < count; i++) {
+                servicecharges.set(response.Data[i].chargesid, response.Data[i]);
+            }
+        }
+
+    }
+
+});
+}
+load_service_charges();
 </script>
              

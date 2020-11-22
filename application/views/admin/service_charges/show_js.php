@@ -1,40 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var distributorList = new Map();
-
-    const loadList = () => {
-
-        $.ajax({
-
-            url: url + 'loadcharges',
-
-            type: 'get',
-
-            dataType: 'json',
-
-            success: function (response) {
-                console.log(response);
-                if (response.Responsecode == 200 && response.Data != null) {
-
-                    const count = response.Data.length;
-
-                    for (var i = 0; i < count; i++) {
-
-                        distributorList.set(response.Data[i].chargesid, response.Data[i]);
-
-                    }
-
-                    showList(distributorList);
-
-                }
-
-            }
-
-        });
-    }
-    loadList();
-
-
+    showList(servicecharges);
     const showList = serviceList => {
         $('#service').dataTable().fnDestroy();
 
@@ -84,11 +50,11 @@
 
         laborid = laborid.toString();
 
-        if (distributorList.has(laborid)) {
+        if (servicecharges.has(laborid)) {
 
             $('.showDiv').hide();
 
-            var product = distributorList.get(laborid);
+            var product = servicecharges.get(laborid);
 
             ulaborid = laborid;
             details = product;
@@ -111,7 +77,7 @@
     
     var deleteData = laborid =>{
     laborid = laborid.toString();
-    var product = distributorList.get(laborid);
+    var product = servicecharges.get(laborid);
     var name=product.servicename;
     var msg='Do you want to delete '+name+' Information ?';
     

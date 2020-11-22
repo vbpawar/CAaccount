@@ -261,7 +261,7 @@ class Digital_controller extends CI_Controller
             'extension' => $ext
         );
         $result = $this->docs->add_remark_docs($data);
-        if ($result) {
+        if ($result['status']) {
             $imgid      = $result['remarkid'];
             $sourcePath = $file; // Storing source path of the file in a variable
             $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored

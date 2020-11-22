@@ -5,7 +5,7 @@ class PFModel extends CI_Model {
     public function get_details($roleid,$userid) {
 
         $result = [];
-        if($roleid ==1){
+        if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM pf_withdrwal pf 
         JOIN personal_details pd ON pd.pid = pf.pid 
         JOIN bank_details bd ON bd.bid = pf.pfid 

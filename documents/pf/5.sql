@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2020 at 02:54 PM
+-- Generation Time: Nov 20, 2020 at 04:59 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -44,18 +44,10 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`activityid`, `activity`, `path`, `pagename`, `servicetype`, `createdat`, `updatedat`, `isactive`) VALUES
-(1, 'RETAILOR', 'retailor', 'RETAILOR', 'Retailors', '2020-11-03 11:56:03', '2020-11-04 07:29:03', 1),
-(2, 'User Master', 'userMaster', 'Users', 'Users', '2020-11-03 11:56:03', '2020-11-04 07:37:41', 1),
-(3, 'SHOP ACT', 'shopAct', 'SHOP ACT', 'service', '2020-11-03 11:57:13', '2020-11-04 07:23:31', 1),
-(4, 'UDYOG AADHAR', 'udyagAadhar', 'UDYOG AADHAR', 'service', '2020-11-03 11:57:13', '2020-11-04 07:23:36', 1),
-(5, 'CA CERTIFICATE\r\n', 'certificate', 'CA CERTIFICATE\r\n', 'service', '2020-11-03 11:57:21', '2020-11-04 07:23:42', 0),
-(6, 'REPORT\r\n', 'report', 'REPORT\r\n', 'service', '2020-11-03 11:57:21', '2020-11-04 07:23:48', 0),
-(9, 'IMPORT EXPORT\r\n', 'importExport\r\n', 'IMPORT EXPORT\r\n', 'service', '2020-11-03 11:59:18', '2020-11-04 07:23:53', 1),
-(11, 'INCOME\r\n', 'income\r\n', 'INCOME\r\n', 'service', '2020-11-03 12:01:15', '2020-11-04 07:23:59', 1),
-(13, 'RETAILOR DISTRIBUTOR', 'retailorDistributor', 'RETAILOR DISTRIBUTOR', 'Distributor Retailors', '2020-11-03 12:01:38', '2020-11-04 07:27:59', 1),
-(14, 'E-WAY BILL', 'ewayBill', 'E-WAY BILL', 'service', '2020-11-03 12:01:38', '2020-11-04 07:23:16', 1),
-(15, 'BALANCESHEET', 'balancesheet', 'BALANCESHEET', 'service', '2020-11-03 12:02:22', '2020-11-04 07:23:09', 1),
-(16, 'PANCARD\r\n', 'pancard\r\n', 'PANCARD\r\n', 'service', '2020-11-03 12:02:38', '2020-11-04 07:23:00', 1);
+(1, 'PF Withdrawal', 'pf_withdrawal/show', 'PF Withdrawal', 'service', '2020-11-15 11:49:00', '2020-11-15 11:59:03', 0),
+(2, 'Digital Signature', 'digital_sign/show', 'Digital Signature', 'service', '2020-11-15 11:50:31', '2020-11-15 11:59:12', 0),
+(3, 'User', 'users/show', 'User', 'Users', '2020-11-15 11:52:04', '2020-11-15 12:03:26', 0),
+(4, 'Distributor Retailors\r\n', 'retailorDistributor', ' Distributor Retailor', 'Distributor Retailors', '2020-11-15 11:52:04', '2020-11-15 12:03:38', 0);
 
 -- --------------------------------------------------------
 
@@ -78,7 +70,10 @@ CREATE TABLE `bank_details` (
 
 INSERT INTO `bank_details` (`bid`, `bank_name`, `ac_number`, `ifsc_number`, `createdat`, `updatedat`) VALUES
 (1, 'IDFC', '1258525', 'IFSC121', '2020-11-14 17:37:38', '2020-11-14 17:37:38'),
-(2, 'HDFC', '895588', 'HDFC344', '2020-11-14 17:39:31', '2020-11-14 17:39:31');
+(2, 'HDFC', '895588', 'HDFC344', '2020-11-14 17:39:31', '2020-11-14 17:39:31'),
+(3, 'IDFC', '258965588', 'IFSC121', '2020-11-20 00:03:41', '2020-11-20 00:03:41'),
+(4, 'IDFC', '258965588', 'IFSC121', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(5, 'IDFC', '258965588', 'IFSC121', '2020-11-20 00:07:16', '2020-11-20 00:07:16');
 
 -- --------------------------------------------------------
 
@@ -109,7 +104,21 @@ INSERT INTO `contact_master` (`userid`, `country`, `ustate`, `city`, `pincode`, 
 (41, 'INDIA', 'MAHARASHTRA', 'PUNE', '415896', 'GI TECH', '2020-11-14 13:30:24', '2020-11-14 13:30:24'),
 (42, 'INDIA', 'MAHARASHTRA', 'PUNE', '415896', 'GI TECH', '2020-11-14 13:30:41', '2020-11-14 13:30:41'),
 (43, 'INDIA', 'MAHARASHTRA', 'PUNE', '415896', 'GI TECH', '2020-11-14 13:32:47', '2020-11-14 13:32:47'),
-(44, 'INDIA', 'MAHARASHTRA', 'PUNE', '415896', 'GI TECH', '2020-11-14 13:34:29', '2020-11-14 13:34:29');
+(44, 'INDIA', 'MAHARASHTRA', 'PUNE', '415896', 'GI TECH', '2020-11-14 13:34:29', '2020-11-14 13:34:29'),
+(45, 'India', 'Maharashtra', 'Pune', '413075', 'Pune', '2020-11-15 23:28:40', '2020-11-15 23:28:40'),
+(46, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:31:30', '2020-11-15 23:31:30'),
+(47, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:32:10', '2020-11-15 23:32:10'),
+(48, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:32:35', '2020-11-15 23:32:35'),
+(49, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:32:40', '2020-11-15 23:32:40'),
+(50, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:34:28', '2020-11-15 23:34:28'),
+(51, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:35:40', '2020-11-15 23:35:40'),
+(52, 'MAharahstra', 'Ma', 'Pune', '', 'Pune', '2020-11-15 23:37:53', '2020-11-15 23:37:53'),
+(53, 'India', 'Maharashtra', 'Pune', '147895', 'Pune', '2020-11-15 23:39:19', '2020-11-15 23:39:19'),
+(54, 'India', 'Maharashtra', 'Pune', '147895', 'Pune', '2020-11-15 23:40:40', '2020-11-15 23:40:40'),
+(55, 'India', 'Maharashtra', 'Pune', '147895', 'Pune', '2020-11-15 23:41:13', '2020-11-15 23:41:13'),
+(56, 'India', 'Maharashtra', 'Pune', '147895', 'Pune', '2020-11-15 23:41:59', '2020-11-15 23:41:59'),
+(57, 'India', 'Maharashtra', 'Pune', '413075', 'pune', '2020-11-15 23:44:14', '2020-11-15 23:44:14'),
+(58, 'MAharahstra', 'Ma', 'Pune', '147895', 'pune', '2020-11-15 23:47:23', '2020-11-15 23:47:23');
 
 -- --------------------------------------------------------
 
@@ -123,6 +132,31 @@ CREATE TABLE `criteria_documents` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `digital_docs`
+--
+
+CREATE TABLE `digital_docs` (
+  `docid` int(10) UNSIGNED NOT NULL,
+  `extension` varchar(100) NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `did` int(10) UNSIGNED NOT NULL,
+  `doctype` varchar(100) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `digital_docs`
+--
+
+INSERT INTO `digital_docs` (`docid`, `extension`, `userid`, `did`, `doctype`, `createdat`, `updatedat`) VALUES
+(1, 'sql', 1, 3, 'Aadhar', '2020-11-20 17:24:04', '2020-11-20 17:24:04'),
+(2, 'text', 1, 3, 'PAN', '2020-11-20 17:24:04', '2020-11-20 17:24:04'),
+(3, 'java', 1, 3, 'Passport', '2020-11-20 17:24:04', '2020-11-20 17:24:04');
 
 -- --------------------------------------------------------
 
@@ -142,6 +176,7 @@ CREATE TABLE `digital_signature` (
   `trade_name` varchar(150) NOT NULL,
   `place_of_buss` varchar(150) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'New',
+  `remark` text DEFAULT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -149,9 +184,10 @@ CREATE TABLE `digital_signature` (
 -- Dumping data for table `digital_signature`
 --
 
-INSERT INTO `digital_signature` (`did`, `userid`, `pid`, `rid`, `class`, `uan_number`, `uan_password`, `nature_of_buss`, `trade_name`, `place_of_buss`, `status`, `createdat`) VALUES
-(1, 1, 1, 1, 'CLASS 1', '589655', '12345', 'Private', 'Kalptaru', 'Pune', '', '2020-11-13 18:31:18'),
-(2, 1, 4, 4, 'CLASS 2', '1234567', '12345', 'Private', 'Kalptaru', 'Pune', 'New', '2020-11-13 14:51:55');
+INSERT INTO `digital_signature` (`did`, `userid`, `pid`, `rid`, `class`, `uan_number`, `uan_password`, `nature_of_buss`, `trade_name`, `place_of_buss`, `status`, `remark`, `createdat`) VALUES
+(1, 1, 1, 1, 'CLASS 1', '589655', '12345', 'Private', 'Kalptaru', 'Pune', '', NULL, '2020-11-13 18:31:18'),
+(2, 1, 4, 4, 'CLASS 2', '1234567', '12345', 'Private', 'Kalptaru', 'Pune', 'New', NULL, '2020-11-13 14:51:55'),
+(3, 70, 6, 11, 'CLASS 2', '12345', '12245', ' Private limited', 'IDFC', 'Punawala', 'New', NULL, '2020-11-20 17:24:04');
 
 -- --------------------------------------------------------
 
@@ -246,6 +282,34 @@ CREATE TABLE `employee_service` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pan_service`
+--
+
+CREATE TABLE `pan_service` (
+  `panid` int(10) UNSIGNED NOT NULL,
+  `rid` int(10) UNSIGNED NOT NULL,
+  `app_type` varchar(100) NOT NULL,
+  `category` varchar(100) DEFAULT NULL,
+  `pan_number` varchar(14) DEFAULT NULL,
+  `aadhar_name` varchar(255) DEFAULT NULL,
+  `contact_number` varchar(12) DEFAULT NULL,
+  `emailid` varchar(255) DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'New',
+  `userid` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pan_service`
+--
+
+INSERT INTO `pan_service` (`panid`, `rid`, `app_type`, `category`, `pan_number`, `aadhar_name`, `contact_number`, `emailid`, `status`, `userid`, `createdat`, `updatedat`) VALUES
+(1, 1, 'INDIVISUAL', 'NEW PAN', NULL, 'VIKAS PAWA', '9657613754', 'vikas.nucleon@gmail.com', '', 1, '0000-00-00 00:00:00', '2020-11-15 21:01:18');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `partner_details`
 --
 
@@ -309,7 +373,37 @@ CREATE TABLE `personal_details` (
 
 INSERT INTO `personal_details` (`pid`, `pan_name`, `pan_number`, `aadhar_name`, `aadhar_number`, `contact_number`, `emailid`, `dob`, `createdat`, `updatedat`) VALUES
 (1, 'VIKAS PAWAR', 'EVVP987BN', 'VIKAS PAWAR', '20289588888', '9657613754', 'vikas.nucleon@gmail.com', '1998-03-11', '2020-11-14 17:37:38', '2020-11-14 17:37:38'),
-(2, 'KUNAL KAPSE', 'VPP67bg', 'KAPSE KUNAL', '25828888888', '9657613754', 'vikas.nucleon@gmail.com', '1997-12-12', '2020-11-14 17:39:31', '2020-11-14 17:39:31');
+(2, 'KUNAL KAPSE', 'VPP67bg', 'KAPSE KUNAL', '25828888888', '9657613754', 'vikas.nucleon@gmail.com', '1997-12-12', '2020-11-14 17:39:31', '2020-11-14 17:39:31'),
+(3, 'VIKAS PAWAR', 'EVVP987BN', 'KALE NARESH BALU', '636458396589', '9657613754', 'vikas.nucleon@gmail.com', '1998-03-11', '2020-11-20 00:03:40', '2020-11-20 00:03:40'),
+(4, 'VIKAS PAWAR', 'EVVP987BN', 'KALE NARESH BALU', '636458396589', '9657613754', 'vikas.nucleon@gmail.com', '1998-03-11', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(5, 'VIKAS PAWAR', 'EVVP987BN', 'KALE NARESH BALU', '636458396589', '9657613754', 'vikas.nucleon@gmail.com', '2020-11-19', '2020-11-20 00:07:16', '2020-11-20 00:07:16'),
+(6, 'VIKAS PAWAR', 'EVVP987BN', 'KALE NARESH BALU', '636458396589', '9657613754', 'vikas.nucleon@gmail.com', NULL, '2020-11-20 17:24:04', '2020-11-20 17:24:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pf_docs`
+--
+
+CREATE TABLE `pf_docs` (
+  `docid` int(10) UNSIGNED NOT NULL,
+  `extension` varchar(100) NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL,
+  `pfid` int(10) UNSIGNED NOT NULL,
+  `doctype` varchar(100) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pf_docs`
+--
+
+INSERT INTO `pf_docs` (`docid`, `extension`, `userid`, `pfid`, `doctype`, `createdat`, `updatedat`) VALUES
+(1, 'png', 1, 4, 'Aadhar', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(2, 'jfif', 1, 4, 'PAN', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(3, 'text', 1, 5, 'Aadhar', '2020-11-20 00:07:16', '2020-11-20 00:07:16'),
+(4, 'xlsx', 1, 5, 'PAN', '2020-11-20 00:07:16', '2020-11-20 00:07:16');
 
 -- --------------------------------------------------------
 
@@ -324,6 +418,7 @@ CREATE TABLE `pf_withdrwal` (
   `rid` int(10) UNSIGNED NOT NULL,
   `bid` int(10) UNSIGNED NOT NULL,
   `status` varchar(25) NOT NULL DEFAULT 'New',
+  `remark` text DEFAULT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -332,9 +427,12 @@ CREATE TABLE `pf_withdrwal` (
 -- Dumping data for table `pf_withdrwal`
 --
 
-INSERT INTO `pf_withdrwal` (`pfid`, `userid`, `pid`, `rid`, `bid`, `status`, `createdat`, `updatedat`) VALUES
-(1, 2, 1, 1, 1, 'New', '2020-11-14 17:37:39', '2020-11-14 17:37:39'),
-(2, 2, 2, 2, 2, 'New', '2020-11-14 17:39:31', '2020-11-14 17:39:31');
+INSERT INTO `pf_withdrwal` (`pfid`, `userid`, `pid`, `rid`, `bid`, `status`, `remark`, `createdat`, `updatedat`) VALUES
+(1, 2, 1, 1, 1, 'New', NULL, '2020-11-14 17:37:39', '2020-11-14 17:37:39'),
+(2, 2, 2, 2, 2, 'New', NULL, '2020-11-14 17:39:31', '2020-11-14 17:39:31'),
+(3, 2, 3, 8, 3, 'New', NULL, '2020-11-20 00:03:41', '2020-11-20 00:03:41'),
+(4, 2, 4, 9, 4, 'New', NULL, '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(5, 2, 5, 10, 5, 'New', NULL, '2020-11-20 00:07:16', '2020-11-20 00:07:16');
 
 -- --------------------------------------------------------
 
@@ -380,7 +478,16 @@ CREATE TABLE `residential_details` (
 
 INSERT INTO `residential_details` (`rid`, `premise_name`, `flat_number`, `road`, `area`, `village`, `taluka`, `district`, `state`, `pincode`, `createdat`, `updatedat`) VALUES
 (1, 'Gokul colony', '12', 'Police station', 'Pune', 'Rahuri', 'Rahuri', 'Ahmadnagar', 'Maharashtra', '4130752', '2020-11-14 17:37:38', '2020-11-14 17:37:38'),
-(2, 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', '415888', '2020-11-14 17:39:31', '2020-11-14 17:39:31');
+(2, 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', 'DHULE', '415888', '2020-11-14 17:39:31', '2020-11-14 17:39:31'),
+(3, 'PUNE', '10', 'Police station', 'RAHURI', 'RAhuri', 'PUNE', 'AHMADNAGAR', 'MAHARASHTRA', '412589', '2020-11-15 20:51:36', '2020-11-15 20:51:36'),
+(4, 'PUNE', '10', 'Police station', 'RAHURI', 'RAhuri', 'PUNE', 'AHMADNAGAR', 'MAHARASHTRA', '412589', '2020-11-15 20:57:03', '2020-11-15 20:57:03'),
+(5, 'PUNE', '10', 'Police station', 'RAHURI', 'RAhuri', 'PUNE', 'AHMADNAGAR', 'MAHARASHTRA', '412589', '2020-11-15 20:57:16', '2020-11-15 20:57:16'),
+(6, 'PUNE', '10', 'Police station', 'RAHURI', 'RAhuri', 'PUNE', 'AHMADNAGAR', 'MAHARASHTRA', '412589', '2020-11-15 21:00:34', '2020-11-15 21:00:34'),
+(7, 'PUNE', '10', 'Police station', 'RAHURI', 'RAhuri', 'PUNE', 'AHMADNAGAR', 'MAHARASHTRA', '412589', '2020-11-15 21:01:17', '2020-11-15 21:01:17'),
+(8, 'SUPE', '45', 'GHODENADI', 'PUNE', 'SHIRUR', 'SHIRUR', 'PUNE', 'MP', '147895', '2020-11-20 00:03:41', '2020-11-20 00:03:41'),
+(9, 'SUPE', '45', 'GHODENADI', 'PUNE', 'SHIRUR', 'SHIRUR', 'PUNE', 'MP', '147895', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(10, 'SUPE', '45', 'GHODENADI', 'PUNE', 'SHIRUR', 'SHIRUR', 'PUNE', 'MP', '147895', '2020-11-20 00:07:16', '2020-11-20 00:07:16'),
+(11, 'Gokul colony', '45', 'Police station', 'PUNE', 'SHIRUR', 'SHIRUR', 'PUNE', 'MP', '147895', '2020-11-20 17:24:04', '2020-11-20 17:24:04');
 
 -- --------------------------------------------------------
 
@@ -609,18 +716,44 @@ CREATE TABLE `user_access_control` (
 --
 
 INSERT INTO `user_access_control` (`accessid`, `userid`, `activityid`, `createdat`, `updatedat`) VALUES
-(1, 2, 2, '2020-11-03 12:04:01', '2020-11-03 12:04:01'),
-(2, 2, 4, '2020-11-03 12:04:01', '2020-11-03 12:04:01'),
-(3, 2, 15, '2020-11-03 12:04:20', '2020-11-03 12:04:20'),
-(4, 2, 5, '2020-11-03 12:04:20', '2020-11-03 12:04:20'),
-(5, 2, 14, '2020-11-03 12:04:43', '2020-11-03 12:04:43'),
-(6, 2, 9, '2020-11-03 12:04:43', '2020-11-03 12:04:43'),
-(7, 2, 11, '2020-11-03 12:05:02', '2020-11-03 12:05:02'),
-(8, 2, 16, '2020-11-03 12:05:02', '2020-11-03 12:05:02'),
-(9, 2, 1, '2020-11-03 12:05:41', '2020-11-03 12:05:41'),
-(10, 2, 13, '2020-11-03 12:05:41', '2020-11-03 12:05:41'),
-(11, 2, 2, '2020-11-04 07:25:26', '2020-11-04 07:25:26'),
-(12, 2, 3, '2020-11-04 07:25:26', '2020-11-04 07:25:26');
+(1, 2, 1, '2020-11-15 11:53:03', '2020-11-15 11:53:03'),
+(2, 2, 2, '2020-11-15 11:53:03', '2020-11-15 11:53:03'),
+(3, 2, 3, '2020-11-15 11:53:36', '2020-11-15 11:53:36'),
+(4, 2, 4, '2020-11-15 11:53:36', '2020-11-15 11:53:36'),
+(7, 47, 1, '2020-11-15 23:19:44', '2020-11-15 23:19:44'),
+(8, 47, 2, '2020-11-15 23:19:44', '2020-11-15 23:19:44'),
+(9, 47, 4, '2020-11-15 23:19:44', '2020-11-15 23:19:44'),
+(10, 48, 1, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(11, 48, 2, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(12, 48, 3, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(13, 48, 4, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(14, 49, 1, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(15, 49, 2, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(16, 49, 3, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(17, 49, 4, '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(18, 50, 1, '2020-11-16 00:11:24', '2020-11-16 00:11:24'),
+(19, 50, 2, '2020-11-16 00:11:24', '2020-11-16 00:11:24'),
+(20, 50, 3, '2020-11-16 00:11:24', '2020-11-16 00:11:24'),
+(21, 50, 4, '2020-11-16 00:11:24', '2020-11-16 00:11:24'),
+(22, 51, 1, '2020-11-16 00:11:26', '2020-11-16 00:11:26'),
+(23, 51, 2, '2020-11-16 00:11:26', '2020-11-16 00:11:26'),
+(24, 51, 3, '2020-11-16 00:11:26', '2020-11-16 00:11:26'),
+(25, 51, 4, '2020-11-16 00:11:26', '2020-11-16 00:11:26'),
+(28, 54, 1, '2020-11-16 00:13:14', '2020-11-16 00:13:14'),
+(29, 54, 3, '2020-11-16 00:13:14', '2020-11-16 00:13:14'),
+(30, 55, 1, '2020-11-16 00:23:05', '2020-11-16 00:23:05'),
+(31, 55, 2, '2020-11-16 00:23:05', '2020-11-16 00:23:05'),
+(32, 55, 3, '2020-11-16 00:23:05', '2020-11-16 00:23:05'),
+(33, 55, 4, '2020-11-16 00:23:05', '2020-11-16 00:23:05'),
+(41, 63, 1, '2020-11-16 05:26:48', '2020-11-16 05:26:48'),
+(42, 63, 2, '2020-11-16 05:26:48', '2020-11-16 05:26:48'),
+(43, 63, 3, '2020-11-16 05:26:48', '2020-11-16 05:26:48'),
+(44, 63, 4, '2020-11-16 05:26:48', '2020-11-16 05:26:48'),
+(51, 70, 1, '2020-11-17 11:10:19', '2020-11-17 11:10:19'),
+(52, 70, 2, '2020-11-17 11:10:19', '2020-11-17 11:10:19'),
+(53, 71, 1, '2020-11-18 09:12:27', '2020-11-18 09:12:27'),
+(54, 71, 4, '2020-11-18 09:12:27', '2020-11-18 09:12:27'),
+(55, 72, 1, '2020-11-18 10:09:30', '2020-11-18 10:09:30');
 
 -- --------------------------------------------------------
 
@@ -647,12 +780,24 @@ CREATE TABLE `user_master` (
 INSERT INTO `user_master` (`userid`, `roleid`, `emailid`, `firstname`, `lastname`, `upassword`, `contact`, `createdat`, `updatedat`) VALUES
 (2, 1, 'admin@ca.com', 'KIRAN', 'VYAVHARE', '12345', '9657613754', '2020-10-23 10:33:58', '2020-10-23 10:33:58'),
 (36, 1, 'lalitrmeshram@gmail.com', 'Lalit', 'Meshram', '12345', '8007015819', '2020-11-04 05:39:30', '2020-11-04 06:35:41'),
-(39, 2, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:27:17', '2020-11-14 13:27:17'),
+(39, 1, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:27:17', '2020-11-15 21:09:21'),
 (40, 3, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:30:14', '2020-11-15 12:35:12'),
 (41, 3, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:30:24', '2020-11-15 12:35:42'),
 (42, 3, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:30:41', '2020-11-15 12:35:53'),
 (43, 2, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:32:47', '2020-11-14 13:32:47'),
-(44, 2, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:34:29', '2020-11-14 13:34:29');
+(44, 2, 'vikas.nucleon@gmail.com', 'VIKAS', 'PAWAR', '12345', '9881652726', '2020-11-14 13:34:29', '2020-11-14 13:34:29'),
+(47, 4, 'kiranvyavhare277@gmail.com', 'kiran', 'vyavhare', '12345', '8788329794', '2020-11-15 23:19:44', '2020-11-15 23:19:44'),
+(48, 5, 'kiran277@gmail.com', 'rahul', 'wani', '12345', '8788329794', '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(49, 5, 'kiran277@gmail.com', 'rahul', 'wani', '12345', '8788329794', '2020-11-16 00:11:21', '2020-11-16 00:11:21'),
+(50, 5, 'kiran277@gmail.com', 'rahul', 'wani', '12345', '8788329794', '2020-11-16 00:11:24', '2020-11-16 00:11:24'),
+(51, 5, 'kiran277@gmail.com', 'rahul', 'wani', '12345', '8788329794', '2020-11-16 00:11:26', '2020-11-16 00:11:26'),
+(53, 3, 'shaikhwasim729@gmail.com', 'wasim', 'sk', '12345', '74182963', '2020-11-16 00:13:00', '2020-11-16 00:13:00'),
+(54, 3, 'shaikhwasim729@gmail.com', 'wasim', 'sk', '12345', '74182963', '2020-11-16 00:13:14', '2020-11-16 00:13:14'),
+(55, 2, 'shaikhwasim729@gmail.com', 'wasim distrib', 'sk', '123', '123456793', '2020-11-16 00:23:05', '2020-11-16 00:23:05'),
+(63, 4, 'distributor@ca.com', 'wasim', 'sk', '12345', '74182963', '2020-11-16 05:26:48', '2020-11-16 05:26:48'),
+(70, 3, 'retailor@ca.com', 'John', 'Doe', '12345', '965761354', '2020-11-17 11:10:18', '2020-11-17 11:10:18'),
+(71, 3, 'ashok.retailor@ca.com', 'Ashok', 'Mule', '12345', '8007015819', '2020-11-18 09:12:27', '2020-11-18 09:12:27'),
+(72, 4, 'akash.customer@ca.com', 'Akash', 'Malve', '12345', '8007015819', '2020-11-18 10:09:30', '2020-11-18 10:09:30');
 
 -- --------------------------------------------------------
 
@@ -678,7 +823,15 @@ CREATE TABLE `wallet_transaction` (
 INSERT INTO `wallet_transaction` (`transactionid`, `userid`, `transaction_type`, `amount`, `message`, `transactiondate`, `createdat`, `updatedat`) VALUES
 (1, 2, 'Credit', 250.00, 'Added money in wallet', '2020-11-15 00:00:00', '2020-11-15 16:54:12', '2020-11-15 16:54:12'),
 (2, 2, 'Credit', 500.00, 'Added money in wallet', '2020-11-15 12:53:00', '2020-11-15 16:56:53', '2020-11-15 16:56:53'),
-(3, 2, 'Debit', 250.00, 'Added money in wallet', '2020-11-15 05:02:59', '2020-11-15 17:02:59', '2020-11-15 17:03:51');
+(3, 2, 'Debit', 250.00, 'Added money in wallet', '2020-11-15 05:02:59', '2020-11-15 17:02:59', '2020-11-15 17:03:51'),
+(4, 2, 'Credit', 2500.00, 'Added money in wallet', '2020-11-20 12:03:30', '2020-11-20 00:03:30', '2020-11-20 00:03:30'),
+(5, 2, 'Debit', 2000.00, 'Debit for service', '2020-11-20 12:03:40', '2020-11-20 00:03:40', '2020-11-20 00:03:40'),
+(6, 2, 'Credit', 3000.00, 'Added money in wallet', '2020-11-20 12:05:30', '2020-11-20 00:05:30', '2020-11-20 00:05:30'),
+(7, 2, 'Debit', 2000.00, 'Debit for service', '2020-11-20 12:05:36', '2020-11-20 00:05:36', '2020-11-20 00:05:36'),
+(8, 2, 'Debit', 2000.00, 'Debit for service', '2020-11-20 12:07:15', '2020-11-20 00:07:15', '2020-11-20 00:07:15'),
+(9, 2, 'Credit', 10000.00, 'Added money in wallet', '2020-11-20 04:37:46', '2020-11-20 16:37:46', '2020-11-20 16:37:46'),
+(13, 70, 'Credit', 5000.00, 'Added money in wallet', '2020-11-20 05:22:32', '2020-11-20 17:22:32', '2020-11-20 17:22:32'),
+(14, 70, 'Debit', 2000.00, 'Debit for service', '2020-11-20 05:24:04', '2020-11-20 17:24:04', '2020-11-20 17:24:04');
 
 --
 -- Indexes for dumped tables
@@ -707,6 +860,12 @@ ALTER TABLE `contact_master`
 --
 ALTER TABLE `criteria_documents`
   ADD PRIMARY KEY (`criteriaid`);
+
+--
+-- Indexes for table `digital_docs`
+--
+ALTER TABLE `digital_docs`
+  ADD PRIMARY KEY (`docid`);
 
 --
 -- Indexes for table `digital_signature`
@@ -742,6 +901,12 @@ ALTER TABLE `employee_service`
   ADD KEY `empid` (`empid`);
 
 --
+-- Indexes for table `pan_service`
+--
+ALTER TABLE `pan_service`
+  ADD PRIMARY KEY (`panid`);
+
+--
 -- Indexes for table `partner_details`
 --
 ALTER TABLE `partner_details`
@@ -758,6 +923,12 @@ ALTER TABLE `payment_transaction`
 --
 ALTER TABLE `personal_details`
   ADD PRIMARY KEY (`pid`);
+
+--
+-- Indexes for table `pf_docs`
+--
+ALTER TABLE `pf_docs`
+  ADD PRIMARY KEY (`docid`);
 
 --
 -- Indexes for table `pf_withdrwal`
@@ -875,19 +1046,19 @@ ALTER TABLE `wallet_transaction`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activityid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `activityid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bank_details`
 --
 ALTER TABLE `bank_details`
-  MODIFY `bid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contact_master`
 --
 ALTER TABLE `contact_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `criteria_documents`
@@ -896,10 +1067,16 @@ ALTER TABLE `criteria_documents`
   MODIFY `criteriaid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `digital_docs`
+--
+ALTER TABLE `digital_docs`
+  MODIFY `docid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `digital_signature`
 --
 ALTER TABLE `digital_signature`
-  MODIFY `did` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `did` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `distributors_retailors`
@@ -926,6 +1103,12 @@ ALTER TABLE `employee_service`
   MODIFY `empserviceid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `pan_service`
+--
+ALTER TABLE `pan_service`
+  MODIFY `panid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `partner_details`
 --
 ALTER TABLE `partner_details`
@@ -941,13 +1124,19 @@ ALTER TABLE `payment_transaction`
 -- AUTO_INCREMENT for table `personal_details`
 --
 ALTER TABLE `personal_details`
-  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `pf_docs`
+--
+ALTER TABLE `pf_docs`
+  MODIFY `docid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pf_withdrwal`
 --
 ALTER TABLE `pf_withdrwal`
-  MODIFY `pfid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pfid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `proof_docs`
@@ -959,7 +1148,7 @@ ALTER TABLE `proof_docs`
 -- AUTO_INCREMENT for table `residential_details`
 --
 ALTER TABLE `residential_details`
-  MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `retailor_access_control`
@@ -1025,19 +1214,19 @@ ALTER TABLE `udyog_adhar`
 -- AUTO_INCREMENT for table `user_access_control`
 --
 ALTER TABLE `user_access_control`
-  MODIFY `accessid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `accessid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user_master`
 --
 ALTER TABLE `user_master`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `wallet_transaction`
 --
 ALTER TABLE `wallet_transaction`
-  MODIFY `transactionid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `transactionid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -1101,7 +1290,7 @@ ALTER TABLE `user_master`
 -- Constraints for table `wallet_transaction`
 --
 ALTER TABLE `wallet_transaction`
-  ADD CONSTRAINT `wallet_transaction_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_master` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `wallet_transaction_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_master` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,7 +7,11 @@
         var formdata = new FormData(this);
         formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount = 2000;
+        var amount = 100;
+        if (servicecharges.has('2')) {
+        var product = servicecharges.get('2');
+        amount = product.charges;
+        }
         if (returnVal) {
             if(check_balance(userid,amount)){
             $.ajax({
