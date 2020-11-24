@@ -172,7 +172,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Password</label>
-                                                                <input type="password" class="form-control" placeholder="" name="Password" />
+                                                                <input type="password" class="form-control" placeholder="" name="Password" id="password"/>
                                                             </div>
                                                         </div>
 

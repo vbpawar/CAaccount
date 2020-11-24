@@ -125,6 +125,7 @@ $route['wallet']          = 'services/WalletService/create';
 //user creation
 $route['createuser']      = 'user/createUser';
 $route['getusers']        = 'user/getUsersList';
+$route['updateprofile']   = 'User/update_profile';
 //user ui
 $route['user/create']     = 'services/AccessControlService/create';
 $route['users/show']      = 'services/AccessControlService/show';

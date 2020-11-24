@@ -19,7 +19,7 @@ class User extends CI_Controller {
             'firstname' => $this->input->post('firstname'),
             'lastname' => $this->input->post('lastname'),
             'upassword' => $this->input->post('upassword'),
-            'contact' => $this->input->post('contact'),
+            'contact' => $this->input->post('contact')
         );
         $userid = $this->user->createNewUser($user);
         $contact = array(
@@ -28,7 +28,7 @@ class User extends CI_Controller {
             'ustate' => $this->input->post('ustate'),
             'city' => $this->input->post('city'),
             'pincode' => $this->input->post('pincode'),
-            'uaddress' => $this->input->post('uaddress'),
+            'uaddress' => $this->input->post('uaddress')
         );
         $result = $this->contact->createUserContact($contact);
        $access= $this->input->post('access');
@@ -99,8 +99,8 @@ class User extends CI_Controller {
         echo json_encode($response);
     }
 
-    public function findUser($userid) {
-//        $userid = $this->input->get('userid');
+    public function findUser() {
+        $userid = $this->input->get('userid');
         $record = $this->user->findUser($userid);
         if ($record != null) {
             $response = array(
@@ -165,6 +165,48 @@ class User extends CI_Controller {
                     );
                 }
             }
+        }
+        echo json_encode($response);
+    }
+
+    public function update_profile() {
+        $userid = $this->input->post('userid');
+        $data = array(
+            'firstname' => $this->input->post('firstname'),
+            'lastname' => $this->input->post('lastname'),
+            'upassword' => $this->input->post('upassword')
+        );
+        $contact = array(
+            'country' => $this->input->post('country'),
+            'ustate' => $this->input->post('ustate'),
+            'city' => $this->input->post('city'),
+            'pincode' => $this->input->post('pincode'),
+            'uaddress' => $this->input->post('uaddress')
+        );
+        
+        $response=NULL;
+        if ($data == null || $contact == null || $userid == null) {
+            $response = array(
+                'Message' => 'Parameter missing',
+                'Responsecode' => 404
+            );
+        } else {
+            $userResult;
+            $contactResult;
+            $userResult = $this->user->updateuser($userid, $data);
+            $contactResult = $this->contact->updatecontact($userid, $contact);
+                if ($userResult === FALSE && $contactResult === FALSE) {
+                    $response = array(
+                        'Message' => 'Sorry try again',
+                        'Responsecode' => 302
+                    );
+                } else {
+                    $response = array(
+                        'Message' => 'user updated successfully',
+                        'Responsecode' => 200
+                    );
+                }
+            
         }
         echo json_encode($response);
     }
