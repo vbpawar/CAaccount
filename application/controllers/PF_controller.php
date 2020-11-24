@@ -289,4 +289,10 @@ class PF_controller extends CI_Controller
             return false;
         }
     }
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->getremarkupdate($pfid,'PF');
+        echo json_encode($result);
+    }
 } 

@@ -47,5 +47,10 @@ class DocsModel extends CI_Model {
          }
          return $result;
     }
+    public function get_update_remarks_docs($rowid,$service) {
+        $sql = "SELECT * FROM remarks_document WHERE rowid=$rowid AND service = '$service'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
 }

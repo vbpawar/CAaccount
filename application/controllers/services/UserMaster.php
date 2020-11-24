@@ -21,6 +21,18 @@ class UserMaster extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
+    public function changepassword() {
+        $data['title'] = 'User Profile';
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/navigation/notificationbar');
+        $this->load->view('admin/navigation/menubar');
+        $this->load->view('admin/access_control/profile');
+        $this->load->view('admin/js/comman_js');
+        $this->load->view('admin/js/user_master/profile');
+        $this->load->view('admin/footer');
+    }
+
     public function show() {
         $this->load->view('admin/header');
         $this->load->view('admin/css/comman_css');

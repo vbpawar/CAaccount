@@ -129,6 +129,7 @@ $route['getusers']        = 'user/getUsersList';
 $route['user/create']     = 'services/AccessControlService/create';
 $route['users/show']      = 'services/AccessControlService/show';
 $route['user/update']     = 'services/AccessControlService/update';
+$route['changepassword']     = 'services/UserMaster/changepassword';
 //wallet apis
 $route['loadbalance']     = 'walletController/loadBalance';
 $route['loadtransaction'] = 'walletController/load_transactions';
@@ -143,6 +144,7 @@ $route['loadpan']   = 'pan_controller/get_all_pan';
 
 //docs apis
 $route['getpfdocs']      = 'PF_controller/getpfdocs'; //pass pf id
+$route['getremarksdocs']      = 'PF_controller/get_update_docs'; //pass Service name PF,and rowid of primary like pfid
 $route['getdigitaldocs'] = 'Digital_controller/getdigitaldocs'; //pass did
 
 //service charges apis
