@@ -2,13 +2,20 @@
 
 class Pan_model extends CI_Model {
 
-    public function get_details() {
+    public function get_details($roleid,$userid) {
         $result = [];
-        $sql = "SELECT * FROM pan_service pf 
-        JOIN residential_details rd ON rd.rid = pf.rid";
-        $query = $this->db->query($sql);
-            $result['status'] = true;
-            $result['data'] =  $query->result();       
+        if($roleid ==1 || $roleid ==4){
+            $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid";
+            }else{
+                $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid";
+            } 
+       if($query =$this->db->query($sql)){
+        $result['status'] = true;
+        $result['data'] =  $query->result(); 
+       }else{
+        $result['sql'] = $sql;
+        $result['status'] = false;
+       }
         return $result;
     }   
     
@@ -54,5 +61,15 @@ class Pan_model extends CI_Model {
             }         
             return $result;
         }        
-
+        public function updatepanstatus($pfid,$data)
+        {
+            $result = false;
+            $this->db->where('panid',$pfid);
+            if($this->db->update('pan_service',$data)){
+                $result['status'] = true;
+            }else{
+                $result['status'] = false;
+            }
+            return $result;
+        }      
 }

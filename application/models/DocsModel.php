@@ -18,6 +18,24 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+//pan details
+    public function get_pan_docs($panid) {
+        $sql = "SELECT * FROM pan_docs WHERE panid=$panid";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function add_pan_docs($data)
+    {    
+        $result = [];
+        if($this->db->insert('pan_docs', $data)){
+           $result['docid'] =  $this->db->insert_id();
+           $result['status'] = true;   
+         }else{
+            $result['status'] = false;
+         }
+         return $result;
+    }
 
     public function add_digital_docs($data)
     {    
