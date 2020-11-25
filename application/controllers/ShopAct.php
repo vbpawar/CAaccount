@@ -1,183 +1,277 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class ShopAct extends CI_Controller{
-
+class ShhopAct extends CI_Controller
+{
+    
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('ShopActModel','service');
+        $this->load->model('ResidentialModel', 'rmodel');
+        $this->load->model('PersonalModel', 'pmodel');
+        $this->load->model('DigitalModel', 'dmodel');
+        $this->load->model('DocsModel', 'docs');
     }
     private $response = null;
     private $records = null;
-
-    //get all import export details
-    public function getallshopacts() {
-        $records = $this->service->getshopacts();
-        if ($records != null) {
+    
+    
+    public function get_all_digital()
+    {
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->dmodel->get_details($roleid,$userid);
+        if ($result['status']) {
             $response = array(
-                'Message' => 'All data load successfully',
-                "Data" => $records,
+                'Message' => 'PF Details loaded successfully',
+                'Data' => $result['data'],
                 'Responsecode' => 200
             );
         } else {
             $response = array(
-                'Message' => 'Data Not Found',
-                'Responsecode' => 401
-            );
-        }
-         echo json_encode($response);
-    }
-
-    //create API for documnet master
-    public function addshopact()
-    {
-        $data = array(
-            "userid"=>$this->input->post("userid"),
-            "nameofestb"=>$this->input->post("nameofestb"),
-            "street"=>$this->input->post("street"),
-            "landmark"=>$this->input->post("landmark"),
-            "district"=>$this->input->post("district"),
-            "taluka"=>$this->input->post("taluka"),
-            "village"=>$this->input->post("village"),
-            "pincode"=>$this->input->post("pincode"),
-            "mobile"=>$this->input->post("mobile"),
-            "emailid"=>$this->input->post("emailid"),
-            "ownerpremise"=>$this->input->post("ownerpremise"),
-            "dateofcommit"=>$this->input->post("dateofcommit"),
-            "natureofbuss"=>$this->input->post("natureofbuss"),
-            "menw"=>$this->input->post("menw"),
-            "womenw"=>$this->input->post("womenw"),
-            "s_nameofestb"=>$this->input->post("s_nameofestb"),
-            "s_street"=>$this->input->post("s_street"),
-            "s_locality"=>$this->input->post("s_locality"),
-            "s_landmark"=>$this->input->post("s_landmark"),
-            "s_taluka"=>$this->input->post("s_taluka"),
-            "s_village"=>$this->input->post("s_village"),
-            "s_district"=>$this->input->post("s_district"),
-            "s_state"=>$this->input->post("s_state"),
-            "s_residence"=>$this->input->post("s_residence"),
-            "s_adharnumber"=>$this->input->post("s_adharnumber"),
-            "s_mobile"=>$this->input->post("s_mobile"),
-            "s_email"=>$this->input->post("s_email"),
-            "s_status"=>$this->input->post("s_status"),
-            "typeoforg"=>$this->input->post("typeoforg"),
-            "s_nameofemp"=>$this->input->post("s_nameofemp"),
-            "s_menw"=>$this->input->post('s_menw'),
-            "s_womenw"=>$this->input->post('s_womenw')
-        );
-    if(!$data || empty($data)){
-        $response = array(
-            'Message' => 'Missing parameter',
-            'Responsecode' => 303
-        );
-    }else{ 
-        $result = $this->service->addshopact($data);
-        if($result === 0 || $result == NULL){ 
-            $response = array(
                 'Message' => 'Try again',
                 'Responsecode' => 402
             );
-       }else{ 
-        $response = array(
-            'Message' => 'Shop Act Bill Generated successfully',
-            'Data'=>$result,
-            'Responsecode' => 200
-        );
-       }
-    }
-     echo json_encode($response);
-}
-
-    //API - delete a document 
-    public function removebill()
-    {
-        $shopactid  = $this->input->post('shopactid');
-        if(!$shopactid || empty($shopactid)){
-            $response = array(
-                'Message' => 'Parameter missing',
-                'Responsecode' => 404
-            );
-        }else{
-        if($this->service->removebill($shopactid))
-        {
-            $response = array(
-                'Message' => 'Shop Act removed successfully',
-                'Responsecode' => 200
-            );
-        } 
-        else
-        {
-            $response = array(
-                'Message' => 'Failed to remove',
-                'Responsecode' => 302
-            );
         }
-    }
         echo json_encode($response);
     }
-
-   //API - update a service
-   public function updateshopact(){
-    $data = array(
-        "userid"=>$this->input->post("userid"),
-        "nameofestb"=>$this->input->post("nameofestb"),
-        "street"=>$this->input->post("street"),
-        "landmark"=>$this->input->post("landmark"),
-        "district"=>$this->input->post("district"),
-        "taluka"=>$this->input->post("taluka"),
-        "village"=>$this->input->post("village"),
-        "pincode"=>$this->input->post("pincode"),
-        "mobile"=>$this->input->post("mobile"),
-        "emailid"=>$this->input->post("emailid"),
-        "ownerpremise"=>$this->input->post("ownerpremise"),
-        "dateofcommit"=>$this->input->post("dateofcommit"),
-        "natureofbuss"=>$this->input->post("natureofbuss"),
-        "menw"=>$this->input->post("menw"),
-        "womenw"=>$this->input->post("womenw"),
-        "s_nameofestb"=>$this->input->post("s_nameofestb"),
-        "s_street"=>$this->input->post("s_street"),
-        "s_locality"=>$this->input->post("s_locality"),
-        "s_landmark"=>$this->input->post("s_landmark"),
-        "s_taluka"=>$this->input->post("s_taluka"),
-        "s_village"=>$this->input->post("s_village"),
-        "s_district"=>$this->input->post("s_district"),
-        "s_state"=>$this->input->post("s_state"),
-        "s_residence"=>$this->input->post("s_residence"),
-        "s_adharnumber"=>$this->input->post("s_adharnumber"),
-        "s_mobile"=>$this->input->post("s_mobile"),
-        "s_email"=>$this->input->post("s_email"),
-        "s_status"=>$this->input->post("s_status"),
-        "typeoforg"=>$this->input->post("typeoforg"),
-        "s_nameofemp"=>$this->input->post("s_nameofemp"),
-        "s_menw"=>$this->input->post('s_menw'),
-        "s_womenw"=>$this->input->post('s_womenw'),
-    );
-        $shopactid = $this->input->post('shopactid');
-    
-   
-        if(!$shopactid && !$data || empty($shopactid)){
-            $response = array(
-                'Message' => 'Parameter missing',
-                'Responsecode' => 404
+    //create API for PF master
+    public function add_digital_form()
+    {
+        //personal details
+        $pdetails = array(
+            'pan_name ' => $this->input->post('pan_name'),
+            'pan_number' => $this->input->post('pan_number'),
+            'aadhar_name' => $this->input->post('aadhar_name'),
+            'aadhar_number' => $this->input->post('aadhar_number'),
+            'contact_number' => $this->input->post('contact_number'),
+            'emailid' => $this->input->post('emailid'),
+            'dob' => $this->input->post('dob')
+        );
+        
+        //Residential details
+        $rdetails = array(
+            'premise_name ' => $this->input->post('premise_name'),
+            'flat_number' => $this->input->post('flat_number'),
+            'road' => $this->input->post('road'),
+            'area' => $this->input->post('area'),
+            'village' => $this->input->post('village'),
+            'taluka' => $this->input->post('taluka'),
+            'district' => $this->input->post('district'),
+            'state' => $this->input->post('state'),
+            'pincode' => $this->input->post('pincode')
+        );
+        
+        if (!empty($pdetails)) {
+            $pid = $this->pmodel->add_details($pdetails);
+        }
+        if (!empty($rdetails)) {
+            $rid = $this->rmodel->add_details($rdetails);
+        }
+        
+        $userid = $this->input->post('userid');
+        
+        if ($pid['status'] && $rid['status']) {
+            $pid = $pid['pid'];
+            $rid = $rid['rid'];
+            
+            $data = array(
+                'userid' => $userid,
+                'class' => $this->input->post('class'),
+                'nature_of_buss' => $this->input->post('nature_of_buss'),
+                'trade_name' => $this->input->post('trade_name'),
+                'place_of_buss' => $this->input->post('place_of_buss'),
+                'pid' => $pid,
+                'rid' => $rid
             );
-        }else{
-           $result = $this->service->updateshopact($shopactid,$data);
-           if($result['result']!=0 && $result['data']!=null){
+            
+            $result = $this->dmodel->add_details($data);
+            if ($result['status']) {
+                $id       = $result['did'];
+                $document = 'Document not uploaded';
+                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['pass']['name'])) {
+                    if ($this->uploaddocs('Aadhar', $id, $_FILES['adhar']['name'], $_FILES['adhar']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->uploaddocs('PAN', $id, $_FILES['pan']['name'], $_FILES['pan']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->uploaddocs('Passport', $id, $_FILES['pass']['name'], $_FILES['pass']['tmp_name'])) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                $response = array(
+                    'Message' => 'Digital Signature added successfully',
+                    'Data' => $result['data'],
+                    'Document' => $document,
+                    'Responsecode' => 200
+                );
+            } else {
+                $response = array(
+                    'Message' => 'Try again',
+                    'Responsecode' => 402
+                );
+            }
+        } else {
             $response = array(
-                'Message' => 'Shop act successfully updated',
-                'Data'=>$result['data'],
-                'Responsecode' => 200
-            );
-           }else{
-            $response = array(
-                'Message' => 'Sorry try again',
+                'Message' => 'Check Parameters',
                 'Responsecode' => 302
             );
-           
-           }
-       }
-   echo json_encode($response);
-   }
+            
+        }
+        echo json_encode($response);
+    }
     
-}
+    public function update_digital_form()
+    {
+        //personal details
+        $pdetails = array(
+            'pan_name ' => $this->input->post('pan_name'),
+            'pan_number' => $this->input->post('pan_number'),
+            'aadhar_name' => $this->input->post('aadhar_name'),
+            'aadhar_number' => $this->input->post('aadhar_number'),
+            'contact_number' => $this->input->post('contact_number'),
+            'emailid' => $this->input->post('emailid'),
+            'dob' => $this->input->post('dob')
+        );
+        
+        //Residential details
+        $rdetails = array(
+            'premise_name ' => $this->input->post('premise_name'),
+            'flat_number' => $this->input->post('flat_number'),
+            'road' => $this->input->post('road'),
+            'area' => $this->input->post('area'),
+            'village' => $this->input->post('village'),
+            'taluka' => $this->input->post('taluka'),
+            'district' => $this->input->post('district'),
+            'state' => $this->input->post('state'),
+            'pincode' => $this->input->post('pincode')
+        );
+        if (!empty($pdetails)) {
+            $pid = $this->input->post('pid');
+            $pid = $this->pmodel->update_details($pid, $pdetails);
+        }
+        if (!empty($rdetails)) {
+            $rid = $this->input->post('rid');
+            $rid = $this->rmodel->update_details($rid, $rdetails);
+        }
+        
+        $userid = $this->input->post('userid');
+        $did    = $this->input->post('did');
+        if ($pid && $rid) {
+            
+            $data   = array(
+                'userid' => $userid,
+                'class' => $this->input->post('class'),
+                'nature_of_buss' => $this->input->post('nature_of_buss'),
+                'trade_name' => $this->input->post('trade_name'),
+                'place_of_buss' => $this->input->post('place_of_buss'),
+                'pid' => $pid,
+                'rid' => $rid,
+                'status' => $this->input->post('status')
+            );
+            $result = $this->dmodel->update_details($did, $data);
+            if ($result['status']) {
+                $response = array(
+                    'Message' => 'Digital Signature Details updated successfully',
+                    'Data' => $result['data'],
+                    'Responsecode' => 200
+                );
+            } else {
+                $response = array(
+                    'Message' => 'Try again',
+                    'Responsecode' => 402
+                );
+            }
+        } else {
+            $response = array(
+                'Message' => 'Check Parameters',
+                'Responsecode' => 302
+            );
+            
+        }
+        echo json_encode($response);
+    }
+    
+    public function uploaddocs($doctype, $did, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'extension' => $ext,
+            'userid' => 1,
+            'did' => $did,
+            'doctype' => $doctype
+        );
+        $result = $this->docs->add_digital_docs($data);
+        if ($result) {
+            $imgid      = $result['docid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/digital/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    public function getdigitaldocs()
+    {
+        $did    = $this->input->post('did');
+        $result = $this->docs->get_digital_docs($did);
+        echo json_encode($result);
+    }
+    public function update_status()
+    {
+        $did    = $this->input->post('did');
+        $data   = array(
+            'status' => $this->input->post('status'),
+            'remark' => $this->input->post('remark')
+        );
+        $result = $this->dmodel->updatedigitalstatus($did, $data);
+        if ($result) {
+            $document = 'Documents not uplaoded';
+            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+                if ($this->uploadremarks('Digital', $did, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+                if ($this->uploadremarks('Digital', $did, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+            }
+            $response = array(
+                'Message' => 'Status updated successfully',
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Try Again',
+                'Responsecode' => 204
+            );
+        }
+        echo json_encode($response);
+    }
+    public function uploadremarks($service, $rowid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'service' => $service,
+            'rowid' => $rowid,
+            'extension' => $ext
+        );
+        $result = $this->docs->add_remark_docs($data);
+        if ($result['status']) {
+            $imgid      = $result['remarkid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+} 
