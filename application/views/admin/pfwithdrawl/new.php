@@ -4,7 +4,6 @@
         size: 10px;
     }
 </style>
-<div id="loader"></div>
 
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
@@ -445,6 +444,7 @@
         </div>
         <!--===================================================-->
         <!--End page content-->
+        <div id="loader"></div>
     </div>
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->

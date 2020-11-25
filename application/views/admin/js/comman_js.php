@@ -2,20 +2,6 @@
 <!--=================================================-->
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url('admin_assets/js/jquery-2.1.1.min.js'); ?>"></script>
-<script>
- var $loading = $('#loader').hide();
-$(document)
-        .ajaxStart(function () {
-            console.log('loader ok');
-            $loading.show();
-    
-        })
-        .ajaxStop(function () {
-            $loading.hide();
-        });
-
-
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <!--BootstrapJS [ RECOMMENDED ]-->
 <script src="<?php echo base_url('admin_assets/js/bootstrap.min.js'); ?>"></script>
@@ -61,6 +47,18 @@ $(document)
 
 
 <script> //img preview code ######DON'T REMOVE ####
+var $loading = $('#loader').hide();
+$(document)
+        .ajaxStart(function () {
+            console.log('loader ok');
+            $loading.show();
+    
+        })
+        .ajaxStop(function () {
+            $loading.hide();
+        });
+
+
  var servicecharges = new Map();
 var loadFile = function(event,out) {
 //    console.log("da")

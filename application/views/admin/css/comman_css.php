@@ -42,7 +42,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('admin_assets/image/loader.gif');?>') no-repeat center center;
+    background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('admin_assets/image/spinner.gif');?>') no-repeat center center;
     z-index: 10000;
 }
 
