@@ -4,6 +4,8 @@
         size: 10px;
     }
 </style>
+<div id="loader"></div>
+
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->

@@ -45,17 +45,18 @@ function load_transaction(){
             }
            
            $('#wallet_data').html(options);
+           
            $('#w_w').dataTable({
 
 searching: true,
 
 retrieve: true,
 
-bPaginate: $('tbody tr').length > 5,
+bPaginate: $('tbody tr').length > 10,
 
 order: [],
 
-columnDefs: [{orderable: false, targets: []}],
+columnDefs: [{orderable: true, targets: []}],
 
 dom: 'Bfrtip',
 

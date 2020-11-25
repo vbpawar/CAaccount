@@ -19,7 +19,6 @@ class PfwithdrawlService extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/pfwithdrawl/new');
         $this->load->view('admin/js/comman_js');
-        
         $this->load->view('admin/pfwithdrawl/validation_js');
         $this->load->view('admin/pfwithdrawl/new_js');
         $this->load->view('admin/footer');
