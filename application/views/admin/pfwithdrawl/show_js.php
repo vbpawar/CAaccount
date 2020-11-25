@@ -39,13 +39,13 @@
                     status = '<span class="badge badge-pill badge-primary">Pending...</span>';
                     break;
                 case '2':
-                    status = '<span class="badge badge-pill badge-warning">Hold</span>';
+                    status = '<button class="badge badge-pill badge-warning" onclick="returnStatus(' + (k) + ')">Hold</button>';
                     break;
                 case '3':
-                    status = '<span class="badge badge-pill badge-danger">Rejected</span>';
+                    status = '<button class="badge badge-pill badge-danger" onclick="returnStatus(' + (k) + ')">Rejected</button>';
                     break;
                 case '4':
-                    status = '<span class="badge badge-pill badge-success">Completed</span>';
+                    status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ')">Completed</button>';
                     break;
             }
             tblData += '<tr><td>' + services.aadhar_name + '</td>';
@@ -161,7 +161,7 @@ if ($data['Data']['role'] == 1 || $data['Data']['role'] == 4) {
         var $option = $(this).find('option:selected');
         //Added with the EDIT
         var value = $option.val();//to get content of "value" attrib
-        if (value == 2 || value == 3) {
+        if (value == 2 || value == 3 || value==4) {
             $('#remarkField').show();
         } else {
             $('#remarkField').hide();
@@ -213,4 +213,9 @@ if ($data['Data']['role'] == 1 || $data['Data']['role'] == 4) {
 
         });
     });
+    
+    
+    function returnStatus(id){
+        $('#remarkModal').modal('toggle');
+    }
 </script>

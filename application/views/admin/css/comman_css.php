@@ -23,11 +23,27 @@
         <!--/STYLESHEET-->
         <!--=================================================-->
         <!--Page Load Progress Bar [ OPTIONAL ]-->
-        <link href="<?php echo base_url('admin_assets/plugins/pace/pace.min.css'); ?>" rel="stylesheet">
-        <script src="<?php echo base_url('admin_assets/plugins/pace/pace.min.js'); ?>"></script>
-        <link rel="shortcut icon" href="<?php echo base_url('admin_assets/img/favicon.ico'); ?>">
+        <link href="<?php // echo base_url('admin_assets/plugins/pace/pace.min.css'); ?>" rel="stylesheet">
+        <script src="<?php // echo base_url('admin_assets/plugins/pace/pace.min.js'); ?>"></script>
+        <link rel="shortcut icon" href="<?php // echo base_url('admin_assets/img/favicon.ico'); ?>">
         
         <!--Bootstrap Table [ OPTIONAL ]-->
 <link href="<?php echo base_url('admin_assets/plugins/datatables/media/css/dataTables.bootstrap.css'); ?>" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 <link href="<?php echo base_url('admin_assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'); ?>" rel="stylesheet">
+
+<style>
+    
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('admin_assets/image/loader.gif');?>') no-repeat center center;
+    z-index: 10000;
+}
+
+</style>
