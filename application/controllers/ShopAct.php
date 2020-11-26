@@ -262,10 +262,11 @@ class ShhopAct extends CI_Controller
     }
     
 
-    public function getdigitaldocs()
+    public function get_docs()
     {
-        $did    = $this->input->post('did');
-        $result = $this->docs->get_digital_docs($did);
+        $id    = $this->input->post('id');
+        $table = $this->input->post('table');
+        $result = $this->docs->get_documents($id,$table);
         echo json_encode($result);
     }
     public function update_status()

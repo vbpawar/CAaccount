@@ -65,6 +65,11 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function get_documents($did) {
+        $sql = "SELECT * FROM digital_docs WHERE did=$did";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
     public function add_remark_docs($data)
     {    
