@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'load_pf',
+            url: url + 'loadpan',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].pfid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].panid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -39,18 +39,18 @@
                     status = '<span class="badge badge-pill badge-primary">Pending...</span>';
                     break;
                 case '2':
-                    status = '<button class="badge badge-pill badge-warning" onclick="returnStatus(' + (k) + ',2)">Hold</button>';
+                    status = '<button class="badge badge-pill badge-warning" onclick="returnStatus(' + (k, 2) + ')">Hold</button>';
                     break;
                 case '3':
-                    status = '<button class="badge badge-pill badge-danger" onclick="returnStatus(' + (k) + ',3)">Rejected</button>';
+                    status = '<button class="badge badge-pill badge-danger" onclick="returnStatus(' + (k, 3) + ')">Rejected</button>';
                     break;
                 case '4':
-                    status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ',4)">Completed</button>';
+                    status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k, 4) + ')">Completed</button>';
                     break;
             }
             tblData += '<tr><td>' + services.aadhar_name + '</td>';
             tblData += '<td>' + services.pan_number + '</td>';
-            tblData += '<td>' + services.aadhar_number + '</td>';
+//            tblData += '<td>' + services.aadhar_number + '</td>';
             tblData += '<td>' + services.contact_number + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
             tblData += '<td>' + services.createdat + '</td>';
@@ -62,7 +62,7 @@
 $data = $this->session->userdata();
 if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     ?>
-                if (services.status == '1' || services.status == '2') {
+                if (services.status != '3'&& services.status != '4') {
     //    alert(services.status);
                     tblData += `&nbsp; <a href="#@"  onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`;
                 }
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'pancard/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -218,7 +218,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     });
 
 
-    function returnStatus(id,st) {
+    function returnStatus(id) {
         $.ajax({
 
             url: url + 'getremarksdocs',
@@ -229,27 +229,12 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
                 console.log(response);
                 var dateTime = '';
-                var status='';
-                switch (st) {
-                
-                case 2:
-                    status = 'Hold';
-                    break;
-                case 3:
-                    status = 'Rejected';
-                    break;
-                case 4:
-                    status = 'Completed';
-                    break;
-            }
-            var pfid=id.toString();
-            var product = pfWithdrawal.get(pfid);
+
                 const count = response.length;
-                var tableData = `<tr><td>`+status+` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
-                 tableData += `<tr><td>Remark:</td><td rowspan="2">`+product.remark+`</td></tr>`;
+                var tableData = `<tr><td>Dated On: <span id="dateTime"></sapn></td></tr>`
                 for (var i = 0; i < count; i++) {
                     dateTime = response[i].updatedat;
-                    tableData += `<tr><td colspan="2" align="center">
+                    tableData += `<tr><td>
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
                 }

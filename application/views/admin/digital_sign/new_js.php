@@ -1,17 +1,15 @@
 <script>
     var url = '<?php echo base_url(); ?>';
+    var serviceCharges= <?php echo json_encode($_SESSION['serviceCharges']);?>;
     $('#digital-sign-form').on('submit', function (e) {
         e.preventDefault();
 
     var returnVal = validChecker();
         var formdata = new FormData(this);
-        formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount = 100;
-        if (servicecharges.has('2')) {
-        var product = servicecharges.get('2');
-        amount = product.charges;
-        }
+        formdata.append('userid',userid);
+        var amount = serviceCharges[1]['charges'];;
+        
         if (returnVal) {
             if(check_balance(userid,amount)){
             $.ajax({

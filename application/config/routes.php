@@ -66,8 +66,6 @@ $route['importExport/create'] = 'services/ImportExport/create';
 $route['income']        = 'services/income/show';
 $route['income/create'] = 'services/income/create';
 
-$route['pancard']        = 'services/pancard/show';
-$route['pancard/create'] = 'services/pancard/create';
 
 $route['balancesheet']        = 'services/balancesheet/show';
 $route['balancesheet/create'] = 'services/balancesheet/create';
@@ -138,10 +136,15 @@ $route['checkbalance']    = 'walletController/checkbalance';
 $route['userbalances']    = 'walletController/alluserbalance';
 $route['updatewallet']    = 'walletController/update_balance';
 
-//pan services
+//pan services apis
 $route['createpan'] = 'pan_controller/add_pan_form';
 $route['updatepan'] = 'pan_controller/update_pan_form';
 $route['loadpan']   = 'pan_controller/get_all_pan';
+
+//pancard ui
+$route['pancard']        = 'services/pancard/show';
+$route['pancard/create'] = 'services/pancard/create';
+
 
 //docs apis
 $route['getpfdocs']      = 'PF_controller/getpfdocs'; //pass pf id

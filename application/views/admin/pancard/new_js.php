@@ -1,18 +1,23 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#reportForm').on('submit', function (e) {
-// alert("hello");
+    $('#pancard-form').on('submit', function (e) {
+
         e.preventDefault();
 
-//    var returnVal = $("#caCertificateForm").valid();
-        
+    var returnVal = validChecker();
         var formdata = new FormData(this);
-        formdata.append('userid', 1);
-        if (true) {
-
+        formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
+        var userid = <?php echo $_SESSION['Data']['userid'];?>;
+        var amount = 100;
+        if (servicecharges.has('1')) {
+        var product = servicecharges.get('1');
+        amount = product.charges;
+        }
+        if (returnVal) {
+             if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'Project_report/addreport',
+                url: url + 'createpan',
 
                 type: 'POST',
 
@@ -47,6 +52,10 @@
                 }
 
             });
+             }else{
+                 window.open(url+ 'wallet','_blank');
+                // window.location.replace(url + 'wallet');
+             }
 
         }
 
@@ -54,7 +63,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/report/show');
+        window.location.replace(url + 'pancard/show');
     }
 
 

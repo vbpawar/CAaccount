@@ -9,6 +9,7 @@ class LoginController extends CI_Controller {
     public function __construct() {
         parent:: __construct();
         $this->load->model('LoginModel', 'service');
+        $this->load->model('Service_chargeModel','serviceCharge');
     }
 
     public function flash_message() {
@@ -43,6 +44,7 @@ class LoginController extends CI_Controller {
                     'logged_in' => TRUE
                 );
                 $userid = $result['data'][0]->userid;
+                $serviceCharges = $this->serviceCharge->getservicecharges();
 //           $this->session->set_userdata($session_data); 
                 $pages = $this->service->accesspages($userid);
                 if ($pages != NULL && count($pages) > 0) {
@@ -60,7 +62,8 @@ class LoginController extends CI_Controller {
 
                 $session_data = array(
                     'Data' => $user_data,
-                    'Pages' => $mainResult
+                    'Pages' => $mainResult,
+                    'serviceCharges' => $serviceCharges,
                 );
 
                 $this->session->set_userdata($session_data);

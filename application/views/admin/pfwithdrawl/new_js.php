@@ -1,18 +1,18 @@
 <script>
     var url = '<?php echo base_url(); ?>';
+
+  var serviceCharges= <?php echo json_encode($_SESSION['serviceCharges']);?>;
+
     $('#pf-withdrawl-form').on('submit', function (e) {
 
         e.preventDefault();
 
     var returnVal = validChecker();
         var formdata = new FormData(this);
-        formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount = 100;
-        if (servicecharges.has('1')) {
-        var product = servicecharges.get('1');
-        amount = product.charges;
-        }
+        var amount=serviceCharges[0]['charges'];
+        formdata.append('userid',userid);
+
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({

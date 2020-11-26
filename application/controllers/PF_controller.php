@@ -292,7 +292,7 @@ class PF_controller extends CI_Controller
     public function get_update_docs()
     {
         $pfid   = $this->input->post('rowid');
-        $result = $this->docs->getremarkupdate($pfid,'PF');
+        $result = $this->docs->get_update_remarks_docs($pfid,'PF');
         echo json_encode($result);
     }
 } 
