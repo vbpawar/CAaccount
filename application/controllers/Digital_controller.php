@@ -232,13 +232,13 @@ class Digital_controller extends CI_Controller
         );
         if($data['status'] == '3'){
             $wallet_data = array(
-                'userid'=>1,//$this->input->post('userid'),
+                'userid'=>$this->input->post('digital_uid'),
                 'transaction_type'=>'Credit',
-                'amount'=>10,//$this->input->post('amount'),
-                'message'=>'Credited amount of PF services which is rejected by admin',
+                'amount'=>$this->input->post('digital_amount'),
+                'message'=>'Credited amount of Digital signature services which is rejected by admin',
                 'transactiondate'=>date('Y-m-d h:i:s')
                );
-                $result = $this->mmodel->deduct_amount($wallet_data);
+                $result = $this->service->deduct_amount($wallet_data);
         }
         $result = $this->dmodel->updatedigitalstatus($did, $data);
         if ($result) {

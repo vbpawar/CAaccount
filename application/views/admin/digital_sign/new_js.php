@@ -1,6 +1,5 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    var serviceCharges= <?php echo json_encode($_SESSION['serviceCharges']);?>;
     $('#digital-sign-form').on('submit', function (e) {
         e.preventDefault();
 
@@ -8,7 +7,7 @@
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
         formdata.append('userid',userid);
-        var amount = serviceCharges[1]['charges'];;
+        var amount = servicecharges.get('2');
         
         if (returnVal) {
             if(check_balance(userid,amount)){

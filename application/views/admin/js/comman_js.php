@@ -47,64 +47,55 @@
 
 
 <script> //img preview code ######DON'T REMOVE ####
-var $loading = $('#loader').hide();
-$(document)
-        .ajaxStart(function () {
-            console.log('loader ok');
-            $loading.show();
-    
-        })
-        .ajaxStop(function () {
-            $loading.hide();
-        });
+    var $loading = $('#loader').hide();
+    $(document)
+            .ajaxStart(function () {
+                console.log('loader ok');
+                $loading.show();
+
+            })
+            .ajaxStop(function () {
+                $loading.hide();
+            });
 
 
- var servicecharges = new Map();
-var loadFile = function(event,out) {
+    var servicecharges = new Map();
+    var loadFile = function (event, out) {
 //    console.log("da")
-    var output = document.getElementById(out);
-    
-    output.src = URL.createObjectURL(event.target.files[0]);
-};
-function check_balance(userid,amount){
-    var check = false;
-    $.ajax({
-        url:'<?php echo base_url('/checkbalance');?>',
-        type:'POST',
-        dataType:'json',
-        data:{userid:userid,amount:amount},
-        async:false,
-        success:function(response){
-           if(response.Responsecode==200){
-           check = true;
-           }else{
-               check = false;
-           }
-        }
-    });
-    return check;
-}
-var load_service_charges = () => {
-$.ajax({
-    url: '<?php echo base_url('/loadcharges');?>',
-    type: 'get',
-    dataType: 'json',
-    async:false,
-    success: function (response) {
-        if (response.Responsecode == 200 && response.Data != null) {
-            const count = response.Data.length;
-            for (var i = 0; i < count; i++) {
-                servicecharges.set(response.Data[i].chargesid, response.Data[i]);
-            }
-        }
+        var output = document.getElementById(out);
 
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+    function check_balance(userid, amount) {
+        var check = false;
+        $.ajax({
+            url: '<?php echo base_url('/checkbalance'); ?>',
+            type: 'POST',
+            dataType: 'json',
+            data: {userid: userid, amount: amount},
+            async: false,
+            success: function (response) {
+                if (response.Responsecode == 200) {
+                    check = true;
+                } else {
+                    check = false;
+                }
+            }
+        });
+        return check;
+    }
+    var load_service_charges = () => {
+        var sCharges =<?php echo json_encode($_SESSION['serviceCharges']); ?>;
+        servicecharges.clear();
+        const count = sCharges.length;
+        for (var i = 0; i < count; i++) {
+            servicecharges.set(sCharges[i]['chargesid'], sCharges[i]['charges']);
+        }
     }
 
-});
-}
-load_service_charges();
+
+    load_service_charges();
 
 
-   
+
 </script>
-             

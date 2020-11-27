@@ -1,3 +1,10 @@
+<style>
+    .error{
+        color:red;
+        size: 10px;
+    }
+</style>
+
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
@@ -145,7 +152,7 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <li id="dynamicLi">
+                                                    <li id="dynamicLi" style="display: none;">
                                                         <a href="#partnership" data-toggle="tab" title="Partners Detail">
                                                             <span class="round-tabs four">
                                                                 <i class="fa fa-handshake"></i>
@@ -446,40 +453,41 @@
                                                 </div>
                                                 <div class="tab-pane fade" id="partnership">
                                                     <div class="row">
+                                                        <div class="partnerError text-center"></div>
                                                         <div class="col-sm-10">
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label"> Partner Name</label>
-                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" />
+                                                                    <label class="control-label"><span class="error">*</span> Partner Name</label>
+                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" required="" />
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Aadharcard Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Aadharcard Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="ABCD0101E" name="pAadhar" id="pAadhar" />
+                                                                    <input type="text" class="form-control" placeholder="" name="pAadhar" id="pAadhar" required=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Pancard Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Pancard Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" />
+                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" required=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Email Id</label>
+                                                                    <label class="control-label"><span class="error">*</span>Email Id</label>
 
-                                                                    <input type="email" class="form-control" placeholder="123456789123" name="pEmail" id="pEmail" />
+                                                                    <input type="email" class="form-control" placeholder="" name="pEmail" id="pEmail" required="" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Mobile Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Mobile Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="123456789123" name="pMobile" id="pMobile" />
+                                                                    <input type="text" class="form-control" placeholder="" name="pMobile" id="pMobile" required=""/>
                                                                 </div>
                                                             </div>
                                                         </div>

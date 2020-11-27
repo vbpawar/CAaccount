@@ -1,7 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
     var digitalSign = new Map();
-
     const loadList = () => {
         var userid =<?php echo $_SESSION['Data']['userid']; ?>;
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
@@ -149,7 +148,10 @@ if ($data['Data']['role'] == 1 || $data['Data']['role'] == 4) {
 
     $('#remarkField').hide();
     function changeStatus(id) {
+        var temp=digitalSign.get(id.toString());
         $('#did').val(id);
+        $('#digital_amount').val(servicecharges.get('2'));
+        $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
 

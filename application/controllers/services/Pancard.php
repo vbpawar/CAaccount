@@ -12,7 +12,7 @@ class Pancard extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/pancard/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/pancard/pancard_validation_js');
+        $this->load->view('admin/pancard/validation_js');
         $this->load->view('admin/pancard/new_js');
         $this->load->view('admin/footer');
     }

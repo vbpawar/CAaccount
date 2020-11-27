@@ -136,13 +136,7 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <!-- <li>
-                                                        <a href="#bankdet" data-toggle="tab" title="Bank etails">
-                                                            <span class="round-tabs three">
-                                                                <i class="fa fa-bank"></i>
-                                                            </span>
-                                                        </a>
-                                                    </li> -->
+                                                   
 
                                                     <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
@@ -304,33 +298,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id= "bankdet">
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label"> Bank Name</label>
-                                                                <input type="text" class="form-control" placeholder="Bank Name" name="retailorid" id="retailorid" />
-
-                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Account Number</label>
-
-                                                                <input type="text" class="form-control" placeholder="Account Number" name="panno" id="panno" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">IFSC Number</label>
-
-                                                                <input type="text" class="form-control" placeholder="IFSC Number" name="aadhar" id="aadhar" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="tab-pane fade" id="documenttab">
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
@@ -362,7 +330,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Filled Form</label>
-                                                                                <input class="form-control" id="filled_form" name="filled_form" type="file" onchange="loadFile(event,'filled_formpre')" />
+                                                                                <input class="form-control" id="filled_form" name="doc" type="file" onchange="loadFile(event,'filled_formpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -375,7 +343,7 @@
                                                                         <td id="otherdocu" >
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Other Documnents</label>
-                                                                                <input class="form-control" id="other_doc" name="other_doc" type="file" onchange="loadFile(event,'otherpre')" />
+                                                                                <input class="form-control" id="other_doc" name="otherdoc" type="file" onchange="loadFile(event,'otherpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -409,7 +377,7 @@
 
                                                     
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                         <button href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                     </p>
                                                 </div>
 
