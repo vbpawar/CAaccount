@@ -12,6 +12,7 @@ class PF_controller extends CI_Controller
         $this->load->model('BankModel', 'bmodel');
         $this->load->model('PFModel', 'pfmodel');
         $this->load->model('DocsModel', 'docs');
+        $this->load->model('WalletModel', 'mmodel');
     }
     private $response = null;
     private $records = null;
@@ -105,7 +106,7 @@ class PF_controller extends CI_Controller
                     if ($this->uploaddocs('PAN', $id, $_FILES['pan']['name'], $_FILES['pan']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
-                    if ($this->uploaddocs('Passbook', $id, $_FILES['pas']['name'], $_FILES['pas']['tmp_name'])) {
+                    if ($this->uploaddocs('Cancelled Check Passbook', $id, $_FILES['pas']['name'], $_FILES['pas']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
                 }
@@ -242,6 +243,16 @@ class PF_controller extends CI_Controller
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>1,//$this->input->post('userid'),
+                'transaction_type'=>'Credit',
+                'amount'=>10,//$this->input->post('amount'),
+                'message'=>'Credited amount of PF services which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->mmodel->deduct_amount($wallet_data);
+        }
         $result = $this->pfmodel->updatepfstatus($pfid, $data);
         if ($result) {
             $document = 'Documents not uplaoded';

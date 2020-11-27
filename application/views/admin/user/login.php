@@ -71,6 +71,7 @@ if(isset($session_data['Data'])){
                 </div>
                 <!--<div class="registration"> Don't have an account ! <a href="#/pages/signup"> <span class="text-primary"> Sign Up </span> </a> </div>-->
             </div>
+            <div id="loader"></div>
         </div>
         <!--===================================================-->
         <!-- END OF CONTAINER -->

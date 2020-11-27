@@ -12,6 +12,14 @@ class User_model extends CI_Model {
         INNER JOIN role_master rm ON rm.roleid = u.roleid ");
         return $query->result();
     }
+    public function getDistributorList($userid) {
+        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,
+        u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress,rm.role 
+        FROM distributors_retailors dr JOIN user_master u ON dr.retailorid  = u.userid 
+        LEFT JOIN contact_master c ON u.`userid`=c.`userid`
+         INNER JOIN role_master rm ON rm.roleid = u.roleid WHERE dr.distributorid = $userid");
+        return $query->result();
+    }
 
     public function getUserAccess() {
         $query = $this->db->query("SELECT * FROM user_access_control");

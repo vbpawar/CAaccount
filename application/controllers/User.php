@@ -10,6 +10,7 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('Contact_model', 'contact');
+        $this->load->model('DistributorModel','service');
     }
 
     public function createUser() {
@@ -21,6 +22,7 @@ class User extends CI_Controller {
             'upassword' => $this->input->post('upassword'),
             'contact' => $this->input->post('contact')
         );
+      
         $userid = $this->user->createNewUser($user);
         $contact = array(
             'userid' => $userid,
@@ -30,7 +32,15 @@ class User extends CI_Controller {
             'pincode' => $this->input->post('pincode'),
             'uaddress' => $this->input->post('uaddress')
         );
-        $result = $this->contact->createUserContact($contact);
+        $userdata = $_SESSION['Data'];
+        if($userdata['role']=='2'){
+            $dist_data = array(
+                'distributorid'=>$userdata['userid'],
+                'retailorid' => $userid
+                ); 
+                $add = $this->service->add_retailors($dist_data);
+        }
+       $result = $this->contact->createUserContact($contact);
        $access= $this->input->post('access');
        $access = explode(',',$access);
        
@@ -62,8 +72,15 @@ class User extends CI_Controller {
     }
 
     public function getUsersList() {
-//        $response=null;
-        $records = $this->user->getAllUsersList();
+        $userdata = $_SESSION['Data'];
+        $userid = $userdata['userid'];
+        $roleid = $userdata['role'];
+        if($roleid == 2){
+            $records = $this->user->getDistributorList($userid);
+        }else{
+            $records = $this->user->getAllUsersList();   
+        }
+       
         $access = $this->user->getUserAccess();
         if ($records != null) {
 

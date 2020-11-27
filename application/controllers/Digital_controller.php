@@ -11,6 +11,7 @@ class Digital_controller extends CI_Controller
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('DigitalModel', 'dmodel');
         $this->load->model('DocsModel', 'docs');
+        $this->load->model('WalletModel','service');
     }
     private $response = null;
     private $records = null;
@@ -229,6 +230,16 @@ class Digital_controller extends CI_Controller
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>1,//$this->input->post('userid'),
+                'transaction_type'=>'Credit',
+                'amount'=>10,//$this->input->post('amount'),
+                'message'=>'Credited amount of PF services which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->mmodel->deduct_amount($wallet_data);
+        }
         $result = $this->dmodel->updatedigitalstatus($did, $data);
         if ($result) {
             $document = 'Documents not uplaoded';

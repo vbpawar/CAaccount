@@ -3,8 +3,6 @@
     $('#loginForm').on('submit', function (e) {
 
         e.preventDefault();
-
-//    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
 
         if (true) {
@@ -26,8 +24,6 @@
                 dataType: 'json',
 
                 success: function (response) {
-//                alert(response.Data.customerId);
-//                console.log(response);
 
                     if (response.Responsecode == 200) {
 
