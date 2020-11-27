@@ -48,7 +48,11 @@ class DocsModel extends CI_Model {
          }
          return $result;
     }
-
+    public function get_shop_docs($id) {
+        $sql = "SELECT * FROM shopact_docs WHERE shid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     public function add_digital_docs($data)
     {    
         $result = [];
@@ -65,11 +69,7 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
-    public function get_documents($did) {
-        $sql = "SELECT * FROM digital_docs WHERE did=$did";
-        $query = $this->db->query($sql);
-        return $query->result_array();
-    }
+   
 
     public function add_remark_docs($data)
     {    

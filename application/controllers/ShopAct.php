@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class ShhopAct extends CI_Controller
+class ShopAct extends CI_Controller
 {
     
     public function __construct()
@@ -13,6 +13,7 @@ class ShhopAct extends CI_Controller
         $this->load->model('ShopModel', 'smodel');
         $this->load->model('ShopActModel', 'shmodel');
         $this->load->model('PartnerModel', 'parmodel');
+        $this->load->model('WalletModel', 'service');
     }
     private $response = null;
     private $records = null;
@@ -262,28 +263,37 @@ class ShhopAct extends CI_Controller
     }
     
 
-    public function get_docs()
+    public function getshopactdocs()
     {
-        $id    = $this->input->post('id');
-        $table = $this->input->post('table');
-        $result = $this->docs->get_documents($id,$table);
+        $id   = $this->input->post('shid');
+        $result = $this->docs->get_shop_docs($id);
         echo json_encode($result);
     }
     public function update_status()
     {
-        $did    = $this->input->post('did');
+        $shid    = $this->input->post('shid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
-        $result = $this->dmodel->updatedigitalstatus($did, $data);
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>$this->input->post('digital_uid'),
+                'transaction_type'=>'Credit',
+                'amount'=>$this->input->post('digital_amount'),
+                'message'=>'Credited amount of Shop Act service which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->service->deduct_amount($wallet_data);
+        }
+        $result = $this->shmodel->update_shop_status($shid, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('Digital', $did, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('Digital', $did, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }

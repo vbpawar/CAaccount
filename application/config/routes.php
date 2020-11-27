@@ -161,3 +161,9 @@ $route['updatecharges'] = 'Service_charges/updateservicecharges';
 $route['servicecharge']   = 'services/ServiceCharges/show';
 $route['servicecharge/create']   = 'services/ServiceCharges/create';
 $route['servicecharge/update']   = 'services/ServiceCharges/update';
+
+//shop act apis
+$route['getshopdocs']      = 'ShopAct/getshopactdocs'; //pass sh id
+$route['loadshops']        = 'ShopAct/get_all_shopact';//get all shop acts data pass roleid and userid
+$route['createshop']       =    'ShopAct/add_shop_form';
+$route['update_shop_status'] = 'ShopAct/update_status';
