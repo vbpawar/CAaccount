@@ -1,7 +1,6 @@
 <script>
     var url = '<?php echo base_url(); ?>';
 
-  var serviceCharges= <?php echo json_encode($_SESSION['serviceCharges']);?>;
 
     $('#pf-withdrawl-form').on('submit', function (e) {
 
@@ -10,7 +9,7 @@
     var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=serviceCharges[0]['charges'];
+        var amount=servicecharges.get('1');
         formdata.append('userid',userid);
 
         if (returnVal) {

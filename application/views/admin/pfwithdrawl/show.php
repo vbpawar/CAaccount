@@ -201,6 +201,8 @@
 
                         <div class="form-group">
                             <input type="hidden" name="pfid" id="pfid"/>
+                            <input type="hidden" name="digital_amount" id="digital_amount"/>
+                        <input type="hidden" name="digital_uid" id="digital_uid"/>
                             <label class="control-label">Status</label>
                             <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
                             <select class="form-control selectpicker" id="statusRemark" name="status">

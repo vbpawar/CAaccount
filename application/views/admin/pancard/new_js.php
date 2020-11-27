@@ -1,18 +1,17 @@
 <script>
     var url = '<?php echo base_url(); ?>';
+
+
     $('#pancard-form').on('submit', function (e) {
 
         e.preventDefault();
 
     var returnVal = validChecker();
         var formdata = new FormData(this);
-        formdata.append('userid',<?php echo $_SESSION['Data']['userid'];?>);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount = 100;
-        if (servicecharges.has('1')) {
-        var product = servicecharges.get('1');
-        amount = product.charges;
-        }
+        var amount=3;
+        formdata.append('userid',userid);
+
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
@@ -63,7 +62,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'pancard/show');
+        window.location.replace(url + 'pancard');
     }
 
 

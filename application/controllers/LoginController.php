@@ -70,6 +70,7 @@ class LoginController extends CI_Controller {
                 
                 $response = array(
                     'Message' => 'Logged in successfully',
+                    'serviceCharges' => $serviceCharges,
                     'Responsecode' => 200
                 );
             } else {

@@ -197,6 +197,8 @@
                     <!--card start-->
                     <div class="card">
                         <input type="hidden" name="did" id="did"/>
+                        <input type="hidden" name="digital_amount" id="digital_amount"/>
+                        <input type="hidden" name="digital_uid" id="digital_uid"/>
                         <div class="form-group">
                             <label class="control-label">Status</label>
                             <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
@@ -267,4 +269,35 @@
             </div>
         </div>
     </div>
+    </div>
+
+<!--remark and return attachment modal-->
+    <div class="modal fade" id="remarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Download Attachments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--card start-->
+                    <div class="card">
+                        <!--table-->
+                        <table class="table table-striped">
+  
+                            <tbody id="remarkList" >
+    
+  </tbody>
+</table>
+                        <!--table-->
+                        
+                    <!--card end-->
+                </div>
+                
+        </div>
+    </div>
+</div>
+</div>
     <div id="loader"></div>

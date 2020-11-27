@@ -1,7 +1,7 @@
 <script>
     $('.electricityAttach').hide();
     $('.otherdocAttach').hide();
-    $('#dynamicLi').hide();
+//    $('#dynamicLi').hide();
 
 //electricity bill attachment
     $("input[name='elect']").change(function () {
@@ -19,14 +19,16 @@
 //    gst enable/disable
     $('#enableGst').change(function () {
         if (this.checked) {
-            $("#gst").prop('disabled', false);
+            $("#gst_number").prop('disabled', false);
+//    alert('checked')
         } else {
-            $("#gst").prop('disabled', true);
+//    alert('unchecked')
+            $("#gst_number").prop('disabled', true);
         }
     });
 
 //bussiness type change then appear new tab
-    $('#bussinessType').change(function () {
+    $('#buss_type').change(function () {
         //Use $option (with the "$") to see that the variable is a jQuery object
         var $option = $(this).find('option:selected');
         //Added with the EDIT
@@ -50,6 +52,9 @@
         var pMobile = $('#pMobile').val();
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
+//if fields are not empty then add in table 
+//else empty then set errors
+if(partnerName!='' && pAadhar!='' && pPancard!='' && pEmail!='' && pMobile!=''){
         tableData += $('#partnerTable tbody').html();
         tableData += `<tr id="r`+pAadhar+`">
                         <td>`+partnerName+`</td>
@@ -65,11 +70,45 @@
                         </tr>`;
                             
                             $('#partnerData').html(tableData);
+                            }else{
+                              var errorData='';
+                              if(partnerName==''){
+                                  errorData +='<span id="pNameError" class="text-danger"> *Enter Partner Name</span><br/>';
+                              }
+                              if(pAadhar==''){
+                                  errorData +='<span id="pAadharError" class="text-danger"> *Enter Aadhar No.</span><br/>';
+                              }
+                              if(pPancard==''){
+                                  errorData +='<span id="pPanError" class="text-danger"> *Enter Pan No.</span><br/>';
+                              }
+                              if(pEmail==''){
+                                  errorData +='<span id="pEmailError" class="text-danger"> *Enter Emailid</span><br/>';
+                              }
+                              if(pMobile==''){
+                                  errorData +='<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
+                              }
+                            $('.partnerError').html(errorData);
+                            }
     });
     function deletePartner(id) {
         $('#r' + id).remove();
     }
-    
+    //partners add list error remove
+    $('#partnerName').keyup(function () {
+        $('#pNameError').empty();
+    });
+    $('#pAadhar').keyup(function () {
+        $('#pAadharError').empty();
+    });
+    $('#pPancard').keyup(function () {
+        $('#pPanError').empty();
+    });
+    $('#pEmail').keyup(function () {
+        $('#pEmailError').empty();
+    });
+    $('#pMobile').keyup(function () {
+        $('#pMobileError').empty();
+    });
     
     
     //form validation
