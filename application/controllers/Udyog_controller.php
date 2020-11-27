@@ -12,6 +12,7 @@ class Udyog_controller extends CI_Controller
         $this->load->model('BankModel', 'bmodel');
         $this->load->model('ShopModel', 'smodel');
         $this->load->model('Udyog_Model', 'umodel');
+        $this->load->model('DocsModel', 'docs');
     }
     private $response = null;
     private $records = null;
