@@ -202,6 +202,7 @@
 
                         <div class="form-group">
                             <input type="hidden" name="panid" id="panid"/>
+                            
                             <input type="hidden" name="digital_amount" id="digital_amount"/>
                         <input type="hidden" name="digital_uid" id="digital_uid"/>
                             <label class="control-label">Status</label>
