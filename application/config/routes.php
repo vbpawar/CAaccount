@@ -140,10 +140,14 @@ $route['updatewallet']    = 'walletController/update_balance';
 $route['createpan'] = 'pan_controller/add_pan_form';
 $route['updatepan'] = 'pan_controller/update_pan_form';
 $route['loadpan']   = 'pan_controller/get_all_pan';
+$route['panstatus']   = 'pan_controller/update_status';
+$route['getpandocs']   = 'pan_controller/getpandocs';
+$route['getpanremarkdocs']   = 'pan_controller/get_update_docs';
 
 //pancard ui
 $route['pancard']        = 'services/pancard/show';
 $route['pancard/create'] = 'services/pancard/create';
+$route['pancard/update'] = 'services/pancard/update';
 
 
 //docs apis

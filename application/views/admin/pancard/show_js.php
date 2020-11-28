@@ -62,7 +62,7 @@
 $data = $this->session->userdata();
 if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     ?>
-                if (services.status == '1'&& services.status == '2') {
+                if (services.status == '1' || services.status == '2') {
     //    alert(services.status);
                     tblData += `&nbsp; <a href="#@"  onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`;
                 }
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'pf_withdrawal/update',
+                url: url + 'pancard/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pancard/show');
+        window.location.replace(url + 'pancard');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -126,8 +126,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
         $('#panid').val(id);
-        
-        $('#digital_amount').val(servicecharges.get('1'));
+        $('#digital_amount').val(servicecharges.get('3'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
@@ -135,11 +134,11 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getpfdocs',
+            url: url + 'getpandocs',
 
             type: 'POST',
 
-            data: {pfid: id},
+            data: {panid: id},
 
             cache: false,
 
@@ -150,7 +149,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 for (var i = 0; i < count; i++) {
                     docTable += ` <tr>
       <td>
-          <a href="` + (url + 'documents/pf/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
+          <a href="` + (url + 'documents/pan/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
       </td>
     </tr>`;
                 }
@@ -184,7 +183,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updatestatus',
+            url: url + 'panstatus',
 
             type: 'POST',
 
@@ -225,7 +224,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id) {
         $.ajax({
 
-            url: url + 'getremarksdocs',
+            url: url + 'getpanremarkdocs',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',
