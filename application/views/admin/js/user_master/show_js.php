@@ -46,13 +46,17 @@
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
+            if(services.roleid=='2'){
+                console.log('in distributor');
+            }
+            console.log(services);
             tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
             tblData += '<td>' + services.role + '</td>';
 
             tblData += '<div class="table-actions">';
-
+            
             tblData += '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;&nbsp; <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
 
             tblData += '</div></tr>';

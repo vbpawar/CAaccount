@@ -3,17 +3,12 @@
     var url = '<?php echo base_url(); ?>';
     $('#accessControlForm').on('submit', function (e) {
         e.preventDefault();
-//        var arr=getAccess();
         var array = []
         var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
         for (var i = 0; i < checkboxes.length; i++) {
             array.push(checkboxes[i].value)
         }
-        console.log(array);
-    //    array = JSON.stringify(array);
-        console.log(array);
-//    var returnVal = $("#caCertificateForm").valid();
         var formdata = new FormData(this);
             formdata.append('access',array);
         if (true) {

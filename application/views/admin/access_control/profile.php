@@ -138,35 +138,35 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Contry</label>
-                                                                <input type="text" class="form-control" placeholder="Country" id="country" name="country" />
+                                                                <input type="text" class="form-control" placeholder="Country" id="country" name="country"  readonly/>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
-                                                                <input type="text" class="form-control" placeholder="State" id="ustate" name="ustate" />
+                                                                <input type="text" class="form-control" placeholder="State" id="ustate" name="ustate" readonly/>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">City</label>
-                                                                <input type="text" class="form-control" placeholder="City" id="city" name="city" />
+                                                                <input type="text" class="form-control" placeholder="City" id="city" name="city" readonly/>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
-                                                                <input type="text" class="form-control" placeholder="Contact" id="pincode" name="pincode" />
+                                                                <input type="text" class="form-control" placeholder="Contact" id="pincode" name="pincode" readonly/>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Address</label>
-                                                                <textarea class="form-control" placeholder="Address" id="uaddress" name="uaddress"></textarea>
+                                                                <textarea class="form-control" placeholder="Address" id="uaddress" name="uaddress" readonly></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">

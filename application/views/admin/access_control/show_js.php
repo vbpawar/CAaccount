@@ -42,11 +42,19 @@
 
         $('.serviceList').empty();
 
-        var tblData = '', badge;
-
+        var tblData = '', badge,flag=false,action=null;
+        var session_user = '<?php echo $_SESSION['Data']['role'];?>';
+        if(session_user =='2'){
+            flag = true;
+        }
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
+            if(flag){
+                action = '<td style="width:5%"></td>';
+            }   else{
+                action = '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;&nbsp; <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
+            }
             tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
@@ -54,7 +62,7 @@
 
             tblData += '<div class="table-actions">';
 
-            tblData += '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;&nbsp; <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
+            tblData += action;
 
             tblData += '</div></tr>';
 
