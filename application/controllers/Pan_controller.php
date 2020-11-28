@@ -10,6 +10,7 @@ class Pan_controller extends CI_Controller
         $this->load->model('ResidentialModel', 'rmodel');
         $this->load->model('Pan_model', 'umodel');
         $this->load->model('DocsModel', 'docs');
+        date_default_timezone_set('Asia/Kolkata');
     }
     private $response = null;
     private $records = null;

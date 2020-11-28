@@ -87,6 +87,12 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    //udyog docs
+    public function get_udyogdocs($id) {
+        $sql = "SELECT * FROM udyog_docs ud WHERE ud.uid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
     //upload documents
 

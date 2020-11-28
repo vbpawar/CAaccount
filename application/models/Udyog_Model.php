@@ -61,5 +61,15 @@ class Udyog_Model extends CI_Model {
             }         
             return $result;
         }        
-
+        public function updatestatus($id,$data)
+        {
+            $result = false;
+            $this->db->where('uid',$id);
+            if($this->db->update('udyog_adhar',$data)){
+                $result['status'] = true;
+            }else{
+                $result['status'] = false;
+            }
+            return $result;
+        }    
 }
