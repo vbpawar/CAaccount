@@ -185,7 +185,7 @@ class Pan_controller extends CI_Controller
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
-        $result = $this->pfmodel->updatepanstatus($panid, $data);
+        $result = $this->umodel->updatepanstatus($panid, $data);
         if ($result['status']) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
@@ -242,7 +242,7 @@ class Pan_controller extends CI_Controller
     public function get_update_docs()
     {
         $pfid   = $this->input->post('rowid');
-        $result = $this->docs->getremarkupdate($pfid,'PAN');
+        $result = $this->docs->get_update_remarks_docs($pfid,'PAN');
         echo json_encode($result);
     }
     
