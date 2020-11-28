@@ -22,7 +22,6 @@
                 processData: false,
 
                 dataType: 'json',
-
                 success: function (response) {
 
                     if (response.Responsecode == 200) {

@@ -46,7 +46,7 @@ function load_transaction(){
            
            $('#wallet_data').html(options);
            
-           $('#w_w').dataTable({
+           $('#wallet_table').dataTable({
 
 searching: true,
 
@@ -56,7 +56,7 @@ bPaginate: $('tbody tr').length > 10,
 
 order: [],
 
-columnDefs: [{orderable: true, targets: []}],
+columnDefs: [{orderable: true, targets: [0,1,2]}],
 
 dom: 'Bfrtip',
 

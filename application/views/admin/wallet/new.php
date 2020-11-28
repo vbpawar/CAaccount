@@ -211,7 +211,7 @@
 
                                                         <!-- <div class="h2 font-weight-bold">Meetings</div> -->
                                                         <div class="table-responsive">
-                                                            <table class="table" id="w_w">
+                                                            <table class="table" id="wallet_table">
                                                                 <thead>
                                                                     <tr>
                                                                     <th scope="col">Activity</th>

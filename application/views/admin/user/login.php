@@ -33,6 +33,21 @@ if(isset($session_data['Data'])){
         <!--=================================================-->
         <!--Page Load Progress Bar [ OPTIONAL ]-->
         <link href="<?php echo base_url('admin_assets/');?>plugins/pace/pace.min.css" rel="stylesheet">
+        <style>
+    
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('admin_assets/image/spinner.gif');?>') no-repeat center center;
+    z-index: 10000;
+}
+
+</style>
         <script src="<?php echo base_url('admin_assets/');?>plugins/pace/pace.min.js"></script>
     </head>
     <!--TIPS-->
@@ -89,5 +104,16 @@ if(isset($session_data['Data'])){
         <script src="<?php echo base_url('admin_assets/');?>plugins/bootstrap-select/bootstrap-select.min.js"></script>
         <!--sweet alert-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script> //img preview code ######DON'T REMOVE ####
+    var $loading = $('#loader').hide();
+    $(document)
+            .ajaxStart(function () {
+                $loading.show();
+
+            })
+            .ajaxStop(function () {
+                $loading.hide();
+            });
+            </script>
     </body>
 </html>
