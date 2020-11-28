@@ -8,12 +8,14 @@ class PFModel extends CI_Model {
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM pf_withdrwal pf 
         JOIN personal_details pd ON pd.pid = pf.pid 
-        JOIN bank_details bd ON bd.bid = pf.pfid 
+        JOIN bank_details bd ON bd.bid = pf.pfid
+        JOIN user_master u ON u.userid = pf.userid
         JOIN residential_details rd ON rd.rid = pf.rid";
         }else{
             $sql = "SELECT * FROM pf_withdrwal pf 
         JOIN personal_details pd ON pd.pid = pf.pid 
         JOIN bank_details bd ON bd.bid = pf.pfid 
+        JOIN user_master u ON u.userid = pf.userid
         JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid";
         }
         $query = $this->db->query($sql);
@@ -30,6 +32,7 @@ class PFModel extends CI_Model {
             $sql = "SELECT * FROM pf_withdrwal pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN bank_details bd ON bd.bid = pf.pfid 
+            JOIN user_master u ON u.userid = pf.userid
             JOIN residential_details rd ON rd.rid = pf.rid 
             WHERE pf.pfid = $pfid";
             $query = $this->db->query($sql);

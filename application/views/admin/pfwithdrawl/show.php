@@ -112,8 +112,8 @@
                     <table  class="table table-striped table-bordered" id="service">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Pan No.</th>
+                                <th>Retailor</th>
+                                <th>Customer</th>
                                 <th class="min-tablet">Aadhar No.</th>
                                 <th class="min-tablet">Mobile No.</th>
                                 <th class="min-tablet">Email ID</th>

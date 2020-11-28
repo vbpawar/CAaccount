@@ -5,9 +5,9 @@ class Pan_model extends CI_Model {
     public function get_details($roleid,$userid) {
         $result = [];
         if($roleid ==1 || $roleid ==4){
-            $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid";
+            $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid JOIN user_master u ON u.userid=pf.userid";
             }else{
-                $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid WHERE pf.userid=$userid";
+                $sql = "SELECT * FROM pan_service pf JOIN residential_details rd ON rd.rid = pf.rid JOIN user_master u ON u.userid=pf.userid WHERE pf.userid=$userid";
             } 
        if($query =$this->db->query($sql)){
         $result['status'] = true;
@@ -26,6 +26,7 @@ class Pan_model extends CI_Model {
             $uid = $this->db->insert_id();
             $sql = "SELECT * FROM pan_service pf 
             JOIN residential_details rd ON rd.rid = pf.rid 
+            JOIN user_master u ON u.userid=pf.userid
             WHERE pf.panid = $uid";
             $query = $this->db->query($sql);
            $result['uid'] =  $uid;

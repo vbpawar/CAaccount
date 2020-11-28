@@ -49,7 +49,6 @@
             if(services.roleid=='2'){
                 console.log('in distributor');
             }
-            console.log(services);
             tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';

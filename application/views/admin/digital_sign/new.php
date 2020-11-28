@@ -326,7 +326,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Place of Bussines</label>
 
-                                                                <input type="text" class="form-control" placeholder="Place of Bussines" name="place_of_buss" id="place_of_buss" />
+                                                                <textarea  class="form-control" placeholder="Place of Bussines" name="place_of_buss" id="place_of_buss"></textarea>
                                                                 <input type="hidden" class="form-control" value="new"  name="status" id="status" />
                                                             </div>
                                                         </div>
@@ -413,6 +413,7 @@
             </div>
             <!-- </div> -->
         </div>
+        <div id="loader"></div>
         <!--===================================================-->
         <!--End page content-->
     </div>
