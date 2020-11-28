@@ -79,9 +79,6 @@ $route['retailorDistributor/create'] = 'services/RetailorDistributor/create';
 $route['udyagAadhar']        = 'services/UdyogAadhar/show';
 $route['udyagAadhar/create'] = 'services/UdyogAadhar/create';
 
-$route['shopAct']        = 'services/ShopAct/show';
-$route['shopAct/create'] = 'services/ShopAct/create';
-
 $route['retailor']        = 'services/Retailor/show';
 $route['retailor/create'] = 'services/Retailor/create';
 
@@ -171,3 +168,7 @@ $route['getshopdocs']      = 'ShopAct/getshopactdocs'; //pass sh id
 $route['loadshops']        = 'ShopAct/get_all_shopact';//get all shop acts data pass roleid and userid
 $route['createshop']       =    'ShopAct/add_shop_form';
 $route['update_shop_status'] = 'ShopAct/update_status';
+
+//shop act ui
+$route['shopAct']        = 'services/ShopAct/show';
+$route['shopAct/create'] = 'services/ShopAct/create';
