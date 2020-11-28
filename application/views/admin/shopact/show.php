@@ -1,6 +1,7 @@
 <div id="includeBox">
     
 </div>
+<!--<div id="loader"></div>-->
 <div id="deleteAlert"></div>
             <div class="boxed showDiv">
                 <!--CONTENT CONTAINER-->
@@ -102,7 +103,13 @@
                         <div class="panel">
                           
                             <div class="panel-body">
-                            <a class="btn btn-primary" href="<?php echo base_url('services/ShopAct/create');?> " role="button">Add New Entry</a>
+                                <?php
+                    $data = $this->session->userdata();
+                    if ($data['Data']['role'] == 3) {
+                        echo '<a class="btn btn-primary" href="' . base_url() . 'shopAct/create" role="button">Add New Entry</a>';
+                    }
+                    ?>
+                            
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>

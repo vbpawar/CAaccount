@@ -33,7 +33,7 @@
         var $option = $(this).find('option:selected');
         //Added with the EDIT
         var value = $option.val();//to get content of "value" attrib
-        if (value!= 1) {
+        if (value != 1) {
             $('#dynamicLi').show();
             $('.otherdocAttach').show();
         } else {
@@ -54,41 +54,43 @@
 //   alert(partnerName+' '+pMobile);
 //if fields are not empty then add in table 
 //else empty then set errors
-if(partnerName!='' && pAadhar!='' && pPancard!='' && pEmail!='' && pMobile!=''){
-        tableData += $('#partnerTable tbody').html();
-        tableData += `<tr id="r`+pAadhar+`">
-                        <td>`+partnerName+`</td>
-                        <td>`+pAadhar+`</td>
-                        <td>`+pPancard+`</td>
-                        <td>`+pEmail+`</td>
-                        <td>`+pMobile+`</td>
+        if (partnerName != '' && pAadhar != '' && pPancard != '' && pEmail != '' && pMobile != '') {
+           if (!($('#r' + pAadhar).length)) {
+                tableData += $('#partnerTable tbody').html();
+                tableData += `<tr id="r` + pAadhar + `">
+                        <td>` + partnerName + `</td>
+                        <td>` + pAadhar + `</td>
+                        <td>` + pPancard + `</td>
+                        <td>` + pEmail + `</td>
+                        <td>` + pMobile + `</td>
                         <td>
-                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('`+pAadhar+`')">
+                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + pAadhar + `')">
                         <i class="fa fa-trash-alt" ></i>
                         </button>
                         </td>
                         </tr>`;
-                            
-                            $('#partnerData').html(tableData);
-                            }else{
-                              var errorData='';
-                              if(partnerName==''){
-                                  errorData +='<span id="pNameError" class="text-danger"> *Enter Partner Name</span><br/>';
-                              }
-                              if(pAadhar==''){
-                                  errorData +='<span id="pAadharError" class="text-danger"> *Enter Aadhar No.</span><br/>';
-                              }
-                              if(pPancard==''){
-                                  errorData +='<span id="pPanError" class="text-danger"> *Enter Pan No.</span><br/>';
-                              }
-                              if(pEmail==''){
-                                  errorData +='<span id="pEmailError" class="text-danger"> *Enter Emailid</span><br/>';
-                              }
-                              if(pMobile==''){
-                                  errorData +='<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
-                              }
-                            $('.partnerError').html(errorData);
-                            }
+
+                $('#partnerData').html(tableData);
+            }
+        } else {
+            var errorData = '';
+            if (partnerName == '') {
+                errorData += '<span id="pNameError" class="text-danger"> *Enter Partner Name</span><br/>';
+            }
+            if (pAadhar == '') {
+                errorData += '<span id="pAadharError" class="text-danger"> *Enter Aadhar No.</span><br/>';
+            }
+            if (pPancard == '') {
+                errorData += '<span id="pPanError" class="text-danger"> *Enter Pan No.</span><br/>';
+            }
+            if (pEmail == '') {
+                errorData += '<span id="pEmailError" class="text-danger"> *Enter Emailid</span><br/>';
+            }
+            if (pMobile == '') {
+                errorData += '<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
+            }
+            $('.partnerError').html(errorData);
+        }
     });
     function deletePartner(id) {
         $('#r' + id).remove();
@@ -109,30 +111,30 @@ if(partnerName!='' && pAadhar!='' && pPancard!='' && pEmail!='' && pMobile!=''){
     $('#pMobile').keyup(function () {
         $('#pMobileError').empty();
     });
-    
-    
-    //form validation
-    function validChecker(){
-    var errorMsg='';
-    var status=true;
-    
-    if($('#pan_name').val()==''){
-        errorMsg +='<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
-        status=false;
-    }
-    if($('#pan_number').val()==''){
-        errorMsg +='<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
-        status=false;
-    }
-    $('#error-container').html(errorMsg);
-    return status;
-}
 
-$('#pan_name').keyup(function () {
+
+    //form validation
+    function validChecker() {
+        var errorMsg = '';
+        var status = true;
+
+        if ($('#pan_name').val() == '') {
+            errorMsg += '<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
+            status = false;
+        }
+        if ($('#pan_number').val() == '') {
+            errorMsg += '<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
+            status = false;
+        }
+        $('#error-container').html(errorMsg);
+        return status;
+    }
+
+    $('#pan_name').keyup(function () {
         $('#panError').empty();
     });
-$('#pan_number').keyup(function () {
+    $('#pan_number').keyup(function () {
         $('#panNoError').empty();
     });
- 
+
 </script>

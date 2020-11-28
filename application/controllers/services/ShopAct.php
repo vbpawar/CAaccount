@@ -20,38 +20,29 @@ class ShopAct extends CI_Controller {
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/shopact/new');
         $this->load->view('admin/js/comman_js');
-         $this->load->view('admin/js/shopact/new_js');
-         $this->load->view('admin/js/shopact/validation_js');
+         $this->load->view('admin/shopact/new_js');
+         $this->load->view('admin/shopact/validation_js');
 
         $this->load->view('admin/footer');
     }
     
     public function show() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Shop Act Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/shopact/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/dataModalJavaScript');
-        $this->load->view('admin/js/shopact/show_js');
+        $this->load->view('admin/shopact/show_js');
         
         $this->load->view('admin/footer');
     }
     public function update() {
-//        $this->load->view('admin/header');
-//        $this->load->view('admin/css/comman_css');
-//        $this->load->view('admin/navigation/notificationbar');
-//        $this->load->view('admin/navigation/menubar');
-        ///////////////////////////////////////////////////////
+
         $this->load->view('admin/shopact/update');
         $this->load->view('admin/js/jquery_validation_js');
-        // $this->load->view('admin/js/shopact/ca_certificate_validation_js');
-        // $this->load->view('admin/js/shopact/update_js');
-        ///////////////////////////////////////////////////////
-//        $this->load->view('admin/js/comman_js');
-//        $this->load->view('admin/footer');
+
     }
     
     

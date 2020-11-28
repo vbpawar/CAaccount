@@ -116,6 +116,8 @@ class ShopAct extends CI_Controller
                 'sid' =>$sid
             );
             $partner_data = $this->input->post('partnerdata');
+            echo $partner_data;exit;
+//            print_r($partner_data);exit;
             $result = $this->shmodel->add_details($data);
             if ($result['status']) {
                 $id       = $result['shopactid'];
