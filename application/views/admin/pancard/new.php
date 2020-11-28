@@ -105,7 +105,7 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
+                                <a href="<?php echo base_url('pancard');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">PAN Card Information</h3>
                         </div>
@@ -184,7 +184,7 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4" id="pandiv" >
+                                                        <div class="col-sm-4" id="pandiv" style="display: none">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pan Number </label>
                                                                 <input type="text" class="form-control" placeholder="Pan Number" name="pan_number" id="pan_number" />
