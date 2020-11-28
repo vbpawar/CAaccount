@@ -62,7 +62,7 @@
 $data = $this->session->userdata();
 if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     ?>
-                if (services.status != '3'&& services.status != '4') {
+                if (services.status == '1'&& services.status == '2') {
     //    alert(services.status);
                     tblData += `&nbsp; <a href="#@"  onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`;
                 }
@@ -124,7 +124,10 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     $('#remarkField').hide();
     function changeStatus(id) {
-        $('#pfid').val(id);
+        var temp=pfWithdrawal.get(id.toString());
+        $('#panid').val(id);
+        $('#digital_amount').val(servicecharges.get('1'));
+        $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
 
