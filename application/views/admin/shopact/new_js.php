@@ -32,24 +32,23 @@
     $('#shopact-form').on('submit', function (e) {
         e.preventDefault();
       var  patnersData = getPartnersData();
-//      JSON.stringify(patnersData);
-//console.log(patnersData);
+      patnersData= JSON.stringify(patnersData);
+    console.log(patnersData);
   var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
         var amount=servicecharges.get('4');
         formdata.append('userid',userid);
-        formdata.append('partnerdata',patnersData);
-
+        console.log(formdata);
         if (returnVal) {
-             if(check_balance(userid,amount)){
+            //  if(check_balance(userid,amount)){
             $.ajax({
 
                 url: url + 'createshop',
 
                 type: 'POST',
 
-                data: formdata,
+                data: {'partnerdata':patnersData},
 
                 cache: false,
 
@@ -80,10 +79,10 @@
                 }
 
             });
-             }else{
-                 window.open(url+ 'wallet','_blank');
-                // window.location.replace(url + 'wallet');
-             }
+            //  }else{
+            //      window.open(url+ 'wallet','_blank');
+            //     // window.location.replace(url + 'wallet');
+            //  }
 
         }
 

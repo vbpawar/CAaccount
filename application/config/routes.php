@@ -106,7 +106,6 @@ $route['digital_sign/cerate'] = 'services/DigitalSignService/create';
 $route['digital_sign/show']   = 'services/DigitalSignService/show';
 $route['digital_sign/update'] = 'services/DigitalSignService/update';
 
-$route['createudyog']  = 'udyog_controller/add_udyog_form';
 //Get APIS
 $route['getroles']     = 'role/getAllRoles';
 $route['activities']   = 'get/getactivities';
@@ -172,3 +171,10 @@ $route['update_shop_status'] = 'ShopAct/update_status';
 //shop act ui
 $route['shopAct']        = 'services/ShopAct/show';
 $route['shopAct/create'] = 'services/ShopAct/create';
+
+//udyog apis
+
+$route['createudyog']  = 'udyog_controller/add_udyog_form';
+$route['loadudyog']  = 'udyog_controller/get_all_udyog';
+$route['getudyogdocs'] = 'udyog_controller/get_udyog_docs';
+$route['updateudyog_status']= 'udyog_controller/update_status';
