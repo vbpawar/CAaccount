@@ -331,7 +331,7 @@
                                                         <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Nature of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="Nature of Business" name="nature_of_buss" id="nature_of_buss" />
+                                                                    <textarea class="form-control" name="nature_of_buss" id="nature_of_buss" rows="1"></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -420,14 +420,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Male</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="men" id="men" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Female</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" name="women" id="women" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -448,7 +448,7 @@
                                                                         <th scope="col">Pancard No.</th>
                                                                         <th scope="col">Mobile No.</th>
                                                                         <th scope="col">Email Id</th>
-                                                                        <th scope="col">Action</th>
+                                                                        <!--<th scope="col">Action</th>-->
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="partnerData">

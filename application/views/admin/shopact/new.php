@@ -333,7 +333,7 @@
                                                         <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Nature of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="Nature of Business" name="nature_of_buss" id="nature_of_buss" />
+                                                                    <textarea class="form-control" name="nature_of_buss" id="nature_of_buss" rows="1" ></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
