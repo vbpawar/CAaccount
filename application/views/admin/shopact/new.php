@@ -422,14 +422,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Male</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="number" class="form-control" name="men" id="men" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Female</label>
 
-                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                                <input type="number" class="form-control" name="women" id="women" />
                                                             </div>
                                                         </div>
                                                     </div>
