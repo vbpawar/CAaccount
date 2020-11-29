@@ -14,8 +14,9 @@ class ShopActModel extends CI_Model {
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN residential_details rd ON rd.rid = pf.rid 
             JOIN user_master u ON u.userid = pf.userid
+            JOIN shop_details sd ON sd.sid = pf.sid 
             JOIN residential_details rd1 ON sd.rid = rd1.rid
-            JOIN shop_details sd ON sd.sid = pf.sid WHERE pf.userid=$userid ORDER BY pf.shopactid DESC";  
+            WHERE pf.userid=$userid ORDER BY pf.shopactid DESC";  
         }
         $query = $this->db->query($sql);
        $result['status'] = true;
