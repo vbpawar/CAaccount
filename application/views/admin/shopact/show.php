@@ -1,7 +1,7 @@
 <div id="includeBox">
     
 </div>
-<!--<div id="loader"></div>-->
+<div id="loader"></div>
 <div id="deleteAlert"></div>
             <div class="boxed showDiv">
                 <!--CONTENT CONTAINER-->
@@ -113,10 +113,13 @@
                                 <table  class="table table-striped table-bordered" id="service">
                                     <thead>
                                         <tr>
-                                            <th class="min-tablet">NAME userid</th>
+                                            <th class="min-tablet">NAME</th>
                                             
+                                            <th class="min-tablet">PAN NO.</th>
+                                            <th class="min-tablet">AADHAR NO.</th>
                                             <th class="min-tablet">MOBILE NO.</th>
                                             <th class="min-tablet">EMAIL ID</th>
+                                            <th class="min-tablet">CREATED AT</th>
                                             <th class="min-desktop">STATUS</th>
                                             <th class="min-desktop">ACTION</th>
 
@@ -189,3 +192,123 @@
         </div>
         <!--===================================================-->
         <!-- END OF CONTAINER -->
+
+        <!-- Status Modal -->
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--form-->
+            <form id="statusUpdateForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Status Approval</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--card start-->
+                    <div class="card">
+
+                        <div class="form-group">
+                            <input type="hidden" name="shopactid" id="shopactid"/>
+                            <input type="hidden" name="digital_amount" id="digital_amount"/>
+                        <input type="hidden" name="digital_uid" id="digital_uid"/>
+                            <label class="control-label">Status</label>
+                            <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
+                            <select class="form-control selectpicker" id="statusRemark" name="status">
+                                <option value="1">Pending...</option>
+                                <option value="2">Hold</option>
+                                <option value="3">Rejected</option>
+                                <option value="4">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="remarkField">
+                            <label class="control-label"><span class="error"></span>Remark</label>
+
+                            <textarea class="form-control" name="remark" ></textarea>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="control-label">Attachment 1</label>
+                            <input class="form-control" id="result1" name="result1" type="file" />
+
+                        </div>
+                        <div class="form-group">
+
+                            <label class="control-label">Attachment 2</label>
+                            <input class="form-control" id="result2" name="result2" type="file" onchange="loadFile(event, 'paspre')" />
+
+                        </div>
+
+
+                    </div>
+                    <!--card end-->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Documnet Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Download Attachments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--card start-->
+                    <div class="card">
+                        <!--table-->
+                        <table class="table table-striped">
+  
+                            <tbody id="documentList" >
+    
+  </tbody>
+</table>
+                        <!--table-->
+                        
+                    <!--card end-->
+                </div>
+                
+        </div>
+    </div>
+</div>
+</div>
+    
+    <!--remark and return attachment modal-->
+    <div class="modal fade" id="remarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Download Attachments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--card start-->
+                    <div class="card">
+                        <!--table-->
+                        <table class="table table-striped">
+  
+                            <tbody id="remarkList" >
+    
+  </tbody>
+</table>
+                        <!--table-->
+                        
+                    <!--card end-->
+                </div>
+                
+        </div>
+    </div>
+</div>
+</div>

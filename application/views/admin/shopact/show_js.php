@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].pfid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].shopactid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'pf_withdrawal/update',
+                url: url + 'shopAct/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'shopAct');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -125,7 +125,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     $('#remarkField').hide();
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
-        $('#pfid').val(id);
+        $('#shopactid').val(id);
          $('#digital_amount').val(servicecharges.get('1'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
@@ -134,11 +134,11 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getpfdocs',
+            url: url + 'getshopactdocs',
 
             type: 'POST',
 
-            data: {pfid: id},
+            data: {shid: id},
 
             cache: false,
 
@@ -146,12 +146,16 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
             success: function (response) {
                 const count = response.length;
                 var docTable = '';
+                if(count>0){
                 for (var i = 0; i < count; i++) {
                     docTable += ` <tr>
       <td>
-          <a href="` + (url + 'documents/pf/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
+          <a href="` + (url + 'documents/shopact/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
       </td>
     </tr>`;
+                }
+                }else{
+                   docTable +=`<tr><td>No Attachment found!</td></tr>`; 
                 }
                 $('#documentList').html(docTable);
                 $('#documentModal').modal('toggle');
@@ -183,7 +187,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updatestatus',
+            url: url + 'update_shop_status',
 
             type: 'POST',
 
