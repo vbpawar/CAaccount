@@ -19,6 +19,8 @@ function load_balance(){
 }
 
 function load_transaction(){
+    $('#service').dataTable().fnDestroy();
+        $('.serviceList').empty();
     $.ajax({
         url:'<?php echo base_url('/loadtransaction');?>',
         type:'GET',
@@ -44,27 +46,19 @@ function load_transaction(){
                }
             }
            
-           $('#wallet_data').html(options);
-           
-           $('#wallet_table').dataTable({
+            $('.serviceList').html(options);
+        $('#service').dataTable({
 
-searching: true,
+            searching: true,
+            retrieve: true,
+            bPaginate: $('tbody tr').length > 10,
+            order: [],
+            columnDefs: [{orderable: true, targets: []}],
+            dom: 'Bfrtip',
+            buttons: ['copy', 'csv', 'excel', 'pdf'],
+            destroy: true
 
-retrieve: true,
-
-bPaginate: $('tbody tr').length > 10,
-
-order: [],
-
-columnDefs: [{orderable: true, targets: [0,1,2]}],
-
-dom: 'Bfrtip',
-
-buttons: ['copy', 'csv', 'excel', 'pdf'],
-
-destroy: true
-
-});
+        });
         }
     });
 }
@@ -91,10 +85,8 @@ function load_user_balance(){
 }
 
 const showList = serviceList => {
-        $('#user_w').dataTable().fnDestroy();
-
-        $('#wallet_user_data').empty();
-
+    $('#userlist').dataTable().fnDestroy();
+        $('.userlistdata').empty();
         var options = '';
         var show = `#`;
         for (let k of serviceList.keys()) {
@@ -120,24 +112,16 @@ const showList = serviceList => {
                                                                     </tr>`;
         }
 
-        $('#wallet_user_data').html(options);
-
-        $('#user_w').dataTable({
+        $('.userlistdata').html(options);
+        $('#userlist').dataTable({
 
             searching: true,
-
             retrieve: true,
-
             bPaginate: $('tbody tr').length > 10,
-
             order: [],
-
-            columnDefs: [{orderable: true, targets: [0,1,2,3]}],
-
+            columnDefs: [{orderable: true, targets: []}],
             dom: 'Bfrtip',
-
             buttons: ['copy', 'csv', 'excel', 'pdf'],
-
             destroy: true
 
         });

@@ -211,7 +211,7 @@
 
                                                         <!-- <div class="h2 font-weight-bold">Meetings</div> -->
                                                         <div class="table-responsive">
-                                                            <table class="table" id="wallet_table">
+                                                            <table class="table" id="service">
                                                                 <thead>
                                                                     <tr>
                                                                     <th scope="col">Activity</th>
@@ -221,7 +221,7 @@
                                                                     <th scope="col">Message</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="wallet_data">
+                                                                <tbody class="serviceList">
                                                                   
                                                                   
                                                                 </tbody>
@@ -260,7 +260,7 @@
 
                                                         <!-- <div class="h2 font-weight-bold">Meetings</div> -->
                                                         <div class="table-responsive">
-                                                            <table class="table" id="user_w">
+                                                            <table class="table" id="userlist">
                                                                 <thead>
                                                                     <tr>
                                                                     <th scope="col">User</th>
@@ -270,7 +270,7 @@
                                                                     <th scope="col">#</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="wallet_user_data">
+                                                                <tbody class="userlistdata">
                                                                    
                                                                   
                                                                 </tbody>
