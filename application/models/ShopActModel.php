@@ -4,14 +4,17 @@ class ShopActModel extends CI_Model {
 
     public function get_details($roleid,$userid) {
         if($roleid ==1 || $roleid ==4){
-        $sql = "SELECT * FROM shopact pf 
-        JOIN personal_details pd ON pd.pid = pf.pid 
+        $sql = "SELECT * FROM shopact pf JOIN personal_details pd ON pd.pid = pf.pid 
         JOIN residential_details rd ON rd.rid = pf.rid 
-        JOIN shop_details sd ON sd.sid = pf.sid ORDER BY pf.shopactid DESC";
+        JOIN shop_details sd ON sd.sid = pf.sid 
+        JOIN residential_details rd1 ON sd.rid = rd1.rid 
+        JOIN user_master u ON u.userid = pf.userid ORDER BY pf.shopactid DESC";
         }else{
             $sql = "SELECT * FROM shopact pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN residential_details rd ON rd.rid = pf.rid 
+            JOIN user_master u ON u.userid = pf.userid
+            JOIN residential_details rd1 ON sd.rid = rd1.rid
             JOIN shop_details sd ON sd.sid = pf.sid WHERE pf.userid=$userid ORDER BY pf.shopactid DESC";  
         }
         $query = $this->db->query($sql);
