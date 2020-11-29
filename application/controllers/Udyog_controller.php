@@ -22,11 +22,21 @@ class Udyog_controller extends CI_Controller
     
 
     public function get_all_udyog(){
-        $result = $this->pfmodel->get_details();
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->umodel->get_details($roleid,$userid);
         if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('partners'=>[]);
+               $p_details= $this->umodel->get_partners_details($result['data'][$i]['uid']); 
+               if($p_details['status']){
+                $temp = array('partners'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
             $response = array(
                 'Message' => 'Udyom Aadhar Details loaded successfully',
-                'Data' => $result['data'],
+                'Data' => $records,
                 'Responsecode' => 200
             );
         } else {
@@ -148,7 +158,7 @@ class Udyog_controller extends CI_Controller
                                 'partnerid' => $partnerid['partnerid'],
                                 'uid'=>$id
                             );
-                            $this->shmodel->add_partner_details($shop_partners);
+                            $this->umodel->add_partner_details($shop_partners);
                             }
                     }
                 }

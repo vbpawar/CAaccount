@@ -15,7 +15,7 @@ class IncomeModel extends CI_Model {
         }
         $query = $this->db->query($sql);
        $result['status'] = true;
-       $result['data'] =  $query->result();
+       $result['data'] =   $query->result_array();
     return $result;
     }
    
@@ -31,7 +31,7 @@ class IncomeModel extends CI_Model {
             $query = $this->db->query($sql);
            $result['inid'] =  $id;
            $result['status'] = true;
-           $result['data'] =  $query->result();
+           $result['data'] =   $query->result_array();
          }else{
             $result['status'] = false;
          }

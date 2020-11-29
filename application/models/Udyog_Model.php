@@ -2,17 +2,52 @@
 
 class Udyog_Model extends CI_Model {
 
-    public function get_details() {
+    public function get_details($roleid,$userid) {
         $result = [];
-        $sql = "SELECT * FROM udyog_adhar pf 
-        JOIN personal_details pd ON pd.pid = pf.pid 
-        JOIN bank_details bd ON bd.bid = pf.pfid 
-        JOIN residential_details rd ON rd.rid = pf.rid";
+        if($roleid ==1 || $roleid ==4){
+            $sql = "SELECT * FROM udyog_adhar pf 
+            JOIN personal_details pd ON pd.pid = pf.pid 
+            JOIN bank_details bd ON bd.bid = pf.bid
+            JOIN residential_details rd ON rd.rid = pf.rid
+            JOIN shop_details sd ON sd.sid = pf.sid ORDER BY pf.uid DESC";
+            }else{
+                $sql = "SELECT * FROM udyog_adhar pf 
+                JOIN personal_details pd ON pd.pid = pf.pid 
+                JOIN bank_details bd ON bd.bid = pf.bid
+                JOIN residential_details rd ON rd.rid = pf.rid
+                JOIN shop_details sd ON sd.sid = pf.sid
+                WHERE pf.userid=$userid ORDER BY pf.uid DESC";  
+            }
         $query = $this->db->query($sql);
             $result['status'] = true;
-            $result['data'] =  $query->result();       
+            $result['data'] =  $query->result_array();   
         return $result;
-    }   
+    } 
+    
+    public function get_partners_details($id)
+    {
+        $sql = "SELECT * FROM udyog_partners sp 
+        JOIN partner_details pd ON pd.partnerid = sp.partnerid WHERE sp.uid = $id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $result['status'] = true;
+            $result['data'] =  $query->result();
+        }else{
+            $result['status'] = false;
+        }
+     return $result;
+    }
+
+    public function add_partner_details($data)
+    {
+        $this->db->insert('udyog_partners', $data); 
+
+        if ($this->db->affected_rows() > 0)
+        {
+            return TRUE;
+        }
+        return FALSE;
+    }
     
     public function add_details($data)
     {    

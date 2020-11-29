@@ -121,5 +121,11 @@ class DocsModel extends CI_Model {
         }
        
     }
+    //income docs
+    public function income_docs($id) {
+        $sql = "SELECT * FROM income_docs WHERE inid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
 }
