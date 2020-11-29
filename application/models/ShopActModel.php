@@ -16,8 +16,21 @@ class ShopActModel extends CI_Model {
         }
         $query = $this->db->query($sql);
        $result['status'] = true;
-       $result['data'] =  $query->result();
-    return $result;
+       $result['data'] =  $query->result_array();
+        return $result;
+    }
+    public function get_partners_details($id)
+    {
+        $sql = "SELECT * FROM shopact_partners sp 
+        JOIN partner_details pd ON pd.partnerid = sp.partnerid WHERE sp.shopactid = $id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $result['status'] = true;
+            $result['data'] =  $query->result();
+        }else{
+            $result['status'] = false;
+        }
+     return $result;
     }
     public function add_details($data)
     {    

@@ -24,10 +24,19 @@ class ShopAct extends CI_Controller
         $roleid = $this->input->get('roleid');
         $userid = $this->input->get('userid');
         $result = $this->shmodel->get_details($roleid,$userid);
+       
         if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('partners'=>[]);
+               $p_details= $this->shmodel->get_partners_details($result['data'][$i]['shopactid']); 
+               if($p_details['status']){
+                $temp = array('partners'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
             $response = array(
                 'Message' => 'Shop Act Details loaded successfully',
-                'Data' => $result['data'],
+                'Data' =>$records,
                 'Responsecode' => 200
             );
         } else {
@@ -111,6 +120,8 @@ class ShopAct extends CI_Controller
                 'userid' => $userid,
                 'natureofbuss' => $this->input->post('nature_of_buss'),
                 'busstype' => $this->input->post('busstype'),
+                'men'=>$this->input->post('men'),
+                'women'=>$this->input->post('women'),
                 'pid' => $pid,
                 'rid' => $rid,
                 'sid' =>$sid
@@ -332,5 +343,11 @@ class ShopAct extends CI_Controller
         } else {
             return false;
         }
+    }
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'SHOPACT');
+        echo json_encode($result);
     }
 } 

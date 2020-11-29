@@ -167,6 +167,7 @@ $route['getshopdocs']      = 'ShopAct/getshopactdocs'; //pass sh id
 $route['loadshops']        = 'ShopAct/get_all_shopact';//get all shop acts data pass roleid and userid
 $route['createshop']       =    'ShopAct/add_shop_form';
 $route['update_shop_status'] = 'ShopAct/update_status';
+$route['get_shopact_remarks'] = 'ShopAct/get_update_docs';
 
 //shop act ui
 $route['shopAct']        = 'services/ShopAct/show';
