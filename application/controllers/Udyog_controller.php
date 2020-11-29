@@ -79,35 +79,18 @@ class Udyog_controller extends CI_Controller
             'ac_number' => $this->input->post('ac_number'),
             'ifsc_number' => $this->input->post('ifsc_number')
         );
-
-        $shop_details = array(
-            'premise_name ' => $this->input->post('s_premise_name'),
-            'flat_number' => $this->input->post('s_flat_number'),
-            'road' => $this->input->post('s_road'),
-            'area' => $this->input->post('s_area'),
-            'village' => $this->input->post('s_village'),
-            'taluka' => $this->input->post('s_taluka'),
-            'district' => $this->input->post('s_district'),
-            'state' => $this->input->post('s_state'),
-            'pincode' => $this->input->post('s_pincode')
-        );
-        if (!empty($shop_details)) {
-            $shopdetails = $this->rmodel->add_details($shop_details);
-            if ($shopdetails['status']) {
-               $r_id = $shopdetails['rid'];
                $sdetails = array(
-                   'rid'=>$r_id,
                 'shop_name'=>$this->input->post('shop_name'),
                 'office_contact'=>$this->input->post('office_contact'),
                 'office_mailid'=>$this->input->post('office_mailid'),
                 'buss_start_date'=>$this->input->post('buss_start_date')
                );
-            }
+            
             $sid = $this->smodel->add_details($sdetails);
             if($sid['status']){
                 $sid = $sid['sid'];
             }
-        }
+        
         if (!empty($pdetails)) {
             $pid = $this->pmodel->add_details($pdetails);
         }
@@ -139,6 +122,7 @@ class Udyog_controller extends CI_Controller
                 'female'=>$this->input->post('female')
             );
             $partner_data = $this->input->post('partnerdata');
+            $partner_data= json_decode($partner_data);
             $result = $this->umodel->add_details($data);
             if ($result['status']) {
                 $id       = $result['uid'];
