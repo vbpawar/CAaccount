@@ -7,11 +7,9 @@
         $('#pan_number').val(product.pan_number);
         $('#aadhar_name').val(product.aadhar_name);
         $('#aadhar_number').val(product.aadhar_number);
-        $('#dob').val(product.dob);
         $('#contact_number').val(product.contact_number);
         $('#emailid').val(product.emailid);
-        $('#uan_number').val(product.uan_number);
-        $('#uan_password').val(product.uan_password);
+        $('#dob').val(product.dob);
         $('#premise_name').val(product.premise_name);
         $('#flat_number').val(product.flat_number);
         $('#road').val(product.road);
@@ -21,13 +19,53 @@
         $('#district').val(product.district);
         $('#state').val(product.state);
         $('#pincode').val(product.pincode);
-        $('#bank_name').val(product.bank_name);
-        $('#ac_number').val(product.ac_number);
-        $('#ifsc_number').val(product.ifsc_number);
-
+        $('#s_premise_name').val(product.s_premise_name);
+        $('#s_flat_number').val(product.s_flat_number);
+        $('#s_road').val(product.s_road);
+        $('#s_area').val(product.s_area);
+        $('#s_village').val(product.s_village);
+        $('#s_taluka').val(product.s_taluka);
+        $('#s_district').val(product.s_district);
+        $('#s_state').val(product.s_state);
+        $('#s_pincode').val(product.s_pincode);
+        $('#shop_name').val(product.shop_name);
+        $('#office_contact').val(product.office_contact);
+        $('#office_mailid').val(product.office_mailid);
+        $('#buss_start_date').val(product.buss_start_date);
+        $('#nature_of_buss').val(product.natureofbuss);
+        $('#busstype').val(product.busstype);
+        $('#men').val(product.men);
+        $('#women').val(product.women);
+        
+        showPartnersList(product.partners);
     }
 
     loadDetails(details);
+
+
+function showPartnersList(pList) {
+        const count = pList.length;
+        var tableData='';
+        if(count>0){
+            for(var i=0;i<count;i++){
+                tableData += $('#partnerTable tbody').html();
+                tableData += `<tr id="r` + pList[i]['aadhar_number'] + `">
+                        <td>` + pList[i]['partner_name'] + `</td>
+                        <td>` + pList[i]['aadhar_number'] + `</td>
+                        <td>` + pList[i]['pan_number'] + `</td>
+                        <td>` + pList[i]['emailid'] + `</td>
+                        <td>` + pList[i]['contact_number'] + `</td>
+                        </tr>`;
+            }
+            
+
+        }else{
+            tableData += $('#partnerTable tbody').html();
+            tableData +=`<tr><td colspan="5" align="center">No records found!</td></tr>`;
+        }
+        $('#partnerData').html(tableData);
+    }
+
 
 
 var form  = document.getElementById("shopact-form");

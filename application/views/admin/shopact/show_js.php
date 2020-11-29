@@ -228,7 +228,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'getremarksdocs',
+            url: url + 'get_shopact_remarks',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',
