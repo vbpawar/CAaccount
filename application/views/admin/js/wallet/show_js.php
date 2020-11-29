@@ -34,7 +34,7 @@ function load_transaction(){
                                                                         
                                                                     
                                                                         <td class="pt-3"> <span class="fa fa-exchange mr-1"></span> `+data[i].transaction_type+` </td>
-                                                                        <td class="pt-3"><span><img src="<?php echo base_url('/admin_assets/img/phonepe.png'); ?>" ></span></td>
+                                                                        <td class="pt-3"><span>`+data[i].payment_id+`</span></td>
                                                                         <td class="pt-3">`+data[i].transactiondate+`</td>
                                                                         <td class="pt-3"> ₹ `+data[i].amount+` </td>
                                                                         <td class="pt-3"> ₹ `+data[i].message+` </td>

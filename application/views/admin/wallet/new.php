@@ -215,7 +215,7 @@
                                                                 <thead>
                                                                     <tr>
                                                                     <th scope="col">Activity</th>
-                                                                    <th scope="col">Mode</th>
+                                                                    <th scope="col">Payment Id</th>
                                                                     <th scope="col">Date</th>
                                                                     <th scope="col">Amount</th>
                                                                     <th scope="col">Message</th>
