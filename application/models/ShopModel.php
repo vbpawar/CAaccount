@@ -38,8 +38,8 @@ class ShopModel extends CI_Model {
     public function update_shop_status($id,$data)
     {
         $result = false;
-        $this->db->where('sid',$id);
-        if($this->db->update('shop_details',$data)){
+        $this->db->where('shopactid',$id);
+        if($this->db->update('shopact',$data)){
             $result['status'] = true;
         }else{
             $result['status'] = false;

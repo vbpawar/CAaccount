@@ -117,7 +117,7 @@
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="pf-withdrawl-form" method="post">
+                        <form id="udyog-form" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -600,7 +600,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="bankstat" id="bankstat" onchange="loadFile(event, 'bankstatpre')" />
+                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event, 'bankstatpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -612,7 +612,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'form16pre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -626,7 +626,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Cancelled Check Passbook</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="passport" name="passport" type="file" onchange="loadFile(event, 'form16pre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -655,7 +655,7 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Electricity Bill of Shop</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="electricity" name="electricity" type="file" onchange="loadFile(event, 'form16pre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -677,7 +677,7 @@
                                                                             <h6>Other Document for Partnership/Private Limited/Public Private Limited</h6>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Other Documents</label>
-                                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="otherdoc" name="otherdoc" type="file" onchange="loadFile(event, 'form16pre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -694,7 +694,7 @@
                                                     </div>
 
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                     </p>
                                                 </div>
 

@@ -30,7 +30,7 @@
     loadDetails(details);
 
 
-var form  = document.getElementById("pf-withdrawl-form");
+var form  = document.getElementById("shopact-form");
 var allElements = form.elements;
 for (var i = 0, l = allElements.length; i < l; ++i) {
     // allElements[i].readOnly = true;
@@ -40,14 +40,5 @@ for (var i = 0, l = allElements.length; i < l; ++i) {
 
 
 
-    $(document).ready(function () {
-//        $("#pf-withdrawl-form :input").prop("disabled", true);
-$("body").find("*").prop('disabled', true);
-    });
-//    function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+    
 </script>

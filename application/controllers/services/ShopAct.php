@@ -39,9 +39,9 @@ class ShopAct extends CI_Controller {
         $this->load->view('admin/footer');
     }
     public function update() {
-
+         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/shopact/update');
-        $this->load->view('admin/js/jquery_validation_js');
+        $this->load->view('admin/shopact/update_js');
 
     }
     
