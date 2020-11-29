@@ -261,7 +261,7 @@ class Udyog_controller extends CI_Controller
                );
                 $result = $this->service->deduct_amount($wallet_data);
         }
-        $result = $this->umodel->update_status($id, $data);
+        $result = $this->umodel->updatestatus($id, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
