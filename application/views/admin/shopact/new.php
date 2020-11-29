@@ -302,6 +302,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="tab-pane fade" id= "shopdetails">
                                                 <div class="row">
@@ -412,6 +413,23 @@
                                                                 <label class="control-label">Pincode</label>
 
                                                                 <input type="text" class="form-control" placeholder="Pincode" name="s_pincode" id="s_pincode" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h4>Number of Employee</h4>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Male</label>
+
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Female</label>
+
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
                                                             </div>
                                                         </div>
                                                     </div>
