@@ -37,7 +37,7 @@ function load_transaction(){
                                                                         <td class="pt-3"><span>`+data[i].payment_id+`</span></td>
                                                                         <td class="pt-3">`+data[i].transactiondate+`</td>
                                                                         <td class="pt-3"> ₹ `+data[i].amount+` </td>
-                                                                        <td class="pt-3"> ₹ `+data[i].message+` </td>
+                                                                        <td class="pt-3">`+data[i].message+` </td>
                                                                     </tr>
                                                                     <tr id="spacing-row">
                                                                         <td></td>
