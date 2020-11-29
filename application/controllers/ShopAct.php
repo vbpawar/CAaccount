@@ -57,7 +57,8 @@ class ShopAct extends CI_Controller
             'aadhar_name' => $this->input->post('aadhar_name'),
             'aadhar_number' => $this->input->post('aadhar_number'),
             'contact_number' => $this->input->post('contact_number'),
-            'emailid' => $this->input->post('emailid')
+            'emailid' => $this->input->post('emailid'),
+            'dob'=>$this->input->post('dob')
         );
         
         //Residential details

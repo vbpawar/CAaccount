@@ -176,7 +176,7 @@
                                                                     <label class="form-label">Category</label>
                                                                     <select class="form-control" id="category" name="category" required="">
                                                                         <option value="1" class="form-control" >Individual </option>
-                                                                        <option class="form-control" value="2">Partner</option>
+                                                                        <option class="form-control" value="2">Partnership</option>
                                                                     <option class="form-control" value="3">Private Limited</option>
                                                                     <option class="form-control" value="4">Public Private Limited</option>
                                                                     
