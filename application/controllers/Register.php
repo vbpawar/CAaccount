@@ -79,6 +79,7 @@ class Register extends CI_Controller {
 			$this->setRegistrationData();
 			$userdata = $_SESSION['Data'];
 			$data = array(
+				'payment_id'=> $_POST['razorpay_payment_id'],
 				'userid'=>$userdata['userid'],
 				'transaction_type'=>'Credit',
 				'amount'=>$_SESSION['payable_amount'],
