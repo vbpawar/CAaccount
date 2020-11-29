@@ -48,8 +48,8 @@
                     status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ',4)">Completed</button>';
                     break;
             }
-            tblData += '<tr><td>' + services.aadhar_name + '</td>';
-            tblData += '<td>' + services.pan_number + '</td>';
+            tblData += '<tr><td>' + services.firstname+' '+services.lastname + '</td>';
+            tblData += '<td>' + services.aadhar_name + '</td>';
             tblData += '<td>' + services.aadhar_number + '</td>';
             tblData += '<td>' + services.contact_number + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
