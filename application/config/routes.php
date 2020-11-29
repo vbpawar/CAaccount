@@ -180,3 +180,11 @@ $route['createudyog']  = 'udyog_controller/add_udyog_form';
 $route['loadudyog']  = 'udyog_controller/get_all_udyog';
 $route['getudyogdocs'] = 'udyog_controller/get_udyog_docs';
 $route['updateudyog_status']= 'udyog_controller/update_status';
+$route['get_udyog_remarks'] = 'udyog_controller/get_update_docs';
+
+//income apis 
+$route['createincome']  = 'IncomeTax/add_income_form';
+$route['loadincome']  = 'IncomeTax/get_all_incomes';
+$route['getincomedocs'] = 'IncomeTax/get_income_docs';
+$route['update_income_status']= 'IncomeTax/update_status';
+$route['get_income_remarks'] = 'IncomeTax/get_update_docs';

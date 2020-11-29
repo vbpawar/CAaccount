@@ -23,9 +23,17 @@ class IncomeTax extends CI_Controller{
         $userid = $this->input->get('userid');
         $result = $this->imodel->get_details($roleid,$userid);
         if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('partners'=>[]);
+               $p_details= $this->imodel->get_partners_details($result['data'][$i]['inid']); 
+               if($p_details['status']){
+                $temp = array('partners'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
             $response = array(
                 'Message' => 'Income Details loaded successfully',
-                'Data' => $result['data'],
+                'Data' => $records,
                 'Responsecode' => 200
             );
         } else {
@@ -171,14 +179,14 @@ class IncomeTax extends CI_Controller{
                );
                 $result = $this->service->deduct_amount($wallet_data);
         }
-        $result = $this->imodel->update_shop_status($shid, $data);
+        $result = $this->imodel->updatestatus($id, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('INCOME', $shid, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('INCOME', $shid, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }
@@ -215,5 +223,11 @@ class IncomeTax extends CI_Controller{
         } else {
             return false;
         }
+    }
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'INCOME');
+        echo json_encode($result);
     }
 }

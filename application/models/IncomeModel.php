@@ -6,11 +6,13 @@ class IncomeModel extends CI_Model {
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM incometax pf 
         JOIN personal_details pd ON pd.pid = pf.pid 
+        JOIN user_master u ON u.userid = pf.userid
         JOIN residential_details rd ON rd.rid = pf.rid  ORDER BY pf.inid DESC";
         }else{
             $sql = "SELECT * FROM incometax pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN residential_details rd ON rd.rid = pf.rid 
+            JOIN user_master u ON u.userid = pf.userid
             WHERE pf.userid=$userid ORDER BY pf.inid DESC";  
         }
         $query = $this->db->query($sql);
@@ -37,6 +39,20 @@ class IncomeModel extends CI_Model {
          }
          return $result;
     }
+    public function get_partners_details($id)
+    {
+        $sql = "SELECT * FROM incometax_partners sp 
+        JOIN partner_details pd ON pd.partnerid = sp.partnerid WHERE sp.inid = $id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $result['status'] = true;
+            $result['data'] =  $query->result();
+        }else{
+            $result['status'] = false;
+        }
+     return $result;
+    }
+
     public function add_partner_details($data)
     {
         $this->db->insert('incometax_partners', $data); 
@@ -55,18 +71,17 @@ class IncomeModel extends CI_Model {
            return false;
          }
     }
-
-    
-        public function updatedigitalstatus($did,$data)
-        {
-            $result = false;
-            $this->db->where('inid',$did);
-            if($this->db->update('incometax',$data)){
-                $result['status'] = true;
-            }else{
-                $result['status'] = false;
-            }
-            return $result;
-        }       
+    public function updatestatus($id,$data)
+    {
+        $result = false;
+        $this->db->where('inid',$id);
+        if($this->db->update('incometax',$data)){
+            $result['status'] = true;
+        }else{
+            $result['status'] = false;
+        }
+        return $result;
+    }    
+ 
 
 }

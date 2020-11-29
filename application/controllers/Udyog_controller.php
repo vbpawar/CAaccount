@@ -307,5 +307,10 @@ class Udyog_controller extends CI_Controller
         }
     }
    
-    
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'UDYOG');
+        echo json_encode($result);
+    }
 } 
