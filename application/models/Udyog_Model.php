@@ -9,12 +9,14 @@ class Udyog_Model extends CI_Model {
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN bank_details bd ON bd.bid = pf.bid
             JOIN residential_details rd ON rd.rid = pf.rid
+            JOIN user_master u ON u.userid = pf.userid
             JOIN shop_details sd ON sd.sid = pf.sid ORDER BY pf.uid DESC";
             }else{
                 $sql = "SELECT * FROM udyog_adhar pf 
                 JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN bank_details bd ON bd.bid = pf.bid
                 JOIN residential_details rd ON rd.rid = pf.rid
+                JOIN user_master u ON u.userid = pf.userid
                 JOIN shop_details sd ON sd.sid = pf.sid
                 WHERE pf.userid=$userid ORDER BY pf.uid DESC";  
             }
