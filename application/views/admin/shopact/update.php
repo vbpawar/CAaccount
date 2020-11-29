@@ -151,13 +151,13 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
+<!--                                                    <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs five">
                                                                 <i class="fa fa-file"></i>
                                                             </span>
                                                         </a>
-                                                    </li>
+                                                    </li>-->
 
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
@@ -414,61 +414,32 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <h4>Number of Employee</h4>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Male</label>
+
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Female</label>
+
+                                                                <input type="text" class="form-control" name="aadhar" id="aadhar" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="partenship">
                                                     <div class="row">
                                                         <div class="partnerError text-center"></div>
-                                                        <div class="col-sm-10">
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="text-danger">*</span> Partner Name</label>
-                                                                    <input type="text" class="form-control" placeholder="Partner Name" name="partnerName" id="partnerName" />
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="text-danger">*</span> Aadhar Card Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="Aadhar Card Number" name="pAadhar" id="pAadhar" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="text-danger">*</span> Pancard Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="Pancard Number" name="pPancard" id="pPancard" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="text-danger">*</span> Email Id</label>
-
-                                                                    <input type="email" class="form-control" placeholder="Email Id" name="pEmail" id="pEmail" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="text-danger">*</span> Mobile Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="Mobile Number" name="pMobile" id="pMobile" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--// add parteners button-->
-                                                        <div class="col-sm-2">
-                                                            <div class="row mt-5" style="margin-top: 25px;">
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"></label>
-                                                                        <button type="button" class="btn btn-info" id="addPartener">Add Parteners</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            
 
                                                         <!--//partener table list-->
-                                                        <div class="row">
+                                                        <div class="row text-center">
                                                             <table class="table table-bordered" id="partnerTable">
                                                                 <thead>
                                                                     <tr>
