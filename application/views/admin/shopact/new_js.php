@@ -30,25 +30,27 @@
     }
 
     $('#shopact-form').on('submit', function (e) {
+
         e.preventDefault();
-      var  patnersData = getPartnersData();
-      patnersData= JSON.stringify(patnersData);
-    console.log(patnersData);
-  var returnVal = validChecker();
+
+    var returnVal = validChecker();
+    var partnerData=getPartnersData();
+   var jsonString= JSON.stringify(partnerData);
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('4');
+        var amount=servicecharges.get('1');
         formdata.append('userid',userid);
-        console.log(formdata);
+        formdata.append('partnerdata',jsonString);
+
         if (returnVal) {
-            //  if(check_balance(userid,amount)){
+             if(check_balance(userid,amount)){
             $.ajax({
 
                 url: url + 'createshop',
 
                 type: 'POST',
 
-                data: {'partnerdata':patnersData},
+                data: formdata,
 
                 cache: false,
 
@@ -79,10 +81,10 @@
                 }
 
             });
-            //  }else{
-            //      window.open(url+ 'wallet','_blank');
-            //     // window.location.replace(url + 'wallet');
-            //  }
+             }else{
+                 window.open(url+ 'wallet','_blank');
+                // window.location.replace(url + 'wallet');
+             }
 
         }
 

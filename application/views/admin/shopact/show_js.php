@@ -134,7 +134,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getshopactdocs',
+            url: url + 'getshopdocs',
 
             type: 'POST',
 

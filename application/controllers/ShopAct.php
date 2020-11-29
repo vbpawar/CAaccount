@@ -116,9 +116,7 @@ class ShopAct extends CI_Controller
                 'sid' =>$sid
             );
             $partner_data = $this->input->post('partnerdata');
-           echo gettype($partner_data);
-            print_r($partner_data[0]);exit;
-//            print_r($partner_data);exit;
+           $partner_data= json_decode($partner_data);
             $result = $this->shmodel->add_details($data);
             if ($result['status']) {
                 $id       = $result['shopactid'];
@@ -127,11 +125,11 @@ class ShopAct extends CI_Controller
         foreach ($partner_data as $contact)
         {
             $partners = array(
-                'partner_name' => $contact['p_partner_name'],
-                'aadhar_number' => $contact['p_aadhar_number'],
-                'pan_number' => $contact['p_pan_number'],
-                'contact_number'=>$contact['p_contact_number'],
-                'emailid'=>$contact['p_emailid']
+                'partner_name' => $contact->p_partner_name,
+                'aadhar_number' => $contact->p_aadhar_number,
+                'pan_number' => $contact->p_pan_number,
+                'contact_number'=>$contact->p_contact_number,
+                'emailid'=>$contact->p_emailid
                 );
                 $partnerid = $this->parmodel->add_details($partners);
             if($partnerid['status']){
@@ -275,7 +273,7 @@ class ShopAct extends CI_Controller
     }
     public function update_status()
     {
-        $shid    = $this->input->post('shid');
+        $shopactid    = $this->input->post('shopactid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
@@ -290,14 +288,14 @@ class ShopAct extends CI_Controller
                );
                 $result = $this->service->deduct_amount($wallet_data);
         }
-        $result = $this->shmodel->update_shop_status($shid, $data);
+        $result = $this->smodel->update_shop_status($shopactid, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('SHOPACT', $shopactid, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('SHOPACT', $shid, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('SHOPACT', $shopactid, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }

@@ -171,6 +171,7 @@ $route['update_shop_status'] = 'ShopAct/update_status';
 //shop act ui
 $route['shopAct']        = 'services/ShopAct/show';
 $route['shopAct/create'] = 'services/ShopAct/create';
+$route['shopAct/update'] = 'services/ShopAct/update';
 
 //udyog apis
 
