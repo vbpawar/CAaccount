@@ -172,12 +172,28 @@ class User extends CI_Controller {
                         'Responsecode' => 302
                     );
                 } else {
-//                    $contactdetails = $contact['data'];
-//                    $userdata = $user['data'];
+                    $userdata = $_SESSION['Data'];
+                    if($userdata['role']=='2'){
+                        $dist_data = array(
+                            'distributorid'=>$userdata['userid'],
+                            'retailorid' => $userid
+                            ); 
+                            $add = $this->service->add_retailors($dist_data);
+                    }
+                   $result = $this->contact->createUserContact($contact);
+                   $this->user->delete_access($userid);
+                   $access= $this->input->post('access');
+                   $access = explode(',',$access);
+                   for($i=0;$i<count($access);$i++){
+                    $data = array(
+                        'userid'=>$userid,
+                        'activityid'=>$access[$i]
+                    );
+                 $insert[] = $this->user->create_batch($data);
+                }
                     $response = array(
                         'Message' => 'user updated successfully',
-//                        'contactdetails' => $contactdetails,
-//                        'userdata' => $userdata,
+                       'contactdetails' =>  $insert,
                         'Responsecode' => 200
                     );
                 }
