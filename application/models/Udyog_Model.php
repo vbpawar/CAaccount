@@ -5,20 +5,30 @@ class Udyog_Model extends CI_Model {
     public function get_details($roleid,$userid) {
         $result = [];
         if($roleid ==1 || $roleid ==4){
-            $sql = "SELECT * FROM udyog_adhar pf 
+            $sql = "SELECT pf.uid,pf.userid,pf.nature_of_buss,pf.buss_type,pf.turn_over_amt,pf.gst_number,pf.male,pf.female,pf.status,pf.status,pf.remark,pf.createdat,pf.updatedat,
+            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
+            rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
+            u.firstname,u.lastname,u.roleid,
+            bd.bank_name,bd.ac_number,bd.ifsc_number
+            FROM udyog_adhar pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN bank_details bd ON bd.bid = pf.bid
             JOIN residential_details rd ON rd.rid = pf.rid
             JOIN user_master u ON u.userid = pf.userid
             JOIN shop_details sd ON sd.sid = pf.sid ORDER BY pf.uid DESC";
             }else{
-                $sql = "SELECT * FROM udyog_adhar pf 
+                $sql = "SELECT pf.uid,pf.userid,pf.nature_of_buss,pf.buss_type,pf.turn_over_amt,pf.gst_number,pf.male,pf.female,pf.status,pf.status,pf.remark,pf.createdat,pf.updatedat,
+                pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
+                rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
+                u.firstname,u.lastname,u.roleid,
+                bd.bank_name,bd.ac_number,bd.ifsc_number
+                FROM udyog_adhar pf 
                 JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN bank_details bd ON bd.bid = pf.bid
                 JOIN residential_details rd ON rd.rid = pf.rid
                 JOIN user_master u ON u.userid = pf.userid
                 JOIN shop_details sd ON sd.sid = pf.sid
-                WHERE pf.userid=$userid ORDER BY pf.uid DESC";  
+                WHERE pf.userid=$userid";  
             }
         $query = $this->db->query($sql);
             $result['status'] = true;
@@ -56,11 +66,17 @@ class Udyog_Model extends CI_Model {
         $result = [];
         if($this->db->insert('udyog_adhar', $data)){
             $uid = $this->db->insert_id();
-            $sql = "SELECT * FROM udyog_adhar pf 
+            $sql = "SELECT pf.uid,pf.userid,pf.nature_of_buss,pf.buss_type,pf.turn_over_amt,pf.gst_number,pf.male,pf.female,pf.status,pf.status,pf.remark,pf.createdat,pf.updatedat,
+            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
+            rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
+            u.firstname,u.lastname,u.roleid,
+            bd.bank_name,bd.ac_number,bd.ifsc_number
+            FROM udyog_adhar pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
-            JOIN bank_details bd ON bd.bid = pf.bid 
-            JOIN residential_details rd ON rd.rid = pf.rid 
-            JOIN shop_details sd ON sd.sid = pf.sid 
+            JOIN bank_details bd ON bd.bid = pf.bid
+            JOIN residential_details rd ON rd.rid = pf.rid
+            JOIN user_master u ON u.userid = pf.userid
+            JOIN shop_details sd ON sd.sid = pf.sid
             WHERE pf.uid = $uid";
             $query = $this->db->query($sql);
            $result['uid'] =  $uid;

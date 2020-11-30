@@ -25,17 +25,24 @@ loadList();
 
         $('.serviceList').empty();
 
-        var tblData = '', badge;
-
+        var tblData = '', badge,tlist='';
+        var roleid = <?php echo $_SESSION['Data']['role'];?>;
         for (let k of serviceList.keys()) {
 
             let services = serviceList.get(k);
+            tlist = '';
+            console.log(services);
+            if(roleid=='1'){
+                tlist = '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;&nbsp; <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
+            }else{
+                tlist = '<td style="width:5%"></td>';  
+            }
             tblData += '<tr><td>' +services.servicename+'</td>';
             tblData += '<td>'+services.charges+'</td>';
 
             tblData += '<div class="table-actions">';
 
-            tblData += '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;&nbsp; <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
+            tblData += tlist;
 
             tblData += '</div></tr>';
 
