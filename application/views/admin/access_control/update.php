@@ -102,7 +102,7 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <a href="<?php echo base_url('users/show');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                <a href="<?php echo base_url('users/show'); ?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">Add New Entry</h3>
                         </div>
@@ -166,7 +166,11 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Role</label>
                                                                 <select name="roleid" id="roleid" class="form-control">
-                                                                  
+                                                                    <option value="1">Admin</option>
+                                                                    <option value="2">Distributor</option>
+                                                                    <option value="3">Retailor</option>
+                                                                    <option value="4">Employee</option>
+                                                                    <option value="5">Customer</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -175,6 +179,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">First Name</label>
                                                                 <input type="text" class="form-control" placeholder="First" name="firstname" id="firstname" />
+                                                                <input type="hidden" class="form-control"  name="userid" id="userid"/>
                                                             </div>
                                                         </div>
 
@@ -250,19 +255,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="services">
-                                                <div class="row role_access">
-                                                 
-                                                   
+                                                    <div class="row role_access">
+
+
+                                                    </div>
+
                                                 </div>
-                                               
-                                                </div>
-                                                
-                                               
+
+
                                                 <div class="tab-pane fade" id="sbm">
-                                                        <p class="text-center">
-                                                            <button class="btn btn-success btn-outline-rounded green" type="submit">Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
-                                                        </p>
-                                                   
+                                                    <p class="text-center">
+                                                        <button class="btn btn-success btn-outline-rounded green" type="submit">Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                    </p>
+
                                                 </div>
                                                 <!-- <div class="tab-pane fade" id="settings">
                                                             <h3 class="head text-center">Drop comments!</h3>
@@ -303,3 +308,4 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
+<div class="loader"></div>

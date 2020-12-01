@@ -3,11 +3,12 @@
     function loadDetails(product) {
 
         $('#userid').val(product.userid);
-        $('#roleid').change(product.roleid);
+        $('#roleid').val(product.roleid);
         $('#emailid').val(product.emailid);
         $('#firstname').val(product.firstname);
         $('#lastname').val(product.lastname);
         $('#password').val(product.upassword);
+        $('#upassword').val(product.upassword);
         $('#contact').val(product.contact);
         $('#country').val(product.country);
         $('#ustate').val(product.ustate);
@@ -40,7 +41,7 @@
             }
         });
     }
-    loadroles();
+//    loadroles();
     loadDetails(details);
     checkedAccess(details.userid);
 
@@ -60,7 +61,7 @@
 //                        console.log(data[i].activityid + " activities=" + userAccess[i]['activityid']);
 //                        console.log(userAccess[i]['userid'] + " user=" + userid);
 
-                         
+
                         ////////////////////
                         options += ` <div class="form-check col-sm-4" > <input class="form-check-input " id="activity` + data[i].activityid + `"  type="checkbox" value="` + data[i].activityid + `">
                                                         <label class="form-check-label">
@@ -71,26 +72,30 @@
 
                 }
                 $('.role_access').html(options);
-                for(var j=0;j<userAccess.length;j++){
-                    if(userAccess[j]['userid'] == userid){
-                        document.getElementById("activity"+userAccess[j]['activityid']).checked = true;
+                for (var j = 0; j < userAccess.length; j++) {
+                    if (userAccess[j]['userid'] == userid) {
+                        document.getElementById("activity" + userAccess[j]['activityid']).checked = true;
                     }
                 }
             }
         });
     }
 
-    $('#userForm').on('submit', function (e) {
-
+     $('#accessControlForm').on('submit', function (e) {
         e.preventDefault();
+        var array = []
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
-//    var returnVal = $("#userForm").valid();
-
+        for (var i = 0; i < checkboxes.length; i++) {
+            array.push(checkboxes[i].value)
+        }
+        var formdata = new FormData(this);
+            formdata.append('access',array);
         if (true) {
-            var formdata = new FormData(this);
+
             $.ajax({
 
-                url: url + 'User/updateuser',
+                url: url + 'updateprofile',
 
                 type: 'POST',
 
@@ -106,12 +111,14 @@
 
                 success: function (response) {
 //                alert(response.Data.customerId);
-//                console.log(response);
+                console.log(response);
 
                     if (response.Responsecode == 200) {
-//                         var productid = response.Data.customerId;
-//                    productid = productid.toString();
+
                         swal("Congrats!", response.Message, "success");
+
+
+
                         goback();
 
                     } else {
@@ -128,10 +135,10 @@
 
     });
 
-//    function goback() {
+    function goback() {
 //
 //        window.location.replace(url + 'services/certificate/show');
-////$('.showDiv').show();
-////$('.updateDiv').hide();
-//    }
+$('.showDiv').show();
+$('.updateDiv').hide();
+    }
 </script>
