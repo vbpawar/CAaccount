@@ -4,9 +4,9 @@ class LoginModel extends CI_Model {
 
     public function checkauth($user,$pass) {
         $result = array();
-        $this->db->where('emailid', $user);  
-        $this->db->where('upassword', $pass);  
-        $query = $this->db->get('user_master');  
+        $sql = "SELECT * FROM user_master
+         WHERE emailid = '$user' AND upassword='$pass' AND isactive=1";
+        $query = $this->db->query($sql);  
         if($query->num_rows() > 0)  
         {  
             $result['data'] = $query->result();

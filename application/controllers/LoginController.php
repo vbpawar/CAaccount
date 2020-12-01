@@ -75,7 +75,7 @@ class LoginController extends CI_Controller {
                 );
             } else {
                 $response = array(
-                    'Message' => 'Invalid user id or password',
+                    'Message' => 'Invalid user id or password or contact adminstrator',
                     'Responsecode' => 204
                 );
             }
