@@ -48,7 +48,8 @@ class User_model extends CI_Model {
             }
 
     public function findUser($userid) {
-        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
+        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`
+        ,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` where u.userid='$userid'");
         return $query->row();
     }
 
@@ -61,6 +62,13 @@ class User_model extends CI_Model {
     public function create_batch($data){
         $query = $this->db->insert('user_access_control', $data);
       return $this->db->insert_id();
+      }
+      public function activate_user($userid)
+      {
+        $sql = "UPDATE  user_master SET isactive = CASE WHEN isactive = 1 THEN  isactive = 0 WHEN 
+        isactive = 0 THEN  isactive = 0 END WHERE userid= $userid";
+         $query = $this->db->query($sql);
+         return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
       }
      
 }

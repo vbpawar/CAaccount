@@ -243,5 +243,24 @@ class User extends CI_Controller {
         }
         echo json_encode($response);
     }
+    public function activateuser()
+    {
+     $userid = $this->input->post('userid');
+     $userResult = $this->user->activate_user($userid);
+     if ($userResult) {
+        $response = array(
+            'Message' => 'user Details successfully',
+            'Responsecode' => 200
+        );
+    } else {
+        
+        $response = array(
+            'Message' => 'Sorry try again',
+            'Responsecode' => 302
+        );
+    }
+    echo json_encode($response);
+    }
+
 
 }
