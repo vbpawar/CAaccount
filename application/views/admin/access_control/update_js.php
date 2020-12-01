@@ -110,9 +110,6 @@
                 dataType: 'json',
 
                 success: function (response) {
-//                alert(response.Data.customerId);
-                console.log(response);
-
                     if (response.Responsecode == 200) {
 
                         swal("Congrats!", response.Message, "success");
@@ -136,9 +133,8 @@
     });
 
     function goback() {
-//
-//        window.location.replace(url + 'services/certificate/show');
-$('.showDiv').show();
-$('.updateDiv').hide();
+        window.location.replace(url + 'users/show');
+// $('.showDiv').show();
+// $('.updateDiv').hide();
     }
 </script>

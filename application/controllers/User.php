@@ -164,40 +164,38 @@ class User extends CI_Controller {
             $userResult;
             $contactResult;
             $userResult = $this->user->updateuser($userid, $data);
-            if ($userResult) {
-                $contactResult = $this->contact->updatecontact($userid, $contact);
-                if ($userResult === FALSE && $contactResult === FALSE) {
+            $contactResult = $this->contact->updatecontact($userid, $contact);
+            $userdata = $_SESSION['Data'];
+            if($userdata['role']=='2'){
+                $dist_data = array(
+                    'distributorid'=>$userdata['userid'],
+                    'retailorid' => $userid
+                    ); 
+                    $add = $this->service->add_retailors($dist_data);
+            }
+            $this->user->delete_access($userid);
+            $access= $this->input->post('access');
+            $access = explode(',',$access);
+            for($i=0;$i<count($access);$i++){
+             $data = array(
+                 'userid'=>$userid,
+                 'activityid'=>$access[$i]
+             );
+          $insert[] = $this->user->create_batch($data);
+         }
+                if ($userResult === FALSE && $contactResult === FALSE && empty($insert)) {
                     $response = array(
                         'Message' => 'Sorry try again',
                         'Responsecode' => 302
                     );
                 } else {
-                    $userdata = $_SESSION['Data'];
-                    if($userdata['role']=='2'){
-                        $dist_data = array(
-                            'distributorid'=>$userdata['userid'],
-                            'retailorid' => $userid
-                            ); 
-                            $add = $this->service->add_retailors($dist_data);
-                    }
-                   $result = $this->contact->createUserContact($contact);
-                   $this->user->delete_access($userid);
-                   $access= $this->input->post('access');
-                   $access = explode(',',$access);
-                   for($i=0;$i<count($access);$i++){
-                    $data = array(
-                        'userid'=>$userid,
-                        'activityid'=>$access[$i]
-                    );
-                 $insert[] = $this->user->create_batch($data);
-                }
                     $response = array(
                         'Message' => 'user updated successfully',
                        'contactdetails' =>  $insert,
                         'Responsecode' => 200
                     );
                 }
-            }
+            
         }
         echo json_encode($response);
     }

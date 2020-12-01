@@ -8,7 +8,9 @@ class User_model extends CI_Model {
     }
 
     public function getAllUsersList() {
-        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress,rm.role FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` 
+        $query = $this->db->query("SELECT u.isactive,u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,
+        u.`lastname`,u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress,rm.role 
+        FROM `user_master` u LEFT JOIN contact_master c ON u.`userid`=c.`userid` 
         INNER JOIN role_master rm ON rm.roleid = u.roleid ORDER BY u.userid DESC");
         return $query->result();
     }

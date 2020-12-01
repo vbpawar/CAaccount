@@ -53,20 +53,22 @@
             if(flag){
                 action = '<td style="width:5%"></td>';
             }   else{
-                action = '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a></td>';
-                //  <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a>--></td>';
+                action = '<td style="width:5%"><a href="#" onclick="editData(' + (k) + ')" title="edit details"><i class="fa fa-edit text-success"></i></a> <a href="#!" onclick="deleteData(' + (k) + ')" title="Active/Inactive"><i class="fa fa-info text-danger"></i></a></td>';
+                //  <a href="#!" onclick="deleteData(' + (k) + ')" title="Delete"><i class="fa fa-trash text-danger"></i></a></td>';
+            }
+            if(services.isactive=='1'){
+                status = '<span class="badge badge-pill badge-primary">Active</span>';
+            }else{
+                status = '<button class="badge badge-pill badge-danger">InActive</button>';
             }
             tblData += '<tr><td>' + services.firstname+" "+services.lastname + '</td>';
             tblData += '<td>' + services.contact + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
             tblData += '<td>' + services.role + '</td>';
-
+            tblData += '<td>' + status + '</td>';
             tblData += '<div class="table-actions">';
-
             tblData += action;
-
             tblData += '</div></tr>';
-
         }
 //console.log(tblData);
         $('.serviceList').html(tblData);
@@ -81,7 +83,7 @@
 
             order: [],
 
-            columnDefs: [{orderable: true, targets: [0,1,2,3]}],
+            columnDefs: [{orderable: true, targets: [0,1,2,3,4]}],
 
             dom: 'Bfrtip',
 
@@ -126,7 +128,7 @@
     laborid = laborid.toString();
     var product = userList.get(laborid);
     var name=product.firstname+' '+product.lastname;
-    var msg='Do you want to delete '+name+' Information ?';
+    var msg='Do you want to Active/Inactive '+name+' Information ?';
     
     var alert1 = '';
     alert1 += '<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
@@ -145,7 +147,7 @@ function deletePermission(laborid) {
     $('#deleteModal').modal('hide');
       $.ajax({
 
-            url: url + 'user/deleteUser',
+            url: url + 'user/activateuser',
 
             type: 'POST',
 
@@ -218,7 +220,7 @@ function deletePermission(laborid) {
 
 function goback() {
 
-        window.location.replace(url + 'services/UserMaster/show');
+        window.location.replace(url + 'users/show');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

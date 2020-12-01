@@ -308,4 +308,4 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
-<div class="loader"></div>
+<div id="loader"></div>

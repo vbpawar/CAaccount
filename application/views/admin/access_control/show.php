@@ -110,6 +110,7 @@
                                             <th class="min-tablet">MOBILE NO.</th>
                                             <th class="min-tablet">EMAIL ID</th>
                                             <th class="min-tablet">Role</th>
+                                            <th class="min-tablet">Status</th>
                                             <th class="min-desktop">ACTION</th>
 
                                         </tr>
