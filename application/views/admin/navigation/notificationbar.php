@@ -221,7 +221,7 @@
                             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                             <li id="dropdown-user" class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
-                                    <span class="pull-right"> <img class="img-circle img-user media-object" src="<?php echo base_url('admin_assets/img/av1.png'); ?>" alt="Profile Picture"> </span>
+                                    <span class="pull-right"> <img class="img-circle img-user media-object" src="<?php echo base_url('admin_assets/image/user.png'); ?>" alt="Profile Picture"> </span>
                                     <div class="username hidden-xs"><?php echo $username;?></div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right with-arrow">
