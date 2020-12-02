@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'shopAct');
+        window.location.replace(url + 'udyagAadhar');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -125,7 +125,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     $('#remarkField').hide();
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
-        $('#shopactid').val(id);
+        $('#uid').val(id);
          $('#digital_amount').val(servicecharges.get('1'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
@@ -134,11 +134,11 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getshopdocs',
+            url: url + 'getudyogdocs',
 
             type: 'POST',
 
-            data: {shid: id},
+            data: {uid: id},
 
             cache: false,
 
@@ -150,7 +150,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 for (var i = 0; i < count; i++) {
                     docTable += ` <tr>
       <td>
-          <a href="` + (url + 'documents/shopact/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
+          <a href="` + (url + 'documents/udyog/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
       </td>
     </tr>`;
                 }
@@ -187,7 +187,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'update_shop_status',
+            url: url + 'updateudyog_status',
 
             type: 'POST',
 
@@ -228,7 +228,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'get_shopact_remarks',
+            url: url + 'get_udyog_remarks',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

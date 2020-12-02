@@ -448,7 +448,6 @@
                                                                         <th scope="col">Pancard No.</th>
                                                                         <th scope="col">Mobile No.</th>
                                                                         <th scope="col">Email Id</th>
-                                                                        <!--<th scope="col">Action</th>-->
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="partnerData">
