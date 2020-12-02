@@ -38,7 +38,7 @@
    var jsonString= JSON.stringify(partnerData);
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('1');
+        var amount=servicecharges.get('4');
         formdata.append('userid',userid);
         formdata.append('partnerdata',jsonString);
 
