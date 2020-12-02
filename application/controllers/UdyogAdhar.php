@@ -1,167 +1,277 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-class UdyogAdhar extends CI_Controller{
-
+class UdyogAdhar extends CI_Controller
+{
+   
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('UdyogModel','service');
+        $this->load->model('ResidentialModel', 'rmodel');
+        $this->load->model('PersonalModel', 'pmodel');
+        $this->load->model('BankModel', 'bmodel');
+        $this->load->model('ShopModel', 'smodel');
+        $this->load->model('Udyog_Model', 'umodel');
+        $this->load->model('DocsModel', 'docs');
+        $this->load->model('WalletModel', 'service');
+        $this->load->model('PartnerModel', 'parmodel');
+        date_default_timezone_set('Asia/Kolkata');
     }
     private $response = null;
     private $records = null;
+    
 
-    //get all import export details
-    public function getudyogs() {
-        $records = $this->service->getudyogs();
-        if ($records != null) {
+    public function get_all_udyog(){
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->umodel->get_details($roleid,$userid);
+        if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('partners'=>[]);
+               $p_details= $this->umodel->get_partners_details($result['data'][$i]['uid']); 
+               if($p_details['status']){
+                $temp = array('partners'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
             $response = array(
-                'Message' => 'All data load successfully',
-                "Data" => $records,
+                'Message' => 'Udyom Aadhar Details loaded successfully',
+                'Data' => $records,
                 'Responsecode' => 200
             );
         } else {
             $response = array(
-                'Message' => 'Data Not Found',
-                'Responsecode' => 401
+                'Message' => 'Try again',
+                'Responsecode' => 402
             );
         }
-         echo json_encode($response);
+        echo json_encode($response);
     }
-
-    //create API for documnet master
-    public function addudyog()
+    //create API for PF master
+    public function add_udyog_form()
     {
-        $data = array(
-        'userid '=>$this->input->post('userid'),
-        'adharnumber' => $this->input->post('adharnumber'),
-        'nameofent'=>$this->input->post('nameofent'),
-        'gender' => $this->input->post('gender'),
-        'category'=>$this->input->post('category'),
-        'mobilenumber' => $this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid'),
-        'nameofentr'=>$this->input->post('nameofentr'),
-        'typeoforg' => $this->input->post('typeoforg'),
-        'ustate'=>$this->input->post('ustate'),
-        'district' => $this->input->post('district'),
-        'city'=>$this->input->post('city'),
-        'pincode' => $this->input->post('pincode'),
-        'postoffice'=>$this->input->post('postoffice'),
-        'regdate'=>$this->input->post('regdate'),
-        'bankName'=>$this->input->post('bankName'),
-        'ifsc'=>$this->input->post('ifsc'),
-        'bankAc'=>$this->input->post('bankAc'),
-        'men'=>$this->input->post('men'),
-        'women'=>$this->input->post('women')
+        //personal details
+        $pdetails = array(
+            'pan_name ' => $this->input->post('pan_name'),
+            'pan_number' => $this->input->post('pan_number'),
+            'aadhar_name' => $this->input->post('aadhar_name'),
+            'aadhar_number' => $this->input->post('aadhar_number'),
+            'contact_number' => $this->input->post('contact_number'),
+            'emailid' => $this->input->post('emailid'),
+            'dob' => $this->input->post('dob')
         );
-    if(!$data || empty($data)){
-        $response = array(
-            'Message' => 'Missing parameter',
-            'Responsecode' => 303
+        
+        //Residential details
+        $rdetails = array(
+            'premise_name ' => $this->input->post('premise_name'),
+            'flat_number' => $this->input->post('flat_number'),
+            'road' => $this->input->post('road'),
+            'area' => $this->input->post('area'),
+            'village' => $this->input->post('village'),
+            'taluka' => $this->input->post('taluka'),
+            'district' => $this->input->post('district'),
+            'state' => $this->input->post('state'),
+            'pincode' => $this->input->post('pincode')
         );
-    }else{ 
-        $result = $this->service->addudyog($data);
-        if($result['status']){ 
-            if(!empty($_FILES['adhar']['name']) && !empty($_FILES['file']['name']) ){ 
-                if($this->uploaddocs('aadhar',$id,'EWAY',$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
-                $document = 'Documents uplaoded';
+        //bank details
+        $bdetails = array(
+            'bank_name ' => $this->input->post('bank_name'),
+            'ac_number' => $this->input->post('ac_number'),
+            'ifsc_number' => $this->input->post('ifsc_number')
+        );
+               $sdetails = array(
+                'shop_name'=>$this->input->post('shop_name'),
+                'office_contact'=>$this->input->post('office_contact'),
+                'office_mailid'=>$this->input->post('office_mailid'),
+                'buss_start_date'=>$this->input->post('buss_start_date')
+               );
+              
+            
+        $userid = $this->input->post('userid');
+            
+            $data = array(
+                'userid' => $userid,
+                'nature_of_buss'=>$this->input->post('nature_of_buss'),
+                'buss_type'=>$this->input->post('buss_type'),
+                'turn_over_amt'=>$this->input->post('turn_over_amt'),
+                'gst_number'=>$this->input->post('gst_number'),
+                'male'=>$this->input->post('male'),
+                'female'=>$this->input->post('female')
+            );
+            $partner_data = $this->input->post('partnerdata');
+            $partner_data= json_decode($partner_data);
+            // $result = $this->umodel->add_details($data);
+            $testdata = array(
+                'pdetails'=>$pdetails,
+                'rdetails'=>$rdetails,
+                'bdetails'=>$bdetails,
+                'sdetails'=>$sdetails,
+                'partnerdata'=>$partner_data,
+                'main'=>$data
+            );
+            $result = $this->smodel->testmodel($testdata);
+            if ($result['status']) {
+                $id       = $result['uid'];
+               
+                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['passport']['name'])) {
+                    $first = array(
+                        'name'=>'Aadhar',
+                        'userid'=>$userid,
+                        'id'=>$id,
+                        'filename'=>$_FILES['adhar']['name'],
+                        'file'=>$_FILES['adhar']['tmp_name'],
+                        'table'=>'udyog_docs',
+                        'folder'=>'udyog',
+                        'prim'=>'uid'
+                    );
+                    $second = array(
+                        'name'=>'PAN',
+                        'userid'=>$userid,
+                        'id'=>$id,
+                        'filename'=>$_FILES['pan']['name'],
+                        'file'=>$_FILES['pan']['tmp_name'],
+                        'table'=>'udyog_docs',
+                        'folder'=>'udyog',
+                        'prim'=>'uid'
+                    );
+                    $third = array(
+                        'name'=>'CANCELLED CHECK',
+                        'userid'=>$userid,
+                        'id'=>$id,
+                        'filename'=>$_FILES['passport']['name'],
+                        'file'=>$_FILES['passport']['tmp_name'],
+                        'table'=>'udyog_docs',
+                        'folder'=>'udyog',
+                        'prim'=>'uid'
+                    );
+                    if ($this->docs->uploaddocs($first)) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->docs->uploaddocs($third)) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if (!empty($_FILES['electricity']['name'])) {
+                        $four = array(
+                            'name'=>'Electricity Bill',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['electricity']['name'],
+                            'file'=>$_FILES['electricity']['tmp_name'],
+                            'table'=>'udyog_docs',
+                            'folder'=>'udyog',
+                            'prim'=>'uid'
+                        );
+                        if ($this->docs->uploaddocs($four)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['otherdoc']['name'])) {
+                        $five = array(
+                            'name'=>'OTHER DOCUMENTS',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['otherdoc']['name'],
+                            'file'=>$_FILES['otherdoc']['tmp_name'],
+                            'table'=>'udyog_docs',
+                            'folder'=>'udyog',
+                            'prim'=>'uid'
+                        );
+                        if ($this->docs->uploaddocs($five)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
                 }
-                if($this->uploaddocs('pan',$id,'EWAY',$_FILES['file']['name'],$_FILES['file']['tmp_name'])){
-                   $document = 'Documents uplaoded';
-                   }
-               }
-            $response = array(
-                'Message' => 'Udyog Adhar Generated successfully',
-                'Data'=>$result['data'],
-                'Responsecode' => 200
-            );
-       }else{ 
-        $response = array(
-            'Message' => 'Try again',
-            'Responsecode' => 402
-        );
-       }
-    }
-     echo json_encode($response);
-}
-
-    //API - delete a document 
-    public function removebill()
-    {
-        $uid  = $this->input->post('uid');
-        if(!$uid || empty($uid)){
-            $response = array(
-                'Message' => 'Parameter missing',
-                'Responsecode' => 404
-            );
-        }else{
-        if($this->service->removebill($uid))
-        {
-            $response = array(
-                'Message' => 'Udyog Adhar removed successfully',
-                'Responsecode' => 200
-            );
-        } 
-        else
-        {
-            $response = array(
-                'Message' => 'Failed to remove',
-                'Responsecode' => 302
-            );
-        }
-    }
+                $response = array(
+                    'Message' => 'Udyog Details added successfully',
+                    'Data' => $result,
+                    'Responsecode' => 200
+                );
+            } else {
+                $response = array(
+                    'Message' => 'Try again',
+                    'Responsecode' => 402
+                );
+            }
+        
         echo json_encode($response);
     }
 
-   //API - update a service
-   public function updateudyog(){
-    $data = array(
-        'userid '=>$this->input->post('userid'),
-        'adharnumber' => $this->input->post('adharnumber'),
-        'nameofent'=>$this->input->post('nameofent'),
-        'gender' => $this->input->post('gender'),
-        'category'=>$this->input->post('category'),
-        'mobilenumber' => $this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid'),
-        'nameofentr'=>$this->input->post('nameofentr'),
-        'typeoforg' => $this->input->post('typeoforg'),
-        'ustate'=>$this->input->post('ustate'),
-        'district' => $this->input->post('district'),
-        'city'=>$this->input->post('city'),
-        'pincode' => $this->input->post('pincode'),
-        'postoffice'=>$this->input->post('postoffice'),
-        'regdate'=>$this->input->post('regdate'),
-        'bankName'=>$this->input->post('bankName'),
-        'ifsc'=>$this->input->post('ifsc'),
-        'bankAc'=>$this->input->post('bankAc'),
-        'men'=>$this->input->post('men'),
-        'women'=>$this->input->post('women')
+    public function get_udyog_docs()
+    {
+        $id   = $this->input->post('uid');
+        $result = $this->docs->get_udyogdocs($id);
+        echo json_encode($result);
+    }
+    public function update_status()
+    {
+        $id    = $this->input->post('uid');
+        $data   = array(
+            'status' => $this->input->post('status'),
+            'remark' => $this->input->post('remark')
         );
-        $uid = $this->input->post('uid');
-    
-   
-        if(!$uid && !$data || empty($uid)){
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>$this->input->post('digital_uid'),
+                'transaction_type'=>'Credit',
+                'amount'=>$this->input->post('digital_amount'),
+                'message'=>'Credited amount of Udyom Aadhar service which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->service->deduct_amount($wallet_data);
+        }
+        $result = $this->umodel->updatestatus($id, $data);
+        if ($result) {
+            $document = 'Documents not uplaoded';
+            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+                if ($this->uploadremarks('UDYOG', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+                if ($this->uploadremarks('UDYOG', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+            }
             $response = array(
-                'Message' => 'Parameter missing',
-                'Responsecode' => 404
-            );
-        }else{
-           $result = $this->service->updateudyog($uid,$data);
-           if($result['result']!=0 && $result['data']!=null){
-            $response = array(
-                'Message' => 'Udyog Adhar successfully updated',
-                'Data'=>$result['data'],
+                'Message' => 'Status updated successfully',
                 'Responsecode' => 200
             );
-           }else{
+        } else {
             $response = array(
-                'Message' => 'Sorry try again',
-                'Responsecode' => 302
+                'Message' => 'Try Again',
+                'Responsecode' => 204
             );
-           
-           }
-       }
-   echo json_encode($response);
-   }
-    
-}
+        }
+        echo json_encode($response);
+    }
+    public function uploadremarks($service, $rowid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'service' => $service,
+            'rowid' => $rowid,
+            'extension' => $ext
+        );
+        $result = $this->docs->add_remark_docs($data);
+        if ($result['status']) {
+            $imgid      = $result['remarkid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+   
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'UDYOG');
+        echo json_encode($result);
+    }
+} 

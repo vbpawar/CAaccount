@@ -178,7 +178,7 @@ $route['shopAct/update'] = 'services/ShopAct/update';
 
 //udyog apis
 
-$route['createudyog']  = 'udyog_controller/add_udyog_form';
+$route['createudyog']  = 'UdyogAdhar/add_udyog_form';
 $route['loadudyog']  = 'udyog_controller/get_all_udyog';
 $route['getudyogdocs'] = 'udyog_controller/get_udyog_docs';
 $route['updateudyog_status']= 'udyog_controller/update_status';
