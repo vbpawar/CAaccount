@@ -235,6 +235,7 @@
                                                     </p> -->
                                                 </div>
                                                 <div class="tab-pane fade" id="addressdet">
+                                                    <h3 class="head text-center">Residential</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
@@ -305,6 +306,7 @@
                                                     
                                                 </div>
                                                 <div class="tab-pane fade" id= "shopdetails">
+                                                    <h3 class="head text-center">Shop Details</h3>
                                                 <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
@@ -435,6 +437,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="partenship">
+                                                    
                                                     <div class="row">
                                                         <div class="partnerError text-center"></div>
                                                         <div class="col-sm-10">
@@ -518,6 +521,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="documenttab">
+                                                    <h3 class="head text-center">Document</h3>
                                                     <div class="text-center">
                                                         <i class="img-intro icon-checkmark-circle"></i>
                                                     </div>
