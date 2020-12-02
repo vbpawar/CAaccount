@@ -9,7 +9,8 @@ class Udyog_Model extends CI_Model {
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
             rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
             u.firstname,u.lastname,u.roleid,
-            bd.bank_name,bd.ac_number,bd.ifsc_number
+            bd.bank_name,bd.ac_number,bd.ifsc_number,
+            sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date
             FROM udyog_adhar pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN bank_details bd ON bd.bid = pf.bid
@@ -21,7 +22,8 @@ class Udyog_Model extends CI_Model {
                 pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
                 rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
                 u.firstname,u.lastname,u.roleid,
-                bd.bank_name,bd.ac_number,bd.ifsc_number
+                bd.bank_name,bd.ac_number,bd.ifsc_number,
+                sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date
                 FROM udyog_adhar pf 
                 JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN bank_details bd ON bd.bid = pf.bid
@@ -70,7 +72,8 @@ class Udyog_Model extends CI_Model {
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
             rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
             u.firstname,u.lastname,u.roleid,
-            bd.bank_name,bd.ac_number,bd.ifsc_number
+            bd.bank_name,bd.ac_number,bd.ifsc_number,
+            sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date
             FROM udyog_adhar pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
             JOIN bank_details bd ON bd.bid = pf.bid
