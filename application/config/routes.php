@@ -78,6 +78,7 @@ $route['retailorDistributor/create'] = 'services/RetailorDistributor/create';
 
 $route['udyagAadhar']        = 'services/UdyogAadhar/show';
 $route['udyagAadhar/create'] = 'services/UdyogAadhar/create';
+$route['udyagAadhar/update'] = 'services/UdyogAadhar/update';
 
 $route['retailor']        = 'services/Retailor/show';
 $route['retailor/create'] = 'services/Retailor/create';

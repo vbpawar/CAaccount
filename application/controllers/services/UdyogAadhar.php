@@ -37,6 +37,7 @@ class UdyogAadhar extends CI_Controller {
         $this->load->view('admin/footer');
     }
     public function update() {
+        $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/udyog_aadhar/update');
         $this->load->view('admin/udyog_aadhar/update_js');
     }
