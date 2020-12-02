@@ -111,7 +111,7 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
+                                <a href="<?php echo base_url('udyagAadhar');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">Udyog Aadhar Information</h3>
                         </div>
@@ -612,13 +612,13 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'panpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -626,13 +626,13 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label"> Cancelled Check Passbook</label>
-                                                                                <input class="form-control" id="passport" name="passport" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="passport" name="passport" type="file" onchange="loadFile(event, 'passportpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passportpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -655,13 +655,13 @@
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Electricity Bill of Shop</label>
-                                                                                <input class="form-control" id="electricity" name="electricity" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="electricity" name="electricity" type="file" onchange="loadFile(event, 'elpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="elpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -677,13 +677,13 @@
                                                                             <h6>Other Document for Partnership/Private Limited/Public Private Limited</h6>
                                                                             <div class="form-group">
                                                                                 <label class="control-label">Other Documents</label>
-                                                                                <input class="form-control" id="otherdoc" name="otherdoc" type="file" onchange="loadFile(event, 'form16pre')" />
+                                                                                <input class="form-control" id="otherdoc" name="otherdoc" type="file" onchange="loadFile(event, 'otherpre')" />
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group">
                                                                                 <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
+                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherpre" width="200px" height="200px" />
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -718,3 +718,4 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
+<div id="loader"></div>

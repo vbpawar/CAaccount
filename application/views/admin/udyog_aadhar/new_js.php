@@ -32,20 +32,20 @@
     $('#udyog-form').on('submit', function (e) {
         e.preventDefault();
       var  patnersData = getPartnersData();
-//      JSON.stringify(patnersData);
+     var jsonString= JSON.stringify(patnersData);
 //console.log(patnersData);
   var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
         var amount=servicecharges.get('5');
         formdata.append('userid',userid);
-        formdata.append('partnerdata',patnersData);
+        formdata.append('partnerdata',jsonString);
 
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'createshop',
+                url: url + 'createudyog',
 
                 type: 'POST',
 
@@ -91,7 +91,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'shopAct');
+        window.location.replace(url + 'udyagAadhar');
     }
 
 

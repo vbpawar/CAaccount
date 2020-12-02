@@ -130,11 +130,11 @@ class Udyog_controller extends CI_Controller
                     foreach ($partner_data as $contact)
                     {
                         $partners = array(
-                            'partner_name' => $contact['p_partner_name'],
-                            'aadhar_number' => $contact['p_aadhar_number'],
-                            'pan_number' => $contact['p_pan_number'],
-                            'contact_number'=>$contact['p_contact_number'],
-                            'emailid'=>$contact['p_emailid']
+                            'partner_name' => $contact->p_partner_name,
+                            'aadhar_number' => $contact->p_aadhar_number,
+                            'pan_number' => $contact->p_pan_number,
+                            'contact_number'=>$contact->p_contact_number,
+                            'emailid'=>$contact->p_emailid
                             );
                             $partnerid = $this->parmodel->add_details($partners);
                         if($partnerid['status']){

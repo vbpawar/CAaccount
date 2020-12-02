@@ -3,83 +3,89 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
-        $('#uid').val(product.uid);
-        $('#adharnumber').val(product.adharnumber);
-        $('#nameofent').val(product.nameofent);
-        $('#gender').val(product.gender);
-        $('#mobilenumber').val(product.mobilenumber);
+        $('#pan_name').val(product.pan_name);
+        $('#pan_number').val(product.pan_number);
+        $('#aadhar_name').val(product.aadhar_name);
+        $('#aadhar_number').val(product.aadhar_number);
+        $('#contact_number').val(product.contact_number);
         $('#emailid').val(product.emailid);
-        $('#category').val(product.category);
-        $('#nameofentr').val(product.nameofentr);
-        $('#typeoforg').val(product.typeoforg);
-        $('#ustate').val(product.ustate);
+        $('#dob').val(product.dob);
+        $('#premise_name').val(product.premise_name);
+        $('#flat_number').val(product.flat_number);
+        $('#road').val(product.road);
+        $('#area').val(product.area);
+        $('#village').val(product.village);
+        $('#taluka').val(product.taluka);
         $('#district').val(product.district);
-        $('#city').val(product.city);
+        $('#state').val(product.state);
         $('#pincode').val(product.pincode);
-        $('#postoffice').val(product.postoffice);
-        $('#regdate').val(product.regdate);
-        $('#bankName').val(product.bankName);
-        $('#ifsc').val(product.ifsc);
-        $('#bankAc').val(product.bankAc);
-        $('#men').val(product.men);
-        $('#women').val(product.women);
-
-
+        $('#s_premise_name').val(product.s_premise_name);
+        $('#s_flat_number').val(product.s_flat_number);
+        $('#s_road').val(product.s_road);
+        $('#s_area').val(product.s_area);
+        $('#s_village').val(product.s_village);
+        $('#s_taluka').val(product.s_taluka);
+        $('#s_district').val(product.s_district);
+        $('#s_state').val(product.s_state);
+        $('#s_pincode').val(product.s_pincode);
+        $('#shop_name').val(product.shop_name);
+        $('#office_contact').val(product.office_contact);
+        $('#office_mailid').val(product.office_mailid);
+        $('#buss_start_date').val(product.buss_start_date);
+        $('#nature_of_buss').val(product.nature_of_buss);
+        $('#busstype').val(product.buss_type);
+        $('#male').val(product.male);
+        $('#female').val(product.female);
+        $('#bank_name').val(product.bank_name);
+        $('#ac_number').val(product.ac_number);
+        $('#ifsc_number').val(product.ifsc_number);
+        $('#turn_over_amt').val(product.turn_over_amt);
+        if(product.gst_number!=''){
+        $('#gst_number').val(product.gst_number);
+        }else{
+            $('#gst_number').hide();
+        }
+        
+        showPartnersList(product.partners);
     }
 
     loadDetails(details);
 
-$('#udyogAadharForm').on('submit', function (e) {
-        e.preventDefault();
 
-//    var returnVal = $("#caCertificateForm").valid();
-        var formdata = new FormData(this);
-            formdata.append('userid',1);
-        if (true) {
+function showPartnersList(pList) {
+        const count = pList.length;
+        var tableData='';
+        if(count>0){
+            for(var i=0;i<count;i++){
+                tableData += $('#partnerTable tbody').html();
+                tableData += `<tr id="r` + pList[i]['aadhar_number'] + `">
+                        <td>` + pList[i]['partner_name'] + `</td>
+                        <td>` + pList[i]['aadhar_number'] + `</td>
+                        <td>` + pList[i]['pan_number'] + `</td>
+                        <td>` + pList[i]['emailid'] + `</td>
+                        <td>` + pList[i]['contact_number'] + `</td>
+                        </tr>`;
+            }
+            
 
-            $.ajax({
-
-                url: url + 'UdyogAdhar/updateudyog',
-
-                type: 'POST',
-
-                data: formdata,
-
-                cache: false,
-
-                contentType: false,
-
-                processData: false,
-
-                dataType: 'json',
-
-                success: function (response) {
-//                alert(response.Data.customerId);
-//                console.log(response);
-
-                    if (response.Responsecode == 200) {
-
-                        swal("Congrats!", response.Message, "success");
-
-
-
-                        goback();
-
-                    } else {
-
-                        swal("Error!", response.Message, "success");
-
-                    }
-
-                }
-
-            });
-
+        }else{
+            tableData += $('#partnerTable tbody').html();
+            tableData +=`<tr><td colspan="5" align="center">No records found!</td></tr>`;
         }
+        $('#partnerData').html(tableData);
+    }
 
-    });
+
+
+var form  = document.getElementById("udyog-form");
+var allElements = form.elements;
+for (var i = 0, l = allElements.length; i < l; ++i) {
+    // allElements[i].readOnly = true;
+       allElements[i].disabled=true;
+}
+
+
+
 
     
-
-
 </script>
