@@ -274,11 +274,12 @@ if ($data['Data']['role'] == 1 || $data['Data']['role'] == 4) {
                 var tableData = `<tr><td>`+status+` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
                  tableData += `<tr><td>Remark:</td><td rowspan="2">`+product.remark+`</td></tr>`;
                 for (var i = 0; i < count; i++) {
-                    dateTime = product.updatedat;
+                   
                     tableData += `<tr><td colspan="2" align="center">
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
                 }
+                dateTime = product.updatedat;
                 $('#remarkList').html(tableData);
                 $('#dateTime').text(dateTime);
                 $('#remarkModal').modal('toggle');
