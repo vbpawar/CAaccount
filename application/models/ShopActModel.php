@@ -4,7 +4,7 @@ class ShopActModel extends CI_Model {
 
     public function get_details($roleid,$userid) {
         if($roleid ==1 || $roleid ==4){
-        $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.status,
+        $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.status,pf.updatedat,
         pf.remark,pf.createdat,pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
         rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date,
         u.firstname,u.lastname,rd1.premise_name s_premise_name,rd1.flat_number s_flat_number,rd1.road s_road,rd1.area s_area,rd1.village s_village,rd1.taluka s_taluka,
@@ -15,7 +15,8 @@ class ShopActModel extends CI_Model {
                 JOIN residential_details rd1 ON sd.rid = rd1.rid 
                 JOIN user_master u ON u.userid = pf.userid ORDER BY pf.shopactid DESC";
         }else{
-            $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.status,pf.remark,pf.createdat,pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+            $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.status,pf.remark,pf.createdat,pf.updatedat,
+            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
             rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date,
             u.firstname,u.lastname,rd1.premise_name s_premise_name,rd1.flat_number s_flat_number,rd1.road s_road,rd1.area s_area,rd1.village s_village,rd1.taluka s_taluka,
             rd1.district s_district,rd1.state s_state,rd1.pincode s_pincode,u.roleid
@@ -48,7 +49,8 @@ class ShopActModel extends CI_Model {
         $result = [];
         if($this->db->insert('shopact', $data)){
             $id = $this->db->insert_id();
-            $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.status,pf.remark,pf.createdat,pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+            $sql = "SELECT pf.shopactid,pf.userid,pf.natureofbuss,pf.busstype,pf.men,pf.women,pf.updatedat,
+            pf.status,pf.remark,pf.createdat,pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
             rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date,
             u.firstname,u.lastname,rd1.premise_name s_premise_name,rd1.flat_number s_flat_number,rd1.road s_road,rd1.area s_area,rd1.village s_village,rd1.taluka s_taluka,
             rd1.district s_district,rd1.state s_state,rd1.pincode s_pincode,u.roleid
