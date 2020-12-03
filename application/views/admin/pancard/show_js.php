@@ -236,7 +236,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 const count = response.length;
                 var tableData = `<tr><td>Dated On: <span id="dateTime"></sapn></td></tr>`
                 for (var i = 0; i < count; i++) {
-                    dateTime = response[i].updatedat;
+                    dateTime = product.updatedat;
                     tableData += `<tr><td>
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
