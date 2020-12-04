@@ -47,15 +47,16 @@ class IncomeTax extends CI_Controller{
     //create API for PF master
     public function add_income_form()
     {
-        //personal details
-        $pdetails = array(
+
+         //personal details
+         $pdetails = array(
             'pan_name ' => $this->input->post('pan_name'),
             'pan_number' => $this->input->post('pan_number'),
             'aadhar_name' => $this->input->post('aadhar_name'),
             'aadhar_number' => $this->input->post('aadhar_number'),
             'contact_number' => $this->input->post('contact_number'),
             'emailid' => $this->input->post('emailid'),
-            'dob'=>$this->input->post('dob')
+            'dob' => $this->input->post('dob')
         );
         
         //Residential details
@@ -70,23 +71,8 @@ class IncomeTax extends CI_Controller{
             'state' => $this->input->post('state'),
             'pincode' => $this->input->post('pincode')
         );
-        if (!empty($pdetails)) {
-            $pid = $this->pmodel->add_details($pdetails);
-        }
-        if (!empty($rdetails)) {
-            $rid = $this->rmodel->add_details($rdetails);
-        }
-        
-        $userid = $this->input->post('userid');
-        
-        if ($pid['status'] && $rid['status']) {
-            $pid = $pid['pid'];
-            $rid = $rid['rid'];
-            
             $income_details = array(
-                'pid'=>$pid,
-                'rid'=>$rid,
-                'userid'=>$userid,
+                'userid'=>$this->input->post('userid'),
                 'incomeType'=>$this->input->post('incomeType'),
                 'bname' => $this->input->post('bname'),
                 'natureofbuss' => $this->input->post('natureofbuss'),
@@ -107,35 +93,19 @@ class IncomeTax extends CI_Controller{
             );
             $partner_data = $this->input->post('partnerdata');
             $partner_data= json_decode($partner_data);
-            $result = $this->imodel->add_details($data);
+        $testdata = array(
+            'pdetails'=>$pdetails,
+            'rdetails'=>$rdetails,
+            'partnerdata'=>$partner_data,
+            'main'=>$income_details
+        );
+            $result = $this->imodel->create_income($testdata);
             if ($result['status']) {
                 $id       = $result['inid'];
-                //stored partner details
-    if(!empty($partner_data)){
-        foreach ($partner_data as $contact)
-        {
-            $partners = array(
-                'partner_name' => $contact['p_partner_name'],
-                'aadhar_number' => $contact['p_aadhar_number'],
-                'pan_number' => $contact['p_pan_number'],
-                'contact_number'=>$contact['p_contact_number'],
-                'emailid'=>$contact['p_emailid']
-                );
-                $partnerid = $this->parmodel->add_details($partners);
-            if($partnerid['status']){
-                $shop_partners=array( 
-                    'partnerid' => $partnerid['partnerid'],
-                    'inid'=>$id
-                );
-                $this->imodel->add_partner_details($shop_partners);
-                }
-        }
-    }
-       
                 $document = 'Document not uploaded';
                 $response = array(
                     'Message' => 'Income Form added successfully',
-                    'Data' => $result['data'],
+                    'Data' => $result,
                     'Document' => $document,
                     'Responsecode' => 200
                 );
@@ -145,13 +115,6 @@ class IncomeTax extends CI_Controller{
                     'Responsecode' => 402
                 );
             }
-        } else {
-            $response = array(
-                'Message' => 'Check Parameters',
-                'Responsecode' => 302
-            );
-            
-        }
         echo json_encode($response);
     }
     

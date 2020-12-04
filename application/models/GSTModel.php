@@ -71,5 +71,84 @@ class GSTModel extends CI_Model {
                 $result['status'] = false;
             }
             return $result;
-        }    
+        }
+        
+        public function create_gst($data)
+    {
+      $pdetails = $data['pdetails'];
+      $rdetails = $data['rdetails'];
+      $sdetails = $data['sdetails'];
+      $shop_details = $data['shop_details'];
+      $partnerdata = $data['partnerdata'];
+      $main = $data['main'];
+      $result = array();
+      $this->db->trans_begin();
+
+        $this->db->insert('personal_details', $pdetails);
+        $result['pid'] =  $this->db->insert_id(); 
+
+        $this->db->insert('residential_details', $rdetails);
+        $result['rid'] =  $this->db->insert_id(); 
+
+        $this->db->insert('residential_details', $sdetails);
+        $result['r_id'] =  $this->db->insert_id();
+
+        $shopdetails = array(
+         'rid'=>$r_id,
+         'shop_name'=>$shop_details['shop_name'],
+         'office_contact'=>$shop_details['office_contact'],
+         'office_mailid'=>$shop_details['office_mailid'],
+         'buss_start_date'=>$shop_details['buss_start_date']
+        );
+
+        $this->db->insert('shop_details', $shopdetails);
+        $result['sid'] =  $this->db->insert_id();
+
+        $gst_details = array(
+            'pid'=>$result['pid'],
+            'rid'=>$result['rid'],
+            'sid'=>$result['sid'],
+            'userid'=>$main['userid'],
+            'nature_of_buss'=>$main['nature_of_buss'],
+            'buss_type'=>$main['buss_type'],
+            'male'=>$main['male'],
+            'female'=>$main['female'],
+            'gst_type'=>$main['gst_type']
+        );
+        $this->db->insert('gst_service', $gst_details);
+        $result['gid'] =  $this->db->insert_id();
+        $this->getpartnerdetails($partnerdata,$result['gid']);
+        if ($this->db->trans_status() === FALSE)
+{
+        $this->db->trans_rollback();
+}
+else
+{
+        $this->db->trans_commit();
+      
+        $result['status'] = true;
+        return $result;
+}
+    }
+    public function getpartnerdetails($partner_data,$id)
+    {
+        foreach ($partner_data as $contact)
+                    {
+                        $partners = array(
+                            'partner_name' => $contact->p_partner_name,
+                            'aadhar_number' => $contact->p_aadhar_number,
+                            'pan_number' => $contact->p_pan_number,
+                            'contact_number'=>$contact->p_contact_number,
+                            'emailid'=>$contact->p_emailid
+                            );
+                            $this->db->insert('partner_details', $partners);
+                            $partnerid =  $this->db->insert_id();
+                            
+                            $shop_partners=array( 
+                                'partnerid' => $partnerid,
+                                'gid'=>$id
+                            );
+                            $this->db->insert('gst_partners', $shop_partners);
+                    }
+    }  
 }

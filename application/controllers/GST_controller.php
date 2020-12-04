@@ -10,7 +10,7 @@ class GST_controller extends CI_Controller
         $this->load->model('ResidentialModel', 'rmodel');
         $this->load->model('PersonalModel', 'pmodel');
         $this->load->model('ShopModel', 'smodel');
-        $this->load->model('GSTModel', 'gmodel');
+        $this->load->model('GSTModel', 'gstmodel');
         $this->load->model('DocsModel', 'docs');
         $this->load->model('WalletModel', 'service');
         $this->load->model('PartnerModel', 'parmodel');
@@ -37,7 +37,7 @@ class GST_controller extends CI_Controller
         echo json_encode($response);
     }
     //create API for PF master
-    public function add_udyog_form()
+    public function add_gst_form()
     {
         //personal details
         $pdetails = array(
@@ -62,12 +62,7 @@ class GST_controller extends CI_Controller
             'state' => $this->input->post('state'),
             'pincode' => $this->input->post('pincode')
         );
-        //bank details
-        $bdetails = array(
-            'bank_name ' => $this->input->post('bank_name'),
-            'ac_number' => $this->input->post('ac_number'),
-            'ifsc_number' => $this->input->post('ifsc_number')
-        );
+       
 
         $shop_details = array(
             'premise_name ' => $this->input->post('s_premise_name'),
@@ -80,77 +75,39 @@ class GST_controller extends CI_Controller
             'state' => $this->input->post('s_state'),
             'pincode' => $this->input->post('s_pincode')
         );
-        if (!empty($shop_details)) {
-            $shopdetails = $this->rmodel->add_details($shop_details);
-            if ($shopdetails['status']) {
-               $r_id = $shopdetails['rid'];
+       
+           
                $sdetails = array(
-                   'rid'=>$r_id,
                 'shop_name'=>$this->input->post('shop_name'),
                 'office_contact'=>$this->input->post('office_contact'),
                 'office_mailid'=>$this->input->post('office_mailid'),
                 'buss_start_date'=>$this->input->post('buss_start_date')
                );
-            }
-            $sid = $this->smodel->add_details($sdetails);
-            if($sid['status']){
-                $sid = $sid['sid'];
-            }
-        }
-        if (!empty($pdetails)) {
-            $pid = $this->pmodel->add_details($pdetails);
-        }
-        if (!empty($rdetails)) {
-            $rid = $this->rmodel->add_details($rdetails);
-        }
-        if (!empty($bdetails)) {
-            $bid = $this->bmodel->add_details($bdetails);
-        }
+           
         
-        $userid = $this->input->post('userid');
-        
-        if ($pid['status'] && $rid['status'] && $bid['status']) {
-            $pid = $pid['pid'];
-            $rid = $rid['rid'];
-            $bid = $bid['bid'];
-            
-            $data = array(
-                'userid' => $userid,
-                'pid' => $pid,
-                'rid' => $rid,
-                'bid' => $bid,
-                'sid'=>$sid,
+            $gst_details = array(
+                'userid' => $this->input->post('userid'),
                 'nature_of_buss'=>$this->input->post('nature_of_buss'),
                 'buss_type'=>$this->input->post('buss_type'),
-                'turn_over_amt'=>$this->input->post('turn_over_amt'),
-                'gst_number'=>$this->input->post('gst_number'),
                 'male'=>$this->input->post('male'),
-                'female'=>$this->input->post('female')
+                'female'=>$this->input->post('female'),
+                'gst_type'=>$this->input->post('gst_type')
             );
+          
             $partner_data = $this->input->post('partnerdata');
-            $result = $this->umodel->add_details($data);
+            $partner_data= json_decode($partner_data);
+            $testdata = array(
+                'pdetails'=>$pdetails,
+                'rdetails'=>$rdetails,
+                'partnerdata'=>$partner_data,
+                'sdetails'=> $shop_details,
+                'shop_details'=>$sdetails,
+                'main'=>$gst_details
+            );
+            $result = $this->gstmodel->create_gst($testdata);
             if ($result['status']) {
-                $id       = $result['uid'];
-                if(!empty($partner_data)){
-                    foreach ($partner_data as $contact)
-                    {
-                        $partners = array(
-                            'partner_name' => $contact['p_partner_name'],
-                            'aadhar_number' => $contact['p_aadhar_number'],
-                            'pan_number' => $contact['p_pan_number'],
-                            'contact_number'=>$contact['p_contact_number'],
-                            'emailid'=>$contact['p_emailid']
-                            );
-                            $partnerid = $this->parmodel->add_details($partners);
-                        if($partnerid['status']){
-                            $shop_partners=array( 
-                                'partnerid' => $partnerid['partnerid'],
-                                'uid'=>$id
-                            );
-                            $this->shmodel->add_partner_details($shop_partners);
-                            }
-                    }
-                }
+                $id       = $result['gid'];
+               
                 if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['passport']['name'])) {
                     $first = array(
                         'name'=>'Aadhar',
@@ -233,13 +190,7 @@ class GST_controller extends CI_Controller
                     'Responsecode' => 402
                 );
             }
-        } else {
-            $response = array(
-                'Message' => 'Check Parameters',
-                'Responsecode' => 302
-            );
-            
-        }
+       
         echo json_encode($response);
     }
 
