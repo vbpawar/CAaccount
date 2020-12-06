@@ -13,35 +13,7 @@ $('#dynamicLi').hide();
         }
     });
 
-//add parteners in table
-    $('#addPartener').click(function (e) {
 
-        var partnerName = $('#partnerName').val();
-        var pAadhar = $('#pAadhar').val();
-        var pPancard = $('#pPancard').val();
-        var pEmail = $('#pEmail').val();
-        var pMobile = $('#pMobile').val();
-        var tableData = '';
-//   alert(partnerName+' '+pMobile);
-        tableData += $('#partnerTable tbody').html();
-        tableData += `<tr id="r`+pAadhar+`">
-                        <td>`+partnerName+`</td>
-                        <td>`+pAadhar+`</td>
-                        <td>`+pPancard+`</td>
-                        <td>`+pEmail+`</td>
-                        <td>`+pMobile+`</td>
-                        <td>
-                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('`+pAadhar+`')">
-                        <i class="fa fa-trash-alt" ></i>
-                        </button>
-                        </td>
-                        </tr>`;
-                            
-                            $('#partnerData').html(tableData);
-    });
-    function deletePartner(id) {
-        $('#r' + id).remove();
-    }
 
 
     $(function () {

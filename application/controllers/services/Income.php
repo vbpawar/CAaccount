@@ -17,28 +17,23 @@ class Income extends CI_Controller {
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/css/stepform_css');
-       
-
         $this->load->view('admin/income/new');
-
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/income/validation_js.php');
-
-        $this->load->view('admin/js/income/income_validation_js.php');
-        $this->load->view('admin/js/income/new_js');
+        $this->load->view('admin/income/validation_js.php');
+        $this->load->view('admin/income/income_validation_js.php');
+        $this->load->view('admin/income/new_js');
         $this->load->view('admin/footer');
     }
     
     public function show() {
-        $this->load->view('admin/header');
+        $data['title'] = 'Income Certificate Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
-        $this->load->view('admin/css/dataModalCss');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/income/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/dataModalJavaScript');
-        $this->load->view('admin/js/income/show_js');
+        $this->load->view('admin/income/show_js');
         
         $this->load->view('admin/footer');
     }

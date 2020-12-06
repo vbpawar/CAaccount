@@ -63,8 +63,10 @@ $route['report/create'] = 'services/report/create';
 $route['importExport']        = 'services/ImportExport/show';
 $route['importExport/create'] = 'services/ImportExport/create';
 
+//income ui
 $route['income']        = 'services/income/show';
 $route['income/create'] = 'services/income/create';
+$route['income/update'] = 'services/income/update';
 
 
 $route['balancesheet']        = 'services/balancesheet/show';

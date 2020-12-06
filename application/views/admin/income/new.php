@@ -1,3 +1,11 @@
+<style>
+    .error{
+        color:red;
+        size: 10px;
+    }
+</style>
+
+
 <div class="boxed newDiv">
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
@@ -82,7 +90,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Income</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/icome.png'); ?>" style="height:35px;width:35px"/> Income</h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/icome.png'); ?>" style="height:35px;width:35px"/> Income Tax</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -104,9 +112,9 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
+                                <a href="<?php echo base_url();?>income" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
-                            <h3 class="card-title">Income Information</h3>
+                            <h3 class="card-title">Income Tax Form</h3>
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
@@ -122,7 +130,7 @@
                                                     <li class="active">
                                                         <a href="#inctype" data-toggle="tab" title="Income Type">
                                                             <span class="round-tabs one">
-                                                            <img src="<?php echo base_url('/admin_assets/img/incometype.png'); ?>" style="height:35px;width:35px"/>
+                                                                <img src="<?php echo base_url('/admin_assets/img/incometype.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -138,14 +146,14 @@
                                                     <li>
                                                         <a href="#multic" data-toggle="tab" title="Amounts">
                                                             <span class="round-tabs three">
-                                                            <img src="<?php echo base_url('/admin_assets/img/amount.png'); ?>" style="height:35px;width:35px"/>
+                                                                <img src="<?php echo base_url('/admin_assets/img/amount.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                    <li id="busProfDetailLi" style="display: none;">
                                                         <a href="#addressdet" data-toggle="tab" title="Bussiness Details">
                                                             <span class="round-tabs four">
-                                                            <img src="<?php echo base_url('/admin_assets/img/busdetail.png'); ?>" style="height:35px;width:35px"/>
+                                                                <img src="<?php echo base_url('/admin_assets/img/busdetail.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -190,9 +198,9 @@
                                                             <div class="form-group">
                                                                 <label class="control-label"> Income Type</label>
                                                                 <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="radio" name="inctype" id="yes" value="1" />
+                                                                    <input class="form-check-input" type="radio" name="inctype" id="bussCheck" value="1" />
                                                                     <label class="form-check-label" for="inlineRadio1">Business and Profession</label>
-                                                                    <input class="form-check-input" type="radio" name="inctype" id="no" value="2" />
+                                                                    <input class="form-check-input" type="radio" name="inctype" id="salCheck" value="2" />
                                                                     <label class="form-check-label" for="">Salaried</label>
                                                                 </div>
                                                             </div>
@@ -335,7 +343,7 @@
                                                 <div class="tab-pane fade" id="multic">
                                                     <div class="row card">
                                                         <div class="row">
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Turn Over Amount</label>
                                                                     <div class="form-check form-check-inline">
@@ -344,11 +352,11 @@
                                                                         <input class="form-check-input" type="radio" name="toveramt" id="no" value="B" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="turn_over_amt" id="turn_over_amt" style="display:none;" />
+                                                                    <input type="text" class="form-control" placeholder="" name="turn_over_amt" id="turn_over_amt" disabled="" />
 
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Loan Amount</label>
                                                                     <div class="form-check form-check-inline">
@@ -357,12 +365,12 @@
                                                                         <input class="form-check-input" type="radio" name="lamt" id="no" value="D" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="loan_amt" id="loan_amt" style="display:none;" />
+                                                                    <input type="text" class="form-control" placeholder="" name="loan_amt" id="loan_amt" disabled="" />
 
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 salCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Income From Other Source</label>
                                                                     <div class="form-check form-check-inline">
@@ -371,10 +379,10 @@
                                                                         <input class="form-check-input" type="radio" name="iothersource" id="no" value="F" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="income_other_source" id="income_other_source"  style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="income_other_source" id="income_other_source"  disabled=""/>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 salCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> LIC slip</label>
                                                                     <div class="form-check form-check-inline">
@@ -383,10 +391,10 @@
                                                                         <input class="form-check-input" type="radio" name="lslip" id="no" value="H" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="licslip" id="licslip"  style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="licslip" id="licslip"  disabled=""/>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 salCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Home Loan</label>
                                                                     <div class="form-check form-check-inline">
@@ -395,11 +403,11 @@
                                                                         <input class="form-check-input" type="radio" name="hloan" id="no" value="J" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="home_loan" id="home_loan" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="home_loan" id="home_loan" disabled=""/>
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 salCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Investment Amount</label>
                                                                     <div class="form-check form-check-inline">
@@ -409,10 +417,10 @@
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="invest_amt" id="invest_amt" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="invest_amt" id="invest_amt" disabled=""/>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Sandry Creditors</label>
                                                                     <div class="form-check form-check-inline">
@@ -421,11 +429,11 @@
                                                                         <input class="form-check-input" type="radio" name="scredit" id="no" value="N" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="sandry_credit" id="sandry_credit" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_credit" id="sandry_credit" disabled=""/>
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Sandry Debitors</label>
                                                                     <div class="form-check form-check-inline">
@@ -434,10 +442,10 @@
                                                                         <input class="form-check-input" type="radio" name="sdebit" id="no" value="P" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="sandry_debit" id="sandry_debit" style="display:none;" />
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_debit" id="sandry_debit" disabled="" />
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Stock Amount</label>
                                                                     <div class="form-check form-check-inline">
@@ -446,11 +454,11 @@
                                                                         <input class="form-check-input" type="radio" name="stamt" id="no" value="R" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="stock_amt" id="stock_amt" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="stock_amt" id="stock_amt" disabled=""/>
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Cash Balance</label>
                                                                     <div class="form-check form-check-inline">
@@ -459,10 +467,10 @@
                                                                         <input class="form-check-input" type="radio" name="cbalance" id="no" value="T" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="cash_balance" id="cash_balance" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="cash_balance" id="cash_balance" disabled=""/>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Bussness Loan</label>
                                                                     <div class="form-check form-check-inline">
@@ -471,11 +479,11 @@
                                                                         <input class="form-check-input" type="radio" name="bloan" id="no" value="V" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="buss_loan" id="buss_loan" style="display:none;" />
+                                                                    <input type="text" class="form-control" placeholder="" name="buss_loan" id="buss_loan" disabled="" />
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-4 bussCheckClass">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Personal Loan</label>
                                                                     <div class="form-check form-check-inline">
@@ -484,7 +492,7 @@
                                                                         <input class="form-check-input" type="radio" name="ploan" id="no" value="X" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="pers_loan" id="pers_loan" style="display:none;"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="pers_loan" id="pers_loan" disabled=""/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -536,38 +544,39 @@
                                                 </div>
                                                 <div class="tab-pane fade" id="partenship">
                                                     <div class="row">
+                                                        <div class="partnerError text-center"></div>
                                                         <div class="col-sm-10">
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label"> Partner Name</label>
+                                                                    <label class="control-label"><span class="error">*</span> Partner Name</label>
                                                                     <input type="text" class="form-control" placeholder="Partner Name" name="partnerName" id="partnerName" />
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Aadhar Card Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Aadhar Card Number</label>
 
                                                                     <input type="text" class="form-control" placeholder="Aadhar Card Number" name="pAadhar" id="pAadhar" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Pancard Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Pancard Number</label>
 
                                                                     <input type="text" class="form-control" placeholder="Pancard Number" name="pPancard" id="pPancard" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Email Id</label>
+                                                                    <label class="control-label"><span class="error">*</span>Email Id</label>
 
                                                                     <input type="email" class="form-control" placeholder="example@gmail.com" name="pEmail" id="pEmail" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Mobile Number</label>
+                                                                    <label class="control-label"><span class="error">*</span>Mobile Number</label>
 
                                                                     <input type="text" class="form-control" placeholder="Mobile Number" name="pMobile" id="pMobile" />
                                                                 </div>
@@ -652,229 +661,275 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr> -->
+                                                                    <!--salaried start-->
                                                                     <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">FORM-16- A-part</label>
-                                                                                <input type="file" class="form-control" name="form16a" id="form16a" onchange="loadFile(event,'form16apre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16apre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
+                                                                <div class="col-sm-4" id="ssdocType">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Document Type</label>
 
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">FORM-16- B-part</label>
-                                                                                <input type="file" class="form-control" name="form16b" id="form16b" onchange="loadFile(event,'form16bpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16bpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                       
-                                                                    </tr>
-                                                                    
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event,'adharpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Pan Card</label>
-                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event,'panpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Bank Statement/Passbook</label>
-                                                                                <input class="form-control" id="bankstt" name="bankstt" type="file" onchange="loadFile(event,'stmpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="stmpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
+                                                                        <select class="form-control" name="saldocType" id="saldocType">
+                                                                            <option class="form-control" value="0">Select Document</option>
+                                                                            <option class="form-control" value="1">Form-16</option>
+                                                                            <option class="form-control" value="2">Bank Statement</option>
+                                                                            <option class="form-control" value="3">Salary Slip</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                </tr>
+                                                                <tr class="form16Class">
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">FORM-16- A-part</label>
+                                                                            <input type="file" class="form-control" name="form16a" id="form16a" onchange="loadFile(event, 'form16apre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16apre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
 
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Investment Proof</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="invet_proof" id="yes" value="Y"/>
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="invet_proof" id="no" value="Z"/>
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                    <input class="form-control" id="inv_proof" name="inv_proof" type="file" onchange="loadFile(event,'invpre')" style="display:none;"/>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="invpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">FORM-16- B-part</label>
+                                                                            <input type="file" class="form-control" name="form16b" id="form16b" onchange="loadFile(event, 'form16bpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16bpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
 
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Bussiness Loan Certficate</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="bloancert" id="yes" value="a" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="bloancert" id="no" value="b" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="buss_loan_cert" id="buss_loan_cert" onchange="loadFile(event,'bcertpre')" style="display:none;"/>
+                                                                </tr>
+                                                                <tr class="salBankClass">
+                                                                   <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">Bank Statement </label>
+                                                                            <input type="file" class="form-control" name="salBankStatement" id="salBankStatement" onchange="loadFile(event, 'salBankStatementpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="salBankStatementpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td> 
+                                                                </tr>
+                                                                <tr class="salSlarySlipClass">
+                                                                   <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">Salary Slip </label>
+                                                                            <input type="file" class="form-control" name="salSalarySlip" id="salSalarySlip" onchange="loadFile(event, 'salSalarySlippre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="salSalarySlippre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td> 
+                                                                </tr>
+                                                                <tr class="saldocClass">
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Investment Proof</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="invet_proof" id="yes" value="Y"/>
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="invet_proof" id="no" value="Z"/>
+                                                                                <label class="form-check-label" for="">No</label>
+                                                                                <input class="form-control" id="inv_proof" name="inv_proof" type="file" onchange="loadFile(event, 'invpre')" style="display:none;"/>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bcertpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="invpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
 
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> LIC reciept </label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="lcert" id="yes" value="c" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="lcert" id="no" value="d" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="lic_cert" id="lic_cert" onchange="loadFile(event,'licpre')" style="display:none;" />
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Bussiness Loan Certficate</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="bloancert" id="yes" value="a" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="bloancert" id="no" value="b" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="licpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Income from other source</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="iother" id="yes" value="e" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="iother" id="no" value="f" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="inc_other" id="inc_other" onchange="loadFile(event,'incopre')" style="display:none;" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="incopre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
+                                                                            <input type="file" class="form-control" placeholder="" name="buss_loan_cert" id="buss_loan_cert" onchange="loadFile(event, 'bcertpre')" style="display:none;"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bcertpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="saldocClass">
 
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Home Loan Certificate</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="h_loan" id="yes" value="g" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="h_loan" id="no" value="h" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="home_cert" id="home_cert" onchange="loadFile(event,'homel')" style="display:none;" />
+
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> LIC reciept </label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="lcert" id="yes" value="c" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="lcert" id="no" value="d" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="homel" width="200px" height="200px" />
+                                                                            <input type="file" class="form-control" placeholder="" name="lic_cert" id="lic_cert" onchange="loadFile(event, 'licpre')" style="display:none;" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="licpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Income from other source</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="iother" id="yes" value="e" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="iother" id="no" value="f" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Personal Loan</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="" id="yes" value="i" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="no" id="no" value="j" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="pe_loan" id="pe_loan" onchange="loadFile(event,'prespre')" style="display:none;" />
+                                                                            <input type="file" class="form-control" placeholder="" name="inc_other" id="inc_other" onchange="loadFile(event, 'incopre')" style="display:none;" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="incopre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <!--salaried end-->
+                                                                <!--bussiness and prof-->
+                                                                <tr class="bussdocClass">
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">Aadhar Card </label>
+                                                                            <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event, 'adharpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Pan Card</label>
+                                                                            <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'panpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="bussdocClass">
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Bank Statement/Passbook</label>
+                                                                            <input class="form-control" id="bankstt" name="bankstt" type="file" onchange="loadFile(event, 'stmpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="stmpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Home Loan Certificate</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="h_loan" id="yes" value="g" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="h_loan" id="no" value="h" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="prespre" width="200px" height="200px" />
+                                                                            <input type="file" class="form-control" placeholder="" name="home_cert" id="home_cert" onchange="loadFile(event, 'homel')" style="display:none;" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="homel" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr class="bussdocClass">
+
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Personal Loan</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="" id="yes" value="i" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="no" id="no" value="j" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label"> Last Year Balance Sheet Copy</label>
-                                                                                <div class="form-check form-check-inline">
-                                                                                    <input class="form-check-input" type="radio" name="bsheet" id="yes" value="k" />
-                                                                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                                                    <input class="form-check-input" type="radio" name="bsheet" id="no" value="l" />
-                                                                                    <label class="form-check-label" for="">No</label>
-                                                                                </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="bal_sheet" id="bal_sheet" onchange="loadFile(event,'lastblpre')" style="display:none;" />
+                                                                            <input type="file" class="form-control" placeholder="" name="pe_loan" id="pe_loan" onchange="loadFile(event, 'prespre')" style="display:none;" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="prespre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"> Last Year Balance Sheet Copy</label>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input class="form-check-input" type="radio" name="bsheet" id="yes" value="k" />
+                                                                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                                                <input class="form-check-input" type="radio" name="bsheet" id="no" value="l" />
+                                                                                <label class="form-check-label" for="">No</label>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="lastblpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Other Documents</label>
-                                                                                <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event,'otherdpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                       
-                                                                    </tr>
-                                                                    
+                                                                            <input type="file" class="form-control" placeholder="" name="bal_sheet" id="bal_sheet" onchange="loadFile(event, 'lastblpre')" style="display:none;" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="lastblpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr class="bussdocClass">
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">Other Documents</label>
+                                                                            <input type="file" class="form-control" name="otherd" id="otherd" onchange="loadFile(event, 'otherdpre')" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+                                                                            <label for="output"></label>
+                                                                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="otherdpre" width="200px" height="200px" />
+                                                                        </div>
+                                                                    </td>
+
+                                                                </tr>
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
