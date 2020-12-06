@@ -103,6 +103,231 @@ class IncomeTax extends CI_Controller{
             if ($result['status']) {
                 $id       = $result['inid'];
                 $document = 'Document not uploaded';
+                if(!empty($_FILES['form16b']['name']) && !empty($_FILES['form16a']['name'])){
+                    $first = array(
+                        'name'=>'Form 16-B',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['form16b']['name'],
+                        'file'=>$_FILES['form16b']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );
+                    $second = array(
+                        'name'=>'Form 16-A',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['form16a']['name'],
+                        'file'=>$_FILES['form16a']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );
+    
+                    if ($this->docs->uploaddocs($first)) {
+                        $document = 'Documents uplaoded';
+                    }
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['salBankStatement']['name'])){
+                    $third = array(
+                        'name'=>'Bank Statement',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['salBankStatement']['name'],
+                        'file'=>$_FILES['salBankStatement']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($third)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['salSalarySlip']['name'])){
+                    $four = array(
+                        'name'=>'Salary Slip',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['salSalarySlip']['name'],
+                        'file'=>$_FILES['salSalarySlip']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($four)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['inv_proof']['name'])){
+                    $five = array(
+                        'name'=>'Investment Proof',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['inv_proof']['name'],
+                        'file'=>$_FILES['inv_proof']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($five)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['buss_loan_cert']['name'])){
+                    $six = array(
+                        'name'=>'Loan Certificate',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['buss_loan_cert']['name'],
+                        'file'=>$_FILES['buss_loan_cert']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($six)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['lic_cert']['name'])){
+                    $seven = array(
+                        'name'=>'LIC Certificate',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['lic_cert']['name'],
+                        'file'=>$_FILES['lic_cert']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($seven)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['inc_other']['name'])){
+                    $eight = array(
+                        'name'=>'Income From Other Source',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['inc_other']['name'],
+                        'file'=>$_FILES['inc_other']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($eight)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['inc_other']['name'])){
+                    $nine = array(
+                        'name'=>'Income From Other Source',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['inc_other']['name'],
+                        'file'=>$_FILES['inc_other']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($nine)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['adhar']['name'])){
+                    $ten = array(
+                        'name'=>'Aadhar Card',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['adhar']['name'],
+                        'file'=>$_FILES['adhar']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($ten)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['pan']['name'])){
+                    $a = array(
+                        'name'=>'PAN Card',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['pan']['name'],
+                        'file'=>$_FILES['pan']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($a)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['pe_loan']['name'])){
+                    $b = array(
+                        'name'=>'Personal Loan',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['pe_loan']['name'],
+                        'file'=>$_FILES['pe_loan']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($b)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['h_loan']['name'])){
+                    $c = array(
+                        'name'=>'Home Loan Certificate',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['h_loan']['name'],
+                        'file'=>$_FILES['h_loan']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($c)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['bal_sheet']['name'])){
+                    $d = array(
+                        'name'=>'Balance Sheet',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['bal_sheet']['name'],
+                        'file'=>$_FILES['bal_sheet']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($d)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['otherd']['name'])){
+                    $e = array(
+                        'name'=>'Balance Sheet',
+                        'userid'=>$income_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['otherd']['name'],
+                        'file'=>$_FILES['otherd']['tmp_name'],
+                        'table'=>'income_docs',
+                        'folder'=>'income',
+                        'prim'=>'inid'
+                    );  
+                    if ($this->docs->uploaddocs($e)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+               
                 $response = array(
                     'Message' => 'Income Form added successfully',
                     'Data' => $result,
