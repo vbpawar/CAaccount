@@ -8,9 +8,11 @@ class WalletModel extends CI_Model {
     }
     public function getbalance($userid)
     {
+        $this->db->trans_begin();
         $sql = "SELECT SUM(CASE WHEN `transaction_type` = 'credit' THEN amount ELSE -amount END) AS balance
          FROM wallet_transaction WHERE userid = $userid";
         $query = $this->db->query($sql);
+        $this->db->trans_commit();
         return $query->row_array();
     }
     public function gettransactions($userid)
