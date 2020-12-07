@@ -121,7 +121,7 @@ class IncomeModel extends CI_Model {
             'buss_loan' => $main['buss_loan'],
             'personal_loan' => $main['personal_loan']
         );
-        $this->db->insert('incometax', $maindata);
+        $this->db->insert('incometax', $income_details);
         $result['inid'] =  $this->db->insert_id();
         $this->getpartnerdetails($partnerdata,$result['inid']);
         if ($this->db->trans_status() === FALSE)
