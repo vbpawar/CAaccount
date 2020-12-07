@@ -34,7 +34,7 @@ $('#profileForm').on('submit', function (e) {
         var formdata = new FormData(this);
         formdata.append('userid',<?php echo $_SESSION['Data']['userid']; ?>);
             $.ajax({
-                url: url + 'updateprofile',
+                url: url + 'updatepassword',
                 type: 'POST',
                 data: formdata,
                 cache: false,
