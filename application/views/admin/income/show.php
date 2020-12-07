@@ -210,7 +210,7 @@
                     <div class="card">
 
                         <div class="form-group">
-                            <input type="hidden" name="uid" id="uid"/>
+                            <input type="hidden" name="inid" id="inid"/>
                             <input type="hidden" name="digital_amount" id="digital_amount"/>
                         <input type="hidden" name="digital_uid" id="digital_uid"/>
                             <label class="control-label">Status</label>

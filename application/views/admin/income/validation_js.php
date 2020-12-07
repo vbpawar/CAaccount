@@ -26,20 +26,20 @@
 //                $('#loan_amt').val(' ');
                 break;
             case 'E' :
-                $("#income_other_source").prop('disabled', false);
+                $("#income_from_other").prop('disabled', false);
 //                $('#income_other_source').show();
                 break;
             case 'F' :
-                $("#income_other_source").prop('disabled', true);
+                $("#income_from_other").prop('disabled', true);
 //                $('#income_other_source').hide();
 //                $('#income_other_source').val(' ');
                 break;
             case 'G' :
-                $("#licslip").prop('disabled', false);
+                $("#lic_slip").prop('disabled', false);
 //                $('#licslip').show();
                 break;
             case 'H' :
-                $("#licslip").prop('disabled', true);
+                $("#lic_slip").prop('disabled', true);
 //                $('#licslip').hide();
 //                $('#licslip').val(' ');
                 break;
@@ -53,29 +53,29 @@
 //                $('#home_loan').val(' ');
                 break;
             case 'K' :
-                $("#invest_amt").prop('disabled', false);
+                $("#invs_amt").prop('disabled', false);
 //                $('#invest_amt').show();
                 break;
             case 'L' :
-                $("#invest_amt").prop('disabled', true);
+                $("#invs_amt").prop('disabled', true);
 //                $('#invest_amt').hide();
 //                $('#invest_amt').val(' ');
                 break;
             case 'M' :
-                $("#sandry_credit").prop('disabled', false);
+                $("#sandry_creditor").prop('disabled', false);
 //                $('#sandry_credit').show();
                 break;
             case 'N' :
-                $("#sandry_credit").prop('disabled', true);
+                $("#sandry_creditor").prop('disabled', true);
 //                $('#sandry_credit').hide();
 //                $('#sandry_credit').val(' ');
                 break;
             case 'O' :
-                $("#sandry_debit").prop('disabled', false);
+                $("#sandry_debitor").prop('disabled', false);
 //                $('#sandry_debit').show();
                 break;
             case 'P' :
-                $("#sandry_debit").prop('disabled', true);
+                $("#sandry_debitor").prop('disabled', true);
 //                $('#sandry_debit').hide();
 //                $('#sandry_debit').val(' ');
                 break;
@@ -89,11 +89,11 @@
 //                $('#stock_amt').val(' ');
                 break;
             case 'S' :
-                $("#cash_balance").prop('disabled', false);
+                $("#cash_bal").prop('disabled', false);
 //                $('#cash_balance').show();
                 break;
             case 'T' :
-                $("#cash_balance").prop('disabled', true);
+                $("#cash_bal").prop('disabled', true);
 //                $('#cash_balance').hide();
 //                $('#cash_balance').val(' ');
                 break;
@@ -107,11 +107,11 @@
 //                $('#buss_loan').val(' ');
                 break;
             case 'W' :
-                $("#pers_loan").prop('disabled', false);
+                $("#personal_loan").prop('disabled', false);
 //                $('#pers_loan').show();
                 break;
             case 'X' :
-                $("#pers_loan").prop('disabled', true);
+                $("#personal_loan").prop('disabled', true);
 //                $('#pers_loan').hide();
 //                $('#pers_loan').val(' ');
                 break;
@@ -293,5 +293,30 @@
     });
     $('#pMobile').keyup(function () {
         $('#pMobileError').empty();
+    });
+    
+    
+    //form validation
+    function validChecker() {
+        var errorMsg = '';
+        var status = true;
+
+        if ($('#pan_name').val() == '') {
+            errorMsg += '<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
+            status = false;
+        }
+        if ($('#pan_number').val() == '') {
+            errorMsg += '<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
+            status = false;
+        }
+        $('#error-container').html(errorMsg);
+        return status;
+    }
+
+    $('#pan_name').keyup(function () {
+        $('#panError').empty();
+    });
+    $('#pan_number').keyup(function () {
+        $('#panNoError').empty();
     });
 </script>

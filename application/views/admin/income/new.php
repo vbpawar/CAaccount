@@ -118,7 +118,7 @@
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="pf-withdrawl-form" method="post">
+                        <form id="incomeForm" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -214,7 +214,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -224,13 +224,13 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">PAN Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="PAN Card Number" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="PAN Card Number" name="pan_number" id="pan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name (as per aadhar card)</label>
-                                                                <input type="text" class="form-control" placeholder="Name (as per aadhar card)" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder="Name (as per aadhar card)" name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -239,14 +239,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Aadhar Card Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Aadhar Card Number" name="aadhar_number" id="aadhar_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Date of Birth</label>
 
-                                                                <input type="date" class="form-control" placeholder="8888888888" name="mobile" id="mobile" />
+                                                                <input type="date" class="form-control" name="dob" id="dob" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
@@ -265,7 +265,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
 
-                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" id="email" />
+                                                                <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Contact No.</label>
+
+                                                                <input type="text" class="form-control" placeholder="" name="contact_number" id="contact_number" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -276,7 +283,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Premise Name</label>
-                                                                <input type="text" class="form-control" placeholder=" Premise Name" name="retailorid" id="retailorid" />
+                                                                <input type="text" class="form-control" placeholder=" Premise Name" name="premise_name" id="premise_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -286,56 +293,56 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Flat Number</label>
 
-                                                                <input type="text" class="form-control" placeholder="Flat Number" name="panno" id="panno" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="flat_number" id="flat_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Road</label>
 
-                                                                <input type="text" class="form-control" placeholder="Road" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="road" id="road" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Area</label>
 
-                                                                <input type="text" class="form-control" placeholder="Area" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="area" id="area" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Village</label>
 
-                                                                <input type="text" class="form-control" placeholder="Village" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="village" id="village" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Taluka</label>
 
-                                                                <input type="text" class="form-control" placeholder="Taluka" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="taluka" id="taluka" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">District</label>
 
-                                                                <input type="text" class="form-control" placeholder="District" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="District" name="district" id="district" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">State</label>
 
-                                                                <input type="text" class="form-control" placeholder="State" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="State" name="state" id="state" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Pincode</label>
 
-                                                                <input type="text" class="form-control" placeholder="Pincode" name="aadhar" id="aadhar" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -379,7 +386,7 @@
                                                                         <input class="form-check-input" type="radio" name="iothersource" id="no" value="F" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="income_other_source" id="income_other_source"  disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="income_from_other" id="income_from_other"  disabled=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4 salCheckClass">
@@ -391,7 +398,7 @@
                                                                         <input class="form-check-input" type="radio" name="lslip" id="no" value="H" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="licslip" id="licslip"  disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="lic_slip" id="lic_slip"  disabled=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4 salCheckClass">
@@ -417,7 +424,7 @@
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="invest_amt" id="invest_amt" disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="invs_amt" id="invs_amt" disabled=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4 bussCheckClass">
@@ -429,7 +436,7 @@
                                                                         <input class="form-check-input" type="radio" name="scredit" id="no" value="N" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="sandry_credit" id="sandry_credit" disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_creditor" id="sandry_creditor" disabled=""/>
                                                                 </div>
                                                             </div>
 
@@ -442,7 +449,7 @@
                                                                         <input class="form-check-input" type="radio" name="sdebit" id="no" value="P" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="sandry_debit" id="sandry_debit" disabled="" />
+                                                                    <input type="text" class="form-control" placeholder="" name="sandry_debitor" id="sandry_debitor" disabled="" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4 bussCheckClass">
@@ -467,7 +474,7 @@
                                                                         <input class="form-check-input" type="radio" name="cbalance" id="no" value="T" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="cash_balance" id="cash_balance" disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="cash_bal" id="cash_bal" disabled=""/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4 bussCheckClass">
@@ -492,7 +499,7 @@
                                                                         <input class="form-check-input" type="radio" name="ploan" id="no" value="X" />
                                                                         <label class="form-check-label" for="">No</label>
                                                                     </div>
-                                                                    <input type="text" class="form-control" placeholder="" name="pers_loan" id="pers_loan" disabled=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="personal_loan" id="personal_loan" disabled=""/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -506,7 +513,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Business Name</label>
-                                                                    <input type="text" class="form-control" placeholder="Business Name" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="Business Name" name="bname" id="bname" />
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -514,7 +521,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Nature of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="Nature of Business" name="retailorid" id="retailorid" />
+                                                                    <textarea class="form-control" name="natureofbuss" id="natureofbuss" ></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -522,7 +529,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"> Place of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="Place of Business" name="retailorid" id="retailorid" />
+                                                                    <input type="text" class="form-control" placeholder="Place of Business" name="place_of_buss" id="place_of_buss" />
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
@@ -532,7 +539,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Bussiness Type</label>
 
-                                                                <select class="form-control" name="bustype" id="bustype">
+                                                                <select class="form-control" name="buss_type" id="bustype">
                                                                     <option class="form-control" value="1">Propertireship</option>
                                                                     <option class="form-control" value="2">Partner</option>
                                                                     <option class="form-control" value="3">Private Limited</option>
@@ -936,7 +943,7 @@
                                                     </div>
 
                                                     <p class="text-center">
-                                                        <a href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></a>
+                                                        <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                     </p>
                                                 </div>
 

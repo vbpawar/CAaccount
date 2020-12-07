@@ -73,7 +73,7 @@ class IncomeTax extends CI_Controller{
         );
             $income_details = array(
                 'userid'=>$this->input->post('userid'),
-                'incomeType'=>$this->input->post('incomeType'),
+                'incomeType'=>$this->input->post('inctype'),
                 'bname' => $this->input->post('bname'),
                 'natureofbuss' => $this->input->post('natureofbuss'),
                 'place_of_buss' => $this->input->post('place_of_buss'),
