@@ -122,7 +122,7 @@ $route['wallet']          = 'services/WalletService/create';
 //user creation
 $route['createuser']      = 'user/createUser';
 $route['getusers']        = 'user/getUsersList';
-$route['updateprofile']   = 'User/updateuser';
+$route['updateprofile']   = 'User/update_password';
 $route['activateuser']    = "User/activateuser";//pass userid
 //user ui
 $route['user/create']     = 'services/AccessControlService/create';

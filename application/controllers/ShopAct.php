@@ -155,9 +155,7 @@ class ShopAct extends CI_Controller
     }
        
                 $document = 'Document not uploaded';
-                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['passport']['name']) && !empty($_FILES['signature']['name']) && !empty($_FILES['shop_photo']['name'])
-                && !empty($_FILES['declaration']['name']) && !empty($_FILES['otherdoc']['name'])) {
-                  
+                if (!empty($_FILES['adhar']['name'])){
                     $first = array(
                         'name'=>'Aadhar',
                         'userid'=>$userid,
@@ -168,6 +166,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($first)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['pan']['name'])){
                     $second = array(
                         'name'=>'PAN',
                         'userid'=>$userid,
@@ -178,6 +181,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['passport']['name'])){
                     $third = array(
                         'name'=>'Passport Photo',
                         'userid'=>$userid,
@@ -188,6 +196,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($third)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['signature']['name'])){
                     $four = array(
                         'name'=>'Signature',
                         'userid'=>$userid,
@@ -198,6 +211,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($four)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['shop_photo']['name'])){
                     $five = array(
                         'name'=>'Shop Photo',
                         'userid'=>$userid,
@@ -208,6 +226,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($five)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['declaration']['name'])){
                     $six = array(
                         'name'=>'Declaration Form',
                         'userid'=>$userid,
@@ -218,6 +241,11 @@ class ShopAct extends CI_Controller
                         'folder'=>'shopact',
                         'prim'=>'shid'
                     );
+                    if ($this->docs->uploaddocs($six)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['otherdoc']['name'])){
                     $seven = array(
                         'name'=>'Other Documents',
                         'userid'=>$userid,
@@ -229,30 +257,9 @@ class ShopAct extends CI_Controller
                         'prim'=>'shid'
                     );
                     
-                    
-                    if ($this->docs->uploaddocs($first)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($second)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($third)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($four)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($five)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($six)) {
-                        $document = 'Documents uplaoded';
-                    }
                     if ($this->docs->uploaddocs($seven)) {
                         $document = 'Documents uplaoded';
                     }
-                   
-    
                 }
                 $response = array(
                     'Message' => 'Shop Act Form added successfully',

@@ -135,6 +135,27 @@ class User extends CI_Controller {
     }
 
     //API - update a service
+    public function update_password()
+    {
+        $userid = $this->input->post('userid');
+        $data = array(
+            'upassword' => $this->input->post('upassword')
+        );
+        $userResult = $this->user->updateuser($userid, $data);
+        //echo $userResult;
+        if ($userResult === FALSE) {
+            $response = array(
+                'Message' => 'No change in password.please update it',
+                'Responsecode' => 302
+            );
+        } else {
+            $response = array(
+                'Message' => 'Password reset successfully',
+                'Responsecode' => 200
+            );
+        }
+        echo json_encode($response);
+    }
 
     public function updateuser() {
         $userid = $this->input->post('userid');

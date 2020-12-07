@@ -112,8 +112,7 @@ class UdyogAdhar extends CI_Controller
             $result = $this->smodel->testmodel($testdata);
             if ($result['status']) {
                 $id       = $result['uid'];
-               
-                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['passport']['name'])) {
+                if (!empty($_FILES['adhar']['name'])) {
                     $first = array(
                         'name'=>'Aadhar',
                         'userid'=>$userid,
@@ -124,6 +123,11 @@ class UdyogAdhar extends CI_Controller
                         'folder'=>'udyog',
                         'prim'=>'uid'
                     );
+                    if ($this->docs->uploaddocs($first)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['pan']['name'])) {
                     $second = array(
                         'name'=>'PAN',
                         'userid'=>$userid,
@@ -134,6 +138,11 @@ class UdyogAdhar extends CI_Controller
                         'folder'=>'udyog',
                         'prim'=>'uid'
                     );
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['passport']['name'])) {
                     $third = array(
                         'name'=>'CANCELLED CHECK',
                         'userid'=>$userid,
@@ -144,15 +153,11 @@ class UdyogAdhar extends CI_Controller
                         'folder'=>'udyog',
                         'prim'=>'uid'
                     );
-                    if ($this->docs->uploaddocs($first)) {
-                        $document = 'Documents uplaoded';
-                    }
-                    if ($this->docs->uploaddocs($second)) {
-                        $document = 'Documents uplaoded';
-                    }
                     if ($this->docs->uploaddocs($third)) {
                         $document = 'Documents uplaoded';
                     }
+                }
+                  
                     if (!empty($_FILES['electricity']['name'])) {
                         $four = array(
                             'name'=>'Electricity Bill',
@@ -183,7 +188,7 @@ class UdyogAdhar extends CI_Controller
                             $document = 'Documents uplaoded';
                         }
                     }
-                }
+                
                 $response = array(
                     'Message' => 'Udyog Details added successfully',
                     'Data' => $result,

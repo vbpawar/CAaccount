@@ -42,12 +42,11 @@ $('#profileForm').on('submit', function (e) {
                 processData: false,
                 dataType: 'json',
                 success: function (response) {
-               console.log(response);
                if(response !=null){
                     if (response.Responsecode == 200) {
                         swal("Congrats!", response.Message, "success");
                     } else {
-                        swal("Error!", response.Message, "success");
+                        swal("Error!", response.Message, "warning");
                     }
                 }
             }

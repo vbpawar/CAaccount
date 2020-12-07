@@ -70,7 +70,7 @@ class Pan_controller extends CI_Controller
             if ($result['status']) {
                 $id = $result['uid'];
                 $document = 'Document not uploaded';
-                if (!empty($_FILES['doc']['name']) && !empty($_FILES['otherdoc']['name'])) {
+                if (!empty($_FILES['doc']['name']) || !empty($_FILES['otherdoc']['name'])) {
                     if ($this->uploaddocs('Document', $id, $pdetails['userid'], $_FILES['doc']['name'], $_FILES['doc']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
