@@ -222,13 +222,13 @@ class IncomeTax extends CI_Controller{
                         $document = 'Documents uplaoded';
                     }
                 }
-                if(!empty($_FILES['inc_other']['name'])){
+                if(!empty($_FILES['bankstt']['name'])){
                     $nine = array(
-                        'name'=>'Income From Other Source',
+                        'name'=>'Bank Statement',
                         'userid'=>$income_details['userid'],
                         'id'=>$id,
-                        'filename'=>$_FILES['inc_other']['name'],
-                        'file'=>$_FILES['inc_other']['tmp_name'],
+                        'filename'=>$_FILES['bankstt']['name'],
+                        'file'=>$_FILES['bankstt']['tmp_name'],
                         'table'=>'income_docs',
                         'folder'=>'income',
                         'prim'=>'inid'
