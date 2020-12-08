@@ -8,7 +8,6 @@ class LoginController extends CI_Controller {
 
     public function __construct() {
         parent:: __construct();
-        $this->load->library('email');
         $this->load->model('LoginModel', 'service');
         $this->load->model('Service_chargeModel','serviceCharge');
     }
@@ -110,7 +109,7 @@ class LoginController extends CI_Controller {
         $email = $this->input->post('user');
         $row = $this->service->send_mail($email);
        if($row['status']){
-        $token = md5($emailId).rand(10,9999);
+        $token = md5($email).rand(10,9999);
         $expFormat = mktime(
         date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
         );
