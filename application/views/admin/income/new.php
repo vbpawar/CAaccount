@@ -761,7 +761,7 @@
 
                                                                     <td>
                                                                         <div class="form-group">
-                                                                            <label class="control-label"> Bussiness Loan Certficate</label>
+                                                                            <label class="control-label"> Home Loan Certficate</label>
                                                                             <div class="form-check form-check-inline">
                                                                                 <input class="form-check-input" type="radio" name="bloancert" id="yes" value="a" />
                                                                                 <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -821,7 +821,7 @@
                                                                 </tr>
                                                                 <!--salaried end-->
                                                                 <!--bussiness and prof-->
-                                                                <tr class="bussdocClass">
+                                                                <tr>
                                                                     <td>
                                                                         <div class="form-group">
                                                                             <label class="form-label">Aadhar Card </label>
@@ -967,3 +967,4 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
+<div id="loader"></div>

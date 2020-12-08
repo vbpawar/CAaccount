@@ -458,7 +458,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span> Partner Name</label>
-                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" required="" />
+                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName"/>
                                                                 </div>
                                                             </div>
 
@@ -466,28 +466,28 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Aadharcard Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="pAadhar" id="pAadhar" required=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="pAadhar" id="pAadhar"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Pancard Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" required=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Email Id</label>
 
-                                                                    <input type="email" class="form-control" placeholder="" name="pEmail" id="pEmail" required="" />
+                                                                    <input type="email" class="form-control" placeholder="" name="pEmail" id="pEmail"/>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Mobile Number</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="pMobile" id="pMobile" required=""/>
+                                                                    <input type="text" class="form-control" placeholder="" name="pMobile" id="pMobile"/>
                                                                 </div>
                                                             </div>
                                                         </div>
