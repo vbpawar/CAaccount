@@ -150,7 +150,7 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    <li id="busProfDetailLi" style="display: none;">
+                                                    <li id="busProfDetailLi">
                                                         <a href="#addressdet" data-toggle="tab" title="Bussiness Details">
                                                             <span class="round-tabs four">
                                                                 <img src="<?php echo base_url('/admin_assets/img/busdetail.png'); ?>" style="height:35px;width:35px"/>
@@ -856,3 +856,4 @@
     <!--===================================================-->
     <!--END CONTENT CONTAINER-->
 </div>
+<div id="loader"></div>
