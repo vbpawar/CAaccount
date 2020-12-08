@@ -1,5 +1,5 @@
 <?php
-
+  date_default_timezone_set('Asia/Kolkata');
 class IncomeModel extends CI_Model {
 
     public function get_details($roleid,$userid) {

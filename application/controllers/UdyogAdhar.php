@@ -15,7 +15,7 @@ class UdyogAdhar extends CI_Controller
         $this->load->model('DocsModel', 'docs');
         $this->load->model('WalletModel', 'service');
         $this->load->model('PartnerModel', 'parmodel');
-        date_default_timezone_set('Asia/Kolkata');
+       
     }
     private $response = null;
     private $records = null;

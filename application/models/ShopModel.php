@@ -1,7 +1,7 @@
 <?php
-
+  date_default_timezone_set('Asia/Kolkata');
 class ShopModel extends CI_Model {
-
+  
     public function get_details($sid) {
             $data = $this->db->get_where("shop_details", ['sid' => $sid])->row_array();
         return $data;
