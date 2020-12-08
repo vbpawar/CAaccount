@@ -10,7 +10,7 @@ if(isset($session_data['Data'])){
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> TKINFOTECH | Login </title>
+        <title> TKINFOTECH | Forgot Password </title>
         <link rel="shortcut icon" href="img/favicon.ico">
         <!--STYLESHEET-->
         <!--=================================================-->
@@ -60,31 +60,21 @@ if(isset($session_data['Data'])){
                 <div class="panel lock-box">
                     <div class="center"> <img alt="" src="<?php echo base_url('admin_assets/');?>img/user.png" class="img-circle"/> </div>
                     <h4> Hello User !</h4>
-                    <p class="text-center">Please login to Access your Account</p>
+                    <p class="text-center">Please enter your registred email to reset your password</p>
                     <div class="row">
-                        <form class="form-inline" id="loginForm" method="post">
+                        <form class="form-inline" id="forgotp" method="post">
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-left">
-                                    <label class="text-muted">Email ID</label>
-                                    <input id="user" name="user" type="email" placeholder="Enter Email ID" class="form-control" required />
-                                </div>
-                                <div class="text-left">
-                                    <label for="signupInputPassword" class="text-muted">Password</label>
-                                    <input id="pass" name="pass" type="password" placeholder="Password" class="form-control lock-input" required />
-                                </div>
-                                <div class="pull-left pad-btm">
-                                    <label class="form-checkbox form-icon form-text">
-                                    <input type="checkbox"> Remember Me
-                                    </label>
+                                    <label class="text-muted">Email</label>
+                                    <input id="user" name="user" type="email" placeholder="Enter Email" class="form-control" required />
                                 </div>
                                 <button type="submit" class="btn btn-block btn-primary">
-                                Sign In
+                                Reset password link
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="registration"> Forgot Password ! <a href="#/pages/signup"> <span class="text-primary"> click here </span> </a> </div>
             </div>
             <div id="loader"></div>
         </div>

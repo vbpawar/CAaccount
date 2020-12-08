@@ -27,4 +27,21 @@ class LoginModel extends CI_Model {
     $query = $this->db->query($sql);
     return $query->result();
     }
+
+    public function send_mail($user) {
+        $result = array();
+        $sql = "SELECT * FROM user_master WHERE emailid = '$user'";
+        $query = $this->db->query($sql);  
+        if($query->num_rows() > 0)  
+        {  
+            $result['data'] = $query->result();
+            $result['status']= true;
+        }  
+        else  
+        {  
+            $result['data'] = [];
+            $result['status']= false;     
+        }  
+        return $result;
+    }
 }

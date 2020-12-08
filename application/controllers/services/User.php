@@ -6,6 +6,11 @@ class User extends CI_Controller {
         $this->load->view('admin/user/login');
         $this->load->view('admin/user/login_js');
     }
+
+    public function forgotpassword() {
+        $this->load->view('admin/user/forgot_password');
+        $this->load->view('admin/user/login_js');
+    }
     
     
     public function dashboard() {

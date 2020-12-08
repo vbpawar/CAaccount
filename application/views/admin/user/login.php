@@ -84,7 +84,7 @@ if(isset($session_data['Data'])){
                         </form>
                     </div>
                 </div>
-                <!-- <div class="registration"> Forgot Password ! <a href="#/pages/signup"> <span class="text-primary"> click here </span> </a> </div> -->
+                <div class="registration"> Forgot Password ! <a href="forgotpassword"> <span class="text-primary"> click here </span> </a> </div>
             </div>
             <div id="loader"></div>
         </div>

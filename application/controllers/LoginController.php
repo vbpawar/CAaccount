@@ -8,6 +8,7 @@ class LoginController extends CI_Controller {
 
     public function __construct() {
         parent:: __construct();
+        $this->load->library('email');
         $this->load->model('LoginModel', 'service');
         $this->load->model('Service_chargeModel','serviceCharge');
     }
@@ -103,6 +104,48 @@ class LoginController extends CI_Controller {
         $this->session->sess_destroy();
         $this->cache->clean();
         redirect(base_url('services/user/login'));
+    }
+    public function sendmail()
+    {
+        $email = $this->input->post('user');
+        $row = $this->service->send_mail($email);
+       if($row['status']){
+        $token = md5($emailId).rand(10,9999);
+        $expFormat = mktime(
+        date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
+        );
+       $expDate = date("Y-m-d H:i:s",$expFormat);
+       $from_email = "support@tkinfotech.com"; 
+       $to_email = $this->input->post('user'); 
+       $link = "<a href='".base_url()."/resetpassword?key=".$email."&amp;token=".$token."'>Click To Reset password</a>";
+       //Load email library 
+       $this->load->library('email'); 
+ 
+       $this->email->from($from_email, 'TKINFOTECH'); 
+       $this->email->to($to_email);
+       $this->email->subject('Reset Password Link'); 
+       $this->email->message($link); 
+ 
+       //Send mail 
+       if($this->email->send()) {
+        $response = array(
+            'Message' => 'Mail is sent to your email id please reset your password',
+            'Responsecode' => 200
+        );
+       }
+       else {
+        $response = array(
+            'Message' => 'problem with Mail sent try again some time',
+            'Responsecode' => 200
+        );
+       }
+       }else{
+        $response = array(
+            'Message' => 'Email id is not registred',
+            'Responsecode' => 204
+        );
+       }
+       echo json_encode($response);
     }
 
 }
