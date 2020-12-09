@@ -109,14 +109,10 @@ class LoginController extends CI_Controller {
         $email = $this->input->post('user');
         $row = $this->service->send_mail($email);
        if($row['status']){
-        $token = md5($email).rand(10,9999);
-        $expFormat = mktime(
-        date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
-        );
-       $expDate = date("Y-m-d H:i:s",$expFormat);
+       
        $from_email = "support@tkinfotech.com"; 
        $to_email = $this->input->post('user'); 
-       $link = "<a href='".base_url()."/resetpassword?key=".$email."&amp;token=".$token."'>Click To Reset password</a>";
+       $link = base_url()."resetpassword?key=".$email."&amp;token=".$row['token'];
        //Load email library 
        $this->load->library('email'); 
  

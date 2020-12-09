@@ -87,6 +87,7 @@ $route['retailor/create'] = 'services/Retailor/create';
 
 $route['login']        = 'services/User/login';
 $route['forgotpassword']        = 'services/User/forgotpassword';
+$route['resetpassword']        = 'services/User/resetpassword';
 $route['act']          = 'residential_address/act';
 //new service routes
 //pf apis
