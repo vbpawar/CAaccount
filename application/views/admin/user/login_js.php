@@ -32,6 +32,7 @@
 
     $("#forgotp").on("submit", function (e) {
         e.preventDefault();
+        console.log('he');
         var formdata = new FormData(this);
             $.ajax({
                 url: url + "LoginController/sendmail",
@@ -43,11 +44,13 @@
                 dataType: "json",
                 success: function (response) {
                     if (response.Responsecode == 200) {
-                       swal(response.Message,"success");
+                    //    swal(response.Message,"success");
+                       $('#message').html(response.Message);
                     } else {
-                        swal("Error!", response.Message, "error");
+                        $('#message').html(response.Message);
+                        // swal("Error!", response.Message, "error");
                     }
-                },
+                }
             });
     });
 </script>

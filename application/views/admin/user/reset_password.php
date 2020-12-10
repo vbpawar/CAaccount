@@ -56,13 +56,16 @@ if(isset($session_data['Data'])){
         <div id="container" class="cls-container">
             <!-- LOGIN FORM -->
             <!--===================================================-->
-            <div class="lock-wrapper">
+            <div class="lock-wrapper" id="linkshow">
                 <div class="panel lock-box">
                     <div class="center"> <img alt="" src="<?php echo base_url('admin_assets/');?>img/user.png" class="img-circle"/> </div>
                     <h4> Hello User !</h4>
                     <p class="text-center">reset your password</p>
                     <div class="row">
                         <form class="form-inline" id="resetp" method="GET">
+                        <input type="hidden" name="email" value="<?php echo $email;?>">
+                <input type="hidden" name="reset_link_token" value="<?php echo $token;?>">
+
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-left">
                                    
@@ -78,6 +81,9 @@ if(isset($session_data['Data'])){
                         </form>
                     </div>
                 </div>
+            </div>
+            <div style="display:none" id="linkdown">
+            <pre>Password Link is expired</pre>
             </div>
             <div id="loader"></div>
         </div>

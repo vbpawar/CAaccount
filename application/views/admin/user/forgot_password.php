@@ -65,7 +65,7 @@ if(isset($session_data['Data'])){
                         <form class="form-inline" id="forgotp" method="post">
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-left">
-                                    <label class="text-muted">Email</label>
+                                    <label class="text-muted" id="message"></label>
                                     <input id="user" name="user" type="email" placeholder="Enter Email" class="form-control" required />
                                 </div>
                                 <button type="submit" class="btn btn-block btn-primary">

@@ -109,7 +109,6 @@ class LoginController extends CI_Controller {
         $email = $this->input->post('user');
         $row = $this->service->send_mail($email);
        if($row['status']){
-       
        $from_email = "support@tkinfotech.com"; 
        $to_email = $this->input->post('user'); 
        $link = base_url()."resetpassword?key=".$email."&amp;token=".$row['token'];
@@ -141,6 +140,27 @@ class LoginController extends CI_Controller {
         );
        }
        echo json_encode($response);
+    }
+    public function checkemailexpire()
+    {
+       $email = $this->input->get('email');
+       $token = $this->input->get('token');
+       $row = $this->service->check_link($email,$token);
+       $curDate = date("Y-m-d H:i:s");
+       if($row['status']){
+        $flag = false;
+        if($row['expiredate'] >= $curDate){
+            $flag = true;
+        }
+       }else{
+        $flag = false;
+       }
+       $response = array(
+        'Message' => 'check data',
+        'Data'=>$flag,
+        'Responsecode' => 200
+    );
+    echo json_encode($response);
     }
 
 }

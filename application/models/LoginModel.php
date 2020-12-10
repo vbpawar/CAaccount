@@ -34,16 +34,32 @@ class LoginModel extends CI_Model {
         $query = $this->db->query($sql);  
         if($query->num_rows() > 0)  
         {  
-            $token = md5($email).rand(10,9999);
+            $token = md5($user).rand(10,9999);
             $expFormat = mktime(
             date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
             );
            $expDate = date("Y-m-d H:i:s",$expFormat);
            $sql = "UPDATE user_master SET token = '$token',expiredate='$expDate' WHERE emailid = '$user'";
            $query = $this->db->query($sql);
-           $result['data'] = $query->result();
+         //  $result['data'] = $query->result();
            $result['token'] =  $token;
            $result['token'] =   $expDate;
+            $result['status']= true;
+        }  
+        else  
+        {  
+            $result['data'] = [];
+            $result['status']= false;     
+        }  
+        return $result;
+    }
+    public function check_link($email,$token)
+    {
+        $sql = "SELECT * FROM user_master WHERE token = '$token',emailid='$email'";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)  
+        {  
+            $result['data'] = $query->result();
             $result['status']= true;
         }  
         else  

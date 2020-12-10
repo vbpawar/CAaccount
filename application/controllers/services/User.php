@@ -13,7 +13,7 @@ class User extends CI_Controller {
     }
     public function resetpassword() {
         $this->load->view('admin/user/reset_password');
-        $this->load->view('admin/user/login_js');
+        $this->load->view('admin/user/resetpassword_js');
     }
     
     
