@@ -111,7 +111,7 @@ class LoginController extends CI_Controller {
        if($row['status']){
        $from_email = "support@tkinfotech.com"; 
        $to_email = $this->input->post('user'); 
-       $link = base_url()."resetpassword?key=".$email."&amp;token=".$row['token'];
+       $link = base_url()."resetpassword?key=".$email."&token=".$row['token'];
        //Load email library 
        $this->load->library('email'); 
  

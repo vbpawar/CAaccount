@@ -63,8 +63,8 @@ if(isset($session_data['Data'])){
                     <p class="text-center">reset your password</p>
                     <div class="row">
                         <form class="form-inline" id="resetp" method="GET">
-                        <input type="hidden" name="email" value="<?php echo $email;?>">
-                <input type="hidden" name="reset_link_token" value="<?php echo $token;?>">
+                        <input type="hidden" name="email" value="<?php echo  $_GET['key'];?>">
+                <input type="hidden" name="reset_link_token" value="<?php echo $_GET['token'];?>">
 
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-left">

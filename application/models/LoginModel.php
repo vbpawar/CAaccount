@@ -43,7 +43,6 @@ class LoginModel extends CI_Model {
            $query = $this->db->query($sql);
          //  $result['data'] = $query->result();
            $result['token'] =  $token;
-           $result['token'] =   $expDate;
             $result['status']= true;
         }  
         else  
