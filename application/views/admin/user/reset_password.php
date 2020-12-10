@@ -59,7 +59,7 @@ if(isset($session_data['Data'])){
             <div class="lock-wrapper" id="linkshow">
                 <div class="panel lock-box">
                     <div class="center"> <img alt="" src="<?php echo base_url('admin_assets/');?>img/user.png" class="img-circle"/> </div>
-                    <h4> Hello User !</h4>
+                    <h4> Hello <span id="useremail"></span></h4>
                     <p class="text-center">reset your password</p>
                     <div class="row">
                         <form class="form-inline" id="resetp" method="GET">

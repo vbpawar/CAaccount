@@ -162,6 +162,25 @@ class LoginController extends CI_Controller {
     );
     echo json_encode($response);
     }
+    public function changepasswrd()
+    {
+       $email = $this->input->post('email');
+       $token = $this->input->post('reset_link_token');
+       $password = $this->input->post('password');
+       $row = $this->service->change_pwd($password,$email,$token);
+       if($row['status']){
+        $response = array(
+            'Message' => 'Password reset successfull',
+            'Responsecode' => 200
+        );
+       }else{
+        $response = array(
+            'Message' => 'Password not reset',
+            'Responsecode' => 204
+        );
+       }
+       echo json_encode($response);
+    }
 
 }
 

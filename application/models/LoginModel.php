@@ -68,4 +68,18 @@ class LoginModel extends CI_Model {
         }  
         return $result;
     }
+    public function change_pwd($password,$email,$token)
+    {
+        $sql = "UPDATE user_master SET upassword = '$password' WHERE emailid = '$email' AND token='$token'";
+        $query = $this->db->query($sql);
+        if($this->db->affected_rows() > 0)  
+        {  
+            $result['status']= true;
+        }  
+        else  
+        {  
+            $result['status']= false;     
+        } 
+        return $result; 
+    }
 }
