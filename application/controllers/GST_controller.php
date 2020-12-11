@@ -21,11 +21,21 @@ class GST_controller extends CI_Controller
     
 
     public function get_all_gst(){
-        $result = $this->pfmodel->get_details();
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->gstmodel->get_details($roleid,$userid);
         if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('partners'=>[]);
+               $p_details= $this->gstmodel->get_partners_details($result['data'][$i]['gid']); 
+               if($p_details['status']){
+                $temp = array('partners'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
             $response = array(
-                'Message' => 'Udyom Aadhar Details loaded successfully',
-                'Data' => $result['data'],
+                'Message' => 'GST Details loaded successfully',
+                'Data' => $records,
                 'Responsecode' => 200
             );
         } else {
@@ -108,79 +118,189 @@ class GST_controller extends CI_Controller
             if ($result['status']) {
                 $id       = $result['gid'];
                
-                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['pan']['name']) && !empty($_FILES['passport']['name'])) {
+                if (!empty($_FILES['psfirmpandoc']['name'])) {
                     $first = array(
-                        'name'=>'Aadhar',
+                        'name'=>'PAN CARD',
                         'userid'=>$userid,
                         'id'=>$id,
-                        'filename'=>$_FILES['adhar']['name'],
-                        'file'=>$_FILES['adhar']['tmp_name'],
-                        'table'=>'udyog_docs',
-                        'folder'=>'udyog',
-                        'prim'=>'uid'
-                    );
-                    $second = array(
-                        'name'=>'PAN',
-                        'userid'=>$userid,
-                        'id'=>$id,
-                        'filename'=>$_FILES['pan']['name'],
-                        'file'=>$_FILES['pan']['tmp_name'],
-                        'table'=>'udyog_docs',
-                        'folder'=>'udyog',
-                        'prim'=>'uid'
-                    );
-                    $third = array(
-                        'name'=>'CANCELLED CHECK',
-                        'userid'=>$userid,
-                        'id'=>$id,
-                        'filename'=>$_FILES['passport']['name'],
-                        'file'=>$_FILES['passport']['tmp_name'],
-                        'table'=>'udyog_docs',
-                        'folder'=>'udyog',
-                        'prim'=>'uid'
+                        'filename'=>$_FILES['psfirmpandoc']['name'],
+                        'file'=>$_FILES['psfirmpandoc']['tmp_name'],
+                        'table'=>'gst_docs',
+                        'folder'=>'gst',
+                        'prim'=>'gid'
                     );
                     if ($this->docs->uploaddocs($first)) {
                         $document = 'Documents uplaoded';
                     }
+                }
+                if (!empty($_FILES['psdeeddoc']['name'])) {
+                    $second = array(
+                        'name'=>'Partnership Deed',
+                        'userid'=>$userid,
+                        'id'=>$id,
+                        'filename'=>$_FILES['psdeeddoc']['name'],
+                        'file'=>$_FILES['psdeeddoc']['tmp_name'],
+                        'table'=>'gst_docs',
+                        'folder'=>'gst',
+                        'prim'=>'gid'
+                    );
                     if ($this->docs->uploaddocs($second)) {
                         $document = 'Documents uplaoded';
                     }
+                }
+                if (!empty($_FILES['addproofdoc']['name'])) {
+                    $third = array(
+                        'name'=>'Address Proof',
+                        'userid'=>$userid,
+                        'id'=>$id,
+                        'filename'=>$_FILES['addproofdoc']['name'],
+                        'file'=>$_FILES['addproofdoc']['tmp_name'],
+                        'table'=>'gst_docs',
+                        'folder'=>'gst',
+                        'prim'=>'gid'
+                    );
                     if ($this->docs->uploaddocs($third)) {
                         $document = 'Documents uplaoded';
                     }
-                    if (!empty($_FILES['electricity']['name'])) {
+                }
+                    if (!empty($_FILES['cancelcheck']['name'])) {
                         $four = array(
-                            'name'=>'Electricity Bill',
+                            'name'=>'Cancel Check/Bank Stmt',
                             'userid'=>$userid,
                             'id'=>$id,
-                            'filename'=>$_FILES['electricity']['name'],
-                            'file'=>$_FILES['electricity']['tmp_name'],
-                            'table'=>'udyog_docs',
-                            'folder'=>'udyog',
-                            'prim'=>'uid'
+                            'filename'=>$_FILES['cancelcheck']['name'],
+                            'file'=>$_FILES['cancelcheck']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
                         );
                         if ($this->docs->uploaddocs($four)) {
                             $document = 'Documents uplaoded';
                         }
                     }
-                    if (!empty($_FILES['otherdoc']['name'])) {
+                    if (!empty($_FILES['rentagr']['name'])) {
                         $five = array(
-                            'name'=>'OTHER DOCUMENTS',
+                            'name'=>'Rent Aggrement',
                             'userid'=>$userid,
                             'id'=>$id,
-                            'filename'=>$_FILES['otherdoc']['name'],
-                            'file'=>$_FILES['otherdoc']['tmp_name'],
-                            'table'=>'udyog_docs',
-                            'folder'=>'udyog',
-                            'prim'=>'uid'
+                            'filename'=>$_FILES['rentagr']['name'],
+                            'file'=>$_FILES['rentagr']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
                         );
                         if ($this->docs->uploaddocs($five)) {
                             $document = 'Documents uplaoded';
                         }
                     }
-                }
+                    if (!empty($_FILES['propertypic']['name'])) {
+                        $five = array(
+                            'name'=>'Photo of Prop',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['propertypic']['name'],
+                            'file'=>$_FILES['propertypic']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($five)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['adhar']['name'])) {
+                        $six = array(
+                            'name'=>'Aadhar Card',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['adhar']['name'],
+                            'file'=>$_FILES['adhar']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($six)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['pan']['name'])) {
+                        $seven = array(
+                            'name'=>'PAN Card',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['pan']['name'],
+                            'file'=>$_FILES['pan']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($seven)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['electricity']['name'])) {
+                        $eight = array(
+                            'name'=>'Electricity Bill',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['electricity']['name'],
+                            'file'=>$_FILES['electricity']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($eight)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['bstatdoc']['name'])) {
+                        $nine = array(
+                            'name'=>'Cancel Check/Bank Stmt',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['bstatdoc']['name'],
+                            'file'=>$_FILES['bstatdoc']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($nine)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['passportpic']['name'])) {
+                        $ten = array(
+                            'name'=>'Passport Photo',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['passportpic']['name'],
+                            'file'=>$_FILES['passportpic']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($ten)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                    if (!empty($_FILES['rentdoc']['name'])) {
+                        $ten1 = array(
+                            'name'=>'Rent Aggrement',
+                            'userid'=>$userid,
+                            'id'=>$id,
+                            'filename'=>$_FILES['rentdoc']['name'],
+                            'file'=>$_FILES['rentdoc']['tmp_name'],
+                            'table'=>'gst_docs',
+                            'folder'=>'gst',
+                            'prim'=>'gid'
+                        );
+                        if ($this->docs->uploaddocs($ten1)) {
+                            $document = 'Documents uplaoded';
+                        }
+                    }
+                
                 $response = array(
-                    'Message' => 'Udyog Details added successfully',
+                    'Message' => 'GST Details added successfully',
                     'Data' => $result['data'],
                     'Responsecode' => 200
                 );

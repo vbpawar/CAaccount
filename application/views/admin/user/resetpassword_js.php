@@ -15,6 +15,7 @@ function resetpassword(){
                             $('#linkshow').show();
                         }else{
                             $('#linkdown').show();   
+                            $('#linkshow').hide();
                         }
                     } else {
                         $('#linkdown').show(); 

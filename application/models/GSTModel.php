@@ -2,70 +2,55 @@
 
 class GSTModel extends CI_Model {
 
-    public function get_details() {
+    public function get_details($roleid,$userid) {
         $result = [];
-        $sql = "SELECT * FROM udyog_adhar pf 
-        JOIN personal_details pd ON pd.pid = pf.pid 
-        JOIN bank_details bd ON bd.bid = pf.pfid 
-        JOIN residential_details rd ON rd.rid = pf.rid";
+        if($roleid ==1 || $roleid ==4){
+        $sql = "SELECT pf.gid,pf.gst_type,pf.nature_of_buss,pf.nature_of_buss,pf.buss_type,pf.male,pf.female,pf.status,pf.remark,pf.updatedat,pf.createdat,
+        pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+        rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date,
+        u.firstname,u.lastname,rd1.premise_name s_premise_name,rd1.flat_number s_flat_number,rd1.road s_road,rd1.area s_area,rd1.village s_village,rd1.taluka s_taluka,
+        rd1.district s_district,rd1.state s_state,rd1.pincode s_pincode,u.roleid
+        FROM gst_service pf JOIN personal_details pd ON pd.pid = pf.pid 
+                JOIN residential_details rd ON rd.rid = pf.rid 
+                JOIN shop_details sd ON sd.sid = pf.sid 
+                JOIN residential_details rd1 ON sd.rid = rd1.rid 
+                JOIN user_master u ON u.userid = pf.userid ORDER BY pf.gid DESC";
+                  }else{
+                    $sql = "SELECT pf.gid,pf.gst_type,pf.nature_of_buss,pf.nature_of_buss,pf.buss_type,pf.male,pf.female,pf.status,pf.remark,pf.updatedat,pf.createdat,
+                    pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+                    rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,sd.shop_name,sd.office_contact,sd.office_mailid,sd.buss_start_date,
+                    u.firstname,u.lastname,rd1.premise_name s_premise_name,rd1.flat_number s_flat_number,rd1.road s_road,rd1.area s_area,rd1.village s_village,rd1.taluka s_taluka,
+                    rd1.district s_district,rd1.state s_state,rd1.pincode s_pincode,u.roleid
+                    FROM gst_service pf JOIN personal_details pd ON pd.pid = pf.pid 
+                            JOIN residential_details rd ON rd.rid = pf.rid 
+                            JOIN shop_details sd ON sd.sid = pf.sid 
+                            JOIN residential_details rd1 ON sd.rid = rd1.rid 
+                            JOIN user_master u ON u.userid = pf.userid WHERE pf.userid=$userid ORDER BY pf.gid DESC";  
+                }
         $query = $this->db->query($sql);
             $result['status'] = true;
             $result['data'] =  $query->result();       
         return $result;
     }   
-    
-    public function add_details($data)
-    {    
-        $result = [];
-        if($this->db->insert('udyog_adhar', $data)){
-            $uid = $this->db->insert_id();
-            $sql = "SELECT * FROM udyog_adhar pf 
-            JOIN personal_details pd ON pd.pid = pf.pid 
-            JOIN bank_details bd ON bd.bid = pf.bid 
-            JOIN residential_details rd ON rd.rid = pf.rid 
-            JOIN shop_details sd ON sd.sid = pf.sid 
-            WHERE pf.uid = $uid";
-            $query = $this->db->query($sql);
-           $result['uid'] =  $uid;
-           $result['status'] = true;
-           $result['data'] =  $query->result();
-         }else{
-            $result['status'] = false;
-         }
-         return $result;
-    }
-    public function removebill($id){
-        $this->db->where('pfid', $id);
-        if($this->db->delete('udyog_adhar')){
-           return true;
-         }else{
-           return false;
-         }
-    }
-
-    public function update_details($pfid,$data)
+    public function get_partners_details($id)
     {
-       
-            $this->db->where('pfid',$pfid);
-            $sql = "SELECT * FROM udyog_adhar pf 
-            JOIN personal_details pd ON pd.pid = pf.pid 
-            JOIN bank_details bd ON bd.bid = pf.pfid 
-            JOIN residential_details rd ON rd.rid = pf.rid 
-            WHERE pf.pfid = $pfid";
-            if($this->db->update('udyog_adhar',$data)){
-                $query = $this->db->query($sql);
-                $result['status'] = true;
-                $result['data'] =  $query->result();
-            }else{
-                $result['status'] = false;
-            }         
-            return $result;
-        }        
+        $sql = "SELECT * FROM gst_partners sp 
+        JOIN partner_details pd ON pd.partnerid = sp.partnerid WHERE sp.gid = $id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $result['status'] = true;
+            $result['data'] =  $query->result();
+        }else{
+            $result['status'] = false;
+        }
+     return $result;
+    }
+          
         public function updatestatus($id,$data)
         {
             $result = false;
-            $this->db->where('uid',$id);
-            if($this->db->update('udyog_adhar',$data)){
+            $this->db->where('gid',$id);
+            if($this->db->update('gst_service',$data)){
                 $result['status'] = true;
             }else{
                 $result['status'] = false;
