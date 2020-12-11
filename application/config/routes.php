@@ -195,3 +195,15 @@ $route['loadincome']  = 'IncomeTax/get_all_incomes';
 $route['getincomedocs'] = 'IncomeTax/get_income_docs';
 $route['update_income_status']= 'IncomeTax/update_status';
 $route['get_income_remarks'] = 'IncomeTax/get_update_docs';
+
+//GST ui
+$route['gst/create']  = 'services/GstRegistration/create';
+$route['gst']  = 'services/GstRegistration/show';
+$route['gst/info']  = 'services/GstRegistration/update';
+
+//GST apis
+$route['creategst']  = 'GST_controller/add_gst_form';
+$route['loadgst']  = 'GST_controller/get_all_gst';
+$route['getgstdocs'] = 'GST_controller/get_udyog_docs';
+$route['update_gst_status']= 'GST_controller/update_status';
+$route['get_gst_remarks'] = 'GST_controller/uploadremarks';
