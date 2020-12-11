@@ -29,7 +29,7 @@ class GSTModel extends CI_Model {
                 }
         $query = $this->db->query($sql);
             $result['status'] = true;
-            $result['data'] =  $query->result();       
+            $result['data'] =  $query->result_array();       
         return $result;
     }   
     public function get_partners_details($id)
