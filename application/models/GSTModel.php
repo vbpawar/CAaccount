@@ -79,7 +79,7 @@ class GSTModel extends CI_Model {
         $result['r_id'] =  $this->db->insert_id();
 
         $shopdetails = array(
-         'rid'=>$r_id,
+         'rid'=>$result['r_id'],
          'shop_name'=>$shop_details['shop_name'],
          'office_contact'=>$shop_details['office_contact'],
          'office_mailid'=>$shop_details['office_mailid'],
