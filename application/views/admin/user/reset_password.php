@@ -62,7 +62,7 @@ if(isset($session_data['Data'])){
                     <h4> Hello <span id="useremail"></span></h4>
                     <p class="text-center">reset your password</p>
                     <div class="row">
-                        <form class="form-inline" id="resetp" method="GET">
+                        <form class="form-inline" id="resetp" method="POST">
                         <input type="hidden" name="email" value="<?php echo  $_GET['key'];?>">
                 <input type="hidden" name="reset_link_token" value="<?php echo $_GET['token'];?>">
 

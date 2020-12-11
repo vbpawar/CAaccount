@@ -10,6 +10,7 @@ class LoginController extends CI_Controller {
         parent:: __construct();
         $this->load->model('LoginModel', 'service');
         $this->load->model('Service_chargeModel','serviceCharge');
+        date_default_timezone_set('Asia/Kolkata');
     }
 
     public function flash_message() {
@@ -149,7 +150,7 @@ class LoginController extends CI_Controller {
        $curDate = date("Y-m-d H:i:s");
        if($row['status']){
         $flag = false;
-        if($row['expiredate'] >= $curDate){
+        if($row['data']->expiredate >= $curDate){
             $flag = true;
         }
        }else{

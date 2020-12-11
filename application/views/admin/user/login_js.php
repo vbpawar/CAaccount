@@ -32,7 +32,6 @@
 
     $("#forgotp").on("submit", function (e) {
         e.preventDefault();
-        console.log('he');
         var formdata = new FormData(this);
             $.ajax({
                 url: url + "LoginController/sendmail",

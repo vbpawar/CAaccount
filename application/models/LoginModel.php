@@ -1,7 +1,7 @@
 <?php
-
+ date_default_timezone_set('Asia/Kolkata');
 class LoginModel extends CI_Model {
-
+   
     public function checkauth($user,$pass) {
         $result = array();
         $sql = "SELECT * FROM user_master
@@ -36,7 +36,7 @@ class LoginModel extends CI_Model {
         {  
             $token = md5($user).rand(10,9999);
             $expFormat = mktime(
-            date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
+            date("H"), date("i")+15, date("s"), date("m") ,date("d"), date("Y")
             );
            $expDate = date("Y-m-d H:i:s",$expFormat);
            $sql = "UPDATE user_master SET token = '$token',expiredate='$expDate' WHERE emailid = '$user'";
@@ -54,11 +54,11 @@ class LoginModel extends CI_Model {
     }
     public function check_link($email,$token)
     {
-        $sql = "SELECT * FROM user_master WHERE token = '$token',emailid='$email'";
+        $sql = "SELECT token,expiredate FROM user_master WHERE token = '$token' AND emailid='$email'";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)  
         {  
-            $result['data'] = $query->result();
+            $result['data'] = $query->row();
             $result['status']= true;
         }  
         else  
