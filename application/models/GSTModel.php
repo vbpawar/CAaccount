@@ -58,7 +58,7 @@ class GSTModel extends CI_Model {
             return $result;
         }
         
-        public function create_gst($data)
+ public function create_gst($data)
     {
       $pdetails = $data['pdetails'];
       $rdetails = $data['rdetails'];
@@ -104,16 +104,16 @@ class GSTModel extends CI_Model {
         $result['gid'] =  $this->db->insert_id();
         $this->getpartnerdetails($partnerdata,$result['gid']);
         if ($this->db->trans_status() === FALSE)
-{
-        $this->db->trans_rollback();
-}
-else
-{
+            {
+                $this->db->trans_rollback();
+            }
+        else
+        {
         $this->db->trans_commit();
       
         $result['status'] = true;
         return $result;
-}
+        }
     }
     public function getpartnerdetails($partner_data,$id)
     {
@@ -137,3 +137,4 @@ else
                     }
     }  
 }
+?>
