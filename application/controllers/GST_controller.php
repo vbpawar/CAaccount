@@ -24,6 +24,7 @@ class GST_controller extends CI_Controller
         $roleid = $this->input->get('roleid');
         $userid = $this->input->get('userid');
         $result = $this->gstmodel->get_details($roleid,$userid);
+        $records = [];
         if ($result['status']) {
             for($i=0;$i<count($result['data']);$i++){
                 $temp = array('partners'=>[]);
@@ -301,7 +302,7 @@ class GST_controller extends CI_Controller
                 
                 $response = array(
                     'Message' => 'GST Details added successfully',
-                    'Data' => $result['data'],
+                    'Data' => $result,
                     'Responsecode' => 200
                 );
             } else {
