@@ -29,7 +29,7 @@ $("#resetp").on("submit", function (e) {
         var formdata = new FormData(this);
             $.ajax({
                 url: url + "LoginController/changepasswrd",
-                type: "POST",
+                type: "GET",
                 data: formdata,
                 dataType: "json",
                 success: function (response) {
