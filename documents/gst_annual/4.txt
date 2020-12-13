@@ -1,0 +1,6 @@
+add drilldown in branches for franchise
+email the MIS report to particular franchise
+email the MIS major report to licensor
+create tab for security in usermaster
+reset the fileds while add new entry
+franchise owner add 

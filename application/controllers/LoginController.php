@@ -103,7 +103,7 @@ class LoginController extends CI_Controller {
         $this->load->driver('cache');
         $this->session->sess_destroy();
         $this->cache->clean();
-        redirect(base_url('services/user/login'));
+        redirect(base_url('login'));
     }
     public function sendmail()
     {

@@ -207,3 +207,22 @@ $route['loadgst']  = 'GST_controller/get_all_gst';
 $route['getgstdocs'] = 'GST_controller/get_udyog_docs';
 $route['update_gst_status']= 'GST_controller/update_status';
 $route['get_gst_remarks'] = 'GST_controller/uploadremarks';
+
+//GST file UI
+$route['loadgstfile'] = 'services/GST_file/show';
+$route['creategstfile'] = 'services/GST_file/create';
+$route['editgstfile'] = 'services/GST_file/update';
+
+$route['get_gst_return_remarks'] = 'GST_file_controller/get_update_docs';
+$route['updategstfile'] = 'GST_file_controller/update_status';
+$route['getfilereturns'] = 'GST_file_controller/get_gst_files';
+$route['getfilereturns_docs'] = 'GST_file_controller/get_gst_docs';
+
+//GST annual return
+$route['loadgstannual'] = 'services/GSTAnnual/show';
+$route['editgstannual'] = 'services/GSTAnnual/update';
+$route['creategstannual'] = 'services/GSTAnnual/create';
+
+$route['updategstannual'] = 'GST_annual_controller/update_status';
+$route['get_gst_annual'] = 'GST_annual_controller/get_gst_annuals';
+$route['getannualreturns_docs'] = 'GST_annual_controller/get_gst_docs';

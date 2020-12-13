@@ -127,5 +127,16 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+//annual gst docs
+    public function get_annual_docs($id) {
+        $sql = "SELECT * FROM gst_annual_docs WHERE gid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function get_file_docs($id) {
+        $sql = "SELECT * FROM gst_file_docs WHERE gid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
 }

@@ -12,9 +12,8 @@
         <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
 
         <li><a href="<?php echo base_url();?>services/GstRegistration/create">GST Registration</a></li>
-
-
-
+        <li><a href="<?php echo base_url();?>services/GSTAnnual/create">GST Annual Return</a></li>
+        <li><a href="<?php echo base_url();?>services/GST_file/create">GST Filing</a></li>
     </ul>
     <!-- end dropdown-menu -->
 </li>

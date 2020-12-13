@@ -1,12 +1,10 @@
 <script>
-
     var url = '<?php echo base_url(); ?>';
     var pfWithdrawal = new Map();
     const loadList = () => {
         var userid =<?php echo $_SESSION['Data']['userid']; ?>;
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
-
             url: url + 'loadgst',
             type: 'get',
             data: {userid: userid, roleid: roleid},
