@@ -1,7 +1,6 @@
 <script>
 $('#dynamicLi').hide();
  $('#bustype').change(function () {
-     
         //Use $option (with the "$") to see that the variable is a jQuery object
         var $option = $(this).find('option:selected');
         //Added with the EDIT
