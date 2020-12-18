@@ -11,7 +11,7 @@
         <li><a href="<?php echo base_url();?>users/show"> Access Control</a></li>
         <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
 
-        <li><a href="<?php echo base_url();?>services/GstRegistration/create">GST Registration</a></li>
+        <li><a href="<?php echo base_url();?>gst">GST Registration</a></li>
         <li><a href="<?php echo base_url();?>services/GSTAnnual/create">GST Annual Return</a></li>
         <li><a href="<?php echo base_url();?>services/GST_file/create">GST Filing</a></li>
     </ul>

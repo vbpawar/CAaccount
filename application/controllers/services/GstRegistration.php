@@ -40,6 +40,7 @@ class GstRegistration extends CI_Controller {
         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/gst_registration/update');
         $this->load->view('admin/gst_registration/validation_js');
+        $this->load->view('admin/gst_registration/update_js');
     }
 
 }

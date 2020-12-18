@@ -686,7 +686,7 @@
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">Copy Board Resolutionok</label>
+                                                                <label class="control-label">Copy Board Resolution</label>
                                                                 <input class="form-control" id="boarddoc" name="boarddoc" type="file" onchange="loadFile(event, 'boarddocp')" />
                                                             </div>
 

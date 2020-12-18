@@ -19,15 +19,18 @@
         if (value == 1) {
             $('#proprietorship').show();
             $('#partnerhip').hide();
+            $('#pvtltd').hide();
+            $('#ppl').hide();
         } else if (value == 2) {
             $('#proprietorship').hide();
             $('#partnerhip').show();
+            $('#pvtltd').hide();
+            $('#ppl').hide();
         } else if (value == 3) {
             $('#proprietorship').hide();
             $('#partnerhip').hide();
             $('#pvtltd').show();
             $('#ppl').hide();
-            $('#partnerhip').hide();
         } else if (value == 4) {
             $('#proprietorship').hide();
             $('#partnerhip').hide();
