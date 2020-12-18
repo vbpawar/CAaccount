@@ -479,6 +479,31 @@
                                                                     <input type="text" class="form-control" placeholder="Mobile Number" name="pMobile" id="pMobile" />
                                                                 </div>
                                                             </div>
+                                                            <!--//documents-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Select Photo</label>
+
+                                                                    <input class="form-control" id="pPhotodoc" name="pPhotodoc" type="file" onchange="loadFile(event, 'pPhotodocpre')" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPhotodocpre" width="20px" height="20px" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Select Aadhar card</label>
+
+                                                                    <input class="form-control" id="pAadhardoc" name="pAadhardoc" type="file" onchange="loadFile(event, 'pAadhardocpre')" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pAadhardocpre" width="20px" height="20px" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Select Aadhar card</label>
+
+                                                                    <input class="form-control" id="pPandoc" name="pPandoc" type="file" onchange="loadFile(event, 'pPandocpre')" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPandocpre" width="20px" height="20px" />
+                                                                </div>
+                                                            </div>
 
                                                         </div>
                                                         <!--// add parteners button-->

@@ -95,6 +95,9 @@
         var pPancard = $('#pPancard').val();
         var pEmail = $('#pEmail').val();
         var pMobile = $('#pMobile').val();
+        var photodoc = $('#pPhotodoc').prop('files')[0];
+        var aadhardoc = $('#pAadhardoc').prop('files')[0];
+        var pandoc = $('#pPandoc').prop('files')[0];
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
 //if fields are not empty then add in table 
@@ -108,14 +111,18 @@
                         <td>` + pPancard + `</td>
                         <td>` + pEmail + `</td>
                         <td>` + pMobile + `</td>
-                        <td><input class="" id="pPhoto` + pAadhar + `" name="pPhoto` + pAadhar + `" type="file" onchange="loadFile(event, 'pPhoto` + pAadhar + `pre')" />
+                        <td>
                             <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPhoto` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pPhoto_doc` + pAadhar + `" value=""/>
+                                    
                         </td>
-                        <td><input class="" id="pAadhar` + pAadhar + `" name="pAadhar` + pAadhar + `" type="file" onchange="loadFile(event, 'pAadhar` + pAadhar + `pre')" />
+                        <td>
                             <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pAadhar` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pAadhar_doc` + pAadhar + `"/>
                         </td>
-                        <td><input class="" id="pPan` + pAadhar + `" name="pPan` + pAadhar + `" type="file" onchange="loadFile(event, 'pPan` + pAadhar + `pre')" />
+                        <td>
                             <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPan` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pPan_doc` + pAadhar + `"/>
                         </td>
                         <td>
                         <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + pAadhar + `')">
@@ -125,6 +132,23 @@
                         </tr>`;
 
                 $('#partnerData').html(tableData);
+                
+//                set partners documents
+                $('#pPhoto' + pAadhar + 'pre').attr("src", URL.createObjectURL(photodoc));
+                $('#pAadhar' + pAadhar + 'pre').attr("src", URL.createObjectURL(aadhardoc));
+                $('#pPan' + pAadhar + 'pre').attr("src", URL.createObjectURL(pandoc));
+                getPhotoBase64(photodoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pPhoto_doc' + pAadhar).val(data);
+                });
+                getPhotoBase64(aadhardoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pAadhar_doc' + pAadhar).val(data);
+                });
+                getPhotoBase64(pandoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pPan_doc' + pAadhar).val(data);
+                });
             }
         } else {
             var errorData = '';
@@ -144,12 +168,31 @@
                 errorData += '<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
             }
             $('.partnerError').html(errorData);
+
         }
 
     });
     function deletePartner(id) {
         $('#r' + id).remove();
     }
+
+//base64 file upload
+    async   function getPhotoBase64(fileData) {
+//        alert(id);
+//        var f = $(id).prop('files')[0];
+        var f = fileData;
+        return  await toBase64(f);
+
+    }
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+
+
 
 
 
@@ -170,41 +213,41 @@
 
 
 //form validation
-    function validChecker(){
-    var errorMsg='';
-    var status=true;
-    var scrl = $(document).scrollTop(100)
-    
-    if($('#pan_name').val()==''){
-        errorMsg +='<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
-        status=false;
-        
-        
+    function validChecker() {
+        var errorMsg = '';
+        var status = true;
+        var scrl = $(document).scrollTop(100)
+
+        if ($('#pan_name').val() == '') {
+            errorMsg += '<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
+            status = false;
+
+
+        }
+        if ($('#pan_number').val() == '') {
+            errorMsg += '<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
+            status = false;
+
+        }
+        if ($('#aadhar_name').val() == '') {
+            errorMsg += '<span id="adharerr" style="color:red;">*Please Enter Name as per Adhar</span><br>'
+            status = false;
+
+        }
+        if ($('#aadhar_number').val() == '') {
+            errorMsg += '<span id="adharnumerr" style="color:red;">*Please Enter 12 digit Adhar Number</span><br>'
+            status = false;
+
+        }
+        if ($('#contact_number').val() == '') {
+            errorMsg += '<span id="contacterr" style="color:red;">*Please Enter 10 Digit Mobile Number</span><br>'
+            status = false;
+
+
+        }
+        $('#error-container').html(errorMsg);
+        return status;
     }
-    if($('#pan_number').val()==''){
-        errorMsg +='<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
-        status=false;
-        
-    }
-    if($('#aadhar_name').val()==''){
-        errorMsg +='<span id="adharerr" style="color:red;">*Please Enter Name as per Adhar</span><br>'
-        status=false;
-        
-    }
-    if($('#aadhar_number').val()==''){
-        errorMsg +='<span id="adharnumerr" style="color:red;">*Please Enter 12 digit Adhar Number</span><br>'
-        status=false;
-        
-    }
-    if($('#contact_number').val()==''){
-        errorMsg +='<span id="contacterr" style="color:red;">*Please Enter 10 Digit Mobile Number</span><br>'
-        status=false;
-        
-        
-    }
-    $('#error-container').html(errorMsg);
-    return status;
-}
 
     $('#pan_name').keyup(function () {
         $('#panError').empty();

@@ -15,7 +15,7 @@ class User_model extends CI_Model {
         return $query->result();
     }
     public function getDistributorList($userid) {
-        $query = $this->db->query("SELECT u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,
+        $query = $this->db->query("SELECT u.isactive,u.`userid`,u.`roleid`,u.`emailid` ,u.`firstname`,u.`lastname`,
         u.`upassword`,u.`contact`,c.country,c.ustate,c.city,c.pincode,c.uaddress,rm.role 
         FROM distributors_retailors dr JOIN user_master u ON dr.retailorid  = u.userid 
         LEFT JOIN contact_master c ON u.`userid`=c.`userid`
