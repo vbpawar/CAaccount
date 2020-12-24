@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://app.tkinfotech.com/';
 // $config['base_url'] = 'http://test.tkinfotech.com/';
-//  $config['base_url'] = 'local';
+  //$config['base_url'] = '';
 /*
 |--------------------------------------------------------------------------
 | Index File

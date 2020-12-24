@@ -159,7 +159,7 @@
                                                         </a>
                                                     </li>
 
-                                                    <li id="dynamicLi" style="display: none;">
+                                                    <li>
                                                         <a href="#partenship" data-toggle="tab" title="Parteners Detail">
                                                             <span class="round-tabs five">
                                                                 <i class="fa fa-handshake"></i>

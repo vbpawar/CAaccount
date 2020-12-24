@@ -25,7 +25,7 @@ class GstRegistration extends CI_Controller {
     }
 
     public function show() {
-        $data['title'] = 'Udyog Aadhar Service';
+        $data['title'] = 'GST Registration';
         $this->load->view('admin/header', $data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');

@@ -14,6 +14,7 @@
         <li><a href="<?php echo base_url();?>gst">GST Registration</a></li>
         <li><a href="<?php echo base_url();?>services/GSTAnnual/create">GST Annual Return</a></li>
         <li><a href="<?php echo base_url();?>services/GST_file/create">GST Filing</a></li>
+        <li><a href="<?php echo base_url();?>ca_certificate">CA Certificate</a></li>
     </ul>
     <!-- end dropdown-menu -->
 </li>

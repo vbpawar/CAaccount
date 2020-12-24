@@ -887,7 +887,7 @@
                                                                         <div class="form-group">
                                                                             <label class="control-label"> Personal Loan</label>
                                                                             <div class="form-check form-check-inline">
-                                                                                <input class="form-check-input" type="radio" name="" id="yes" value="i" />
+                                                                                <input class="form-check-input" type="radio" name="no" id="yes" value="i" />
                                                                                 <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                                                 <input class="form-check-input" type="radio" name="no" id="no" value="j" />
                                                                                 <label class="form-check-label" for="">No</label>

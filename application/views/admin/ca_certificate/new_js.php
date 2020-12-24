@@ -1,17 +1,22 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-    $('#caCertificateForm').on('submit', function (e) {
+
+
+    $('#pf-withdrawl-form').on('submit', function (e) {
 
         e.preventDefault();
 
-//    var returnVal = $("#caCertificateForm").valid();
+    var returnVal = validChecker();
         var formdata = new FormData(this);
+        var userid = <?php echo $_SESSION['Data']['userid'];?>;
+        var amount=servicecharges.get('1');
+        formdata.append('userid',userid);
 
-        if (true) {
-
+        if (returnVal) {
+             if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'Certificate_service/addcertificate',
+                url: url + 'createpf',
 
                 type: 'POST',
 
@@ -46,6 +51,10 @@
                 }
 
             });
+             }else{
+                 window.open(url+ 'wallet','_blank');
+                // window.location.replace(url + 'wallet');
+             }
 
         }
 
@@ -53,7 +62,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'services/certificate/show');
+        window.location.replace(url + 'pf_withdrawal/show');
     }
 
 

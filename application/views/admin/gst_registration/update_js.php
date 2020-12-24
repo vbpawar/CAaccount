@@ -3,6 +3,11 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
+        if(product.gst_type==1){
+            $("#bussCheck").prop("checked", true);
+        }else{
+            $("#salCheck").prop("checked", true);
+        }
         $('#pan_name').val(product.pan_name);
         $('#pan_number').val(product.pan_number);
         $('#aadhar_name').val(product.aadhar_name);
@@ -33,7 +38,7 @@
         $('#office_mailid').val(product.office_mailid);
         $('#buss_start_date').val(product.buss_start_date);
         $('#nature_of_buss').val(product.nature_of_buss);
-        $('#busstype').val(product.buss_type);
+        $('#bussinessType').val(product.buss_type);
         $('#male').val(product.male);
         $('#female').val(product.female);
         $('#bank_name').val(product.bank_name);
