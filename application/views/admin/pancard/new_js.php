@@ -1,7 +1,7 @@
 <script>
     var url = '<?php echo base_url(); ?>';
 
-
+    
     $('#pancard-form').on('submit', function (e) {
 
         e.preventDefault();
@@ -9,7 +9,7 @@
     var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=3;
+        var amount=servicecharges.get('3');
         formdata.append('userid',userid);
 
         if (returnVal) {

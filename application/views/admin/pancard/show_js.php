@@ -39,13 +39,13 @@
                     status = '<span class="badge badge-pill badge-primary">Pending...</span>';
                     break;
                 case '2':
-                    status = '<button class="badge badge-pill badge-warning" onclick="returnStatus(' + (k, 2) + ')">Hold</button>';
+                    status = '<button class="badge badge-pill badge-warning" onclick="returnStatus(' + (k) + ',2)">Hold</button>';
                     break;
                 case '3':
-                    status = '<button class="badge badge-pill badge-danger" onclick="returnStatus(' + (k, 3) + ')">Rejected</button>';
+                    status = '<button class="badge badge-pill badge-danger" onclick="returnStatus(' + (k) + ',3)">Rejected</button>';
                     break;
                 case '4':
-                    status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k, 4) + ')">Completed</button>';
+                    status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ',4)">Completed</button>';
                     break;
             }
             tblData += '<tr><td>' + services.firstname +' '+ services.lastname+'</td>';
@@ -221,7 +221,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     });
 
 
-    function returnStatus(id) {
+    function returnStatus(id,st) {
         $.ajax({
 
             url: url + 'getpanremarkdocs',
@@ -230,14 +230,30 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
             dataType: 'json',
             success: function (response) {
 
+                
                 console.log(response);
                 var dateTime = '';
-
+                var status='';
+                switch (st) {
+                
+                case 2:
+                    status = 'Hold';
+                    break;
+                case 3:
+                    status = 'Rejected';
+                    break;
+                case 4:
+                    status = 'Completed';
+                    break;
+            }
+            var pfid=id.toString();
+            var product = pfWithdrawal.get(pfid);
                 const count = response.length;
-                var tableData = `<tr><td>Dated On: <span id="dateTime"></sapn></td></tr>`
+                var tableData = `<tr><td>`+status+` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
+                 tableData += `<tr><td>Remark:</td><td rowspan="2">`+product.remark+`</td></tr>`;
                 for (var i = 0; i < count; i++) {
-                   
-                    tableData += `<tr><td>
+                  
+                    tableData += `<tr><td colspan="2" align="center">
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
                 }

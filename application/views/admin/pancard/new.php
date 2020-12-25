@@ -378,7 +378,7 @@
 
                                                     
                                                     <p class="text-center">
-                                                         <button href="" class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                         <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
                                                     </p>
                                                 </div>
 
