@@ -226,3 +226,10 @@ $route['creategstannual'] = 'services/GSTAnnual/create';
 $route['updategstannual'] = 'GST_annual_controller/update_status';
 $route['get_gst_annual'] = 'GST_annual_controller/get_gst_annuals';
 $route['getannualreturns_docs'] = 'GST_annual_controller/get_gst_docs';
+
+//Certificates API
+$route['loadcertificates'] = 'CA_certificate/get_all_certificates';
+$route['add_cert'] = 'CA_certificate/add_cert_form';
+$route['getcert_docs'] = 'CA_certificate/get_certificate_docs';
+$route['update_cert'] = 'CA_certificate/update_status';
+$route['remark_docs'] = 'CA_certificate/get_update_docs';

@@ -138,5 +138,10 @@ class DocsModel extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function cert_docs($id) {
+        $sql = "SELECT * FROM certificates_docs WHERE certid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
 }
