@@ -106,7 +106,7 @@
                     <?php
                     $data = $this->session->userdata();
                     if ($data['Data']['role'] == 3) {
-                        echo '<a class="btn btn-primary" href="' . base_url() . 'pf_withdrawal/create" role="button">Add New Entry</a>';
+                        echo '<a class="btn btn-primary" href="' . base_url() . 'ca_certificate/create" role="button">Add New Entry</a>';
                     }
                     ?>
                     <table  class="table table-striped table-bordered" id="service">
