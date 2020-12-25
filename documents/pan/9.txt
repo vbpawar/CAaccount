@@ -1,0 +1,19 @@
+- resolution tab dropdowns autofill.when user change resolution code then auto fill all data
+respected resolution code
+data in on hold dependacny data- from excel
+when changes has done in child tickets change status - work in progress
+when select on hold reason then etr is mandatory
+edit functionality in standard rfc and work order
+standard rfc list from - excel list
+ref im child no - child ticket number
+customer name - auto populated
+impacted branch - auto populated
+RFC no - nomencalature follow 
+select RCA - rca dropdown 
+-RFC list in standard rfc list
+- work order and standard rfc are option 
+- l2 only created standarad rfc
+- l0 and l1 work order create
+
+-add severity and priority in final resolution process and change the BE
+
