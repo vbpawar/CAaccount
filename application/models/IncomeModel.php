@@ -3,6 +3,7 @@
 class IncomeModel extends CI_Model {
 
     public function get_details($roleid,$userid) {
+        $result = [];
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT * FROM incometax pf 
         JOIN personal_details pd ON pd.pid = pf.pid 

@@ -107,6 +107,10 @@ class GST_controller extends CI_Controller
           
             $partner_data = $this->input->post('partnerdata');
             $partner_data= json_decode($partner_data);
+//            print_r($_FILES['pPhotoa1']);exit;
+//            print_r($partner_data[0]->p_photodoc);exit;
+//            print_r($partner_data);exit;
+//            echo ($partner_data[0]->p_partner_name);exit;
             $testdata = array(
                 'pdetails'=>$pdetails,
                 'rdetails'=>$rdetails,

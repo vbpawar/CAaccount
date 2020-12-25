@@ -7,39 +7,40 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
  * and open the template in the editor.
  */
 
-class Certificate extends CI_Controller {
+class CACertificate extends CI_Controller {
 
     
     public function create() {
-        $this->load->view('admin/header');
+        $data['title'] = 'CA Certificate';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
+        $this->load->view('admin/css/stepform_css');
+
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/ca_certificate/new');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/ca_certificate/ca_certificate_validation_js');
-        
-        $this->load->view('admin/js/ca_certificate/new_js');
+        $this->load->view('admin/ca_certificate/validation_js');
+        $this->load->view('admin/ca_certificate/new_js');
         $this->load->view('admin/footer');
     }
     
     public function show() {
-        $this->load->view('admin/header');
+        $data['title'] = 'PF Withdrawal Service';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
         $this->load->view('admin/navigation/menubar');
         $this->load->view('admin/ca_certificate/show');
         $this->load->view('admin/js/comman_js');
-        $this->load->view('admin/js/ca_certificate/show_js');
+        $this->load->view('admin/ca_certificate/show_js');
         
         $this->load->view('admin/footer');
     }
     public function update() {
-
+$this->load->view('admin/css/stepform_css');
         $this->load->view('admin/ca_certificate/update');
-        // $this->load->view('admin/js/jquery_validation_js');
-        // $this->load->view('admin/js/ca_certificate/ca_certificate_validation_js');
-        $this->load->view('admin/js/ca_certificate/update_js');
+        $this->load->view('admin/ca_certificate/update_js');
 
     }
     

@@ -480,6 +480,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
                                                 <div class="tab-pane fade" id="bankdet">
                                                     <div class="row">
                                                         <div class="col-sm-4">

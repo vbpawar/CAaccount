@@ -54,8 +54,10 @@ $route['default_controller']   = 'welcome';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['certificate']        = 'services/certificate/show';
-$route['certificate/create'] = 'services/certificate/create';
+//CA Certificate ui
+$route['ca_certificate']        = 'services/CACertificate/show';
+$route['ca_certificate/create'] = 'services/CACertificate/create';
+$route['ca_certificate/update'] = 'services/CACertificate/update';
 
 $route['report']        = 'services/report/show';
 $route['report/create'] = 'services/report/create';

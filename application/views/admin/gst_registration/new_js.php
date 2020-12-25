@@ -1,8 +1,7 @@
 <script>
     var url = '<?php echo base_url(); ?>';
-//alert('ok');
-
-    function getPartnersData() {
+    
+     function getPartnersData() {
 
         var data = [];
         var name;
@@ -13,6 +12,7 @@
         var p_photodoc;
         var p_adhardoc;
         var p_pandoc;
+        
         var i = 0;
         $('#partnerTable tbody>tr').each(function (index, tr) {
             var tds = $(tr).find('td');
@@ -21,9 +21,11 @@
             panno = tds[2].textContent;
             emailid = tds[3].textContent;
             mobileno = tds[4].textContent;
-            p_photodoc = $('#pPhoto'+aadharno).val();
-            p_adhardoc = $('#pAadhar'+aadharno).val();
-            p_pandoc = $('#pPan'+aadharno).val();
+
+
+            p_photodoc = $('#pPhoto_doc' + aadharno).val();
+            p_adhardoc = $('#pAadhar_doc' + aadharno).val();
+            p_pandoc = $('#pPan_doc' + aadharno).val();
             data[i++] = {
                 p_partner_name: name,
                 p_aadhar_number: aadharno,
@@ -38,61 +40,64 @@
         return data;
     }
 
+
     $('#gst-form').on('submit', function (e) {
         e.preventDefault();
-      var  patnersData = getPartnersData();
-     var jsonString= JSON.stringify(patnersData);
-//console.log(patnersData);
-  var returnVal = validChecker();
+        var patnersData = getPartnersData();
+        console.log('######################patnersData=')
+        console.log(patnersData);
+        var jsonString = JSON.stringify(patnersData);
+        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@jsonString=');
+        console.log(jsonString);
+        var returnVal = validChecker();
         var formdata = new FormData(this);
-        var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('7');
-        formdata.append('userid',userid);
-        formdata.append('partnerdata',jsonString);
-
+        var userid = <?php echo $_SESSION['Data']['userid']; ?>;
+        var amount = servicecharges.get('7');
+        formdata.append('userid', userid);
+        formdata.append('partnerdata', jsonString);
         if (returnVal) {
-             if(check_balance(userid,amount)){
-            $.ajax({
+            if (check_balance(userid, amount)) {
+                $.ajax({
 
-                url: url + 'creategst',
+                    url: url + 'creategst',
 
-                type: 'POST',
+                    type: 'POST',
 
-                data: formdata,
+                    data: formdata,
 
-                cache: false,
+                    cache: false,
 
-                contentType: false,
+                    contentType: false,
 
-                processData: false,
+                    processData: false,
 
-                dataType: 'json',
+                    dataType: 'json',
 
-                success: function (response) {
+                    success: function (response) {
 //                alert(response.Data.customerId);
 //                console.log(response);
 
-                    if (response.Responsecode == 200) {
+                        if (response.Responsecode == 200) {
 
-                        swal("Congrats!", response.Message, "success");
+                            swal("Congrats!", response.Message, "success");
 
 
 
-                        goback();
+                            goback();
 
-                    } else {
+                        } else {
 
-                        swal("Error!", response.Message, "success");
+                            swal("Error!", response.Message, "success");
+
+                        }
 
                     }
 
-                }
-
-            });
-             }else{
-                 window.open(url+ 'wallet','_blank');
+                });
+            } else {
+                window.open(url + 'wallet', '_blank');
                 // window.location.replace(url + 'wallet');
-             }
+            }
 
         }
 

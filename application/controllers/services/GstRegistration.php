@@ -25,7 +25,7 @@ class GstRegistration extends CI_Controller {
     }
 
     public function show() {
-        $data['title'] = 'Udyog Aadhar Service';
+        $data['title'] = 'GST Registration';
         $this->load->view('admin/header', $data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');
@@ -39,6 +39,7 @@ class GstRegistration extends CI_Controller {
     public function update() {
         $this->load->view('admin/css/stepform_css');
         $this->load->view('admin/gst_registration/update');
+        $this->load->view('admin/gst_registration/validation_js');
         $this->load->view('admin/gst_registration/update_js');
     }
 
