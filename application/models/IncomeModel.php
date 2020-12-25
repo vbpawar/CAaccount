@@ -16,10 +16,19 @@ class IncomeModel extends CI_Model {
             JOIN user_master u ON u.userid = pf.userid
             WHERE pf.userid=$userid ORDER BY pf.inid DESC";  
         }
-        $query = $this->db->query($sql);
-       $result['status'] = true;
-       $result['data'] =   $query->result_array();
-    return $result;
+//        $query = $this->db->query($sql);
+//       $result['status'] = true;
+//       $result['data'] =   $query->result_array();
+//    return $result;
+        if($query =$this->db->query($sql)){
+        $result['status'] = true;
+        $result['data'] =  $query->result_array(); 
+       }else{
+        $result['sql'] = $sql;
+        $result['status'] = false;
+       }
+        return $result;
+        
     }
    
     public function add_details($data)
