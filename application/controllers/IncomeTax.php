@@ -22,6 +22,7 @@ class IncomeTax extends CI_Controller{
         $roleid = $this->input->get('roleid');
         $userid = $this->input->get('userid');
         $result = $this->imodel->get_details($roleid,$userid);
+        $records = [];
         if ($result['status']) {
             for($i=0;$i<count($result['data']);$i++){
                 $temp = array('partners'=>[]);
