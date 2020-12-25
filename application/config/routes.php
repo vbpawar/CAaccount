@@ -235,3 +235,16 @@ $route['add_cert'] = 'CA_certificate/add_cert_form';
 $route['getcert_docs'] = 'CA_certificate/get_certificate_docs';
 $route['update_cert'] = 'CA_certificate/update_status';
 $route['remark_docs'] = 'CA_certificate/get_update_docs';
+
+//Company Reg API
+$route['loadcompany'] = 'Company_reg/get_all_company';
+$route['add_company'] = 'Company_reg/add_company_form';
+$route['getcompany_docs'] = 'Company_reg/get_company_docs';
+$route['update_company'] = 'Company_reg/update_status';
+$route['company_docs'] = 'Company_reg/get_update_docs';
+
+//TaxInvoice API
+$route['loadTaxinvoice'] = 'TaxInvoice/get_all_invoice';
+$route['add_invoice'] = 'TaxInvoice/add_invoice_form';
+$route['update_invoice'] = 'TaxInvoice/update_status';
+$route['updated_inv_docs'] = 'TaxInvoice/get_update_docs';

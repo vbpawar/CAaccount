@@ -18,6 +18,7 @@ class Company_reg extends CI_Controller{
         $roleid = $this->input->get('roleid');
         $userid = $this->input->get('userid');
         $result = $this->imodel->get_details($roleid,$userid);
+        $records = [];
         if ($result['status']) {
             for($i=0;$i<count($result['data']);$i++){
                 $temp = array('directors'=>[]);
@@ -41,62 +42,55 @@ class Company_reg extends CI_Controller{
         echo json_encode($response);
     } 
 
-    public function add_invoice_form()
+    public function add_company_form()
     {
          //personal details
          $pdetails = array(
-            'pan_name ' => $this->input->post('pan_name'),
-            'pan_number' => $this->input->post('pan_number'),
-            'aadhar_name' => $this->input->post('aadhar_name'),
-            'aadhar_number' => $this->input->post('aadhar_number'),
-            'contact_number' => $this->input->post('contact_number'),
-            'emailid' => $this->input->post('emailid')
+            'ctype' => $this->input->post('ctype'),
+            'userid' => $this->input->post('userid'),
+            'cname' => $this->input->post('cname'),
+            'obj_company' => $this->input->post('obj_company'),
+            'obj_specfied' => $this->input->post('obj_specfied'),
+            'capital' => $this->input->post('capital'),
+            'naturebuss' => $this->input->post('naturebuss')
         );
-        
-        //Residential details
-        $rdetails = array(
-            'premise_name ' => $this->input->post('premise_name'),
-            'flat_number' => $this->input->post('flat_number'),
-            'road' => $this->input->post('road'),
-            'area' => $this->input->post('area'),
-            'village' => $this->input->post('village'),
-            'taluka' => $this->input->post('taluka'),
-            'district' => $this->input->post('district'),
-            'state' => $this->input->post('state'),
-            'pincode' => $this->input->post('pincode')
-        );
-            $main_details = array(
-                'userid'=>$this->input->post('userid'),
-                'intype'=>$this->input->post('intype'),
-                'naturebuss' => $this->input->post('naturebuss')
-            );
-            $seller_details = array(
-                'shop_name'=>$this->input->post('shop_name'),
-                'office_contact'=>$this->input->post('office_contact'),
-                'office_mailid'=>$this->input->post('office_mailid'),
-                'gst_number'=>$this->input->post('gst_number')
-               );
-               $buyer_details = array(
-                'shop_name'=>$this->input->post('b_shop_name'),
-                'office_contact'=>$this->input->post('b_office_contact'),
-                'office_mailid'=>$this->input->post('b_office_mailid'),
-                'gst_number'=>$this->input->post('b_gst_number')
-               );
-               $invoicedetails = $this->input->post('invoicedetails');
-               $invoicedetails= json_decode($invoicedetails);
-        $testdata = array(
-            'pdetails'=>$pdetails,
-            'rdetails'=>$rdetails,
-            'seller_details'=>$seller_details,
-            'buyer_details'=>$buyer_details,
-            'main'=>$main_details,
-            'invoicedetails'=>$invoicedetails
-        );
-            $result = $this->imodel->create_invoice($testdata);
+$director_details = $this->input->post('director_details');
+$director_details= json_decode($director_details);
+            $result = $this->imodel->create_company($pdetails,$director_details);
             if ($result['status']) {
-                $id       = $result['certid'];
+                $id       = $result['companyid'];
+                if(!empty($_FILES['electricity']['name'])){
+                    $four = array(
+                        'name'=>'Electricity Bill',
+                        'userid'=>$pdetails['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['electricity']['name'],
+                        'file'=>$_FILES['electricity']['tmp_name'],
+                        'table'=>'company_docs',
+                        'folder'=>'company_docs',
+                        'prim'=>'companyid'
+                    );  
+                    if ($this->docs->uploaddocs($four)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if(!empty($_FILES['rent']['name'])){
+                    $four = array(
+                        'name'=>'Rent Aggrement',
+                        'userid'=>$pdetails['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['rent']['name'],
+                        'file'=>$_FILES['rent']['tmp_name'],
+                        'table'=>'company_docs',
+                        'folder'=>'company_docs',
+                        'prim'=>'companyid'
+                    );  
+                    if ($this->docs->uploaddocs($four)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
                 $response = array(
-                    'Message' => 'Invoice Form added successfully',
+                    'Message' => 'Company Added Form added successfully',
                     'Data' => $result,
                     'Responsecode' => 200
                 );
@@ -121,7 +115,7 @@ class Company_reg extends CI_Controller{
                 'userid'=>$this->input->post('digital_uid'),
                 'transaction_type'=>'Credit',
                 'amount'=>$this->input->post('digital_amount'),
-                'message'=>'Credited amount of Tax Invoice service which is rejected by admin',
+                'message'=>'Credited amount of Company reg service which is rejected by admin',
                 'transactiondate'=>date('Y-m-d h:i:s')
                );
                 $result = $this->service->deduct_amount($wallet_data);
@@ -130,10 +124,10 @@ class Company_reg extends CI_Controller{
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('TIN', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('Company', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('TIN', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('Company', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }
@@ -174,7 +168,13 @@ class Company_reg extends CI_Controller{
     public function get_update_docs()
     {
         $pfid   = $this->input->post('rowid');
-        $result = $this->docs->get_update_remarks_docs($pfid,'TIN');
+        $result = $this->docs->get_update_remarks_docs($pfid,'Company');
+        echo json_encode($result);
+    }
+    public function get_company_docs()
+    {
+        $id   = $this->input->post('id');
+        $result = $this->docs->company_docs($id);
         echo json_encode($result);
     }
 }

@@ -94,6 +94,12 @@ class DocsModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function company_docs($id) {
+        $sql = "SELECT * FROM company_docs ud WHERE ud.companyid=$id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     //upload documents
 
     public function uploaddocs($data)
