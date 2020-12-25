@@ -88,14 +88,14 @@
             </div>
         </div>
         <div class="pageheader">
-            <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> CA Certificate</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> CA Certificate</h3>
+            <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> PF Withdrawal</h3> -->
+            <h3><img src="<?php echo base_url('/admin_assets/img/withdraw_512x512.png'); ?>" /> PF Withdrawal</h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li><a href="#"> Home </a></li>
-                    <li class="active">CA Certificate</li>
+                    <li class="active">PF Withdrawal</li>
                 </ol>
             </div>
         </div>
@@ -113,7 +113,7 @@
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
                                 <a href="<?php echo base_url('pf_withdrawal/show');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
-                            <h3 class="panel-title">CA Certificate Information</h3>
+                            <h3 class="panel-title">PF Withdrawal Information</h3>
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
@@ -142,7 +142,14 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    
+                                                    <li>
+                                                        <a href="#bankdet" data-toggle="tab" title="Bank Details">
+                                                            <span class="round-tabs three">
+                                                                <i class="fa fa-bank"></i>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
                                                     <li>
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs four">
@@ -165,28 +172,6 @@
                                                 <div class="tab-pane fade in active" id="personal">
                                                     <h3 class="head text-center">personal details</h3>
                                                     <div class="row">
-                                                        <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="form-label">Certificate Type</label>
-                                                                    <select class="form-control" id="cert_type" name="cert_type">
-                                                                        <option value="1" class="form-control">Net worth certificate </option>
-                                                                        <option value="2"  class="form-control">Certificate for claiming GST Refund</option>
-                                                                        <option value="3"  class="form-control">Turnover Certificate</option>
-                                                                        <option value="4"  class="form-control">Working captial Requirement Certificate</option>
-                                                                        <option value="5"  class="form-control">Stock in Hand Certificate</option>
-                                                                        <option value="6"  class="form-control">Current Account Opening Certificate</option>
-                                                                        <option value="7"  class="form-control">Other</option>
-                                                                       
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Reason</label>
-                                                                <input type="text" class="form-control"  name="reason" id="reson" />
-
-                                                            </div>
-                                                        </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span> Name (as per pan card)</label>
@@ -242,16 +227,16 @@
                                                         
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">business / shop/ company Name</label>
+                                                                <label class="control-label">UAN Number</label>
 
-                                                                <input type="text" class="form-control"  name="buss_name" id="buss_name" />
+                                                                <input type="text" class="form-control" placeholder="UAN Number" name="uan_number" id="uan_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">Business address</label>
+                                                                <label class="control-label">UAN Password</label>
 
-                                                                <input type="text" class="form-control"  name="buss_address" id="buss_address" />
+                                                                <input type="text" class="form-control" placeholder="" name="uan_password" id="uan_password" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -331,7 +316,34 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="tab-pane fade" id="bankdet">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Bank Name</label>
+                                                                <input type="text" class="form-control" placeholder="Bank Name" name="bank_name" id="bank_name" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Account Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="Account Number" name="ac_number" id="ac_number" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">IFSC Number</label>
+
+                                                                <input type="text" class="form-control" placeholder="IFSC Number" name="ifsc_number" id="ifsc_number" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
                                                 <div class="tab-pane fade" id="documenttab">
                                                 <h3 class="head text-center">documents attachment</h3>
 
@@ -379,7 +391,7 @@
                                                                     <tr>
                                                                     <td>
                                                                             <div class="form-group">
-                                                                                <label class="control-label"> Proof of Business</label>
+                                                                                <label class="control-label"> Cancelled Check Passbook</label>
                                                                                 <input class="form-control" id="pas" name="pas" type="file" onchange="loadFile(event,'paspre')" />
                                                                             </div>
                                                                         </td>
