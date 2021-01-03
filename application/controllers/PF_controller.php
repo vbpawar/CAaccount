@@ -12,7 +12,7 @@ class PF_controller extends CI_Controller
         $this->load->model('BankModel', 'bmodel');
         $this->load->model('PFModel', 'pfmodel');
         $this->load->model('DocsModel', 'docs');
-        $this->load->model('WalletModel', 'mmodel');
+        $this->load->model('WalletModel', 'service');
     }
     private $response = null;
     private $records = null;
