@@ -126,7 +126,7 @@ class GST_controller extends CI_Controller
                 if (!empty($_FILES['psfirmpandoc']['name'])) {
                     $first = array(
                         'name'=>'PAN CARD',
-                        'userid'=>$userid,
+                        'userid'=>$gst_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['psfirmpandoc']['name'],
                         'file'=>$_FILES['psfirmpandoc']['tmp_name'],
@@ -141,7 +141,7 @@ class GST_controller extends CI_Controller
                 if (!empty($_FILES['psdeeddoc']['name'])) {
                     $second = array(
                         'name'=>'Partnership Deed',
-                        'userid'=>$userid,
+                        'userid'=>$gst_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['psdeeddoc']['name'],
                         'file'=>$_FILES['psdeeddoc']['tmp_name'],
@@ -156,7 +156,7 @@ class GST_controller extends CI_Controller
                 if (!empty($_FILES['addproofdoc']['name'])) {
                     $third = array(
                         'name'=>'Address Proof',
-                        'userid'=>$userid,
+                        'userid'=>$gst_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['addproofdoc']['name'],
                         'file'=>$_FILES['addproofdoc']['tmp_name'],
@@ -171,7 +171,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['cancelcheck']['name'])) {
                         $four = array(
                             'name'=>'Cancel Check/Bank Stmt',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['cancelcheck']['name'],
                             'file'=>$_FILES['cancelcheck']['tmp_name'],
@@ -186,7 +186,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['rentagr']['name'])) {
                         $five = array(
                             'name'=>'Rent Aggrement',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['rentagr']['name'],
                             'file'=>$_FILES['rentagr']['tmp_name'],
@@ -201,7 +201,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['propertypic']['name'])) {
                         $five = array(
                             'name'=>'Photo of Prop',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['propertypic']['name'],
                             'file'=>$_FILES['propertypic']['tmp_name'],
@@ -216,7 +216,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['adhar']['name'])) {
                         $six = array(
                             'name'=>'Aadhar Card',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['adhar']['name'],
                             'file'=>$_FILES['adhar']['tmp_name'],
@@ -231,7 +231,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['pan']['name'])) {
                         $seven = array(
                             'name'=>'PAN Card',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['pan']['name'],
                             'file'=>$_FILES['pan']['tmp_name'],
@@ -246,7 +246,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['electricity']['name'])) {
                         $eight = array(
                             'name'=>'Electricity Bill',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['electricity']['name'],
                             'file'=>$_FILES['electricity']['tmp_name'],
@@ -261,7 +261,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['bstatdoc']['name'])) {
                         $nine = array(
                             'name'=>'Cancel Check/Bank Stmt',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['bstatdoc']['name'],
                             'file'=>$_FILES['bstatdoc']['tmp_name'],
@@ -276,7 +276,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['passportpic']['name'])) {
                         $ten = array(
                             'name'=>'Passport Photo',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['passportpic']['name'],
                             'file'=>$_FILES['passportpic']['tmp_name'],
@@ -291,7 +291,7 @@ class GST_controller extends CI_Controller
                     if (!empty($_FILES['rentdoc']['name'])) {
                         $ten1 = array(
                             'name'=>'Rent Aggrement',
-                            'userid'=>$userid,
+                            'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['rentdoc']['name'],
                             'file'=>$_FILES['rentdoc']['tmp_name'],

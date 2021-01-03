@@ -237,7 +237,7 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Amount</label>
 
-                                                                <input type="text" class="form-control" placeholder="200" name="amount" id="amount" />
+                                                                <input type="text" required="" class="form-control" placeholder="Enter Amount" name="amount" id="amount" />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4"></div>
