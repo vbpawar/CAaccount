@@ -319,10 +319,10 @@ class GST_controller extends CI_Controller
         echo json_encode($response);
     }
 
-    public function get_udyog_docs()
+    public function getgst_docs()
     {
         $id   = $this->input->post('uid');
-        $result = $this->docs->get_udyogdocs($id);
+        $result = $this->docs->get_gst_docs($id);
         echo json_encode($result);
     }
     public function update_status()
