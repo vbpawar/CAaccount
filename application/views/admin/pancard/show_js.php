@@ -48,7 +48,7 @@
                     status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ',4)">Completed</button>';
                     break;
             }
-            tblData += '<tr><td>' + services.firstname +' '+ services.lastname+'</td>';
+            tblData += '<tr><td>' + services.firstname + ' ' + services.lastname + '</td>';
             tblData += '<td>' + services.aadhar_name + '</td>';
 //            tblData += '<td>' + services.aadhar_number + '</td>';
             tblData += '<td>' + services.contact_number + '</td>';
@@ -63,7 +63,7 @@ $data = $this->session->userdata();
 if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     ?>
                 if (services.status == '1' || services.status == '2') {
-    //    alert(services.status);
+                    //    alert(services.status);
                     tblData += `&nbsp; <a href="#@"  onclick="changeStatus(` + (k) + `)" title="Change Status"><i class="fa fa-edit text-success"></i></a>`;
                 }
     <?php
@@ -124,7 +124,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     $('#remarkField').hide();
     function changeStatus(id) {
-        var temp=pfWithdrawal.get(id.toString());
+        var temp = pfWithdrawal.get(id.toString());
         $('#panid').val(id);
         $('#digital_amount').val(servicecharges.get('3'));
         $('#digital_uid').val(temp.userid);
@@ -221,7 +221,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     });
 
 
-    function returnStatus(id,st) {
+    function returnStatus(id, st) {
         $.ajax({
 
             url: url + 'getpanremarkdocs',
@@ -230,34 +230,42 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
             dataType: 'json',
             success: function (response) {
 
-                
+
                 console.log(response);
                 var dateTime = '';
-                var status='';
+                var status = '';
                 switch (st) {
-                
-                case 2:
-                    status = 'Hold';
-                    break;
-                case 3:
-                    status = 'Rejected';
-                    break;
-                case 4:
-                    status = 'Completed';
-                    break;
-            }
-            var pfid=id.toString();
-            var product = pfWithdrawal.get(pfid);
+
+                    case 2:
+                        status = 'Hold';
+                        break;
+                    case 3:
+                        status = 'Rejected';
+                        break;
+                    case 4:
+                        status = 'Completed';
+                        break;
+                }
+                var pfid = id.toString();
                 const count = response.length;
-                var tableData = `<tr><td>`+status+` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
-                 tableData += `<tr><td>Remark:</td><td rowspan="2">`+product.remark+`</td></tr>`;
+                var remark = '';
+               
+                if (pfWithdrawal.has(pfid)) {
+                     var product = pfWithdrawal.get(pfid);
+                    remark = product.remark;
+                    dateTime = product.updatedat;
+
+                }
+                var tableData = `<tr><td>` + status + ` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
+                console.log(product);
+                tableData += `<tr><td>Remark:</td><td rowspan="2">` + remark + `</td></tr>`;
                 for (var i = 0; i < count; i++) {
-                  
+
                     tableData += `<tr><td colspan="2" align="center">
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
                 }
-                dateTime = product.updatedat;
+
                 $('#remarkList').html(tableData);
                 $('#dateTime').text(dateTime);
                 $('#remarkModal').modal('toggle');
