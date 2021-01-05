@@ -9,14 +9,14 @@
     var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('1');
+        var amount=10;//servicecharges.get('1');
         formdata.append('userid',userid);
 
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'createpf',
+                url: url + 'add_cert',
 
                 type: 'POST',
 
@@ -62,7 +62,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'ca_certificate');
     }
 
 

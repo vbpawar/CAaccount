@@ -26,7 +26,7 @@ class CACertificate extends CI_Controller {
     }
     
     public function show() {
-        $data['title'] = 'PF Withdrawal Service';
+        $data['title'] = 'Certificate Service';
         $this->load->view('admin/header',$data);
         $this->load->view('admin/css/comman_css');
         $this->load->view('admin/navigation/notificationbar');

@@ -63,8 +63,8 @@ class CA_certificate extends CI_Controller{
         );
             $main_details = array(
                 'userid'=>$this->input->post('userid'),
-                'c_type'=>$this->input->post('c_type'),
-                'c_value' => $this->input->post('c_value'),
+                'c_type'=>$this->input->post('cert_type'),
+                'c_value' => $this->input->post('cert_type'),
                 'buss_address' => $this->input->post('buss_address')
             );
             $sdetails = array(
@@ -86,7 +86,7 @@ class CA_certificate extends CI_Controller{
                 if(!empty($_FILES['pan']['name'])){
                     $third = array(
                         'name'=>'PAN Card',
-                        'userid'=>$main_details['user_id'],
+                        'userid'=>$main_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['pan']['name'],
                         'file'=>$_FILES['pan']['tmp_name'],
@@ -101,7 +101,7 @@ class CA_certificate extends CI_Controller{
                 if(!empty($_FILES['aadhar']['name'])){
                     $third = array(
                         'name'=>'Aadhar Card',
-                        'userid'=>$main_details['user_id'],
+                        'userid'=>$main_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['aadhar']['name'],
                         'file'=>$_FILES['aadhar']['tmp_name'],
@@ -116,7 +116,7 @@ class CA_certificate extends CI_Controller{
                 if(!empty($_FILES['bproof']['name'])){
                     $third = array(
                         'name'=>'Aadhar Card',
-                        'userid'=>$main_details['user_id'],
+                        'userid'=>$main_details['userid'],
                         'id'=>$id,
                         'filename'=>$_FILES['bproof']['name'],
                         'file'=>$_FILES['bproof']['tmp_name'],
@@ -152,7 +152,7 @@ class CA_certificate extends CI_Controller{
     }
     public function update_status()
     {
-        $id    = $this->input->post('id');
+        $id    = $this->input->post('pfid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
@@ -162,7 +162,7 @@ class CA_certificate extends CI_Controller{
                 'userid'=>$this->input->post('digital_uid'),
                 'transaction_type'=>'Credit',
                 'amount'=>$this->input->post('digital_amount'),
-                'message'=>'Credited amount of Income Tax service which is rejected by admin',
+                'message'=>'Credited amount of CA Certificate service which is rejected by admin',
                 'transactiondate'=>date('Y-m-d h:i:s')
                );
                 $result = $this->service->deduct_amount($wallet_data);

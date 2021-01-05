@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'load_pf',
+            url: url + 'loadcertificates',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].pfid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].certid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'ca_certificate');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -134,11 +134,11 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getpfdocs',
+            url: url + 'getcert_docs',
 
             type: 'POST',
 
-            data: {pfid: id},
+            data: {id: id},
 
             cache: false,
 
@@ -183,7 +183,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updatestatus',
+            url: url + 'update_cert',
 
             type: 'POST',
 
@@ -224,7 +224,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'getremarksdocs',
+            url: url + 'remark_docs',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

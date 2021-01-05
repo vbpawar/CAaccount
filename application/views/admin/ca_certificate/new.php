@@ -111,7 +111,7 @@
 <!--                                 <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <a href="<?php echo base_url('pf_withdrawal/show');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                <a href="<?php echo base_url('ca_certificate/show');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">CA Certificate Information</h3>
                         </div>
