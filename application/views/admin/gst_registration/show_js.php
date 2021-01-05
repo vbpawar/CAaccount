@@ -115,7 +115,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'udyagAadhar');
+        window.location.replace(url + 'gst');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -136,7 +136,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
             type: 'POST',
 
-            data: {gid: id},
+            data: {uid: id},
 
             cache: false,
 

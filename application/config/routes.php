@@ -208,7 +208,7 @@ $route['creategst']  = 'GST_controller/add_gst_form';
 $route['loadgst']  = 'GST_controller/get_all_gst';
 $route['getgstdocs'] = 'GST_controller/getgst_docs';
 $route['update_gst_status']= 'GST_controller/update_status';
-$route['get_gst_remarks'] = 'GST_controller/uploadremarks';
+$route['get_gst_remarks'] = 'GST_controller/get_update_docs';
 
 //GST file UI
 $route['loadgstfile'] = 'services/GST_file/show';

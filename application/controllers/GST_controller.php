@@ -327,7 +327,7 @@ class GST_controller extends CI_Controller
     }
     public function update_status()
     {
-        $id    = $this->input->post('uid');
+        $id    = $this->input->post('id');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
@@ -337,19 +337,19 @@ class GST_controller extends CI_Controller
                 'userid'=>$this->input->post('digital_uid'),
                 'transaction_type'=>'Credit',
                 'amount'=>$this->input->post('digital_amount'),
-                'message'=>'Credited amount of Udyom Aadhar service which is rejected by admin',
+                'message'=>'Credited amount of GST Registration service which is rejected by admin',
                 'transactiondate'=>date('Y-m-d h:i:s')
                );
                 $result = $this->service->deduct_amount($wallet_data);
         }
-        $result = $this->umodel->update_status($id, $data);
+        $result = $this->gstmodel->update_status($id, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
             if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
-                if ($this->uploadremarks('UDYOG', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                if ($this->uploadremarks('GSTR', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
-                if ($this->uploadremarks('UDYOG', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                if ($this->uploadremarks('GSTR', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }
@@ -388,5 +388,10 @@ class GST_controller extends CI_Controller
         }
     }
    
-    
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'GSTR');
+        echo json_encode($result);
+    }
 } 

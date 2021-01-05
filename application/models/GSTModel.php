@@ -228,5 +228,16 @@ class GSTModel extends CI_Model {
         }
         return false;
     }
+    public function update_status($id,$data)
+    {
+        $result = false;
+        $this->db->where('gid',$id);
+        if($this->db->update('gst_service',$data)){
+            $result['status'] = true;
+        }else{
+            $result['status'] = false;
+        }
+        return $result;
+    } 
 }
 ?>
