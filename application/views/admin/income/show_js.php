@@ -261,7 +261,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 <a href="` + (url + 'documents/remarks/' + response[i].remarkid + '.' + response[i].extension) + `" class="stretched-link" download>Attachment` + i + `</a>                
                     </td></tr>`;
                 }
-                dateTime = product.updatedat;
+                dateTime = product.updateat;
                 $('#remarkList').html(tableData);
                 $('#dateTime').text(dateTime);
                 $('#remarkModal').modal('toggle');
