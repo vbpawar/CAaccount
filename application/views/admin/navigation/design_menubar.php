@@ -16,6 +16,9 @@
         <li><a href="<?php echo base_url();?>services/GST_file/create">GST Filing</a></li>
         <li><a href="<?php echo base_url();?>ca_certificate">CA Certificate</a></li>
         <li><a href="<?php echo base_url();?>ewayBill">Eway Bill</a></li>
+        <li><a href="<?php echo base_url();?>foodlicense">Food License</a></li>
+        <li><a href="<?php echo base_url();?>taxInvoice">Tax Invoice</a></li>
+        <li><a href="<?php echo base_url();?>partnershipDeed">Partnership Deed</a></li>
     </ul>
     <!-- end dropdown-menu -->
 </li>

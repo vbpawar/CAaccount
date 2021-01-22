@@ -250,3 +250,23 @@ $route['loadTaxinvoice'] = 'TaxInvoice/get_all_invoice';
 $route['add_invoice'] = 'TaxInvoice/add_invoice_form';
 $route['update_invoice'] = 'TaxInvoice/update_status';
 $route['updated_inv_docs'] = 'TaxInvoice/get_update_docs';
+
+
+//food license ui
+$route['foodlicense'] = 'services/FoodLicense/show';
+$route['foodlicense/create'] = 'services/FoodLicense/create';
+$route['foodlicense/update'] = 'services/FoodLicense/update';
+
+
+
+//tax invoice ui
+$route['taxInvoice'] = 'services/TaxInvoice/show';
+$route['taxInvoice/create'] = 'services/TaxInvoice/create';
+$route['taxInvoice/update'] = 'services/TaxInvoice/update';
+
+
+
+//Partnership Deed ui
+$route['partnershipDeed'] = 'services/PartnershipDeed/show';
+$route['partnershipDeed/create'] = 'services/PartnershipDeed/create';
+$route['partnershipDeed/update'] = 'services/PartnershipDeed/update';

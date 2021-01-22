@@ -628,6 +628,85 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
+                                                    
+                                                    <div class="row">
+
+                                                    <div class="col-sm-10">
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>Total Tax'ble Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>CGST Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="discription" id="discription"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>SGST Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>IGST Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>CESS Advol Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit"/>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>CESS non.Advol Amount</label>
+
+                                                                <input type="text" class="form-control" placeholder="" name="value" id="value"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>Other Amount(+/-)</label>
+                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>Total Inv. Amount</label>
+                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
+                                                            </div>
+
+                                                        </div>
+                                                        
+                                                    </div>
+
+
+                                                    <!--  <div>
+                                                           <a href="#billtab" data-toggle="tab" title="Bill Details">
+                                                       <span class="round-tabs four">
+                                                           <i class="fa fa-trash-alt"></i>
+                                                       </span>
+                                                   </a>
+                                                       </div>-->
+                                                    
+                                                    
                                                 </div>
                                                 <!--row 6-->
 
