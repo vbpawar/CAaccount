@@ -34,6 +34,7 @@
         var tblData = '', badge, status;
         for (let k of serviceList.keys()) {
             let services = serviceList.get(k);
+            console.log(services);
             switch (services.status) {
                 case '1':
                     status = '<span class="badge badge-pill badge-primary">Pending...</span>';

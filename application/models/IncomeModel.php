@@ -5,15 +5,23 @@ class IncomeModel extends CI_Model {
     public function get_details($roleid,$userid) {
         $result = [];
         if($roleid ==1 || $roleid ==4){
-        $sql = "SELECT * FROM incometax pf 
+        $sql = "SELECT pf.inid,pf.userid,pf.incomeType,pf.bname,pf.natureofbuss,pf.place_of_buss,pf.buss_type,pf.turn_over_amt,pf.loan_amt,pf.income_from_other,pf.lic_slip,pf.home_loan,pf.invs_amt,pf.sandry_creditor,pf.sandry_debitor,pf.stock_amt,pf.cash_bal,pf.buss_loan,pf.personal_loan,pf.status,pf.createdat,pf.updateat,
+        pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+        u.firstname,u.lastname,
+        rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode
+        FROM incometax pf 
         JOIN personal_details pd ON pd.pid = pf.pid 
-        JOIN user_master u ON u.userid = pf.userid
-        JOIN residential_details rd ON rd.rid = pf.rid  ORDER BY pf.inid DESC";
+        JOIN user_master u ON u.userid = pf.userid 
+        JOIN residential_details rd ON rd.rid = pf.rid ORDER BY pf.inid DESC";
         }else{
-            $sql = "SELECT * FROM incometax pf 
+            $sql = "SELECT pf.inid,pf.userid,pf.incomeType,pf.bname,pf.natureofbuss,pf.place_of_buss,pf.buss_type,pf.turn_over_amt,pf.loan_amt,pf.income_from_other,pf.lic_slip,pf.home_loan,pf.invs_amt,pf.sandry_creditor,pf.sandry_debitor,pf.stock_amt,pf.cash_bal,pf.buss_loan,pf.personal_loan,pf.status,pf.createdat,pf.updateat,
+            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob,
+            u.firstname,u.lastname,
+            rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode
+            FROM incometax pf 
             JOIN personal_details pd ON pd.pid = pf.pid 
-            JOIN residential_details rd ON rd.rid = pf.rid 
-            JOIN user_master u ON u.userid = pf.userid
+            JOIN user_master u ON u.userid = pf.userid 
+            JOIN residential_details rd ON rd.rid = pf.rid
             WHERE pf.userid=$userid ORDER BY pf.inid DESC";  
         }
 //        $query = $this->db->query($sql);
