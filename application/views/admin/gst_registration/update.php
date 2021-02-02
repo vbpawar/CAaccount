@@ -441,83 +441,6 @@
                                                 </div>
 
                                                 <div class="tab-pane fade" id="partenship">
-                                                    <div class="row">
-                                                        <div class="partnerError text-center"></div>
-                                                        <div class="col-sm-10">
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"> Partner/Director Name</label>
-                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName" />
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label">Aadhar card Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="ABCD0101E" name="pAadhar" id="pAadhar" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label">Pan card Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Email Id</label>
-
-                                                                    <input type="email" class="form-control" placeholder="example@gmail.com" name="pEmail" id="pEmail" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Mobile Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="Mobile Number" name="pMobile" id="pMobile" />
-                                                                </div>
-                                                            </div>
-                                                            <!--//documents-->
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Select Photo</label>
-
-                                                                    <input class="form-control" id="pPhotodoc" name="pPhotodoc" type="file" onchange="loadFile(event, 'pPhotodocpre')" />
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPhotodocpre" width="20px" height="20px" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Select Aadhar card</label>
-
-                                                                    <input class="form-control" id="pAadhardoc" name="pAadhardoc" type="file" onchange="loadFile(event, 'pAadhardocpre')" />
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pAadhardocpre" width="20px" height="20px" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Select Aadhar card</label>
-
-                                                                    <input class="form-control" id="pPandoc" name="pPandoc" type="file" onchange="loadFile(event, 'pPandocpre')" />
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPandocpre" width="20px" height="20px" />
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <!--// add parteners button-->
-                                                        <div class="col-sm-2">
-                                                            <div class="row mt-5" style="margin-top: 25px;">
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"></label>
-                                                                        <button type="button" class="btn btn-info" id="addPartener">Add</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
                                                     <!--//partener table list-->
                                                     <div class="row">
@@ -530,10 +453,10 @@
                                                                         <th scope="col">Pancard No.</th>
                                                                         <th scope="col">Emailid</th>
                                                                         <th scope="col">Mobile No.</th>
-                                                                        <!--<th scope="col">Photo Attach</th>-->
-                                                                        <!--<th scope="col">Aadhar Attach</th>-->
-                                                                        <!--<th scope="col">Pancard Attach</th>-->
-                                                                        <th scope="col">Action</th>
+                                                                        <th scope="col">Photo Attach</th>
+                                                                        <th scope="col">Aadhar Attach</th>
+                                                                        <th scope="col">Pancard Attach</th>
+                                                                        <!--<th scope="col">Action</th>-->
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="partnerData">

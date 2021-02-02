@@ -498,7 +498,7 @@
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Select Aadhar card</label>
+                                                                    <label class="control-label"><span class="error">*</span>Select Pan card</label>
 
                                                                     <input class="form-control" id="pPandoc" name="pPandoc" type="file" onchange="loadFile(event, 'pPandocpre')" />
                                                                     <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPandocpre" width="20px" height="20px" />
