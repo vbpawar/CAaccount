@@ -550,10 +550,78 @@
                                                         <i class="img-intro icon-checkmark-circle"></i>
                                                     </div>
 
-                                                    <!--properitership-->
-                                                    <div class="row" id="proprietorship">
+                                                    <div class="row">
                                                         <!--content start-->
-                                                        <div class="col-sm-6">
+                                                        
+                                                        <!--public private ltd start-->
+                                                        
+                                                        <div class="col-sm-6 ppl" style="display: none">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">Copy of Registration Certificate</label>
+                                                                <input class="form-control" id="regcertdoc" name="regcertdoc" type="file" onchange="loadFile(event, 'regcertdocp')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="regcertdocp" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-6 ppl" style="display: none">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">Public Private Ltd. Agreement</label>
+                                                                <input class="form-control" id="pplagreedoc" name="pplagreedoc" type="file" onchange="loadFile(event, 'pplagreedocp')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pplagreedocp" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <!--public private ltd end-->
+                                                        
+                                                        
+                                                        <!--pvt ltd start-->
+                                                        
+                                                         
+                                                        <div class="col-sm-6 pvtltd" style="display: none">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">Copy Board Resolution</label>
+                                                                <input class="form-control" id="boarddoc" name="boarddoc" type="file" onchange="loadFile(event, 'boarddocp')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="boarddocp" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <!--pvt ltd end-->
+                                                        
+                                                        
+                                                        
+                                                        <!--partnership start-->
+                                                        
+                                                         <div class="col-sm-6 partnerhip" style="display: none">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">Copy of Partnership Deed</label>
+                                                                <input class="form-control" id="psdeeddoc" name="psdeeddoc" type="file" onchange="loadFile(event, 'psdeeddocpre')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="psdeeddocpre" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        <!--partnership end-->
+                                                        
+                                                        <!--propritership start-->
+                                                        <div class="col-sm-6 proprietorship" style="display: none">
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">Photo of Prop</label>
@@ -565,7 +633,7 @@
                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="propertypicp" width="200px" height="200px" />
                                                             </div>
                                                         </div>     
-                                                        <div class="col-sm-6">
+<!--                                                        <div class="col-sm-6 proprietorship" style="display: none">
 
                                                             <div class="form-group col-sm-6">
                                                                 <label class="control-label">Aadhar card</label>
@@ -574,13 +642,27 @@
 
                                                             <div class="form-group col-sm-6">
                                                                 <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
+                                                                <img src="<?php //echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
                                                             </div>
-                                                        </div>     
+                                                        </div>   -->
+                                                        <div class="col-sm-6 proprietorship" style="display: none">
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="control-label">Passport Size Photo</label>
+                                                                <input class="form-control" id="passportpic" name="passportpic" type="file" onchange="loadFile(event, 'passportpicpre')" />
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <label for="output"></label>
+                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passportpicpre" width="200px" height="200px" />
+                                                            </div>
+                                                        </div>
+                                                        <!--proritership end-->
+                                                        
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">pan card</label>
+                                                                <label class="control-label">pan card<span id="panSpan"></span></label>
                                                                 <input class="form-control" id="pand" name="pan" type="file" onchange="loadFile(event, 'pandpre')" />
                                                             </div>
 
@@ -592,7 +674,7 @@
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">Address Proof(Electricity bill)</label>
+                                                                <label class="control-label">Address Proof/Electricity bill</label>
                                                                 <input class="form-control" id="addressproof" name="electricity" type="file" onchange="loadFile(event, 'addressproofpre')" />
                                                             </div>
 
@@ -614,18 +696,7 @@
                                                                 <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bstatdocpre" width="200px" height="200px" />
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Passport Size Photo</label>
-                                                                <input class="form-control" id="passportpic" name="passportpic" type="file" onchange="loadFile(event, 'passportpicpre')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passportpicpre" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
+                                                        
                                                         <div class="col-sm-6">
                                                             <h4>Do you have rent aggrement?</h4>
                                                             <input type="radio" name="rent" id="" value="1" />Yes <input type="radio" name="rent" id="" value="0" />No
@@ -644,234 +715,9 @@
                                                         <!--content end-->
                                                     </div>
 
-                                                    <!--private limited-->
-                                                    <div class="row" id="pvtltd">
-                                                        <!--content start-->
-                                                        <div class="col-sm-6">
+                                                    
 
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">pan card of company</label>
-                                                                <input class="form-control" id="cpandoc" name="cpandoc" type="file" onchange="loadFile(event, 'cpandocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="cpandocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Electricity Bill of Business</label>
-                                                                <input class="form-control" id="bizelectridoc" name="bizelectridoc" type="file" onchange="loadFile(event, 'bizelectridocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="bizelectridocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">cancel check/passbook</label>
-                                                                <input class="form-control" id="passbookdoc" name="passbookdoc" type="file" onchange="loadFile(event, 'passbookdocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="passbookdocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Copy Board Resolution</label>
-                                                                <input class="form-control" id="boarddoc" name="boarddoc" type="file" onchange="loadFile(event, 'boarddocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="boarddocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <h4>Do you have rent aggrement?</h4>
-                                                            <input type="radio" name="rentPrivate" id="" value="1" />Yes <input type="radio" name="rentPrivate" id="" value="0" />No
-                                                            <div id="rentAgree2">
-                                                                <div class="form-group col-sm-6">
-                                                                    <label class="control-label">Rent aggrement</label>
-                                                                    <input class="form-control" id="rentagreemnt" name="rentagreemnt" type="file" onchange="loadFile(event, 'rentagreemntpre')" />
-                                                                </div>
-
-                                                                <div class="form-group col-sm-6">
-                                                                    <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="rentagreemntpre" width="200px" height="200px" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--content end-->
-                                                    </div>
-                                                    <!--public private limited-->
-                                                    <div class="row" id="ppl">
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">pan card of public private ltd.</label>
-                                                                <input class="form-control" id="pplpandoc" name="pplpandoc" type="file" onchange="loadFile(event, 'pplpandocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pplpandocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Copy of Registration Certificate</label>
-                                                                <input class="form-control" id="regcertdoc" name="regcertdoc" type="file" onchange="loadFile(event, 'regcertdocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="regcertdocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Electricity Bill</label>
-                                                                <input class="form-control" id="electbilldoc" name="electbilldoc" type="file" onchange="loadFile(event, 'electbilldocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="electbilldocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Public Private Ltd. Agreement</label>
-                                                                <input class="form-control" id="pplagreedoc" name="pplagreedoc" type="file" onchange="loadFile(event, 'pplagreedocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pplagreedocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Cancel Check/Bank stmt</label>
-                                                                <input class="form-control" id="cancelcheckdoc" name="cancelcheckdoc" type="file" onchange="loadFile(event, 'cancelcheckdocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="cancelcheckdocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Board resolution</label>
-                                                                <input class="form-control" id="resolvdoc" name="resolvdoc" type="file" onchange="loadFile(event, 'resolvdocp')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="resolvdocp" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <h4>Do you have rent aggrement?</h4>
-                                                            <input type="radio" name="rentPPL" id="" value="1" />Yes <input type="radio" name="rentPPL" id="" value="0" />No
-                                                            <div id="rentAgree3">
-                                                                <div class="form-group col-sm-6">
-                                                                    <label class="control-label">Rent Agreement</label>
-                                                                    <input class="form-control" id="rentdocu" name="rentdocu" type="file" onchange="loadFile(event, 'rentdocupre')" />
-                                                                </div>
-
-                                                                <div class="form-group col-sm-6">
-                                                                    <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="rentdocupre" width="200px" height="200px" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--partnerhip-->
-                                                    <div class="row" id="partnerhip">
-                                                        <!--content start-->
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Pan Card of Partnership Firm</label>
-                                                                <input class="form-control" id="psfirmpandoc" name="psfirmpandoc" type="file" onchange="loadFile(event, 'psfirmpandocpre')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="psfirmpandocpre" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Copy of Partnership Deed</label>
-                                                                <input class="form-control" id="psdeeddoc" name="psdeeddoc" type="file" onchange="loadFile(event, 'psdeeddocpre')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="psdeeddocpre" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Address proof(electricity bill)</label>
-                                                                <input class="form-control" id="addproofdoc" name="addproofdoc" type="file" onchange="loadFile(event, 'addproofdocpre')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="addproofdocpre" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="control-label">Cancel Check/bank stmt</label>
-                                                                <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
-                                                            </div>
-
-                                                            <div class="form-group col-sm-6">
-                                                                <label for="output"></label>
-                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <h4>Do you have rent aggrement?</h4>
-                                                            <input type="radio" name="partnerRent" id="partnerRent" value="1" />Yes <input type="radio" name="partnerRent" id="partnerRent" value="0" />No
-                                                            <div id="rentAgree1">
-                                                                <div class="form-group col-sm-6">
-                                                                    <label class="control-label">Rent aggrement</label>
-                                                                    <input class="form-control" id="form16" name="form16" type="file" onchange="loadFile(event, 'form16pre')" />
-                                                                </div>
-
-                                                                <div class="form-group col-sm-6">
-                                                                    <label for="output"></label>
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="form16pre" width="200px" height="200px" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--content end-->
-
-                                                    </div>
+                                                    
 
                                                     <p class="text-center">
                                                         <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
