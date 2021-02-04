@@ -1,14 +1,8 @@
 <script>
 //    $('#dynamicLi').hide();
-    $('#proprietorship').show();
-    $('#partnerhip').hide();
-    $('#pvtltd').hide();
-    $('#ppl').hide();
+    $('.proprietorship').show();
+    
     $('#rentAgree').hide();
-    $('#rentAgree1').hide();
-    $('#rentAgree2').hide();
-    $('#rentAgree3').hide();
-    $('#partnerhip').hide();
     $('#Partners_director').hide();
 //bussiness type change then appear new tab
     $('#bussinessType').change(function () {
@@ -17,25 +11,29 @@
         //Added with the EDIT
         var value = $option.val();//to get content of "value" attrib
         if (value == 1) {
-            $('#proprietorship').show();
-            $('#partnerhip').hide();
-            $('#pvtltd').hide();
-            $('#ppl').hide();
+            $('.proprietorship').show();
+            $('.partnerhip').hide();
+            $('.pvtltd').hide();
+            $('.ppl').hide();
+            $('#panSpan').html('');
         } else if (value == 2) {
-            $('#proprietorship').hide();
-            $('#partnerhip').show();
-            $('#pvtltd').hide();
-            $('#ppl').hide();
+            $('.proprietorship').hide();
+            $('.partnerhip').show();
+            $('.pvtltd').hide();
+            $('.ppl').hide();
+            $('#panSpan').html(' of partner ship firm');
         } else if (value == 3) {
-            $('#proprietorship').hide();
-            $('#partnerhip').hide();
-            $('#pvtltd').show();
-            $('#ppl').hide();
+            $('.proprietorship').hide();
+            $('.partnerhip').hide();
+            $('.pvtltd').show();
+            $('.ppl').hide();
+            $('#panSpan').html(' of Company');
         } else if (value == 4) {
-            $('#proprietorship').hide();
-            $('#partnerhip').hide();
-            $('#pvtltd').hide();
-            $('#ppl').show();
+            $('.proprietorship').hide();
+            $('.partnerhip').hide();
+            $('.pvtltd').hide();
+            $('.ppl').show();
+            $('#panSpan').html(' of public private ltd.');
         }
     });
 
@@ -47,42 +45,6 @@
             $('#rentAgree').show();
         } else if (radioValue == 0) {
             $('#rentAgree').hide();
-        }
-
-
-    });
-//Do you have rent aggrement? for partners
-    $("input[name='partnerRent']").change(function () {
-
-        var radioValue = $("input[name='partnerRent']:checked").val();
-        if (radioValue == 1) {
-            $('#rentAgree1').show();
-        } else if (radioValue == 0) {
-            $('#rentAgree1').hide();
-        }
-
-
-    });
-//Do you have rent aggrement? for private
-    $("input[name='rentPrivate']").change(function () {
-
-        var radioValue = $("input[name='rentPrivate']:checked").val();
-        if (radioValue == 1) {
-            $('#rentAgree2').show();
-        } else if (radioValue == 0) {
-            $('#rentAgree2').hide();
-        }
-
-
-    });
-//Do you have rent aggrement? for private
-    $("input[name='rentPPL']").change(function () {
-
-        var radioValue = $("input[name='rentPPL']:checked").val();
-        if (radioValue == 1) {
-            $('#rentAgree3').show();
-        } else if (radioValue == 0) {
-            $('#rentAgree3').hide();
         }
 
 

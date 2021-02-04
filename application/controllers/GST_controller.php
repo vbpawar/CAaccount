@@ -123,21 +123,54 @@ class GST_controller extends CI_Controller
             if ($result['status']) {
                 $id       = $result['gid'];
                
-                if (!empty($_FILES['psfirmpandoc']['name'])) {
-                    $first = array(
-                        'name'=>'PAN CARD',
+                
+                if (!empty($_FILES['boarddoc']['name'])) {
+                    $second = array(
+                        'name'=>'Board Resolution',
                         'userid'=>$gst_details['userid'],
                         'id'=>$id,
-                        'filename'=>$_FILES['psfirmpandoc']['name'],
-                        'file'=>$_FILES['psfirmpandoc']['tmp_name'],
+                        'filename'=>$_FILES['boarddoc']['name'],
+                        'file'=>$_FILES['boarddoc']['tmp_name'],
                         'table'=>'gst_docs',
                         'folder'=>'gst',
                         'prim'=>'gid'
                     );
-                    if ($this->docs->uploaddocs($first)) {
+                    if ($this->docs->uploaddocs($second)) {
                         $document = 'Documents uplaoded';
                     }
                 }
+                
+                if (!empty($_FILES['pplagreedoc']['name'])) {
+                    $second = array(
+                        'name'=>'Public Private Ltd. Agreement',
+                        'userid'=>$gst_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['pplagreedoc']['name'],
+                        'file'=>$_FILES['pplagreedoc']['tmp_name'],
+                        'table'=>'gst_docs',
+                        'folder'=>'gst',
+                        'prim'=>'gid'
+                    );
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                if (!empty($_FILES['regcertdoc']['name'])) {
+                    $second = array(
+                        'name'=>'Copy of Registration Certificate',
+                        'userid'=>$gst_details['userid'],
+                        'id'=>$id,
+                        'filename'=>$_FILES['regcertdoc']['name'],
+                        'file'=>$_FILES['regcertdoc']['tmp_name'],
+                        'table'=>'gst_docs',
+                        'folder'=>'gst',
+                        'prim'=>'gid'
+                    );
+                    if ($this->docs->uploaddocs($second)) {
+                        $document = 'Documents uplaoded';
+                    }
+                }
+                
                 if (!empty($_FILES['psdeeddoc']['name'])) {
                     $second = array(
                         'name'=>'Partnership Deed',
@@ -153,51 +186,8 @@ class GST_controller extends CI_Controller
                         $document = 'Documents uplaoded';
                     }
                 }
-                if (!empty($_FILES['addproofdoc']['name'])) {
-                    $third = array(
-                        'name'=>'Address Proof',
-                        'userid'=>$gst_details['userid'],
-                        'id'=>$id,
-                        'filename'=>$_FILES['addproofdoc']['name'],
-                        'file'=>$_FILES['addproofdoc']['tmp_name'],
-                        'table'=>'gst_docs',
-                        'folder'=>'gst',
-                        'prim'=>'gid'
-                    );
-                    if ($this->docs->uploaddocs($third)) {
-                        $document = 'Documents uplaoded';
-                    }
-                }
-                    if (!empty($_FILES['cancelcheck']['name'])) {
-                        $four = array(
-                            'name'=>'Cancel Check/Bank Stmt',
-                            'userid'=>$gst_details['userid'],
-                            'id'=>$id,
-                            'filename'=>$_FILES['cancelcheck']['name'],
-                            'file'=>$_FILES['cancelcheck']['tmp_name'],
-                            'table'=>'gst_docs',
-                            'folder'=>'gst',
-                            'prim'=>'gid'
-                        );
-                        if ($this->docs->uploaddocs($four)) {
-                            $document = 'Documents uplaoded';
-                        }
-                    }
-                    if (!empty($_FILES['rentagr']['name'])) {
-                        $five = array(
-                            'name'=>'Rent Aggrement',
-                            'userid'=>$gst_details['userid'],
-                            'id'=>$id,
-                            'filename'=>$_FILES['rentagr']['name'],
-                            'file'=>$_FILES['rentagr']['tmp_name'],
-                            'table'=>'gst_docs',
-                            'folder'=>'gst',
-                            'prim'=>'gid'
-                        );
-                        if ($this->docs->uploaddocs($five)) {
-                            $document = 'Documents uplaoded';
-                        }
-                    }
+                
+                    
                     if (!empty($_FILES['propertypic']['name'])) {
                         $five = array(
                             'name'=>'Photo of Prop',
@@ -245,7 +235,7 @@ class GST_controller extends CI_Controller
                     }
                     if (!empty($_FILES['electricity']['name'])) {
                         $eight = array(
-                            'name'=>'Electricity Bill',
+                            'name'=>'Address Proof/Electricity Bill',
                             'userid'=>$gst_details['userid'],
                             'id'=>$id,
                             'filename'=>$_FILES['electricity']['name'],

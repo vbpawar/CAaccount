@@ -1,5 +1,5 @@
 <script>
-
+var url = '<?php echo base_url(); ?>';
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
@@ -65,6 +65,9 @@ function showPartnersList(pList) {
                         <td>` + pList[i]['pan_number'] + `</td>
                         <td>` + pList[i]['emailid'] + `</td>
                         <td>` + pList[i]['contact_number'] + `</td>
+                        <td><a href="`+(url+pList[i]['photo'])+`" download="`+pList[i]['partner_name']+`_photo"><u>Download</u></a></td>
+                        <td><a href="`+(url+pList[i]['aadhar'])+`" download="`+pList[i]['partner_name']+`_aadharcard"><u>Download</u></a></td>
+                        <td><a href="`+(url+pList[i]['pan'])+`" download="`+pList[i]['partner_name']+`_pancard"><u>Download</u></a></td>
                         </tr>`;
             }
             
