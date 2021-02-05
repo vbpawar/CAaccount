@@ -17,24 +17,24 @@
     });
 
 //    gst enable/disable
-    $('#enableGst').change(function () {
+    $('#seller_enableGst').change(function () {
         if (this.checked) {
-            $("#gst_number").prop('disabled', false);
+            $("#seller_gst_number").prop('disabled', false);
 //    alert('checked')
         } else {
 //    alert('unchecked')
-            $("#gst_number").prop('disabled', true);
+            $("#seller_gst_number").prop('disabled', true);
         }
     });
 
 //    gst enable/disable
-    $('#enableGst1').change(function () {
+    $('#buyer_enableGst').change(function () {
         if (this.checked) {
-            $("#gst_number1").prop('disabled', false);
+            $("#buyer_gst_number").prop('disabled', false);
 //    alert('checked')
         } else {
 //    alert('unchecked')
-            $("#gst_number1").prop('disabled', true);
+            $("#buyer_gst_number").prop('disabled', true);
         }
     });
 
@@ -55,52 +55,52 @@
     });
 
 //add parteners in table
-    $('#addPartener').click(function (e) {
-
-        var partnerName = $('#partnerName').val();
-        var pAadhar = $('#pAadhar').val();
-        var pPancard = $('#pPancard').val();
-        var pEmail = $('#pEmail').val();
-        var pMobile = $('#pMobile').val();
+    $('#addBill').click(function (e) {
+        var productName = $('#productName').val();
+        var hsn = $('#hsn').val();
+        var quantity = $('#quantity').val();
+        var rate = $('#rate').val();
+        var amount = $('#amount').val();
+        var gst = $('#gst').val();
+        var igst = $('#igst').val();
+        var sgst = $('#sgst').val();
+        var taotalamt = $('#taotalamt').val();
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
 //if fields are not empty then add in table 
 //else empty then set errors
-        if (partnerName != '' && pAadhar != '' && pPancard != '' && pEmail != '' && pMobile != '') {
-           if (!($('#r' + pAadhar).length)) {
-                tableData += $('#partnerTable tbody').html();
-                tableData += `<tr id="r` + pAadhar + `">
-                        <td>` + partnerName + `</td>
-                        <td>` + pAadhar + `</td>
-                        <td>` + pPancard + `</td>
-                        <td>` + pEmail + `</td>
-                        <td>` + pMobile + `</td>
+        if (productName != '' && hsn != '' && quantity != '' && rate != '' && amount != '') {
+            console.log($('#r' + productName).length);
+           if (!($('#r' + productName).length)) {
+                tableData += $('#billTable tbody').html();
+                tableData += `<tr id="r` + productName + `">
+                        <td>` + productName + `</td>
+                        <td>` + hsn + `</td>
+                        <td>` + quantity + `</td>
+                        <td>` + rate + `</td>
+                        <td>` + amount + `</td>
+                        <td>` + gst + `</td>
+                        <td>` + igst + `</td>
+                        <td>` + sgst + `</td>
+                        <td>` + taotalamt + `</td>
                         <td>
-                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + pAadhar + `')">
+                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + productName + `')">
                         <i class="fa fa-trash-alt" ></i>
                         </button>
                         </td>
                         </tr>`;
-
-                $('#partnerData').html(tableData);
+                            console.log(tableData);
+                $('#billData').html(tableData);
             }
         } else {
             var errorData = '';
-            if (partnerName == '') {
-                errorData += '<span id="pNameError" class="text-danger"> *Enter Partner Name</span><br/>';
+            if (productName == '') {
+                errorData += '<span id="pNameError" class="text-danger"> *Enter Product Name</span><br/>';
             }
-            if (pAadhar == '') {
+            if (hsn == '') {
                 errorData += '<span id="pAadharError" class="text-danger"> *Enter Aadhar No.</span><br/>';
             }
-            if (pPancard == '') {
-                errorData += '<span id="pPanError" class="text-danger"> *Enter Pan No.</span><br/>';
-            }
-            if (pEmail == '') {
-                errorData += '<span id="pEmailError" class="text-danger"> *Enter Emailid</span><br/>';
-            }
-            if (pMobile == '') {
-                errorData += '<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
-            }
+            
             $('.partnerError').html(errorData);
         }
     });

@@ -208,7 +208,7 @@
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Nature of the business</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <textarea class="form-control" name="nature_of_buss" id="nature_of_buss" rows="1"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>

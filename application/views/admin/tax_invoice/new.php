@@ -111,13 +111,13 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <a href="<?php echo base_url('taxInvoice');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                <a href="<?php echo base_url('taxInvoice'); ?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">Tax Invoice Information</h3>
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="udyog-form" method="post">
+                        <form id="taxinvoice-form" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -153,8 +153,8 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                    
-                                                   
+
+
                                                     <!-- <li>
                                                         <a href="#doner" data-toggle="tab" title="completed">
                                                             <span class="round-tabs five">
@@ -169,39 +169,39 @@
                                                 <div class="tab-pane fade in active" id="taxinvoice">
                                                     <h3 class="head text-center">Tax Invoice Information</h3>
                                                     <div class="row">
-<div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span> Name (as per pan card)</label>
-                                                            <input type="text" class="form-control" placeholder="Enter your name as per pan card" name="pan_name" id="pan_name" />
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span> Name (as per pan card)</label>
+                                                                <input type="text" class="form-control" placeholder="Enter your name as per pan card" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span> PAN Card Number</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span> PAN Card Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your unique pan card number" name="pan_number" id="pan_number" />
+                                                                <input type="text" class="form-control" placeholder="Enter your unique pan card number" name="pan_number" id="pan_number" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span> Name (as per aadhar card)</label>
-                                                            <input type="text" class="form-control" placeholder="Enter your name as per aadhar card" name="aadhar_name" id="aadhar_name" />
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span> Name (as per aadhar card)</label>
+                                                                <input type="text" class="form-control" placeholder="Enter your name as per aadhar card" name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
+                                                                <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                        
-                                                         <div class="col-sm-4">
+
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span> Mobile Number</label>
 
@@ -215,12 +215,12 @@
                                                                 <input type="email" class="form-control" placeholder="example@gmail.com" name="emailid" id="emailid" />
                                                             </div>
                                                         </div>
-                                                        
-                                                          <div class="col-sm-4">
+
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Tax Invoice</label>
                                                                 <!--<input type="text" class="form-control" placeholder="nature of bussness" name="shopName" id="shopName" />-->
-                                                                <select class="form-control selectpicker" id="buss_type" name="buss_type">
+                                                                <select class="form-control selectpicker" id="intype" name="intype">
                                                                     <option value="1">Proprietorship</option>
                                                                     <option value="2">Partnership</option>
                                                                     <option value="3">Private Limited</option>
@@ -229,7 +229,7 @@
                                                             </div>
                                                         </div>
 
-                                                                                                                
+
                                                     </div>
 
                                                     <!-- <p class="text-center">
@@ -239,386 +239,307 @@
                                                 <div class="tab-pane fade" id="addressdet">
                                                     <h3 class="head text-center">Residential address</h3>
                                                     <div class="row">
-                                                  <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"> Premise Name</label>
-                                                            <input type="text" class="form-control" placeholder="Premise Name" name="premise_name" id="premise_name" />
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Premise Name</label>
+                                                                <input type="text" class="form-control" placeholder="Premise Name" name="premise_name" id="premise_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Flat Number</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Flat Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Flat Number" name="flat_number" id="flat_number" />
+                                                                <input type="text" class="form-control" placeholder="Flat Number" name="flat_number" id="flat_number" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Road</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Road</label>
 
-                                                            <input type="text" class="form-control" placeholder="Road" name="road" id="road" />
+                                                                <input type="text" class="form-control" placeholder="Road" name="road" id="road" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Area</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Area</label>
 
-                                                            <input type="text" class="form-control" placeholder="Area" name="area" id="area" />
+                                                                <input type="text" class="form-control" placeholder="Area" name="area" id="area" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Village</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Village</label>
 
-                                                            <input type="text" class="form-control" placeholder="Village" name="village" id="village" />
+                                                                <input type="text" class="form-control" placeholder="Village" name="village" id="village" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Taluka</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Taluka</label>
 
-                                                            <input type="text" class="form-control" placeholder="Taluka" name="taluka" id="taluka" />
+                                                                <input type="text" class="form-control" placeholder="Taluka" name="taluka" id="taluka" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">District</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">District</label>
 
-                                                            <input type="text" class="form-control" placeholder="District" name="district" id="district" />
+                                                                <input type="text" class="form-control" placeholder="District" name="district" id="district" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">State</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">State</label>
 
-                                                            <input type="text" class="form-control" placeholder="State" name="state" id="state" />
+                                                                <input type="text" class="form-control" placeholder="State" name="state" id="state" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Pincode</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Pincode</label>
 
-                                                            <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
+                                                                <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="shopdetails">
                                                     <h3 class="head text-center">Shop Details</h3>
                                                     <div class="row">
-                                                <div class="row bg-info">
-                                                    <div class="col-md-6"><h5>Seller Details</h5></div>                                                    
-                                                </div>
-                                                        
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"> Business/Shop/Company Name</label>
-                                                            <input type="text" class="form-control" placeholder="Business Name" name="businessName" id="businessName" />
+                                                        <div class="row bg-info">
+                                                            <div class="col-md-6"><h5>Seller Details</h5></div>                                                    
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Business/Shop/Company Name</label>
+                                                                <input type="text" class="form-control" placeholder="Business Name" name="seller_business_name" id="seller_business_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Business Address</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
 
-                                                            <input type="text" class="form-control" placeholder="Business Address" name="businessAdd" id="businessAdd" />
+                                                                <input type="text" class="form-control" placeholder="Business Address" name="seller_address" id="seller_address" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Email</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
 
-                                                            <input type="email" class="form-control" placeholder="Email" name="email" id="email" />
+                                                                <input type="email" class="form-control" placeholder="Email" name="seller_email" id="seller_email" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Mobile No.</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile No.</label>
 
-                                                            <input type="text" class="form-control" placeholder="Mobile No" name="mobileNo" id="mobileNo" />
+                                                                <input type="text" class="form-control" placeholder="Mobile No" name="seller_contact" id="seller_contact" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                        
-                                                   <div class="col-sm-4">
+
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">GST Number</label>
-                                                                <input type="text" class="form-control" name="gst_number" id="gst_number" disabled="" />
-                                                                <input type="checkbox" name="" id="enableGst" />Enable GST
+                                                                <input type="text" class="form-control" name="seller_gst_number" id="seller_gst_number" disabled="" />
+                                                                <input type="checkbox" name="" id="seller_enableGst" />Enable GST
                                                             </div>
-                                                    </div>
-                                                        
-                                                    </div>
-                                                        <!---Row 1 end -->
-                                    <div class="row">                                 
+                                                        </div>
 
-                                                <div class="row bg-info">
-                                                    <div class="col-md-6"><h5>Buyer Details</h5></div>                                                    
-                                                </div>
-                                        
-                                              <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"> Business/Shop/Company Name</label>
-                                                            <input type="text" class="form-control" placeholder="Business Name" name="businessName1" id="businessName1" />
+                                                    </div>
+                                                    <!---Row 1 end -->
+                                                    <div class="row">                                 
+
+                                                        <div class="row bg-info">
+                                                            <div class="col-md-6"><h5>Buyer Details</h5></div>                                                    
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Business/Shop/Company Name</label>
+                                                                <input type="text" class="form-control" placeholder="Business Name" name="buyer_business_name" id="buyer_business_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Business Address</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
 
-                                                            <input type="text" class="form-control" placeholder="Business Address" name="businessAdd1" id="businessAdd1" />
+                                                                <input type="text" class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Email</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
 
-                                                            <input type="email" class="form-control" placeholder="Email" name="email1" id="email1" />
+                                                                <input type="email" class="form-control" placeholder="Email" name="buyer_email" id="buyer_email" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Mobile No.</label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile No.</label>
 
-                                                            <input type="text" class="form-control" placeholder="Mobile No" name="mobileNo1" id="mobileNo1" />
+                                                                <input type="text" class="form-control" placeholder="Mobile No" name="buyer_contactno" id="buyer_contactno" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                        
-                                                    <div class="col-sm-4">
+
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">GST Number</label>
-                                                                <input type="text" class="form-control" name="gst_number1" id="gst_number1" disabled="" />
-                                                                <input type="checkbox" name="" id="enableGst1" />Enable GST
-                                                            </div>
-                                                    </div>
-
-                                    </div>                
-                                                
-                                                        <!---Row 2 end -->
-                                                        
-                                    <div class="row">
-                                        
-                                        <div class="row bg-info">
-                                            <h5>Invoice Details</h5>
-                                        </div>
-
-                                        <div class="row">
-
-                                                    <div class="col-sm-10">
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Product Name</label>
-                                                                <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
+                                                                <input type="text" class="form-control" name="buyer_gst_number" id="buyer_gst_number" disabled="" />
+                                                                <input type="checkbox" name="" id="buyer_enableGst" />Enable GST
                                                             </div>
                                                         </div>
 
+                                                    </div>                
 
-
-
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>HSN</label>
-                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Quantity</label>
-                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Rate</label>
-                                                                <input type="text" class="form-control" placeholder="" name="rate" id="rate"/>
-                                                            </div>
-
-                                                        </div>
-
-
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Amount</label>
-
-                                                                <input type="text" class="form-control" placeholder="" name="amount" id="amount"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>GST Rate</label>
-                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>CGST)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-2">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>SGST</label>
-                                                                <input type="text" class="form-control" placeholder="" name="sgst" id="sgst"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Total Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="taotalamt" id="taotalamt"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!--  <div>
-                                                           <a href="#billtab" data-toggle="tab" title="Bill Details">
-                                                       <span class="round-tabs four">
-                                                           <i class="fa fa-trash-alt"></i>
-                                                       </span>
-                                                   </a>
-                                                       </div>-->
-                                                    <!--//            add parteners button-->
-                                                    <div class="col-sm-2">
-                                                        <div class="row mt-5" style="margin-top: 25px;">
-                                                            <div class="col-sm-12">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"></label>
-                                                                    <button type="button" class="btn btn-info" id="addBill">Add </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--//partener table list-->
-
-
+                                                    <!---Row 2 end -->
 
                                                     <div class="row">
-                                                        <table class="table table-bordered" id="billTable">
-                                                            <tr>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Product Name</th>
-                                                                    <th scope="col">HSN</th>
-                                                                    <th scope="col">Quantity</th>
-                                                                    <th scope="col">Rate</th>
-                                                                    <th scope="col">Amount</th>
-                                                                    <th scope="col">GST Rate</th>
-                                                                    <th scope="col">CGST</th>
-                                                                    <th scope="col">SGST</th>
-                                                                    <th scope="col">Total Amount</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="billData">   
 
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-
-                                        
-                                    </div>
-                                                        
-                                                        
-                                                        <!---Row 3 end -->
-                                                </div>
-                                                <div class="tab-pane fade" id="partnership">
-                                                    <div class="row">
-                                                        <div class="partnerError text-center"></div>
-                                                        <div class="col-sm-10">
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span> Partner Name</label>
-                                                                    <input type="text" class="form-control" placeholder="enter Partner name" name="partnerName" id="partnerName"/>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Aadharcard Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="" name="pAadhar" id="pAadhar"/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Pancard Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="" name="pPancard" id="pPancard"/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Email Id</label>
-
-                                                                    <input type="email" class="form-control" placeholder="" name="pEmail" id="pEmail"/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="control-label"><span class="error">*</span>Mobile Number</label>
-
-                                                                    <input type="text" class="form-control" placeholder="" name="pMobile" id="pMobile"/>
-                                                                </div>
-                                                            </div>
+                                                        <div class="row bg-info">
+                                                            <h5>Invoice Details</h5>
                                                         </div>
-                                                        <!--// add parteners button-->
-                                                        <div class="col-sm-2">
-                                                            <div class="row mt-5" style="margin-top: 25px;">
-                                                                <div class="col-sm-12">
+
+                                                        <div class="row">
+
+                                                            <div class="col-sm-10">
+                                                                <div class="col-sm-3">
                                                                     <div class="form-group">
-                                                                        <label class="control-label"></label>
-                                                                        <button type="button" class="btn btn-info" id="addPartener">Add Parteners</button>
+                                                                        <label class="control-label"><span class="error">*</span>Product Name</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>HSN</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="hsn" id="hsn" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>Quantity</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="quantity" id="quantity" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>Rate</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="rate" id="rate" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="col-sm-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>Amount</label>
+
+                                                                        <input type="text" class="form-control" placeholder="" name="amount" id="amount" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>GST Rate</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="gst" id="gst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>CGST)</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="igst" id="igst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>SGST</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="sgst" id="sgst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"><span class="error">*</span>Total Amount</label>
+                                                                        <input type="text" class="form-control" placeholder="" name="taotalamt" id="taotalamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
+                                                            <!--  <div>
+                                                                   <a href="#billtab" data-toggle="tab" title="Bill Details">
+                                                               <span class="round-tabs four">
+                                                                   <i class="fa fa-trash-alt"></i>
+                                                               </span>
+                                                           </a>
+                                                               </div>-->
+                                                            <!--//            add parteners button-->
+                                                            <div class="col-sm-2">
+                                                                <div class="row mt-5" style="margin-top: 25px;">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label"></label>
+                                                                            <button type="button" class="btn btn-info" id="addBill">Add </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--//partener table list-->
+
+
+
+                                                            <div class="row">
+                                                                <table class="table table-bordered" id="billTable">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col">Product Name</th>
+                                                                            <th scope="col">HSN</th>
+                                                                            <th scope="col">Quantity</th>
+                                                                            <th scope="col">Rate</th>
+                                                                            <th scope="col">Amount</th>
+                                                                            <th scope="col">GST Rate</th>
+                                                                            <th scope="col">CGST</th>
+                                                                            <th scope="col">SGST</th>
+                                                                            <th scope="col">Total Amount</th>
+                                                                            <th scope="col">Action</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="billData">   
+
+                                                                    </tbody>
+                                                                </table>
+
+                                                                <p class="text-center">
+                                                                    <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                                </p>
+                                                            </div>
                                                         </div>
 
-                                                        <!--//partener table list-->
-                                                        <div class="row">
-                                                            <table class="table table-bordered" id="partnerTable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Partener Name</th>
-                                                                        <th scope="col">Aadharcard No.</th>
-                                                                        <th scope="col">Pancard No.</th>
-                                                                        <th scope="col">Mobile No.</th>
-                                                                        <th scope="col">Email Id</th>
-                                                                        <th scope="col">Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="partnerData">
-                                                                    <!--                                                                    <tr>
-                                                                        <td>Lalit</td>
-                                                                        <td>Aadhar123</td>
-                                                                        <td>Pan123</td>
-                                                                        <td>8007015819</td>
-                                                                        <td>lalit@gmail.com</td>
-                                                                        <td>
-                                                                            <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="test()">
-                                                                                <i class="fa fa-trash-alt" ></i>
-                                                                            </button>
-                                                                        </td>
-                                                                    </tr>-->
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
+
                                                     </div>
+
+
+                                                    <!---Row 3 end -->
                                                 </div>
 
 

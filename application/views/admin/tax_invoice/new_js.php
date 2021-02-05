@@ -2,50 +2,66 @@
     var url = '<?php echo base_url(); ?>';
 //alert('ok');
 
-    function getPartnersData() {
+    function geInvoiceDetails() {
 
         var data = [];
-        var name;
-        var aadharno;
-        var panno;
-        var mobileno;
-        var emailid;
+        var productName;
+        var hsn;
+        var quantity;
+        var rate;
+        var amount;
+        var gst;
+        var cgst;
+        var sgst;
+        var totalAmount;
         var i = 0;
-        $('#partnerTable tbody>tr').each(function (index, tr) {
+        $('#billTable tbody>tr').each(function (index, tr) {
             var tds = $(tr).find('td');
-            name = tds[0].textContent;
-            aadharno = tds[1].textContent;
-            panno = tds[2].textContent;
-            mobileno = tds[3].textContent;
-            emailid = tds[4].textContent;
+            productName = tds[0].textContent;
+            hsn = tds[1].textContent;
+            quantity = tds[2].textContent;
+            rate = tds[3].textContent;
+            amount = tds[4].textContent;
+            gst = tds[5].textContent;
+            cgst = tds[6].textContent;
+            sgst = tds[7].textContent;
+            totalAmount = tds[8].textContent;
             data[i++] = {
-                p_partner_name: name,
-                p_aadhar_number: aadharno,
-                p_pan_number: panno,
-                p_contact_number: mobileno,
-                p_emailid: emailid
+                pname: productName,
+                hsn: hsn,
+                quantity: quantity,
+                rate: rate,
+                amount: amount,
+                gst: gst,
+                cgst: cgst,
+                sgst: sgst,
+                total_amount: totalAmount
             }
         });
         return data;
     }
 
-    $('#udyog-form').on('submit', function (e) {
+    $('#taxinvoice-form').on('submit', function (e) {
+        
         e.preventDefault();
-      var  patnersData = getPartnersData();
-     var jsonString= JSON.stringify(patnersData);
-//console.log(patnersData);
+      var  invoiceData = geInvoiceDetails();
+      console.log('@@@@@@@array@@@@@@');
+      console.log(invoiceData);
+     var jsonString= JSON.stringify(invoiceData);
+    console.log('#####String#####');
+    console.log(jsonString);
   var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('5');
+        var amount=servicecharges.get('12');
         formdata.append('userid',userid);
-        formdata.append('partnerdata',jsonString);
+        formdata.append('invoicedata',jsonString);
 
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'createudyog',
+                url: url + 'add_invoice',
 
                 type: 'POST',
 
@@ -91,7 +107,7 @@
 
     function goback() {
 
-        window.location.replace(url + 'udyagAadhar');
+        window.location.replace(url + 'taxInvoice');
     }
 
 

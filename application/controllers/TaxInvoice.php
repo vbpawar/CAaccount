@@ -73,18 +73,20 @@ class TaxInvoice extends CI_Controller{
                 'naturebuss' => $this->input->post('naturebuss')
             );
             $seller_details = array(
-                'shop_name'=>$this->input->post('shop_name'),
-                'office_contact'=>$this->input->post('office_contact'),
-                'office_mailid'=>$this->input->post('office_mailid'),
-                'gst_number'=>$this->input->post('gst_number')
+                'shop_name'=>$this->input->post('seller_business_name'),
+                'office_address'=>$this->input->post('seller_address'),
+                'office_mailid'=>$this->input->post('seller_email'),
+                'office_contact'=>$this->input->post('seller_contact'),
+                'gst_number'=>$this->input->post('seller_gst_number')
                );
                $buyer_details = array(
-                'shop_name'=>$this->input->post('b_shop_name'),
-                'office_contact'=>$this->input->post('b_office_contact'),
-                'office_mailid'=>$this->input->post('b_office_mailid'),
-                'gst_number'=>$this->input->post('b_gst_number')
+                'shop_name'=>$this->input->post('buyer_business_name'),
+                'office_address'=>$this->input->post('buyer_address'),
+                'office_mailid'=>$this->input->post('buyer_email'),
+                'office_contact'=>$this->input->post('buyer_contactno'),
+                'gst_number'=>$this->input->post('buyer_gst_number')
                );
-               $invoicedetails = $this->input->post('invoicedetails');
+               $invoicedetails = $this->input->post('invoicedata');
                $invoicedetails= json_decode($invoicedetails);
         $testdata = array(
             'pdetails'=>$pdetails,
@@ -96,10 +98,10 @@ class TaxInvoice extends CI_Controller{
         );
             $result = $this->imodel->create_invoice($testdata);
             if ($result['status']) {
-                $id       = $result['certid'];
+//                $id       = $result['certid'];
                 $response = array(
                     'Message' => 'Invoice Form added successfully',
-                    'Data' => $result,
+//                    'Data' => $result,
                     'Responsecode' => 200
                 );
             } else {

@@ -115,10 +115,12 @@ else
                             'pname' => $contact->pname,
                             'hsn' => $contact->hsn,
                             'quantity' => $contact->quantity,
-                            'gstrate'=>$contact->gstrate,
+                            'rate'=>$contact->rate,
+                            'gst'=>$contact->gst,
                             'cgst'=>$contact->cgst,
                             'sgst'=>$contact->sgst,
-                            'amount'=>$contact->amount
+                            'amount'=>$contact->amount,
+                            'total_amount'=>$contact->total_amount
                             );
                             $this->db->insert('invoice_details', $partners);
                     }
