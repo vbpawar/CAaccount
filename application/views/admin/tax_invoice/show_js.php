@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'loadudyog',
+            url: url + 'loadTaxinvoice',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].uid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].invoiceid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'udyagAadhar/update',
+                url: url + 'taxInvoice/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
