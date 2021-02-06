@@ -187,7 +187,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updateudyog_status',
+            url: url + 'update_invoice',
 
             type: 'POST',
 
