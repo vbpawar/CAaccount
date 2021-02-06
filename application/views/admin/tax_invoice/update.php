@@ -413,76 +413,7 @@
 
                                                         <div class="row">
 
-                                                            <div class="col-sm-10">
-                                                                <div class="col-sm-3">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>Product Name</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
-                                                                    </div>
-                                                                </div>
-
-
-
-
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>HSN</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="hsn" id="hsn" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>Quantity</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="quantity" id="quantity" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>Rate</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="rate" id="rate" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-
-
-                                                                <div class="col-sm-3">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>Amount</label>
-
-                                                                        <input type="text" class="form-control" placeholder="" name="amount" id="amount" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>GST Rate</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="gst" id="gst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>CGST)</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="igst" id="igst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-2">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>SGST</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="sgst" id="sgst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-sm-3">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"><span class="error">*</span>Total Amount</label>
-                                                                        <input type="text" class="form-control" placeholder="" name="taotalamt" id="taotalamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            
 
 
                                                             <!--  <div>
@@ -493,16 +424,7 @@
                                                            </a>
                                                                </div>-->
                                                             <!--//            add parteners button-->
-                                                            <div class="col-sm-2">
-                                                                <div class="row mt-5" style="margin-top: 25px;">
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label"></label>
-                                                                            <button type="button" class="btn btn-info" id="addBill">Add </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            
 
                                                             <!--//partener table list-->
 
@@ -521,7 +443,7 @@
                                                                             <th scope="col">CGST</th>
                                                                             <th scope="col">SGST</th>
                                                                             <th scope="col">Total Amount</th>
-                                                                            <th scope="col">Action</th>
+                                                                            
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody id="billData">   
@@ -529,9 +451,7 @@
                                                                     </tbody>
                                                                 </table>
 
-                                                                <p class="text-center">
-                                                                    <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
-                                                                </p>
+                                                                
                                                             </div>
                                                         </div>
 
