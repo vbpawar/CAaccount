@@ -18,12 +18,12 @@
         $('#state').val(product.state);
         $('#pincode').val(product.pincode);
         $('#seller_business_name').val(product.s_shopname);
-        $('#seller_address').val(product.seller_address);
+        $('#seller_address').val(product.s_address);
         $('#seller_email').val(product.s_mail);
         $('#seller_contact').val(product.s_contact);
         $('#seller_gst_number').val(product.s_gst);
         $('#buyer_business_name').val(product.b_shopname);
-        $('#buyer_address').val(product.buyer_address);
+        $('#buyer_address').val(product.b_address);
         $('#buyer_email').val(product.b_mail);
         $('#buyer_contactno').val(product.b_contact);
         $('#buyer_gst_number').val(product.b_gst);
