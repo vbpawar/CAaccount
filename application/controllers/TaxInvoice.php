@@ -115,7 +115,7 @@ class TaxInvoice extends CI_Controller{
     
     public function update_status()
     {
-        $id    = $this->input->post('id');
+        $id    = $this->input->post('uid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')

@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'udyagAadhar');
+        window.location.replace(url + 'taxInvoice');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -125,8 +125,9 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     $('#remarkField').hide();
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
+        console.log(temp);
         $('#uid').val(id);
-         $('#digital_amount').val(servicecharges.get('5'));
+         $('#digital_amount').val(servicecharges.get('12'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
@@ -228,7 +229,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'get_udyog_remarks',
+            url: url + 'updated_inv_docs',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

@@ -9,7 +9,7 @@ class InvoiceModel extends CI_Model {
     rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
     sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
     sd1.shop_name b_shopname,sd1.office_address b_address,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
-        u.firstname,u.lastname
+        u.firstname,u.lastname,u.userid
         FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN residential_details rd ON rd.rid = pf.rid 
                 JOIN shop_details sd ON sd.sid = pf.sellerid
@@ -21,7 +21,7 @@ class InvoiceModel extends CI_Model {
         rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
         sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
         sd1.shop_name b_shopname,sd1.office_contact b_contact,sd1.office_address b_address,sd1.office_mailid b_mail,sd1.gst_number b_gst,
-            u.firstname,u.lastname
+            u.firstname,u.lastname,u.userid
             FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                     JOIN residential_details rd ON rd.rid = pf.rid 
                     JOIN shop_details sd ON sd.sid = pf.sellerid
