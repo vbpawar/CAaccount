@@ -70,7 +70,7 @@ class GST_annual_controller extends CI_Controller
               
                     if (!empty($_FILES['bankstmt']['name'])) {
                         $four = array(
-                            'name'=>'Bank Statement',
+                            'name'=>'Bank Statement/Sales & Purchase Ledger',
                             'userid'=>$userid,
                             'id'=>$id,
                             'filename'=>$_FILES['bankstmt']['name'],

@@ -177,32 +177,50 @@
                                                         </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label"> Company Name</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Company Name 1 </label>
+                                                                        <input type="text" class="form-control" placeholder="Company Name 1" name="comp_name1" id="comp_name1" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">  Registered Office of the State</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Company Name 2 </label>
+                                                                        <input type="text" class="form-control" placeholder="Company Name 2" name="comp_name2" id="comp_name2" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label"> The Objects to be pursued by the company</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Company Name 3 </label>
+                                                                        <input type="text" class="form-control" placeholder="Company Name 3" name="comp_name3" id="comp_name3" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">  objects specified</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Company Name 4 </label>
+                                                                        <input type="text" class="form-control" placeholder="Company Name 4" name="comp_name4" id="comp_name4" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">Authorized capital and Subscribed capital</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> State of the Registered Office </label>
+                                                                        <input type="text" class="form-control" placeholder="State of the Registered Office" name="reg_office" id="reg_office" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">  Objects specified</label>
+                                                                        <input type="text" class="form-control" placeholder="Objects specified" name="objects_specified" id="objects_specified" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"> Authorized capital </label>
+                                                                        <input type="text" class="form-control" placeholder="Authorized capital" name="authorized_capital" id="authorized_capital" />
+                                                                    </div>
+                                                                </div>                                                                
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"> Subscribed capital </label>
+                                                                        <input type="text" class="form-control" placeholder="Subscribed capital" name="subscribed_capital" id="subscribed_capital" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
@@ -250,8 +268,8 @@
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label"> Education</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Education Qualification</label>
+                                                                        <input type="text" class="form-control" placeholder="Education Qualification" name="educationid" id="educationid" />
 
                                                                         <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                     </div>
@@ -259,8 +277,8 @@
 
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label"> Share Holding</label>
-                                                                        <input type="text" class="form-control" placeholder="enter your name" name="retailorid" id="retailorid" />
+                                                                        <label class="control-label"> Share Holding Percentage </label>
+                                                                        <input type="text" class="form-control" placeholder="Share Holding Percentage " name="shareholding" id="shareholding" />
 
                                                                         <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                     </div>
@@ -268,8 +286,8 @@
 
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
-                                                                        <label class="control-label">Residential Address</label>
-                                                                        <textarea class="form-control" placeholder="enter your name" name="retailorid" id="retailorid"> </textarea>
+                                                                        <label class="control-label"> Residential Address as per Address Proof </label>
+                                                                        <textarea class="form-control" placeholder="Residential Address" name="residentialaddress" id="residentialaddress"> </textarea>
 
                                                                         <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                     </div>

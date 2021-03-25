@@ -268,7 +268,7 @@
                                                         <div class="col-sm-6">
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="control-label">Bank Statement</label>
+                                                                <label class="control-label">Bank Statement / Sales & Purchase Ledger</label>
                                                                 <input class="form-control" id="bankstmt" name="bankstmt" type="file" onchange="loadFile(event, 'bstmt')" />
                                                             </div>
 
