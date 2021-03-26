@@ -214,7 +214,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Name </label>
-                                                                <input type="text" class="form-control" placeholder="Name" name="name" id="name" />
+                                                                <input type="text" class="form-control" placeholder="Name" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -230,7 +230,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Income Tax Website Password </label>
-                                                                <input type="text" class="form-control" placeholder="Income Tax Website Password " name="incometax_web_password" id="incometax_web_password" />
+                                                                <input type="text" class="form-control" placeholder="Income Tax Website Password " name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>

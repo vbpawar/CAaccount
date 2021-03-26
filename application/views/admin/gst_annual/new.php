@@ -107,7 +107,7 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-control">
-                                 <a href="<?php echo base_url('gst');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                 <a href="<?php echo base_url('loadgstannual');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">GST Annual Return</h3>
                         </div>

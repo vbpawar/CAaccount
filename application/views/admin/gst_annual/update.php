@@ -142,7 +142,7 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
+                                                    <li style="display:none">
                                                         <a href="#documenttab" data-toggle="tab" title="Documents">
                                                             <span class="round-tabs six">
                                                                 <i class="fa fa-file"></i>
