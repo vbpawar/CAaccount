@@ -285,7 +285,7 @@
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
                                                                         <label class="control-label"><span class="error">*</span> Share Holding Percentage </label>
-                                                                        <input type="text" class="form-control" placeholder="Share Holding Percentage " name="shareholding" id="shareholding" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" value="0"/>
+                                                                        <input type="text" class="form-control" placeholder="Share Holding Percentage " name="shareholding" id="shareholding" onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))" value="0"/>
 
                                                                         <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                     </div>
@@ -437,60 +437,6 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Director Passport Size Photo </label>
-                                                                                <input type="file" class="form-control" name="pasp" id="pasp" onchange="loadFile(event, 'pasppre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pasppre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">Director Aadhar Card </label>
-                                                                                <input type="file" class="form-control" name="adhar" id="adhar" onchange="loadFile(event, 'adharpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="adharpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">Director Pan Card</label>
-                                                                                <input class="form-control" id="pan" name="pan" type="file" onchange="loadFile(event, 'panpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="panpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label class="control-label">Director Bank Statement 1 Page / Mobile Phone Bill  </label>
-                                                                                <input class="form-control" id="phonbil" name="phonbil" type="file" onchange="loadFile(event, 'phonbilpre')" />
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group">
-                                                                                <label for="output"></label>
-                                                                                <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="phonbilpre" width="200px" height="200px" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-
                                                                 </tbody>
                                                             </table>
                                                         </div>

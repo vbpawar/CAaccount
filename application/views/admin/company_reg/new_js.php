@@ -8,12 +8,12 @@
         var dEducation = $('#dEducation').val();
         var shareholding = $('#shareholding').val();
         var residentialaddress = $('#residentialaddress').val();
-        var pPhotodoc = $('#pPhotodoc').val();
-        var pAadhardoc = $('#pAadhardoc').val();
-        var pPandoc = $('#pPandoc').val();
-        var pSahidoc = $('#pSahidoc').val();
-        var pbankstdoc = $('#pbankstdoc').val();
-        var pEbilldoc = $('#pEbilldoc').val();
+        var pPhotodoc = $('#pPhotodocpre').attr('src');
+        var pAadhardoc = $('#pAadhardocpre').attr('src');
+        var pPandoc = $('#pPandocpre').attr('src');
+        var pSahidoc = $('#pSahidocpre').attr('src');
+        var pbankstdoc = $('#pbankstdocpre').attr('src');
+        var pEbilldoc = $('#pEbilldocpre').attr('src');
         var error = '';
         var tableData = '';
         if (dName != '' && dContact != '' && shareholding > 0 && residentialaddress != '' && dEducation != '') {
@@ -29,12 +29,30 @@
                             <td>` + dEducation + `</td>
                             <td>` + shareholding + `</td>
                             <td>` + residentialaddress + `</td>
-                            <td>p</td>
-                            <td>a</td>
-                            <td>s</td>
-                            <td>d</td>
-                            <td>f</td>
-                            <td>f</td>
+                            <td><a href="` + pPhotodoc + `" download>
+                                 Download
+                                 </a>
+                            </td>
+                            <td><a href="`+ pAadhardoc +`" download>
+                                 Download
+                                 </a>
+                            </td>
+                            <td><a href="`+ pPandoc +`" download>
+                                 Download
+                                 </a>
+                            </td>
+                            <td><a href="`+ pSahidoc +`" download>
+                                 Download
+                                 </a>
+                            </td>
+                            <td><a href="`+ pbankstdoc +`" download>
+                                 Download
+                                 </a>
+                            </td>
+                            <td><a href="`+ pEbilldoc +`" download>
+                                 Download
+                                 </a>
+                            </td>
                             <td>
 <a href="#directorTable" class="btn btn-secondary btn-sm text-danger" onclick="rowDelete('` + dContact + `')" title="delete">
                         <i class="fa fa-trash-alt" aria-hidden="true"></i>
