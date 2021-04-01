@@ -232,7 +232,7 @@
                                                                     <label class="control-label"><span class="error">*</span>Select Electricity Bill</label>
 
                                                                     <input class="form-control" id="pEBilldoc" name="pEBilldoc" type="file" onchange="loadFile(event, 'pEBilldocpre')" />
-                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPhotodocpre" width="20px" height="20px" />
+                                                                    <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pEBilldocpre" width="20px" height="20px" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
@@ -427,14 +427,14 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Partner Name</label>
 
-                                                                <input type="text" class="form-control" placeholder="ABCD0101E" name="partenerName" id="partenerName" />
+                                                                <input type="text" class="form-control" placeholder="" name="partenerName" id="partenerName" />
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <label class="control-label">Partner Investment</label>
-                                                                <input type="text" class="form-control" placeholder="" name="partner_investment" id="partner_investment" />
+                                                                <input type="text" class="form-control" placeholder="" name="partner_investment" id="partner_investment" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' />
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-2">
@@ -462,6 +462,11 @@
                                                                 <tbody id="investmentData">
 
                                                                 </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="3" align="center">Total Investment:</td>
+                                                                    </tr>
+                                                                </tfoot>
                                                             </table>
                                                         </div>
                                                     </div>

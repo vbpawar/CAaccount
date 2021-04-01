@@ -214,35 +214,56 @@
         var partenerName = $('#partenerName').val();
         var partner_investment = $('#partner_investment').val();
         var tableData1 = '';
-        if (partenerName != '' && partner_investment != '') {
+        var total = 0;
+        if ($('#r' + partenerName.replace(/ /g, "_")).length == 0) {
+//            $('#totalInvest').remove();
+//            $('#investmentTable .investmentId').each(function () {
+//                total =total+parseFloat($(this).html());
+////                alert($(this).html());
+//                if(total==0){
+//                    total=total+parseFloat(partner_investment);
+//                }
+//                  alert(total);
+//            });
+//            
 
-//    alert('hello');
+
+
             tableData1 += $('#investmentTable tbody').html();
-            tableData1 += `<tr>
+            tableData1 += `<tr id="r` + partenerName.replace(/ /g, "_") + `">
                         <td>` + partenerName + `</td>
-                        <td>` + partner_investment + `</td>
-                            
-                        <td>
-                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deleteInvestment('` + partenerName + `')">
-                        <i class="fa fa-trash-alt" ></i>
+                        <td class="investmentId">` + partner_investment + `</td>
+                            <td>
+                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartnerInvestment('` + partenerName.replace(/ /g, "_") + `')" title="delete">
+                                Delete
                         </button>
                         </td>
+                   </tr>
+                    `;
 
-                   </tr>`;
             $('#investmentData').html(tableData1);
 
-        }
-//       tableData1 += $('#investmentTable tbody').html();
-//        tableData1 += `<tr>
-//                        <td>` + partenerName + `</td>
-//
-//                   </tr>`
-//
-//        $('#investmentData').html(tableData1);
+            //        investment satrt
 
+            $('#investmentTable tr').each(function () {
+                var value = parseFloat($('td', this).eq(1).text());
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+//        investment end
+
+
+
+
+        }
     });
-    function deleteInvestment(id) {
-        $(id).remove();
+
+
+    function  deletePartnerInvestment(partnerName) {
+        $('#r' + partnerName).remove();
     }
+
 
 </script>
