@@ -263,6 +263,17 @@
 
     function  deletePartnerInvestment(partnerName) {
         $('#r' + partnerName).remove();
+        var total=0;
+        //        investment satrt
+
+            $('#investmentTable tr').each(function () {
+                var value = parseFloat($('td', this).eq(1).text());
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+//        investment end
     }
 
 
