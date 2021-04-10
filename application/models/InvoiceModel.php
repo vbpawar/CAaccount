@@ -7,9 +7,9 @@ class InvoiceModel extends CI_Model {
         $sql = "SELECT pf.invoiceid,pf.intype,pf.naturebuss,pf.status,pf.remark,pf.updatedat,pf.createdat,
         pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,
     rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
-    sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_mailid s_mail,sd.gst_number s_gst,
-    sd1.shop_name b_shopname,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
-        u.firstname,u.lastname
+    sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
+    sd1.shop_name b_shopname,sd1.office_address b_address,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
+        u.firstname,u.lastname,u.userid
         FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN residential_details rd ON rd.rid = pf.rid 
                 JOIN shop_details sd ON sd.sid = pf.sellerid
@@ -19,9 +19,9 @@ class InvoiceModel extends CI_Model {
             $sql = "SELECT pf.invoiceid,pf.intype,pf.naturebuss,pf.status,pf.remark,pf.updatedat,pf.createdat,
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,
         rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
-        sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_mailid s_mail,sd.gst_number s_gst,
-        sd1.shop_name b_shopname,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
-            u.firstname,u.lastname
+        sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
+        sd1.shop_name b_shopname,sd1.office_contact b_contact,sd1.office_address b_address,sd1.office_mailid b_mail,sd1.gst_number b_gst,
+            u.firstname,u.lastname,u.userid
             FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                     JOIN residential_details rd ON rd.rid = pf.rid 
                     JOIN shop_details sd ON sd.sid = pf.sellerid
@@ -115,10 +115,12 @@ else
                             'pname' => $contact->pname,
                             'hsn' => $contact->hsn,
                             'quantity' => $contact->quantity,
-                            'gstrate'=>$contact->gstrate,
+                            'rate'=>$contact->rate,
+                            'gst'=>$contact->gst,
                             'cgst'=>$contact->cgst,
                             'sgst'=>$contact->sgst,
-                            'amount'=>$contact->amount
+                            'amount'=>$contact->amount,
+                            'total_amount'=>$contact->total_amount
                             );
                             $this->db->insert('invoice_details', $partners);
                     }

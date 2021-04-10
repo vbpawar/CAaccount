@@ -71,16 +71,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 $active_group = 'testing';
-// $active_group = 'production';
+//$active_group = 'production';
 //  $active_group = 'localdb';
 $query_builder = TRUE;
 
 $db['testing'] = array(
 	'dsn'	=> '',
 	'hostname' => '208.109.12.251',
-	'username' => 'soulsoft_CA',
+	'username' => 'tkinfote_CA_test',
 	'password' => 'Soulsoft@1987',
-	'database' => 'soulsoft_CA',
+	'database' => 'tkinfote_CA',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -96,12 +96,14 @@ $db['testing'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
 $db['production'] = array(
 	'dsn'	=> '',
 	'hostname' => '208.109.12.251',
-	'username' => 'soulsoft_CA',
+	'username' => 'tkinfote_CA_uat',
 	'password' => 'Soulsoft@1987',
-	'database' => 'soulsoft_production',
+	'database' => 'tkinfote_CA_uat',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -117,6 +119,7 @@ $db['production'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
 
 $db['localdb'] = array(
 	'dsn'	=> '',

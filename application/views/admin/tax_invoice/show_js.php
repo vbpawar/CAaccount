@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'loadudyog',
+            url: url + 'loadTaxinvoice',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].uid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].invoiceid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'udyagAadhar/update',
+                url: url + 'taxInvoice/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'udyagAadhar');
+        window.location.replace(url + 'taxInvoice');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -125,8 +125,9 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     $('#remarkField').hide();
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
+        console.log(temp);
         $('#uid').val(id);
-         $('#digital_amount').val(servicecharges.get('5'));
+         $('#digital_amount').val(servicecharges.get('12'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
@@ -187,7 +188,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updateudyog_status',
+            url: url + 'update_invoice',
 
             type: 'POST',
 
@@ -228,7 +229,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'get_udyog_remarks',
+            url: url + 'updated_inv_docs',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

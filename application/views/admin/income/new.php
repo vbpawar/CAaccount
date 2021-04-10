@@ -112,7 +112,7 @@
                                 <!-- <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
                                     <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
                                     <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button> -->
-                                <a href="<?php echo base_url();?>income" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                <a href="<?php echo base_url(); ?>income" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="card-title">Income Tax Form</h3>
                         </div>
@@ -213,8 +213,8 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Name (as per pan card)</label>
-                                                                <input type="text" class="form-control" placeholder="Name (as per pan card)" name="pan_name" id="pan_name" />
+                                                                <label class="control-label"> Name </label>
+                                                                <input type="text" class="form-control" placeholder="Name" name="pan_name" id="pan_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -229,8 +229,8 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"> Name (as per aadhar card)</label>
-                                                                <input type="text" class="form-control" placeholder="Name (as per aadhar card)" name="aadhar_name" id="aadhar_name" />
+                                                                <label class="control-label"> Income Tax Website Password </label>
+                                                                <input type="text" class="form-control" placeholder="Income Tax Website Password " name="aadhar_name" id="aadhar_name" />
 
                                                                 <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -257,6 +257,25 @@
                                                                     <option class="form-control" value="">2019</option>
                                                                     <option class="form-control" value="">2020</option>
                                                                     <option class="form-control" value="">2021</option>
+                                                                    <option class="form-control" value="">2022</option>
+                                                                    <option class="form-control" value="">2023</option>
+                                                                    <option class="form-control" value="">2024</option>
+                                                                    <option class="form-control" value="">2025</option>
+                                                                    <option class="form-control" value="">2026</option>
+                                                                    <option class="form-control" value="">2027</option>
+                                                                    <option class="form-control" value="">2028</option>
+                                                                    <option class="form-control" value="">2029</option>
+                                                                    <option class="form-control" value="">2030</option>
+                                                                    <option class="form-control" value="">2031</option>
+                                                                    <option class="form-control" value="">2032</option>
+                                                                    <option class="form-control" value="">2033</option>
+                                                                    <option class="form-control" value="">2034</option>
+                                                                    <option class="form-control" value="">2035</option>
+                                                                    <option class="form-control" value="">2036</option>
+                                                                    <option class="form-control" value="">2037</option>
+                                                                    <option class="form-control" value="">2038</option>
+                                                                    <option class="form-control" value="">2039</option>
+                                                                    <option class="form-control" value="">2040</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -502,6 +521,7 @@
                                                                     <input type="text" class="form-control" placeholder="" name="personal_loan" id="personal_loan" disabled=""/>
                                                                 </div>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -528,12 +548,12 @@
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="control-label"> Place of Business</label>
-                                                                    <input type="text" class="form-control" placeholder="Place of Business" name="place_of_buss" id="place_of_buss" />
+                                                                    <label class="control-label"> Place of Business </label>
+                                                                    <textarea class="form-control" name="place_of_buss" id="place_of_buss" ></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                                 </div>
-                                                            </div>
+                                                            </div>                                                            
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
@@ -712,7 +732,7 @@
 
                                                                 </tr>
                                                                 <tr class="salBankClass">
-                                                                   <td>
+                                                                    <td>
                                                                         <div class="form-group">
                                                                             <label class="form-label">Bank Statement </label>
                                                                             <input type="file" class="form-control" name="salBankStatement" id="salBankStatement" onchange="loadFile(event, 'salBankStatementpre')" />
@@ -726,7 +746,7 @@
                                                                     </td> 
                                                                 </tr>
                                                                 <tr class="salSlarySlipClass">
-                                                                   <td>
+                                                                    <td>
                                                                         <div class="form-group">
                                                                             <label class="form-label">Salary Slip </label>
                                                                             <input type="file" class="form-control" name="salSalarySlip" id="salSalarySlip" onchange="loadFile(event, 'salSalarySlippre')" />

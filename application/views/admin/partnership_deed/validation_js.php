@@ -4,16 +4,33 @@
 //    $('#dynamicLi').hide();
 
 //electricity bill attachment
-    $("input[name='elect']").change(function () {
-
-        var radioValue = $("input[name='elect']:checked").val();
-        if (radioValue == 1) {
-            $('.electricityAttach').show();
-        } else if (radioValue == 0) {
-            $('.electricityAttach').hide();
+    $('input[type=radio]').on('change', function () {
+        switch ($(this).val()) {
+            case 'Y' :
+                $('#inv_proof').show();
+                break;
+            case 'Z' :
+                $('#inv_proof').hide();
+                break;
+            case 'a' :
+                $('#buss_loan_cert').show();
+                break;
+            case 'b' :
+                $('#buss_loan_cert').hide();
+                break;
+            case 'w' :
+                $('#other_doc1').show();
+                break;
+            case 'x' :
+                $('#other_doc1').hide();
+                break;
+            case 'c' :
+                $('#other_doc2').show();
+                break;
+            case 'd' :
+                $('#other_doc2').hide();
+                break;
         }
-
-
     });
 
 //    gst enable/disable
@@ -50,15 +67,15 @@
         var pPancard = $('#pPancard').val();
         var pEmail = $('#pEmail').val();
         var pMobile = $('#pMobile').val();
-        var pPhotodoc = $('#pPhotodoc').val();
-        var pAadhardoc = $('#pPhotodoc').val();
-        var pPandoc = $('#pPandoc').val();
+        var pEBilldoc = $('#pEBilldocpre').attr('src');
+        var pAadhardoc = $('#pAadhardocpre').attr('src');
+        var pPandoc = $('#pPandocpre').attr('src');
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
 //if fields are not empty then add in table 
 //else empty then set errors
-        if (partnerName != '' && pAadhar != '' && pPancard != '' && pEmail != '' && pMobile != '' && pPhotodoc != '' && pAadhardoc != '' && pPandoc != '') {
-           if (!($('#r' + pAadhar).length)) {
+        if (partnerName != '' && pAadhar != '' && pPancard != '' && pEmail != '' && pMobile != '' && pEBilldoc != '' && pAadhardoc != '' && pPandoc != '') {
+            if (!($('#r' + pAadhar).length)) {
                 tableData += $('#partnerTable tbody').html();
                 tableData += `<tr id="r` + pAadhar + `">
                         <td>` + partnerName + `</td>
@@ -66,9 +83,18 @@
                         <td>` + pPancard + `</td>
                         <td>` + pEmail + `</td>
                         <td>` + pMobile + `</td>
-                        <td>` + pPhotodoc + `</td>
-                        <td>` + pAadhardoc + `</td>
-                        <td>` + pPandoc + `</td>
+                        <td><a href="` + pEBilldoc + `" download>
+                                 Download
+                                 </a>
+                        </td>
+                        <td><a href="` + pAadhardoc + `" download>
+                                 Download
+                                 </a>
+                        </td>
+                        <td><a href="` + pPandoc + `" download>
+                                 Download
+                                 </a>
+                        </td>
                         <td>
                         <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + pAadhar + `')">
                         <i class="fa fa-trash-alt" ></i>
@@ -95,7 +121,7 @@
             if (pMobile == '') {
                 errorData += '<span id="pMobileError" class="text-danger"> *Enter Mobile No.</span><br/>';
             }
-            if (pPhotodoc == '') {
+            if (pEBilldoc == '') {
                 errorData += '<span id="pPhotodocError" class="text-danger"> *Select Photo</span><br/>';
             }
             if (pAadhardoc == '') {
@@ -104,7 +130,7 @@
             if (pPandoc == '') {
                 errorData += '<span id="pPandocError" class="text-danger"> *Select Pan Card</span><br/>';
             }
-            
+
             $('.partnerError').html(errorData);
         }
     });
@@ -139,41 +165,41 @@
 
 
     //form validation
-    function validChecker(){
-    var errorMsg='';
-    var status=true;
-    var scrl = $(document).scrollTop(100)
-    
-    if($('#pan_name').val()==''){
-        errorMsg +='<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
-        status=false;
-        
-        
+    function validChecker() {
+        var errorMsg = '';
+        var status = true;
+        var scrl = $(document).scrollTop(100)
+
+        if ($('#pan_name').val() == '') {
+            errorMsg += '<span id="panError" style="color:red;">*Please Enter Name as per Pan</span><br>'
+            status = false;
+
+
+        }
+        if ($('#pan_number').val() == '') {
+            errorMsg += '<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
+            status = false;
+
+        }
+        if ($('#aadhar_name').val() == '') {
+            errorMsg += '<span id="adharerr" style="color:red;">*Please Enter Name as per Adhar</span><br>'
+            status = false;
+
+        }
+        if ($('#aadhar_number').val() == '') {
+            errorMsg += '<span id="adharnumerr" style="color:red;">*Please Enter 12 digit Adhar Number</span><br>'
+            status = false;
+
+        }
+        if ($('#contact_number').val() == '') {
+            errorMsg += '<span id="contacterr" style="color:red;">*Please Enter 10 Digit Mobile Number</span><br>'
+            status = false;
+
+
+        }
+        $('#error-container').html(errorMsg);
+        return status;
     }
-    if($('#pan_number').val()==''){
-        errorMsg +='<span id="panNoError" style="color:red;">*Please Enter Pan No.</span><br>'
-        status=false;
-        
-    }
-    if($('#aadhar_name').val()==''){
-        errorMsg +='<span id="adharerr" style="color:red;">*Please Enter Name as per Adhar</span><br>'
-        status=false;
-        
-    }
-    if($('#aadhar_number').val()==''){
-        errorMsg +='<span id="adharnumerr" style="color:red;">*Please Enter 12 digit Adhar Number</span><br>'
-        status=false;
-        
-    }
-    if($('#contact_number').val()==''){
-        errorMsg +='<span id="contacterr" style="color:red;">*Please Enter 10 Digit Mobile Number</span><br>'
-        status=false;
-        
-        
-    }
-    $('#error-container').html(errorMsg);
-    return status;
-}
 
     $('#pan_name').keyup(function () {
         $('#panError').empty();
@@ -181,5 +207,74 @@
     $('#pan_number').keyup(function () {
         $('#panNoError').empty();
     });
+
+//    add investment Table
+    $('#addInvestment').click(function () {
+
+        var partenerName = $('#partenerName').val();
+        var partner_investment = $('#partner_investment').val();
+        var tableData1 = '';
+        var total = 0;
+        if ($('#r' + partenerName.replace(/ /g, "_")).length == 0) {
+//            $('#totalInvest').remove();
+//            $('#investmentTable .investmentId').each(function () {
+//                total =total+parseFloat($(this).html());
+////                alert($(this).html());
+//                if(total==0){
+//                    total=total+parseFloat(partner_investment);
+//                }
+//                  alert(total);
+//            });
+//            
+
+
+
+            tableData1 += $('#investmentTable tbody').html();
+            tableData1 += `<tr id="r` + partenerName.replace(/ /g, "_") + `">
+                        <td>` + partenerName + `</td>
+                        <td class="investmentId">` + partner_investment + `</td>
+                            <td>
+                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartnerInvestment('` + partenerName.replace(/ /g, "_") + `')" title="delete">
+                                Delete
+                        </button>
+                        </td>
+                   </tr>
+                    `;
+
+            $('#investmentData').html(tableData1);
+
+            //        investment satrt
+
+            $('#investmentTable tr').each(function () {
+                var value = parseFloat($('td', this).eq(1).text());
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+//        investment end
+
+
+
+
+        }
+    });
+
+
+    function  deletePartnerInvestment(partnerName) {
+        $('#r' + partnerName).remove();
+        var total=0;
+        //        investment satrt
+
+            $('#investmentTable tr').each(function () {
+                var value = parseFloat($('td', this).eq(1).text());
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+//        investment end
+    }
+
 
 </script>
