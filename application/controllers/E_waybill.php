@@ -1,178 +1,134 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
- 
-class E_waybill extends CI_Controller{
+  date_default_timezone_set('Asia/Kolkata');
+class E_waybill extends CI_Model {
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Eway_bill','service');
-        $this->load->model('DocsModel','docs');
-    }
-    private $response = null;
-    private $records = null;
-
-    //get all certificates
-    public function gatewaybills() {
-        $records = $this->service->gatewaybills();
-        if ($records != null) {
-            $response = array(
-                'Message' => 'All data load successfully',
-                "Data" => $records,
-                'Responsecode' => 200
-            );
-        } else {
-            $response = array(
-                'Message' => 'Data Not Found',
-                'Responsecode' => 401
-            );
-        }
-         echo json_encode($response);
-    }
-
-    //create API for documnet master
-    public function addbill()
-    {
-        $data = array(
-        'userid '=>$this->input->post('userid'),
-        'gstnumber' => $this->input->post('gstnumber'),
-        'gstid'=>$this->input->post('gstid'),
-        'gstpwd' => $this->input->post('gstpwd'),
-        'mobilenumber'=>$this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid')
-        );
-        
-    if(!$data || empty($data)){
-        $response = array(
-            'Message' => 'Missing parameter',
-            'Responsecode' => 303
-        );
-    }else{ 
-        $result = $this->service->addbill($data);
-        $a=false;
-         $p=false;
-        if(!$result['status']){ 
-            $response = array(
-                'Message' => 'Try again',
-                'Responsecode' => 402
-            );
-       }else{ 
-           $id = $result['id'];
-        $document = 'Document not uploaded';
-        if(!empty($_FILES['adhar']['name']) && !empty($_FILES['file']['name']) ){ 
-         if($this->uploaddocs('aadhar',$id,'EWAY',$_FILES['adhar']['name'],$_FILES['adhar']['tmp_name'])){
-         $document = 'Documents uplaoded';
-         }
-         if($this->uploaddocs('pan',$id,'EWAY',$_FILES['file']['name'],$_FILES['file']['tmp_name'])){
-            $document = 'Documents uplaoded';
-            }
-        }
-        $response = array(
-            'Message' => 'E-Way Bill Generated successfully',
-            'Doc'=>$document,
-            'Responsecode' => 200
-        );
-       }
-    }
-     echo json_encode($response);
-}
-
-    //API - delete a document 
-    public function removebill()
-    {
-        $id  = $this->input->post('billid');
-        if(!$id || empty($id)){
-            $response = array(
-                'Message' => 'Parameter missing',
-                'Responsecode' => 404
-            );
+    public function get_details($roleid,$userid) {
+        if($roleid ==1 || $roleid ==4){
+        $sql = "SELECT eb.bill_id,eb.bussness_type,eb.bussness_name,eb.shop_adhar,eb.gst_number,eb.eway_bill_id,eb.bill_pwd,eb.transporter_name,eb.transporter_id,
+        eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
+        ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
+        esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
+        um.firstname,um.lastname,
+        pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
+        FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
+        INNER JOIN personal_details pd ON pd.pid = eb.pid
+        INNER JOIN eway_shiping_details esd ON esd.shipid = eb.shipid
+        INNER JOIN user_master um ON um.userid = eb.userid
+        ORDER BY eb.bill_id DESC";
         }else{
-        if($this->service->removebill($id))
-        {
-            $response = array(
-                'Message' => 'E-Way bill removed successfully',
-                'Responsecode' => 200
-            );
-        } 
-        else
-        {
-            $response = array(
-                'Message' => 'Failed to remove',
-                'Responsecode' => 302
-            );
+            $sql = "SELECT eb.bill_id,eb.bussness_type,eb.bussness_name,eb.shop_adhar,eb.gst_number,eb.eway_bill_id,eb.bill_pwd,eb.transporter_name,eb.transporter_id,
+            eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
+            ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
+            esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
+            um.firstname,um.lastname,
+            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
+            FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
+            INNER JOIN personal_details pd ON pd.pid = eb.pid
+            INNER JOIN eway_shiping_details esd ON esd.shipid = eb.shipid
+            INNER JOIN user_master um ON um.userid = eb.userid
+            WHERE eb.userid = $userid ORDER BY eb.bill_id DESC";  
         }
-    }
-        echo json_encode($response);
-    }
-
-   //API - update a service
-   public function updatebill(){
-    $data = array(
-        'userid '=>$this->input->post('userid'),
-        'gstnumber' => $this->input->post('gstnumber'),
-        'gstid'=>$this->input->post('gstid'),
-        'gstpwd' => $this->input->post('gstpwd'),
-        'mobilenumber'=>$this->input->post('mobilenumber'),
-        'emailid' => $this->input->post('emailid')
-        );
-        $billid = $this->input->post('billid');
-    
-    if(!$billid || !$data || empty($data)){
-        $response = array(
-            'Message' => 'Parameter missing',
-            'Responsecode' => 404
-        );
-    }else{
-       $result = $this->service->updatebill($billid,$data);
-       if($result === 0){
-        $response = array(
-            'Message' => 'Sorry try again',
-            'Responsecode' => 302
-        );
-       }else{
-        $response = array(
-            'Message' => 'E-Way bill updated successfully',
-            'Responsecode' => 200
-        );
-       }
-   }
-   echo json_encode($response);
-   }
-
-   public function uploaddocs($doctype,$pfid,$filename,$file)
-   {
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    $data = array(
-        'extension'=>$ext,
-        'userid'=>1,
-        'pfid'=>$pfid,
-        'doctype'=>$doctype
-    );
-    $result = $this->docs->adddoc($data);
-    if($result){
-        $imgid = $result['docid'];
-    $sourcePath = $file; // Storing source path of the file in a variable
-    $targetPath = "./pfdocs/".$imgid.".".$ext; // Target path where file is to be stored
-    if(move_uploaded_file($sourcePath,$targetPath)){
-       return true;
-    }else{
-        return false;
-    }
-    }else{
-        return false;
-    }  
-   }
-   public function getdocs($id,$service)
-   {
-       $response=[];
-    $response = $this->docs->getdocs($id,$service); 
-    if(count($response)>0){
-        echo json_encode($response);
-    }else{
-        echo json_encode($response);
+        $query = $this->db->query($sql);
+       $result['status'] = true;
+       $result['data'] =   $query->result_array();
+    return $result;
     }
    
-   }
+    public function get_invoice_details($id)
+    {
+        $sql = "SELECT * FROM ewaybill_invoice_details WHERE ewaybill_id= $id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $result['status'] = true;
+            $result['data'] =  $query->result();
+        }else{
+            $result['status'] = false;
+        }
+     return $result;
+    }
+    public function updatestatus($id,$data)
+    {
+        $result = false;
+        $this->db->where('bill_id',$id);
+        if($this->db->update('ewaybill',$data)){
+            $result['status'] = true;
+        }else{
+            $result['status'] = false;
+        }
+        return $result;
+    } 
     
+    public function create_bill($data)
+    {
+      $pdetails = $data['pdetails'];
+      $tdetails = $data['tdetails'];
+      $billdetails = $data['billdetails'];
+      $invoicedetails = $data['invoicedetails'];
+      $main = $data['main'];
+      $result = array();
+      $this->db->trans_begin();
+
+        $this->db->insert('personal_details', $pdetails);
+        $result['pid'] =  $this->db->insert_id(); 
+
+        $this->db->insert('eway_shiping_details', $billdetails);
+        $result['shipid'] =  $this->db->insert_id(); 
+
+        $income_details = array(
+            'pid'=>$result['pid'],
+            'shipid'=>$result['shipid'],
+            'userid'=>$main['userid'],
+            'bussness_type'=>$main['bussness_type'],
+            'bussness_name' => $main['bussness_name'],
+            'shop_adhar'=>$main['shop_adhar'],
+            'gst_number'=>$main['gst_number'],
+            'eway_bill_id' => $main['eway_bill_id'],
+            'bill_pwd'=>$main['bill_pwd'],
+            'transporter_name'=>$main['transporter_name'],
+            'transporter_id' => $main['transporter_id'],
+            'distance_km'=>$main['distance_km'],
+            'transport_mode'=>$main['transport_mode'],
+            'vehicle_type' => $main['vehicle_type'],
+            'vehicle_number'=>$main['vehicle_number'],
+            'transport_doc_number' => $main['transport_doc_number'],
+            'final_date'=>$main['final_date']
+            
+        );
+        $this->db->insert('ewaybill', $income_details);
+        $result['bill_id'] =  $this->db->insert_id();
+        $this->insert_invoice($invoicedetails,$result['bill_id']);
+        if ($this->db->trans_status() === FALSE)
+{
+        $this->db->trans_rollback();
+}
+else
+{
+        $this->db->trans_commit();
+      
+        $result['status'] = true;
+        return $result;
+}
+    }
+    public function insert_invoice($partner_data,$id)
+    {
+        foreach ($partner_data as $contact)
+                    {
+                        $partners = array(
+                            'ewaybill_id'=>$id,
+                            'pname' => $contact->pname,
+                            'hsn' => $contact->hsn,
+                            'pdesc' => $contact->pdesc,
+                            'quantity'=>$contact->quantity,
+                            'unit'=>$contact->unit,
+                            'variable_value'=>$contact->variable_value,
+                            'gst_rate'=>$contact->gst_rate,
+                            'igst_rate'=>$contact->igst_rate,
+                            'cess_advol_rate'=>$contact->cess_advol_rate,
+                            'cess_non_advol_rate'=>$contact->cess_non_advol_rate
+                            );
+                            $this->db->insert('ewaybill_invoice_details', $partners);
+                    }
+    }  
+ 
+
 }

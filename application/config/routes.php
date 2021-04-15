@@ -270,3 +270,9 @@ $route['taxInvoice/update'] = 'services/TaxInvoice/update';
 $route['partnershipDeed'] = 'services/PartnershipDeed/show';
 $route['partnershipDeed/create'] = 'services/PartnershipDeed/create';
 $route['partnershipDeed/update'] = 'services/PartnershipDeed/update';
+
+//E-way bill apis
+$route['loadBills'] = 'Eway_bill/get_all_bills';
+$route['add_bill'] = 'Eway_bill/add_bill_form';
+$route['update_bill'] = 'Eway_bill/update_status';
+$route['updated_bill_docs'] = 'Eway_bill/get_update_docs';
