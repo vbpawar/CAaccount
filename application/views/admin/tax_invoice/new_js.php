@@ -45,10 +45,10 @@
         
         e.preventDefault();
       var  invoiceData = geInvoiceDetails();
-      console.log('@@@@@@@array@@@@@@');
-      console.log(invoiceData);
+//      console.log('@@@@@@@array@@@@@@');
+//      console.log(invoiceData);
      var jsonString= JSON.stringify(invoiceData);
-    console.log('#####String#####');
+//    console.log('#####String#####');
     console.log(jsonString);
   var returnVal = validChecker();
         var formdata = new FormData(this);

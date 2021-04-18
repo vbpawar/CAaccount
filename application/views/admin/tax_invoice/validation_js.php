@@ -70,10 +70,10 @@
 //if fields are not empty then add in table 
 //else empty then set errors
         if (productName != '' && hsn != '' && quantity != '' && rate != '' && amount != '') {
-            console.log($('#r' + productName).length);
-           if (!($('#r' + productName).length)) {
+//            console.log($('#r' + productName).length);
+           if (!($('#r' + productName.replace(/ /g, "_")).length)) {
                 tableData += $('#billTable tbody').html();
-                tableData += `<tr id="r` + productName + `">
+                tableData += `<tr id="r` + productName.replace(/ /g, "_") + `">
                         <td>` + productName + `</td>
                         <td>` + hsn + `</td>
                         <td>` + quantity + `</td>
@@ -84,12 +84,12 @@
                         <td>` + sgst + `</td>
                         <td>` + taotalamt + `</td>
                         <td>
-                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + productName + `')">
-                        <i class="fa fa-trash-alt" ></i>
+                        <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + productName.replace(/ /g, "_") + `')">
+                        Delete
                         </button>
                         </td>
                         </tr>`;
-                            console.log(tableData);
+//                            console.log(tableData);
                 $('#billData').html(tableData);
             }
         } else {
