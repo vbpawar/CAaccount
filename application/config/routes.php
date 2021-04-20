@@ -77,7 +77,7 @@ $route['balancesheet/create'] = 'services/balancesheet/create';
 //eway bill ui
 $route['ewayBill']        = 'services/EwayBill/show';
 $route['ewayBill/create'] = 'services/EwayBill/create';
-$route['ewayBill/update'] = 'services/EwayBill/create';
+$route['ewayBill/update'] = 'services/EwayBill/update';
 
 $route['retailorDistributor']        = 'services/RetailorDistributor/show';
 $route['retailorDistributor/create'] = 'services/RetailorDistributor/create';
