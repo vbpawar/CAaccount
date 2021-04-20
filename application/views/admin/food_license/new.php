@@ -165,6 +165,17 @@
                                                      <h3 class="head text-center">Address Details</h3>
                                                     <div class="row">
                                                         <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Application Type</label>
+                                                                    <select class="form-control" id="app_type" name="app_type" required="">
+                                                                        <option value="1" class="form-control">Apply for Registration </option>
+                                                                       
+                                                                        <option value="2"  class="form-control">Apply for License</option>
+                                                                       
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Address</label>
                                                                 <input type="text" class="form-control" placeholder=" Address" name="address" id="address" />
