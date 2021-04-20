@@ -2,21 +2,21 @@
     var url = '<?php echo base_url(); ?>';
 
 
-    $('#pf-withdrawl-form').on('submit', function (e) {
+    $('#eway-form').on('submit', function (e) {
 
         e.preventDefault();
 
     var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('1');
+        var amount=servicecharges.get('13');
         formdata.append('userid',userid);
 
         if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'createpf',
+                url: url + 'add_bill',
 
                 type: 'POST',
 
