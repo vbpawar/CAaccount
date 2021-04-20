@@ -64,6 +64,7 @@
         var gst = $('#gst').val();
         var igst = $('#igst').val();
         var sgst = $('#sgst').val();
+        var igst = $('#igst').val();
         var taotalamt = $('#taotalamt').val();
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
@@ -82,6 +83,7 @@
                         <td>` + gst + `</td>
                         <td>` + igst + `</td>
                         <td>` + sgst + `</td>
+                        <td>` + igst + `</td>
                         <td>` + taotalamt + `</td>
                         <td>
                         <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + productName.replace(/ /g, "_") + `')">

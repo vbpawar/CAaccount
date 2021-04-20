@@ -13,6 +13,7 @@
         var gst;
         var cgst;
         var sgst;
+        var igst;
         var totalAmount;
         var i = 0;
         $('#billTable tbody>tr').each(function (index, tr) {
@@ -25,7 +26,8 @@
             gst = tds[5].textContent;
             cgst = tds[6].textContent;
             sgst = tds[7].textContent;
-            totalAmount = tds[8].textContent;
+            igst = tds[8].textContent;
+            totalAmount = tds[9].textContent;
             data[i++] = {
                 pname: productName,
                 hsn: hsn,
@@ -35,6 +37,7 @@
                 gst: gst,
                 cgst: cgst,
                 sgst: sgst,
+                igst: igst,
                 total_amount: totalAmount
             }
         });
