@@ -618,7 +618,6 @@
 
                                                     <div class="row">
                                                         <table class="table table-bordered" id="billTable">
-                                                            <tr>
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="col">Product Name</th>
