@@ -272,7 +272,7 @@ $route['partnershipDeed/create'] = 'services/PartnershipDeed/create';
 $route['partnershipDeed/update'] = 'services/PartnershipDeed/update';
 
 //E-way bill apis
-$route['loadBills'] = 'Eway_bill/get_all_bills';
-$route['add_bill'] = 'Eway_bill/add_bill_form';
-$route['update_bill'] = 'Eway_bill/update_status';
-$route['updated_bill_docs'] = 'Eway_bill/get_update_docs';
+$route['loadBills'] = 'E_waybill/get_details';
+$route['add_bill'] = 'E_waybill/create_bill';
+$route['update_bill'] = 'E_waybill/update_status';
+$route['updated_bill_docs'] = 'E_waybill/get_update_docs';

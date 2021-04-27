@@ -1,19 +1,6 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-class Eway_bill extends CI_Controller{
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('PersonalModel', 'pmodel');
-        $this->load->model('DocsModel', 'docs');
-        $this->load->model('E_waybill', 'imodel');
-        $this->load->model('WalletModel', 'service');
-        date_default_timezone_set('Asia/Kolkata');
-    }
-    private $response = null;
-    private $records = null;
+class Eway_bill extends CI_Model{
 
     public function get_all_bills(){
         $roleid = $this->input->get('roleid');

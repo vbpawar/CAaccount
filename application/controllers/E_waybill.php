@@ -1,7 +1,21 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
   date_default_timezone_set('Asia/Kolkata');
-class E_waybill extends CI_Model {
+class E_waybill extends CI_Controller  {
 
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('PersonalModel', 'pmodel');
+        $this->load->model('DocsModel', 'docs');
+        $this->load->model('Eway_bill', 'imodel');
+        $this->load->model('WalletModel', 'service');
+        date_default_timezone_set('Asia/Kolkata');
+    }
+    private $response = null;
+    private $records = null;
     public function get_details($roleid,$userid) {
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT eb.bill_id,eb.bussness_type,eb.bussness_name,eb.shop_adhar,eb.gst_number,eb.eway_bill_id,eb.bill_pwd,eb.transporter_name,eb.transporter_id,
