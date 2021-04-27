@@ -77,7 +77,7 @@ $route['balancesheet/create'] = 'services/balancesheet/create';
 //eway bill ui
 $route['ewayBill']        = 'services/EwayBill/show';
 $route['ewayBill/create'] = 'services/EwayBill/create';
-$route['ewayBill/update'] = 'services/EwayBill/create';
+$route['ewayBill/update'] = 'services/EwayBill/update';
 
 $route['retailorDistributor']        = 'services/RetailorDistributor/show';
 $route['retailorDistributor/create'] = 'services/RetailorDistributor/create';
@@ -272,7 +272,7 @@ $route['partnershipDeed/create'] = 'services/PartnershipDeed/create';
 $route['partnershipDeed/update'] = 'services/PartnershipDeed/update';
 
 //E-way bill apis
-$route['loadBills'] = 'E_waybill/get_details';
+$route['loadBills'] = 'E_waybill/get_all_bills';
 $route['add_bill'] = 'E_waybill/create_bill';
 $route['update_bill'] = 'E_waybill/update_status';
 $route['updated_bill_docs'] = 'E_waybill/get_update_docs';

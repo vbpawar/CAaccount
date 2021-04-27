@@ -161,7 +161,17 @@
                                                             <i class="fa fa-hands"></i>
                                                         </span>
                                                     </a>
-                                                </li>                                                       
+                                                </li> 
+                                                <li class="">
+                                                    <a href="#submitButton" data-toggle="tab" title="Submit Details">
+                                                        <span class="round-tabs four">
+                                                            <!--<i class="fa fa-address-card"></i>-->
+                                                            <!-- <i class="fa fa-store"></i> -->
+                                                            <img src="<?php echo base_url('/admin_assets/img/submit_icon.png'); ?>" style="height:35px;width:35px"/>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
 
                                             </ul>
                                         </div>
@@ -201,7 +211,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
+                                                            <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -215,7 +225,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label"><span class="error">*</span> Mobile Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" />
+                                                            <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -330,7 +340,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label">Pincode</label>
 
-                                                            <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
+                                                            <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -351,14 +361,14 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
-                                                            <label class="control-label">Shop Adhar</label>
+                                                            <label class="control-label">Shop Aadhar</label>
                                                             <input type="text" class="form-control" placeholder="shop adhar" name="shop_adhar" id="shop_adhar" />
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">GST Number</label>
-                                                            <input type="text" class="form-control" placeholder="gst number" name="gst_number" id="gst_number" />
+                                                            <input type="text" class="form-control" placeholder="gst number" name="gst_number" id="gst_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="col-sm-4">
@@ -370,13 +380,14 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Eway Bill Id</label>
-                                                            <input type="text" class="form-control" placeholder="eway bill id" name="eway_bill_id" id="eway_bill_id" />
+                                                            <input type="text" class="form-control" placeholder="eway bill id" name="eway_bill_id" id="eway_bill_id" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Eway Bill Password</label>
-                                                            <textarea class="form-control" placeholder="password" name="eway_bill_pass" id="eway_bill_pass" rows="1"></textarea>
+                                                            <!--<textarea class="form-control" placeholder="password" name="eway_bill_pass" id="eway_bill_pass" rows="1"></textarea>-->
+                                                            <input type="text" class="form-control" placeholder="password" name="eway_bill_pass" id="eway_bill_pass" />
                                                         </div>
                                                     </div>
 
@@ -403,14 +414,14 @@
                                                         <div class="form-group row">
                                                             <label for="inputGSTIN" class="col-sm-2 col-form-label"> GSTIN</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN">
+                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputState" class="col-sm-2 col-form-label">State</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                                                <input type="text" class="form-control" id="inputState" placeholder="State"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -420,21 +431,21 @@
                                                         <div class="form-group row">
                                                             <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
                                                             <div class="col-sm-6">
-                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address">
+                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPlace" class="col-sm-2 col-form-label">Place</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place">
+                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPincode" class="col-sm-2 col-form-label">Pincode</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode">
+                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -452,21 +463,21 @@
                                                         <div class="form-group row">
                                                             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                                                <input type="text" class="form-control" id="inputName" placeholder="Name"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputGSTIN" class="col-sm-2 col-form-label"> GSTIN</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN">
+                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputState" class="col-sm-2 col-form-label">State</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                                                <input type="text" class="form-control" id="inputState" placeholder="State"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -476,21 +487,21 @@
                                                         <div class="form-group row">
                                                             <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
                                                             <div class="col-sm-6">
-                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address">
+                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPlace" class="col-sm-2 col-form-label">Place</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place">
+                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPincode" class="col-sm-2 col-form-label">Pincode</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode">
+                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -524,21 +535,21 @@
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>HSN</label>
-                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
+                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Quantity</label>
-                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
+                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Unit</label>
-                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit"/>
+                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
@@ -548,35 +559,35 @@
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Value/Variable value(Rs)</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="value" id="value"/>
+                                                                <input type="text" class="form-control" placeholder="" name="value" id="value" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CGST+SGST Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
+                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>IGST Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
+                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CESS Advol Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="advolRate" id="advolRate"/>
+                                                                <input type="text" class="form-control" placeholder="" name="advolRate" id="advolRate" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CESS non.Advol Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="nonAdvol" id="nonAdvol"/>
+                                                                <input type="text" class="form-control" placeholder="" name="nonAdvol" id="nonAdvol" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -607,7 +618,6 @@
 
                                                     <div class="row">
                                                         <table class="table table-bordered" id="billTable">
-                                                            <tr>
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="col">Product Name</th>
@@ -628,189 +638,195 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                    
+
                                                     <div class="row">
 
-                                                    <div class="col-sm-10">
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Total Tax'ble Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
+                                                        <div class="col-sm-10">
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Total Tax'ble Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="taxamount" id="taxamount" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
                                                             </div>
+
+
+
+
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>CGST Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="cgstamt" id="cgstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>SGST Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="sgstamt" id="sgstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>IGST Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="igstamt" id="igstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>CESS Advol Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="unit" id="unit"/ onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;">
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>CESS non.Advol Amount</label>
+
+                                                                    <input type="text" class="form-control" placeholder="" name="value" id="value" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Other Amount(+/-)</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="gst" id="gst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Total Inv. Amount</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="igst" id="igst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
+                                                                </div>
+
+                                                            </div>
+
                                                         </div>
 
 
+                                                        <!--  <div>
+                                                               <a href="#billtab" data-toggle="tab" title="Bill Details">
+                                                           <span class="round-tabs four">
+                                                               <i class="fa fa-trash-alt"></i>
+                                                           </span>
+                                                       </a>
+                                                           </div>-->
 
 
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>CGST Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="discription" id="discription"/>
-                                                            </div>
+                                                    </div>
+                                                    <!--row 6-->
 
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>SGST Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>IGST Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>CESS Advol Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit"/>
-                                                            </div>
-
-                                                        </div>
-
-
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>CESS non.Advol Amount</label>
-
-                                                                <input type="text" class="form-control" placeholder="" name="value" id="value"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Other Amount(+/-)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Total Inv. Amount</label>
-                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
-                                                            </div>
-
-                                                        </div>
-                                                        
+                                                    <div class="row bg-info">
+                                                        <div class="col-md-6">Transportation Details</div>
                                                     </div>
 
+                                                    <div class="row">
+                                                        <div class="partnerError text-center"></div>
+                                                        <div class="col-sm-10">
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Transporter Name</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="transporterName" id="transporterName"/>
+                                                                </div>
 
-                                                    <!--  <div>
-                                                           <a href="#billtab" data-toggle="tab" title="Bill Details">
-                                                       <span class="round-tabs four">
-                                                           <i class="fa fa-trash-alt"></i>
-                                                       </span>
-                                                   </a>
-                                                       </div>-->
-                                                    
-                                                    
-                                                </div>
-                                                <!--row 6-->
+                                                            </div>
 
-                                                <div class="row bg-info">
-                                                    <div class="col-md-6">Transportation Details</div>
-                                                </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Transporter Id</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="transporterName" id="transporterName"/>
+                                                                </div>
 
-                                                <div class="row">
-                                                    <div class="partnerError text-center"></div>
-                                                    <div class="col-sm-10">
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label"><span class="error">*</span>Approximate Distance (in KM)</label>
+                                                                    <input type="text" class="form-control" placeholder="" name="distanceName" id="distanceName"/>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--row 7  -->
+                                                    <div class="row bg-info">
+                                                        <div class="col-md-6">Part B</div>
+                                                    </div>
+
+                                                    <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Transporter Name</label>
-                                                                <input type="text" class="form-control" placeholder="" name="transporterName" id="transporterName"/>
+                                                                <label class="control-label"><span class="error">*</span>Mode </label>
+                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio1" value="option1">
+                                                                <label class="control-label"for="inlineRadio1">Road</label>
+                                                                <label class="form-check-label" for="inlineRadio1"></label>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Rail</label>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Air</label>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Ship</label>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>Vehicle Type</label>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Regular</label>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Over Dimensional Cargo</label>
 
+                                                            </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Transporter Id</label>
-                                                                <input type="text" class="form-control" placeholder="" name="transporterName" id="transporterName"/>
-                                                            </div>
+                                                                <label class="control-label"><span class="error">*</span>Vehicle No.</label>
+                                                                <input class="form-check-input" type="text" name="vehicle No" id="vehicleNo" value="Vehicle No">
 
+                                                            </div>
                                                         </div>
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Approximate Distance (in KM)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="distanceName" id="distanceName"/>
+                                                                <label class="control-label"><span class="error">*</span>Transporter Doc.No.</label>
+                                                                <input class="form-check-input" type="text" name="docNo" id="docNo" value="">
+
                                                             </div>
+                                                        </div>
 
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"><span class="error">*</span>Date </label>
+                                                                <input class="form-check-input" type="date" name="date" id="date" value="">
+
+                                                            </div>
                                                         </div>
 
 
-                                                    </div>
+
+                                                    </div>    
+                                                    <!--row 8-->
                                                 </div>
-                                                <!--row 7  -->
-                                                <div class="row bg-info">
-                                                    <div class="col-md-6">Part B</div>
-                                                </div>
 
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span>Mode </label>
-                                                            <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio1" value="option1">
-                                                            <label class="control-label"for="inlineRadio1">Road</label>
-                                                            <label class="form-check-label" for="inlineRadio1"></label>
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Rail</label>
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Air</label>
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Ship</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span>Vehicle Type</label>
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Regular</label>
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Over Dimensional Cargo</label>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span>Vehicle No.</label>
-                                                            <input class="form-check-input" type="text" name="vehicle No" id="vehicleNo" value="Vehicle No">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span>Transporter Doc.No.</label>
-                                                            <input class="form-check-input" type="text" name="docNo" id="docNo" value="">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><span class="error">*</span>Date </label>
-                                                            <input class="form-check-input" type="date" name="date" id="date" value="">
-
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>    
-                                                <!--row 8-->
                                             </div>
-
+                                            <div class="tab-pane fade" id="submitButton">
+                                                <h3 class="text-center">SUBMIT FORM DETAILS</h3>
+                                                <p class="text-center">
+                                                    <button class="btn btn-success btn-outline-rounded green" type="submit"> Submit <span style="margin-left: 10px;" class="glyphicon glyphicon-send"></span></button>
+                                                </p>
+                                            </div>
 
 
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </section>
                         </form>

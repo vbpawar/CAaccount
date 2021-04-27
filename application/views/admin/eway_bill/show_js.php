@@ -69,8 +69,8 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     <?php
 }
 ?>
-            tblData += ` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
-            tblData += '</div></tr>';
+//            tblData += ` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
+            tblData += '</td></div></tr>';
 
 
         }
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'pf_withdrawal/update',
+                url: url + 'ewayBill/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'ewayBill');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }

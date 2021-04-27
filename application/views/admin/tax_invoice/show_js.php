@@ -69,8 +69,8 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     <?php
 }
 ?>
-            tblData += ` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
-            tblData += '</div></tr>';
+//            tblData += ` &nbsp; <a href="#$" onclick="documentList(` + (k) + `)" title="Document List"><i class="fa fa-file text-success"></i></a></td>`;
+            tblData += '</td></div></tr>';
 
 
         }

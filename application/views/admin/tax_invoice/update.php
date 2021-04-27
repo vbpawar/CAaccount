@@ -130,7 +130,8 @@
                                                     <li class="active">
                                                         <a href="#taxinvoice" data-toggle="tab" title="Tax Invoice Details">
                                                             <span class="round-tabs one">
-                                                                <i class="fa fa-file-invoice"></i>
+                                                                <!--<i class="fa fa-file-invoice"></i>-->
+                                                                <img src="<?php echo base_url('/admin_assets/img/taxinvoice_icon.jpg'); ?>" style="height:35px;width:35px"/>
                                                                 <!--<i class="fa fa-user"></i>-->
                                                                 <!-- <i class="glyphicon glyphicon-profile"></i> -->
                                                             </span>
@@ -139,7 +140,8 @@
                                                     <li class="">
                                                         <a href="#addressdet" data-toggle="tab" title="Address Details">
                                                             <span class="round-tabs two">
-                                                                <i class="fa fa-address-card"></i>
+                                                                <!--<i class="fa fa-address-card"></i>-->
+                                                                <img src="<?php echo base_url('/admin_assets/img/address_icon.png'); ?>" style="height:35px;width:35px"/>
                                                             </span>
                                                         </a>
                                                     </li>
