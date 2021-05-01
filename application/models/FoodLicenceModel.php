@@ -66,7 +66,7 @@ class FoodLicenceModel extends CI_Model {
         {    
             $result = [];
             if($this->db->insert('food_licence_docs', $data)){
-               $result['docid'] =  $this->db->insert_id();
+               $result['foodid'] =  $this->db->insert_id();
                $result['status'] = true;   
              }else{
                 $result['status'] = false;
@@ -74,7 +74,7 @@ class FoodLicenceModel extends CI_Model {
              return $result;
         }
         public function get_digital_docs($did) {
-            $sql = "SELECT * FROM food_licence_docs WHERE did=$did";
+            $sql = "SELECT * FROM food_licence_docs WHERE foodid=$did";
             $query = $this->db->query($sql);
             return $query->result_array();
         }

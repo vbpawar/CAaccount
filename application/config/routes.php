@@ -276,3 +276,9 @@ $route['loadBills'] = 'E_waybill/get_all_bills';
 $route['add_bill'] = 'E_waybill/create_bill';
 $route['update_bill'] = 'E_waybill/update_status';
 $route['updated_bill_docs'] = 'E_waybill/get_update_docs';
+
+//Food Licence API
+$route['loadfoodlicence'] = 'FoodLicence/get_all_food_licence';
+$route['add_food_licence'] = 'FoodLicence/add_food_lice_form';
+$route['get_foods_docs'] = 'FoodLicence/getdigitaldocs';
+$route['update_food_licence_status'] = 'FoodLicence/update_status';

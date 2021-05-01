@@ -1,9 +1,8 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-  date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('Asia/Kolkata');
 class E_waybill extends CI_Controller  {
-
 
     public function __construct()
     {
@@ -14,135 +13,184 @@ class E_waybill extends CI_Controller  {
         $this->load->model('WalletModel', 'service');
         date_default_timezone_set('Asia/Kolkata');
     }
+
     private $response = null;
     private $records = null;
-    public function get_details($roleid,$userid) {
-        if($roleid ==1 || $roleid ==4){
-        $sql = "SELECT eb.bill_id,eb.bussness_type,eb.bussness_name,eb.shop_adhar,eb.gst_number,eb.eway_bill_id,eb.bill_pwd,eb.transporter_name,eb.transporter_id,
-        eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
-        ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
-        esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
-        um.firstname,um.lastname,
-        pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
-        FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
-        INNER JOIN personal_details pd ON pd.pid = eb.pid
-        INNER JOIN eway_shiping_details esd ON esd.shipid = eb.shipid
-        INNER JOIN user_master um ON um.userid = eb.userid
-        ORDER BY eb.bill_id DESC";
-        }else{
-            $sql = "SELECT eb.bill_id,eb.bussness_type,eb.bussness_name,eb.shop_adhar,eb.gst_number,eb.eway_bill_id,eb.bill_pwd,eb.transporter_name,eb.transporter_id,
-            eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
-            ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
-            esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
-            um.firstname,um.lastname,
-            pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
-            FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
-            INNER JOIN personal_details pd ON pd.pid = eb.pid
-            INNER JOIN eway_shiping_details esd ON esd.shipid = eb.shipid
-            INNER JOIN user_master um ON um.userid = eb.userid
-            WHERE eb.userid = $userid ORDER BY eb.bill_id DESC";  
+
+    public function get_all_bills(){
+        $roleid = $this->input->get('roleid');
+        $userid = $this->input->get('userid');
+        $result = $this->imodel->get_details($roleid,$userid);
+        if ($result['status']) {
+            for($i=0;$i<count($result['data']);$i++){
+                $temp = array('invoices'=>[]);
+               $p_details= $this->imodel->get_invoice_details($result['data'][$i]['bill_id']); 
+               if($p_details['status']){
+                $temp = array('invoices'=>$p_details['data']);
+               }
+               $records[] = array_merge($result['data'][$i],$temp); 
+            }
+            $response = array(
+                'Message' => 'Eway bill Details loaded successfully',
+                'Data' => $records,
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Try again',
+                'Responsecode' => 402
+            );
         }
-        $query = $this->db->query($sql);
-       $result['status'] = true;
-       $result['data'] =   $query->result_array();
-    return $result;
-    }
-   
-    public function get_invoice_details($id)
-    {
-        $sql = "SELECT * FROM ewaybill_invoice_details WHERE ewaybill_id= $id";
-        $query = $this->db->query($sql);
-        if($query->num_rows()>0){
-            $result['status'] = true;
-            $result['data'] =  $query->result();
-        }else{
-            $result['status'] = false;
-        }
-     return $result;
-    }
-    public function updatestatus($id,$data)
-    {
-        $result = false;
-        $this->db->where('bill_id',$id);
-        if($this->db->update('ewaybill',$data)){
-            $result['status'] = true;
-        }else{
-            $result['status'] = false;
-        }
-        return $result;
+        echo json_encode($response);
     } 
-    
-    public function create_bill($data)
+
+    public function add_bill_form()
     {
-      $pdetails = $data['pdetails'];
-      $tdetails = $data['tdetails'];
-      $billdetails = $data['billdetails'];
-      $invoicedetails = $data['invoicedetails'];
-      $main = $data['main'];
-      $result = array();
-      $this->db->trans_begin();
-
-        $this->db->insert('personal_details', $pdetails);
-        $result['pid'] =  $this->db->insert_id(); 
-
-        $this->db->insert('eway_shiping_details', $billdetails);
-        $result['shipid'] =  $this->db->insert_id(); 
-
-        $income_details = array(
-            'pid'=>$result['pid'],
-            'shipid'=>$result['shipid'],
-            'userid'=>$main['userid'],
-            'bussness_type'=>$main['bussness_type'],
-            'bussness_name' => $main['bussness_name'],
-            'shop_adhar'=>$main['shop_adhar'],
-            'gst_number'=>$main['gst_number'],
-            'eway_bill_id' => $main['eway_bill_id'],
-            'bill_pwd'=>$main['bill_pwd'],
-            'transporter_name'=>$main['transporter_name'],
-            'transporter_id' => $main['transporter_id'],
-            'distance_km'=>$main['distance_km'],
-            'transport_mode'=>$main['transport_mode'],
-            'vehicle_type' => $main['vehicle_type'],
-            'vehicle_number'=>$main['vehicle_number'],
-            'transport_doc_number' => $main['transport_doc_number'],
-            'final_date'=>$main['final_date']
-            
+         //personal details
+         $pdetails = array(
+            'pan_name ' => $this->input->post('pan_name'),
+            'pan_number' => $this->input->post('pan_number'),
+            'aadhar_name' => $this->input->post('aadhar_name'),
+            'aadhar_number' => $this->input->post('aadhar_number'),
+            'contact_number' => $this->input->post('contact_number'),
+            'emailid' => $this->input->post('emailid'),
+            'dob'=>$this->input->post('dob')
         );
-        $this->db->insert('ewaybill', $income_details);
-        $result['bill_id'] =  $this->db->insert_id();
-        $this->insert_invoice($invoicedetails,$result['bill_id']);
-        if ($this->db->trans_status() === FALSE)
-{
-        $this->db->trans_rollback();
-}
-else
-{
-        $this->db->trans_commit();
-      
-        $result['status'] = true;
-        return $result;
-}
+        
+        //tax details
+        $tax_details = array(
+            'tax_amt ' => $this->input->post('tax_amt'),
+            'cgst_amt' => $this->input->post('cgst_amt'),
+            'sgst_amt' => $this->input->post('sgst_amt'),
+            'igst_amt' => $this->input->post('igst_amt'),
+            'cess_advol_amt' => $this->input->post('cess_advol_amt'),
+            'cess_non_amt' => $this->input->post('cess_non_amt'),
+            'other_amt' => $this->input->post('other_amt'),
+            'invoice_amt' => $this->input->post('invoice_amt')
+        );
+            $main_details = array(
+                'userid'=>$this->input->post('userid'),
+                'bussness_type'=>$this->input->post('bussness_type'),
+                'bussness_name' => $this->input->post('bussness_name'),
+                'shop_adhar'=>$this->input->post('shop_adhar'),
+                'gst_number'=>$this->input->post('gst_number'),
+                'eway_bill_id' => $this->input->post('eway_bill_id'),
+                'bill_pwd'=>$this->input->post('bill_pwd'),
+                'transporter_name'=>$this->input->post('transporter_name'),
+                'transporter_id' => $this->input->post('transporter_id'),
+                'distance_km'=>$this->input->post('distance_km'),
+                'transport_mode'=>$this->input->post('transport_mode'),
+                'vehicle_type' => $this->input->post('vehicle_type'),
+                'vehicle_number'=>$this->input->post('vehicle_number'),
+                'transport_doc_number' => $this->input->post('transport_doc_number'),
+                'final_date'=>$this->input->post('final_date')
+            );
+            $bill_details = array(
+                'sname'=>$this->input->post('sname'),
+                'gstn'=>$this->input->post('gstn'),
+                'sstate'=>$this->input->post('sstate'),
+                'saddress'=>$this->input->post('saddress'),
+                'place'=>$this->input->post('place'),
+                'pincode'=>$this->input->post('pincode'),
+                'bname'=>$this->input->post('bname'),
+                'b_gstn'=>$this->input->post('b_gstn'),
+                'bstate'=>$this->input->post('bstate'),
+                'b_address'=>$this->input->post('b_address'),
+                'b_place'=>$this->input->post('b_place'),
+                'b_pincode'=>$this->input->post('b_pincode')
+               );
+               $invoicedetails = $this->input->post('invoicedata');
+               $invoicedetails= json_decode($invoicedetails);
+        $testdata = array(
+            'pdetails'=>$pdetails,
+            'tdetails'=>$tax_details,
+            'main'=>$main_details,
+            'billdetails'=>$bill_details,
+            'invoicedetails'=>$invoicedetails
+        );
+            $result = $this->imodel->create_bill($testdata);
+            if ($result['status']) {
+//                $id       = $result['certid'];
+                $response = array(
+                    'Message' => 'Eway Bill added successfully',
+                    'Responsecode' => 200
+                );
+            } else {
+                $response = array(
+                    'Message' => 'Try again',
+                    'Responsecode' => 402
+                );
+            }
+        echo json_encode($response);
     }
-    public function insert_invoice($partner_data,$id)
+    
+    public function update_status()
     {
-        foreach ($partner_data as $contact)
-                    {
-                        $partners = array(
-                            'ewaybill_id'=>$id,
-                            'pname' => $contact->pname,
-                            'hsn' => $contact->hsn,
-                            'pdesc' => $contact->pdesc,
-                            'quantity'=>$contact->quantity,
-                            'unit'=>$contact->unit,
-                            'variable_value'=>$contact->variable_value,
-                            'gst_rate'=>$contact->gst_rate,
-                            'igst_rate'=>$contact->igst_rate,
-                            'cess_advol_rate'=>$contact->cess_advol_rate,
-                            'cess_non_advol_rate'=>$contact->cess_non_advol_rate
-                            );
-                            $this->db->insert('ewaybill_invoice_details', $partners);
-                    }
-    }  
- 
+        $id    = $this->input->post('uid');
+        $data   = array(
+            'status' => $this->input->post('status'),
+            'remark' => $this->input->post('remark')
+        );
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>$this->input->post('digital_uid'),
+                'transaction_type'=>'Credit',
+                'amount'=>$this->input->post('digital_amount'),
+                'message'=>'Credited amount of E-way bill service which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->service->deduct_amount($wallet_data);
+        }
+        $result = $this->imodel->updatestatus($id, $data);
+        if ($result) {
+            $document = 'Documents not uplaoded';
+            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+                if ($this->uploadremarks('EWAY', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+                if ($this->uploadremarks('EWAY', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+                    $document = 'Documents uplaoded';
+                }
+            }
+            $response = array(
+                'Message' => 'Status updated successfully',
+                'Responsecode' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Try Again',
+                'Responsecode' => 204
+            );
+        }
+        echo json_encode($response);
+    }
+    public function uploadremarks($service, $rowid, $filename, $file)
+    {
+        $ext    = pathinfo($filename, PATHINFO_EXTENSION);
+        $data   = array(
+            'service' => $service,
+            'rowid' => $rowid,
+            'extension' => $ext
+        );
+        $result = $this->docs->add_remark_docs($data);
+        if ($result['status']) {
+            $imgid      = $result['remarkid'];
+            $sourcePath = $file; // Storing source path of the file in a variable
+            $targetPath = "./documents/remarks/" . $imgid . "." . $ext; // Target path where file is to be stored
+            if (move_uploaded_file($sourcePath, $targetPath)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'EWAY');
+        echo json_encode($result);
+    }
 
 }

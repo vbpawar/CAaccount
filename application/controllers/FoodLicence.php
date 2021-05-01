@@ -8,6 +8,7 @@ class FoodLicence extends CI_Controller
     {
         parent::__construct();
         $this->load->model('FoodLicenceModel', 'dmodel');
+        $this->load->model('DocsModel','docs');
         $this->load->model('WalletModel','service');
     }
     private $response = null;
@@ -91,10 +92,10 @@ class FoodLicence extends CI_Controller
         $data   = array(
             'extension' => $ext,
             'userid' => 1,
-            'did' => $did,
+            'foodid' => $did,
             'doctype' => $doctype
         );
-        $result = $this->docs->add_digital_docs($data);
+        $result = $this->dmodel->add_digital_docs($data);
         if ($result) {
             $imgid      = $result['docid'];
             $sourcePath = $file; // Storing source path of the file in a variable
