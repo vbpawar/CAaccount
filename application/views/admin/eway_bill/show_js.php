@@ -7,8 +7,8 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'load_pf',
-            type: 'get',
+            url: url + 'loadBills',
+            type: 'GET',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
             success: function (response) {
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].pfid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].bill_id, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -183,7 +183,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updatestatus',
+            url: url + 'update_bill',
 
             type: 'POST',
 
@@ -224,7 +224,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'getremarksdocs',
+            url: url + 'updated_bill_docs',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

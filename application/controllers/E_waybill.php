@@ -21,6 +21,7 @@ class E_waybill extends CI_Controller  {
         $roleid = $this->input->get('roleid');
         $userid = $this->input->get('userid');
         $result = $this->imodel->get_details($roleid,$userid);
+        $records = null;
         if ($result['status']) {
             for($i=0;$i<count($result['data']);$i++){
                 $temp = array('invoices'=>[]);
@@ -59,10 +60,10 @@ class E_waybill extends CI_Controller  {
         
         //tax details
         $tax_details = array(
-            'tax_amt ' => $this->input->post('tax_amt'),
-            'cgst_amt' => $this->input->post('cgst_amt'),
-            'sgst_amt' => $this->input->post('sgst_amt'),
-            'igst_amt' => $this->input->post('igst_amt'),
+            'tax_amt ' => $this->input->post('taxamount'),
+            'cgst_amt' => $this->input->post('cgstamt'),
+            'sgst_amt' => $this->input->post('sgstamt'),
+            'igst_amt' => $this->input->post('igstamt'),
             'cess_advol_amt' => $this->input->post('cess_advol_amt'),
             'cess_non_amt' => $this->input->post('cess_non_amt'),
             'other_amt' => $this->input->post('other_amt'),
@@ -70,37 +71,39 @@ class E_waybill extends CI_Controller  {
         );
             $main_details = array(
                 'userid'=>$this->input->post('userid'),
-                'bussness_type'=>$this->input->post('bussness_type'),
-                'bussness_name' => $this->input->post('bussness_name'),
+                'bussness_type'=>$this->input->post('buss_type'),
+                'bussness_name' => $this->input->post('shop_name'),
                 'shop_adhar'=>$this->input->post('shop_adhar'),
                 'gst_number'=>$this->input->post('gst_number'),
                 'eway_bill_id' => $this->input->post('eway_bill_id'),
                 'bill_pwd'=>$this->input->post('bill_pwd'),
-                'transporter_name'=>$this->input->post('transporter_name'),
-                'transporter_id' => $this->input->post('transporter_id'),
+                'transporter_name'=>$this->input->post('transporterName'),
+                'transporter_id' => $this->input->post('transporterId'),
                 'distance_km'=>$this->input->post('distance_km'),
-                'transport_mode'=>$this->input->post('transport_mode'),
-                'vehicle_type' => $this->input->post('vehicle_type'),
+                'transport_mode'=>$this->input->post('modeRadio'),
+                'vehicle_type' => $this->input->post('inlineRadioOptions'),
                 'vehicle_number'=>$this->input->post('vehicle_number'),
                 'transport_doc_number' => $this->input->post('transport_doc_number'),
                 'final_date'=>$this->input->post('final_date')
             );
             $bill_details = array(
-                'sname'=>$this->input->post('sname'),
-                'gstn'=>$this->input->post('gstn'),
-                'sstate'=>$this->input->post('sstate'),
-                'saddress'=>$this->input->post('saddress'),
-                'place'=>$this->input->post('place'),
-                'pincode'=>$this->input->post('pincode'),
-                'bname'=>$this->input->post('bname'),
-                'b_gstn'=>$this->input->post('b_gstn'),
-                'bstate'=>$this->input->post('bstate'),
-                'b_address'=>$this->input->post('b_address'),
-                'b_place'=>$this->input->post('b_place'),
-                'b_pincode'=>$this->input->post('b_pincode')
+                'sname'=>$this->input->post('inputName'),
+                'gstn'=>$this->input->post('inputGSTIN'),
+                'sstate'=>$this->input->post('inputState'),
+                'saddress'=>$this->input->post('inputAddress'),
+                'place'=>$this->input->post('inputPlace'),
+                'pincode'=>$this->input->post('inputPincode'),
+                'bname'=>$this->input->post('inputName1'),
+                'b_gstn'=>$this->input->post('inputGSTIN1'),
+                'bstate'=>$this->input->post('inputState1'),
+                'b_address'=>$this->input->post('inputAddress1'),
+                'b_place'=>$this->input->post('inputPlace1'),
+                'b_pincode'=>$this->input->post('inputPincode1')
                );
                $invoicedetails = $this->input->post('invoicedata');
+              // print_r($invoicedetails);
                $invoicedetails= json_decode($invoicedetails);
+               //print_r($invoicedetails);
         $testdata = array(
             'pdetails'=>$pdetails,
             'tdetails'=>$tax_details,
@@ -126,7 +129,7 @@ class E_waybill extends CI_Controller  {
     
     public function update_status()
     {
-        $id    = $this->input->post('uid');
+        $id    = $this->input->post('pfid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')

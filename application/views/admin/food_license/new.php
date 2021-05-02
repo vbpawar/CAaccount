@@ -186,7 +186,7 @@
 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="control-label"><span class="error">*</span>Stae</label>
+                                                                <label class="control-label"><span class="error">*</span>State</label>
 
                                                                 <input type="text" class="form-control" placeholder="State" name="state" id="state" />
                                                             </div>

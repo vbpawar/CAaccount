@@ -3,20 +3,19 @@
 
 
     $('#pf-withdrawl-form').on('submit', function (e) {
-
         e.preventDefault();
 
-    var returnVal = validChecker();
+       // var returnVal = validChecker();
         var formdata = new FormData(this);
         var userid = <?php echo $_SESSION['Data']['userid'];?>;
-        var amount=servicecharges.get('1');
+        var amount=servicecharges.get('14');
         formdata.append('userid',userid);
 
-        if (returnVal) {
+        // if (returnVal) {
              if(check_balance(userid,amount)){
             $.ajax({
 
-                url: url + 'createpf',
+                url: url + 'add_food_licence',
 
                 type: 'POST',
 
@@ -56,13 +55,13 @@
                 // window.location.replace(url + 'wallet');
              }
 
-        }
+        // }
 
     });
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'foodlicense');
     }
 
 

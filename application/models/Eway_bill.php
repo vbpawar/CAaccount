@@ -7,7 +7,7 @@ class Eway_bill extends CI_Model{
         eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
         ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
         esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
-        um.firstname,um.lastname,
+        um.firstname,um.lastname,eb.remark,eb.status,
         pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
         FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
         INNER JOIN personal_details pd ON pd.pid = eb.pid
@@ -19,7 +19,7 @@ class Eway_bill extends CI_Model{
             eb.distance_km,eb.transport_mode,eb.vehicle_type,eb.vehicle_number,eb.transport_doc_number,eb.final_date,eb.status,eb.createdat,eb.updatedat,
             ebd.tax_amt,ebd.cgst_amt,ebd.cgst_amt,ebd.sgst_amt,ebd.igst_amt,ebd.cess_advol_amt,ebd.cess_non_amt,ebd.other_amt,ebd.invoice_amt,
             esd.sname,esd.gstn,esd.sstate,esd.saddress,esd.place,esd.pincode,esd.bname,esd.b_gstn,esd.bstate,esd.b_address,esd.b_place,esd.b_pincode,
-            um.firstname,um.lastname,
+            um.firstname,um.lastname,eb.remark,eb.status,
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,pd.dob
             FROM ewaybill eb INNER JOIN eway_bill_details ebd ON eb.billId = ebd.id
             INNER JOIN personal_details pd ON pd.pid = eb.pid
@@ -73,6 +73,10 @@ class Eway_bill extends CI_Model{
         $this->db->insert('eway_shiping_details', $billdetails);
         $result['shipid'] =  $this->db->insert_id(); 
 
+        $this->db->insert('eway_bill_details', $tdetails);
+        $result['billid'] =  $this->db->insert_id(); 
+        
+
         $income_details = array(
             'pid'=>$result['pid'],
             'shipid'=>$result['shipid'],
@@ -90,12 +94,12 @@ class Eway_bill extends CI_Model{
             'vehicle_type' => $main['vehicle_type'],
             'vehicle_number'=>$main['vehicle_number'],
             'transport_doc_number' => $main['transport_doc_number'],
-            'final_date'=>$main['final_date']
-            
+            'final_date'=>$main['final_date'],
+            'billid'=>$result['billid']
         );
         $this->db->insert('ewaybill', $income_details);
         $result['bill_id'] =  $this->db->insert_id();
-        $this->insert_invoice($invoicedetails,$result['bill_id']);
+       $this->insert_invoice($invoicedetails,$result['bill_id']);
         if ($this->db->trans_status() === FALSE)
 {
         $this->db->trans_rollback();
@@ -116,14 +120,14 @@ else
                             'ewaybill_id'=>$id,
                             'pname' => $contact->pname,
                             'hsn' => $contact->hsn,
-                            'pdesc' => $contact->pdesc,
+                            'pdesc' => $contact->discription,
                             'quantity'=>$contact->quantity,
                             'unit'=>$contact->unit,
-                            'variable_value'=>$contact->variable_value,
-                            'gst_rate'=>$contact->gst_rate,
-                            'igst_rate'=>$contact->igst_rate,
-                            'cess_advol_rate'=>$contact->cess_advol_rate,
-                            'cess_non_advol_rate'=>$contact->cess_non_advol_rate
+                            'variable_value'=>$contact->value,
+                            'gst_rate'=>$contact->gst,
+                            'igst_rate'=>$contact->igst,
+                            'cess_advol_rate'=>$contact->advolRate,
+                            'cess_non_advol_rate'=>$contact->nonAdvol
                             );
                             $this->db->insert('ewaybill_invoice_details', $partners);
                     }

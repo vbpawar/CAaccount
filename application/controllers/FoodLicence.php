@@ -38,35 +38,35 @@ class FoodLicence extends CI_Controller
     public function add_food_lice_form()
     {
         //personal details
-        $pdetails = array(
-            'mobile_number' => $this->input->post('mobile_number'),
+        $data = array(
+            'mobile_number' => $this->input->post('mob_no'),
             'fax' => $this->input->post('fax'),
-            'emailid' => $this->input->post('emailid'),
-            'mobile_alternate' => $this->input->post('mobile_alternate'),
-            'noofyear' => $this->input->post('noofyear'),
-            'telephone' => $this->input->post('telephone'),
-            'faddress' => $this->input->post('faddress'),
-            'fstate' => $this->input->post('fstate'),
-            'district' => $this->input->post('district'),
-            'region' => $this->input->post('region'),
-            'subdivision' => $this->input->post('subdivision'),
+            'emailid' => $this->input->post('email'),
+            'mobile_alternate' => $this->input->post('alternate_no'),
+            'noofyear' => $this->input->post('male'),
+            'telephone' => $this->input->post('tel_no'),
+            'faddress' => $this->input->post('address'),
+            'fstate' => $this->input->post('state'),
+            'district' => $this->input->post('zone'),
+            'app_type' => $this->input->post('app_type'),
+            'subdivision' => $this->input->post('division'),
             'village'=>$this->input->post('village'),
             'pincode' => $this->input->post('pincode'),
             'landmark' => $this->input->post('landmark'),
-            'user_id' => $this->input->post('userid')
+            'userid' => $this->input->post('userid')
         ); 
             $result = $this->dmodel->add_details($data);
             if ($result['status']) {
                 $id       = $result['foodid'];
                 $document = 'Document not uploaded';
-                if (!empty($_FILES['photo']['name']) && !empty($_FILES['identity']['name']) && !empty($_FILES['otherdoc']['name'])) {
-                    if ($this->uploaddocs('Photo', $id, $_FILES['photo']['name'], $_FILES['photo']['tmp_name'])) {
+                if (!empty($_FILES['adhar']['name']) && !empty($_FILES['identity']['name']) && !empty($_FILES['passport']['name'])) {
+                    if ($this->uploaddocs('Photo', $id, $_FILES['adhar']['name'], $_FILES['adhar']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
                     if ($this->uploaddocs('Identity Proof', $id, $_FILES['identity']['name'], $_FILES['identity']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
-                    if ($this->uploaddocs('Other Documents', $id, $_FILES['otherdoc']['name'], $_FILES['otherdoc']['tmp_name'])) {
+                    if ($this->uploaddocs('Other Documents', $id, $_FILES['passport']['name'], $_FILES['passport']['tmp_name'])) {
                         $document = 'Documents uplaoded';
                     }
                 }
@@ -91,13 +91,13 @@ class FoodLicence extends CI_Controller
         $ext    = pathinfo($filename, PATHINFO_EXTENSION);
         $data   = array(
             'extension' => $ext,
-            'userid' => 1,
+            'userid' => $_SESSION['Data']['userid'],
             'foodid' => $did,
             'doctype' => $doctype
         );
         $result = $this->dmodel->add_digital_docs($data);
         if ($result) {
-            $imgid      = $result['docid'];
+            $imgid      = $result['foodid'];
             $sourcePath = $file; // Storing source path of the file in a variable
             $targetPath = "./documents/food/" . $imgid . "." . $ext; // Target path where file is to be stored
             if (move_uploaded_file($sourcePath, $targetPath)) {
@@ -117,7 +117,7 @@ class FoodLicence extends CI_Controller
     }
     public function update_status()
     {
-        $did    = $this->input->post('foodid');
+        $did    = $this->input->post('pfid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
@@ -176,5 +176,13 @@ class FoodLicence extends CI_Controller
         } else {
             return false;
         }
+
+
+    }
+    public function get_update_docs()
+    {
+        $pfid   = $this->input->post('rowid');
+        $result = $this->docs->get_update_remarks_docs($pfid,'FOOD');
+        echo json_encode($result);
     }
 } 

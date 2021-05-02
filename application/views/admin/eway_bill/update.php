@@ -211,7 +211,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label"><span class="error">*</span> Aadhar Card Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" />
+                                                            <input type="text" class="form-control" placeholder="Enter your 12 digit aadhar card number" name="aadhar_number" id="aadhar_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -225,7 +225,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label"><span class="error">*</span> Mobile Number</label>
 
-                                                            <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" />
+                                                            <input type="text" class="form-control" placeholder="Enter your 10 digit mobile number" name="contact_number" id="contact_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
@@ -340,7 +340,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label">Pincode</label>
 
-                                                            <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" />
+                                                            <input type="text" class="form-control" placeholder="Pincode" name="pincode" id="pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -368,7 +368,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">GST Number</label>
-                                                            <input type="text" class="form-control" placeholder="gst number" name="gst_number" id="gst_number" />
+                                                            <input type="text" class="form-control" placeholder="gst number" name="gst_number" id="gst_number" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="col-sm-4">
@@ -380,14 +380,14 @@
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Eway Bill Id</label>
-                                                            <input type="text" class="form-control" placeholder="eway bill id" name="eway_bill_id" id="eway_bill_id" />
+                                                            <input type="text" class="form-control" placeholder="eway bill id" name="eway_bill_id" id="eway_bill_id" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group">
                                                             <label class="control-label">Eway Bill Password</label>
                                                             <!--<textarea class="form-control" placeholder="password" name="eway_bill_pass" id="eway_bill_pass" rows="1"></textarea>-->
-                                                            <input type="text" class="form-control" placeholder="password" name="eway_bill_pass" id="eway_bill_pass" />
+                                                            <input type="text" class="form-control" placeholder="password" name="bill_pwd" id="bill_pwd" />
                                                         </div>
                                                     </div>
 
@@ -407,21 +407,21 @@
                                                         <div class="form-group row">
                                                             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                                                <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name">
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputGSTIN" class="col-sm-2 col-form-label"> GSTIN</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN">
+                                                                <input type="text" class="form-control" id="inputGSTIN" name="inputGSTIN" placeholder="GSTIN" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputState" class="col-sm-2 col-form-label">State</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                                                <input type="text" class="form-control" id="inputState" name="inputState" placeholder="State"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -431,21 +431,21 @@
                                                         <div class="form-group row">
                                                             <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
                                                             <div class="col-sm-6">
-                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address">
+                                                                <input type="textarea" class="form-control" id="inputAddress" name="inputAddress" placeholder="Address"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPlace" class="col-sm-2 col-form-label">Place</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place">
+                                                                <input type="text" class="form-control" id="inputPlace" name="inputPlace" placeholder="Place"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
                                                             <label for="inputPincode" class="col-sm-2 col-form-label">Pincode</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode">
+                                                                <input type="text" class="form-control" id="inputPincode" name="inputPincode" placeholder="Pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -461,23 +461,23 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group row">
-                                                            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                                            <label for="inputName1" class="col-sm-2 col-form-label">Name</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                                                <input type="text" class="form-control" id="inputName1" name="inputName1" placeholder="Name"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
-                                                            <label for="inputGSTIN" class="col-sm-2 col-form-label"> GSTIN</label>
+                                                            <label for="inputGSTIN1" class="col-sm-2 col-form-label"> GSTIN</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputGSTIN" placeholder="GSTIN">
+                                                                <input type="text" class="form-control" id="inputGSTIN1" name="inputGSTIN1" placeholder="GSTIN" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
-                                                            <label for="inputState" class="col-sm-2 col-form-label">State</label>
+                                                            <label for="inputState1" class="col-sm-2 col-form-label">State</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                                                <input type="text" class="form-control" id="inputState1" name="inputState1" placeholder="State"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -485,23 +485,23 @@
                                                     <!--col end-->
                                                     <div class="col-md-6">
                                                         <div class="form-group row">
-                                                            <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+                                                            <label for="inputAddress1" class="col-sm-2 col-form-label">Address</label>
                                                             <div class="col-sm-6">
-                                                                <input type="textarea" class="form-control" id="inputAddress" placeholder="Address">
+                                                                <input type="textarea" class="form-control" id="inputAddress1" id="inputAddress1" placeholder="Address"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
-                                                            <label for="inputPlace" class="col-sm-2 col-form-label">Place</label>
+                                                            <label for="inputPlace1" class="col-sm-2 col-form-label">Place</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPlace" placeholder="Place">
+                                                                <input type="text" class="form-control" id="inputPlace1" id="inputPlace1" placeholder="Place"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
                                                         <div class="form-group row">
-                                                            <label for="inputPincode" class="col-sm-2 col-form-label">Pincode</label>
+                                                            <label for="inputPincode1" class="col-sm-2 col-form-label">Pincode</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputPincode" placeholder="Pincode">
+                                                                <input type="text" class="form-control" id="inputPincode1" name="inputPincode1" placeholder="Pincode" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                         <!--sub row end-->
@@ -535,21 +535,21 @@
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>HSN</label>
-                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
+                                                                <input type="text" class="form-control" placeholder="" name="hsn" id="hsn" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Quantity</label>
-                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
+                                                                <input type="text" class="form-control" placeholder="" name="quantity" id="quantity" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Unit</label>
-                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit"/>
+                                                                <input type="text" class="form-control" placeholder="" name="unit" id="unit" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
@@ -559,35 +559,35 @@
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Value/Variable value(Rs)</label>
 
-                                                                <input type="text" class="form-control" placeholder="" name="value" id="value"/>
+                                                                <input type="text" class="form-control" placeholder="" name="value" id="value" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CGST+SGST Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
+                                                                <input type="text" class="form-control" placeholder="" name="gst" id="gst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>IGST Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
+                                                                <input type="text" class="form-control" placeholder="" name="igst" id="igst" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CESS Advol Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="advolRate" id="advolRate"/>
+                                                                <input type="text" class="form-control" placeholder="" name="advolRate" id="advolRate" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
 
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>CESS non.Advol Rate(%)</label>
-                                                                <input type="text" class="form-control" placeholder="" name="nonAdvol" id="nonAdvol"/>
+                                                                <input type="text" class="form-control" placeholder="" name="nonAdvol" id="nonAdvol" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -645,7 +645,7 @@
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Total Tax'ble Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="productName" id="productName"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="taxamount" id="taxamount" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
                                                             </div>
 
@@ -655,28 +655,28 @@
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>CGST Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="discription" id="discription"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="cgstamt" id="cgstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>SGST Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="hsn" id="hsn"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="sgstamt" id="sgstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>IGST Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="quantity" id="quantity"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="igstamt" id="igstamt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>CESS Advol Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="unit" id="unit"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="cess_advol_amt" id="cess_advol_amt"/ onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;">
                                                                 </div>
 
                                                             </div>
@@ -686,21 +686,21 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>CESS non.Advol Amount</label>
 
-                                                                    <input type="text" class="form-control" placeholder="" name="value" id="value"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="cess_non_amt" id="cess_non_amt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Other Amount(+/-)</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="gst" id="gst"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="other_amt" id="other_amt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-sm-3">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Total Inv. Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="igst" id="igst"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="invoice_amt" id="invoice_amt" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46;"/>
                                                                 </div>
 
                                                             </div>
@@ -738,7 +738,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Transporter Id</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="transporterName" id="transporterName"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="transporterId" id="transporterId"/>
                                                                 </div>
 
                                                             </div>
@@ -746,7 +746,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
                                                                     <label class="control-label"><span class="error">*</span>Approximate Distance (in KM)</label>
-                                                                    <input type="text" class="form-control" placeholder="" name="distanceName" id="distanceName"/>
+                                                                    <input type="text" class="form-control" placeholder="" name="distance_km" id="distance_km"/>
                                                                 </div>
 
                                                             </div>
@@ -763,23 +763,23 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Mode </label>
-                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio1" value="road">
                                                                 <label class="control-label"for="inlineRadio1">Road</label>
                                                                 <label class="form-check-label" for="inlineRadio1"></label>
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio2" value="rail">
                                                                 <label class="form-check-label" for="inlineRadio1">Rail</label>
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio2" value="air">
                                                                 <label class="form-check-label" for="inlineRadio1">Air</label>
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="modeRadio" id="inlineRadio4" value="ship">
                                                                 <label class="form-check-label" for="inlineRadio1">Ship</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Vehicle Type</label>
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="regular">
                                                                 <label class="form-check-label" for="inlineRadio1">Regular</label>
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="dimensional">
                                                                 <label class="form-check-label" for="inlineRadio1">Over Dimensional Cargo</label>
 
                                                             </div>
@@ -788,7 +788,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Vehicle No.</label>
-                                                                <input class="form-check-input" type="text" name="vehicle No" id="vehicleNo" value="Vehicle No">
+                                                                <input class="form-control" type="text" name="vehicle_number" id="vehicle_number">
 
                                                             </div>
                                                         </div>
@@ -796,7 +796,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Transporter Doc.No.</label>
-                                                                <input class="form-check-input" type="text" name="docNo" id="docNo" value="">
+                                                                <input class="form-control" type="text" name="transport_doc_number" id="transport_doc_number" value="">
 
                                                             </div>
                                                         </div>
@@ -804,7 +804,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"><span class="error">*</span>Date </label>
-                                                                <input class="form-check-input" type="date" name="date" id="date" value="">
+                                                                <input class="form-control" type="date" name="final_date" id="final_date" value="">
 
                                                             </div>
                                                         </div>

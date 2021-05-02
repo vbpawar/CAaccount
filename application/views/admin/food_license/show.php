@@ -113,8 +113,8 @@
                         <thead>
                             <tr>
                                 <th>Retailor</th>
-                                <th>Customer</th>
-                                <th class="min-tablet">Aadhar No.</th>
+                                <th>Applied for</th>
+                                <th class="min-tablet">Village</th>
                                 <th class="min-tablet">Mobile No.</th>
                                 <th class="min-tablet">Email ID</th>
                                 <th class="min-tablet">created At</th>

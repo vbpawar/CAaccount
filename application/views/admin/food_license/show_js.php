@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'load_pf',
+            url: url + 'loadfoodlicence',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',
@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].pfid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].foodid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -32,6 +32,7 @@
         $('#service').dataTable().fnDestroy();
         $('.serviceList').empty();
         var tblData = '', badge, status;
+        var app_type = 'Registration';
         for (let k of serviceList.keys()) {
             let services = serviceList.get(k);
             switch (services.status) {
@@ -48,10 +49,16 @@
                     status = '<button class="badge badge-pill badge-success" onclick="returnStatus(' + (k) + ',4)">Completed</button>';
                     break;
             }
+           
+            if(services.app_type==2){
+                app_type = 'License';
+            }else{
+                app_type = 'Registration';
+            }
             tblData += '<tr><td>' + services.firstname +' '+ services.lastname+'</td>';
-            tblData += '<td>' + services.aadhar_name + '</td>';
-            tblData += '<td>' + services.aadhar_number + '</td>';
-            tblData += '<td>' + services.contact_number + '</td>';
+            tblData += '<td>' +app_type  + '</td>';
+            tblData += '<td>' + services.village + '</td>';
+            tblData += '<td>' + services.mobile_number + '</td>';
             tblData += '<td>' + services.emailid + '</td>';
             tblData += '<td>' + services.createdat + '</td>';
             tblData += '<td>' + status + '</td>';
@@ -101,7 +108,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'pf_withdrawal/update',
+                url: url + 'foodlicense/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +124,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'pf_withdrawal/show');
+        window.location.replace(url + 'foodlicense');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -126,7 +133,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
         $('#pfid').val(id);
-         $('#digital_amount').val(servicecharges.get('1'));
+         $('#digital_amount').val(servicecharges.get('14'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
@@ -134,11 +141,11 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getpfdocs',
+            url: url + 'get_foods_docs',
 
             type: 'POST',
 
-            data: {pfid: id},
+            data: {foodid: id},
 
             cache: false,
 
@@ -149,7 +156,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 for (var i = 0; i < count; i++) {
                     docTable += ` <tr>
       <td>
-          <a href="` + (url + 'documents/pf/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
+          <a href="` + (url + 'documents/food/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
       </td>
     </tr>`;
                 }
@@ -183,7 +190,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updatestatus',
+            url: url + 'update_food_licence_status',
 
             type: 'POST',
 
@@ -224,7 +231,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'getremarksdocs',
+            url: url + 'update_docs_food',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',
@@ -247,6 +254,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
             }
             var pfid=id.toString();
             var product = pfWithdrawal.get(pfid);
+            console.log(product);
                 const count = response.length;
                 var tableData = `<tr><td>`+status+` On:</td><td> <span id="dateTime"></sapn></td></tr>`;
                  tableData += `<tr><td>Remark:</td><td rowspan="2">`+product.remark+`</td></tr>`;
