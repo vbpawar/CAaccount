@@ -10,6 +10,7 @@ class Pan_controller extends CI_Controller
         $this->load->model('ResidentialModel', 'rmodel');
         $this->load->model('Pan_model', 'umodel');
         $this->load->model('DocsModel', 'docs');
+        $this->load->model('WalletModel', 'service');
         date_default_timezone_set('Asia/Kolkata');
     }
     private $response = null;
@@ -185,6 +186,20 @@ class Pan_controller extends CI_Controller
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')
         );
+        
+        if($data['status'] == '3'){
+            $wallet_data = array(
+                'userid'=>$this->input->post('digital_uid'),
+                'transaction_type'=>'Credit',
+                'amount'=>$this->input->post('digital_amount'),
+                'message'=>'Credited amount of pancard services which is rejected by admin',
+                'transactiondate'=>date('Y-m-d h:i:s')
+               );
+                $result = $this->service->deduct_amount($wallet_data);
+        }
+        
+        
+        
         $result = $this->umodel->updatepanstatus($panid, $data);
         if ($result['status']) {
             $document = 'Documents not uplaoded';
