@@ -7,7 +7,7 @@
         var roleid =<?php echo $_SESSION['Data']['role']; ?>;
         $.ajax({
 
-            url: url + 'loadudyog',
+            url: url + 'loadPartnershipDeed',
             type: 'get',
             data: {userid: userid, roleid: roleid},
             dataType: 'json',

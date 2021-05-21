@@ -6,11 +6,11 @@ class PartnerShip_model extends CI_Model {
         $result = [];
         if($roleid ==1 || $roleid ==4){
         $sql = "SELECT pd.deedid,pd.userid,pd.shop_name,pd.shop_address,pd.start_up_date,pd.natureofbuss,pd.msg,pd.status,pd.remark,
-        pd.createdat,pd.updateda,um.firstname,um.lastname
+        pd.createdat,pd.updatedat,um.firstname,um.lastname
         FROM partnership_deed pd INNER JOIN user_master um ON um.userid = pd.userid ORDER BY pd.deedid DESC";
                   }else{
                     $sql = "SELECT pd.deedid,pd.userid,pd.shop_name,pd.shop_address,pd.start_up_date,pd.natureofbuss,pd.msg,pd.status,pd.remark,
-                    pd.createdat,pd.updateda,um.firstname,um.lastname
+                    pd.createdat,pd.updatedat,um.firstname,um.lastname
                     FROM partnership_deed pd INNER JOIN user_master um ON um.userid = pd.userid WHERE pd.userid =$userid ORDER BY pd.deedid DESC";  
                 }
         $query = $this->db->query($sql);
@@ -74,7 +74,7 @@ class PartnerShip_model extends CI_Model {
         $result['deedid'] =  $this->db->insert_id(); 
 
         $this->getpartnerdetails($partnerdata,$result['deedid']);
-        $this->getinvestmentdetails($partner_invest,$result['deedid'])
+        $this->getinvestmentdetails($partner_invest,$result['deedid']);
         if ($this->db->trans_status() === FALSE)
             {
                 $this->db->trans_rollback();

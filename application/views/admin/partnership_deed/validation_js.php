@@ -64,12 +64,13 @@
 
         var partnerName = $('#partnerName').val();
         var pAadhar = $('#pAadhar').val();
+        var pPanName = $('#pan_name').val();
         var pPancard = $('#pPancard').val();
         var pEmail = $('#pEmail').val();
         var pMobile = $('#pMobile').val();
-        var pEBilldoc = $('#pEBilldocpre').attr('src');
-        var pAadhardoc = $('#pAadhardocpre').attr('src');
-        var pPandoc = $('#pPandocpre').attr('src');
+        var pEBilldoc = $('#pEBilldoc').prop('files')[0];
+        var pAadhardoc = $('#pAadhardoc').prop('files')[0];
+        var pPandoc = $('#pPandoc').prop('files')[0];
         var tableData = '';
 //   alert(partnerName+' '+pMobile);
 //if fields are not empty then add in table 
@@ -80,29 +81,51 @@
                 tableData += `<tr id="r` + pAadhar + `">
                         <td>` + partnerName + `</td>
                         <td>` + pAadhar + `</td>
+                        <td>` + pPanName + `</td>
                         <td>` + pPancard + `</td>
                         <td>` + pEmail + `</td>
                         <td>` + pMobile + `</td>
-                        <td><a href="` + pEBilldoc + `" download>
-                                 Download
-                                 </a>
+                        <td>
+                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pEbill` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pEbill_doc` + pAadhar + `" value=""/>
+                                    
                         </td>
-                        <td><a href="` + pAadhardoc + `" download>
-                                 Download
-                                 </a>
+                        <td>
+                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pAadhar` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pAadhar_doc` + pAadhar + `"/>
                         </td>
-                        <td><a href="` + pPandoc + `" download>
-                                 Download
-                                 </a>
+                        <td>
+                            <img src="<?php echo base_url('/admin_assets/img/doc_pre.png'); ?>" alt="" id="pPan` + pAadhar + `pre" width="20px" height="20px" />
+                                <input type="hidden" id="pPan_doc` + pAadhar + `"/>
                         </td>
                         <td>
                         <button type="button" class="btn btn-secondary btn-sm text-danger" onclick="deletePartner('` + pAadhar + `')">
-                        <i class="fa fa-trash-alt" ></i>
+                        Delete
                         </button>
                         </td>
                         </tr>`;
 
                 $('#partnerData').html(tableData);
+                
+                //                set partners documents
+                $('#pEbill' + pAadhar + 'pre').attr("src", URL.createObjectURL(pEBilldoc));
+                $('#pAadhar' + pAadhar + 'pre').attr("src", URL.createObjectURL(pAadhardoc));
+                $('#pPan' + pAadhar + 'pre').attr("src", URL.createObjectURL(pPandoc));
+                
+                getPhotoBase64(pEBilldoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pEbill_doc' + pAadhar).val(data);
+                });
+                getPhotoBase64(pAadhardoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pAadhar_doc' + pAadhar).val(data);
+                });
+                getPhotoBase64(pPandoc).then(function (data) {
+                    //set string in hidden field
+                    $('#pPan_doc' + pAadhar).val(data);
+                });
+                
+                
             }
         } else {
             var errorData = '';
@@ -162,6 +185,25 @@
     $('#pPandoc').keyup(function () {
         $('#pPandocError').empty();
     });
+
+
+
+//base64 file upload
+    async   function getPhotoBase64(fileData) {
+//        alert(id);
+//        var f = $(id).prop('files')[0];
+        var f = fileData;
+        return  await toBase64(f);
+
+    }
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+
 
 
     //form validation
@@ -251,7 +293,7 @@
                     total += value;
                 }
             });
-             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+            $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
 //        investment end
 
 
@@ -263,16 +305,16 @@
 
     function  deletePartnerInvestment(partnerName) {
         $('#r' + partnerName).remove();
-        var total=0;
+        var total = 0;
         //        investment satrt
 
-            $('#investmentTable tr').each(function () {
-                var value = parseFloat($('td', this).eq(1).text());
-                if (!isNaN(value)) {
-                    total += value;
-                }
-            });
-             $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+        $('#investmentTable tr').each(function () {
+            var value = parseFloat($('td', this).eq(1).text());
+            if (!isNaN(value)) {
+                total += value;
+            }
+        });
+        $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
 //        investment end
     }
 

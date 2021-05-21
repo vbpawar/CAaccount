@@ -117,7 +117,7 @@
                         </div>
                         <!--Block Styled Form -->
                         <!--===================================================-->
-                        <form id="udyog-form" method="post">
+                        <form id="partnershipdeed-form" method="post">
                             <section style="background: #efefe9;">
                                 <div class="container">
                                     <div class="row">
@@ -274,6 +274,7 @@
                                                                     <tr>
                                                                         <th scope="col">Partener/Director</th>
                                                                         <th scope="col">Aadharcard No.</th>
+                                                                        <th scope="col">Name as per pancard</th>
                                                                         <th scope="col">Pancard No.</th>
                                                                         <th scope="col">Emailid</th>
                                                                         <th scope="col">Mobile No.</th>
@@ -311,13 +312,13 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Start Up Date </label>
 
-                                                                <input type="date" class="form-control" name="sud" id="sud" />
+                                                                <input type="date" class="form-control" name="start_up_date" id="start_up_date" />
                                                             </div>
                                                         </div> 
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Nature of Bussiness </label>
-                                                                <textarea class="form-control" name="nature_of_bussiness" id="nature_of_bussiness" ></textarea>
+                                                                <textarea class="form-control" name="natureofbuss" id="natureofbuss" ></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -325,7 +326,7 @@
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label"> Massage Box(Minimun 500 Words) </label>
-                                                                <textarea class="form-control" name="msgbox" id="msgbox" ></textarea>
+                                                                <textarea class="form-control" name="msg" id="msg" ></textarea>
 
                                                                     <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
                                                             </div>
@@ -497,7 +498,7 @@
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                                                     <input class="form-check-input" type="radio" name="rent_agree" id="no" value="Z"/>
                                                                                     <label class="form-check-label" for="">No</label>
-                                                                                    <input class="form-control" id="inv_proof" name="rentagree" type="file" onchange="loadFile(event, 'invpre')" style="display:none;"/>
+                                                                                    <input class="form-control" id="inv_proof" name="rentaggrement" type="file" onchange="loadFile(event, 'invpre')" style="display:none;"/>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -517,7 +518,7 @@
                                                                                     <input class="form-check-input" type="radio" name="shop_ebill" id="no" value="b" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="shop_e_bill" id="buss_loan_cert" onchange="loadFile(event, 'bcertpre')" style="display:none;"/>
+                                                                                <input type="file" class="form-control" placeholder="" name="shopbill" id="buss_loan_cert" onchange="loadFile(event, 'bcertpre')" style="display:none;"/>
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -536,7 +537,7 @@
                                                                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                                                     <input class="form-check-input" type="radio" name="other_doc1" id="no" value="x"/>
                                                                                     <label class="form-check-label" for="">No</label>
-                                                                                    <input class="form-control" id="other_doc1" name="otherdoc1" type="file" onchange="loadFile(event, 'doc1pre')" style="display:none;"/>
+                                                                                    <input class="form-control" id="other_doc1" name="other_1" type="file" onchange="loadFile(event, 'doc1pre')" style="display:none;"/>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -556,7 +557,7 @@
                                                                                     <input class="form-check-input" type="radio" name="other_doc2" id="no" value="d" />
                                                                                     <label class="form-check-label" for="">No</label>
                                                                                 </div>
-                                                                                <input type="file" class="form-control" placeholder="" name="other_doc2" id="other_doc2" onchange="loadFile(event, 'doc2pre')" style="display:none;"/>
+                                                                                <input type="file" class="form-control" placeholder="" name="other_2" id="other_doc2" onchange="loadFile(event, 'doc2pre')" style="display:none;"/>
                                                                             </div>
                                                                         </td>
                                                                         <td>

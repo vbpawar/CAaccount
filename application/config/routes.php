@@ -283,3 +283,6 @@ $route['add_food_licence'] = 'FoodLicence/add_food_lice_form';
 $route['get_foods_docs'] = 'FoodLicence/getdigitaldocs';
 $route['update_food_licence_status'] = 'FoodLicence/update_status';
 $route['update_docs_food'] = 'FoodLicence/get_update_docs';
+
+$route['loadPartnershipDeed']='PartnerShip_deed/get_all_partners_data';
+$route['add_PartnershipDeed']='PartnerShip_deed/add_partnership_form';
