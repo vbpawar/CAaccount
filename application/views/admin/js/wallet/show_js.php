@@ -38,9 +38,6 @@ function load_transaction(){
                                                                         <td class="pt-3">`+data[i].transactiondate+`</td>
                                                                         <td class="pt-3"> ₹ `+data[i].amount+` </td>
                                                                         <td class="pt-3">`+data[i].message+` </td>
-                                                                    </tr>
-                                                                    <tr id="spacing-row">
-                                                                        <td></td>
                                                                     </tr>`;
         
                }
@@ -107,9 +104,7 @@ const showList = serviceList => {
                                                                     <td  class="pt-3" style="width:5%">`+show+`</td>
 
                                                                     </tr>
-                                                                    <tr id="spacing-row">
-                                                                        <td></td>
-                                                                    </tr>`;
+                                                                    `;
         }
 
         $('.userlistdata').html(options);
