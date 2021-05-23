@@ -9,23 +9,27 @@ class InvoiceModel extends CI_Model {
     rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
     sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
     sd1.shop_name b_shopname,sd1.office_address b_address,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
+      sd2.shop_name shop_shopname,sd2.office_address shop_address,sd2.office_contact shop_contact,sd2.office_mailid shop_mail,sd2.gst_number shop_gst,
         u.firstname,u.lastname,u.userid
         FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                 JOIN residential_details rd ON rd.rid = pf.rid 
                 JOIN shop_details sd ON sd.sid = pf.sellerid
                  JOIN shop_details sd1 ON sd1.sid = pf.buyerid
+                 LEFT JOIN shop_details sd2 ON sd2.sid = pf.shopid
                 JOIN user_master u ON u.userid = pf.userid ORDER BY pf.invoiceid DESC";
         }else{
             $sql = "SELECT pf.invoiceid,pf.intype,pf.naturebuss,pf.status,pf.remark,pf.updatedat,pf.createdat,
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.emailid,
         rd.premise_name,rd.flat_number,rd.road,rd.area,rd.village,rd.taluka,rd.district,rd.state,rd.pincode,
         sd.shop_name s_shopname,sd.office_contact s_contact,sd.office_address s_address,sd.office_mailid s_mail,sd.gst_number s_gst,
-        sd1.shop_name b_shopname,sd1.office_contact b_contact,sd1.office_address b_address,sd1.office_mailid b_mail,sd1.gst_number b_gst,
+        sd1.shop_name b_shopname,sd1.office_address b_address,sd1.office_contact b_contact,sd1.office_mailid b_mail,sd1.gst_number b_gst,
+          sd2.shop_name shop_shopname,sd2.office_address shop_address,sd2.office_contact shop_contact,sd2.office_mailid shop_mail,sd2.gst_number shop_gst,
             u.firstname,u.lastname,u.userid
             FROM tax_invoice pf JOIN personal_details pd ON pd.pid = pf.pid 
                     JOIN residential_details rd ON rd.rid = pf.rid 
                     JOIN shop_details sd ON sd.sid = pf.sellerid
                      JOIN shop_details sd1 ON sd1.sid = pf.buyerid
+                     LEFT JOIN shop_details sd2 ON sd2.sid = pf.shopid
                     JOIN user_master u ON u.userid = pf.userid  WHERE pf.userid=$userid ORDER BY pf.invoiceid DESC";  
         }
         $query = $this->db->query($sql);
@@ -81,12 +85,16 @@ class InvoiceModel extends CI_Model {
         $this->db->insert('shop_details', $buyer_details);
         $result['buyerid'] =  $this->db->insert_id();
 
+        $this->db->insert('shop_details', $shop_details);
+        $result['shopid'] =  $this->db->insert_id();
+
 
         $income_details = array(
             'pid'=>$result['pid'],
             'rid'=>$result['rid'],
             'sellerid'=>$result['sellerid'],
             'buyerid'=>$result['buyerid'],
+            'shopid'=>$result['shopid'],
             'userid'=>$main['userid'],
             'intype'=>$main['intype'],
             'naturebuss' => $main['naturebuss']

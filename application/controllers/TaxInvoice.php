@@ -86,6 +86,13 @@ class TaxInvoice extends CI_Controller{
                 'office_contact'=>$this->input->post('buyer_contactno'),
                 'gst_number'=>$this->input->post('buyer_gst_number')
                );
+               $shoping_details = array(
+                'shop_name'=>$this->input->post('shop_business_name'),
+                'office_address'=>$this->input->post('shop_address'),
+                'office_mailid'=>$this->input->post('shop_email'),
+                'office_contact'=>$this->input->post('shop_contactno'),
+                'gst_number'=>$this->input->post('shop_gst_number')
+               );
                $invoicedetails = $this->input->post('invoicedata');
                $invoicedetails= json_decode($invoicedetails);
         $testdata = array(
@@ -94,7 +101,8 @@ class TaxInvoice extends CI_Controller{
             'seller_details'=>$seller_details,
             'buyer_details'=>$buyer_details,
             'main'=>$main_details,
-            'invoicedetails'=>$invoicedetails
+            'invoicedetails'=>$invoicedetails,
+            'shop_details'=>$shoping_details
         );
             $result = $this->imodel->create_invoice($testdata);
             if ($result['status']) {
