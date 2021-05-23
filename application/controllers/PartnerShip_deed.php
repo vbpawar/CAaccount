@@ -21,17 +21,17 @@ class PartnerShip_deed extends CI_Controller
         $userid = $this->input->get('userid');
         $result = $this->pmodel->get_details($roleid,$userid);
         $records = [];
+        $temp = array('partners'=>[]);
+        $temp_1 = array('partners_investment'=>[]);
         if ($result['status']) {
             for($i=0;$i<count($result['data']);$i++){
-                $temp = array('partners'=>[]);
-                $temp_1 = array('partners_investment'=>[]);
                $p_details= $this->pmodel->get_partners_details($result['data'][$i]['deedid']); 
                if($p_details['status']){
-                $temp = array('partners_data'=>$p_details['data']);
+                $temp = array('partners'=>$p_details['data']);
                }
                $p_details_1= $this->pmodel->get_partners_investment($result['data'][$i]['deedid']); 
                if($p_details_1['status']){
-                $temp = array('partners_Investment_data'=>$p_details_1['data']);
+                $temp_1 = array('partners_investment'=>$p_details_1['data']);
                }
                $records[] = array_merge($result['data'][$i],$temp,$temp_1); 
             }
