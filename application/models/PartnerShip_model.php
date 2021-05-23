@@ -47,8 +47,8 @@ class PartnerShip_model extends CI_Model {
         public function updatestatus($id,$data)
         {
             $result = false;
-            $this->db->where('gid',$id);
-            if($this->db->update('gst_service',$data)){
+            $this->db->where('deedid',$id);
+            if($this->db->update('partnership_deed',$data)){
                 $result['status'] = true;
             }else{
                 $result['status'] = false;
@@ -222,5 +222,11 @@ class PartnerShip_model extends CI_Model {
                                             $partnerid =  $this->db->insert_id();
                     }
     }  
+
+    public function get_partnership_docs($pfid) {
+        $sql = "SELECT * FROM deed_docs WHERE deedid=$pfid";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>
