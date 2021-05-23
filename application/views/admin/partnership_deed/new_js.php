@@ -57,7 +57,7 @@
 
             data[i++] = {
                 partner_name: partner_name,
-                aadhar_number: partner_invst
+                investment: partner_invst
             }
         });
         return data;
