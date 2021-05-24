@@ -114,11 +114,11 @@
                                     <thead>
                                         <tr>
                                             <th class="min-tablet">RETAILOR</th>
-                                            <th class="min-tablet">CUSTOMER</th>
+                                            <th class="min-tablet">SHOP NAME</th>
                                             
-                                            <th class="min-tablet">AADHAR NO.</th>
-                                            <th class="min-tablet">MOBILE NO.</th>
-                                            <th class="min-tablet">EMAIL ID</th>
+                                            <th class="min-tablet">SHOP ADDRESS</th>
+                                            <th class="min-tablet">START UP DATE</th>
+                                            <th class="min-tablet">NATURE OF BUSINESS</th>
                                             <th class="min-tablet">CREATED AT</th>
                                             <th class="min-desktop">STATUS</th>
                                             <th class="min-desktop">ACTION</th>

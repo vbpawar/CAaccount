@@ -18,7 +18,7 @@
 
                     const count = response.Data.length;
                     for (var i = 0; i < count; i++) {
-                        pfWithdrawal.set(response.Data[i].uid, response.Data[i]);
+                        pfWithdrawal.set(response.Data[i].deedid, response.Data[i]);
                     }
 
                     showList(pfWithdrawal);
@@ -49,10 +49,10 @@
                     break;
             }
             tblData += '<tr><td>' + services.firstname+' '+services.lastname + '</td>';
-            tblData += '<td>' + services.aadhar_name + '</td>';
-            tblData += '<td>' + services.aadhar_number + '</td>';
-            tblData += '<td>' + services.contact_number + '</td>';
-            tblData += '<td>' + services.emailid + '</td>';
+            tblData += '<td>' + services.shop_name + '</td>';
+            tblData += '<td>' + services.shop_address + '</td>';
+            tblData += '<td>' + services.start_up_date + '</td>';
+            tblData += '<td>' + services.natureofbuss + '</td>';
             tblData += '<td>' + services.createdat + '</td>';
             tblData += '<td>' + status + '</td>';
 
@@ -101,7 +101,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 //        $('#includeBox').load('services/certificate/update'); 
             $.ajax({
                 type: 'get',
-                url: url + 'udyagAadhar/update',
+                url: url + 'partnershipDeed/update',
                 dataType: 'html',
                 success: function (html) {
                     // success callback -- replace the div's innerHTML with
@@ -117,7 +117,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function goback() {
 
-        window.location.replace(url + 'udyagAadhar');
+        window.location.replace(url + 'partnershipDeed');
 //$('.showDiv').show();
 //$('.updateDiv').hide();
     }
@@ -126,7 +126,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
         $('#uid').val(id);
-         $('#digital_amount').val(servicecharges.get('5'));
+         $('#digital_amount').val(servicecharges.get('15'));
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }
@@ -134,7 +134,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
 
     function documentList(id) {
         $.ajax({
-            url: url + 'getudyogdocs',
+            url: url + 'getpartnershipdeeddoc',
 
             type: 'POST',
 
@@ -150,7 +150,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
                 for (var i = 0; i < count; i++) {
                     docTable += ` <tr>
       <td>
-          <a href="` + (url + 'documents/udyog/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
+          <a href="` + (url + 'documents/deed/' + response[i].docid + '.' + response[i].extension) + `" class="stretched-link" download>` + response[i].doctype + `</a>
       </td>
     </tr>`;
                 }
@@ -187,7 +187,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
         var formdata = new FormData(this);
         $.ajax({
 
-            url: url + 'updateudyog_status',
+            url: url + 'updatepartnershipstatus',
 
             type: 'POST',
 
@@ -228,7 +228,7 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function returnStatus(id,st) {
         $.ajax({
 
-            url: url + 'get_udyog_remarks',
+            url: url + 'get_partnership_remark',
             type: 'post',
             data: {rowid: id},
             dataType: 'json',

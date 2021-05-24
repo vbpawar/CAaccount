@@ -223,10 +223,6 @@ class PartnerShip_model extends CI_Model {
                     }
     }  
 
-    public function get_partnership_docs($pfid) {
-        $sql = "SELECT * FROM deed_docs WHERE deedid=$pfid";
-        $query = $this->db->query($sql);
-        return $query->result_array();
-    }
+    
 }
 ?>

@@ -1,91 +1,90 @@
 <script>
-
+    var url = '<?php echo base_url(); ?>';
     function loadDetails(product) {
-//    $('#pic_productId').val(product.testimonialId);
 
-        $('#pan_name').val(product.pan_name);
-        $('#pan_number').val(product.pan_number);
-        $('#aadhar_name').val(product.aadhar_name);
-        $('#aadhar_number').val(product.aadhar_number);
-        $('#contact_number').val(product.contact_number);
-        $('#emailid').val(product.emailid);
-        $('#dob').val(product.dob);
-        $('#premise_name').val(product.premise_name);
-        $('#flat_number').val(product.flat_number);
-        $('#road').val(product.road);
-        $('#area').val(product.area);
-        $('#village').val(product.village);
-        $('#taluka').val(product.taluka);
-        $('#district').val(product.district);
-        $('#state').val(product.state);
-        $('#pincode').val(product.pincode);
-        $('#s_premise_name').val(product.s_premise_name);
-        $('#s_flat_number').val(product.s_flat_number);
-        $('#s_road').val(product.s_road);
-        $('#s_area').val(product.s_area);
-        $('#s_village').val(product.s_village);
-        $('#s_taluka').val(product.s_taluka);
-        $('#s_district').val(product.s_district);
-        $('#s_state').val(product.s_state);
-        $('#s_pincode').val(product.s_pincode);
         $('#shop_name').val(product.shop_name);
-        $('#office_contact').val(product.office_contact);
-        $('#office_mailid').val(product.office_mailid);
-        $('#buss_start_date').val(product.buss_start_date);
-        $('#nature_of_buss').val(product.nature_of_buss);
-        $('#busstype').val(product.buss_type);
-        $('#male').val(product.male);
-        $('#female').val(product.female);
-        $('#bank_name').val(product.bank_name);
-        $('#ac_number').val(product.ac_number);
-        $('#ifsc_number').val(product.ifsc_number);
-        $('#turn_over_amt').val(product.turn_over_amt);
-        if(product.gst_number!=''){
-        $('#gst_number').val(product.gst_number);
-        }else{
-            $('#gst_number').hide();
-        }
-        
+        $('#shop_address').val(product.shop_address);
+        $('#start_up_date').val(product.start_up_date);
+        $('#natureofbuss').val(product.natureofbuss);
+        $('#msg').val(product.msg);
+
+
         showPartnersList(product.partners);
+        showPartnerInvestment(product.partners_investment);
     }
 
     loadDetails(details);
 
 
-function showPartnersList(pList) {
+    function showPartnersList(pList) {
         const count = pList.length;
-        var tableData='';
-        if(count>0){
-            for(var i=0;i<count;i++){
+        var tableData = '';
+        if (count > 0) {
+            for (var i = 0; i < count; i++) {
                 tableData += $('#partnerTable tbody').html();
                 tableData += `<tr id="r` + pList[i]['aadhar_number'] + `">
                         <td>` + pList[i]['partner_name'] + `</td>
                         <td>` + pList[i]['aadhar_number'] + `</td>
+                        <td>` + pList[i]['pan_name'] + `</td>
                         <td>` + pList[i]['pan_number'] + `</td>
                         <td>` + pList[i]['emailid'] + `</td>
-                        <td>` + pList[i]['contact_number'] + `</td>
+                        <td>` + pList[i]['mobile_number'] + `</td>
+                            <td><a href="` + (url + pList[i]['electricity']) + `" download="` + pList[i]['partner_name'] + `_electricitybill"><u>Download</u></a></td>
+                            <td><a href="` + (url + pList[i]['aadhar']) + `" download="` + pList[i]['partner_name'] + `_aadhar"><u>Download</u></a></td>
+                            <td><a href="` + (url + pList[i]['pan']) + `" download="` + pList[i]['partner_name'] + `_pancard"><u>Download</u></a></td>
                         </tr>`;
             }
-            
 
-        }else{
+
+        } else {
             tableData += $('#partnerTable tbody').html();
-            tableData +=`<tr><td colspan="5" align="center">No records found!</td></tr>`;
+            tableData += `<tr><td colspan="5" align="center">No records found!</td></tr>`;
         }
         $('#partnerData').html(tableData);
     }
 
 
 
-var form  = document.getElementById("udyog-form");
-var allElements = form.elements;
-for (var i = 0, l = allElements.length; i < l; ++i) {
-    // allElements[i].readOnly = true;
-       allElements[i].disabled=true;
-}
+    function showPartnerInvestment(pList) {
+        const count = pList.length;
+        var tableData = '';
+        var total = 0;
+        if (count > 0) {
+            for (var i = 0; i < count; i++) {
+                tableData += $('#investmentTable tbody').html();
+                tableData += `<tr id="">
+                        <td>` + pList[i]['partner_name'] + `</td>
+                        <td class="investmentId">` + pList[i]['investment'] + `</td>
+                   </tr>
+                    `;
+                var value = parseFloat(pList[i]['investment']);
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            }
+
+
+        } else {
+            tableData += $('#partnerTable tbody').html();
+            tableData += `<tr><td colspan="2" align="center">No records found!</td></tr>`;
+        }
+        $('#investmentData').html(tableData);
+        $('#investmentTable tfoot td').eq(0).text('Total Investment: ' + total);
+    }
 
 
 
 
-    
+
+    var form = document.getElementById("partnershipdeed-form");
+    var allElements = form.elements;
+    for (var i = 0, l = allElements.length; i < l; ++i) {
+        // allElements[i].readOnly = true;
+        allElements[i].disabled = true;
+    }
+
+
+
+
+
 </script>
