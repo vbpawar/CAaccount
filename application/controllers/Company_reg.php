@@ -105,7 +105,7 @@ $director_details= json_decode($director_details);
     
     public function update_status()
     {
-        $id    = $this->input->post('id');
+        $id    = $this->input->post('cid');
         $data   = array(
             'status' => $this->input->post('status'),
             'remark' => $this->input->post('remark')

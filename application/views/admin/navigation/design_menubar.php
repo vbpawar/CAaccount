@@ -9,7 +9,7 @@
         <li><a href="<?php echo base_url();?>income"> Income</a></li>
         <li><a href="<?php echo base_url();?>digital_sign/show"> Digital Sign</a></li>
         <li><a href="<?php echo base_url();?>users/show"> Access Control</a></li>
-        <li><a href="<?php echo base_url();?>services/CompanyRegService/create"> Company Registration</a></li>
+        <li><a href="<?php echo base_url();?>companyregistration"> Company Registration</a></li>
 
         <li><a href="<?php echo base_url();?>gst">GST Registration</a></li>
         <li><a href="<?php echo base_url();?>services/GSTAnnual/create">GST Annual Return</a></li>
