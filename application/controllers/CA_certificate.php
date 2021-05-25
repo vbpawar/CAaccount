@@ -64,18 +64,13 @@ class CA_certificate extends CI_Controller{
             $main_details = array(
                 'userid'=>$this->input->post('userid'),
                 'c_type'=>$this->input->post('cert_type'),
-                'c_value' => $this->input->post('cert_type'),
-                'buss_address' => $this->input->post('buss_address')
+                'reason' => $this->input->post('reason'),
+                'buss_address' => $this->input->post('buss_address'),
+                'buss_name'=>$this->input->post('buss_name'),
             );
-            $sdetails = array(
-                'shop_name'=>$this->input->post('shop_name'),
-                'office_contact'=>$this->input->post('office_contact'),
-                'office_mailid'=>$this->input->post('office_mailid')
-               );
         $testdata = array(
             'pdetails'=>$pdetails,
             'rdetails'=>$rdetails,
-            'shopdetails'=>$sdetails,
             'main'=>$main_details
         );
             $result = $this->imodel->create_certificate($testdata);
