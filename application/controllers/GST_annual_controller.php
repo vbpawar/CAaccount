@@ -124,14 +124,25 @@ class GST_annual_controller extends CI_Controller
         $result = $this->umodel->updatestatus($id, $data);
         if ($result) {
             $document = 'Documents not uplaoded';
-            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+            if(!empty($_FILES['result1']['name'])){
                 if ($this->uploadremarks('GSTANNUAL', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
+            }
+            if(!empty($_FILES['result2']['name'])){
                 if ($this->uploadremarks('GSTANNUAL', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
                     $document = 'Documents uplaoded';
                 }
             }
+            
+//            if (!empty($_FILES['result1']['name']) && !empty($_FILES['result2']['name'])) {
+//                if ($this->uploadremarks('GSTANNUAL', $id, $_FILES['result1']['name'], $_FILES['result1']['tmp_name'])) {
+//                    $document = 'Documents uplaoded';
+//                }
+//                if ($this->uploadremarks('GSTANNUAL', $id, $_FILES['result2']['name'], $_FILES['result2']['tmp_name'])) {
+//                    $document = 'Documents uplaoded';
+//                }
+//            }
             $response = array(
                 'Message' => 'Status updated successfully',
                 'Responsecode' => 200
