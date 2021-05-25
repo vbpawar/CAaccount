@@ -3,6 +3,10 @@
     function loadDetails(product) {
 //    $('#pic_productId').val(product.testimonialId);
 
+        $('#cert_type').val(product.c_type);
+//        $('#reason').val(product.c_type);
+        $('#buss_name').val(product.shop_name);
+        $('#buss_address').val(product.buss_address);
         $('#pan_name').val(product.pan_name);
         $('#pan_number').val(product.pan_number);
         $('#aadhar_name').val(product.aadhar_name);

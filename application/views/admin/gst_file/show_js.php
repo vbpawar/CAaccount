@@ -119,7 +119,13 @@ if (($data['Data']['role'] == 1 || $data['Data']['role'] == 4)) {
     function changeStatus(id) {
         var temp=pfWithdrawal.get(id.toString());
         $('#id').val(id);
-         $('#digital_amount').val(servicecharges.get('7'));
+         if(temp.returntype == 'yes'){
+         $('#digital_amount').val(servicecharges.get('8'));
+         }else{
+         $('#digital_amount').val(servicecharges.get('9'));
+         }
+         
+         
         $('#digital_uid').val(temp.userid);
         $('#statusModal').modal('toggle');
     }

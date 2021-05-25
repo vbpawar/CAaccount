@@ -88,7 +88,7 @@
         </div>
         <div class="pageheader">
             <!-- <h3><i class="glyphicon glyphicon-piggy-bank"></i> Udyog Aadhar</h3> -->
-            <h3><img src="<?php echo base_url('/admin_assets/img/gst.png'); ?>" style="height:42px;weight:42px" /> GST Annual Return </h3>
+            <h3><img src="<?php echo base_url('/admin_assets/img/gst.png'); ?>" style="height:42px;weight:42px" /> GST Filing </h3>
 
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
@@ -107,7 +107,7 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-control">
-                                 <a href="<?php echo base_url('gst');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
+                                 <a href="<?php echo base_url('loadgstfile');?>" class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></a>
                             </div>
                             <h3 class="panel-title">GST Filing</h3>
                         </div>

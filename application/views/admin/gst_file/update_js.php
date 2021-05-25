@@ -1,5 +1,12 @@
 <script>
     function loadDetails(product) {
+        
+        if(product.returntype=='yes'){
+            $("#yes").prop("checked", true);
+        }else{
+            $("#no").prop("checked", true);
+        }
+        
         $('#pan_name').val(product.pan_name);
         $('#pan_number').val(product.pan_number);
         $('#aadhar_name').val(product.aadhar_name);

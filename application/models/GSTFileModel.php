@@ -5,7 +5,7 @@ class GSTFileModel extends CI_Model {
     public function get_details($roleid,$userid) {
         $result = [];
         if($roleid ==1 || $roleid ==4){
-            $sql = "SELECT pf.gid,pf.userid,pf.shop_name,pf.gst_number,pf.gst_number,pf.gst_id,pf.gst_pwd,pf.status,pf.remark,pf.createdat,pf.updatedat,
+            $sql = "SELECT pf.gid,pf.userid,pf.returntype,pf.shop_name,pf.gst_number,pf.gst_number,pf.gst_id,pf.gst_pwd,pf.status,pf.remark,pf.createdat,pf.updatedat,
             pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
             u.firstname,u.lastname,u.roleid
             FROM gst_file pf 
@@ -13,7 +13,7 @@ class GSTFileModel extends CI_Model {
             JOIN user_master u ON u.userid = pf.userid
             ORDER BY pf.gid DESC";
             }else{
-                $sql = "SELECT pf.gid,pf.userid,pf.shop_name,pf.gst_number,pf.gst_number,pf.gst_id,pf.gst_pwd,pf.status,pf.remark,pf.createdat,pf.updatedat,
+                $sql = "SELECT pf.gid,pf.userid,pf.returntype,pf.shop_name,pf.gst_number,pf.gst_number,pf.gst_id,pf.gst_pwd,pf.status,pf.remark,pf.createdat,pf.updatedat,
                 pd.pan_name,pd.pan_number,pd.aadhar_name,pd.aadhar_number,pd.contact_number,pd.contact_number,pd.emailid,pd.dob,
                 u.firstname,u.lastname,u.roleid
                 FROM gst_file pf 
