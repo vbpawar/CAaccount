@@ -27,6 +27,14 @@
         $('#buyer_email').val(product.b_mail);
         $('#buyer_contactno').val(product.b_contact);
         $('#buyer_gst_number').val(product.b_gst);
+        $('#shopping_business_name').val(product.shop_shopname);
+        $('#shop_email').val(product.shop_mail);
+        $('#shop_contactno').val(product.shop_contact);
+        $('#shop_gst_number').val(product.shop_gst);
+        $('#shop_address').val(product.shop_address);
+        
+        
+        
    showInvoiceDetailList(product.invoices);        
         
     }

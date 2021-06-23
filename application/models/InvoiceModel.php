@@ -68,6 +68,7 @@ class InvoiceModel extends CI_Model {
       $rdetails = $data['rdetails'];
       $seller_details = $data['seller_details'];
       $buyer_details = $data['buyer_details'];
+      $shop_details = $data['shop_details'];
       $invoicedetails = $data['invoicedetails'];
       $main = $data['main'];
       $result = array();

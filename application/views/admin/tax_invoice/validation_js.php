@@ -38,6 +38,17 @@
         }
     });
 
+//    gst enable/disable
+    $('#shop_enableGst').change(function () {
+        if (this.checked) {
+            $("#shop_gst_number").prop('disabled', false);
+//    alert('checked')
+        } else {
+//    alert('unchecked')
+            $("#shop_gst_number").prop('disabled', true);
+        }
+    });
+
 
 //bussiness type change then appear new tab
     $('#buss_type').change(function () {

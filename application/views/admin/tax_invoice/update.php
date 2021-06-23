@@ -405,6 +405,58 @@
 
                                                     </div>                
 
+                                                    <div class="row">                                 
+
+                                                        <div class="row bg-info">
+                                                            <div class="col-md-6"><h5>Shopping Address</h5></div>                                                    
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label"> Business/Shop/Company Name</label>
+                                                                <input type="text" class="form-control" placeholder="Business Name" name="shopping_business_name" id="shopping_business_name" />
+
+                                                                <!--<input type="text" class="form-control" placeholder="" name="distributorid" id="distributorid">-->
+                                                            </div>
+                                                        </div>
+
+<!--                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
+
+                                                                <input type="text" class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" />
+                                                            </div>
+                                                        </div>-->
+                                                        
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Email</label>
+
+                                                                <input type="email" class="form-control" placeholder="Email" name="shop_email" id="shop_email" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Mobile No.</label>
+
+                                                                <input type="text" class="form-control" placeholder="Mobile No" name="shop_contactno" id="shop_contactno" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">GST Number</label>
+                                                                <input type="text" class="form-control" name="shop_gst_number" id="shop_gst_number" disabled="" />
+                                                                <input type="checkbox" name="" id="shop_enableGst" />Enable GST
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
+                                                                <textarea class="form-control" placeholder="Business Address" name="shop_address" id="shop_address" rows="1"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>                
                                                     <!---Row 2 end -->
 
                                                     <div class="row">

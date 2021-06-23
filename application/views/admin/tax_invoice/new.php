@@ -343,12 +343,7 @@
                                                                 <input type="text" class="form-control" placeholder="Business Address" name="seller_address" id="seller_address" />
                                                             </div>
                                                         </div>-->
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Business Address</label>
-                                                                <textarea class="form-control" placeholder="Business Address" name="seller_address" id="seller_address" rows="1"></textarea>
-                                                            </div>
-                                                        </div>
+                                                      
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Invoice Number</label>
@@ -379,6 +374,12 @@
                                                             </div>
                                                         </div>
 
+                                                          <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
+                                                                <textarea class="form-control" placeholder="Business Address" name="seller_address" id="seller_address" rows="1"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <!---Row 1 end -->
                                                     <div class="row">                                 
@@ -403,12 +404,7 @@
                                                                 <input type="text" class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" />
                                                             </div>
                                                         </div>-->
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Business Address</label>
-                                                                <textarea class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" rows="1"></textarea>
-                                                            </div>
-                                                        </div>
+                                                       
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
@@ -432,6 +428,12 @@
                                                             </div>
                                                         </div>
 
+                                                         <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
+                                                                <textarea class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" rows="1"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>                
 
                                                     <!---Row 2 end -->
@@ -457,12 +459,7 @@
                                                                 <input type="text" class="form-control" placeholder="Business Address" name="buyer_address" id="buyer_address" />
                                                             </div>
                                                         </div>-->
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Business Address</label>
-                                                                <textarea class="form-control" placeholder="Business Address" name="shop_address" id="shop_address" rows="1"></textarea>
-                                                            </div>
-                                                        </div>
+                                                        
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
@@ -485,7 +482,12 @@
                                                                 <input type="checkbox" name="" id="shop_enableGst" />Enable GST
                                                             </div>
                                                         </div>
-
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label">Business Address</label>
+                                                                <textarea class="form-control" placeholder="Business Address" name="shop_address" id="shop_address" rows="1"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>                
 
                                                     <!---Row 3 end -->
